@@ -1,0 +1,249 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:56:44Z"
+    creationTimestamp: "2024-08-06T01:56:42Z"
+    labels:
+      app.kubernetes.io/instance: rancher-logging
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: rancher-logging
+      app.kubernetes.io/version: 3.17.10
+      helm.sh/chart: rancher-logging-103.0.0_up3.17.10
+      service.kubernetes.io/headless: "null"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:helm.sh/chart: {}
+            f:service.kubernetes.io/headless: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:56:44Z"
+    name: rancher-logging
+    namespace: cattle-logging-system
+    resourceVersion: "7020"
+    uid: bd8cc8e3-562e-4327-bd29-85307528942b
+  subsets:
+  - addresses:
+    - ip: 10.52.0.76
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: rancher-logging-77f858bbb7-j27z7
+        namespace: cattle-logging-system
+        uid: f14cabb9-aeb0-4b07-ba4d-28b8b795d523
+    ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:57:02Z"
+    creationTimestamp: "2024-08-06T01:57:00Z"
+    labels:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-kube-audit
+      app.kubernetes.io/name: fluentd
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:57:02Z"
+    name: rancher-logging-kube-audit-fluentd
+    namespace: cattle-logging-system
+    resourceVersion: "7956"
+    uid: a08d18da-2765-446f-a883-aab72b161c21
+  subsets:
+  - addresses:
+    - ip: 10.52.0.90
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: rancher-logging-kube-audit-fluentd-0
+        namespace: cattle-logging-system
+        uid: cb953e15-e9fc-4c75-b597-bafc19ef86da
+    ports:
+    - name: tcp-fluentd
+      port: 24240
+      protocol: TCP
+    - name: udp-fluentd
+      port: 24240
+      protocol: UDP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:57:02Z"
+    creationTimestamp: "2024-08-06T01:57:00Z"
+    labels:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-kube-audit
+      app.kubernetes.io/name: fluentd
+      service.kubernetes.io/headless: "null"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:service.kubernetes.io/headless: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:57:02Z"
+    name: rancher-logging-kube-audit-fluentd-headless
+    namespace: cattle-logging-system
+    resourceVersion: "7955"
+    uid: 34311ff4-1639-444c-8cbb-6d2f42209ea2
+  subsets:
+  - addresses:
+    - hostname: rancher-logging-kube-audit-fluentd-0
+      ip: 10.52.0.90
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: rancher-logging-kube-audit-fluentd-0
+        namespace: cattle-logging-system
+        uid: cb953e15-e9fc-4c75-b597-bafc19ef86da
+    ports:
+    - name: tcp-fluentd
+      port: 24240
+      protocol: TCP
+    - name: udp-fluentd
+      port: 24240
+      protocol: UDP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:57:13Z"
+    creationTimestamp: "2024-08-06T01:57:11Z"
+    labels:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-root
+      app.kubernetes.io/name: fluentd
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:57:13Z"
+    name: rancher-logging-root-fluentd
+    namespace: cattle-logging-system
+    resourceVersion: "8663"
+    uid: dbcaa9db-1887-4ac5-8d6c-9f2ca2e80e82
+  subsets:
+  - addresses:
+    - ip: 10.52.0.94
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: rancher-logging-root-fluentd-0
+        namespace: cattle-logging-system
+        uid: 365395bf-7ddb-4287-b474-ba84fe196972
+    ports:
+    - name: tcp-fluentd
+      port: 24240
+      protocol: TCP
+    - name: udp-fluentd
+      port: 24240
+      protocol: UDP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:57:13Z"
+    creationTimestamp: "2024-08-06T01:57:11Z"
+    labels:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-root
+      app.kubernetes.io/name: fluentd
+      service.kubernetes.io/headless: "null"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:service.kubernetes.io/headless: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:57:13Z"
+    name: rancher-logging-root-fluentd-headless
+    namespace: cattle-logging-system
+    resourceVersion: "8664"
+    uid: 26714b8f-31a8-43c1-a1d3-0f055cd9bf95
+  subsets:
+  - addresses:
+    - hostname: rancher-logging-root-fluentd-0
+      ip: 10.52.0.94
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: rancher-logging-root-fluentd-0
+        namespace: cattle-logging-system
+        uid: 365395bf-7ddb-4287-b474-ba84fe196972
+    ports:
+    - name: tcp-fluentd
+      port: 24240
+      protocol: TCP
+    - name: udp-fluentd
+      port: 24240
+      protocol: UDP
+kind: List
+metadata:
+  resourceVersion: "770286"

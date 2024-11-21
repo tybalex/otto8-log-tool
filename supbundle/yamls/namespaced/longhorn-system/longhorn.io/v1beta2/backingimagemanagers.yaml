@@ -1,0 +1,313 @@
+apiVersion: v1
+items:
+- apiVersion: longhorn.io/v1beta2
+  kind: BackingImageManager
+  metadata:
+    creationTimestamp: "2024-08-06T02:24:11Z"
+    finalizers:
+    - longhorn.io
+    generation: 2
+    labels:
+      longhorn.io/component: backing-image-manager
+      longhorn.io/disk-uuid: 7b70705b-57bb-4ccb-b9bb-5e6ec0c76249
+      longhorn.io/managed-by: longhorn-manager
+      longhorn.io/node: harvesterdev2
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:longhorn.io/component: {}
+            f:longhorn.io/disk-uuid: {}
+            f:longhorn.io/managed-by: {}
+            f:longhorn.io/node: {}
+        f:spec:
+          .: {}
+          f:backingImages:
+            .: {}
+            f:default-image-nntjr: {}
+            f:default-image-qwfqg: {}
+          f:diskPath: {}
+          f:diskUUID: {}
+          f:image: {}
+          f:nodeID: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T12:53:01Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:apiMinVersion: {}
+          f:apiVersion: {}
+          f:backingImageFileMap:
+            .: {}
+            f:default-image-nntjr:
+              .: {}
+              f:currentChecksum: {}
+              f:message: {}
+              f:name: {}
+              f:progress: {}
+              f:senderManagerAddress: {}
+              f:sendingReference: {}
+              f:size: {}
+              f:state: {}
+              f:uuid: {}
+              f:virtualSize: {}
+            f:default-image-qwfqg:
+              .: {}
+              f:currentChecksum: {}
+              f:message: {}
+              f:name: {}
+              f:progress: {}
+              f:senderManagerAddress: {}
+              f:sendingReference: {}
+              f:size: {}
+              f:state: {}
+              f:uuid: {}
+              f:virtualSize: {}
+          f:currentState: {}
+          f:ip: {}
+          f:ownerID: {}
+          f:storageIP: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T12:54:42Z"
+    name: backing-image-manager-c16a-7b70
+    namespace: longhorn-system
+    resourceVersion: "690993"
+    uid: 865d2e25-df07-476c-b203-040af76ddbd8
+  spec:
+    backingImages:
+      default-image-nntjr: a0ffc77a
+      default-image-qwfqg: 59c0d774
+    diskPath: /var/lib/harvester/extra-disks/730bfc287c4891698a05e8f30cfec23f
+    diskUUID: 7b70705b-57bb-4ccb-b9bb-5e6ec0c76249
+    image: longhornio/backing-image-manager:v1.6.2
+    nodeID: harvesterdev2
+  status:
+    apiMinVersion: 3
+    apiVersion: 3
+    backingImageFileMap:
+      default-image-nntjr:
+        currentChecksum: 1b35a52bd32f5257b3454787c87688fdbe3fdd018a47ed2cf9a7cca71630f54230ceefd544cd984adf7593974b0087a9da2e51eaf9fea8a105ce86ef4be5fc76
+        message: "null"
+        name: default-image-nntjr
+        progress: 100
+        senderManagerAddress: "null"
+        sendingReference: 0
+        size: 1.48733952e+09
+        state: ready
+        uuid: a0ffc77a
+        virtualSize: 1.48733952e+09
+      default-image-qwfqg:
+        currentChecksum: 1a9518d76cd3fa3adf7ee4126f6ab7e89b209d7056be7d7a6b57e7760f4b9a5a6bae54cb11a0cb125571011135bb3f47052189d74a523aa5e81ab1af6de0acfb
+        message: "null"
+        name: default-image-qwfqg
+        progress: 100
+        senderManagerAddress: "null"
+        sendingReference: 0
+        size: 2.61357568e+08
+        state: ready
+        uuid: 59c0d774
+        virtualSize: 2.361393152e+09
+    currentState: running
+    ip: 10.52.1.29
+    ownerID: harvesterdev2
+    storageIP: 10.52.1.29
+- apiVersion: longhorn.io/v1beta2
+  kind: BackingImageManager
+  metadata:
+    creationTimestamp: "2024-08-06T02:09:26Z"
+    finalizers:
+    - longhorn.io
+    generation: 1
+    labels:
+      longhorn.io/component: backing-image-manager
+      longhorn.io/disk-uuid: c9ff8501-8c22-4cc0-810e-65214001909d
+      longhorn.io/managed-by: longhorn-manager
+      longhorn.io/node: harvesterdev1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:longhorn.io/component: {}
+            f:longhorn.io/disk-uuid: {}
+            f:longhorn.io/managed-by: {}
+            f:longhorn.io/node: {}
+        f:spec:
+          .: {}
+          f:backingImages:
+            .: {}
+            f:default-image-qwfqg: {}
+          f:diskPath: {}
+          f:diskUUID: {}
+          f:image: {}
+          f:nodeID: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T02:09:26Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:apiMinVersion: {}
+          f:apiVersion: {}
+          f:backingImageFileMap:
+            .: {}
+            f:default-image-qwfqg:
+              .: {}
+              f:currentChecksum: {}
+              f:message: {}
+              f:name: {}
+              f:progress: {}
+              f:senderManagerAddress: {}
+              f:sendingReference: {}
+              f:size: {}
+              f:state: {}
+              f:uuid: {}
+              f:virtualSize: {}
+          f:currentState: {}
+          f:ip: {}
+          f:ownerID: {}
+          f:storageIP: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:11:10Z"
+    name: backing-image-manager-c16a-c9ff
+    namespace: longhorn-system
+    resourceVersion: "22264"
+    uid: a9a2bdea-ac4f-4185-b067-634eabde5fa0
+  spec:
+    backingImages:
+      default-image-qwfqg: 59c0d774
+    diskPath: /var/lib/harvester/extra-disks/c2675a090f3de6d1ec528e9c57791af5
+    diskUUID: c9ff8501-8c22-4cc0-810e-65214001909d
+    image: longhornio/backing-image-manager:v1.6.2
+    nodeID: harvesterdev1
+  status:
+    apiMinVersion: 3
+    apiVersion: 3
+    backingImageFileMap:
+      default-image-qwfqg:
+        currentChecksum: 1a9518d76cd3fa3adf7ee4126f6ab7e89b209d7056be7d7a6b57e7760f4b9a5a6bae54cb11a0cb125571011135bb3f47052189d74a523aa5e81ab1af6de0acfb
+        message: "null"
+        name: default-image-qwfqg
+        progress: 100
+        senderManagerAddress: "null"
+        sendingReference: 0
+        size: 2.61357568e+08
+        state: ready
+        uuid: 59c0d774
+        virtualSize: 2.361393152e+09
+    currentState: running
+    ip: 10.52.0.108
+    ownerID: harvesterdev1
+    storageIP: 10.52.0.108
+- apiVersion: longhorn.io/v1beta2
+  kind: BackingImageManager
+  metadata:
+    creationTimestamp: "2024-08-06T02:24:11Z"
+    finalizers:
+    - longhorn.io
+    generation: 1
+    labels:
+      longhorn.io/component: backing-image-manager
+      longhorn.io/disk-uuid: d74b8deb-1d56-46de-9058-b1e6c18a775a
+      longhorn.io/managed-by: longhorn-manager
+      longhorn.io/node: harvesterdev3
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:longhorn.io/component: {}
+            f:longhorn.io/disk-uuid: {}
+            f:longhorn.io/managed-by: {}
+            f:longhorn.io/node: {}
+        f:spec:
+          .: {}
+          f:backingImages:
+            .: {}
+            f:default-image-qwfqg: {}
+          f:diskPath: {}
+          f:diskUUID: {}
+          f:image: {}
+          f:nodeID: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T02:24:11Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:apiMinVersion: {}
+          f:apiVersion: {}
+          f:backingImageFileMap:
+            .: {}
+            f:default-image-qwfqg:
+              .: {}
+              f:currentChecksum: {}
+              f:message: {}
+              f:name: {}
+              f:progress: {}
+              f:senderManagerAddress: {}
+              f:sendingReference: {}
+              f:size: {}
+              f:state: {}
+              f:uuid: {}
+              f:virtualSize: {}
+          f:currentState: {}
+          f:ip: {}
+          f:ownerID: {}
+          f:storageIP: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:24:21Z"
+    name: backing-image-manager-c16a-d74b
+    namespace: longhorn-system
+    resourceVersion: "39387"
+    uid: 24d37342-b005-4f96-8157-dfbf349a2069
+  spec:
+    backingImages:
+      default-image-qwfqg: 59c0d774
+    diskPath: /var/lib/harvester/extra-disks/af108f336cb053734c93658d7551aa93
+    diskUUID: d74b8deb-1d56-46de-9058-b1e6c18a775a
+    image: longhornio/backing-image-manager:v1.6.2
+    nodeID: harvesterdev3
+  status:
+    apiMinVersion: 3
+    apiVersion: 3
+    backingImageFileMap:
+      default-image-qwfqg:
+        currentChecksum: 1a9518d76cd3fa3adf7ee4126f6ab7e89b209d7056be7d7a6b57e7760f4b9a5a6bae54cb11a0cb125571011135bb3f47052189d74a523aa5e81ab1af6de0acfb
+        message: "null"
+        name: default-image-qwfqg
+        progress: 100
+        senderManagerAddress: "null"
+        sendingReference: 0
+        size: 2.61357568e+08
+        state: ready
+        uuid: 59c0d774
+        virtualSize: 2.361393152e+09
+    currentState: running
+    ip: 10.52.2.20
+    ownerID: harvesterdev3
+    storageIP: 10.52.2.20
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770282"

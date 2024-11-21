@@ -1,0 +1,564 @@
+2024-08-06T02:11:57.956516133Z 2024/08/06 02:11:57 [INFO] Rancher version v2.8.3 (904c2fb09) is starting
+2024-08-06T02:11:57.956590324Z 2024/08/06 02:11:57 [INFO] Rancher arguments {ACMEDomains:[] AddLocal:true Embedded:false BindHost: HTTPListenPort:80 HTTPSListenPort:443 K8sMode:auto Debug:false Trace:false NoCACerts:true AuditLogPath:/var/log/auditlog/rancher-api-audit.log AuditLogMaxage:10 AuditLogMaxsize:100 AuditLogMaxbackup:10 AuditLevel:0 Features:multi-cluster-management=false,multi-cluster-management-agent=false ClusterRegistry:}
+2024-08-06T02:11:57.956627554Z 2024/08/06 02:11:57 [INFO] Listening on /tmp/log.sock
+2024-08-06T02:11:57.976000951Z 2024/08/06 02:11:57 [INFO] Running in clustered mode with ID 10.52.1.5, monitoring endpoint cattle-system/rancher
+2024-08-06T02:11:58.991474599Z 2024/08/06 02:11:58 [INFO] Applying CRD features.management.cattle.io
+2024-08-06T02:12:01.296881330Z 2024/08/06 02:12:01 [INFO] Applying CRD navlinks.ui.cattle.io
+2024-08-06T02:12:01.466888745Z 2024/08/06 02:12:01 [INFO] Applying CRD podsecurityadmissionconfigurationtemplates.management.cattle.io
+2024-08-06T02:12:01.643223526Z 2024/08/06 02:12:01 [INFO] Applying CRD clusters.management.cattle.io
+2024-08-06T02:12:01.835370771Z 2024/08/06 02:12:01 [INFO] Applying CRD apiservices.management.cattle.io
+2024-08-06T02:12:02.071268282Z 2024/08/06 02:12:02 [INFO] Applying CRD clusterregistrationtokens.management.cattle.io
+2024-08-06T02:12:02.239359883Z 2024/08/06 02:12:02 [INFO] Applying CRD settings.management.cattle.io
+2024-08-06T02:12:02.406325574Z 2024/08/06 02:12:02 [INFO] Applying CRD preferences.management.cattle.io
+2024-08-06T02:12:02.573292348Z 2024/08/06 02:12:02 [INFO] Applying CRD features.management.cattle.io
+2024-08-06T02:12:02.743346437Z 2024/08/06 02:12:02 [INFO] Applying CRD clusterrepos.catalog.cattle.io
+2024-08-06T02:12:02.909172315Z 2024/08/06 02:12:02 [INFO] Applying CRD operations.catalog.cattle.io
+2024-08-06T02:12:03.075660749Z 2024/08/06 02:12:03 [INFO] Applying CRD apps.catalog.cattle.io
+2024-08-06T02:12:03.246674017Z 2024/08/06 02:12:03 [INFO] Applying CRD fleetworkspaces.management.cattle.io
+2024-08-06T02:12:03.417373793Z 2024/08/06 02:12:03 [INFO] Applying CRD managedcharts.management.cattle.io
+2024-08-06T02:12:03.667605329Z 2024/08/06 02:12:03 [INFO] Applying CRD clusters.provisioning.cattle.io
+2024-08-06T02:12:03.895790402Z 2024/08/06 02:12:03 [INFO] Applying CRD clusters.provisioning.cattle.io
+2024-08-06T02:12:04.110837633Z 2024/08/06 02:12:04 [INFO] Applying CRD rkeclusters.rke.cattle.io
+2024-08-06T02:12:04.276746055Z 2024/08/06 02:12:04 [INFO] Applying CRD rkecontrolplanes.rke.cattle.io
+2024-08-06T02:12:04.480745220Z 2024/08/06 02:12:04 [INFO] Applying CRD rkebootstraps.rke.cattle.io
+2024-08-06T02:12:04.648769960Z 2024/08/06 02:12:04 [INFO] Applying CRD rkebootstraptemplates.rke.cattle.io
+2024-08-06T02:12:04.815232809Z 2024/08/06 02:12:04 [INFO] Applying CRD rkecontrolplanes.rke.cattle.io
+2024-08-06T02:12:05.017670596Z 2024/08/06 02:12:05 [INFO] Applying CRD custommachines.rke.cattle.io
+2024-08-06T02:12:05.180124635Z 2024/08/06 02:12:05 [INFO] Applying CRD etcdsnapshots.rke.cattle.io
+2024-08-06T02:12:05.410297435Z 2024/08/06 02:12:05 [INFO] Applying CRD clusters.cluster.x-k8s.io
+2024-08-06T02:12:05.606071713Z 2024/08/06 02:12:05 [INFO] Applying CRD machinedeployments.cluster.x-k8s.io
+2024-08-06T02:12:05.790779470Z 2024/08/06 02:12:05 [INFO] Applying CRD machinehealthchecks.cluster.x-k8s.io
+2024-08-06T02:12:05.967729032Z 2024/08/06 02:12:05 [INFO] Applying CRD machines.cluster.x-k8s.io
+2024-08-06T02:12:06.145350626Z 2024/08/06 02:12:06 [INFO] Applying CRD machinesets.cluster.x-k8s.io
+2024-08-06T02:12:08.288915199Z 2024/08/06 02:12:08 [WARNING] Unknown setting eula-agreed
+2024-08-06T02:12:08.310198110Z 2024/08/06 02:12:08 [INFO] Starting API controllers
+2024-08-06T02:12:08.559401932Z 2024/08/06 02:12:08 [INFO] Starting management.cattle.io/v3, Kind=Cluster controller
+2024-08-06T02:12:08.559455152Z 2024/08/06 02:12:08 [INFO] Starting management.cattle.io/v3, Kind=Token controller
+2024-08-06T02:12:08.559465061Z 2024/08/06 02:12:08 [INFO] Starting management.cattle.io/v3, Kind=User controller
+2024-08-06T02:12:08.559488134Z 2024/08/06 02:12:08 [INFO] Starting management.cattle.io/v3, Kind=UserAttribute controller
+2024-08-06T02:12:08.559504846Z 2024/08/06 02:12:08 [INFO] Starting /v1, Kind=ConfigMap controller
+2024-08-06T02:12:08.559657654Z 2024/08/06 02:12:08 [INFO] Starting management.cattle.io/v3, Kind=GroupMember controller
+2024-08-06T02:12:08.559700965Z 2024/08/06 02:12:08 [INFO] Starting management.cattle.io/v3, Kind=Group controller
+2024-08-06T02:12:08.560029455Z 2024/08/06 02:12:08 [INFO] Starting /v1, Kind=Secret controller
+2024-08-06T02:12:09.012399636Z 2024/08/06 02:12:09 [INFO] Starting management.cattle.io/v3, Kind=Feature controller
+2024-08-06T02:12:09.012558085Z 2024/08/06 02:12:09 [INFO] Starting cluster.x-k8s.io/v1beta1, Kind=Machine controller
+2024-08-06T02:12:09.015343435Z 2024/08/06 02:12:09 [INFO] Starting apiregistration.k8s.io/v1, Kind=APIService controller
+2024-08-06T02:12:09.019004356Z 2024/08/06 02:12:09 [INFO] Starting management.cattle.io/v3, Kind=APIService controller
+2024-08-06T02:12:09.019048088Z 2024/08/06 02:12:09 [INFO] Starting rbac.authorization.k8s.io/v1, Kind=ClusterRole controller
+2024-08-06T02:12:09.019017541Z I0806 02:12:09.018153      33 leaderelection.go:250] attempting to acquire leader lease kube-system/cattle-controllers...
+2024-08-06T02:12:09.019064148Z 2024/08/06 02:12:09 [INFO] Starting management.cattle.io/v3, Kind=Cluster controller
+2024-08-06T02:12:09.019127107Z 2024/08/06 02:12:09 [INFO] Starting management.cattle.io/v3, Kind=Setting controller
+2024-08-06T02:12:09.019136485Z 2024/08/06 02:12:09 [INFO] Starting /v1, Kind=Secret controller
+2024-08-06T02:12:09.019149008Z 2024/08/06 02:12:09 [INFO] Starting management.cattle.io/v3, Kind=Preference controller
+2024-08-06T02:12:09.019162013Z 2024/08/06 02:12:09 [INFO] Starting steve aggregation client
+2024-08-06T02:12:09.019175198Z 2024/08/06 02:12:09 [INFO] Starting provisioning.cattle.io/v1, Kind=Cluster controller
+2024-08-06T02:12:09.019189465Z 2024/08/06 02:12:09 [INFO] Starting rbac.authorization.k8s.io/v1, Kind=RoleBinding controller
+2024-08-06T02:12:09.019202409Z 2024/08/06 02:12:09 [INFO] Starting apiextensions.k8s.io/v1, Kind=CustomResourceDefinition controller
+2024-08-06T02:12:09.019213710Z 2024/08/06 02:12:09 [INFO] Starting rbac.authorization.k8s.io/v1, Kind=Role controller
+2024-08-06T02:12:09.019675210Z 2024/08/06 02:12:09 [INFO] Starting rbac.authorization.k8s.io/v1, Kind=ClusterRoleBinding controller
+2024-08-06T02:12:09.019932836Z 2024/08/06 02:12:09 [INFO] Starting rke.cattle.io/v1, Kind=RKEBootstrap controller
+2024-08-06T02:12:09.020054655Z 2024/08/06 02:12:09 [INFO] Starting catalog.cattle.io/v1, Kind=ClusterRepo controller
+2024-08-06T02:12:09.020791224Z 2024/08/06 02:12:09 [INFO] Starting /v1, Kind=Namespace controller
+2024-08-06T02:12:09.021405261Z 2024/08/06 02:12:09 [INFO] Starting management.cattle.io/v3, Kind=ClusterRegistrationToken controller
+2024-08-06T02:12:09.021931403Z 2024/08/06 02:12:09 [INFO] Starting /v1, Kind=ServiceAccount controller
+2024-08-06T02:12:09.021943476Z 2024/08/06 02:12:09 [INFO] Starting /v1, Kind=ConfigMap controller
+2024-08-06T02:12:09.022983606Z 2024/08/06 02:12:09 [INFO] Starting /v1, Kind=Endpoints controller
+2024-08-06T02:12:09.023163886Z 2024/08/06 02:12:09 [INFO] Adding peer wss://10.52.0.73/v3/connect, 10.52.0.73
+2024-08-06T02:12:09.025858506Z 2024/08/06 02:12:09 [ERROR] Failed to connect to peer wss://10.52.0.73/v3/connect [local ID=10.52.1.5]: websocket: bad handshake
+2024-08-06T02:12:09.031923658Z 2024/08/06 02:12:09 [INFO] Listening on :443
+2024-08-06T02:12:09.031949086Z 2024/08/06 02:12:09 [INFO] Listening on :80
+2024-08-06T02:12:09.032003789Z 2024/08/06 02:12:09 [INFO] Active TLS secret cattle-system/serving-cert (ver=9400) (count 7): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-127.0.0.1:127.0.0.1 listener.cattle.io/cn-localhost:localhost listener.cattle.io/cn-rancher:rancher listener.cattle.io/cn-rancher.cattle-system:rancher.cattle-system listener.cattle.io/fingerprint:SHA1=CDF95D8C083129114BE153B2EE92670B2BBD3A7C]
+2024-08-06T02:12:09.032637173Z 2024/08/06 02:12:09 [INFO] certificate CN=dynamic,O=dynamic signed by CN=dynamiclistener-ca@1722909151,O=dynamiclistener-org: notBefore=2024-08-06 01:52:31 +0000 UTC notAfter=2025-08-06 02:12:09 +0000 UTC
+2024-08-06T02:12:09.034645959Z 2024/08/06 02:12:09 [INFO] Updating TLS secret for cattle-system/serving-cert (count: 8): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-10.52.1.5:10.52.1.5 listener.cattle.io/cn-127.0.0.1:127.0.0.1 listener.cattle.io/cn-localhost:localhost listener.cattle.io/cn-rancher:rancher listener.cattle.io/cn-rancher.cattle-system:rancher.cattle-system listener.cattle.io/fingerprint:SHA1=2F7AD968D308A85648330DBE507CD0A6034310DF]
+2024-08-06T02:12:09.037395072Z 2024/08/06 02:12:09 [INFO] Listening on :444
+2024-08-06T02:12:09.037780528Z 2024/08/06 02:12:09 [INFO] Active TLS secret cattle-system/tls-rancher-internal (ver=8725) (count 4): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-10.53.97.255:10.53.97.255 listener.cattle.io/fingerprint:SHA1=1E3F09B92E9F059FB2117A03F45BE95B9FE854F8]
+2024-08-06T02:12:09.038000042Z 2024/08/06 02:12:09 [INFO] certificate CN=dynamic,O=dynamic signed by CN=dynamiclistener-ca@1722909151,O=dynamiclistener-org: notBefore=2024-08-06 01:52:31 +0000 UTC notAfter=2025-08-06 02:12:09 +0000 UTC
+2024-08-06T02:12:09.047595960Z 2024/08/06 02:12:09 [INFO] Active TLS secret cattle-system/serving-cert (ver=24140) (count 8): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-10.52.1.5:10.52.1.5 listener.cattle.io/cn-127.0.0.1:127.0.0.1 listener.cattle.io/cn-localhost:localhost listener.cattle.io/cn-rancher:rancher listener.cattle.io/cn-rancher.cattle-system:rancher.cattle-system listener.cattle.io/fingerprint:SHA1=2F7AD968D308A85648330DBE507CD0A6034310DF]
+2024-08-06T02:12:09.292250523Z 2024/08/06 02:12:09 [INFO] Starting /v1, Kind=Secret controller
+2024-08-06T02:12:09.295597943Z 2024/08/06 02:12:09 [INFO] Updating TLS secret for cattle-system/tls-rancher-internal (count: 4): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-10.53.97.255:10.53.97.255 listener.cattle.io/fingerprint:SHA1=1E3F09B92E9F059FB2117A03F45BE95B9FE854F8]
+2024-08-06T02:12:09.295802348Z 2024/08/06 02:12:09 [INFO] Updating TLS secret for cattle-system/serving-cert (count: 8): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-10.52.1.5:10.52.1.5 listener.cattle.io/cn-127.0.0.1:127.0.0.1 listener.cattle.io/cn-localhost:localhost listener.cattle.io/cn-rancher:rancher listener.cattle.io/cn-rancher.cattle-system:rancher.cattle-system listener.cattle.io/fingerprint:SHA1=2F7AD968D308A85648330DBE507CD0A6034310DF]
+2024-08-06T02:12:10.607880123Z W0806 02:12:10.607761      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:12:10.620862236Z 2024/08/06 02:12:10 [INFO] Watching metadata for apps/v1, Kind=Deployment
+2024-08-06T02:12:10.620893806Z 2024/08/06 02:12:10 [INFO] Watching metadata for flowcontrol.apiserver.k8s.io/v1beta3, Kind=PriorityLevelConfiguration
+2024-08-06T02:12:10.620916098Z 2024/08/06 02:12:10 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=Output
+2024-08-06T02:12:10.620927349Z 2024/08/06 02:12:10 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineBackup
+2024-08-06T02:12:10.620941396Z 2024/08/06 02:12:10 [INFO] Watching metadata for rke.cattle.io/v1, Kind=RKEBootstrapTemplate
+2024-08-06T02:12:10.620949561Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=ResourceQuota
+2024-08-06T02:12:10.620957476Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Engine
+2024-08-06T02:12:10.620970961Z 2024/08/06 02:12:10 [INFO] Watching metadata for rke.cattle.io/v1, Kind=RKEControlPlane
+2024-08-06T02:12:10.620988124Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=APIService
+2024-08-06T02:12:10.620996550Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=Feature
+2024-08-06T02:12:10.621011247Z 2024/08/06 02:12:10 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=ImageScan
+2024-08-06T02:12:10.621019683Z 2024/08/06 02:12:10 [INFO] Watching metadata for clone.kubevirt.io/v1alpha1, Kind=VirtualMachineClone
+2024-08-06T02:12:10.621734530Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=BackupVolume
+2024-08-06T02:12:10.621758576Z 2024/08/06 02:12:10 [INFO] Watching metadata for helm.cattle.io/v1, Kind=HelmChartConfig
+2024-08-06T02:12:10.621769977Z 2024/08/06 02:12:10 [INFO] Watching metadata for monitoring.coreos.com/v1, Kind=Prometheus
+2024-08-06T02:12:10.621780807Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Node
+2024-08-06T02:12:10.621791307Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=Endpoints
+2024-08-06T02:12:10.621803590Z 2024/08/06 02:12:10 [INFO] Watching metadata for snapshot.storage.k8s.io/v1, Kind=VolumeSnapshotClass
+2024-08-06T02:12:10.621813729Z 2024/08/06 02:12:10 [INFO] Watching metadata for cluster.x-k8s.io/v1beta1, Kind=MachineSet
+2024-08-06T02:12:10.621823738Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=SupportBundle
+2024-08-06T02:12:10.621833717Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=ManagedChart
+2024-08-06T02:12:10.621843456Z 2024/08/06 02:12:10 [INFO] Watching metadata for networking.k8s.io/v1, Kind=Ingress
+2024-08-06T02:12:10.621853374Z 2024/08/06 02:12:10 [INFO] Watching metadata for instancetype.kubevirt.io/v1beta1, Kind=VirtualMachinePreference
+2024-08-06T02:12:10.621863353Z 2024/08/06 02:12:10 [INFO] Watching metadata for kubevirt.io/v1, Kind=VirtualMachineInstanceMigration
+2024-08-06T02:12:10.621873372Z 2024/08/06 02:12:10 [INFO] Watching metadata for helm.cattle.io/v1, Kind=HelmChart
+2024-08-06T02:12:10.621882860Z 2024/08/06 02:12:10 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=BundleNamespaceMapping
+2024-08-06T02:12:10.621892618Z 2024/08/06 02:12:10 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=Cluster
+2024-08-06T02:12:10.621902817Z 2024/08/06 02:12:10 [INFO] Watching metadata for whereabouts.cni.cncf.io/v1alpha1, Kind=OverlappingRangeIPReservation
+2024-08-06T02:12:10.621912355Z 2024/08/06 02:12:10 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=BundleDeployment
+2024-08-06T02:12:10.621921593Z 2024/08/06 02:12:10 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=Version
+2024-08-06T02:12:10.621929858Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=Secret
+2024-08-06T02:12:10.621960155Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=BackupTarget
+2024-08-06T02:12:10.621968712Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=Cluster
+2024-08-06T02:12:10.621976687Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=BackingImageDataSource
+2024-08-06T02:12:10.621984461Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=KubeControllersConfiguration
+2024-08-06T02:12:10.621992266Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Backup
+2024-08-06T02:12:10.622000321Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=NetworkSet
+2024-08-06T02:12:10.622008977Z 2024/08/06 02:12:10 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineTemplateVersion
+2024-08-06T02:12:10.622016792Z 2024/08/06 02:12:10 [INFO] Watching metadata for network.harvesterhci.io/v1beta1, Kind=ClusterNetwork
+2024-08-06T02:12:10.622024938Z 2024/08/06 02:12:10 [INFO] Watching metadata for storage.k8s.io/v1, Kind=CSINode
+2024-08-06T02:12:10.622033123Z 2024/08/06 02:12:10 [INFO] Watching metadata for bmc.tinkerbell.org/v1alpha1, Kind=BMCJob
+2024-08-06T02:12:10.622041328Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=IPAMConfig
+2024-08-06T02:12:10.622049564Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Snapshot
+2024-08-06T02:12:10.622057579Z 2024/08/06 02:12:10 [INFO] Watching metadata for apiregistration.k8s.io/v1, Kind=APIService
+2024-08-06T02:12:10.622099378Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=Group
+2024-08-06T02:12:10.622142860Z 2024/08/06 02:12:10 [INFO] Watching metadata for tinkerbell.org/v1alpha1, Kind=WorkflowData
+2024-08-06T02:12:10.622154321Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=User
+2024-08-06T02:12:10.622194758Z 2024/08/06 02:12:10 [INFO] Watching metadata for catalog.cattle.io/v1, Kind=App
+2024-08-06T02:12:10.622206349Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=AuthConfig
+2024-08-06T02:12:10.622217931Z 2024/08/06 02:12:10 [INFO] Watching metadata for rbac.authorization.k8s.io/v1, Kind=ClusterRoleBinding
+2024-08-06T02:12:10.622228261Z 2024/08/06 02:12:10 [INFO] Watching metadata for cluster.x-k8s.io/v1beta1, Kind=Cluster
+2024-08-06T02:12:10.622238560Z 2024/08/06 02:12:10 [INFO] Watching metadata for logging-extensions.banzaicloud.io/v1alpha1, Kind=HostTailer
+2024-08-06T02:12:10.622248839Z 2024/08/06 02:12:10 [INFO] Watching metadata for coordination.k8s.io/v1, Kind=Lease
+2024-08-06T02:12:10.622259429Z 2024/08/06 02:12:10 [INFO] Watching metadata for devices.harvesterhci.io/v1beta1, Kind=VGPUDevice
+2024-08-06T02:12:10.622269228Z 2024/08/06 02:12:10 [INFO] Watching metadata for metal.harvesterhci.io/v1alpha1, Kind=Inventory
+2024-08-06T02:12:10.622279858Z 2024/08/06 02:12:10 [INFO] Watching metadata for events.k8s.io/v1, Kind=Event
+2024-08-06T02:12:10.622294886Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Orphan
+2024-08-06T02:12:10.622304424Z 2024/08/06 02:12:10 [INFO] Watching metadata for rbac.authorization.k8s.io/v1, Kind=Role
+2024-08-06T02:12:10.622317108Z 2024/08/06 02:12:10 [INFO] Watching metadata for instancetype.kubevirt.io/v1beta1, Kind=VirtualMachineClusterInstancetype
+2024-08-06T02:12:10.622353998Z 2024/08/06 02:12:10 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=Upgrade
+2024-08-06T02:12:10.622364618Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Setting
+2024-08-06T02:12:10.622374176Z 2024/08/06 02:12:10 [INFO] Watching metadata for tinkerbell.org/v1alpha1, Kind=Hardware
+2024-08-06T02:12:10.622408761Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=Token
+2024-08-06T02:12:10.622419040Z 2024/08/06 02:12:10 [INFO] Watching metadata for bmc.tinkerbell.org/v1alpha1, Kind=BMCTask
+2024-08-06T02:12:10.622431544Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=Pod
+2024-08-06T02:12:10.622450259Z 2024/08/06 02:12:10 [INFO] Watching metadata for cluster.x-k8s.io/v1beta1, Kind=MachineHealthCheck
+2024-08-06T02:12:10.622460629Z 2024/08/06 02:12:10 [INFO] Watching metadata for node.harvesterhci.io/v1beta1, Kind=CloudInit
+2024-08-06T02:12:10.622470447Z 2024/08/06 02:12:10 [INFO] Watching metadata for apiextensions.k8s.io/v1, Kind=CustomResourceDefinition
+2024-08-06T02:12:10.622479755Z 2024/08/06 02:12:10 [INFO] Watching metadata for logging-extensions.banzaicloud.io/v1alpha1, Kind=EventTailer
+2024-08-06T02:12:10.622489663Z 2024/08/06 02:12:10 [INFO] Watching metadata for apps/v1, Kind=ControllerRevision
+2024-08-06T02:12:10.622499151Z 2024/08/06 02:12:10 [INFO] Watching metadata for apps/v1, Kind=ReplicaSet
+2024-08-06T02:12:10.622508318Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=FleetWorkspace
+2024-08-06T02:12:10.622518327Z 2024/08/06 02:12:10 [INFO] Watching metadata for cluster.x-k8s.io/v1beta1, Kind=MachineDeployment
+2024-08-06T02:12:10.622549456Z 2024/08/06 02:12:10 [INFO] Watching metadata for monitoring.coreos.com/v1alpha1, Kind=AlertmanagerConfig
+2024-08-06T02:12:10.622600823Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=Namespace
+2024-08-06T02:12:10.622611864Z 2024/08/06 02:12:10 [INFO] Watching metadata for rbac.authorization.k8s.io/v1, Kind=ClusterRole
+2024-08-06T02:12:10.622622253Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=BGPConfiguration
+2024-08-06T02:12:10.622632172Z 2024/08/06 02:12:10 [INFO] Watching metadata for k8s.cni.cncf.io/v1, Kind=NetworkAttachmentDefinition
+2024-08-06T02:12:10.622671536Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=HostEndpoint
+2024-08-06T02:12:10.622692546Z 2024/08/06 02:12:10 [INFO] Watching metadata for monitoring.coreos.com/v1, Kind=PrometheusRule
+2024-08-06T02:12:10.622701422Z 2024/08/06 02:12:10 [INFO] Watching metadata for kubevirt.io/v1, Kind=VirtualMachine
+2024-08-06T02:12:10.622709267Z 2024/08/06 02:12:10 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=Logging
+2024-08-06T02:12:10.622719797Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=ServiceAccount
+2024-08-06T02:12:10.622757668Z 2024/08/06 02:12:10 [INFO] Watching metadata for bmc.tinkerbell.org/v1alpha1, Kind=Machine
+2024-08-06T02:12:10.622776744Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=BackingImageManager
+2024-08-06T02:12:10.622786202Z 2024/08/06 02:12:10 [INFO] Watching metadata for monitoring.coreos.com/v1, Kind=ServiceMonitor
+2024-08-06T02:12:10.622794929Z 2024/08/06 02:12:10 [INFO] Watching metadata for admissionregistration.k8s.io/v1, Kind=MutatingWebhookConfiguration
+2024-08-06T02:12:10.622803264Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=PodTemplate
+2024-08-06T02:12:10.622811390Z 2024/08/06 02:12:10 [INFO] Watching metadata for monitoring.coreos.com/v1, Kind=ThanosRuler
+2024-08-06T02:12:10.622831057Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=BackingImage
+2024-08-06T02:12:10.622839312Z 2024/08/06 02:12:10 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=Content
+2024-08-06T02:12:10.622847067Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=BackupBackingImage
+2024-08-06T02:12:10.622859891Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=GroupMember
+2024-08-06T02:12:10.622887182Z 2024/08/06 02:12:10 [INFO] Watching metadata for snapshot.storage.k8s.io/v1, Kind=VolumeSnapshotContent
+2024-08-06T02:12:10.622895488Z 2024/08/06 02:12:10 [INFO] Watching metadata for gitjob.cattle.io/v1, Kind=GitJob
+2024-08-06T02:12:10.622903313Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=NodeDriver
+2024-08-06T02:12:10.622920124Z 2024/08/06 02:12:10 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=Flow
+2024-08-06T02:12:10.622928620Z 2024/08/06 02:12:10 [INFO] Watching metadata for metal.harvesterhci.io/v1alpha1, Kind=Cluster
+2024-08-06T02:12:10.622940603Z 2024/08/06 02:12:10 [INFO] Watching metadata for rke.cattle.io/v1, Kind=ETCDSnapshot
+2024-08-06T02:12:10.622956693Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=EngineImage
+2024-08-06T02:12:10.622993743Z 2024/08/06 02:12:10 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=ClusterRegistrationToken
+2024-08-06T02:12:10.623019632Z 2024/08/06 02:12:10 [INFO] Watching metadata for whereabouts.cni.cncf.io/v1alpha1, Kind=IPPool
+2024-08-06T02:12:10.623036233Z 2024/08/06 02:12:10 [INFO] Watching metadata for node.harvesterhci.io/v1beta1, Kind=Ksmtuned
+2024-08-06T02:12:10.624613916Z 2024/08/06 02:12:10 [INFO] Watching metadata for devices.harvesterhci.io/v1beta1, Kind=SRIOVGPUDevice
+2024-08-06T02:12:10.624641959Z 2024/08/06 02:12:10 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineRestore
+2024-08-06T02:12:10.624652830Z 2024/08/06 02:12:10 [INFO] Watching metadata for bmc.tinkerbell.org/v1alpha1, Kind=Task
+2024-08-06T02:12:10.624662859Z 2024/08/06 02:12:10 [INFO] Watching metadata for storage.k8s.io/v1, Kind=StorageClass
+2024-08-06T02:12:10.624672777Z 2024/08/06 02:12:10 [INFO] Watching metadata for instancetype.kubevirt.io/v1beta1, Kind=VirtualMachineInstancetype
+2024-08-06T02:12:10.624682526Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=ShareManager
+2024-08-06T02:12:10.624691533Z 2024/08/06 02:12:10 [INFO] Watching metadata for tinkerbell.org/v1alpha1, Kind=Template
+2024-08-06T02:12:10.624700920Z 2024/08/06 02:12:10 [INFO] Watching metadata for node.k8s.io/v1, Kind=RuntimeClass
+2024-08-06T02:12:10.624711069Z 2024/08/06 02:12:10 [INFO] Watching metadata for policy/v1, Kind=PodDisruptionBudget
+2024-08-06T02:12:10.624720547Z 2024/08/06 02:12:10 [INFO] Watching metadata for catalog.cattle.io/v1, Kind=ClusterRepo
+2024-08-06T02:12:10.624730155Z 2024/08/06 02:12:10 [INFO] Watching metadata for batch/v1, Kind=CronJob
+2024-08-06T02:12:10.624739984Z 2024/08/06 02:12:10 [INFO] Watching metadata for devices.harvesterhci.io/v1beta1, Kind=SRIOVNetworkDevice
+2024-08-06T02:12:10.624749963Z 2024/08/06 02:12:10 [INFO] Watching metadata for cluster.x-k8s.io/v1beta1, Kind=Machine
+2024-08-06T02:12:10.624759841Z 2024/08/06 02:12:10 [INFO] Watching metadata for monitoring.coreos.com/v1, Kind=Probe
+2024-08-06T02:12:10.624769770Z 2024/08/06 02:12:10 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=UpgradeLog
+2024-08-06T02:12:10.624779569Z 2024/08/06 02:12:10 [INFO] Watching metadata for kubevirt.io/v1, Kind=KubeVirt
+2024-08-06T02:12:10.624789938Z 2024/08/06 02:12:10 [INFO] Watching metadata for apps/v1, Kind=StatefulSet
+2024-08-06T02:12:10.624799646Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=IPAMHandle
+2024-08-06T02:12:10.624809244Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=InstanceManager
+2024-08-06T02:12:10.624818963Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=ConfigMap
+2024-08-06T02:12:10.624828811Z 2024/08/06 02:12:10 [INFO] Watching metadata for network.harvesterhci.io/v1beta1, Kind=VlanConfig
+2024-08-06T02:12:10.624838750Z 2024/08/06 02:12:10 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineImage
+2024-08-06T02:12:10.624873566Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=SystemBackup
+2024-08-06T02:12:10.624883264Z 2024/08/06 02:12:10 [INFO] Watching metadata for bmc.tinkerbell.org/v1alpha1, Kind=BaseboardManagement
+2024-08-06T02:12:10.624893102Z 2024/08/06 02:12:10 [INFO] Watching metadata for loadbalancer.harvesterhci.io/v1beta1, Kind=LoadBalancer
+2024-08-06T02:12:10.624902921Z 2024/08/06 02:12:10 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=Addon
+2024-08-06T02:12:10.624912759Z 2024/08/06 02:12:10 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=Bundle
+2024-08-06T02:12:10.624922518Z 2024/08/06 02:12:10 [INFO] Watching metadata for batch/v1, Kind=Job
+2024-08-06T02:12:10.624932396Z 2024/08/06 02:12:10 [INFO] Watching metadata for kubevirt.io/v1, Kind=VirtualMachineInstance
+2024-08-06T02:12:10.624942435Z 2024/08/06 02:12:10 [INFO] Watching metadata for node.harvesterhci.io/v1beta1, Kind=NodeConfig
+2024-08-06T02:12:10.624952354Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=BlockAffinity
+2024-08-06T02:12:10.624962453Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=Preference
+2024-08-06T02:12:10.624972322Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=NetworkPolicy
+2024-08-06T02:12:10.624982010Z 2024/08/06 02:12:10 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=ClusterOutput
+2024-08-06T02:12:10.624991728Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=LimitRange
+2024-08-06T02:12:10.625002048Z 2024/08/06 02:12:10 [INFO] Watching metadata for certificates.k8s.io/v1, Kind=CertificateSigningRequest
+2024-08-06T02:12:10.625012297Z 2024/08/06 02:12:10 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=Preference
+2024-08-06T02:12:10.625022486Z 2024/08/06 02:12:10 [INFO] Watching metadata for upgrade.cattle.io/v1, Kind=Plan
+2024-08-06T02:12:10.625032465Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=IPReservation
+2024-08-06T02:12:10.625042284Z 2024/08/06 02:12:10 [INFO] Watching metadata for scheduling.k8s.io/v1, Kind=PriorityClass
+2024-08-06T02:12:10.625052082Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Volume
+2024-08-06T02:12:10.625061911Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=VolumeAttachment
+2024-08-06T02:12:10.625071589Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=Setting
+2024-08-06T02:12:10.625081918Z 2024/08/06 02:12:10 [INFO] Watching metadata for rke.cattle.io/v1, Kind=RKECluster
+2024-08-06T02:12:10.625091857Z 2024/08/06 02:12:10 [INFO] Watching metadata for snapshot.kubevirt.io/v1alpha1, Kind=VirtualMachineSnapshot
+2024-08-06T02:12:10.625124839Z 2024/08/06 02:12:10 [INFO] Watching metadata for metal.harvesterhci.io/v1alpha1, Kind=AddressPool
+2024-08-06T02:12:10.625136000Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=UserAttribute
+2024-08-06T02:12:10.625145859Z 2024/08/06 02:12:10 [INFO] Watching metadata for pool.kubevirt.io/v1alpha1, Kind=VirtualMachinePool
+2024-08-06T02:12:10.625155787Z 2024/08/06 02:12:10 [INFO] Watching metadata for instancetype.kubevirt.io/v1beta1, Kind=VirtualMachineClusterPreference
+2024-08-06T02:12:10.625165476Z 2024/08/06 02:12:10 [INFO] Watching metadata for devices.harvesterhci.io/v1beta1, Kind=Node
+2024-08-06T02:12:10.625175755Z 2024/08/06 02:12:10 [INFO] Watching metadata for discovery.k8s.io/v1, Kind=EndpointSlice
+2024-08-06T02:12:10.625185523Z 2024/08/06 02:12:10 [INFO] Watching metadata for snapshot.kubevirt.io/v1alpha1, Kind=VirtualMachineSnapshotContent
+2024-08-06T02:12:10.625195312Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=ReplicationController
+2024-08-06T02:12:10.625227062Z 2024/08/06 02:12:10 [INFO] Watching metadata for tinkerbell.org/v1alpha1, Kind=Workflow
+2024-08-06T02:12:10.625237061Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=PersistentVolume
+2024-08-06T02:12:10.625247510Z 2024/08/06 02:12:10 [INFO] Watching metadata for monitoring.coreos.com/v1, Kind=Alertmanager
+2024-08-06T02:12:10.625258812Z 2024/08/06 02:12:10 [INFO] Watching metadata for k3s.cattle.io/v1, Kind=ETCDSnapshotFile
+2024-08-06T02:12:10.625269963Z 2024/08/06 02:12:10 [INFO] Watching metadata for rke.cattle.io/v1, Kind=RKEBootstrap
+2024-08-06T02:12:10.625281675Z 2024/08/06 02:12:10 [INFO] Watching metadata for catalog.cattle.io/v1, Kind=Operation
+2024-08-06T02:12:10.625293677Z 2024/08/06 02:12:10 [INFO] Watching metadata for devices.harvesterhci.io/v1beta1, Kind=PCIDevice
+2024-08-06T02:12:10.625305199Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=RecurringJob
+2024-08-06T02:12:10.625316651Z 2024/08/06 02:12:10 [INFO] Watching metadata for ui.cattle.io/v1, Kind=NavLink
+2024-08-06T02:12:10.625328172Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=PersistentVolumeClaim
+2024-08-06T02:12:10.625339874Z 2024/08/06 02:12:10 [INFO] Watching metadata for rke.cattle.io/v1, Kind=CustomMachine
+2024-08-06T02:12:10.625351266Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=IPPool
+2024-08-06T02:12:10.625362687Z 2024/08/06 02:12:10 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=Setting
+2024-08-06T02:12:10.625377726Z 2024/08/06 02:12:10 [INFO] Watching metadata for networking.k8s.io/v1, Kind=IngressClass
+2024-08-06T02:12:10.625405278Z 2024/08/06 02:12:10 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=KeyPair
+2024-08-06T02:12:10.625417841Z 2024/08/06 02:12:10 [INFO] Watching metadata for devices.harvesterhci.io/v1beta1, Kind=PCIDeviceClaim
+2024-08-06T02:12:10.625428632Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=BGPPeer
+2024-08-06T02:12:10.625439552Z 2024/08/06 02:12:10 [INFO] Watching metadata for storage.k8s.io/v1, Kind=CSIStorageCapacity
+2024-08-06T02:12:10.625449371Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=IPAMBlock
+2024-08-06T02:12:10.625459299Z 2024/08/06 02:12:10 [INFO] Watching metadata for snapshot.kubevirt.io/v1alpha1, Kind=VirtualMachineRestore
+2024-08-06T02:12:10.625469338Z 2024/08/06 02:12:10 [INFO] Watching metadata for loadbalancer.harvesterhci.io/v1beta1, Kind=IPPool
+2024-08-06T02:12:10.625479257Z 2024/08/06 02:12:10 [INFO] Watching metadata for export.kubevirt.io/v1alpha1, Kind=VirtualMachineExport
+2024-08-06T02:12:10.625489166Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=CalicoNodeStatus
+2024-08-06T02:12:10.625499305Z 2024/08/06 02:12:10 [INFO] Watching metadata for flowcontrol.apiserver.k8s.io/v1beta3, Kind=FlowSchema
+2024-08-06T02:12:10.625508783Z 2024/08/06 02:12:10 [INFO] Watching metadata for rbac.authorization.k8s.io/v1, Kind=RoleBinding
+2024-08-06T02:12:10.625518631Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=FelixConfiguration
+2024-08-06T02:12:10.625528550Z 2024/08/06 02:12:10 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=BlockDevice
+2024-08-06T02:12:10.625538509Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=Service
+2024-08-06T02:12:10.625548237Z 2024/08/06 02:12:10 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineTemplate
+2024-08-06T02:12:10.625558176Z 2024/08/06 02:12:10 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=GitRepo
+2024-08-06T02:12:10.625568225Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Replica
+2024-08-06T02:12:10.625602148Z 2024/08/06 02:12:10 [INFO] Watching metadata for provisioning.cattle.io/v1, Kind=Cluster
+2024-08-06T02:12:10.625611917Z 2024/08/06 02:12:10 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=ClusterGroup
+2024-08-06T02:12:10.625621896Z 2024/08/06 02:12:10 [INFO] Watching metadata for storage.k8s.io/v1, Kind=CSIDriver
+2024-08-06T02:12:10.625633267Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=Node
+2024-08-06T02:12:10.625643426Z 2024/08/06 02:12:10 [INFO] Watching metadata for monitoring.coreos.com/v1, Kind=PodMonitor
+2024-08-06T02:12:10.625653595Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=GlobalNetworkSet
+2024-08-06T02:12:10.625663394Z 2024/08/06 02:12:10 [INFO] Watching metadata for migrations.kubevirt.io/v1alpha1, Kind=MigrationPolicy
+2024-08-06T02:12:10.625673383Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=ClusterRegistrationToken
+2024-08-06T02:12:10.625683131Z 2024/08/06 02:12:10 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=SupportBundle
+2024-08-06T02:12:10.625693050Z 2024/08/06 02:12:10 [INFO] Watching metadata for k3s.cattle.io/v1, Kind=Addon
+2024-08-06T02:12:10.625720662Z 2024/08/06 02:12:10 [INFO] Watching metadata for apps/v1, Kind=DaemonSet
+2024-08-06T02:12:10.625732063Z 2024/08/06 02:12:10 [INFO] Watching metadata for admissionregistration.k8s.io/v1, Kind=ValidatingWebhookConfiguration
+2024-08-06T02:12:10.625741721Z 2024/08/06 02:12:10 [INFO] Watching metadata for network.harvesterhci.io/v1beta1, Kind=VlanStatus
+2024-08-06T02:12:10.625751520Z 2024/08/06 02:12:10 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=SystemRestore
+2024-08-06T02:12:10.625761759Z 2024/08/06 02:12:10 [INFO] Watching metadata for network.harvesterhci.io/v1beta1, Kind=LinkMonitor
+2024-08-06T02:12:10.625771447Z 2024/08/06 02:12:10 [INFO] Watching metadata for autoscaling/v2, Kind=HorizontalPodAutoscaler
+2024-08-06T02:12:10.625780955Z 2024/08/06 02:12:10 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=GitRepoRestriction
+2024-08-06T02:12:10.625790774Z 2024/08/06 02:12:10 [INFO] Watching metadata for storage.k8s.io/v1, Kind=VolumeAttachment
+2024-08-06T02:12:10.625800302Z 2024/08/06 02:12:10 [INFO] Watching metadata for kubevirt.io/v1, Kind=VirtualMachineInstancePreset
+2024-08-06T02:12:10.625809900Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=GlobalNetworkPolicy
+2024-08-06T02:12:10.625819047Z 2024/08/06 02:12:10 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=ClusterInformation
+2024-08-06T02:12:10.625826922Z 2024/08/06 02:12:10 [INFO] Watching metadata for kubevirt.io/v1, Kind=VirtualMachineInstanceReplicaSet
+2024-08-06T02:12:10.625834907Z 2024/08/06 02:12:10 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=ClusterFlow
+2024-08-06T02:12:10.625842712Z 2024/08/06 02:12:10 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=ClusterRegistration
+2024-08-06T02:12:10.625850577Z 2024/08/06 02:12:10 [INFO] Watching metadata for management.cattle.io/v3, Kind=PodSecurityAdmissionConfigurationTemplate
+2024-08-06T02:12:10.625868510Z 2024/08/06 02:12:10 [INFO] Watching metadata for snapshot.storage.k8s.io/v1, Kind=VolumeSnapshot
+2024-08-06T02:12:10.625877056Z 2024/08/06 02:12:10 [INFO] Watching metadata for networking.k8s.io/v1, Kind=NetworkPolicy
+2024-08-06T02:12:10.625885232Z 2024/08/06 02:12:10 [INFO] Watching metadata for /v1, Kind=Event
+2024-08-06T02:12:10.625893027Z 2024/08/06 02:12:10 [INFO] Watching metadata for bmc.tinkerbell.org/v1alpha1, Kind=Job
+2024-08-06T02:12:10.656231946Z W0806 02:12:10.656125      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:12:10.669082562Z W0806 02:12:10.663964      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:12:14.030269191Z 2024/08/06 02:12:14 [ERROR] Failed to connect to peer wss://10.52.0.73/v3/connect [local ID=10.52.1.5]: websocket: bad handshake
+2024-08-06T02:12:14.723159250Z 2024/08/06 02:12:14 [INFO] Handling backend connection request [10.52.0.73]
+2024-08-06T02:12:28.557823196Z 2024/08/06 02:12:28 [INFO] certificate CN=dynamic,O=dynamic signed by CN=dynamiclistener-ca@1722909151,O=dynamiclistener-org: notBefore=2024-08-06 01:52:31 +0000 UTC notAfter=2025-08-06 02:12:28 +0000 UTC
+2024-08-06T02:12:28.563468790Z 2024/08/06 02:12:28 [INFO] Updating TLS secret for cattle-system/tls-rancher-internal (count: 5): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-10.52.1.5:10.52.1.5 listener.cattle.io/cn-10.53.97.255:10.53.97.255 listener.cattle.io/fingerprint:SHA1=6EAEF080AC8DD60F57A1F587DAFF6C380DCCD435]
+2024-08-06T02:12:28.566142683Z 2024/08/06 02:12:28 [INFO] Active TLS secret cattle-system/tls-rancher-internal (ver=24702) (count 5): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-10.52.1.5:10.52.1.5 listener.cattle.io/cn-10.53.97.255:10.53.97.255 listener.cattle.io/fingerprint:SHA1=6EAEF080AC8DD60F57A1F587DAFF6C380DCCD435]
+2024-08-06T02:12:28.568292301Z 2024/08/06 02:12:28 [INFO] Updating TLS secret for cattle-system/tls-rancher-internal (count: 5): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-10.52.1.5:10.52.1.5 listener.cattle.io/cn-10.53.97.255:10.53.97.255 listener.cattle.io/fingerprint:SHA1=6EAEF080AC8DD60F57A1F587DAFF6C380DCCD435]
+2024-08-06T02:13:36.153418387Z 2024/08/06 02:13:36 [INFO] Handling backend connection request [stv-f091dafd-27d0-4fa3-b09e-47e031464caa]
+2024-08-06T02:13:44.243689080Z 2024/08/06 02:13:44 [INFO] [rke2configserver] fleet-local/custom-a33fa7ee9b91 machineID: 3c6865c2723e533e3e69faa6c8e8ddc2bbd82e561865631c2ab5c740100df93 delivering planSecret custom-a33fa7ee9b91-machine-plan with token secret fleet-local/custom-a33fa7ee9b91-machine-plan-token-cmhc4 to system-agent
+2024-08-06T02:13:57.629152666Z 2024/08/06 02:13:57 [ERROR] Failed to handle tunnel request from remote address 10.52.2.3:45810: response 401: failed authentication
+2024-08-06T02:13:57.647696906Z 2024/08/06 02:13:57 [INFO] Updating TLS secret for cattle-system/serving-cert (count: 9): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-10.52.1.5:10.52.1.5 listener.cattle.io/cn-10.52.2.3:10.52.2.3 listener.cattle.io/cn-127.0.0.1:127.0.0.1 listener.cattle.io/cn-localhost:localhost listener.cattle.io/cn-rancher:rancher listener.cattle.io/cn-rancher.cattle-system:rancher.cattle-system listener.cattle.io/fingerprint:SHA1=30484832375B9C35F2EE18BF1484F8AC38BE4EE3]
+2024-08-06T02:13:57.650792582Z 2024/08/06 02:13:57 [INFO] Active TLS secret cattle-system/serving-cert (ver=27283) (count 9): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-10.52.1.5:10.52.1.5 listener.cattle.io/cn-10.52.2.3:10.52.2.3 listener.cattle.io/cn-127.0.0.1:127.0.0.1 listener.cattle.io/cn-localhost:localhost listener.cattle.io/cn-rancher:rancher listener.cattle.io/cn-rancher.cattle-system:rancher.cattle-system listener.cattle.io/fingerprint:SHA1=30484832375B9C35F2EE18BF1484F8AC38BE4EE3]
+2024-08-06T02:14:02.631594297Z 2024/08/06 02:14:02 [ERROR] Failed to serve peer connection 10.52.0.73: websocket: close 1006 (abnormal closure): unexpected EOF
+2024-08-06T02:14:02.631693765Z 2024/08/06 02:14:02 [INFO] error in remotedialer server [400]: read tcp 10.52.1.5:443->10.52.0.73:45628: use of closed network connection
+2024-08-06T02:14:02.633549462Z 2024/08/06 02:14:02 [ERROR] Failed to handle tunnel request from remote address 10.52.2.3:45634: response 401: failed authentication
+2024-08-06T02:14:07.635477408Z 2024/08/06 02:14:07 [INFO] Handling backend connection request [10.52.0.73]
+2024-08-06T02:14:07.636727153Z 2024/08/06 02:14:07 [ERROR] Failed to handle tunnel request from remote address 10.52.2.3:45648: response 401: failed authentication
+2024-08-06T02:14:12.639704105Z 2024/08/06 02:14:12 [ERROR] Failed to handle tunnel request from remote address 10.52.2.3:59706: response 401: failed authentication
+2024-08-06T02:14:16.928918991Z 2024/08/06 02:14:16 [INFO] Adding peer wss://10.52.2.3/v3/connect, 10.52.2.3
+2024-08-06T02:14:17.643327383Z 2024/08/06 02:14:17 [INFO] Handling backend connection request [10.52.2.3]
+2024-08-06T02:14:20.801912568Z 2024/08/06 02:14:20 [INFO] Updating TLS secret for cattle-system/tls-rancher-internal (count: 6): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-10.52.1.5:10.52.1.5 listener.cattle.io/cn-10.52.2.3:10.52.2.3 listener.cattle.io/cn-10.53.97.255:10.53.97.255 listener.cattle.io/fingerprint:SHA1=A4368DED40259AC7B1B204F464B05182300A2162]
+2024-08-06T02:14:20.805041199Z 2024/08/06 02:14:20 [INFO] Active TLS secret cattle-system/tls-rancher-internal (ver=27980) (count 6): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-10.52.1.5:10.52.1.5 listener.cattle.io/cn-10.52.2.3:10.52.2.3 listener.cattle.io/cn-10.53.97.255:10.53.97.255 listener.cattle.io/fingerprint:SHA1=A4368DED40259AC7B1B204F464B05182300A2162]
+2024-08-06T02:15:15.771561034Z 2024/08/06 02:15:15 [INFO] EnsureSecretForServiceAccount: waiting for secret [custom-8c61162cc227-machine-plan-token-jzfg9] to be populated with token
+2024-08-06T02:15:15.778546395Z 2024/08/06 02:15:15 [INFO] [rke2configserver] fleet-local/custom-8c61162cc227 machineID: dfa2656d4135b1192c9e9ead41bc5ad03f2bd0e635423a11a872421158b7b70 delivering planSecret custom-8c61162cc227-machine-plan with token secret fleet-local/custom-8c61162cc227-machine-plan-token-jzfg9 to system-agent from plan service account watch
+2024-08-06T02:16:39.589691251Z 2024/08/06 02:16:39 [ERROR] Error during subscribe websocket: close sent
+2024-08-06T02:16:39.589753629Z 2024/08/06 02:16:39 [ERROR] Error during subscribe websocket: close sent
+2024-08-06T02:17:11.657997194Z W0806 02:17:11.657852      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:20:32.749716928Z 2024/08/06 02:20:32 [ERROR] Error during subscribe websocket: close sent
+2024-08-06T02:21:26.743925265Z W0806 02:21:26.743815      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:21:27.818571707Z W0806 02:21:27.818440      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:21:31.398276485Z W0806 02:21:31.398158      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:21:34.189522447Z W0806 02:21:34.189425      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:24:17.664134192Z W0806 02:24:17.663996      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:31:06.670278761Z W0806 02:31:06.670160      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:36:12.666674446Z W0806 02:36:12.666451      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:42:39.667064154Z W0806 02:42:39.666802      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:50:13.674255174Z W0806 02:50:13.674145      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:51:34.092046836Z W0806 02:51:34.091902      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T02:51:34.092096550Z W0806 02:51:34.091928      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T02:51:34.092143569Z W0806 02:51:34.092077      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T02:51:34.092153037Z W0806 02:51:34.092081      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T02:51:34.092254038Z W0806 02:51:34.092189      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T02:51:34.092346504Z W0806 02:51:34.092302      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T02:59:50.684197149Z W0806 02:59:50.684075      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:09:18.674537084Z W0806 03:09:18.674388      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:15:26.668442096Z W0806 03:15:26.668227      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:20:58.669318939Z W0806 03:20:58.669208      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:26:52.675287791Z W0806 03:26:52.675140      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:34:31.681451770Z W0806 03:34:31.681338      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:40:04.681200364Z W0806 03:40:04.681071      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:46:48.675270495Z W0806 03:46:48.675007      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:56:04.673786442Z W0806 03:56:04.673646      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:05:13.676501853Z W0806 04:05:13.676356      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:14:01.678704848Z W0806 04:14:01.678596      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:21:53.435082479Z W0806 04:21:53.434968      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T04:21:53.435130540Z W0806 04:21:53.435002      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T04:21:53.435136031Z W0806 04:21:53.435015      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T04:21:53.435140519Z W0806 04:21:53.435015      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T04:21:53.435157271Z W0806 04:21:53.435050      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T04:21:53.435162551Z W0806 04:21:53.435066      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T04:23:01.678338748Z W0806 04:23:01.678177      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:31:54.679917306Z W0806 04:31:54.679780      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:41:41.682269387Z W0806 04:41:41.682181      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:50:42.682345532Z W0806 04:50:42.682213      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:51:59.422466200Z W0806 04:51:59.422191      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T04:51:59.422507548Z W0806 04:51:59.422234      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T04:51:59.422516996Z W0806 04:51:59.422265      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T04:51:59.422525472Z W0806 04:51:59.422318      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T04:51:59.422534439Z W0806 04:51:59.422370      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T04:51:59.422543015Z W0806 04:51:59.422406      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T05:00:36.681561805Z W0806 05:00:36.681430      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:08:58.684398676Z W0806 05:08:58.684159      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:14:15.686391182Z W0806 05:14:15.686215      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:21:31.687787684Z W0806 05:21:31.687502      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:22:05.400297516Z W0806 05:22:05.400108      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T05:22:05.400353943Z W0806 05:22:05.400169      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T05:22:05.400365835Z W0806 05:22:05.400208      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T05:26:32.688788128Z W0806 05:26:32.688674      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:34:44.689583399Z W0806 05:34:44.689490      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:43:38.691213362Z W0806 05:43:38.691061      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:48:51.693826609Z W0806 05:48:51.693710      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:57:14.694933379Z W0806 05:57:14.694767      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:03:54.697572905Z W0806 06:03:54.697420      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:10:12.699033939Z W0806 06:10:12.698844      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:17:50.701729468Z W0806 06:17:50.701590      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:22:17.346161646Z W0806 06:22:17.345865      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T06:22:17.346244834Z W0806 06:22:17.345951      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T06:22:17.346255805Z W0806 06:22:17.345989      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T06:22:17.346279570Z W0806 06:22:17.346196      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T06:22:17.346289419Z W0806 06:22:17.346205      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T06:22:17.346300099Z W0806 06:22:17.346242      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T06:26:53.703182465Z W0806 06:26:53.703087      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:33:40.705842612Z W0806 06:33:40.705694      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:38:56.707102696Z W0806 06:38:56.706958      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:44:11.709669073Z W0806 06:44:11.709540      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:49:41.711614215Z W0806 06:49:41.711508      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:52:23.325592455Z W0806 06:52:23.325425      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T06:52:23.325644905Z W0806 06:52:23.325471      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T06:52:23.325654733Z W0806 06:52:23.325480      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T06:52:23.325663039Z W0806 06:52:23.325522      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T06:52:23.325671054Z W0806 06:52:23.325521      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T06:52:23.325693968Z W0806 06:52:23.325597      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T06:57:10.713032693Z W0806 06:57:10.712895      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:02:41.715773577Z W0806 07:02:41.715685      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:11:24.717478605Z W0806 07:11:24.717324      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:20:20.719420627Z W0806 07:20:20.719336      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:22:29.308082543Z W0806 07:22:29.307950      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:22:29.308130083Z W0806 07:22:29.307986      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:22:29.308140302Z W0806 07:22:29.308034      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:22:29.308162574Z W0806 07:22:29.308048      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:22:29.308180769Z W0806 07:22:29.308102      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:22:29.308218340Z W0806 07:22:29.308165      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:26:02.170952791Z 2024/08/06 07:26:02 [ERROR] Error during subscribe write tcp 10.52.1.5:80->10.52.3.11:41862: write: broken pipe
+2024-08-06T07:29:59.721636635Z W0806 07:29:59.721498      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:39:40.723483202Z W0806 07:39:40.723363      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:47:41.725143511Z W0806 07:47:41.724884      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:53:52.726830276Z W0806 07:53:52.726607      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:57:01.090112040Z W0806 07:57:01.089958      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.090167205Z W0806 07:57:01.089986      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.090172615Z W0806 07:57:01.090019      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.090176773Z W0806 07:57:01.090027      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.090369949Z W0806 07:57:01.090290      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.090376031Z W0806 07:57:01.090325      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:02:30.728307277Z W0806 08:02:30.728177      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T08:09:14.658736993Z 2024/08/06 08:09:14 [ERROR] Error during subscribe write tcp 10.52.1.5:80->10.52.0.29:37594: write: broken pipe
+2024-08-06T08:10:19.730046318Z W0806 08:10:19.729865      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T08:17:19.732039291Z W0806 08:17:19.731879      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T08:23:57.734434069Z W0806 08:23:57.734312      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T08:31:53.735349541Z W0806 08:31:53.735223      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T08:37:52.736856417Z W0806 08:37:52.736721      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T08:39:16.337141806Z W0806 08:39:16.336997      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.337216487Z W0806 08:39:16.337000      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.337229121Z W0806 08:39:16.337035      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.337239521Z W0806 08:39:16.337003      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.337269828Z W0806 08:39:16.337078      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.337281280Z W0806 08:39:16.337086      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.337291149Z W0806 08:39:16.337133      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.337302150Z W0806 08:39:16.337161      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.385536233Z W0806 08:39:16.385415      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.385567132Z W0806 08:39:16.385442      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.385576390Z W0806 08:39:16.385467      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.385624851Z W0806 08:39:16.385484      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.385653115Z W0806 08:39:16.385551      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.385677952Z W0806 08:39:16.385629      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.435873001Z W0806 08:39:16.435808      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.435885605Z W0806 08:39:16.435845      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.435925380Z W0806 08:39:16.435882      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.435948564Z W0806 08:39:16.435902      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.436090012Z W0806 08:39:16.436052      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.436100642Z W0806 08:39:16.436061      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.436109088Z W0806 08:39:16.436079      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.436132543Z W0806 08:39:16.436102      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.436200081Z W0806 08:39:16.436169      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.436216171Z W0806 08:39:16.436191      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.436382867Z W0806 08:39:16.436344      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.436456356Z W0806 08:39:16.436386      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.437068556Z W0806 08:39:16.437018      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.437099976Z W0806 08:39:16.437041      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.437109834Z W0806 08:39:16.437058      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.437125534Z W0806 08:39:16.437060      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.437141975Z W0806 08:39:16.437094      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.437145893Z W0806 08:39:16.437103      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.437176731Z W0806 08:39:16.437136      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.438249554Z W0806 08:39:16.438204      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.438269211Z W0806 08:39:16.438238      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.438288658Z W0806 08:39:16.438256      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.439430531Z W0806 08:39:16.439388      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.439454517Z W0806 08:39:16.439427      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.439516644Z W0806 08:39:16.439481      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:39:16.439527084Z W0806 08:39:16.439494      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:45:32.738886709Z W0806 08:45:32.738775      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T08:50:56.739547731Z W0806 08:50:56.739407      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T08:58:31.740526472Z W0806 08:58:31.740398      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:04:05.087432265Z 2024/08/06 09:04:05 [ERROR] Error during subscribe write tcp 10.52.1.5:80->10.52.3.11:34976: write: broken pipe
+2024-08-06T09:05:55.742315982Z W0806 09:05:55.742186      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:09:22.226806616Z W0806 09:09:22.226646      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.226858935Z W0806 09:09:22.226712      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.226878112Z W0806 09:09:22.226760      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.226887119Z W0806 09:09:22.226761      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.226895254Z W0806 09:09:22.226783      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.226909752Z W0806 09:09:22.226841      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.226919620Z W0806 09:09:22.226853      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.227026202Z W0806 09:09:22.226916      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228023031Z W0806 09:09:22.227884      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228051876Z W0806 09:09:22.227930      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228061334Z W0806 09:09:22.227901      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228069499Z W0806 09:09:22.227952      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228078476Z W0806 09:09:22.227972      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228086983Z W0806 09:09:22.227986      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228107852Z W0806 09:09:22.228012      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228116569Z W0806 09:09:22.228015      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228124784Z W0806 09:09:22.228024      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228141356Z W0806 09:09:22.228054      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228149731Z W0806 09:09:22.228061      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228158047Z W0806 09:09:22.228054      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228165832Z W0806 09:09:22.228073      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228182283Z W0806 09:09:22.228088      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228190479Z W0806 09:09:22.228097      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228198424Z W0806 09:09:22.228103      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228214123Z W0806 09:09:22.228139      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228257205Z W0806 09:09:22.228176      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:09:22.228501999Z W0806 09:09:22.228365      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:12:12.743839791Z W0806 09:12:12.743528      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:19:56.745304332Z W0806 09:19:56.745162      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:26:51.965798761Z 2024/08/06 09:26:51 [ERROR] Failed to dial steve aggregation server: websocket: close 1006 (abnormal closure): unexpected EOF
+2024-08-06T09:29:19.748614683Z W0806 09:29:19.748411      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:30:08.503362242Z 2024/08/06 09:30:08 [ERROR] Error during subscribe write tcp 10.52.1.5:80->10.52.1.4:51050: write: broken pipe
+2024-08-06T09:30:23.707571004Z 2024/08/06 09:30:23 [ERROR] Error during subscribe write tcp 10.52.1.5:80->10.52.2.10:56916: write: broken pipe
+2024-08-06T09:38:37.750295570Z W0806 09:38:37.750164      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:39:28.206374847Z W0806 09:39:28.205923      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:39:28.206427978Z W0806 09:39:28.205928      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:39:28.206437326Z W0806 09:39:28.206040      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:39:28.207242551Z W0806 09:39:28.207120      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:39:28.207292717Z W0806 09:39:28.207154      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:39:28.207320740Z W0806 09:39:28.207236      33 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:46:20.752635259Z W0806 09:46:20.752480      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:53:38.754548998Z W0806 09:53:38.754443      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:59:06.979048444Z 2024/08/06 09:59:06 [ERROR] Error during subscribe write tcp 10.52.1.5:80->10.52.2.10:56902: write: broken pipe
+2024-08-06T09:59:36.756453237Z W0806 09:59:36.756324      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:05:48.758925458Z W0806 10:05:48.758774      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:12:16.761006270Z W0806 10:12:16.760906      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:18:46.763099069Z W0806 10:18:46.763001      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:27:34.764614680Z W0806 10:27:34.764463      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:35:13.765856738Z W0806 10:35:13.765714      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:42:40.767028050Z W0806 10:42:40.766807      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:49:54.769342930Z W0806 10:49:54.769177      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:57:23.771539477Z W0806 10:57:23.771397      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:05:49.773933860Z W0806 11:05:49.773797      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:11:20.775168155Z W0806 11:11:20.775060      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:19:55.777028537Z W0806 11:19:55.776906      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:29:39.779291363Z W0806 11:29:39.779156      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:36:58.780329159Z W0806 11:36:58.780170      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:39:29.656394112Z 2024/08/06 11:39:29 [ERROR] Error during subscribe write tcp 10.52.1.5:80->10.52.1.4:57042: write: broken pipe
+2024-08-06T11:42:45.780987958Z W0806 11:42:45.780765      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:48:46.782032831Z W0806 11:48:46.781878      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:58:04.783086886Z W0806 11:58:04.782946      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:06:28.785182898Z W0806 12:06:28.785008      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:12:09.216029995Z 2024/08/06 12:12:09 [INFO] Updating TLS secret for cattle-system/tls-rancher-internal (count: 6): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-10.52.1.5:10.52.1.5 listener.cattle.io/cn-10.52.2.3:10.52.2.3 listener.cattle.io/cn-10.53.97.255:10.53.97.255 listener.cattle.io/fingerprint:SHA1=A4368DED40259AC7B1B204F464B05182300A2162]
+2024-08-06T12:12:09.216787801Z 2024/08/06 12:12:09 [INFO] Updating TLS secret for cattle-system/serving-cert (count: 9): map[listener.cattle.io/cn-10.10.110.100:10.10.110.100 listener.cattle.io/cn-10.52.0.5:10.52.0.5 listener.cattle.io/cn-10.52.0.73:10.52.0.73 listener.cattle.io/cn-10.52.1.5:10.52.1.5 listener.cattle.io/cn-10.52.2.3:10.52.2.3 listener.cattle.io/cn-127.0.0.1:127.0.0.1 listener.cattle.io/cn-localhost:localhost listener.cattle.io/cn-rancher:rancher listener.cattle.io/cn-rancher.cattle-system:rancher.cattle-system listener.cattle.io/fingerprint:SHA1=30484832375B9C35F2EE18BF1484F8AC38BE4EE3]
+2024-08-06T12:12:10.164729785Z W0806 12:12:10.164636      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:12:25.787374908Z W0806 12:12:25.787275      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:16:59.287255880Z 2024/08/06 12:16:59 [ERROR] Failed to dial steve aggregation server: websocket: close 1006 (abnormal closure): unexpected EOF
+2024-08-06T12:22:10.790015770Z W0806 12:22:10.789910      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:30:25.791757486Z W0806 12:30:25.791561      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:36:57.792591627Z W0806 12:36:57.792467      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:44:51.794225484Z W0806 12:44:51.794069      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:50:20.796489954Z W0806 12:50:20.796284      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:56:12.442979281Z 2024/08/06 12:56:12 [ERROR] Error during subscribe write tcp 10.52.1.5:80->10.52.3.11:51798: write: broken pipe
+2024-08-06T13:00:10.798117749Z W0806 13:00:10.798023      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:04:59.579329150Z 2024/08/06 13:04:59 [ERROR] Failed to dial steve aggregation server: websocket: close 1006 (abnormal closure): unexpected EOF
+2024-08-06T13:08:10.801620727Z W0806 13:08:10.801458      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:16:11.803307212Z W0806 13:16:11.803155      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:22:57.803880228Z W0806 13:22:57.803761      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:32:37.804237861Z W0806 13:32:37.804106      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:39:24.805717387Z W0806 13:39:24.805588      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:40:15.287157188Z 2024/08/06 13:40:15 [ERROR] Error during subscribe write tcp 10.52.1.5:80->10.52.3.11:49498: write: broken pipe
+2024-08-06T13:46:48.124140658Z 2024/08/06 13:46:48 [ERROR] Error during subscribe websocket: close sent
+2024-08-06T13:46:48.124273259Z 2024/08/06 13:46:48 [ERROR] Error during subscribe websocket: close sent
+2024-08-06T13:47:38.806636418Z W0806 13:47:38.806477      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:48:58.903009025Z 2024/08/06 13:48:58 [ERROR] Error during subscribe websocket: close sent
+2024-08-06T13:51:13.869244068Z 2024/08/06 13:51:13 [ERROR] Error during subscribe websocket: close sent
+2024-08-06T13:54:07.014321380Z 2024/08/06 13:54:07 [ERROR] Failed to dial steve aggregation server: websocket: close 1006 (abnormal closure): unexpected EOF
+2024-08-06T13:55:01.808121064Z W0806 13:55:01.807970      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:56:03.580762479Z 2024/08/06 13:56:03 [ERROR] Error during subscribe write tcp 10.52.1.5:80->10.52.3.11:48744: write: broken pipe
+2024-08-06T13:56:03.599897092Z 2024/08/06 13:56:03 [ERROR] Error during subscribe write tcp 10.52.1.5:80->10.52.2.10:41104: write: broken pipe
+2024-08-06T14:04:41.810691144Z W0806 14:04:41.810538      33 warnings.go:80] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T14:11:11.349405312Z 2024/08/06 14:11:11 [ERROR] Error during subscribe websocket: close sent

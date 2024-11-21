@@ -1,0 +1,103 @@
+apiVersion: v1
+items:
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      banzaicloud.com/last-applied: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAb3JpZ2luYWyUkTHP2jAQhv/LzXFKKApptk5dOlGpS8Vwds7BxTlH9pkKUP57ZYEoA5X4Nst6n9eP764wkeCAgtBfwaMmn8oJ57k+Zk2RSSjVLnwyYZoDEwv0YH0mlgGqF7kJGUcalD5DDxHZHCgqH8bR8ahKVGEenLxkGSd6ql8quN/8v0f9cynZNKMpgEERT498OiehCSoIf5jijixFYkMJ+l/lr+4nxeQCQw93otbIF3TGhzwUs1OjSbCBCkxgicF7itBLzFTB0fEAPXy/kfCGNFSQXWFa87mzq81GtaZdqc220eqLpU51bbceWru1zdrCsl8qiMHTjuxtN+5bDHkuT2g0NWY5hOguKC5wfezKKOGhtQue3nFST1NPWf8mI7fx3Ht+UDw5Q1+NCZnlQ43vrGbZL38DAAD//1BLBwjlrUHQNAEAAIwCAABQSwECFAAUAAgACAAAAAAA5a1B0DQBAACMAgAACAAAAAAAAAAAAAAAAAAAAAAAb3JpZ2luYWxQSwUGAAAAAAEAAQA2AAAAagEAAAAA
+    creationTimestamp: "2024-08-06T01:56:46Z"
+    labels:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-kube-audit
+      app.kubernetes.io/name: fluentd
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:banzaicloud.com/last-applied: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"6c38f044-6c60-471b-9fe8-8682d6f7f12f"}: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T01:56:46Z"
+    name: rancher-logging-kube-audit-fluentd
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: logging.banzaicloud.io/v1beta1
+      controller: true
+      kind: Logging
+      name: rancher-logging-kube-audit
+      uid: 6c38f044-6c60-471b-9fe8-8682d6f7f12f
+    resourceVersion: "7164"
+    uid: 6214644d-9dd5-4501-905f-18745c083679
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: rancher-logging-kube-audit-fluentd
+  subjects:
+  - kind: ServiceAccount
+    name: rancher-logging-kube-audit-fluentd
+    namespace: cattle-logging-system
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      banzaicloud.com/last-applied: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAb3JpZ2luYWyMkbGO2zAMht+Fs+U2TX32eevUpVMKdCluoGTap0YmDYm6Ign87oWQIM0QBNkE4eOnXz9PMJPigIrQnyCgpZDKCZel3mdLkUkp1V4+OZkXYWKFHsaQiXWA6g43I+NEg7EH6CEiu3eKJsg0eZ5MFNG7U4wz3YjXCi439wzm//uFSgu6gjpUDXQl0yEpzVCB/GWKOxopEjtK0P8u//O/KCYvDD1cJmqLfETvguShZPrYWFLcQAVOWKOEQBF6jZkq2HseoIcf50l4GBcqyL7QXTO+fhlxY8bXtjFfu/azsS9da7bNdttZ2zTtSwvr21pBlEA7Gs+b8N+j5KXILboas75L9EdUL1zvu1IfXAPtJNDjNOam45TtH3J6ruRi+Enxwzv65pxk1iddzyxifVv/BQAA//9QSwcINWg/YTIBAABuAgAAUEsBAhQAFAAIAAgAAAAAADVoP2EyAQAAbgIAAAgAAAAAAAAAAAAAAAAAAAAAAG9yaWdpbmFsUEsFBgAAAAABAAEANgAAAGgBAAAAAA==
+    creationTimestamp: "2024-08-06T01:56:48Z"
+    labels:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-root
+      app.kubernetes.io/name: fluentd
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:banzaicloud.com/last-applied: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"85f92fa1-f975-4870-b687-35338bb55767"}: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T01:56:48Z"
+    name: rancher-logging-root-fluentd
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: logging.banzaicloud.io/v1beta1
+      controller: true
+      kind: Logging
+      name: rancher-logging-root
+      uid: 85f92fa1-f975-4870-b687-35338bb55767
+    resourceVersion: "7231"
+    uid: aa88c7d0-94a1-46f2-9d98-7c9896a85331
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: rancher-logging-root-fluentd
+  subjects:
+  - kind: ServiceAccount
+    name: rancher-logging-root-fluentd
+    namespace: cattle-logging-system
+kind: List
+metadata:
+  resourceVersion: "770286"

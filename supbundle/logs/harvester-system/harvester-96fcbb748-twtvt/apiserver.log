@@ -1,0 +1,575 @@
+2024-08-06T02:13:33.603489448Z time="2024-08-06T02:13:33Z" level=info msg="Starting controller"
+2024-08-06T02:13:34.692854166Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Setting"
+2024-08-06T02:13:34.692888370Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD APIService"
+2024-08-06T02:13:34.692892768Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Setting"
+2024-08-06T02:13:34.692897817Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD User"
+2024-08-06T02:13:34.692901735Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Group"
+2024-08-06T02:13:34.692905402Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD GroupMember"
+2024-08-06T02:13:34.692909189Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Token"
+2024-08-06T02:13:34.692913266Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD NodeDriver"
+2024-08-06T02:13:34.692916693Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Feature"
+2024-08-06T02:13:34.692920530Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Plan"
+2024-08-06T02:13:34.692924217Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Logging"
+2024-08-06T02:13:34.700154537Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD KeyPair"
+2024-08-06T02:13:34.700187418Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Upgrade"
+2024-08-06T02:13:34.700196566Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD UpgradeLog"
+2024-08-06T02:13:34.700205592Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Version"
+2024-08-06T02:13:34.700214088Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD VirtualMachineImage"
+2024-08-06T02:13:34.700227824Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD VirtualMachineTemplate"
+2024-08-06T02:13:34.700237142Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD VirtualMachineTemplateVersion"
+2024-08-06T02:13:34.700265435Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD VirtualMachineBackup"
+2024-08-06T02:13:34.700274021Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD VirtualMachineRestore"
+2024-08-06T02:13:34.700282557Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Preference"
+2024-08-06T02:13:34.700291413Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD SupportBundle"
+2024-08-06T02:13:34.700299699Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD BackingImage"
+2024-08-06T02:13:34.700308265Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD BackingImageDataSource"
+2024-08-06T02:13:34.700317382Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Backup"
+2024-08-06T02:13:34.700326469Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Engine"
+2024-08-06T02:13:34.700335065Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Volume"
+2024-08-06T02:13:34.700343521Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Setting"
+2024-08-06T02:13:34.700352077Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Cluster"
+2024-08-06T02:13:34.700360363Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Cluster"
+2024-08-06T02:13:34.700368919Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Cluster"
+2024-08-06T02:13:34.700377485Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Machine"
+2024-08-06T02:13:34.700408824Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Addon"
+2024-08-06T02:13:34.700416268Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Prometheus"
+2024-08-06T02:13:34.700423201Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD Alertmanager"
+2024-08-06T02:13:34.700429963Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD ClusterFlow"
+2024-08-06T02:13:34.700450582Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD ClusterOutput"
+2024-08-06T02:13:34.700459539Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD NodeConfig"
+2024-08-06T02:13:34.700467904Z time="2024-08-06T02:13:34Z" level=info msg="Do not update the existing CRD RKEControlPlane"
+2024-08-06T02:13:35.357385764Z time="2024-08-06T02:13:35Z" level=info msg="Waiting for ValidatingWebhookConfiguration harvester-validator..."
+2024-08-06T02:13:35.359726073Z time="2024-08-06T02:13:35Z" level=info msg="Waiting for MutatingWebhookConfiguration harvester-mutator..."
+2024-08-06T02:13:35.361489981Z time="2024-08-06T02:13:35Z" level=info msg="Admission webhooks are ready"
+2024-08-06T02:13:35.396136166Z I0806 02:13:35.396020       7 leaderelection.go:248] attempting to acquire leader lease kube-system/harvester-controllers...
+2024-08-06T02:13:36.101236376Z time="2024-08-06T02:13:36Z" level=info msg="Starting longhorn.io/v1beta2, Kind=Replica controller"
+2024-08-06T02:13:36.101273316Z time="2024-08-06T02:13:36Z" level=info msg="Starting /v1, Kind=Node controller"
+2024-08-06T02:13:36.101356071Z time="2024-08-06T02:13:36Z" level=info msg="Starting longhorn.io/v1beta2, Kind=BackingImage controller"
+2024-08-06T02:13:36.101415432Z time="2024-08-06T02:13:36Z" level=info msg="Starting /v1, Kind=Secret controller"
+2024-08-06T02:13:36.101501734Z time="2024-08-06T02:13:36Z" level=info msg="Starting storage.k8s.io/v1, Kind=StorageClass controller"
+2024-08-06T02:13:36.101545917Z time="2024-08-06T02:13:36Z" level=info msg="Starting apiregistration.k8s.io/v1, Kind=APIService controller"
+2024-08-06T02:13:36.101590651Z time="2024-08-06T02:13:36Z" level=info msg="Starting kubevirt.io/v1, Kind=VirtualMachineInstance controller"
+2024-08-06T02:13:36.101690338Z time="2024-08-06T02:13:36Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=Addon controller"
+2024-08-06T02:13:36.101696720Z time="2024-08-06T02:13:36Z" level=info msg="Starting kubevirt.io/v1, Kind=VirtualMachine controller"
+2024-08-06T02:13:36.101774716Z time="2024-08-06T02:13:36Z" level=info msg="Starting /v1, Kind=ServiceAccount controller"
+2024-08-06T02:13:36.101883530Z time="2024-08-06T02:13:36Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=Setting controller"
+2024-08-06T02:13:36.101923395Z time="2024-08-06T02:13:36Z" level=info msg="Starting /v1, Kind=Pod controller"
+2024-08-06T02:13:36.101983898Z time="2024-08-06T02:13:36Z" level=info msg="Starting longhorn.io/v1beta2, Kind=Volume controller"
+2024-08-06T02:13:36.102060242Z time="2024-08-06T02:13:36Z" level=info msg="Starting longhorn.io/v1beta2, Kind=BackingImageDataSource controller"
+2024-08-06T02:13:36.102114624Z time="2024-08-06T02:13:36Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=UpgradeLog controller"
+2024-08-06T02:13:36.102260748Z time="2024-08-06T02:13:36Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=Upgrade controller"
+2024-08-06T02:13:36.102329166Z time="2024-08-06T02:13:36Z" level=info msg="Starting /v1, Kind=ConfigMap controller"
+2024-08-06T02:13:36.102457296Z time="2024-08-06T02:13:36Z" level=info msg="Starting snapshot.storage.k8s.io/v1, Kind=VolumeSnapshot controller"
+2024-08-06T02:13:36.102520915Z time="2024-08-06T02:13:36Z" level=info msg="Starting /v1, Kind=PersistentVolume controller"
+2024-08-06T02:13:36.102566371Z time="2024-08-06T02:13:36Z" level=info msg="Starting rbac.authorization.k8s.io/v1, Kind=RoleBinding controller"
+2024-08-06T02:13:36.102575067Z time="2024-08-06T02:13:36Z" level=info msg="Starting rbac.authorization.k8s.io/v1, Kind=ClusterRole controller"
+2024-08-06T02:13:36.102627766Z time="2024-08-06T02:13:36Z" level=info msg="Starting kubevirt.io/v1, Kind=VirtualMachineInstanceMigration controller"
+2024-08-06T02:13:36.102689381Z time="2024-08-06T02:13:36Z" level=info msg="Starting rbac.authorization.k8s.io/v1, Kind=ClusterRoleBinding controller"
+2024-08-06T02:13:36.102763661Z time="2024-08-06T02:13:36Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=SupportBundle controller"
+2024-08-06T02:13:36.102804638Z time="2024-08-06T02:13:36Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=VirtualMachineImage controller"
+2024-08-06T02:13:36.102866273Z time="2024-08-06T02:13:36Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=VirtualMachineTemplateVersion controller"
+2024-08-06T02:13:36.102939571Z time="2024-08-06T02:13:36Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=VirtualMachineBackup controller"
+2024-08-06T02:13:36.102974145Z time="2024-08-06T02:13:36Z" level=info msg="Starting rbac.authorization.k8s.io/v1, Kind=Role controller"
+2024-08-06T02:13:36.103025772Z time="2024-08-06T02:13:36Z" level=info msg="Starting /v1, Kind=PersistentVolumeClaim controller"
+2024-08-06T02:13:36.103054987Z time="2024-08-06T02:13:36Z" level=info msg="Starting k8s.cni.cncf.io/v1, Kind=NetworkAttachmentDefinition controller"
+2024-08-06T02:13:36.103100703Z time="2024-08-06T02:13:36Z" level=info msg="Starting apiextensions.k8s.io/v1, Kind=CustomResourceDefinition controller"
+2024-08-06T02:13:36.119263775Z time="2024-08-06T02:13:36Z" level=info msg="Starting steve aggregation client"
+2024-08-06T02:13:36.137012010Z time="2024-08-06T02:13:36Z" level=info msg="Listening on :8443"
+2024-08-06T02:13:36.137066883Z time="2024-08-06T02:13:36Z" level=warning msg="dynamiclistener [::]:8443: no cached certificate available for preload - deferring certificate load until storage initialization or first client request"
+2024-08-06T02:13:37.903557521Z W0806 02:13:37.903454       7 warnings.go:70] v1 ComponentStatus is deprecated in v1.19+
+2024-08-06T02:13:37.911809154Z W0806 02:13:37.911742       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:13:37.930587214Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=BackupTarget"
+2024-08-06T02:13:37.930618103Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for gitjob.cattle.io/v1, Kind=GitJob"
+2024-08-06T02:13:37.930650235Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for logging.banzaicloud.io/v1beta1, Kind=Logging"
+2024-08-06T02:13:37.930691764Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for kubevirt.io/v1, Kind=VirtualMachineInstance"
+2024-08-06T02:13:37.930702525Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=PersistentVolume"
+2024-08-06T02:13:37.930725329Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for tinkerbell.org/v1alpha1, Kind=WorkflowData"
+2024-08-06T02:13:37.930740628Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=Feature"
+2024-08-06T02:13:37.930749335Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for monitoring.coreos.com/v1, Kind=Prometheus"
+2024-08-06T02:13:37.930763011Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for fleet.cattle.io/v1alpha1, Kind=ClusterGroup"
+2024-08-06T02:13:37.930809910Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=GlobalNetworkSet"
+2024-08-06T02:13:37.930890535Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for monitoring.coreos.com/v1, Kind=Probe"
+2024-08-06T02:13:37.930904091Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for monitoring.coreos.com/v1, Kind=PrometheusRule"
+2024-08-06T02:13:37.930923087Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for snapshot.kubevirt.io/v1alpha1, Kind=VirtualMachineRestore"
+2024-08-06T02:13:37.930939559Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=PodTemplate"
+2024-08-06T02:13:37.930959366Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=Endpoints"
+2024-08-06T02:13:37.930988522Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for logging-extensions.banzaicloud.io/v1alpha1, Kind=EventTailer"
+2024-08-06T02:13:37.931013630Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for harvesterhci.io/v1beta1, Kind=UpgradeLog"
+2024-08-06T02:13:37.931062875Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for fleet.cattle.io/v1alpha1, Kind=BundleNamespaceMapping"
+2024-08-06T02:13:37.931101749Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for coordination.k8s.io/v1, Kind=Lease"
+2024-08-06T02:13:37.931530670Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=FelixConfiguration"
+2024-08-06T02:13:37.931550017Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=Node"
+2024-08-06T02:13:37.931560427Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for whereabouts.cni.cncf.io/v1alpha1, Kind=IPPool"
+2024-08-06T02:13:37.931570797Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=EngineImage"
+2024-08-06T02:13:37.931581006Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for rke.cattle.io/v1, Kind=RKEControlPlane"
+2024-08-06T02:13:37.931596927Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for harvesterhci.io/v1beta1, Kind=Upgrade"
+2024-08-06T02:13:37.931607237Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for snapshot.storage.k8s.io/v1, Kind=VolumeSnapshot"
+2024-08-06T02:13:37.931617276Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for kubevirt.io/v1, Kind=VirtualMachine"
+2024-08-06T02:13:37.931627756Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for snapshot.kubevirt.io/v1alpha1, Kind=VirtualMachineSnapshotContent"
+2024-08-06T02:13:37.931637825Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=BGPPeer"
+2024-08-06T02:13:37.932124116Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=User"
+2024-08-06T02:13:37.932155596Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for storage.k8s.io/v1, Kind=CSINode"
+2024-08-06T02:13:37.932167008Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for networking.k8s.io/v1, Kind=Ingress"
+2024-08-06T02:13:37.932177027Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for admissionregistration.k8s.io/v1, Kind=MutatingWebhookConfiguration"
+2024-08-06T02:13:37.932187207Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=ResourceQuota"
+2024-08-06T02:13:37.932261920Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=IPReservation"
+2024-08-06T02:13:37.933169747Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for admissionregistration.k8s.io/v1, Kind=ValidatingWebhookConfiguration"
+2024-08-06T02:13:37.933197160Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for bmc.tinkerbell.org/v1alpha1, Kind=Task"
+2024-08-06T02:13:37.933216667Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=ConfigMap"
+2024-08-06T02:13:37.933221456Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=ServiceAccount"
+2024-08-06T02:13:37.933226285Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for networking.k8s.io/v1, Kind=IngressClass"
+2024-08-06T02:13:37.933232026Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for tinkerbell.org/v1alpha1, Kind=Template"
+2024-08-06T02:13:37.933237888Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=ClusterRegistrationToken"
+2024-08-06T02:13:37.933243959Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for k8s.cni.cncf.io/v1, Kind=NetworkAttachmentDefinition"
+2024-08-06T02:13:37.933249370Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=KubeControllersConfiguration"
+2024-08-06T02:13:37.933253848Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=GlobalNetworkPolicy"
+2024-08-06T02:13:37.933258317Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for bmc.tinkerbell.org/v1alpha1, Kind=Machine"
+2024-08-06T02:13:37.933262775Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for devices.harvesterhci.io/v1beta1, Kind=SRIOVGPUDevice"
+2024-08-06T02:13:37.933267214Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineTemplateVersion"
+2024-08-06T02:13:37.933271722Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for k3s.cattle.io/v1, Kind=ETCDSnapshotFile"
+2024-08-06T02:13:37.933294135Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for node.harvesterhci.io/v1beta1, Kind=Ksmtuned"
+2024-08-06T02:13:37.933299055Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineBackup"
+2024-08-06T02:13:37.933304064Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for rke.cattle.io/v1, Kind=RKEBootstrapTemplate"
+2024-08-06T02:13:37.933308353Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for network.harvesterhci.io/v1beta1, Kind=ClusterNetwork"
+2024-08-06T02:13:37.933313302Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=BlockAffinity"
+2024-08-06T02:13:37.933317560Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for export.kubevirt.io/v1alpha1, Kind=VirtualMachineExport"
+2024-08-06T02:13:37.933591414Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for instancetype.kubevirt.io/v1beta1, Kind=VirtualMachineInstancetype"
+2024-08-06T02:13:37.933621442Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for networking.k8s.io/v1, Kind=NetworkPolicy"
+2024-08-06T02:13:37.933632493Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=Preference"
+2024-08-06T02:13:37.933641961Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=ClusterInformation"
+2024-08-06T02:13:37.933651309Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for upgrade.cattle.io/v1, Kind=Plan"
+2024-08-06T02:13:37.933660376Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=IPAMConfig"
+2024-08-06T02:13:37.933669263Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for devices.harvesterhci.io/v1beta1, Kind=PCIDevice"
+2024-08-06T02:13:37.933678030Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for logging-extensions.banzaicloud.io/v1alpha1, Kind=HostTailer"
+2024-08-06T02:13:37.933686787Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for fleet.cattle.io/v1alpha1, Kind=ClusterRegistrationToken"
+2024-08-06T02:13:37.933718197Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for rbac.authorization.k8s.io/v1, Kind=Role"
+2024-08-06T02:13:37.933727455Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for loadbalancer.harvesterhci.io/v1beta1, Kind=IPPool"
+2024-08-06T02:13:37.933754026Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for storage.k8s.io/v1, Kind=VolumeAttachment"
+2024-08-06T02:13:37.933764415Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for bmc.tinkerbell.org/v1alpha1, Kind=BaseboardManagement"
+2024-08-06T02:13:37.933773493Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=AuthConfig"
+2024-08-06T02:13:37.933782300Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=HostEndpoint"
+2024-08-06T02:13:37.933791097Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for kubevirt.io/v1, Kind=VirtualMachineInstanceMigration"
+2024-08-06T02:13:37.933800024Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for fleet.cattle.io/v1alpha1, Kind=Content"
+2024-08-06T02:13:37.933809181Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=CalicoNodeStatus"
+2024-08-06T02:13:37.933818249Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for harvesterhci.io/v1beta1, Kind=SupportBundle"
+2024-08-06T02:13:37.933827095Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for logging.banzaicloud.io/v1beta1, Kind=Output"
+2024-08-06T02:13:37.933835902Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for kubevirt.io/v1, Kind=VirtualMachineInstancePreset"
+2024-08-06T02:13:37.933844739Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=Engine"
+2024-08-06T02:13:37.933853266Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=InstanceManager"
+2024-08-06T02:13:37.933861912Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=FleetWorkspace"
+2024-08-06T02:13:37.933870989Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=BackingImageDataSource"
+2024-08-06T02:13:37.933879987Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for monitoring.coreos.com/v1alpha1, Kind=AlertmanagerConfig"
+2024-08-06T02:13:37.933888543Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for rbac.authorization.k8s.io/v1, Kind=RoleBinding"
+2024-08-06T02:13:37.933897731Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for node.k8s.io/v1, Kind=RuntimeClass"
+2024-08-06T02:13:37.933906768Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for policy/v1, Kind=PodDisruptionBudget"
+2024-08-06T02:13:37.933915475Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for fleet.cattle.io/v1alpha1, Kind=ClusterRegistration"
+2024-08-06T02:13:37.933924812Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for monitoring.coreos.com/v1, Kind=ServiceMonitor"
+2024-08-06T02:13:37.933934541Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for migrations.kubevirt.io/v1alpha1, Kind=MigrationPolicy"
+2024-08-06T02:13:37.933943368Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for network.harvesterhci.io/v1beta1, Kind=VlanConfig"
+2024-08-06T02:13:37.933952215Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=UserAttribute"
+2024-08-06T02:13:37.933961192Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for catalog.cattle.io/v1, Kind=App"
+2024-08-06T02:13:37.933970019Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for apiregistration.k8s.io/v1, Kind=APIService"
+2024-08-06T02:13:37.933995868Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=BackupVolume"
+2024-08-06T02:13:37.934004956Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineTemplate"
+2024-08-06T02:13:37.934014644Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for bmc.tinkerbell.org/v1alpha1, Kind=BMCJob"
+2024-08-06T02:13:37.934024694Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for fleet.cattle.io/v1alpha1, Kind=BundleDeployment"
+2024-08-06T02:13:37.934034522Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for storage.k8s.io/v1, Kind=CSIStorageCapacity"
+2024-08-06T02:13:37.934063799Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for fleet.cattle.io/v1alpha1, Kind=Cluster"
+2024-08-06T02:13:37.934074609Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for events.k8s.io/v1, Kind=Event"
+2024-08-06T02:13:37.934083737Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for ui.cattle.io/v1, Kind=NavLink"
+2024-08-06T02:13:37.934092974Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for instancetype.kubevirt.io/v1beta1, Kind=VirtualMachinePreference"
+2024-08-06T02:13:37.934102282Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for kubevirt.io/v1, Kind=VirtualMachineInstanceReplicaSet"
+2024-08-06T02:13:37.934111420Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for fleet.cattle.io/v1alpha1, Kind=ImageScan"
+2024-08-06T02:13:37.934130747Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=IPAMHandle"
+2024-08-06T02:13:37.934140425Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for apps/v1, Kind=StatefulSet"
+2024-08-06T02:13:37.934150014Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=PodSecurityAdmissionConfigurationTemplate"
+2024-08-06T02:13:37.934159562Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=Event"
+2024-08-06T02:13:37.934168940Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=Snapshot"
+2024-08-06T02:13:37.934178268Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for apps/v1, Kind=Deployment"
+2024-08-06T02:13:37.934187886Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for devices.harvesterhci.io/v1beta1, Kind=SRIOVNetworkDevice"
+2024-08-06T02:13:37.934196883Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for rke.cattle.io/v1, Kind=RKECluster"
+2024-08-06T02:13:37.934206031Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=LimitRange"
+2024-08-06T02:13:37.934215058Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for apps/v1, Kind=ReplicaSet"
+2024-08-06T02:13:37.934224536Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineImage"
+2024-08-06T02:13:37.934233994Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=ShareManager"
+2024-08-06T02:13:37.934243352Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for devices.harvesterhci.io/v1beta1, Kind=Node"
+2024-08-06T02:13:37.934253542Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for rke.cattle.io/v1, Kind=RKEBootstrap"
+2024-08-06T02:13:37.934262769Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=IPAMBlock"
+2024-08-06T02:13:37.934272217Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for clone.kubevirt.io/v1alpha1, Kind=VirtualMachineClone"
+2024-08-06T02:13:37.934280944Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for snapshot.kubevirt.io/v1alpha1, Kind=VirtualMachineSnapshot"
+2024-08-06T02:13:37.934306723Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=BackingImageManager"
+2024-08-06T02:13:37.934315671Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for metal.harvesterhci.io/v1alpha1, Kind=Inventory"
+2024-08-06T02:13:37.934324518Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for tinkerbell.org/v1alpha1, Kind=Hardware"
+2024-08-06T02:13:37.934333535Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=RecurringJob"
+2024-08-06T02:13:37.934342251Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=VolumeAttachment"
+2024-08-06T02:13:37.934351379Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for harvesterhci.io/v1beta1, Kind=Setting"
+2024-08-06T02:13:37.934360967Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for cluster.x-k8s.io/v1beta1, Kind=Machine"
+2024-08-06T02:13:37.934371017Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for kubevirt.io/v1, Kind=KubeVirt"
+2024-08-06T02:13:37.934380094Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for metal.harvesterhci.io/v1alpha1, Kind=AddressPool"
+2024-08-06T02:13:37.934389352Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=NetworkSet"
+2024-08-06T02:13:37.934398609Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for rbac.authorization.k8s.io/v1, Kind=ClusterRoleBinding"
+2024-08-06T02:13:37.934407717Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=BGPConfiguration"
+2024-08-06T02:13:37.934417005Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=Group"
+2024-08-06T02:13:37.934426863Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for harvesterhci.io/v1beta1, Kind=Version"
+2024-08-06T02:13:37.934436171Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for harvesterhci.io/v1beta1, Kind=Preference"
+2024-08-06T02:13:37.934446641Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for batch/v1, Kind=Job"
+2024-08-06T02:13:37.934456580Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for logging.banzaicloud.io/v1beta1, Kind=ClusterOutput"
+2024-08-06T02:13:37.934466730Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for network.harvesterhci.io/v1beta1, Kind=LinkMonitor"
+2024-08-06T02:13:37.934476579Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for flowcontrol.apiserver.k8s.io/v1beta3, Kind=PriorityLevelConfiguration"
+2024-08-06T02:13:37.934485997Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for rke.cattle.io/v1, Kind=CustomMachine"
+2024-08-06T02:13:37.934521124Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for monitoring.coreos.com/v1, Kind=Alertmanager"
+2024-08-06T02:13:37.934557624Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for flowcontrol.apiserver.k8s.io/v1beta3, Kind=FlowSchema"
+2024-08-06T02:13:37.934562804Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for scheduling.k8s.io/v1, Kind=PriorityClass"
+2024-08-06T02:13:37.934567282Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for storage.k8s.io/v1, Kind=StorageClass"
+2024-08-06T02:13:37.934571971Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for helm.cattle.io/v1, Kind=HelmChart"
+2024-08-06T02:13:37.934576770Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for rke.cattle.io/v1, Kind=ETCDSnapshot"
+2024-08-06T02:13:37.934581269Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for monitoring.coreos.com/v1, Kind=PodMonitor"
+2024-08-06T02:13:37.934600586Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for harvesterhci.io/v1beta1, Kind=KeyPair"
+2024-08-06T02:13:37.934605796Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for k3s.cattle.io/v1, Kind=Addon"
+2024-08-06T02:13:37.934610505Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for catalog.cattle.io/v1, Kind=Operation"
+2024-08-06T02:13:37.934614943Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for logging.banzaicloud.io/v1beta1, Kind=Flow"
+2024-08-06T02:13:37.934619302Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=Setting"
+2024-08-06T02:13:37.934623800Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for storage.k8s.io/v1, Kind=CSIDriver"
+2024-08-06T02:13:37.934627708Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for logging.banzaicloud.io/v1beta1, Kind=ClusterFlow"
+2024-08-06T02:13:37.934631836Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=Orphan"
+2024-08-06T02:13:37.934635884Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=Cluster"
+2024-08-06T02:13:37.934640372Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=Token"
+2024-08-06T02:13:37.934644740Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=PersistentVolumeClaim"
+2024-08-06T02:13:37.934648989Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for fleet.cattle.io/v1alpha1, Kind=GitRepo"
+2024-08-06T02:13:37.934653507Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for instancetype.kubevirt.io/v1beta1, Kind=VirtualMachineClusterInstancetype"
+2024-08-06T02:13:37.934658096Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for devices.harvesterhci.io/v1beta1, Kind=PCIDeviceClaim"
+2024-08-06T02:13:37.934662374Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=Namespace"
+2024-08-06T02:13:37.934666482Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for monitoring.coreos.com/v1, Kind=ThanosRuler"
+2024-08-06T02:13:37.934670700Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=Replica"
+2024-08-06T02:13:37.934675239Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for discovery.k8s.io/v1, Kind=EndpointSlice"
+2024-08-06T02:13:37.934679427Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=ManagedChart"
+2024-08-06T02:13:37.934683364Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=BackupBackingImage"
+2024-08-06T02:13:37.934687803Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=ReplicationController"
+2024-08-06T02:13:37.934691710Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for snapshot.storage.k8s.io/v1, Kind=VolumeSnapshotContent"
+2024-08-06T02:13:37.934696129Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for harvesterhci.io/v1beta1, Kind=Addon"
+2024-08-06T02:13:37.934700267Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=Node"
+2024-08-06T02:13:37.934704725Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for instancetype.kubevirt.io/v1beta1, Kind=VirtualMachineClusterPreference"
+2024-08-06T02:13:37.934709685Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for certificates.k8s.io/v1, Kind=CertificateSigningRequest"
+2024-08-06T02:13:37.934713873Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=NodeDriver"
+2024-08-06T02:13:37.934718141Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=SystemRestore"
+2024-08-06T02:13:37.934730765Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for cluster.x-k8s.io/v1beta1, Kind=MachineHealthCheck"
+2024-08-06T02:13:37.934735214Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for apps/v1, Kind=DaemonSet"
+2024-08-06T02:13:37.934739051Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for whereabouts.cni.cncf.io/v1alpha1, Kind=OverlappingRangeIPReservation"
+2024-08-06T02:13:37.934752918Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for helm.cattle.io/v1, Kind=HelmChartConfig"
+2024-08-06T02:13:37.934757396Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for metal.harvesterhci.io/v1alpha1, Kind=Cluster"
+2024-08-06T02:13:37.934761704Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for pool.kubevirt.io/v1alpha1, Kind=VirtualMachinePool"
+2024-08-06T02:13:37.934765983Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for bmc.tinkerbell.org/v1alpha1, Kind=Job"
+2024-08-06T02:13:37.934770090Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for bmc.tinkerbell.org/v1alpha1, Kind=BMCTask"
+2024-08-06T02:13:37.934774128Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=Service"
+2024-08-06T02:13:37.934781622Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=Setting"
+2024-08-06T02:13:37.934785770Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for cluster.x-k8s.io/v1beta1, Kind=MachineDeployment"
+2024-08-06T02:13:37.934790259Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=SystemBackup"
+2024-08-06T02:13:37.934794106Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for tinkerbell.org/v1alpha1, Kind=Workflow"
+2024-08-06T02:13:37.934798435Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for snapshot.storage.k8s.io/v1, Kind=VolumeSnapshotClass"
+2024-08-06T02:13:37.934802853Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for fleet.cattle.io/v1alpha1, Kind=Bundle"
+2024-08-06T02:13:37.934806981Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for batch/v1, Kind=CronJob"
+2024-08-06T02:13:37.934811099Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for apps/v1, Kind=ControllerRevision"
+2024-08-06T02:13:37.934815317Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=IPPool"
+2024-08-06T02:13:37.934819525Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for fleet.cattle.io/v1alpha1, Kind=GitRepoRestriction"
+2024-08-06T02:13:37.934823453Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=BackingImage"
+2024-08-06T02:13:37.934830656Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for harvesterhci.io/v1beta1, Kind=BlockDevice"
+2024-08-06T02:13:37.934834985Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for node.harvesterhci.io/v1beta1, Kind=CloudInit"
+2024-08-06T02:13:37.934845154Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for crd.projectcalico.org/v1, Kind=NetworkPolicy"
+2024-08-06T02:13:37.934849512Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=Volume"
+2024-08-06T02:13:37.934856526Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for loadbalancer.harvesterhci.io/v1beta1, Kind=LoadBalancer"
+2024-08-06T02:13:37.934881764Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=SupportBundle"
+2024-08-06T02:13:37.934887365Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for devices.harvesterhci.io/v1beta1, Kind=VGPUDevice"
+2024-08-06T02:13:37.934918494Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineRestore"
+2024-08-06T02:13:37.934925618Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for apiextensions.k8s.io/v1, Kind=CustomResourceDefinition"
+2024-08-06T02:13:37.934959914Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for cluster.x-k8s.io/v1beta1, Kind=Cluster"
+2024-08-06T02:13:37.934968761Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=Pod"
+2024-08-06T02:13:37.934998818Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for node.harvesterhci.io/v1beta1, Kind=NodeConfig"
+2024-08-06T02:13:37.935028796Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for autoscaling/v2, Kind=HorizontalPodAutoscaler"
+2024-08-06T02:13:37.935037723Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for catalog.cattle.io/v1, Kind=ClusterRepo"
+2024-08-06T02:13:37.935069914Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for /v1, Kind=Secret"
+2024-08-06T02:13:37.935221805Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for cluster.x-k8s.io/v1beta1, Kind=MachineSet"
+2024-08-06T02:13:37.935318159Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for rbac.authorization.k8s.io/v1, Kind=ClusterRole"
+2024-08-06T02:13:37.935325584Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for provisioning.cattle.io/v1, Kind=Cluster"
+2024-08-06T02:13:37.935330723Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=GroupMember"
+2024-08-06T02:13:37.935335422Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for management.cattle.io/v3, Kind=APIService"
+2024-08-06T02:13:37.935345642Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for longhorn.io/v1beta2, Kind=Backup"
+2024-08-06T02:13:37.935350411Z time="2024-08-06T02:13:37Z" level=info msg="Watching metadata for network.harvesterhci.io/v1beta1, Kind=VlanStatus"
+2024-08-06T02:13:37.972520582Z W0806 02:13:37.971042       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:13:38.009470888Z W0806 02:13:38.009362       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:19:56.004089776Z W0806 02:19:56.003930       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:21:26.876794430Z W0806 02:21:26.876651       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:21:26.896283100Z W0806 02:21:26.896215       7 warnings.go:70] v1 ComponentStatus is deprecated in v1.19+
+2024-08-06T02:21:28.121374884Z W0806 02:21:28.121133       7 warnings.go:70] v1 ComponentStatus is deprecated in v1.19+
+2024-08-06T02:21:28.134052967Z W0806 02:21:28.133973       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:21:31.424376454Z W0806 02:21:31.424235       7 warnings.go:70] v1 ComponentStatus is deprecated in v1.19+
+2024-08-06T02:21:31.437061780Z W0806 02:21:31.436923       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:21:34.343238433Z W0806 02:21:34.343111       7 warnings.go:70] v1 ComponentStatus is deprecated in v1.19+
+2024-08-06T02:21:34.344712017Z W0806 02:21:34.344631       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:27:37.005651363Z W0806 02:27:37.005557       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:34:38.007921688Z W0806 02:34:38.007807       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:42:47.007230691Z W0806 02:42:47.007054       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T02:50:36.141922050Z time="2024-08-06T02:50:36Z" level=info msg="delete support bundle bundle-jk7b5"
+2024-08-06T02:52:38.017042271Z W0806 02:52:38.016971       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:00:05.025934272Z W0806 03:00:05.025821       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:05:25.024615185Z W0806 03:05:25.024456       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:14:47.007530844Z W0806 03:14:47.007394       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:19:50.004279108Z W0806 03:19:50.004132       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:28:26.016214991Z W0806 03:28:26.016061       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:35:28.023561382Z W0806 03:35:28.023433       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:42:35.018278570Z W0806 03:42:35.018134       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:48:08.014696990Z W0806 03:48:08.014592       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T03:54:09.013344447Z W0806 03:54:09.013163       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:02:39.018334004Z W0806 04:02:39.018188       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:11:14.022533267Z W0806 04:11:14.022404       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:20:13.021440146Z W0806 04:20:13.021317       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:26:10.022620335Z W0806 04:26:10.022310       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:33:49.025691791Z W0806 04:33:49.025508       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:39:28.028904827Z W0806 04:39:28.028776       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:47:01.031009434Z W0806 04:47:01.030910       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T04:53:40.030645763Z W0806 04:53:40.030503       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:01:52.030376817Z W0806 05:01:52.030243       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:07:52.031700152Z W0806 05:07:52.031553       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:17:24.032423834Z W0806 05:17:24.032300       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:23:27.033787033Z W0806 05:23:27.033670       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:33:10.034785321Z W0806 05:33:10.034661       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:42:27.036302759Z W0806 05:42:27.036152       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:47:49.037648843Z W0806 05:47:49.037540       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T05:57:46.039984885Z W0806 05:57:46.039863       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:03:50.041899363Z W0806 06:03:50.041761       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:11:14.043643769Z W0806 06:11:14.043471       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:19:41.045854405Z W0806 06:19:41.045728       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:29:23.048557179Z W0806 06:29:23.048430       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:37:52.050441783Z W0806 06:37:52.050351       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:46:48.052731321Z W0806 06:46:48.052640       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T06:53:00.055077288Z W0806 06:53:00.054940       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:00:54.056972479Z W0806 07:00:54.056865       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:08:41.058871040Z W0806 07:08:41.058704       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:16:03.060306977Z W0806 07:16:03.060073       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:23:50.061625969Z W0806 07:23:50.061462       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:31:03.063150114Z W0806 07:31:03.062903       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:37:19.065297110Z W0806 07:37:19.065084       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:45:45.066790146Z W0806 07:45:45.066691       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:55:25.068260726Z W0806 07:55:25.068097       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T07:57:01.348216332Z W0806 07:57:01.348118       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.348274834Z W0806 07:57:01.348153       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.348298419Z W0806 07:57:01.348215       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.348310081Z W0806 07:57:01.348200       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.348356460Z W0806 07:57:01.348285       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.349659919Z W0806 07:57:01.349604       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.349700687Z W0806 07:57:01.349637       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.349727257Z W0806 07:57:01.349666       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.349743749Z W0806 07:57:01.349702       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.349842798Z W0806 07:57:01.349710       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.349853859Z W0806 07:57:01.349785       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.349861985Z W0806 07:57:01.349734       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.349870200Z W0806 07:57:01.349798       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.349878346Z W0806 07:57:01.349795       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.349886852Z W0806 07:57:01.349757       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.349902191Z W0806 07:57:01.349820       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.350354766Z W0806 07:57:01.350239       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.350364344Z W0806 07:57:01.350295       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.350454606Z W0806 07:57:01.350350       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.350464285Z W0806 07:57:01.350407       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.350473993Z W0806 07:57:01.350414       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.351618258Z W0806 07:57:01.351478       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T07:57:01.351638006Z W0806 07:57:01.351522       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T08:03:22.069679778Z W0806 08:03:22.069542       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T08:09:14.654986784Z time="2024-08-06T08:09:14Z" level=error msg="Error during subscribe io: read/write on closed pipe"
+2024-08-06T08:11:52.070937700Z W0806 08:11:52.070790       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T08:20:57.073176169Z W0806 08:20:57.073044       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T08:26:38.074944657Z W0806 08:26:38.074808       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T08:33:24.075616423Z W0806 08:33:24.075428       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T08:42:20.075260381Z W0806 08:42:20.075025       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T08:51:02.075200279Z W0806 08:51:02.075044       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:00:52.074852866Z W0806 09:00:52.074704       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:08:14.078152527Z W0806 09:08:14.077953       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:14:35.080650024Z W0806 09:14:35.080505       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:20:26.082867650Z W0806 09:20:26.082714       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:26:19.085140610Z W0806 09:26:19.085005       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:31:29.086866558Z W0806 09:31:29.086728       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:38:43.090011889Z W0806 09:38:43.089651       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:46:00.092473359Z W0806 09:46:00.092311       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:51:38.093535246Z W0806 09:51:38.093359       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T09:59:26.243920105Z W0806 09:59:26.243791       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.243981321Z W0806 09:59:26.243868       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.244014815Z W0806 09:59:26.243905       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.244025886Z W0806 09:59:26.243895       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.244035866Z W0806 09:59:26.243926       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.244053279Z W0806 09:59:26.243963       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.244068438Z W0806 09:59:26.244027       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.244193186Z W0806 09:59:26.244125       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.244228513Z W0806 09:59:26.244142       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.244238392Z W0806 09:59:26.244172       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.244740150Z W0806 09:59:26.244676       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.244808089Z W0806 09:59:26.244773       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.244852865Z W0806 09:59:26.244800       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.244876420Z W0806 09:59:26.244832       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.244964979Z W0806 09:59:26.244866       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.244983635Z W0806 09:59:26.244891       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.245002721Z W0806 09:59:26.244918       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.245019072Z W0806 09:59:26.244940       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.246213472Z W0806 09:59:26.246123       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.246269519Z W0806 09:59:26.246219       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.246315587Z W0806 09:59:26.246241       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.246332770Z W0806 09:59:26.246253       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.246340815Z W0806 09:59:26.246262       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T09:59:26.246348660Z W0806 09:59:26.246268       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:00:25.096506407Z W0806 10:00:25.096391       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:06:07.098667007Z W0806 10:06:07.098524       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:13:57.103826697Z W0806 10:13:57.103719       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:21:17.106182525Z W0806 10:21:17.106048       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:29:32.160026033Z W0806 10:29:32.159848       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160087651Z W0806 10:29:32.159940       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160191769Z W0806 10:29:32.160072       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160255040Z W0806 10:29:32.160155       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160267945Z W0806 10:29:32.160204       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160277964Z W0806 10:29:32.160216       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160287793Z W0806 10:29:32.160236       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160363627Z W0806 10:29:32.160290       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160395228Z W0806 10:29:32.160311       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160406319Z W0806 10:29:32.160331       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160535255Z W0806 10:29:32.160343       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160552147Z W0806 10:29:32.160379       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160560613Z W0806 10:29:32.160415       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160568588Z W0806 10:29:32.160411       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160576443Z W0806 10:29:32.160445       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160584308Z W0806 10:29:32.160451       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160592133Z W0806 10:29:32.160455       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160599958Z W0806 10:29:32.160472       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160607743Z W0806 10:29:32.160494       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160615638Z W0806 10:29:32.160499       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160743953Z W0806 10:29:32.160581       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.160755805Z W0806 10:29:32.160586       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.161189553Z W0806 10:29:32.161131       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:29:32.161255248Z W0806 10:29:32.161206       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:31:02.106025726Z W0806 10:31:02.105914       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:39:32.106292984Z W0806 10:39:32.106149       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:47:40.108103821Z W0806 10:47:40.108003       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:57:04.110656790Z W0806 10:57:04.110527       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T10:59:38.134512776Z W0806 10:59:38.134324       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.134569033Z W0806 10:59:38.134343       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.134580235Z W0806 10:59:38.134380       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.134590284Z W0806 10:59:38.134388       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.134600834Z W0806 10:59:38.134400       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.134610663Z W0806 10:59:38.134429       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.134632014Z W0806 10:59:38.134445       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.134642945Z W0806 10:59:38.134463       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.134652673Z W0806 10:59:38.134480       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.134662281Z W0806 10:59:38.134484       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.134671229Z W0806 10:59:38.134548       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.134686848Z W0806 10:59:38.134600       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.134943208Z W0806 10:59:38.134604       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.135114445Z W0806 10:59:38.134962       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.135169590Z W0806 10:59:38.135016       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.135188676Z W0806 10:59:38.135073       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.135199096Z W0806 10:59:38.135112       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.135209526Z W0806 10:59:38.135132       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.135220307Z W0806 10:59:38.135139       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.135228643Z W0806 10:59:38.135144       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.135249472Z W0806 10:59:38.135151       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.135260032Z W0806 10:59:38.135153       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.135277636Z W0806 10:59:38.135174       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T10:59:38.135315048Z W0806 10:59:38.135199       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:02:07.112470633Z W0806 11:02:07.112323       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:07:46.113775034Z W0806 11:07:46.113647       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:14:15.115596097Z W0806 11:14:15.115458       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:21:05.117202459Z W0806 11:21:05.117062       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:28:33.119034777Z W0806 11:28:33.118893       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:29:44.113654187Z W0806 11:29:44.113539       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.113782041Z W0806 11:29:44.113578       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.113829411Z W0806 11:29:44.113795       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.113917660Z W0806 11:29:44.113884       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114033781Z W0806 11:29:44.113973       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114066133Z W0806 11:29:44.113984       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114090019Z W0806 11:29:44.114008       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114100459Z W0806 11:29:44.114025       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114122651Z W0806 11:29:44.114048       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114137990Z W0806 11:29:44.114079       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114148210Z W0806 11:29:44.114084       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114161685Z W0806 11:29:44.114101       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114191282Z W0806 11:29:44.114128       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114212733Z W0806 11:29:44.114132       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114219927Z W0806 11:29:44.114128       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114224616Z W0806 11:29:44.114145       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114229415Z W0806 11:29:44.114157       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114234033Z W0806 11:29:44.114165       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114277426Z W0806 11:29:44.114176       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114293096Z W0806 11:29:44.114232       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114311481Z W0806 11:29:44.114250       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114321520Z W0806 11:29:44.114272       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114337401Z W0806 11:29:44.114263       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:29:44.114380243Z W0806 11:29:44.114285       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T11:33:40.120688625Z W0806 11:33:40.120537       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:43:27.119939566Z W0806 11:43:27.119808       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:48:21.736753533Z time="2024-08-06T11:48:21Z" level=error msg="Error during subscribe io: read/write on closed pipe"
+2024-08-06T11:49:27.120698899Z W0806 11:49:27.120553       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T11:55:51.121887797Z W0806 11:55:51.121776       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:02:02.123359327Z W0806 12:02:02.123218       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:11:58.125302447Z W0806 12:11:58.125136       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:13:37.232329414Z W0806 12:13:37.232179       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:13:37.237939162Z W0806 12:13:37.237831       7 warnings.go:70] v1 ComponentStatus is deprecated in v1.19+
+2024-08-06T12:19:04.128650333Z W0806 12:19:04.128471       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:25:31.130696916Z W0806 12:25:31.130504       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:30:46.131486479Z W0806 12:30:46.131364       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:39:30.131310789Z W0806 12:39:30.131193       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:44:41.132334806Z W0806 12:44:41.132162       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:47:11.000604271Z W0806 12:47:11.000450       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.000690435Z W0806 12:47:11.000573       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.000723779Z W0806 12:47:11.000623       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.000821485Z W0806 12:47:11.000720       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.000863225Z W0806 12:47:11.000738       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.000872622Z W0806 12:47:11.000789       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.000892060Z W0806 12:47:11.000832       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.001039290Z W0806 12:47:11.000925       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.001059409Z W0806 12:47:11.000957       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.001068246Z W0806 12:47:11.000967       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.001084286Z W0806 12:47:11.001027       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.001154360Z W0806 12:47:11.001071       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.001195699Z W0806 12:47:11.001075       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.001232599Z W0806 12:47:11.001181       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.001243119Z W0806 12:47:11.001182       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.001291792Z W0806 12:47:11.001221       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.001326799Z W0806 12:47:11.001229       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:47:11.001337098Z W0806 12:47:11.001244       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T12:52:06.134922318Z W0806 12:52:06.134791       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T12:53:00.617889880Z W0806 12:53:00.617745       7 warnings.go:70] unknown field "type"
+2024-08-06T12:57:25.137339296Z W0806 12:57:25.137207       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:05:47.140443230Z W0806 13:05:47.140326       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:13:51.144217115Z W0806 13:13:51.144056       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:17:16.034471306Z W0806 13:17:16.034285       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.034529517Z W0806 13:17:16.034346       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.034541180Z W0806 13:17:16.034397       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.034648615Z W0806 13:17:16.034578       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.034685385Z W0806 13:17:16.034588       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.034705704Z W0806 13:17:16.034627       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.034714581Z W0806 13:17:16.034658       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.034843557Z W0806 13:17:16.034778       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.034857033Z W0806 13:17:16.034784       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.034867403Z W0806 13:17:16.034746       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.034959509Z W0806 13:17:16.034839       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.034976712Z W0806 13:17:16.034844       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.034988805Z W0806 13:17:16.034809       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.035009995Z W0806 13:17:16.034881       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.035021056Z W0806 13:17:16.034902       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.035053999Z W0806 13:17:16.034936       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.035064639Z W0806 13:17:16.034937       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.035074448Z W0806 13:17:16.034937       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.035147488Z W0806 13:17:16.034973       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.035162426Z W0806 13:17:16.034977       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.035172475Z W0806 13:17:16.034984       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.035182194Z W0806 13:17:16.034994       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.035191782Z W0806 13:17:16.035017       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:17:16.035201361Z W0806 13:17:16.035032       7 transport.go:301] Unable to cancel request for *client.addQuery
+2024-08-06T13:21:17.145587669Z W0806 13:21:17.145465       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:22:18.880901491Z time="2024-08-06T13:22:18Z" level=error msg="Error during subscribe io: read/write on closed pipe"
+2024-08-06T13:27:07.146198544Z W0806 13:27:07.146081       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:36:49.148380616Z W0806 13:36:49.148168       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:37:46.033057015Z time="2024-08-06T13:37:46Z" level=error msg="Error during subscribe websocket: close sent"
+2024-08-06T13:39:34.018362609Z W0806 13:39:34.018222       7 warnings.go:70] unknown field "type"
+2024-08-06T13:39:44.511740671Z time="2024-08-06T13:39:44Z" level=error msg="Error during subscribe io: read/write on closed pipe"
+2024-08-06T13:44:57.149192642Z W0806 13:44:57.149046       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:50:12.151139360Z W0806 13:50:12.150978       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T13:56:15.278981388Z time="2024-08-06T13:56:15Z" level=error msg="Error during subscribe io: read/write on closed pipe"
+2024-08-06T13:56:37.153302680Z W0806 13:56:37.153188       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T14:06:30.156293014Z W0806 14:06:30.156181       7 warnings.go:70] kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2.
+2024-08-06T14:12:10.398575246Z W0806 14:12:10.398384       7 warnings.go:70] unknown field "type"

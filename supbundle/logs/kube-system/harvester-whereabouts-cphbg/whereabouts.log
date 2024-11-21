@@ -1,0 +1,105 @@
+2024-08-06T01:55:43.139780145Z Done configuring CNI.  Sleep=false
+2024-08-06T01:55:43.438739113Z 2024-08-06T01:55:43Z [debug] Filtering pods with filter key 'spec.nodeName' and filter value 'harvesterdev1'
+2024-08-06T01:55:43.537052494Z 2024-08-06T01:55:43Z [verbose] pod controller created
+2024-08-06T01:55:43.537065198Z 2024-08-06T01:55:43Z [verbose] Starting informer factories ...
+2024-08-06T01:55:43.537069245Z 2024-08-06T01:55:43Z [verbose] Informer factories started
+2024-08-06T01:55:43.537072872Z 2024-08-06T01:55:43Z [verbose] starting network controller
+2024-08-06T01:55:44.138252571Z 2024-08-06T01:55:44Z [verbose] using expression: 30 4 * * *
+2024-08-06T01:56:18.118079383Z 2024-08-06T01:56:18Z [verbose] deleted pod [harvester-system/kubevirt-8c5c8323ebf23c689ce9bc87a13132d3fae18c7a-jobq6v2rllzgf]
+2024-08-06T01:56:18.118320048Z 2024-08-06T01:56:18Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:56:18.118332552Z 2024-08-06T01:56:18Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:56:40.425288912Z 2024-08-06T01:56:40Z [verbose] deleted pod [kube-system/helm-install-rke2-ingress-nginx-lmpvq]
+2024-08-06T01:56:40.425305644Z 2024-08-06T01:56:40Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:56:40.425310613Z 2024-08-06T01:56:40Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:56:42.170133610Z 2024-08-06T01:56:42Z [verbose] deleted pod [cattle-system/rancher-67cf66ccb6-hp245]
+2024-08-06T01:56:42.170159737Z 2024-08-06T01:56:42Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:56:42.170170687Z 2024-08-06T01:56:42Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:56:44.179892753Z 2024-08-06T01:56:44Z [verbose] deleted pod [cattle-provisioning-capi-system/capi-controller-manager-79ddf9b9d8-sxt2f]
+2024-08-06T01:56:44.179919448Z 2024-08-06T01:56:44Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:56:44.179924295Z 2024-08-06T01:56:44Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:56:49.839295608Z 2024-08-06T01:56:49Z [verbose] deleted pod [kube-system/rke2-ingress-nginx-admission-create-wp72k]
+2024-08-06T01:56:49.839324349Z 2024-08-06T01:56:49Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:56:49.839328485Z 2024-08-06T01:56:49Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:56:56.739667928Z 2024-08-06T01:56:56Z [verbose] deleted pod [kube-system/rke2-ingress-nginx-admission-patch-4nh6n]
+2024-08-06T01:56:56.739696323Z 2024-08-06T01:56:56Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:56:56.739700890Z 2024-08-06T01:56:56Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:56:57.203182549Z 2024-08-06T01:56:57Z [verbose] deleted pod [cattle-monitoring-system/rancher-monitoring-admission-create-6cpvn]
+2024-08-06T01:56:57.203201118Z 2024-08-06T01:56:57Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:56:57.203204494Z 2024-08-06T01:56:57Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:57:19.961535409Z 2024-08-06T01:57:19Z [verbose] deleted pod [cattle-monitoring-system/rancher-monitoring-admission-patch-dp25p]
+2024-08-06T01:57:19.961577363Z 2024-08-06T01:57:19Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:57:19.961583173Z 2024-08-06T01:57:19Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:57:21.983532880Z 2024-08-06T01:57:21Z [verbose] deleted pod [cattle-monitoring-system/rancher-monitoring-patch-sa-5rhcl]
+2024-08-06T01:57:21.983568773Z 2024-08-06T01:57:21Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:57:21.983577599Z 2024-08-06T01:57:21Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:57:31.601950367Z 2024-08-06T01:57:31Z [verbose] deleted pod [cattle-fleet-local-system/fleet-agent-6d5df7d9cd-c2hjj]
+2024-08-06T01:57:31.601987353Z 2024-08-06T01:57:31Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:57:31.601991551Z 2024-08-06T01:57:31Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:57:32.608484943Z 2024-08-06T01:57:32Z [verbose] deleted pod [cattle-fleet-local-system/fleet-agent-6d5df7d9cd-8h9jq]
+2024-08-06T01:57:32.608557854Z 2024-08-06T01:57:32Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:57:32.608571248Z 2024-08-06T01:57:32Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:57:48.703068567Z 2024-08-06T01:57:48Z [verbose] deleted pod [cattle-fleet-local-system/fleet-agent-6d5df7d9cd-9zgnq]
+2024-08-06T01:57:48.703182440Z 2024-08-06T01:57:48Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:57:48.703202669Z 2024-08-06T01:57:48Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:57:50.990415924Z 2024-08-06T01:57:50Z [verbose] deleted pod [cattle-fleet-system/fleet-cleanup-clusterregistrations-nvlxv]
+2024-08-06T01:57:50.990441915Z 2024-08-06T01:57:50Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:57:50.990447867Z 2024-08-06T01:57:50Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:58:47.030742642Z 2024-08-06T01:58:47Z [verbose] deleted pod [harvester-system/harvester-node-disk-manager-dhn4m]
+2024-08-06T01:58:47.030771104Z 2024-08-06T01:58:47Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:58:51.328866699Z 2024-08-06T01:58:51Z [verbose] deleted pod [longhorn-system/longhorn-post-upgrade-l78xm]
+2024-08-06T01:58:51.328919206Z 2024-08-06T01:58:51Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:58:51.328930998Z 2024-08-06T01:58:51Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T01:59:24.492007048Z 2024-08-06T01:59:24Z [verbose] deleted pod [harvester-system/helm-install-nvidia-driver-toolkit-dptgm]
+2024-08-06T01:59:24.492047342Z 2024-08-06T01:59:24Z [verbose] skipped net-attach-def for default network
+2024-08-06T01:59:24.492082306Z 2024-08-06T01:59:24Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T02:10:39.085587113Z 2024-08-06T02:10:39Z [verbose] deleted pod [cattle-system/apply-system-agent-upgrader-on-harvesterdev1-with-6f6e842-k2qgq]
+2024-08-06T02:10:39.085615396Z 2024-08-06T02:10:39Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T02:11:13.062605309Z 2024-08-06T02:11:13Z [verbose] deleted pod [longhorn-system/backing-image-ds-default-image-qwfqg]
+2024-08-06T02:11:13.062638992Z 2024-08-06T02:11:13Z [verbose] skipped net-attach-def for default network
+2024-08-06T02:11:13.062647518Z 2024-08-06T02:11:13Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T02:11:15.055637806Z 2024-08-06T02:11:15Z [verbose] deleted pod [cattle-system/apply-sync-additional-ca-on-harvesterdev1-with-2c27af4f7e-xknmn]
+2024-08-06T02:11:15.055696976Z 2024-08-06T02:11:15Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T02:12:17.394273390Z 2024-08-06T02:12:17Z [verbose] deleted pod [cattle-fleet-local-system/fleet-agent-6d5df7d9cd-gbkd4]
+2024-08-06T02:12:17.394346406Z 2024-08-06T02:12:17Z [verbose] skipped net-attach-def for default network
+2024-08-06T02:12:17.394358919Z 2024-08-06T02:12:17Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T02:50:33.517494124Z 2024-08-06T02:50:33Z [verbose] deleted pod [harvester-system/supportbundle-agent-bundle-jk7b5-f4x9v]
+2024-08-06T02:50:33.517550780Z 2024-08-06T02:50:33Z [verbose] skipped net-attach-def for default network
+2024-08-06T02:50:33.517593300Z 2024-08-06T02:50:33Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T02:52:41.034802616Z 2024-08-06T02:52:41Z [verbose] deleted pod [cattle-system/helm-operation-nkpfj]
+2024-08-06T02:52:41.034903826Z 2024-08-06T02:52:41Z [verbose] skipped net-attach-def for default network
+2024-08-06T02:52:41.034952818Z 2024-08-06T02:52:41Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T02:52:56.990976545Z 2024-08-06T02:52:56Z [verbose] deleted pod [cattle-system/helm-operation-gszwj]
+2024-08-06T02:52:56.991002104Z 2024-08-06T02:52:56Z [verbose] skipped net-attach-def for default network
+2024-08-06T02:52:56.991007393Z 2024-08-06T02:52:56Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T02:53:03.030851282Z 2024-08-06T02:53:03Z [verbose] deleted pod [cattle-system/helm-operation-h22b2]
+2024-08-06T02:53:03.030874856Z 2024-08-06T02:53:03Z [verbose] skipped net-attach-def for default network
+2024-08-06T02:53:03.030879154Z 2024-08-06T02:53:03Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T02:53:31.053582550Z 2024-08-06T02:53:31Z [verbose] deleted pod [cattle-system/helm-operation-w7qfc]
+2024-08-06T02:53:31.053617365Z 2024-08-06T02:53:31Z [verbose] skipped net-attach-def for default network
+2024-08-06T02:53:31.053622785Z 2024-08-06T02:53:31Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T02:57:41.032614948Z 2024-08-06T02:57:41Z [verbose] deleted pod [cattle-system/helm-operation-bhrb9]
+2024-08-06T02:57:41.032655124Z 2024-08-06T02:57:41Z [verbose] skipped net-attach-def for default network
+2024-08-06T02:57:41.032661296Z 2024-08-06T02:57:41Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T02:57:50.984172320Z 2024-08-06T02:57:50Z [verbose] deleted pod [cattle-system/helm-operation-f4586]
+2024-08-06T02:57:50.984194161Z 2024-08-06T02:57:50Z [verbose] skipped net-attach-def for default network
+2024-08-06T02:57:50.984223747Z 2024-08-06T02:57:50Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T04:30:00.000714636Z 2024-08-06T04:30:00Z [verbose] starting reconciler run
+2024-08-06T04:30:00.000783096Z 2024-08-06T04:30:00Z [debug] NewReconcileLooper - inferred connection data
+2024-08-06T04:30:00.001258667Z 2024-08-06T04:30:00Z [debug] listing IP pools
+2024-08-06T04:30:01.042354477Z 2024-08-06T04:30:01Z [debug] no IP addresses to cleanup
+2024-08-06T04:30:01.042372421Z 2024-08-06T04:30:01Z [verbose] reconciler success
+2024-08-06T11:55:28.501599651Z 2024-08-06T11:55:28Z [verbose] deleted pod [harvester-system/helm-install-nvidia-driver-toolkit-gnv5t]
+2024-08-06T11:55:28.501644245Z 2024-08-06T11:55:28Z [verbose] deleted pod [harvester-system/helm-install-harvester-seeder-chp72]
+2024-08-06T11:55:28.501649415Z 2024-08-06T11:55:28Z [verbose] deleted pod [cattle-monitoring-system/helm-install-rancher-monitoring-g5mkj]
+2024-08-06T11:55:28.501654815Z 2024-08-06T11:55:28Z [verbose] skipped net-attach-def for default network
+2024-08-06T11:55:28.501659284Z 2024-08-06T11:55:28Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T11:55:28.501663542Z 2024-08-06T11:55:28Z [verbose] skipped net-attach-def for default network
+2024-08-06T11:55:28.501667890Z 2024-08-06T11:55:28Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T11:55:28.501672038Z 2024-08-06T11:55:28Z [verbose] skipped net-attach-def for default network
+2024-08-06T11:55:28.501676346Z 2024-08-06T11:55:28Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T11:55:28.501680815Z 2024-08-06T11:55:28Z [verbose] deleted pod [harvester-system/helm-install-pcidevices-controller-5cjlh]
+2024-08-06T11:55:28.501684993Z 2024-08-06T11:55:28Z [verbose] skipped net-attach-def for default network
+2024-08-06T11:55:28.501689391Z 2024-08-06T11:55:28Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T11:55:28.501693719Z 2024-08-06T11:55:28Z [verbose] deleted pod [cattle-logging-system/helm-install-rancher-logging-pv2dl]
+2024-08-06T11:55:28.501719819Z 2024-08-06T11:55:28Z [verbose] skipped net-attach-def for default network
+2024-08-06T11:55:28.501724307Z 2024-08-06T11:55:28Z [verbose] result of garbage collecting pods: <nil>

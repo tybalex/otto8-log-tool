@@ -1,0 +1,18 @@
+2024-08-06T01:52:49.044211982Z time="2024-08-06T01:52:49Z" level=info msg="Starting controller"
+2024-08-06T01:52:49.044398048Z time="2024-08-06T01:52:49Z" level=debug msg="Loglevel set to [debug]"
+2024-08-06T01:52:49.044425931Z W0806 01:52:49.044384       7 client_config.go:618] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+2024-08-06T01:52:49.046013671Z time="2024-08-06T01:52:49Z" level=info msg="Setting up webhook listener"
+2024-08-06T01:52:49.046099756Z I0806 01:52:49.046051       7 leaderelection.go:250] attempting to acquire leader lease cattle-fleet-system/gitjob...
+2024-08-06T01:52:49.057154092Z I0806 01:52:49.057061       7 leaderelection.go:260] successfully acquired lease cattle-fleet-system/gitjob
+2024-08-06T01:52:49.061743479Z W0806 01:52:49.061609       7 reflector.go:535] pkg/mod/k8s.io/client-go@v0.28.6/tools/cache/reflector.go:229: failed to list *v1.GitJob: the server could not find the requested resource (get gitjobs.meta.k8s.io)
+2024-08-06T01:52:49.061757576Z E0806 01:52:49.061704       7 reflector.go:147] pkg/mod/k8s.io/client-go@v0.28.6/tools/cache/reflector.go:229: Failed to watch *v1.GitJob: failed to list *v1.GitJob: the server could not find the requested resource (get gitjobs.meta.k8s.io)
+2024-08-06T01:52:50.657219074Z W0806 01:52:50.657049       7 reflector.go:535] pkg/mod/k8s.io/client-go@v0.28.6/tools/cache/reflector.go:229: failed to list *v1.GitJob: the server could not find the requested resource (get gitjobs.meta.k8s.io)
+2024-08-06T01:52:50.657246406Z E0806 01:52:50.657101       7 reflector.go:147] pkg/mod/k8s.io/client-go@v0.28.6/tools/cache/reflector.go:229: Failed to watch *v1.GitJob: failed to list *v1.GitJob: the server could not find the requested resource (get gitjobs.meta.k8s.io)
+2024-08-06T01:52:53.665234496Z W0806 01:52:53.665096       7 reflector.go:535] pkg/mod/k8s.io/client-go@v0.28.6/tools/cache/reflector.go:229: failed to list *v1.GitJob: the server could not find the requested resource (get gitjobs.meta.k8s.io)
+2024-08-06T01:52:53.665273881Z E0806 01:52:53.665141       7 reflector.go:147] pkg/mod/k8s.io/client-go@v0.28.6/tools/cache/reflector.go:229: Failed to watch *v1.GitJob: failed to list *v1.GitJob: the server could not find the requested resource (get gitjobs.meta.k8s.io)
+2024-08-06T01:52:59.660999218Z W0806 01:52:59.660866       7 reflector.go:535] pkg/mod/k8s.io/client-go@v0.28.6/tools/cache/reflector.go:229: failed to list *v1.GitJob: the server could not find the requested resource (get gitjobs.meta.k8s.io)
+2024-08-06T01:52:59.661118365Z E0806 01:52:59.660919       7 reflector.go:147] pkg/mod/k8s.io/client-go@v0.28.6/tools/cache/reflector.go:229: Failed to watch *v1.GitJob: failed to list *v1.GitJob: the server could not find the requested resource (get gitjobs.meta.k8s.io)
+2024-08-06T01:53:08.967854185Z time="2024-08-06T01:53:08Z" level=info msg="Starting gitjob.cattle.io/v1, Kind=GitJob controller"
+2024-08-06T01:53:08.977126994Z time="2024-08-06T01:53:08Z" level=info msg="Starting /v1, Kind=Secret controller"
+2024-08-06T01:53:08.977149547Z time="2024-08-06T01:53:08Z" level=info msg="Starting /v1, Kind=Pod controller"
+2024-08-06T01:53:08.984235294Z time="2024-08-06T01:53:08Z" level=info msg="Starting batch/v1, Kind=Job controller"

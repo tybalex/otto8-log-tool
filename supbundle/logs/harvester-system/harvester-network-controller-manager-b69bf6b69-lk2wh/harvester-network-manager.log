@@ -1,0 +1,4 @@
+2024-08-06T02:11:27.782291999Z I0806 02:11:27.782077       1 main.go:105] Starting network controller with 2 threads.
+2024-08-06T02:11:27.782337194Z I0806 02:11:27.782186       1 main.go:110] Starting network controller in namespace: harvester-system.
+2024-08-06T02:11:27.880860739Z W0806 02:11:27.880678       1 client_config.go:617] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+2024-08-06T02:11:27.881872096Z I0806 02:11:27.881823       1 leaderelection.go:248] attempting to acquire leader lease kube-system/harvester-network-controllers...

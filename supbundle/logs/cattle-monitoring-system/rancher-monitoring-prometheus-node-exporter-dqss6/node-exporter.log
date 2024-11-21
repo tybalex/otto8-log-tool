@@ -1,0 +1,118 @@
+2024-08-06T02:15:30.589711742Z ts=2024-08-06T02:15:30.589Z caller=node_exporter.go:182 level=info msg="Starting node_exporter" version="(version=1.3.1, branch=HEAD, revision=a2321e7b940ddcff26873612bccdf7cd4c42b6b6)"
+2024-08-06T02:15:30.589755047Z ts=2024-08-06T02:15:30.589Z caller=node_exporter.go:183 level=info msg="Build context" build_context="(go=go1.17.3, user=root@243aafa5525c, date=20211205-11:09:49)"
+2024-08-06T02:15:30.590773146Z ts=2024-08-06T02:15:30.590Z caller=filesystem_common.go:111 level=info collector=filesystem msg="Parsed flag --collector.filesystem.mount-points-exclude" flag=^/(dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($|/)
+2024-08-06T02:15:30.590779859Z ts=2024-08-06T02:15:30.590Z caller=filesystem_common.go:113 level=info collector=filesystem msg="Parsed flag --collector.filesystem.fs-types-exclude" flag=^(autofs|binfmt_misc|bpf|cgroup2?|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|iso9660|mqueue|nsfs|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|selinuxfs|squashfs|sysfs|tracefs)$
+2024-08-06T02:15:30.591627566Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:108 level=info msg="Enabled collectors"
+2024-08-06T02:15:30.591634409Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=arp
+2024-08-06T02:15:30.591638247Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=bcache
+2024-08-06T02:15:30.591642104Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=bonding
+2024-08-06T02:15:30.591645681Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=btrfs
+2024-08-06T02:15:30.591649298Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=conntrack
+2024-08-06T02:15:30.591653035Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=cpu
+2024-08-06T02:15:30.591659739Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=cpufreq
+2024-08-06T02:15:30.591663857Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=diskstats
+2024-08-06T02:15:30.591667995Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=dmi
+2024-08-06T02:15:30.591677794Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=edac
+2024-08-06T02:15:30.591681331Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=entropy
+2024-08-06T02:15:30.591752750Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=fibrechannel
+2024-08-06T02:15:30.591767850Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=filefd
+2024-08-06T02:15:30.591774192Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=filesystem
+2024-08-06T02:15:30.591779973Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=hwmon
+2024-08-06T02:15:30.591785705Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=infiniband
+2024-08-06T02:15:30.591791736Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=ipvs
+2024-08-06T02:15:30.591797448Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=loadavg
+2024-08-06T02:15:30.591802858Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=mdadm
+2024-08-06T02:15:30.591808670Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=meminfo
+2024-08-06T02:15:30.591814741Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=netclass
+2024-08-06T02:15:30.591820473Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=netdev
+2024-08-06T02:15:30.591825993Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=netstat
+2024-08-06T02:15:30.591831584Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=nfs
+2024-08-06T02:15:30.591865060Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=nfsd
+2024-08-06T02:15:30.591871091Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=nvme
+2024-08-06T02:15:30.591876612Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=os
+2024-08-06T02:15:30.591882233Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=powersupplyclass
+2024-08-06T02:15:30.591888025Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=pressure
+2024-08-06T02:15:30.591893926Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=rapl
+2024-08-06T02:15:30.591903675Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=schedstat
+2024-08-06T02:15:30.591909687Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=sockstat
+2024-08-06T02:15:30.591915278Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=softnet
+2024-08-06T02:15:30.591920909Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=stat
+2024-08-06T02:15:30.591926580Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=tapestats
+2024-08-06T02:15:30.591932031Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=textfile
+2024-08-06T02:15:30.591937291Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=thermal_zone
+2024-08-06T02:15:30.591942691Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=time
+2024-08-06T02:15:30.591948152Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=timex
+2024-08-06T02:15:30.591953583Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=udp_queues
+2024-08-06T02:15:30.591958903Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=uname
+2024-08-06T02:15:30.591964835Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=vmstat
+2024-08-06T02:15:30.591970285Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=xfs
+2024-08-06T02:15:30.592049139Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:115 level=info collector=zfs
+2024-08-06T02:15:30.592083346Z ts=2024-08-06T02:15:30.591Z caller=node_exporter.go:199 level=info msg="Listening on" address=[0.0.0.0]:9796
+2024-08-06T02:15:30.592341501Z ts=2024-08-06T02:15:30.592Z caller=tls_config.go:195 level=info msg="TLS is disabled." http2=false
+2024-08-06T09:59:20.289970957Z ts=2024-08-06T09:59:20.289Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290025590Z ts=2024-08-06T09:59:20.289Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290034166Z ts=2024-08-06T09:59:20.289Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290070264Z ts=2024-08-06T09:59:20.289Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290123936Z ts=2024-08-06T09:59:20.289Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290132742Z ts=2024-08-06T09:59:20.289Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290170243Z ts=2024-08-06T09:59:20.289Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290177326Z ts=2024-08-06T09:59:20.289Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290183618Z ts=2024-08-06T09:59:20.289Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290209828Z ts=2024-08-06T09:59:20.289Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290217843Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290223954Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290239674Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290245906Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290251997Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290261325Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290268519Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290275842Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290293656Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290300309Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290311650Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290338771Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290353389Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290454960Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290523840Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290534040Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290541454Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290559297Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290567052Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290584966Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290593712Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290683452Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290731122Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290766318Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290780705Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290787318Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290792888Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290808057Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290815441Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290832663Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290847501Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290855366Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290876486Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290903357Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290917223Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290937241Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290944655Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290972127Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.290984911Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291041267Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291048400Z ts=2024-08-06T09:59:20.290Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291054362Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291069290Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291088867Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291150283Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291158198Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291164770Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291234031Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291241976Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291248688Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291284246Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291290898Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291296869Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291303602Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291351493Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291358736Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"
+2024-08-06T09:59:20.291375057Z ts=2024-08-06T09:59:20.291Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp 10.10.110.232:9796" msg="->10.10.110.11:46628: write: broken pipe"

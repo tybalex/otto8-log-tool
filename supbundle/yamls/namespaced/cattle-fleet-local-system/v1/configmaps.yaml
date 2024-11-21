@@ -1,0 +1,77 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  data:
+    config: '{"agentCheckinInterval":"0s","labels":{"name":"local","provider.cattle.io":"harvester"},"clientID":"lcsbmb8hj2t6tt7qzsm5m4kmtqcw6dlrq8nmx4wmzdx277xcqvxr8j","bootstrap":{}}'
+  kind: ConfigMap
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/3yPvXKsMAyF30U1cLne5c9tqvQp3QgjFifGZixlZzLMvnvGkBRptpTOGX2fdphQEPQONobZ3UDDbgBvFORlIfvhwmsQSnf0BrSBmg0UBjyO5NmA3g0EXOnIfLS5VRjYUry7iVIFjwJWEvxlYAhRUFwMnMc4vpMVJqmSi5VFEU+Vi//cBBpmTyTlYVKOMQpLwq08S+UZHsSSv1hozSib6Dj+5lZiwXUDHT69L358nyEX5AU0XFpVq8vcNYq6+f/QD1M/to2iWg3jpGzb9EidvV4zLT/+1xPOJW9oc/LE9fEdAAD//6hbMZF4AQAA
+      objectset.rio.cattle.io/id: fleet-agent-bootstrap-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:53:13Z"
+    labels:
+      objectset.rio.cattle.io/hash: 362023f752e7f1989d8b652e029bd2c658ae7c44
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          .: {}
+          f:config: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2024-08-06T01:53:13Z"
+    name: fleet-agent
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2071"
+    uid: c8182349-e069-4bb5-b0f6-2d4ec505946d
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIBeTCCAR+gAwIBAgIBADAKBggqhkjOPQQDAjAkMSIwIAYDVQQDDBlya2UyLXNl
+      cnZlci1jYUAxNzIyOTA5MDgwMB4XDTI0MDgwNjAxNTEyMFoXDTM0MDgwNDAxNTEy
+      MFowJDEiMCAGA1UEAwwZcmtlMi1zZXJ2ZXItY2FAMTcyMjkwOTA4MDBZMBMGByqG
+      SM49AgEGCCqGSM49AwEHA0IABEVIknm4Aj01WZVAC6VMFNVbO8v1ccUnvCgKi6+p
+      L6BwKjjhJHscdm0sXEfbKmzVzYGI8PREFO7+HJ7vhOlZXBmjQjBAMA4GA1UdDwEB
+      /wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBQ/mkvosSegv9Rg/1sb
+      oX/NIEfYNDAKBggqhkjOPQQDAgNIADBFAiB11MuBH4WWBtvzoEkHidHZeDQokcxK
+      wpTPtiVvDepgcgIhAKh3lx5DDJ2W/shLxKqDJRv9YzruvDsyJ9QLcM37IHpp
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-08-06T01:53:13Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          .: {}
+          f:ca.crt: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubernetes.io/description: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:53:13Z"
+    name: kube-root-ca.crt
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2063"
+    uid: 542faa07-4cd5-4a28-bf5c-5d882e3a7d70
+kind: List
+metadata:
+  resourceVersion: "770217"

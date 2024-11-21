@@ -1,0 +1,1084 @@
+apiVersion: v1
+items:
+- apiVersion: longhorn.io/v1beta2
+  kind: InstanceManager
+  metadata:
+    creationTimestamp: "2024-08-06T02:13:37Z"
+    generation: 1
+    labels:
+      longhorn.io/component: instance-manager
+      longhorn.io/data-engine: v1
+      longhorn.io/instance-manager-image: imi-0b5e7e43
+      longhorn.io/instance-manager-type: aio
+      longhorn.io/managed-by: longhorn-manager
+      longhorn.io/node: harvesterdev3
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:dataEngine: {}
+          f:image: {}
+          f:nodeID: {}
+          f:type: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T02:13:37Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:apiMinVersion: {}
+          f:apiVersion: {}
+          f:currentState: {}
+          f:instanceEngines:
+            .: {}
+            f:pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-e-0:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+          f:instanceReplicas:
+            .: {}
+            f:pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-5910e157:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-f8c5a5f0:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-31d96bbd:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-e76f3c50:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-9738d5fe:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-18666713:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+          f:ip: {}
+          f:ownerID: {}
+          f:proxyApiMinVersion: {}
+          f:proxyApiVersion: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T03:39:06Z"
+    name: instance-manager-9f23a62f2c5c5f13ea6237a9f5d066e3
+    namespace: longhorn-system
+    ownerReferences:
+    - apiVersion: longhorn.io/v1beta2
+      blockOwnerDeletion: true
+      kind: Node
+      name: harvesterdev3
+      uid: d114675f-1444-46a0-b886-23f43de0681b
+    resourceVersion: "117195"
+    uid: b96035d3-f420-489a-9746-8591c6ff3b47
+  spec:
+    dataEngine: v1
+    image: longhornio/longhorn-instance-manager:v1.6.2
+    nodeID: harvesterdev3
+    type: aio
+  status:
+    apiMinVersion: 1
+    apiVersion: 5
+    currentState: running
+    instanceEngines:
+      pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-e-0:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-e-0
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10060
+          portStart: 10060
+          resourceVersion: 0
+          state: running
+          type: engine
+    instanceReplicas:
+      pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-5910e157:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-5910e157
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10019
+          portStart: 10010
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-f8c5a5f0:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-f8c5a5f0
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10009
+          portStart: 10000
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-31d96bbd:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-31d96bbd
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10039
+          portStart: 10030
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-e76f3c50:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-e76f3c50
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10059
+          portStart: 10050
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-9738d5fe:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-9738d5fe
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10029
+          portStart: 10020
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-18666713:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-18666713
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10049
+          portStart: 10040
+          resourceVersion: 0
+          state: running
+          type: replica
+    ip: 10.52.2.15
+    ownerID: harvesterdev3
+    proxyApiMinVersion: 1
+    proxyApiVersion: 5
+- apiVersion: longhorn.io/v1beta2
+  kind: InstanceManager
+  metadata:
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    labels:
+      longhorn.io/component: instance-manager
+      longhorn.io/data-engine: v1
+      longhorn.io/instance-manager-image: imi-0b5e7e43
+      longhorn.io/instance-manager-type: aio
+      longhorn.io/managed-by: longhorn-manager
+      longhorn.io/node: harvesterdev1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:dataEngine: {}
+          f:image: {}
+          f:nodeID: {}
+          f:type: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:apiMinVersion: {}
+          f:apiVersion: {}
+          f:currentState: {}
+          f:instanceEngines:
+            .: {}
+            f:pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-e-0:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions:
+                  .: {}
+                  f:FilesystemReadOnly: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-e-0:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions:
+                  .: {}
+                  f:FilesystemReadOnly: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-e-0:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions:
+                  .: {}
+                  f:FilesystemReadOnly: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+          f:instanceReplicas:
+            .: {}
+            f:pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-37451462:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-5da778b4:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-274cce36:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-e6ee394a:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-1b014d82:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-c78350c4:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+          f:ip: {}
+          f:ownerID: {}
+          f:proxyApiMinVersion: {}
+          f:proxyApiVersion: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:24:19Z"
+    name: instance-manager-aca441377f086c67b8a79ed0847591fc
+    namespace: longhorn-system
+    ownerReferences:
+    - apiVersion: longhorn.io/v1beta2
+      blockOwnerDeletion: true
+      kind: Node
+      name: harvesterdev1
+      uid: 9d0d58af-5bb1-48d9-974b-4de138a3f883
+    resourceVersion: "39341"
+    uid: ff3d3f23-2224-437e-9b52-ddda8239b922
+  spec:
+    dataEngine: v1
+    image: longhornio/longhorn-instance-manager:v1.6.2
+    nodeID: harvesterdev1
+    type: aio
+  status:
+    apiMinVersion: 1
+    apiVersion: 5
+    currentState: running
+    instanceEngines:
+      pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-e-0:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-e-0
+        status:
+          conditions:
+            FilesystemReadOnly: false
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10021
+          portStart: 10021
+          resourceVersion: 0
+          state: running
+          type: engine
+      pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-e-0:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-e-0
+        status:
+          conditions:
+            FilesystemReadOnly: false
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10032
+          portStart: 10032
+          resourceVersion: 0
+          state: running
+          type: engine
+      pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-e-0:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-e-0
+        status:
+          conditions:
+            FilesystemReadOnly: false
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10010
+          portStart: 10010
+          resourceVersion: 0
+          state: running
+          type: engine
+    instanceReplicas:
+      pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-37451462:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-37451462
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10020
+          portStart: 10011
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-5da778b4:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-5da778b4
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10031
+          portStart: 10022
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-e6ee394a:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-e6ee394a
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10009
+          portStart: 10000
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-1b014d82:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-1b014d82
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10042
+          portStart: 10033
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-c78350c4:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-c78350c4
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10052
+          portStart: 10043
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-274cce36:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-274cce36
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10062
+          portStart: 10053
+          resourceVersion: 0
+          state: running
+          type: replica
+    ip: 10.52.0.48
+    ownerID: harvesterdev1
+    proxyApiMinVersion: 1
+    proxyApiVersion: 5
+- apiVersion: longhorn.io/v1beta2
+  kind: InstanceManager
+  metadata:
+    creationTimestamp: "2024-08-06T02:11:47Z"
+    generation: 1
+    labels:
+      longhorn.io/component: instance-manager
+      longhorn.io/data-engine: v1
+      longhorn.io/instance-manager-image: imi-0b5e7e43
+      longhorn.io/instance-manager-type: aio
+      longhorn.io/managed-by: longhorn-manager
+      longhorn.io/node: harvesterdev2
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:dataEngine: {}
+          f:image: {}
+          f:nodeID: {}
+          f:type: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T02:11:47Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:apiMinVersion: {}
+          f:apiVersion: {}
+          f:currentState: {}
+          f:instanceEngines:
+            .: {}
+            f:pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-e-0:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+          f:instanceReplicas:
+            .: {}
+            f:pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-1e482fcb:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-6c887529:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-f850ce89:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-98a2fe36:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-27278376:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+            f:pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-9dca53e0:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+          f:ip: {}
+          f:ownerID: {}
+          f:proxyApiMinVersion: {}
+          f:proxyApiVersion: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T11:07:07Z"
+    name: instance-manager-e79bb0adc5a3ca1cf3e13b5c138e35c2
+    namespace: longhorn-system
+    ownerReferences:
+    - apiVersion: longhorn.io/v1beta2
+      blockOwnerDeletion: true
+      kind: Node
+      name: harvesterdev2
+      uid: c5c31265-ee1d-485f-ac9a-29aa7ca0f71c
+    resourceVersion: "580074"
+    uid: d4404dde-6a78-48b7-94a7-a9fe5fc69455
+  spec:
+    dataEngine: v1
+    image: longhornio/longhorn-instance-manager:v1.6.2
+    nodeID: harvesterdev2
+    type: aio
+  status:
+    apiMinVersion: 1
+    apiVersion: 5
+    currentState: running
+    instanceEngines:
+      pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-e-0:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-e-0
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10060
+          portStart: 10060
+          resourceVersion: 0
+          state: running
+          type: engine
+    instanceReplicas:
+      pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-1e482fcb:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-1e482fcb
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10019
+          portStart: 10010
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-6c887529:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-6c887529
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10029
+          portStart: 10020
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-f850ce89:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-f850ce89
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10039
+          portStart: 10030
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-98a2fe36:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-98a2fe36
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10059
+          portStart: 10050
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-27278376:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-27278376
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10009
+          portStart: 10000
+          resourceVersion: 0
+          state: running
+          type: replica
+      pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-9dca53e0:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-9dca53e0
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10049
+          portStart: 10040
+          resourceVersion: 0
+          state: running
+          type: replica
+    ip: 10.52.1.16
+    ownerID: harvesterdev2
+    proxyApiMinVersion: 1
+    proxyApiVersion: 5
+- apiVersion: longhorn.io/v1beta2
+  kind: InstanceManager
+  metadata:
+    creationTimestamp: "2024-08-06T02:16:03Z"
+    generation: 1
+    labels:
+      longhorn.io/component: instance-manager
+      longhorn.io/data-engine: v1
+      longhorn.io/instance-manager-image: imi-0b5e7e43
+      longhorn.io/instance-manager-type: aio
+      longhorn.io/managed-by: longhorn-manager
+      longhorn.io/node: harvesterdev7
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:dataEngine: {}
+          f:image: {}
+          f:nodeID: {}
+          f:type: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T02:16:03Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:apiMinVersion: {}
+          f:apiVersion: {}
+          f:currentState: {}
+          f:instanceEngines:
+            .: {}
+            f:pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-e-0:
+              .: {}
+              f:spec:
+                .: {}
+                f:backendStoreDriver: {}
+                f:dataEngine: {}
+                f:name: {}
+              f:status:
+                .: {}
+                f:conditions: {}
+                f:endpoint: {}
+                f:errorMsg: {}
+                f:listen: {}
+                f:portEnd: {}
+                f:portStart: {}
+                f:resourceVersion: {}
+                f:state: {}
+                f:type: {}
+          f:ip: {}
+          f:ownerID: {}
+          f:proxyApiMinVersion: {}
+          f:proxyApiVersion: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:24:26Z"
+    name: instance-manager-fd2210d5d4d7d5980dfa52c0fc71e1fa
+    namespace: longhorn-system
+    ownerReferences:
+    - apiVersion: longhorn.io/v1beta2
+      blockOwnerDeletion: true
+      kind: Node
+      name: harvesterdev7
+      uid: 50e6c99e-6292-4dc7-9cd8-677b945a9fa0
+    resourceVersion: "39508"
+    uid: f089be9d-fd51-4754-bf48-f18f0926db7e
+  spec:
+    dataEngine: v1
+    image: longhornio/longhorn-instance-manager:v1.6.2
+    nodeID: harvesterdev7
+    type: aio
+  status:
+    apiMinVersion: 1
+    apiVersion: 5
+    currentState: running
+    instanceEngines:
+      pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-e-0:
+        spec:
+          backendStoreDriver: "null"
+          dataEngine: v1
+          name: pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-e-0
+        status:
+          conditions: "null"
+          endpoint: "null"
+          errorMsg: "null"
+          listen: "null"
+          portEnd: 10000
+          portStart: 10000
+          resourceVersion: 0
+          state: running
+          type: engine
+    ip: 10.52.3.12
+    ownerID: harvesterdev7
+    proxyApiMinVersion: 1
+    proxyApiVersion: 5
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770281"

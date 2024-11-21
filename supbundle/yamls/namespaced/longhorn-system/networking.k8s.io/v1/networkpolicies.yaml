@@ -1,0 +1,495 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:ingress: {}
+          f:podSelector: {}
+          f:policyTypes: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: backing-image-data-source
+    namespace: longhorn-system
+    resourceVersion: "4084"
+    uid: 05efa80f-77c7-4dd5-9d91-6ea3db4d79fb
+  spec:
+    ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            app: longhorn-manager
+      - podSelector:
+          matchLabels:
+            longhorn.io/component: instance-manager
+      - podSelector:
+          matchLabels:
+            longhorn.io/component: backing-image-manager
+      - podSelector:
+          matchLabels:
+            longhorn.io/component: backing-image-data-source
+    podSelector:
+      matchLabels:
+        longhorn.io/component: backing-image-data-source
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:ingress: {}
+          f:podSelector: {}
+          f:policyTypes: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: backing-image-manager
+    namespace: longhorn-system
+    resourceVersion: "4086"
+    uid: ef99d69e-96ff-45ab-affc-3e4a037b8e15
+  spec:
+    ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            app: longhorn-manager
+      - podSelector:
+          matchLabels:
+            longhorn.io/component: instance-manager
+      - podSelector:
+          matchLabels:
+            longhorn.io/component: backing-image-manager
+      - podSelector:
+          matchLabels:
+            longhorn.io/component: backing-image-data-source
+    podSelector:
+      matchLabels:
+        longhorn.io/component: backing-image-manager
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:ingress: {}
+          f:podSelector: {}
+          f:policyTypes: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: cattle-monitoring-prometheus
+    namespace: longhorn-system
+    resourceVersion: "4092"
+    uid: 13c4cfc2-cfba-47fb-8929-18ed5bb6767c
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            kubernetes.io/metadata.name: cattle-monitoring-system
+        podSelector:
+          matchLabels:
+            app.kubernetes.io/instance: rancher-monitoring-prometheus
+    podSelector:
+      matchLabels:
+        app: longhorn-manager
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:ingress: {}
+          f:podSelector: {}
+          f:policyTypes: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: harvester
+    namespace: longhorn-system
+    resourceVersion: "4087"
+    uid: 51a4b4ce-8878-4723-9d01-cbed8664ae96
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            kubernetes.io/metadata.name: harvester-system
+        podSelector:
+          matchLabels:
+            app.kubernetes.io/name: harvester
+    podSelector:
+      matchLabels:
+        app: longhorn-manager
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:ingress: {}
+          f:podSelector: {}
+          f:policyTypes: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: instance-manager
+    namespace: longhorn-system
+    resourceVersion: "4088"
+    uid: 25527059-4dc8-44c3-935a-cb6d7beceff7
+  spec:
+    ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            app: longhorn-manager
+      - podSelector:
+          matchLabels:
+            longhorn.io/component: instance-manager
+      - podSelector:
+          matchLabels:
+            longhorn.io/component: backing-image-manager
+      - podSelector:
+          matchLabels:
+            longhorn.io/component: backing-image-data-source
+    podSelector:
+      matchLabels:
+        longhorn.io/component: instance-manager
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:ingress: {}
+          f:podSelector: {}
+          f:policyTypes: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: longhorn-admission-webhook
+    namespace: longhorn-system
+    resourceVersion: "4091"
+    uid: c8ed8898-56c7-4647-94e5-3c5fb7dde170
+  spec:
+    ingress:
+    - ports:
+      - port: 9502
+        protocol: TCP
+    podSelector:
+      matchLabels:
+        app: longhorn-manager
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:ingress: {}
+          f:podSelector: {}
+          f:policyTypes: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: longhorn-conversion-webhook
+    namespace: longhorn-system
+    resourceVersion: "4085"
+    uid: e35b1f4d-e20c-4dcf-822e-2cad19545fb7
+  spec:
+    ingress:
+    - ports:
+      - port: 9501
+        protocol: TCP
+    podSelector:
+      matchLabels:
+        app: longhorn-manager
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:ingress: {}
+          f:podSelector: {}
+          f:policyTypes: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: longhorn-manager
+    namespace: longhorn-system
+    resourceVersion: "4090"
+    uid: a8347a87-a766-46b5-80e8-4fed4f633e8f
+  spec:
+    ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            app: longhorn-manager
+      - podSelector:
+          matchLabels:
+            app: longhorn-ui
+      - podSelector:
+          matchLabels:
+            app: longhorn-csi-plugin
+      - podSelector:
+          matchExpressions:
+          - key: recurring-job.longhorn.io
+            operator: Exists
+          matchLabels:
+            longhorn.io/managed-by: longhorn-manager
+      - podSelector:
+          matchExpressions:
+          - key: longhorn.io/job-task
+            operator: Exists
+      - podSelector:
+          matchLabels:
+            app: longhorn-driver-deployer
+    podSelector:
+      matchLabels:
+        app: longhorn-manager
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:ingress: {}
+          f:podSelector: {}
+          f:policyTypes: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: longhorn-recovery-backend
+    namespace: longhorn-system
+    resourceVersion: "4089"
+    uid: b8b658dd-638b-49c9-bc80-a15f8ed77121
+  spec:
+    ingress:
+    - ports:
+      - port: 9503
+        protocol: TCP
+    podSelector:
+      matchLabels:
+        app: longhorn-manager
+    policyTypes:
+    - Ingress
+  status: {}
+kind: List
+metadata:
+  resourceVersion: "770272"

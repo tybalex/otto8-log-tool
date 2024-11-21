@@ -1,0 +1,5 @@
+2024-08-06T01:55:53.847033639Z I0806 01:55:53.846847       1 main.go:97] Version: v4.5.1
+2024-08-06T01:55:54.851828013Z I0806 01:55:54.851747       1 common.go:138] Probing CSI driver for readiness
+2024-08-06T01:55:54.854807742Z I0806 01:55:54.854759       1 main.go:154] CSI driver name: "driver.longhorn.io"
+2024-08-06T01:55:54.856243284Z I0806 01:55:54.856180       1 main.go:230] CSI driver supports ControllerPublishUnpublish, using real CSI handler
+2024-08-06T01:55:54.861311033Z I0806 01:55:54.861265       1 leaderelection.go:250] attempting to acquire leader lease longhorn-system/external-attacher-leader-driver-longhorn-io...

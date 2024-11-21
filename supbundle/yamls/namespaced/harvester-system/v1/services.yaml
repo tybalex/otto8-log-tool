@@ -1,0 +1,795 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      helm.sh/resource-policy: keep
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    labels:
+      app.kubernetes.io/component: apiserver
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: harvester
+      app.kubernetes.io/part-of: harvester
+      app.kubernetes.io/version: v1.3.1
+      helm.sh/chart: harvester-1.3.1
+      helm.sh/release: harvester
+      kubernetes.io/cluster-service: "true"
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:helm.sh/resource-policy: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:helm.sh/chart: {}
+            f:helm.sh/release: {}
+            f:kubernetes.io/cluster-service: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":8443,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:sessionAffinityConfig:
+            .: {}
+            f:clientIP:
+              .: {}
+              f:timeoutSeconds: {}
+          f:type: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: harvester
+    namespace: harvester-system
+    resourceVersion: "4238"
+    uid: 906334b8-b3db-4dea-a6a4-3ee3adb95160
+  spec:
+    clusterIP: 10.53.199.175
+    clusterIPs:
+    - 10.53.199.175
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: https
+      port: 8443
+      protocol: TCP
+      targetPort: https
+    selector:
+      app.kubernetes.io/component: apiserver
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: harvester
+      app.kubernetes.io/part-of: harvester
+      app.kubernetes.io/version: v1.3.1
+      helm.sh/chart: harvester-1.3.1
+      helm.sh/release: harvester
+    sessionAffinity: ClientIP
+    sessionAffinityConfig:
+      clientIP:
+        timeoutSeconds: 10800
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      helm.sh/resource-policy: keep
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:helm.sh/resource-policy: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":443,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: harvester-load-balancer-webhook
+    namespace: harvester-system
+    resourceVersion: "4210"
+    uid: 528fcf28-2f30-4c75-8541-043a3f84e293
+  spec:
+    clusterIP: 10.53.123.0
+    clusterIPs:
+    - 10.53.123.0
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 8443
+    selector:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: harvester-load-balancer-webhook
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      helm.sh/resource-policy: keep
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:helm.sh/resource-policy: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":443,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: harvester-network-webhook
+    namespace: harvester-system
+    resourceVersion: "4213"
+    uid: 01ac94d4-c878-44b0-b3de-568c86666c76
+  spec:
+    clusterIP: 10.53.89.173
+    clusterIPs:
+    - 10.53.89.173
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 8443
+    selector:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: harvester-network-webhook
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      helm.sh/resource-policy: keep
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:helm.sh/resource-policy: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":443,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: harvester-node-manager-webhook
+    namespace: harvester-system
+    resourceVersion: "4215"
+    uid: 625e871a-2a28-419d-a511-947035e0f705
+  spec:
+    clusterIP: 10.53.52.34
+    clusterIPs:
+    - 10.53.52.34
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 8443
+    selector:
+      app.kubernetes.io/name: harvester-node-manager-webhook
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester-seeder
+      meta.helm.sh/release-namespace: harvester-system
+    creationTimestamp: "2024-08-06T01:56:42Z"
+    labels:
+      app.kubernetes.io/instance: harvester-seeder
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: harvester-seeder
+      app.kubernetes.io/version: v0.3.0
+      helm.sh/chart: harvester-seeder-0.3.0
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:helm.sh/chart: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":443,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+            k:{"port":9443,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: helm
+      operation: Update
+      time: "2024-08-06T01:56:42Z"
+    name: harvester-seeder
+    namespace: harvester-system
+    resourceVersion: "6771"
+    uid: 1db9b6b7-dbaf-4469-ad77-cb5ea78a1e53
+  spec:
+    clusterIP: 10.53.21.226
+    clusterIPs:
+    - 10.53.21.226
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: http
+      port: 9443
+      protocol: TCP
+      targetPort: http
+    - name: webhook
+      port: 443
+      protocol: TCP
+      targetPort: webhook
+    selector:
+      app.kubernetes.io/instance: harvester-seeder
+      app.kubernetes.io/name: harvester-seeder
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      helm.sh/resource-policy: keep
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:helm.sh/resource-policy: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":443,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: harvester-webhook
+    namespace: harvester-system
+    resourceVersion: "4223"
+    uid: 3ae54a56-d4f0-4699-8cbd-92889d1f6d72
+  spec:
+    clusterIP: 10.53.170.76
+    clusterIPs:
+    - 10.53.170.76
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 9443
+    selector:
+      app.kubernetes.io/component: webhook-server
+      app.kubernetes.io/name: harvester
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubevirt.io/customizer-identifier: ed6c75fc7ef60740d09f9802c39ceb8c790d407e
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: 8c5c8323ebf23c689ce9bc87a13132d3fae18c7a
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.5
+      kubevirt.io/install-strategy-version: 1.1.1-150500.8.15.1
+    creationTimestamp: "2024-08-06T01:56:15Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      kubevirt.io: "null"
+      prometheus.kubevirt.io: "true"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubevirt.io/customizer-identifier: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+            f:prometheus.kubevirt.io: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":443,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: virt-operator
+      operation: Update
+      time: "2024-08-06T02:21:29Z"
+    name: kubevirt-operator-webhook
+    namespace: harvester-system
+    resourceVersion: "36074"
+    uid: 299f6ef8-1695-4a01-9cb3-2312e3ef996d
+  spec:
+    clusterIP: 10.53.247.63
+    clusterIPs:
+    - 10.53.247.63
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: webhooks
+      port: 443
+      protocol: TCP
+      targetPort: webhooks
+    selector:
+      kubevirt.io: virt-operator
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubevirt.io/customizer-identifier: ed6c75fc7ef60740d09f9802c39ceb8c790d407e
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: 8c5c8323ebf23c689ce9bc87a13132d3fae18c7a
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.5
+      kubevirt.io/install-strategy-version: 1.1.1-150500.8.15.1
+    creationTimestamp: "2024-08-06T01:56:15Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      kubevirt.io: "null"
+      prometheus.kubevirt.io: "true"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubevirt.io/customizer-identifier: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+            f:prometheus.kubevirt.io: {}
+        f:spec:
+          f:clusterIP: {}
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":443,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: virt-operator
+      operation: Update
+      time: "2024-08-06T02:21:29Z"
+    name: kubevirt-prometheus-metrics
+    namespace: harvester-system
+    resourceVersion: "36072"
+    uid: aa29d1f5-e903-4cd5-a758-87bbdf1be9a0
+  spec:
+    clusterIP: None
+    clusterIPs:
+    - None
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: metrics
+      port: 443
+      protocol: TCP
+      targetPort: metrics
+    selector:
+      prometheus.kubevirt.io: "true"
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: pcidevices-controller
+      meta.helm.sh/release-namespace: harvester-system
+    creationTimestamp: "2024-08-06T01:56:42Z"
+    labels:
+      app.kubernetes.io/instance: pcidevices-controller
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: harvester-pcidevices-controller
+      app.kubernetes.io/version: v0.3.2
+      helm.sh/chart: harvester-pcidevices-controller-0.3.2
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:helm.sh/chart: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":8443,"protocol":"TCP"}:
+              .: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:publishNotReadyAddresses: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: helm
+      operation: Update
+      time: "2024-08-06T01:56:42Z"
+    name: pcidevices-webhook
+    namespace: harvester-system
+    resourceVersion: "6750"
+    uid: 9c39b73f-3354-428c-894e-8d04e177ef2e
+  spec:
+    clusterIP: 10.53.195.175
+    clusterIPs:
+    - 10.53.195.175
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - port: 8443
+      protocol: TCP
+      targetPort: 8443
+    publishNotReadyAddresses: true
+    selector:
+      app.kubernetes.io/instance: pcidevices-controller
+      app.kubernetes.io/name: harvester-pcidevices-controller
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubevirt.io/customizer-identifier: ed6c75fc7ef60740d09f9802c39ceb8c790d407e
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: 8c5c8323ebf23c689ce9bc87a13132d3fae18c7a
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.5
+      kubevirt.io/install-strategy-version: 1.1.1-150500.8.15.1
+    creationTimestamp: "2024-08-06T01:56:15Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      kubevirt.io: virt-api
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubevirt.io/customizer-identifier: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":443,"protocol":"TCP"}:
+              .: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: virt-operator
+      operation: Update
+      time: "2024-08-06T02:21:29Z"
+    name: virt-api
+    namespace: harvester-system
+    resourceVersion: "36073"
+    uid: 1c56f188-3c52-49ba-bd73-26f41525c008
+  spec:
+    clusterIP: 10.53.224.105
+    clusterIPs:
+    - 10.53.224.105
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - port: 443
+      protocol: TCP
+      targetPort: 8443
+    selector:
+      kubevirt.io: virt-api
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubevirt.io/customizer-identifier: ed6c75fc7ef60740d09f9802c39ceb8c790d407e
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: 8c5c8323ebf23c689ce9bc87a13132d3fae18c7a
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.5
+      kubevirt.io/install-strategy-version: 1.1.1-150500.8.15.1
+    creationTimestamp: "2024-08-06T01:56:15Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      kubevirt.io: virt-exportproxy
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubevirt.io/customizer-identifier: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":443,"protocol":"TCP"}:
+              .: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: virt-operator
+      operation: Update
+      time: "2024-08-06T02:21:29Z"
+    name: virt-exportproxy
+    namespace: harvester-system
+    resourceVersion: "36075"
+    uid: 639b2e45-0b67-41fd-8c11-39f616ff5dde
+  spec:
+    clusterIP: 10.53.42.38
+    clusterIPs:
+    - 10.53.42.38
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - port: 443
+      protocol: TCP
+      targetPort: 8443
+    selector:
+      kubevirt.io: virt-exportproxy
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: "770254"

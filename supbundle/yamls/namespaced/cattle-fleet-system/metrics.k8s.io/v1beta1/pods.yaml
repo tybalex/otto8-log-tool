@@ -1,0 +1,36 @@
+apiVersion: v1
+items:
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: fleet-controller
+    usage:
+      cpu: 2512813n
+      memory: 109976Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2024-08-06T14:12:16Z"
+    labels:
+      app: fleet-controller
+      pod-template-hash: 877dd5bbc
+    name: fleet-controller-877dd5bbc-72crb
+    namespace: cattle-fleet-system
+  timestamp: "2024-08-06T14:12:00Z"
+  window: 14.281s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: gitjob
+    usage:
+      cpu: 932307n
+      memory: 55536Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2024-08-06T14:12:16Z"
+    labels:
+      app: gitjob
+      pod-template-hash: 848764c58b
+    name: gitjob-848764c58b-t4bth
+    namespace: cattle-fleet-system
+  timestamp: "2024-08-06T14:12:01Z"
+  window: 19.946s
+kind: List
+metadata: {}

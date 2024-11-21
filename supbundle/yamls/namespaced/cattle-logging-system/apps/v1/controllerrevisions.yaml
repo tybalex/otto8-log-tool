@@ -1,0 +1,769 @@
+apiVersion: v1
+items:
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          creationTimestamp: "null"
+          labels:
+            app.kubernetes.io/instance: harvester-default-event-tailer
+            app.kubernetes.io/name: event-tailer
+        spec:
+          containers:
+          - image: rancher/harvester-eventrouter:v0.2.0
+            imagePullPolicy: IfNotPresent
+            name: event-tailer
+            resources:
+              limits:
+                cpu: 100m
+                memory: 100Mi
+              requests:
+                cpu: 20m
+                memory: 20Mi
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /etc/eventrouter
+              name: config-volume
+              readOnly: true
+            - mountPath: /var/pos
+              name: event-tailer-position
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext:
+            fsGroup: 2000
+            runAsNonRoot: true
+            runAsUser: 1000
+          serviceAccount: harvester-default-event-tailer
+          serviceAccountName: harvester-default-event-tailer
+          terminationGracePeriodSeconds: 30
+          volumes:
+          - configMap:
+              defaultMode: 420
+              name: harvester-default-event-tailer
+            name: config-volume
+          - emptyDir: {}
+            name: event-tailer-position
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      banzaicloud.com/last-applied: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAb3JpZ2luYWzEVE9v1D4Q/S5zdnaz+fUH3dwqQAiJllX5c0E9zDqTXauObexxaKjy3dEklN1WRe0Jbrbzxn7vzbzcQkeMDTJCfQsWt2STrDCExXXeUnTElBbGL41LjE4T1LDH2FNiikVDLWbLBfXkuGA0liKoR6oddlJ5Dzcq+HX85IWCSwGn1zUyWyqs3+2M2xVpSEwdKPDfHcVLaimS05Sg/ioyzBeKyXgHNdxV0A2Tk7O02KL7gUZbnxth2a/Qhj2uQIH2jqO38nzNMZOCa+MaqOGNMPt0TOwxAaAgG4GvX66r5hTXRVU1WJw0/62LddOeFnjy/ymW1JQnL1oYr0YFKZAW6yMFazQmqFcKElnS7KN86JD1/v3fbdGogKkLFpkmCv9uWI4ckt6gcRTnJpsOd4KP6PSe4vLw4nRD9Jkp1n25qBYlqBm+ydZuvDV6gBretReeN5ESOT709AHNSMnnOA3WLVjTGZ5WOmSoYVWWMoIddT4O8/7cyIBH+pYpHUOr+8hqAo4Kem9zR+c+O55ldbLcIO+hhiWxXh6pObDU3rVmV8zVE01sPjg7zFM7qgf39BiXwafHVRbBJ8MSlvFqvJLh0zkaHl55x3TDoqFNb6PPAeqqLEsFMbuzdOHdpfd8l5Pp7HOS4KzKspS+UeyNpjOthcrFMzM/S5q9mFWeYxAOz/tpjH+wSCyhLvDw2kiqxqedGBXk0CDTR47ItBukTGQxcp4D0KOxuLV0+Tu7Ys5hM44/AwAA//9QSwcIk02uWzQCAABpBQAAUEsBAhQAFAAIAAgAAAAAAJNNrls0AgAAaQUAAAgAAAAAAAAAAAAAAAAAAAAAAG9yaWdpbmFsUEsFBgAAAAABAAEANgAAAGoCAAAAAA==
+    creationTimestamp: "2024-08-06T01:56:46Z"
+    labels:
+      app.kubernetes.io/instance: harvester-default-event-tailer
+      app.kubernetes.io/name: event-tailer
+      controller.kubernetes.io/hash: 86d5bc84cb
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:banzaicloud.com/last-applied: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:controller.kubernetes.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"d2822e56-d36c-49db-ad9c-f5f742d646e4"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:56:46Z"
+    name: harvester-default-event-tailer-86d5bc84cb
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: StatefulSet
+      name: harvester-default-event-tailer
+      uid: d2822e56-d36c-49db-ad9c-f5f742d646e4
+    resourceVersion: "7150"
+    uid: 4fcfef96-32a0-4bdb-b679-6e4f9e6305ca
+  revision: 1
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          annotations:
+            checksum/fluent-bit.conf: 363e74c33df88593ef588e25a78e778246077eeb7469f97ac57ba1c403d7cdad
+          creationTimestamp: "null"
+          labels:
+            app.kubernetes.io/managed-by: rancher-logging-kube-audit
+            app.kubernetes.io/name: fluentbit
+        spec:
+          containers:
+          - image: rancher/mirrored-fluent-fluent-bit:2.2.0
+            imagePullPolicy: IfNotPresent
+            name: fluent-bit
+            resources:
+              limits:
+                cpu: 200m
+                memory: 200Mi
+              requests:
+                cpu: 50m
+                memory: 50Mi
+            securityContext: {}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /var/lib/docker/containers
+              name: varlibcontainers
+              readOnly: true
+            - mountPath: /var/log/
+              name: varlogs
+              readOnly: true
+            - mountPath: /kube-audit-logs
+              name: extravolumemount0
+              readOnly: true
+            - mountPath: /fluent-bit/etc/fluent-bit.conf
+              name: config
+              subPath: fluent-bit.conf
+            - mountPath: /tail-db
+              name: positiondb
+            - mountPath: /buffers
+              name: buffers
+          dnsPolicy: ClusterFirst
+          nodeSelector:
+            kubernetes.io/os: linux
+            node-role.kubernetes.io/master: "true"
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: rancher-logging-kube-audit-fluentbit
+          serviceAccountName: rancher-logging-kube-audit-fluentbit
+          terminationGracePeriodSeconds: 30
+          tolerations:
+          - effect: NoSchedule
+            key: cattle.io/os
+            operator: Equal
+            value: linux
+          - effect: NoSchedule
+            key: node-role.kubernetes.io/controlplane
+            value: "true"
+          - effect: NoExecute
+            key: node-role.kubernetes.io/etcd
+            value: "true"
+          - effect: NoSchedule
+            key: node-role.kubernetes.io/controlplane
+            value: "true"
+          - effect: NoExecute
+            key: node-role.kubernetes.io/etcd
+            value: "true"
+          volumes:
+          - hostPath:
+              path: /var/lib/docker/containers
+              type: "null"
+            name: varlibcontainers
+          - hostPath:
+              path: /var/log
+              type: "null"
+            name: varlogs
+          - hostPath:
+              path: /var/lib/rancher/rke2/server/logs/
+              type: "null"
+            name: extravolumemount0
+          - name: config
+            secret:
+              defaultMode: 420
+              items:
+              - key: fluent-bit.conf
+                path: fluent-bit.conf
+              secretName: rancher-logging-kube-audit-fluentbit
+          - emptyDir: {}
+            name: positiondb
+          - emptyDir: {}
+            name: buffers
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      banzaicloud.com/last-applied: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAb3JpZ2luYWzMVE2P4jgQ/S91Tkj4TDq31e4cVprubU1LexlxcOwKWDh2xi6zzaL895VJgDDAMHtpzc049R5V5ffeHmokJhgxKPagWInKhRNrmtHGl2g1ErqRNEnNNFuhiMsdFGCZ5mu0sTKrldSrOJTGzAtJEN3AalYjFFApj5pKSdBG0N/dZ4rP5V21axgPEM6IFJ4QbucIa4jA/KPRfsEKLWqODoqvYQ75N1onjYYCesSoZPpfJrkyXoTutuMSiY0hAm40WaMUWijIeoxgI7WAAj53SPiJtiECLwNmwad5lc5m8YIv0niWjcv4qcI8zhf5RCyqrBpPKmiXbQSuQR6W7lAhJ2PDuWbE158/7D3aCAjrRjHCw78PRMG0NsRIGn3ohK+Rb5yvkw4dl5JG3OgKCpguppjN+HQqqjyfP02xmuc5TuYsyzHL8slskWYZYpnNFk/VU8b4PCvZmM/Sqci4YCLI4uMkOFh8eHcmNdpONLJmq8EjJ7W01lgUvSLj8+TFZDQZpRB1kFev1KtRkof+/qxeDL1adKjprJszFCKw6Iy3B6nuQclaUrfhxkMBkzQNoq6xNnbX/X6WYUMWv3l0w9L5ZeX8UBjGQ+6tpN3vRhO+ExT7NoKtUb7GZ+M1ddPW4fjKaA0FJFtmEyXLRBi+QZsMFnMaYcuskuXFF4tM/KXVrnNNG90iNavkksOsfgI6iIMe0DPgO1nWzXIApI+5zrtPkPiVfk/U4ZcMXne+7LHf115xE5MqFuWZpDFOBs+I8rq49FV1sdLjRbtslxFoI/BtEAWXQjYuJJnU/h260tgahVdOcRRCDMIi4J4UHNqt5Pgb56G7l0fJdhHIZBTaYyp83QNWFXKCAl7MG1+j8Aohgg3uToHdNx+BaQIyzAafvnmmIIItUx5Pc4WF/Yjv3tR9fDeKaRyQ9ju44Pz0jtzTY0okLh5Q/XLtLY8m715mbVyvvD00D23e3vd56PEumVl9Bw1u/SFClskxYO0GJ0lQIx6YXDLgujZ6YL2yKnKLQdYgCetu8G511zZv7nh6eaT5P05oDy9XN7T7Q9rOVrcT4GbNwPhtBL4RjPCNLCNc7UJhMCkx8l3Ye2tR04uvS7RH1Qko0ggEOmlR3PqkD3fP0rkb11+QiR0Uadv+FwAA//9QSwcI6HqJY10DAAAJCgAAUEsBAhQAFAAIAAgAAAAAAOh6iWNdAwAACQoAAAgAAAAAAAAAAAAAAAAAAAAAAG9yaWdpbmFsUEsFBgAAAAABAAEANgAAAJMDAAAAAA==
+      deprecated.daemonset.template.generation: "1"
+    creationTimestamp: "2024-08-06T01:57:05Z"
+    labels:
+      app.kubernetes.io/managed-by: rancher-logging-kube-audit
+      app.kubernetes.io/name: fluentbit
+      controller-revision-hash: 68bf7fdd56
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:banzaicloud.com/last-applied: {}
+            f:deprecated.daemonset.template.generation: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:controller-revision-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"1950f1bd-15c1-4819-9ec8-f098b35591bb"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:57:05Z"
+    name: rancher-logging-kube-audit-fluentbit-68bf7fdd56
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: rancher-logging-kube-audit-fluentbit
+      uid: 1950f1bd-15c1-4819-9ec8-f098b35591bb
+    resourceVersion: "8194"
+    uid: 0ca29d0a-1293-4737-82bf-0fc3c2d5b95b
+  revision: 1
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          creationTimestamp: "null"
+          labels:
+            app.kubernetes.io/component: fluentd
+            app.kubernetes.io/managed-by: rancher-logging-kube-audit
+            app.kubernetes.io/name: fluentd
+        spec:
+          containers:
+          - args:
+            - fluentd
+            - -o
+            - /fluentd/log/out
+            - --log-rotate-age
+            - "10"
+            - --log-rotate-size
+            - "10485760"
+            env:
+            - name: BUFFER_PATH
+              value: /buffers
+            image: rancher/mirrored-banzaicloud-fluentd:v1.14.6-alpine-5
+            imagePullPolicy: IfNotPresent
+            livenessProbe:
+              failureThreshold: 3
+              initialDelaySeconds: 30
+              periodSeconds: 15
+              successThreshold: 1
+              tcpSocket:
+                port: 24240
+              timeoutSeconds: 1
+            name: fluentd
+            ports:
+            - containerPort: 24240
+              name: fluent-input
+              protocol: TCP
+            resources:
+              limits:
+                cpu: "1"
+                memory: 800Mi
+              requests:
+                cpu: 100m
+                memory: 200Mi
+            securityContext: {}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /fluentd/etc/
+              name: config
+            - mountPath: /fluentd/app-config
+              name: app-config
+            - mountPath: /fluentd/secret
+              name: output-secret
+            - mountPath: /buffers
+              name: rancher-logging-kube-audit-fluentd-buffer
+          - args:
+            - --volume-dir=/fluentd/etc
+            - --volume-dir=/fluentd/app-config
+            - --webhook-url=http://127.0.0.1:24444/api/config.reload
+            image: rancher/mirrored-jimmidyson-configmap-reload:v0.4.0
+            imagePullPolicy: IfNotPresent
+            name: config-reloader
+            resources: {}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /fluentd/app-config
+              name: app-config
+            - mountPath: /fluentd/etc
+              name: config
+          dnsPolicy: ClusterFirst
+          nodeSelector:
+            kubernetes.io/os: linux
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext:
+            fsGroup: 101
+            runAsUser: 100
+          serviceAccount: rancher-logging-kube-audit-fluentd
+          serviceAccountName: rancher-logging-kube-audit-fluentd
+          terminationGracePeriodSeconds: 30
+          tolerations:
+          - effect: NoSchedule
+            key: cattle.io/os
+            operator: Equal
+            value: linux
+          volumes:
+          - name: config
+            secret:
+              defaultMode: 420
+              secretName: rancher-logging-kube-audit-fluentd
+          - name: output-secret
+            secret:
+              defaultMode: 420
+              secretName: rancher-logging-kube-audit-fluentd-output
+          - name: app-config
+            secret:
+              defaultMode: 420
+              secretName: rancher-logging-kube-audit-fluentd-app
+          - emptyDir: {}
+            name: rancher-logging-kube-audit-fluentd-buffer
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      banzaicloud.com/last-applied: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAb3JpZ2luYWzMVU1z2zYQ/S97BkRSoWWVMzm4+Wg7E7saO+ml4+lA4FJCDWIRfChRPPzvHZC0Ply71TiX3CBo33L37duHe2gxiFoEAdU9aLFE7dNJWDu5i0t0BgP6iaJMUmvJoAlQQaMjmlADeyKuFUassObLLVTghJFrdFzTaqXMiqdQLmKtwpNYI1o8SN8xGG+ez8P3taRYb4VMAClC0LiL91sfsAUG9MWgu8YGHRqJHqo/U6/qD3RekYEKRsRkKcw3oaSmWKfKNsUSgyiAgSQTHGmNDqrgIjK4U6aGCj4MSDihaGAQVcLM5Kt5k5cln8lZzsvzYsl/anDO57P5tJ41500xbaC77Rh4izINxlJ92TPcogkL0komnn93NTqsr1HUW2DgUaMM5BKgFUGuP/xgg00NodsoiVf/x9XDgPkaRa3Re2AQsLVaBOz7+4H1ezC3JBuhDLpRc26VDgeVcAIG2fg707TKKKav8PRx7iiIgFysEBgU+eN7r74Nf5Tzs/NZDrcM0Gz6L401/fzp/ft3138tLj7+Cgw2Qsd0my1j06SaulsGqk3pd01nrXKOXKJivwsP06g2xaQoJzMutFUG+RmM+EXUeifL35orCguHPtHOQKsNGvR+4WjZz04ZFZTQb1GL7Q1KMrWH6lXOwKJTVO+uijMGQdobkncYhi1wAappOS3zbu8SezLT/wPRO94Xe8gjAFfG9lRbR4Ekaajg45tFz4lDT9H1TnEPWrUq9CdpI1SQ7KDFllzqdZ7nlypZlsPPEf1RXJ63h6HTIbRfAhmdCts3ZAJ+Ta11DDakY4uXFM3YQ5uOCxHWaWIPCsEgs73XSDKNWkHHnokW1vIxZoc5uHsW51E6DHsMxWBj4OP1v2APcjrBA3d7PWB6l9vvBecDC7xW7vVhz73yn/rvqEPOv+ByTXTHo9Ov1yHYKsuK6fkkn+STopqWZVlmwqpsQEwcahI1/NcS/K3aVtVbT2b8TCssH3DVJp+Uk/yUFTga1whHB8dCO1kDL53qwOMj6dwmvRuq8ebg9Tj2N/LphVQmfoUnxQuN/8VRtFAVecHARXPhP/n0UhZ5vvf8CylTVSdbf3J80uhEUGQGOrBpUCYrv6IbucY66uR/d7jdvf1jvQzIJmRqB959jkIf2N/Yyu0D3/7QMXfEjmKv7sfT6XV3aQJPbs53ZOVDpqPkR0J4eWZh7ZAWWxu2b5UbxPiSXe4YRFuLgDfBiYCrbUqVJBBEiMMTvRFKi6XGa7RaSeGhytMe7H503T8BAAD//1BLBwh68aq+uQMAAJ4KAABQSwECFAAUAAgACAAAAAAAevGqvrkDAACeCgAACAAAAAAAAAAAAAAAAAAAAAAAb3JpZ2luYWxQSwUGAAAAAAEAAQA2AAAA7wMAAAAA
+    creationTimestamp: "2024-08-06T01:57:00Z"
+    labels:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-kube-audit
+      app.kubernetes.io/name: fluentd
+      controller.kubernetes.io/hash: 6b6f6f859c
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:banzaicloud.com/last-applied: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:controller.kubernetes.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"89cb9e14-9c36-4a33-8d81-01f23837e4bc"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:57:00Z"
+    name: rancher-logging-kube-audit-fluentd-6b6f6f859c
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: StatefulSet
+      name: rancher-logging-kube-audit-fluentd
+      uid: 89cb9e14-9c36-4a33-8d81-01f23837e4bc
+    resourceVersion: "7844"
+    uid: 4da1e543-62fb-49ab-8d42-7c03a75ab622
+  revision: 1
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          annotations:
+            checksum/config: 9dd041173aaf627a9e3d3a3fc5716b185953d62798fdb1023ca8578ba8c646b4
+          creationTimestamp: "null"
+          labels:
+            name: rancher-logging-rke2-journald-aggregator
+          name: rancher-logging-rke2-journald-aggregator
+          namespace: cattle-logging-system
+        spec:
+          containers:
+          - image: rancher/mirrored-fluent-fluent-bit:2.2.0
+            imagePullPolicy: IfNotPresent
+            name: fluentbit
+            resources: {}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /fluent-bit/etc/
+              name: config
+            - mountPath: /var/log/journal
+              name: journal
+              readOnly: true
+            - mountPath: /var/lib/rancher/rke2/agent/logs
+              name: kubelet
+              readOnly: true
+            - mountPath: /etc/machine-id
+              name: machine-id
+              readOnly: true
+            - mountPath: /var/log/audit/audit.log
+              name: rke2-audit
+              readOnly: true
+          dnsPolicy: ClusterFirst
+          nodeSelector:
+            kubernetes.io/os: linux
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: rancher-logging-rke2-journald-aggregator
+          serviceAccountName: rancher-logging-rke2-journald-aggregator
+          terminationGracePeriodSeconds: 30
+          tolerations:
+          - effect: NoSchedule
+            key: cattle.io/os
+            operator: Equal
+            value: linux
+          volumes:
+          - configMap:
+              defaultMode: 420
+              name: rancher-logging-rke2
+            name: config
+          - hostPath:
+              path: /var/log/journal
+              type: "null"
+            name: journal
+          - hostPath:
+              path: /var/lib/rancher/rke2/agent/logs
+              type: "null"
+            name: kubelet
+          - hostPath:
+              path: /etc/machine-id
+              type: "null"
+            name: machine-id
+          - hostPath:
+              path: /var/log/audit/audit.log
+              type: "null"
+            name: rke2-audit
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      deprecated.daemonset.template.generation: "1"
+      meta.helm.sh/release-name: rancher-logging
+      meta.helm.sh/release-namespace: cattle-logging-system
+    creationTimestamp: "2024-08-06T01:56:42Z"
+    labels:
+      controller-revision-hash: 5b47b5d858
+      name: rancher-logging-rke2-journald-aggregator
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deprecated.daemonset.template.generation: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:controller-revision-hash: {}
+            f:name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"41b704cd-7ec1-4eea-8519-3d3053094470"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:56:42Z"
+    name: rancher-logging-rke2-journald-aggregator-5b47b5d858
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: rancher-logging-rke2-journald-aggregator
+      uid: 41b704cd-7ec1-4eea-8519-3d3053094470
+    resourceVersion: "6822"
+    uid: 403e5de7-9571-4d7a-ae44-c9fa09362119
+  revision: 1
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          annotations:
+            checksum/fluent-bit.conf: b820e38d3d5a2df3eb0ea312b464cbf772f3c05d4f2d7c2923ca3c82aa324bed
+          creationTimestamp: "null"
+          labels:
+            app.kubernetes.io/managed-by: rancher-logging-root
+            app.kubernetes.io/name: fluentbit
+        spec:
+          containers:
+          - image: rancher/mirrored-fluent-fluent-bit:2.2.0
+            imagePullPolicy: IfNotPresent
+            name: fluent-bit
+            resources:
+              limits:
+                cpu: 200m
+                memory: 200Mi
+              requests:
+                cpu: 50m
+                memory: 50Mi
+            securityContext: {}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /var/lib/docker/containers
+              name: varlibcontainers
+              readOnly: true
+            - mountPath: /var/log/
+              name: varlogs
+              readOnly: true
+            - mountPath: /fluent-bit/etc/fluent-bit.conf
+              name: config
+              subPath: fluent-bit.conf
+            - mountPath: /tail-db
+              name: positiondb
+            - mountPath: /buffers
+              name: buffers
+          dnsPolicy: ClusterFirst
+          nodeSelector:
+            kubernetes.io/os: linux
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: rancher-logging-root-fluentbit
+          serviceAccountName: rancher-logging-root-fluentbit
+          terminationGracePeriodSeconds: 30
+          tolerations:
+          - effect: NoSchedule
+            key: cattle.io/os
+            operator: Equal
+            value: linux
+          - effect: NoSchedule
+            key: node-role.kubernetes.io/controlplane
+            value: "true"
+          - effect: NoExecute
+            key: node-role.kubernetes.io/etcd
+            value: "true"
+          volumes:
+          - hostPath:
+              path: /var/lib/docker/containers
+              type: "null"
+            name: varlibcontainers
+          - hostPath:
+              path: /var/log
+              type: "null"
+            name: varlogs
+          - name: config
+            secret:
+              defaultMode: 420
+              items:
+              - key: fluent-bit.conf
+                path: fluent-bit.conf
+              secretName: rancher-logging-root-fluentbit
+          - emptyDir: {}
+            name: positiondb
+          - emptyDir: {}
+            name: buffers
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      banzaicloud.com/last-applied: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAb3JpZ2luYWy8lE9z4jgTxr9Ln20gNgTi21vvzmGrJtnUpGovUxxaUhtUyJJHarFhKX/3LWEIJpCZnOZmy08/7j8/9R4aYlTICNUeDAoyIT1h2442UZC3xBRG2o0btLgilYsdVODRyjX53LjVSttV7p1jyG5EWWwIKqhNJMtCM3QZHM9ueeRnYa8LLcoklshs6E0bdoGpgQzcP5b8N6rJk5UUoPqectd/kw/aWajgGDESaP9FLY2LKuW1vRPEeAcZSGfZO2PIQ8U+UgYbbRVU8LWPhJ8mDBlEndSLWf1Q1HiX1w/zWT5dzCe5uF/M83JWlgshZrP5/Ry6ZZdBaEmmFgcyJNn59Nwgy/XX39D9LgOmpjXIdPjvYPhorWNk7ewhB7kmuQmxGffRudA8ks7WUIFYFBMqF6pUMyxUXZKYEJZ3hZjeT6Wo5/OiLuVkpqZ1oeayeChKiaVcFIhlMRWkEgS/A7VBs9OUUVvyPSK6wdVgpONGe+88qSN/+bnmqhgVowlkfchzNObZGS1TZn/WT46fPQWyfKbkHAoZeAou+gOYezC60dz3to1QQTGZJIQbapzf9e+POvXG049IYSidXSpnB2Eqj2T0mnf/d5bplaHadxlsnYkNPbpoua+2SY/PyGuoYLxFPzZajJWTG/LjQWPeStiiN1pcfPGE6i9rdv0d6bJbpm41vvRwq0+Envs1JpZXtL0ZpjedbmOI4hj7XnvlzahNrsTZpHVBJ8KVuBaLWNcXbTgddMtumYF1il4GV/YSPhfSrtE2vsJHYwnkt1rS/6RMf3365BJkZ8ifbuX3PVBdk2So4Mm9yDWpaAgy2NDubUke08nAtSkyZQtffkQ0kMEWTaRBpj/3SyXn3hl6d9OOK7M1aGlgmsb73vPLK8nIv7YklurKanliuS997cJxWHtof0lz9zHOKccPzdzqXWiiOEVccUjSU5otaKamT7Ev8prh9gNglyebz+HQHbrbtLz7Q/ueqttg39QMeO4yiK1Cphf2yLTaJWFilJFjv3ei92T5KTaC/IkMBdUkA0VBe1K3PtnD2aMO4cbxN0K1g2rSdf8FAAD//1BLBwgMGj22IwMAAHYIAABQSwECFAAUAAgACAAAAAAADBo9tiMDAAB2CAAACAAAAAAAAAAAAAAAAAAAAAAAb3JpZ2luYWxQSwUGAAAAAAEAAQA2AAAAWQMAAAAA
+      deprecated.daemonset.template.generation: "1"
+    creationTimestamp: "2024-08-06T01:57:17Z"
+    labels:
+      app.kubernetes.io/managed-by: rancher-logging-root
+      app.kubernetes.io/name: fluentbit
+      controller-revision-hash: 6cdbd8bb7f
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:banzaicloud.com/last-applied: {}
+            f:deprecated.daemonset.template.generation: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:controller-revision-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"7fcaa81f-22a1-4aa5-ae86-eca7797b7934"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:57:17Z"
+    name: rancher-logging-root-fluentbit-6cdbd8bb7f
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: rancher-logging-root-fluentbit
+      uid: 7fcaa81f-22a1-4aa5-ae86-eca7797b7934
+    resourceVersion: "8779"
+    uid: f6360278-6d4d-486e-a034-998f22f46f6b
+  revision: 1
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          creationTimestamp: "null"
+          labels:
+            app.kubernetes.io/component: fluentd
+            app.kubernetes.io/managed-by: rancher-logging-root
+            app.kubernetes.io/name: fluentd
+        spec:
+          containers:
+          - args:
+            - fluentd
+            - -o
+            - /fluentd/log/out
+            - --log-rotate-age
+            - "10"
+            - --log-rotate-size
+            - "10485760"
+            env:
+            - name: BUFFER_PATH
+              value: /buffers
+            image: rancher/mirrored-banzaicloud-fluentd:v1.14.6-alpine-5
+            imagePullPolicy: IfNotPresent
+            livenessProbe:
+              failureThreshold: 3
+              initialDelaySeconds: 30
+              periodSeconds: 15
+              successThreshold: 1
+              tcpSocket:
+                port: 24240
+              timeoutSeconds: 1
+            name: fluentd
+            ports:
+            - containerPort: 24240
+              name: fluent-input
+              protocol: TCP
+            resources:
+              limits:
+                cpu: "1"
+                memory: 800Mi
+              requests:
+                cpu: 100m
+                memory: 200Mi
+            securityContext: {}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /fluentd/etc/
+              name: config
+            - mountPath: /fluentd/app-config
+              name: app-config
+            - mountPath: /fluentd/secret
+              name: output-secret
+            - mountPath: /buffers
+              name: rancher-logging-root-fluentd-buffer
+          - args:
+            - --volume-dir=/fluentd/etc
+            - --volume-dir=/fluentd/app-config
+            - --webhook-url=http://127.0.0.1:24444/api/config.reload
+            image: rancher/mirrored-jimmidyson-configmap-reload:v0.4.0
+            imagePullPolicy: IfNotPresent
+            name: config-reloader
+            resources: {}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /fluentd/app-config
+              name: app-config
+            - mountPath: /fluentd/etc
+              name: config
+          dnsPolicy: ClusterFirst
+          nodeSelector:
+            kubernetes.io/os: linux
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext:
+            fsGroup: 101
+            runAsUser: 100
+          serviceAccount: rancher-logging-root-fluentd
+          serviceAccountName: rancher-logging-root-fluentd
+          terminationGracePeriodSeconds: 30
+          tolerations:
+          - effect: NoSchedule
+            key: cattle.io/os
+            operator: Equal
+            value: linux
+          volumes:
+          - name: config
+            secret:
+              defaultMode: 420
+              secretName: rancher-logging-root-fluentd
+          - name: output-secret
+            secret:
+              defaultMode: 420
+              secretName: rancher-logging-root-fluentd-output
+          - name: app-config
+            secret:
+              defaultMode: 420
+              secretName: rancher-logging-root-fluentd-app
+          - emptyDir: {}
+            name: rancher-logging-root-fluentd-buffer
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      banzaicloud.com/last-applied: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAb3JpZ2luYWzMVVtz2zYT/S/7DIikLFkKZ/KQL5evnUlcjZ30pePpgOBSQg1iEVyUKB7+9w5IWhdXSV0/5Q0E9yx2zx4c3EOLQdQiCCjvQYsKtU8rYe3kLlboDAb0E0WZpNaSQROghEZHNKEGdiauFUassebVDkpwwsgNOq5pvVZmzR1ROIsyosWjxB2DcedcBn44P0V5K2QKlSIEjftIv/MBW2BAXwy6a2zQoZHoofwj9ad+R+cVGShhREwqYb4JJTXFOtW0LSoMogAGkkxwpDU6KIOLyOBOmRpKeD8g4YflAoOoUvRy3ryYNqLgzYvFnM+Wi5xXl8sFv5hfXCyraj5fXC6gu+0YeIsyjcFS/aHns0UTVqSVTKz+5mp0WF+jqHfAwKNGGcglQCuC3Lz/acaYWkG3VRKv/n2cfIOi1ug9MAjYWi0C9j39lAo9mlKSh1AG3agtt06Loxo4AYNs/M40rTOK6RSejuWOggjIxRqBQZE/3vfq2/BjtpwvLnO4ZYBm25801vS/T+/evb3+c/Xq4y/AYCt0TLtZFZsm1dTdMlBtSr9vN2uVc+QSCQfNP8yh3BaTYja55EJbZZDPYcSvotZ7Ef7aXFFYOfSJcAZabdGg9ytHVT81ZVRQQr9BLXY3KMnUHsqLnIFFp6jebxVzBkHaG5J3GAbNuwDldDad5d3BBw5kpv8D0XveVwfIIwBXxvZUW0eBJGko4ePrVc+JQ0/R9Y5wD1q1KvQraSOUkK59iy251Osyzz+oZEoOP0f0J3F53h6HTofQXvgyOhV2r8kE/Jpa6xhsSccWP1A0Yw9tWq5E2KSJPSgEg8wOniLJNGoNHftOtLCWjzF7zNHed3EepcNwwFAMNgY+bv8D9iCnJ1kzH6J7NzvcCM6H/nmt3MvjbnvNn/t30hvnX7DaEN3x6PTLTQi2zLJiupjkk3xSlNPZbDbLhFXZgJg41CRq+JH8/1Jtq+qdJzMe0wrLB1y5zSezSf4U8Z8MaoSjg1OJPXn6z53nwOMj0dwmpRuq8ebolTh1NvLpDVQmfoWzsoXG/99RtFAWecHARfPKf/LpLSzy/ODwr6RMVT3B6JO/k0YngiIzEIFNgzIZ9xXdyA3WUSfPu8Pd/l0fK2VANiFTI/D2cxT6yPLGJm4fmPbHLrmndBR4eT+unlJxl1g/e0+elY8POU7Snoz9OTmFtUNCbG3YvVFuEN1/u60dg2hrEfAmOBFwvUtJ0pCDCHF4eLdCaVFpvEarlRQeyjwpff/RdX8HAAD//1BLBwg/jgwdswMAAFYKAABQSwECFAAUAAgACAAAAAAAP44MHbMDAABWCgAACAAAAAAAAAAAAAAAAAAAAAAAb3JpZ2luYWxQSwUGAAAAAAEAAQA2AAAA6QMAAAAA
+    creationTimestamp: "2024-08-06T01:57:11Z"
+    labels:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-root
+      app.kubernetes.io/name: fluentd
+      controller.kubernetes.io/hash: c5db964cf
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:banzaicloud.com/last-applied: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:controller.kubernetes.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"c5c8e3a4-9b87-4aa7-87dc-bb784d700bb6"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:57:11Z"
+    name: rancher-logging-root-fluentd-c5db964cf
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: StatefulSet
+      name: rancher-logging-root-fluentd
+      uid: c5c8e3a4-9b87-4aa7-87dc-bb784d700bb6
+    resourceVersion: "8585"
+    uid: eddc4a39-9c20-4d39-88de-885d9719304b
+  revision: 1
+kind: List
+metadata:
+  resourceVersion: "770286"

@@ -1,0 +1,309 @@
+apiVersion: v1
+items:
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.70
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: cattle-cluster-agent-58bf658657-55mv4
+      namespace: cattle-system
+      uid: b4cfc5ab-0cb7-4481-aabd-4590158e0171
+  - addresses:
+    - 10.52.0.109
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: cattle-cluster-agent-58bf658657-6tbs9
+      namespace: cattle-system
+      uid: 1219722e-f25e-424b-bb2a-5b488bac3dcb
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:11:21Z"
+    creationTimestamp: "2024-08-06T01:56:40Z"
+    generateName: cattle-cluster-agent-
+    generation: 3
+    labels:
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      kubernetes.io/service-name: cattle-cluster-agent
+      objectset.rio.cattle.io/hash: 5aad1a050dcd69e80fd3fab11655a0521958c07a
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:kubernetes.io/service-name: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"c29e00ae-f7f8-4c60-bd46-f411003f3b86"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:11:21Z"
+    name: cattle-cluster-agent-cvdrv
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: cattle-cluster-agent
+      uid: c29e00ae-f7f8-4c60-bd46-f411003f3b86
+    resourceVersion: "22677"
+    uid: 437b4e36-5b7e-4364-a693-edf9774ac332
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+  - name: https-internal
+    port: 444
+    protocol: TCP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.21
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: harvester-cluster-repo-74b6b74b8c-x6mqv
+      namespace: cattle-system
+      uid: 205566ff-dcc0-457a-a80f-7454892e5d77
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:53:32Z"
+    creationTimestamp: "2024-08-06T01:53:30Z"
+    generateName: harvester-cluster-repo-
+    generation: 2
+    labels:
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      kubernetes.io/service-name: harvester-cluster-repo
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:kubernetes.io/service-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"56eb85d7-6dac-4fd9-9a46-232036ff5b93"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:53:32Z"
+    name: harvester-cluster-repo-fkqh4
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: harvester-cluster-repo
+      uid: 56eb85d7-6dac-4fd9-9a46-232036ff5b93
+    resourceVersion: "2447"
+    uid: 3eaea4e3-2991-49fd-ac29-632dd21c4f34
+  ports:
+  - name: "null"
+    port: 80
+    protocol: TCP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.73
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: rancher-587557b8db-jwxsb
+      namespace: cattle-system
+      uid: fa402f30-3fdf-4169-b309-9869c39fd77b
+  - addresses:
+    - 10.52.1.5
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev2
+    targetRef:
+      kind: Pod
+      name: rancher-587557b8db-9wkx8
+      namespace: cattle-system
+      uid: e5e10f30-a4b7-4f48-ad92-929db8ba3d00
+  - addresses:
+    - 10.52.2.3
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev3
+    targetRef:
+      kind: Pod
+      name: rancher-587557b8db-8bjnk
+      namespace: cattle-system
+      uid: 908600c8-445a-41c8-af2c-bc37db8cac50
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:14:16Z"
+    creationTimestamp: "2024-08-06T01:51:46Z"
+    generateName: rancher-
+    generation: 11
+    labels:
+      app: rancher
+      app.kubernetes.io/managed-by: Helm
+      chart: rancher-2.8.3-dirty.commit-904c2fb09
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      heritage: Helm
+      kubernetes.io/service-name: rancher
+      release: rancher
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:chart: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:heritage: {}
+            f:kubernetes.io/service-name: {}
+            f:release: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"580d32ba-fedb-4a14-b1ce-7e26073343f2"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:14:16Z"
+    name: rancher-2xfqw
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: rancher
+      uid: 580d32ba-fedb-4a14-b1ce-7e26073343f2
+    resourceVersion: "27830"
+    uid: 0558220c-46b8-48e6-b651-66d364201563
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+  - name: https-internal
+    port: 444
+    protocol: TCP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.17
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: rancher-webhook-795765957f-8l8td
+      namespace: cattle-system
+      uid: ec8e0232-fafc-411c-b010-a09efea69c39
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:53:29Z"
+    creationTimestamp: "2024-08-06T01:53:08Z"
+    generateName: rancher-webhook-
+    generation: 3
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      kubernetes.io/service-name: rancher-webhook
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:kubernetes.io/service-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"cc0d5bdd-616d-48aa-9e95-cf811bfa4a24"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:53:29Z"
+    name: rancher-webhook-k57lq
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: rancher-webhook
+      uid: cc0d5bdd-616d-48aa-9e95-cf811bfa4a24
+    resourceVersion: "2241"
+    uid: abb23630-cf11-4152-9882-eaeb09a5325e
+  ports:
+  - name: https
+    port: 9443
+    protocol: TCP
+kind: List
+metadata:
+  resourceVersion: "770206"

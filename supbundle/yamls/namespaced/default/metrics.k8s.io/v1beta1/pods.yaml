@@ -1,0 +1,76 @@
+apiVersion: v1
+items:
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: compute
+    usage:
+      cpu: 1689712098n
+      memory: 7540036Ki
+  - name: guest-console-log
+    usage:
+      cpu: "0"
+      memory: 12708Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2024-08-06T14:12:14Z"
+    labels:
+      harvesterhci.io/creator: docker-machine-driver-harvester
+      harvesterhci.io/vmName: gputest-primary-c31607d4-fqgjd
+      kubevirt.io: virt-launcher
+      kubevirt.io/created-by: 68fc2748-220d-443b-bb03-82d9565843f8
+      kubevirt.io/nodeName: harvesterdev2
+      vm.kubevirt.io/name: gputest-primary-c31607d4-fqgjd
+    name: virt-launcher-gputest-primary-c31607d4-fqgjd-2sl4c
+    namespace: default
+  timestamp: "2024-08-06T14:11:52Z"
+  window: 14.856s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: guest-console-log
+    usage:
+      cpu: "0"
+      memory: 12724Ki
+  - name: compute
+    usage:
+      cpu: 2743863024n
+      memory: 6867588Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2024-08-06T14:12:14Z"
+    labels:
+      harvesterhci.io/creator: docker-machine-driver-harvester
+      harvesterhci.io/vmName: gputest-primary-c31607d4-hpllh
+      kubevirt.io: virt-launcher
+      kubevirt.io/created-by: f9859e88-71a2-48ee-990b-add5675c8753
+      kubevirt.io/nodeName: harvesterdev7
+      vm.kubevirt.io/name: gputest-primary-c31607d4-hpllh
+    name: virt-launcher-gputest-primary-c31607d4-hpllh-kljbh
+    namespace: default
+  timestamp: "2024-08-06T14:11:56Z"
+  window: 10.808s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: guest-console-log
+    usage:
+      cpu: "0"
+      memory: 17160Ki
+  - name: compute
+    usage:
+      cpu: 1955931539n
+      memory: 8505444Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2024-08-06T14:12:14Z"
+    labels:
+      harvesterhci.io/creator: docker-machine-driver-harvester
+      harvesterhci.io/vmName: gputest-primary-c31607d4-nr27s
+      kubevirt.io: virt-launcher
+      kubevirt.io/created-by: 3dbb34cd-039e-4d53-83e9-3cdded895aa5
+      kubevirt.io/nodeName: harvesterdev3
+      vm.kubevirt.io/name: gputest-primary-c31607d4-nr27s
+    name: virt-launcher-gputest-primary-c31607d4-nr27s-rgbw8
+    namespace: default
+  timestamp: "2024-08-06T14:11:47Z"
+  window: 16.891s
+kind: List
+metadata: {}

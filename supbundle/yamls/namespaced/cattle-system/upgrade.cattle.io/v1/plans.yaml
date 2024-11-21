@@ -1,0 +1,289 @@
+apiVersion: v1
+items:
+- apiVersion: upgrade.cattle.io/v1
+  kind: Plan
+  metadata:
+    annotations:
+      helm.sh/resource-policy: keep
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:24Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: upgrade.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:helm.sh/resource-policy: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          .: {}
+          f:concurrency: {}
+          f:nodeSelector:
+            .: {}
+            f:matchLabels:
+              .: {}
+              f:harvesterhci.io/managed: {}
+          f:secrets: {}
+          f:serviceAccountName: {}
+          f:tolerations: {}
+          f:upgrade:
+            .: {}
+            f:args: {}
+            f:command: {}
+            f:image: {}
+          f:version: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:24Z"
+    - apiVersion: upgrade.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:latestHash: {}
+          f:latestVersion: {}
+      manager: system-upgrade-controller
+      operation: Update
+      subresource: status
+      time: "2024-08-06T14:12:12Z"
+    name: sync-additional-ca
+    namespace: cattle-system
+    resourceVersion: "770154"
+    uid: 12b1eaa7-65cc-4f03-abd7-b0d844847487
+  spec:
+    concurrency: 1
+    nodeSelector:
+      matchLabels:
+        harvesterhci.io/managed: "true"
+    secrets:
+    - name: harvester-additional-ca
+      path: /ca
+    serviceAccountName: system-upgrade-controller
+    tolerations:
+    - effect: NoExecute
+      operator: Exists
+    upgrade:
+      args:
+      - echo "Update additional ca ..."; cp /ca/additional-ca.pem /host/etc/pki/trust/anchors;
+        chroot /host update-ca-certificates; echo "Done";
+      command:
+      - /bin/sh
+      - -c
+      image: registry.suse.com/bci/bci-base:15.5
+    version: v1.1.0
+  status:
+    conditions:
+    - lastUpdateTime: "2024-08-06T14:12:12Z"
+      reason: PlanIsValid
+      status: "True"
+      type: Validated
+    - lastUpdateTime: "2024-08-06T14:12:12Z"
+      reason: Version
+      status: "True"
+      type: LatestResolved
+    latestHash: 2c27af4f7e139d7c15346edc0adb200edade07eef796ef2c41ef923b
+    latestVersion: v1.1.0
+- apiVersion: upgrade.cattle.io/v1
+  kind: Plan
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: local-managed-system-agent
+      meta.helm.sh/release-namespace: cattle-system
+      objectset.rio.cattle.io/id: default-local-managed-system-agent-cattle-fleet-local-system
+      upgrade.cattle.io/digest: spec.upgrade.envs,spec.upgrade.envFrom
+    creationTimestamp: "2024-08-06T01:54:54Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: a5c96e7b968940534a2e095661b8734ee2eea04f
+    managedFields:
+    - apiVersion: upgrade.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:upgrade.cattle.io/digest: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          .: {}
+          f:concurrency: {}
+          f:nodeSelector:
+            .: {}
+            f:matchExpressions: {}
+          f:serviceAccountName: {}
+          f:tolerations: {}
+          f:upgrade:
+            .: {}
+            f:envFrom: {}
+            f:envs: {}
+            f:image: {}
+          f:version: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:54:54Z"
+    - apiVersion: upgrade.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:latestHash: {}
+          f:latestVersion: {}
+      manager: system-upgrade-controller
+      operation: Update
+      subresource: status
+      time: "2024-08-06T14:12:12Z"
+    name: system-agent-upgrader
+    namespace: cattle-system
+    resourceVersion: "770155"
+    uid: f3b250ee-a494-47d1-9b32-fb56d21f365d
+  spec:
+    concurrency: 10
+    nodeSelector:
+      matchExpressions:
+      - key: kubernetes.io/os
+        operator: In
+        values:
+        - linux
+    serviceAccountName: system-agent-upgrader
+    tolerations:
+    - operator: Exists
+    upgrade:
+      envFrom:
+      - secretRef:
+          name: stv-aggregation-local-d37125030386
+      envs:
+      - name: CATTLE_ROLE_WORKER
+        value: "true"
+      image: rancher/system-agent
+    version: v0.3.6-suc
+  status:
+    conditions:
+    - lastUpdateTime: "2024-08-06T14:12:12Z"
+      reason: PlanIsValid
+      status: "True"
+      type: Validated
+    - lastUpdateTime: "2024-08-06T14:12:12Z"
+      reason: Version
+      status: "True"
+      type: LatestResolved
+    latestHash: 6f6e8421f58768b4fe5681b35df1c2e2d3511ff276762903e2db2508
+    latestVersion: v0.3.6-suc
+- apiVersion: upgrade.cattle.io/v1
+  kind: Plan
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: local-managed-system-agent
+      meta.helm.sh/release-namespace: cattle-system
+      objectset.rio.cattle.io/id: default-local-managed-system-agent-cattle-fleet-local-system
+      upgrade.cattle.io/digest: spec.upgrade.envs,spec.upgrade.envFrom
+    creationTimestamp: "2024-08-06T01:54:54Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: a5c96e7b968940534a2e095661b8734ee2eea04f
+    managedFields:
+    - apiVersion: upgrade.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:upgrade.cattle.io/digest: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          .: {}
+          f:concurrency: {}
+          f:nodeSelector:
+            .: {}
+            f:matchExpressions: {}
+          f:serviceAccountName: {}
+          f:tolerations: {}
+          f:upgrade:
+            .: {}
+            f:envFrom: {}
+            f:envs: {}
+            f:image: {}
+          f:version: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:54:54Z"
+    - apiVersion: upgrade.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:latestHash: {}
+          f:latestVersion: {}
+      manager: system-upgrade-controller
+      operation: Update
+      subresource: status
+      time: "2024-08-06T13:54:37Z"
+    name: system-agent-upgrader-windows
+    namespace: cattle-system
+    resourceVersion: "752131"
+    uid: ab787073-9f89-403b-bde9-750a336a9270
+  spec:
+    concurrency: 10
+    nodeSelector:
+      matchExpressions:
+      - key: kubernetes.io/os
+        operator: In
+        values:
+        - windows
+    serviceAccountName: system-agent-upgrader
+    tolerations:
+    - operator: Exists
+    upgrade:
+      envFrom:
+      - secretRef:
+          name: stv-aggregation-local-d37125030386
+      envs:
+      - name: CATTLE_ROLE_WORKER
+        value: "true"
+      image: rancher/wins
+    version: v0.4.14
+  status:
+    conditions:
+    - lastUpdateTime: "2024-08-06T13:54:37Z"
+      reason: PlanIsValid
+      status: "True"
+      type: Validated
+    - lastUpdateTime: "2024-08-06T13:54:37Z"
+      reason: Version
+      status: "True"
+      type: LatestResolved
+    latestHash: 7948241ee7690168195b076f00f0fc0fb8102607dcc0789369c5d3ef
+    latestVersion: v0.4.14
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770215"

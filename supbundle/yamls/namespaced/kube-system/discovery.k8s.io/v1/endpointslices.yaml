@@ -1,0 +1,655 @@
+apiVersion: v1
+items:
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.41
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: harvester-snapshot-validation-webhook-b75f94bcb-xf7n6
+      namespace: kube-system
+      uid: 370030b8-e1a4-4ed8-bd58-da853952c4b2
+  - addresses:
+    - 10.52.0.39
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: harvester-snapshot-validation-webhook-b75f94bcb-sghrd
+      namespace: kube-system
+      uid: a7e40478-1f67-4094-8f73-068e26e95393
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:55:42Z"
+    creationTimestamp: "2024-08-06T01:55:39Z"
+    generateName: harvester-snapshot-validation-webhook-
+    generation: 4
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: snapshot-validation-webhook
+      app.kubernetes.io/part-of: snapshot-validation-webhook
+      app.kubernetes.io/version: 1.17.0
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      helm.sh/chart: snapshot-validation-webhook-0.2.0
+      helm.sh/release: harvester
+      kubernetes.io/service-name: harvester-snapshot-validation-webhook
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:helm.sh/release: {}
+            f:kubernetes.io/service-name: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"acd2f453-6fab-4445-99db-75f6eba59ad9"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:55:42Z"
+    name: harvester-snapshot-validation-webhook-x97wm
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: harvester-snapshot-validation-webhook
+      uid: acd2f453-6fab-4445-99db-75f6eba59ad9
+    resourceVersion: "4948"
+    uid: 7d64c566-72d2-4641-a25f-c9a611bcc10e
+  ports:
+  - name: https
+    port: 443
+    protocol: TCP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.29
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: rke2-ingress-nginx-controller-ddpjc
+      namespace: kube-system
+      uid: 36ac3aa1-348b-4545-98a5-b9c970d30da4
+  - addresses:
+    - 10.52.1.4
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev2
+    targetRef:
+      kind: Pod
+      name: rke2-ingress-nginx-controller-kz8qf
+      namespace: kube-system
+      uid: 3ab38831-8942-4614-ac70-f434e8731f16
+  - addresses:
+    - 10.52.2.10
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev3
+    targetRef:
+      kind: Pod
+      name: rke2-ingress-nginx-controller-gtgfl
+      namespace: kube-system
+      uid: 998ba49c-3601-49a6-9d23-ebff420a29f0
+  - addresses:
+    - 10.52.3.11
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev7
+    targetRef:
+      kind: Pod
+      name: rke2-ingress-nginx-controller-kvsmb
+      namespace: kube-system
+      uid: ffbf40cd-a5d9-4337-ace0-26af794b6339
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:16:25Z"
+    creationTimestamp: "2024-08-06T01:56:39Z"
+    generateName: ingress-expose-
+    generation: 12
+    labels:
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      kubernetes.io/service-name: ingress-expose
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:kubernetes.io/service-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"750d5a65-b8d5-480d-8d4a-4f306bc37a93"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:16:25Z"
+    name: ingress-expose-z67w4
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: ingress-expose
+      uid: 750d5a65-b8d5-480d-8d4a-4f306bc37a93
+    resourceVersion: "30846"
+    uid: 051e718a-68b9-47bd-b4a7-544c5befd6e6
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+  - name: https-internal
+    port: 443
+    protocol: TCP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.4
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: rke2-coredns-rke2-coredns-864fbd7785-jc77s
+      namespace: kube-system
+      uid: dec5c1bd-dfb3-4178-a3d4-20d3dd79e4fd
+  - addresses:
+    - 10.52.1.2
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev2
+    targetRef:
+      kind: Pod
+      name: rke2-coredns-rke2-coredns-864fbd7785-bwfcp
+      namespace: kube-system
+      uid: b25c1dbc-f4cc-4be1-86aa-2a59f674edf9
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:12:05Z"
+    creationTimestamp: "2024-08-06T01:56:59Z"
+    generateName: rancher-monitoring-coredns-
+    generation: 3
+    labels:
+      app: rancher-monitoring-coredns
+      app.kubernetes.io/instance: rancher-monitoring
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/part-of: rancher-monitoring
+      app.kubernetes.io/version: 103.0.3_up45.31.1
+      chart: rancher-monitoring-103.0.3_up45.31.1
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      heritage: Helm
+      jobLabel: coredns
+      kubernetes.io/service-name: rancher-monitoring-coredns
+      release: rancher-monitoring
+      service.kubernetes.io/headless: "null"
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:chart: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:heritage: {}
+            f:jobLabel: {}
+            f:kubernetes.io/service-name: {}
+            f:release: {}
+            f:service.kubernetes.io/headless: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"298350c2-e403-467e-9da3-245896831e17"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:12:05Z"
+    name: rancher-monitoring-coredns-r4lmt
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: rancher-monitoring-coredns
+      uid: 298350c2-e403-467e-9da3-245896831e17
+    resourceVersion: "24055"
+    uid: 9c33e1a4-90c6-4e65-b7dd-e7ec85aafa28
+  ports:
+  - name: http-metrics
+    port: 9153
+    protocol: TCP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.10.110.11
+    conditions:
+      ready: true
+    targetRef:
+      kind: Node
+      name: harvesterdev1
+      uid: 9b6fb3e0-6ead-4e4f-bb03-9bc72f605557
+  - addresses:
+    - 10.10.110.61
+    conditions:
+      ready: true
+    targetRef:
+      kind: Node
+      name: harvesterdev3
+      uid: 450a2bb5-9551-4e4f-aa7a-6a8a583bbef8
+  - addresses:
+    - 10.10.110.232
+    conditions:
+      ready: true
+    targetRef:
+      kind: Node
+      name: harvesterdev7
+      uid: cb77b855-ef85-4af4-b07c-b9963a49007b
+  - addresses:
+    - 10.10.110.71
+    conditions:
+      ready: true
+    targetRef:
+      kind: Node
+      name: harvesterdev2
+      uid: 141de37b-4cad-4b6f-9831-ffeed49d0658
+  kind: EndpointSlice
+  metadata:
+    creationTimestamp: "2024-08-06T01:57:02Z"
+    generation: 4
+    labels:
+      app.kubernetes.io/managed-by: prometheus-operator
+      app.kubernetes.io/name: kubelet
+      endpointslice.kubernetes.io/managed-by: endpointslicemirroring-controller.k8s.io
+      k8s-app: kubelet
+      kubernetes.io/service-name: rancher-monitoring-kubelet
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:k8s-app: {}
+            f:kubernetes.io/service-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"a8b1dee4-22a3-4830-96c3-46cf29e27935"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:18:02Z"
+    name: rancher-monitoring-kubelet-nhrvs
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Endpoints
+      name: rancher-monitoring-kubelet
+      uid: a8b1dee4-22a3-4830-96c3-46cf29e27935
+    resourceVersion: "32608"
+    uid: 8a9be588-3927-4f48-9695-ff4eca6fd0ee
+  ports:
+  - name: http-metrics
+    port: 10255
+    protocol: TCP
+  - name: https-metrics
+    port: 10250
+    protocol: TCP
+  - name: cadvisor
+    port: 4194
+    protocol: TCP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.4
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: rke2-coredns-rke2-coredns-864fbd7785-jc77s
+      namespace: kube-system
+      uid: dec5c1bd-dfb3-4178-a3d4-20d3dd79e4fd
+  - addresses:
+    - 10.52.1.2
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev2
+    targetRef:
+      kind: Pod
+      name: rke2-coredns-rke2-coredns-864fbd7785-bwfcp
+      namespace: kube-system
+      uid: b25c1dbc-f4cc-4be1-86aa-2a59f674edf9
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:12:05Z"
+    creationTimestamp: "2024-08-06T01:51:48Z"
+    generateName: rke2-coredns-rke2-coredns-
+    generation: 5
+    labels:
+      app.kubernetes.io/instance: rke2-coredns
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: rke2-coredns
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      helm.sh/chart: rke2-coredns-1.29.002
+      k8s-app: kube-dns
+      kubernetes.io/cluster-service: "true"
+      kubernetes.io/name: CoreDNS
+      kubernetes.io/service-name: rke2-coredns-rke2-coredns
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:k8s-app: {}
+            f:kubernetes.io/cluster-service: {}
+            f:kubernetes.io/name: {}
+            f:kubernetes.io/service-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"8a54e00b-630a-41b3-a6ca-ab387647dde8"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:12:05Z"
+    name: rke2-coredns-rke2-coredns-mrs5q
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: rke2-coredns-rke2-coredns
+      uid: 8a54e00b-630a-41b3-a6ca-ab387647dde8
+    resourceVersion: "24051"
+    uid: 25ed8b48-9e47-4978-9d59-f65ca2570536
+  ports:
+  - name: tcp-53
+    port: 53
+    protocol: TCP
+  - name: udp-53
+    port: 53
+    protocol: UDP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.29
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: rke2-ingress-nginx-controller-ddpjc
+      namespace: kube-system
+      uid: 36ac3aa1-348b-4545-98a5-b9c970d30da4
+  - addresses:
+    - 10.52.1.4
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev2
+    targetRef:
+      kind: Pod
+      name: rke2-ingress-nginx-controller-kz8qf
+      namespace: kube-system
+      uid: 3ab38831-8942-4614-ac70-f434e8731f16
+  - addresses:
+    - 10.52.2.10
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev3
+    targetRef:
+      kind: Pod
+      name: rke2-ingress-nginx-controller-gtgfl
+      namespace: kube-system
+      uid: 998ba49c-3601-49a6-9d23-ebff420a29f0
+  - addresses:
+    - 10.52.3.11
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev7
+    targetRef:
+      kind: Pod
+      name: rke2-ingress-nginx-controller-kvsmb
+      namespace: kube-system
+      uid: ffbf40cd-a5d9-4337-ace0-26af794b6339
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:16:25Z"
+    creationTimestamp: "2024-08-06T01:52:13Z"
+    generateName: rke2-ingress-nginx-controller-admission-
+    generation: 13
+    labels:
+      app.kubernetes.io/component: controller
+      app.kubernetes.io/instance: rke2-ingress-nginx
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: rke2-ingress-nginx
+      app.kubernetes.io/part-of: rke2-ingress-nginx
+      app.kubernetes.io/version: 1.9.6
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      helm.sh/chart: rke2-ingress-nginx-4.9.100
+      kubernetes.io/service-name: rke2-ingress-nginx-controller-admission
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:kubernetes.io/service-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"ed90efec-2998-4ccb-8739-6a566705284b"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:16:25Z"
+    name: rke2-ingress-nginx-controller-admission-xhvzr
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: rke2-ingress-nginx-controller-admission
+      uid: ed90efec-2998-4ccb-8739-6a566705284b
+    resourceVersion: "30845"
+    uid: 847e6b2e-cc30-4c33-ba0f-f2ede56e8c84
+  ports:
+  - appProtocol: https
+    name: https-webhook
+    port: 8444
+    protocol: TCP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.3
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: rke2-metrics-server-7f745dbddf-5trhx
+      namespace: kube-system
+      uid: a647228b-6b72-4814-a113-692e6613e13e
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:52:25Z"
+    creationTimestamp: "2024-08-06T01:52:04Z"
+    generateName: rke2-metrics-server-
+    generation: 3
+    labels:
+      app: rke2-metrics-server
+      app.kubernetes.io/instance: rke2-metrics-server
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: rke2-metrics-server
+      app.kubernetes.io/version: 0.7.1
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      helm.sh/chart: rke2-metrics-server-3.12.002
+      kubernetes.io/service-name: rke2-metrics-server
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:kubernetes.io/service-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"34e92616-62a6-454b-8e39-050aefc75713"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:52:25Z"
+    name: rke2-metrics-server-jsc72
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: rke2-metrics-server
+      uid: 34e92616-62a6-454b-8e39-050aefc75713
+    resourceVersion: "1155"
+    uid: de8cbf4e-4f42-4de1-bd6f-f667f45b18e7
+  ports:
+  - name: https
+    port: 10250
+    protocol: TCP
+kind: List
+metadata:
+  resourceVersion: "770187"

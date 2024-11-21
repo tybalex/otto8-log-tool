@@ -1,0 +1,83 @@
+apiVersion: v1
+items:
+- apiVersion: rke.cattle.io/v1
+  kind: RKECluster
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4yQwU7DMAyGXwX53JaWTaWNxIkjV17AcbwtLI2rxC2Hqu+OAheExLSbLX2//dkbTKzoUBHMBhijKKqXmEsr9oNJM2uTvDSEqoEbL4/egYF05ZrCkpUTVP+i8hk51ef1CgbmJKvPXqKP51/I2lUPbz66l9c7p0WcGAwEIQx3wXlGKolTYNb6J7dXQIm/b333E2fFaQYTlxAqCGg53PzABfMFDHTt0Pd2sPZwtCP3TO3T8XBqaWjHnpxF142O++exbPtjfcMrz0xgtlIp6lJE9v0rAAD//5sXLPupAQAA
+      objectset.rio.cattle.io/id: rke-cluster
+      objectset.rio.cattle.io/owner-gvk: provisioning.cattle.io/v1, Kind=Cluster
+      objectset.rio.cattle.io/owner-name: local
+      objectset.rio.cattle.io/owner-namespace: fleet-local
+    creationTimestamp: "2024-08-06T01:53:30Z"
+    generation: 2
+    labels:
+      cluster.x-k8s.io/cluster-name: local
+      objectset.rio.cattle.io/hash: 10866b8bb34b9e6ec0243f0c8096cdbad19de679
+    managedFields:
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            f:cluster.x-k8s.io/cluster-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"2d7e76f9-bc59-40c5-bca5-5f107c5c834e"}: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T01:54:06Z"
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          .: {}
+          f:controlPlaneEndpoint:
+            .: {}
+            f:host: {}
+            f:port: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:54:06Z"
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:ready: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:54:06Z"
+    name: local
+    namespace: fleet-local
+    ownerReferences:
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Cluster
+      name: local
+      uid: 2d7e76f9-bc59-40c5-bca5-5f107c5c834e
+    resourceVersion: "2970"
+    uid: 51efdf43-a994-482e-8226-637ded06c803
+  spec:
+    controlPlaneEndpoint:
+      host: localhost
+      port: 6443
+  status:
+    ready: true
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770253"

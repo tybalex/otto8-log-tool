@@ -1,0 +1,63 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: fleet-agent-local
+      meta.helm.sh/release-namespace: cattle-fleet-local-system
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/3yOvW7DMAyE34WzlaZK/Ke9Q+dmKzLQEp2ooCXBYlAYht+9UN2lSxaCx/vAuxUmEnQoCGYFDCEKio8hFxmHL7KSSQ6zjweLIkwHH1+8AwMjE4nCGwVRQ4ySZcakdkjtJkeLrPKShSbYKrAz/T6/+Imy4JTAhAdzBYwD8dPIO+Y7GDg1+qhPY1trasfXvutdNzS1pqPuB6dtU3dIrT2fS1rAicCAoxEfLAqZ43eZsFs5oS3+08Y5kS216DZTzmA+1+1agQ//ZIrug5isxBnMupUDe7tclkSFgfc/vIK3fblu208AAAD//zWeXXp4AQAA
+      objectset.rio.cattle.io/id: fleet-agent-bootstrap-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:53:13Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: 362023f752e7f1989d8b652e029bd2c658ae7c44
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:egress: {}
+          f:ingress: {}
+          f:policyTypes: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2024-08-06T01:53:13Z"
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            f:app.kubernetes.io/managed-by: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:54:21Z"
+    name: default-allow-all
+    namespace: cattle-fleet-local-system
+    resourceVersion: "3116"
+    uid: e2b025d6-60b0-4cb6-9bc9-dd1e8c1e3365
+  spec:
+    egress:
+    - {}
+    ingress:
+    - {}
+    podSelector: {}
+    policyTypes:
+    - Ingress
+    - Egress
+  status: {}
+kind: List
+metadata:
+  resourceVersion: "770217"

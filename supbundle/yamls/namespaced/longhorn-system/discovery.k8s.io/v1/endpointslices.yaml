@@ -1,0 +1,659 @@
+apiVersion: v1
+items:
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.45
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-szgbp
+      namespace: longhorn-system
+      uid: 5bdcb47b-bcd3-49bb-bfb9-38bfd1d0c667
+  - addresses:
+    - 10.52.1.11
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev2
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-lns65
+      namespace: longhorn-system
+      uid: 2d5ebf6f-8451-4c11-ae43-33331ea43b1a
+  - addresses:
+    - 10.52.2.8
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev3
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-ng8b7
+      namespace: longhorn-system
+      uid: b4c768f0-3cd6-4ab5-8543-916976a84149
+  - addresses:
+    - 10.52.3.4
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev7
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-6vhdk
+      namespace: longhorn-system
+      uid: bc41048e-073b-4b04-a4ce-d5ae7948e668
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:15:59Z"
+    creationTimestamp: "2024-08-06T01:55:39Z"
+    generateName: longhorn-admission-webhook-
+    generation: 7
+    labels:
+      app: longhorn-admission-webhook
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.6.2
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      helm.sh/chart: longhorn-1.6.2
+      kubernetes.io/service-name: longhorn-admission-webhook
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:kubernetes.io/service-name: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"eedaffa8-c808-494b-b9b0-e0c34fc46701"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:15:59Z"
+    name: longhorn-admission-webhook-284sd
+    namespace: longhorn-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: longhorn-admission-webhook
+      uid: eedaffa8-c808-494b-b9b0-e0c34fc46701
+    resourceVersion: "30299"
+    uid: d280b3e7-04cb-403f-83f3-0bfaa08e7748
+  ports:
+  - name: admission-webhook
+    port: 9502
+    protocol: TCP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.45
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-szgbp
+      namespace: longhorn-system
+      uid: 5bdcb47b-bcd3-49bb-bfb9-38bfd1d0c667
+  - addresses:
+    - 10.52.1.11
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev2
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-lns65
+      namespace: longhorn-system
+      uid: 2d5ebf6f-8451-4c11-ae43-33331ea43b1a
+  - addresses:
+    - 10.52.2.8
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev3
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-ng8b7
+      namespace: longhorn-system
+      uid: b4c768f0-3cd6-4ab5-8543-916976a84149
+  - addresses:
+    - 10.52.3.4
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev7
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-6vhdk
+      namespace: longhorn-system
+      uid: bc41048e-073b-4b04-a4ce-d5ae7948e668
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:15:59Z"
+    creationTimestamp: "2024-08-06T01:55:39Z"
+    generateName: longhorn-backend-
+    generation: 7
+    labels:
+      app: longhorn-manager
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.6.2
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      helm.sh/chart: longhorn-1.6.2
+      kubernetes.io/service-name: longhorn-backend
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:kubernetes.io/service-name: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"83a98329-4ebf-4bf4-9d49-c79a06ae9b88"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:15:59Z"
+    name: longhorn-backend-n46lx
+    namespace: longhorn-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: longhorn-backend
+      uid: 83a98329-4ebf-4bf4-9d49-c79a06ae9b88
+    resourceVersion: "30303"
+    uid: aa064e45-cf93-419b-8bcb-222dd676be0f
+  ports:
+  - name: manager
+    port: 9500
+    protocol: TCP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.45
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-szgbp
+      namespace: longhorn-system
+      uid: 5bdcb47b-bcd3-49bb-bfb9-38bfd1d0c667
+  - addresses:
+    - 10.52.1.11
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev2
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-lns65
+      namespace: longhorn-system
+      uid: 2d5ebf6f-8451-4c11-ae43-33331ea43b1a
+  - addresses:
+    - 10.52.2.8
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev3
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-ng8b7
+      namespace: longhorn-system
+      uid: b4c768f0-3cd6-4ab5-8543-916976a84149
+  - addresses:
+    - 10.52.3.4
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev7
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-6vhdk
+      namespace: longhorn-system
+      uid: bc41048e-073b-4b04-a4ce-d5ae7948e668
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:15:59Z"
+    creationTimestamp: "2024-08-06T01:55:39Z"
+    generateName: longhorn-conversion-webhook-
+    generation: 7
+    labels:
+      app: longhorn-conversion-webhook
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.6.2
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      helm.sh/chart: longhorn-1.6.2
+      kubernetes.io/service-name: longhorn-conversion-webhook
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:kubernetes.io/service-name: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"454380de-f6c7-47a7-b956-1750a70aa4fa"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:15:59Z"
+    name: longhorn-conversion-webhook-cd79c
+    namespace: longhorn-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: longhorn-conversion-webhook
+      uid: 454380de-f6c7-47a7-b956-1750a70aa4fa
+    resourceVersion: "30296"
+    uid: 674cdaa5-895d-451f-a99c-97935bf191d9
+  ports:
+  - name: conversion-webhook
+    port: 9501
+    protocol: TCP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints: "null"
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:55:23Z"
+    creationTimestamp: "2024-08-06T01:55:39Z"
+    generateName: longhorn-engine-manager-
+    generation: 1
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.6.2
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      helm.sh/chart: longhorn-1.6.2
+      kubernetes.io/service-name: longhorn-engine-manager
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+      service.kubernetes.io/headless: "null"
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:kubernetes.io/service-name: {}
+            f:objectset.rio.cattle.io/hash: {}
+            f:service.kubernetes.io/headless: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"ced6f535-9103-4650-b0ad-e5fd5b2920b9"}: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:55:39Z"
+    name: longhorn-engine-manager-vmqkw
+    namespace: longhorn-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: longhorn-engine-manager
+      uid: ced6f535-9103-4650-b0ad-e5fd5b2920b9
+    resourceVersion: "4688"
+    uid: 59265862-a36b-487c-a3bf-a732d8599da0
+  ports: null
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.47
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: longhorn-ui-6b677889f8-8sw9z
+      namespace: longhorn-system
+      uid: e2c683e7-de0d-47c1-b50d-0a2d0a68f732
+  - addresses:
+    - 10.52.0.46
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: longhorn-ui-6b677889f8-v2ppb
+      namespace: longhorn-system
+      uid: 13d044dc-6120-4f1b-846f-d556f6db7acb
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:55:43Z"
+    creationTimestamp: "2024-08-06T01:55:39Z"
+    generateName: longhorn-frontend-
+    generation: 3
+    labels:
+      app: longhorn-ui
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.6.2
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      helm.sh/chart: longhorn-1.6.2
+      kubernetes.io/service-name: longhorn-frontend
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:kubernetes.io/service-name: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"cf7029f0-1688-4366-b67f-5b38ef08caa7"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:55:43Z"
+    name: longhorn-frontend-6dd45
+    namespace: longhorn-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: longhorn-frontend
+      uid: cf7029f0-1688-4366-b67f-5b38ef08caa7
+    resourceVersion: "4998"
+    uid: aa20b4c0-0401-435b-97d3-a3433d6e0a2c
+  ports:
+  - name: http
+    port: 8000
+    protocol: TCP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.45
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev1
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-szgbp
+      namespace: longhorn-system
+      uid: 5bdcb47b-bcd3-49bb-bfb9-38bfd1d0c667
+  - addresses:
+    - 10.52.1.11
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev2
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-lns65
+      namespace: longhorn-system
+      uid: 2d5ebf6f-8451-4c11-ae43-33331ea43b1a
+  - addresses:
+    - 10.52.2.8
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev3
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-ng8b7
+      namespace: longhorn-system
+      uid: b4c768f0-3cd6-4ab5-8543-916976a84149
+  - addresses:
+    - 10.52.3.4
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: harvesterdev7
+    targetRef:
+      kind: Pod
+      name: longhorn-manager-6vhdk
+      namespace: longhorn-system
+      uid: bc41048e-073b-4b04-a4ce-d5ae7948e668
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:15:59Z"
+    creationTimestamp: "2024-08-06T01:55:39Z"
+    generateName: longhorn-recovery-backend-
+    generation: 7
+    labels:
+      app: longhorn-recovery-backend
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.6.2
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      helm.sh/chart: longhorn-1.6.2
+      kubernetes.io/service-name: longhorn-recovery-backend
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:kubernetes.io/service-name: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"cfb6b584-f681-4b25-a8c9-d400f3b1f5ef"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:15:59Z"
+    name: longhorn-recovery-backend-zjxj4
+    namespace: longhorn-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: longhorn-recovery-backend
+      uid: cfb6b584-f681-4b25-a8c9-d400f3b1f5ef
+    resourceVersion: "30302"
+    uid: 6f512394-8721-4bcc-bc10-3392beefea2b
+  ports:
+  - name: recovery-backend
+    port: 9503
+    protocol: TCP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints: "null"
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:55:23Z"
+    creationTimestamp: "2024-08-06T01:55:39Z"
+    generateName: longhorn-replica-manager-
+    generation: 1
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.6.2
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      helm.sh/chart: longhorn-1.6.2
+      kubernetes.io/service-name: longhorn-replica-manager
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+      service.kubernetes.io/headless: "null"
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:kubernetes.io/service-name: {}
+            f:objectset.rio.cattle.io/hash: {}
+            f:service.kubernetes.io/headless: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"4887151e-2909-4ca1-aaef-9a7e76851aab"}: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:55:39Z"
+    name: longhorn-replica-manager-x966t
+    namespace: longhorn-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: longhorn-replica-manager
+      uid: 4887151e-2909-4ca1-aaef-9a7e76851aab
+    resourceVersion: "4693"
+    uid: 4edc86aa-da76-42bf-8961-391a897ac2ce
+  ports: null
+kind: List
+metadata:
+  resourceVersion: "770272"

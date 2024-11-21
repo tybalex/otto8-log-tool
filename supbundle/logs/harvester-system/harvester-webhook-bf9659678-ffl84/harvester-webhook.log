@@ -1,0 +1,253 @@
+2024-08-06T02:13:31.054931078Z time="2024-08-06T02:13:31Z" level=info msg="Starting webhook server"
+2024-08-06T02:13:31.059774361Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [nodes]. (Node)"
+2024-08-06T02:13:31.059793066Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [persistentvolumeclaims]. (PersistentVolumeClaim)"
+2024-08-06T02:13:31.059807223Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [keypairs].harvesterhci.io (KeyPair)"
+2024-08-06T02:13:31.059827090Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [virtualmachines virtualmachines/status].kubevirt.io (VirtualMachine)"
+2024-08-06T02:13:31.059835376Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [virtualmachineimages].harvesterhci.io (VirtualMachineImage)"
+2024-08-06T02:13:31.059842499Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [upgrades].harvesterhci.io (Upgrade)"
+2024-08-06T02:13:31.059849723Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [virtualmachinebackups].harvesterhci.io (VirtualMachineBackup)"
+2024-08-06T02:13:31.059856606Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [virtualmachinerestores].harvesterhci.io (VirtualMachineRestore)"
+2024-08-06T02:13:31.059863468Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [settings].harvesterhci.io (Setting)"
+2024-08-06T02:13:31.059877845Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [virtualmachinetemplateversions].harvesterhci.io (VirtualMachineTemplateVersion)"
+2024-08-06T02:13:31.059892553Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [managedcharts].management.cattle.io (ManagedChart)"
+2024-08-06T02:13:31.059901299Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [bundles].fleet.cattle.io (Bundle)"
+2024-08-06T02:13:31.059908974Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [bundledeployments].fleet.cattle.io (BundleDeployment)"
+2024-08-06T02:13:31.059915666Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [storageclasses].storage.k8s.io (StorageClass)"
+2024-08-06T02:13:31.059922499Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [namespaces]. (Namespace)"
+2024-08-06T02:13:31.059929522Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [addons].harvesterhci.io (Addon)"
+2024-08-06T02:13:31.059952035Z time="2024-08-06T02:13:31Z" level=info msg="add validation handler for [versions].harvesterhci.io (Version)"
+2024-08-06T02:13:31.059984876Z time="2024-08-06T02:13:31Z" level=info msg="add mutation handler for [pods]. (Pod)"
+2024-08-06T02:13:31.059993362Z time="2024-08-06T02:13:31Z" level=info msg="add mutation handler for [virtualmachinetemplateversions].harvesterhci.io (VirtualMachineTemplateVersion)"
+2024-08-06T02:13:31.060025933Z time="2024-08-06T02:13:31Z" level=info msg="add mutation handler for [virtualmachines].kubevirt.io (VirtualMachine)"
+2024-08-06T02:13:31.060057162Z time="2024-08-06T02:13:31Z" level=info msg="add mutation handler for [virtualmachineimages].harvesterhci.io (VirtualMachineImage)"
+2024-08-06T02:13:31.061886512Z time="2024-08-06T02:13:31Z" level=info msg="Active TLS secret harvester-system/harvester-webhook-tls (ver=4848) (count 1): map[listener.cattle.io/cn-harvester-webhook.harvester-system.svc:harvester-webhook.harvester-system.svc listener.cattle.io/fingerprint:SHA1=DFC5332992488BFFA74CB7A3AFE38785CEF64017]"
+2024-08-06T02:13:31.061999885Z time="2024-08-06T02:13:31Z" level=info msg="Listening on :9443"
+2024-08-06T02:13:31.132428346Z W0806 02:13:31.132304       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T02:13:31.135181600Z W0806 02:13:31.135123       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T02:13:31.137091962Z W0806 02:13:31.137043       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T02:13:31.139458821Z W0806 02:13:31.139403       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T02:13:31.620648401Z time="2024-08-06T02:13:31Z" level=info msg="Starting snapshot.storage.k8s.io/v1, Kind=VolumeSnapshotClass controller"
+2024-08-06T02:13:31.621383910Z time="2024-08-06T02:13:31Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=VirtualMachineRestore controller"
+2024-08-06T02:13:31.621655049Z time="2024-08-06T02:13:31Z" level=info msg="Starting longhorn.io/v1beta2, Kind=Volume controller"
+2024-08-06T02:13:31.621659146Z time="2024-08-06T02:13:31Z" level=info msg="Starting management.cattle.io/v3, Kind=ManagedChart controller"
+2024-08-06T02:13:31.621758573Z time="2024-08-06T02:13:31Z" level=info msg="Starting /v1, Kind=Node controller"
+2024-08-06T02:13:31.621806162Z time="2024-08-06T02:13:31Z" level=info msg="Starting kubevirt.io/v1, Kind=VirtualMachineInstance controller"
+2024-08-06T02:13:31.621866125Z time="2024-08-06T02:13:31Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=Setting controller"
+2024-08-06T02:13:31.622017128Z time="2024-08-06T02:13:31Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=KeyPair controller"
+2024-08-06T02:13:31.622130350Z time="2024-08-06T02:13:31Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=Version controller"
+2024-08-06T02:13:31.622176757Z time="2024-08-06T02:13:31Z" level=info msg="Starting storage.k8s.io/v1, Kind=StorageClass controller"
+2024-08-06T02:13:31.622231129Z time="2024-08-06T02:13:31Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=VirtualMachineImage controller"
+2024-08-06T02:13:31.622272326Z time="2024-08-06T02:13:31Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=VirtualMachineBackup controller"
+2024-08-06T02:13:31.622275983Z time="2024-08-06T02:13:31Z" level=info msg="Starting cluster.x-k8s.io/v1alpha4, Kind=Machine controller"
+2024-08-06T02:13:31.622404063Z time="2024-08-06T02:13:31Z" level=info msg="Starting /v1, Kind=ResourceQuota controller"
+2024-08-06T02:13:31.622502969Z time="2024-08-06T02:13:31Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=Addon controller"
+2024-08-06T02:13:31.622541301Z time="2024-08-06T02:13:31Z" level=info msg="Starting fleet.cattle.io/v1alpha1, Kind=Cluster controller"
+2024-08-06T02:13:31.622609238Z time="2024-08-06T02:13:31Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=VirtualMachineTemplateVersion controller"
+2024-08-06T02:13:31.622664762Z time="2024-08-06T02:13:31Z" level=info msg="Starting kubevirt.io/v1, Kind=VirtualMachine controller"
+2024-08-06T02:13:31.622699137Z time="2024-08-06T02:13:31Z" level=info msg="Starting /v1, Kind=Pod controller"
+2024-08-06T02:13:31.622750132Z time="2024-08-06T02:13:31Z" level=info msg="Starting apiextensions.k8s.io/v1, Kind=CustomResourceDefinition controller"
+2024-08-06T02:13:31.622846543Z time="2024-08-06T02:13:31Z" level=info msg="Starting /v1, Kind=Secret controller"
+2024-08-06T02:13:31.622990674Z time="2024-08-06T02:13:31Z" level=info msg="Starting management.cattle.io/v3, Kind=Feature controller"
+2024-08-06T02:13:31.623057319Z time="2024-08-06T02:13:31Z" level=info msg="Starting cluster.x-k8s.io/v1alpha4, Kind=Cluster controller"
+2024-08-06T02:13:31.623126178Z time="2024-08-06T02:13:31Z" level=info msg="Starting apiregistration.k8s.io/v1, Kind=APIService controller"
+2024-08-06T02:13:31.623134684Z time="2024-08-06T02:13:31Z" level=info msg="Starting /v1, Kind=Namespace controller"
+2024-08-06T02:13:31.623224202Z time="2024-08-06T02:13:31Z" level=info msg="Starting k8s.cni.cncf.io/v1, Kind=NetworkAttachmentDefinition controller"
+2024-08-06T02:13:31.623256692Z time="2024-08-06T02:13:31Z" level=info msg="Sleeping for 15 seconds then applying webhook config"
+2024-08-06T02:13:31.623265329Z time="2024-08-06T02:13:31Z" level=info msg="Starting kubevirt.io/v1, Kind=VirtualMachineInstanceMigration controller"
+2024-08-06T02:13:31.623325952Z time="2024-08-06T02:13:31Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=VirtualMachineTemplate controller"
+2024-08-06T02:13:31.623563738Z time="2024-08-06T02:13:31Z" level=info msg="Starting /v1, Kind=PersistentVolumeClaim controller"
+2024-08-06T02:13:31.623593214Z time="2024-08-06T02:13:31Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=Upgrade controller"
+2024-08-06T02:13:31.626122317Z time="2024-08-06T02:13:31Z" level=info msg="Updating TLS secret for harvester-system/harvester-webhook-tls (count: 1): map[listener.cattle.io/cn-harvester-webhook.harvester-system.svc:harvester-webhook.harvester-system.svc listener.cattle.io/fingerprint:SHA1=DFC5332992488BFFA74CB7A3AFE38785CEF64017]"
+2024-08-06T02:19:50.135116271Z W0806 02:19:50.134948       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T02:23:14.131106701Z W0806 02:23:14.130911       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T02:28:07.137481192Z W0806 02:28:07.137335       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T02:28:16.133127965Z W0806 02:28:16.132997       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T02:37:20.139888204Z W0806 02:37:20.139755       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T02:38:07.135406671Z W0806 02:38:07.135254       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T02:43:50.135742709Z W0806 02:43:50.135614       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T02:45:36.139683161Z W0806 02:45:36.139554       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T02:51:20.144150140Z W0806 02:51:20.144006       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T02:51:40.148479703Z W0806 02:51:40.148378       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T02:56:36.151214173Z W0806 02:56:36.151052       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T02:56:49.155872674Z W0806 02:56:49.155734       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T03:03:17.162753215Z W0806 03:03:17.162596       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T03:04:50.155871296Z W0806 03:04:50.155737       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T03:09:33.148810293Z W0806 03:09:33.148650       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T03:14:48.136223856Z W0806 03:14:48.136069       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T03:18:13.140078325Z W0806 03:18:13.139927       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T03:21:20.133990818Z W0806 03:21:20.133863       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T03:25:15.147538852Z W0806 03:25:15.147406       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T03:30:49.147800328Z W0806 03:30:49.147658       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T03:33:12.157277849Z W0806 03:33:12.157105       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T03:36:06.152830208Z W0806 03:36:06.152673       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T03:39:49.158444852Z W0806 03:39:49.158341       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T03:43:32.146926367Z W0806 03:43:32.146682       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T03:47:44.150150733Z W0806 03:47:44.150018       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T03:51:33.141576720Z W0806 03:51:33.141351       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T03:55:18.148332388Z W0806 03:55:18.148157       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T03:58:11.143846789Z W0806 03:58:11.143532       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T04:03:06.154156854Z W0806 04:03:06.153996       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T04:03:27.148364020Z W0806 04:03:27.148203       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T04:10:26.159317667Z W0806 04:10:26.158994       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T04:11:57.152219095Z W0806 04:11:57.152095       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T04:17:44.158784133Z W0806 04:17:44.158559       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T04:19:40.151883513Z W0806 04:19:40.151761       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T04:22:51.159269157Z W0806 04:22:51.159133       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T04:24:57.152822835Z W0806 04:24:57.152635       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T04:29:15.160105883Z W0806 04:29:15.159980       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T04:34:47.156442280Z W0806 04:34:47.156311       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T04:36:53.164430526Z W0806 04:36:53.164288       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T04:42:55.160522530Z W0806 04:42:55.160426       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T04:45:18.168584902Z W0806 04:45:18.168441       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T04:50:43.161789694Z W0806 04:50:43.161643       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T04:54:08.167198298Z W0806 04:54:08.167067       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T04:56:24.161445852Z W0806 04:56:24.161282       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T05:00:18.167311068Z W0806 05:00:18.167211       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T05:04:36.161859953Z W0806 05:04:36.161729       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T05:07:58.168047320Z W0806 05:07:58.167889       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T05:09:36.163122850Z W0806 05:09:36.162930       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T05:14:52.168716282Z W0806 05:14:52.168587       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T05:18:45.164277811Z W0806 05:18:45.164157       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T05:23:14.170151569Z W0806 05:23:14.170016       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T05:26:31.165440247Z W0806 05:26:31.165170       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T05:32:58.171507967Z W0806 05:32:58.171361       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T05:35:18.166247627Z W0806 05:35:18.166092       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T05:39:42.173780698Z W0806 05:39:42.173652       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T05:44:01.168899170Z W0806 05:44:01.168737       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T05:48:24.176266270Z W0806 05:48:24.176104       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T05:53:19.170873784Z W0806 05:53:19.170706       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T05:57:14.178663004Z W0806 05:57:14.178349       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T06:01:39.172347196Z W0806 06:01:39.172243       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T06:05:11.181157117Z W0806 06:05:11.180923       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T06:09:34.174449081Z W0806 06:09:34.174319       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T06:12:12.182915158Z W0806 06:12:12.182773       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T06:16:25.176896009Z W0806 06:16:25.176777       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T06:19:22.185961674Z W0806 06:19:22.185821       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T06:25:06.187850718Z W0806 06:25:06.187656       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T06:25:31.178982935Z W0806 06:25:31.178848       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T06:32:39.181337252Z W0806 06:32:39.181197       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T06:33:25.190349424Z W0806 06:33:25.190210       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T06:38:58.192183622Z W0806 06:38:58.192054       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T06:40:15.183489625Z W0806 06:40:15.183371       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T06:45:39.194585030Z W0806 06:45:39.194418       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T06:47:00.185065823Z W0806 06:47:00.184972       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T06:52:16.196532243Z W0806 06:52:16.196380       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T06:55:24.188050498Z W0806 06:55:24.187833       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T06:59:35.199324192Z W0806 06:59:35.199209       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T07:05:22.189880780Z W0806 07:05:22.189787       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T07:07:27.201055830Z W0806 07:07:27.200877       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T07:11:29.191935186Z W0806 07:11:29.191750       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T07:17:05.193534032Z W0806 07:17:05.193410       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T07:17:17.202977295Z W0806 07:17:17.202851       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T07:25:34.195911542Z W0806 07:25:34.195715       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T07:26:53.204654199Z W0806 07:26:53.204519       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T07:33:54.200558871Z W0806 07:33:54.200290       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T07:34:01.206609186Z W0806 07:34:01.206283       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T07:41:32.201500537Z W0806 07:41:32.201377       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T07:41:36.208068313Z W0806 07:41:36.207921       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T07:49:07.203010866Z W0806 07:49:07.202771       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T07:49:12.208927533Z W0806 07:49:12.208818       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T07:56:18.204728981Z W0806 07:56:18.204405       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T07:58:44.211209242Z W0806 07:58:44.210759       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T08:04:00.212922998Z W0806 08:04:00.212813       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T08:05:02.206404885Z W0806 08:05:02.206275       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T08:11:25.214921240Z W0806 08:11:25.214816       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T08:12:18.208127788Z W0806 08:12:18.207975       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T08:17:54.217012191Z W0806 08:17:54.216841       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T08:20:28.210151138Z W0806 08:20:28.210027       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T08:27:36.212918901Z W0806 08:27:36.212766       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T08:27:50.219809208Z W0806 08:27:50.219725       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T08:35:26.213424211Z W0806 08:35:26.213253       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T08:36:29.219744252Z W0806 08:36:29.219438       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T08:44:11.214752836Z W0806 08:44:11.214461       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T08:46:08.219761349Z W0806 08:46:08.219619       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T08:51:38.220406906Z W0806 08:51:38.220263       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T08:53:17.214593763Z W0806 08:53:17.214252       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T08:56:41.221372482Z W0806 08:56:41.221230       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T08:59:57.215539112Z W0806 08:59:57.215372       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T09:04:19.223671883Z W0806 09:04:19.223502       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T09:06:25.218053413Z W0806 09:06:25.217941       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T09:10:41.226030620Z W0806 09:10:41.225831       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T09:11:45.220173618Z W0806 09:11:45.220060       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T09:16:55.222286170Z W0806 09:16:55.222157       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T09:18:36.228576283Z W0806 09:18:36.228410       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T09:24:27.225714446Z W0806 09:24:27.225532       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T09:28:04.232007980Z W0806 09:28:04.231863       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T09:31:06.228490749Z W0806 09:31:06.228364       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T09:34:52.234941177Z W0806 09:34:52.234823       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T09:38:27.234070866Z W0806 09:38:27.233936       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T09:42:41.237857306Z W0806 09:42:41.237759       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T09:45:10.234110211Z W0806 09:45:10.233987       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T09:47:59.239354677Z W0806 09:47:59.239204       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T09:52:12.237143843Z W0806 09:52:12.237012       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T09:57:22.243013614Z W0806 09:57:22.242714       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T10:00:53.240116003Z W0806 10:00:53.239976       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T10:06:10.244483334Z W0806 10:06:10.244367       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T10:06:55.242395425Z W0806 10:06:55.242280       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T10:14:09.245797448Z W0806 10:14:09.245646       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T10:15:27.243151063Z W0806 10:15:27.242988       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T10:23:54.246850663Z W0806 10:23:54.246706       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T10:24:25.243511702Z W0806 10:24:25.243390       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T10:30:34.248036485Z W0806 10:30:34.247852       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T10:32:30.243716586Z W0806 10:32:30.243594       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T10:37:39.248914886Z W0806 10:37:39.248736       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T10:40:01.244778711Z W0806 10:40:01.244625       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T10:42:58.250449261Z W0806 10:42:58.250286       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T10:49:29.246438409Z W0806 10:49:29.246311       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T10:50:21.252918769Z W0806 10:50:21.252782       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T10:54:48.249606129Z W0806 10:54:48.249438       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T10:55:39.254978298Z W0806 10:55:39.254671       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T11:03:54.252276197Z W0806 11:03:54.252090       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T11:05:33.256284163Z W0806 11:05:33.255972       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T11:11:36.253981815Z W0806 11:11:36.253814       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T11:13:27.259156881Z W0806 11:13:27.258953       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T11:17:49.257020136Z W0806 11:17:49.256847       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T11:19:06.261380713Z W0806 11:19:06.261210       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T11:24:33.259187145Z W0806 11:24:33.259062       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T11:26:17.263346105Z W0806 11:26:17.262954       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T11:31:41.261663566Z W0806 11:31:41.261474       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T11:31:58.265396485Z W0806 11:31:58.265266       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T11:39:28.266171954Z W0806 11:39:28.266011       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T11:40:47.262693608Z W0806 11:40:47.262346       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T11:48:12.266648039Z W0806 11:48:12.266516       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T11:48:50.262718962Z W0806 11:48:50.262593       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T11:56:32.267550667Z W0806 11:56:32.267396       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T11:56:46.264398380Z W0806 11:56:46.264266       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T12:02:25.269016149Z W0806 12:02:25.268879       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T12:06:15.266636891Z W0806 12:06:15.266504       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T12:11:45.271029639Z W0806 12:11:45.270704       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T12:12:54.268899368Z W0806 12:12:54.268786       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T12:13:31.309219025Z time="2024-08-06T12:13:31Z" level=info msg="Sleeping for 15 seconds then applying webhook config"
+2024-08-06T12:13:31.312710429Z time="2024-08-06T12:13:31Z" level=info msg="Updating TLS secret for harvester-system/harvester-webhook-tls (count: 1): map[listener.cattle.io/cn-harvester-webhook.harvester-system.svc:harvester-webhook.harvester-system.svc listener.cattle.io/fingerprint:SHA1=DFC5332992488BFFA74CB7A3AFE38785CEF64017]"
+2024-08-06T12:20:00.274591072Z W0806 12:20:00.274452       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T12:22:36.271796086Z W0806 12:22:36.271527       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T12:25:40.277297408Z W0806 12:25:40.277161       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T12:29:33.273092854Z W0806 12:29:33.272942       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T12:32:46.277935815Z W0806 12:32:46.277812       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T12:36:10.273114622Z W0806 12:36:10.272961       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T12:40:26.278604601Z W0806 12:40:26.278363       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T12:41:41.273813796Z W0806 12:41:41.273715       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T12:49:39.281332980Z W0806 12:49:39.281187       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T12:50:06.276373512Z W0806 12:50:06.276214       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T12:54:42.283909296Z W0806 12:54:42.283764       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T12:55:30.279179575Z W0806 12:55:30.279005       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T13:01:18.280994924Z W0806 13:01:18.280832       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T13:02:14.286927266Z W0806 13:02:14.286796       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T13:06:37.284884008Z W0806 13:06:37.284735       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T13:08:09.290894094Z W0806 13:08:09.290747       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T13:15:26.288104330Z W0806 13:15:26.287965       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T13:16:25.293921478Z W0806 13:16:25.293783       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T13:20:39.290229953Z W0806 13:20:39.290043       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T13:22:35.295492739Z W0806 13:22:35.295337       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T13:25:39.291705699Z W0806 13:25:39.291594       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T13:30:53.295813955Z W0806 13:30:53.295693       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T13:35:17.292936332Z W0806 13:35:17.292764       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T13:40:41.297884305Z W0806 13:40:41.297710       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T13:44:29.294721681Z W0806 13:44:29.294571       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T13:50:39.299214602Z W0806 13:50:39.299054       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T13:52:32.296369532Z W0806 13:52:32.296234       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T13:57:27.302560449Z W0806 13:57:27.302282       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T14:02:12.300790223Z W0806 14:02:12.300632       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T14:05:03.305515372Z W0806 14:05:03.305296       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine
+2024-08-06T14:10:12.303550370Z W0806 14:10:12.303409       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Cluster is deprecated; use cluster.x-k8s.io/v1beta1 Cluster
+2024-08-06T14:11:17.308554398Z W0806 14:11:17.308397       7 warnings.go:70] cluster.x-k8s.io/v1alpha4 Machine is deprecated; use cluster.x-k8s.io/v1beta1 Machine

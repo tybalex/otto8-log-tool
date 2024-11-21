@@ -1,0 +1,1112 @@
+apiVersion: v1
+items:
+- apiVersion: kubevirt.io/v1
+  kind: VirtualMachine
+  metadata:
+    annotations:
+      harvesterhci.io/vmRunStrategy: RerunOnFailure
+      harvesterhci.io/volumeClaimTemplates: '[{"metadata":{"name":"gpu-disk-0-losvf","annotations":{"harvesterhci.io/imageId":"default/image-nntjr"}},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"40Gi"}},"volumeMode":"Block","storageClassName":"longhorn-image-nntjr"}},{"metadata":{"name":"gpu-disk-1-kfxss"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"40Gi"}},"volumeMode":"Block","storageClassName":"harvester-longhorn"}}]'
+      kubevirt.io/latest-observed-api-version: v1
+      kubevirt.io/storage-observed-api-version: v1
+      network.harvesterhci.io/ips: '[]'
+    creationTimestamp: "2024-08-06T13:39:34Z"
+    finalizers:
+    - harvesterhci.io/VMController.UnsetOwnerOfPVCs
+    - kubevirt.io/virtualMachineControllerFinalize
+    generation: 1
+    labels:
+      harvesterhci.io/creator: harvester
+      harvesterhci.io/os: ubuntu
+    managedFields:
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubevirt.io/latest-observed-api-version: {}
+            f:kubevirt.io/storage-observed-api-version: {}
+          f:finalizers:
+            v:"kubevirt.io/virtualMachineControllerFinalize"null: {}
+      manager: Go-http-client
+      operation: Update
+      time: "2024-08-06T13:39:34Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:created: {}
+          f:desiredGeneration: {}
+          f:observedGeneration: {}
+          f:printableStatus: {}
+          f:volumeSnapshotStatuses: {}
+      manager: Go-http-client
+      operation: Update
+      subresource: status
+      time: "2024-08-06T13:39:34Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/vmRunStrategy: {}
+            f:harvesterhci.io/volumeClaimTemplates: {}
+            f:network.harvesterhci.io/ips: {}
+          f:finalizers:
+            .: {}
+            v:"harvesterhci.io/VMController.UnsetOwnerOfPVCs"null: {}
+          f:labels:
+            .: {}
+            f:harvesterhci.io/creator: {}
+            f:harvesterhci.io/os: {}
+        f:spec:
+          .: {}
+          f:runStrategy: {}
+          f:template:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:harvesterhci.io/sshNames: {}
+              f:labels:
+                .: {}
+                f:harvesterhci.io/vmName: {}
+            f:spec:
+              .: {}
+              f:affinity: {}
+              f:domain:
+                .: {}
+                f:cpu:
+                  .: {}
+                  f:cores: {}
+                  f:sockets: {}
+                  f:threads: {}
+                f:devices:
+                  .: {}
+                  f:disks: {}
+                  f:gpus: {}
+                  f:hostDevices: {}
+                  f:inputs: {}
+                  f:interfaces: {}
+                f:features:
+                  .: {}
+                  f:acpi:
+                    .: {}
+                    f:enabled: {}
+                f:machine:
+                  .: {}
+                  f:type: {}
+                f:resources:
+                  .: {}
+                  f:limits:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+              f:evictionStrategy: {}
+              f:hostname: {}
+              f:networks: {}
+              f:terminationGracePeriodSeconds: {}
+              f:volumes: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T13:39:34Z"
+    name: gpu
+    namespace: default
+    resourceVersion: "736670"
+    uid: 861f8ee6-1b9d-4134-a0a8-d584f5516ced
+  spec:
+    runStrategy: RerunOnFailure
+    template:
+      metadata:
+        annotations:
+          harvesterhci.io/sshNames: '[]'
+        creationTimestamp: "null"
+        labels:
+          harvesterhci.io/vmName: gpu
+      spec:
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: network.harvesterhci.io/mgmt
+                  operator: In
+                  values:
+                  - "true"
+        architecture: amd64
+        domain:
+          cpu:
+            cores: 8
+            sockets: 1
+            threads: 1
+          devices:
+            disks:
+            - bootOrder: 1
+              cdrom:
+                bus: sata
+              name: disk-0
+            - bootOrder: 2
+              disk:
+                bus: virtio
+              name: disk-1
+            - disk:
+                bus: virtio
+              name: cloudinitdisk
+            gpus:
+            - deviceName: nvidia.com/NVIDIA_RTX5000-Ada-8Q
+              name: harvesterdev7-00000b007
+            inputs:
+            - bus: usb
+              name: tablet
+              type: tablet
+            interfaces:
+            - bridge: {}
+              model: virtio
+              name: default
+          features:
+            acpi:
+              enabled: true
+          machine:
+            type: q35
+          memory:
+            guest: 16284Mi
+          resources:
+            limits:
+              cpu: "8"
+              memory: 16Gi
+            requests:
+              cpu: 500m
+              memory: 16284Mi
+        evictionStrategy: LiveMigrateIfPossible
+        hostname: gpu
+        networks:
+        - multus:
+            networkName: default/350vlan
+          name: default
+        terminationGracePeriodSeconds: 120
+        volumes:
+        - name: disk-0
+          persistentVolumeClaim:
+            claimName: gpu-disk-0-losvf
+        - name: disk-1
+          persistentVolumeClaim:
+            claimName: gpu-disk-1-kfxss
+        - cloudInitNoCloud:
+            networkDataSecretRef:
+              name: gpu-nzngd
+            secretRef:
+              name: gpu-nzngd
+          name: cloudinitdisk
+  status:
+    conditions:
+    - lastProbeTime: "2024-08-06T13:39:34Z"
+      lastTransitionTime: "2024-08-06T13:39:34Z"
+      message: virt-launcher pod has not yet been scheduled
+      reason: PodNotExists
+      status: "False"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T13:39:34Z"
+      message: 'failed to render launch manifest: GPU nvidia.com/NVIDIA_RTX5000-Ada-8Q
+        is not permitted in permittedHostDevices configuration'
+      reason: FailedCreate
+      status: "False"
+      type: Synchronized
+    created: true
+    desiredGeneration: 1
+    observedGeneration: 1
+    printableStatus: WaitingForVolumeBinding
+    volumeSnapshotStatuses:
+    - enabled: false
+      name: disk-0
+      reason: 2 matching VolumeSnapshotClasses for longhorn-image-nntjr
+    - enabled: false
+      name: disk-1
+      reason: 2 matching VolumeSnapshotClasses for harvester-longhorn
+    - enabled: false
+      name: cloudinitdisk
+      reason: Snapshot is not supported for this volumeSource type [cloudinitdisk]
+- apiVersion: kubevirt.io/v1
+  kind: VirtualMachine
+  metadata:
+    annotations:
+      harvesterhci.io/vmRunStrategy: RerunOnFailure
+      harvesterhci.io/volumeClaimTemplates: '[{"metadata":{"name":"gputest-gpu1-1df5240c-87trc-disk-0-k6q7q","creationTimestamp":"null","annotations":{"harvesterhci.io/imageId":"default/image-qwfqg"}},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"40Gi"}},"storageClassName":"longhorn-image-qwfqg","volumeMode":"Block"},"status":{}}]'
+      kubevirt.io/latest-observed-api-version: v1
+      kubevirt.io/storage-observed-api-version: v1
+    creationTimestamp: "2024-08-06T14:09:05Z"
+    finalizers:
+    - harvesterhci.io/VMController.UnsetOwnerOfPVCs
+    - kubevirt.io/virtualMachineControllerFinalize
+    generation: 1
+    labels:
+      harvesterhci.io/creator: docker-machine-driver-harvester
+      harvesterhci.io/vmName: gputest-gpu1-1df5240c-87trc
+    managedFields:
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubevirt.io/latest-observed-api-version: {}
+            f:kubevirt.io/storage-observed-api-version: {}
+          f:finalizers:
+            v:"kubevirt.io/virtualMachineControllerFinalize"null: {}
+      manager: Go-http-client
+      operation: Update
+      time: "2024-08-06T14:09:05Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:created: {}
+          f:desiredGeneration: {}
+          f:observedGeneration: {}
+          f:printableStatus: {}
+          f:volumeSnapshotStatuses: {}
+      manager: Go-http-client
+      operation: Update
+      subresource: status
+      time: "2024-08-06T14:09:05Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/volumeClaimTemplates: {}
+          f:labels:
+            .: {}
+            f:harvesterhci.io/creator: {}
+            f:harvesterhci.io/vmName: {}
+        f:spec:
+          .: {}
+          f:runStrategy: {}
+          f:template:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:harvesterhci.io/sshNames: {}
+                f:harvesterhci.io/waitForLeaseInterfaceNames: {}
+              f:creationTimestamp: {}
+              f:labels:
+                .: {}
+                f:harvesterhci.io/creator: {}
+                f:harvesterhci.io/vmName: {}
+            f:spec:
+              .: {}
+              f:affinity:
+                .: {}
+                f:podAntiAffinity:
+                  .: {}
+                  f:preferredDuringSchedulingIgnoredDuringExecution: {}
+              f:domain:
+                .: {}
+                f:cpu:
+                  .: {}
+                  f:cores: {}
+                f:devices:
+                  .: {}
+                  f:disks: {}
+                  f:gpus: {}
+                  f:interfaces: {}
+                f:resources:
+                  .: {}
+                  f:limits:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+              f:evictionStrategy: {}
+              f:networks: {}
+              f:volumes: {}
+      manager: docker-machine-driver-harvester
+      operation: Update
+      time: "2024-08-06T14:09:05Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:harvesterhci.io/vmRunStrategy: {}
+          f:finalizers:
+            .: {}
+            v:"harvesterhci.io/VMController.UnsetOwnerOfPVCs"null: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T14:09:05Z"
+    name: gputest-gpu1-1df5240c-87trc
+    namespace: default
+    resourceVersion: "766983"
+    uid: d913b608-c1b8-4fe1-ab4a-1df4bf821e5f
+  spec:
+    runStrategy: RerunOnFailure
+    template:
+      metadata:
+        annotations:
+          harvesterhci.io/sshNames: '[]'
+          harvesterhci.io/waitForLeaseInterfaceNames: '[]'
+        creationTimestamp: "null"
+        labels:
+          harvesterhci.io/creator: docker-machine-driver-harvester
+          harvesterhci.io/vmName: gputest-gpu1-1df5240c-87trc
+      spec:
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: network.harvesterhci.io/mgmt
+                  operator: In
+                  values:
+                  - "true"
+          podAntiAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                  - key: harvesterhci.io/creator
+                    operator: Exists
+                topologyKey: kubernetes.io/hostname
+              weight: 100
+        architecture: amd64
+        domain:
+          cpu:
+            cores: 8
+          devices:
+            disks:
+            - disk:
+                bus: virtio
+              name: cloudinitdisk
+            - bootOrder: 1
+              disk:
+                bus: virtio
+              name: disk-0
+            gpus:
+            - deviceName: nvidia.com/NVIDIA_RTX5000-Ada-8Q
+              name: harvesterdev7-00000b004
+            interfaces:
+            - bridge: {}
+              model: virtio
+              name: nic-0
+          machine:
+            type: q35
+          memory:
+            guest: 16284Mi
+          resources:
+            limits:
+              cpu: "8"
+              memory: 16Gi
+            requests:
+              cpu: 500m
+              memory: 16284Mi
+        evictionStrategy: LiveMigrate
+        networks:
+        - multus:
+            networkName: default/350vlan
+          name: nic-0
+        terminationGracePeriodSeconds: 120
+        volumes:
+        - cloudInitNoCloud:
+            secretRef:
+              name: gputest-gpu1-1df5240c-87trc-cloudinit
+          name: cloudinitdisk
+        - name: disk-0
+          persistentVolumeClaim:
+            claimName: gputest-gpu1-1df5240c-87trc-disk-0-k6q7q
+  status:
+    conditions:
+    - lastProbeTime: "2024-08-06T14:09:05Z"
+      lastTransitionTime: "2024-08-06T14:09:05Z"
+      message: virt-launcher pod has not yet been scheduled
+      reason: PodNotExists
+      status: "False"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T14:09:05Z"
+      message: 'failed to render launch manifest: GPU nvidia.com/NVIDIA_RTX5000-Ada-8Q
+        is not permitted in permittedHostDevices configuration'
+      reason: FailedCreate
+      status: "False"
+      type: Synchronized
+    created: true
+    desiredGeneration: 1
+    observedGeneration: 1
+    printableStatus: WaitingForVolumeBinding
+    volumeSnapshotStatuses:
+    - enabled: false
+      name: cloudinitdisk
+      reason: Snapshot is not supported for this volumeSource type [cloudinitdisk]
+    - enabled: false
+      name: disk-0
+      reason: 2 matching VolumeSnapshotClasses for longhorn-image-qwfqg
+- apiVersion: kubevirt.io/v1
+  kind: VirtualMachine
+  metadata:
+    annotations:
+      harvesterhci.io/vmRunStrategy: RerunOnFailure
+      harvesterhci.io/volumeClaimTemplates: '[{"metadata":{"name":"gputest-primary-c31607d4-fqgjd-disk-0-4xtb4","creationTimestamp":"null","annotations":{"harvesterhci.io/imageId":"default/image-qwfqg"}},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"40Gi"}},"storageClassName":"longhorn-image-qwfqg","volumeMode":"Block"},"status":{}}]'
+      kubevirt.io/latest-observed-api-version: v1
+      kubevirt.io/storage-observed-api-version: v1
+    creationTimestamp: "2024-08-06T02:24:15Z"
+    finalizers:
+    - kubevirt.io/virtualMachineControllerFinalize
+    - harvesterhci.io/VMController.UnsetOwnerOfPVCs
+    generation: 2
+    labels:
+      harvesterhci.io/creator: docker-machine-driver-harvester
+      harvesterhci.io/vmName: gputest-primary-c31607d4-fqgjd
+    managedFields:
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubevirt.io/latest-observed-api-version: {}
+            f:kubevirt.io/storage-observed-api-version: {}
+          f:finalizers:
+            .: {}
+            v:"kubevirt.io/virtualMachineControllerFinalize"null: {}
+      manager: Go-http-client
+      operation: Update
+      time: "2024-08-06T02:24:15Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/volumeClaimTemplates: {}
+          f:labels:
+            .: {}
+            f:harvesterhci.io/creator: {}
+            f:harvesterhci.io/vmName: {}
+        f:spec:
+          .: {}
+          f:runStrategy: {}
+          f:template:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:harvesterhci.io/sshNames: {}
+                f:harvesterhci.io/waitForLeaseInterfaceNames: {}
+              f:creationTimestamp: {}
+              f:labels:
+                .: {}
+                f:harvesterhci.io/creator: {}
+                f:harvesterhci.io/vmName: {}
+            f:spec:
+              .: {}
+              f:affinity:
+                .: {}
+                f:podAntiAffinity:
+                  .: {}
+                  f:preferredDuringSchedulingIgnoredDuringExecution: {}
+              f:domain:
+                .: {}
+                f:cpu:
+                  .: {}
+                  f:cores: {}
+                f:devices:
+                  .: {}
+                  f:disks: {}
+                f:resources:
+                  .: {}
+                  f:limits:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+              f:evictionStrategy: {}
+              f:networks: {}
+              f:volumes: {}
+      manager: docker-machine-driver-harvester
+      operation: Update
+      time: "2024-08-06T02:24:15Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:harvesterhci.io/vmRunStrategy: {}
+          f:finalizers:
+            v:"harvesterhci.io/VMController.UnsetOwnerOfPVCs"null: {}
+        f:spec:
+          f:template:
+            f:spec:
+              f:domain:
+                f:devices:
+                  f:interfaces: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T02:24:43Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:created: {}
+          f:desiredGeneration: {}
+          f:observedGeneration: {}
+          f:printableStatus: {}
+          f:ready: {}
+          f:volumeSnapshotStatuses: {}
+      manager: Go-http-client
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:25:17Z"
+    name: gputest-primary-c31607d4-fqgjd
+    namespace: default
+    resourceVersion: "40536"
+    uid: 108a1b8a-a5ef-49c6-893b-ff6df41e949f
+  spec:
+    runStrategy: RerunOnFailure
+    template:
+      metadata:
+        annotations:
+          harvesterhci.io/sshNames: '[]'
+          harvesterhci.io/waitForLeaseInterfaceNames: '[]'
+        creationTimestamp: "null"
+        labels:
+          harvesterhci.io/creator: docker-machine-driver-harvester
+          harvesterhci.io/vmName: gputest-primary-c31607d4-fqgjd
+      spec:
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: network.harvesterhci.io/mgmt
+                  operator: In
+                  values:
+                  - "true"
+          podAntiAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                  - key: harvesterhci.io/creator
+                    operator: Exists
+                topologyKey: kubernetes.io/hostname
+              weight: 100
+        architecture: amd64
+        domain:
+          cpu:
+            cores: 4
+          devices:
+            disks:
+            - disk:
+                bus: virtio
+              name: cloudinitdisk
+            - bootOrder: 1
+              disk:
+                bus: virtio
+              name: disk-0
+            interfaces:
+            - bridge: {}
+              macAddress: 22:34:36:42:a8:ed
+              model: virtio
+              name: nic-0
+          machine:
+            type: q35
+          memory:
+            guest: 8092Mi
+          resources:
+            limits:
+              cpu: "4"
+              memory: 8Gi
+            requests:
+              cpu: 250m
+              memory: 5461Mi
+        evictionStrategy: LiveMigrate
+        networks:
+        - multus:
+            networkName: default/350vlan
+          name: nic-0
+        terminationGracePeriodSeconds: 120
+        volumes:
+        - cloudInitNoCloud:
+            secretRef:
+              name: gputest-primary-c31607d4-fqgjd-cloudinit
+          name: cloudinitdisk
+        - name: disk-0
+          persistentVolumeClaim:
+            claimName: gputest-primary-c31607d4-fqgjd-disk-0-4xtb4
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:24:41Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "null"
+      status: "True"
+      type: LiveMigratable
+    - lastProbeTime: "2024-08-06T02:25:17Z"
+      lastTransitionTime: "null"
+      status: "True"
+      type: AgentConnected
+    created: true
+    desiredGeneration: 2
+    observedGeneration: 2
+    printableStatus: Running
+    ready: true
+    volumeSnapshotStatuses:
+    - enabled: false
+      name: cloudinitdisk
+      reason: Snapshot is not supported for this volumeSource type [cloudinitdisk]
+    - enabled: false
+      name: disk-0
+      reason: 2 matching VolumeSnapshotClasses for longhorn-image-qwfqg
+- apiVersion: kubevirt.io/v1
+  kind: VirtualMachine
+  metadata:
+    annotations:
+      harvesterhci.io/vmRunStrategy: RerunOnFailure
+      harvesterhci.io/volumeClaimTemplates: '[{"metadata":{"name":"gputest-primary-c31607d4-hpllh-disk-0-9xgqk","creationTimestamp":"null","annotations":{"harvesterhci.io/imageId":"default/image-qwfqg"}},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"40Gi"}},"storageClassName":"longhorn-image-qwfqg","volumeMode":"Block"},"status":{}}]'
+      kubevirt.io/latest-observed-api-version: v1
+      kubevirt.io/storage-observed-api-version: v1
+    creationTimestamp: "2024-08-06T02:24:06Z"
+    finalizers:
+    - kubevirt.io/virtualMachineControllerFinalize
+    - harvesterhci.io/VMController.UnsetOwnerOfPVCs
+    generation: 2
+    labels:
+      harvesterhci.io/creator: docker-machine-driver-harvester
+      harvesterhci.io/vmName: gputest-primary-c31607d4-hpllh
+    managedFields:
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/volumeClaimTemplates: {}
+          f:labels:
+            .: {}
+            f:harvesterhci.io/creator: {}
+            f:harvesterhci.io/vmName: {}
+        f:spec:
+          .: {}
+          f:runStrategy: {}
+          f:template:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:harvesterhci.io/sshNames: {}
+                f:harvesterhci.io/waitForLeaseInterfaceNames: {}
+              f:creationTimestamp: {}
+              f:labels:
+                .: {}
+                f:harvesterhci.io/creator: {}
+                f:harvesterhci.io/vmName: {}
+            f:spec:
+              .: {}
+              f:affinity:
+                .: {}
+                f:podAntiAffinity:
+                  .: {}
+                  f:preferredDuringSchedulingIgnoredDuringExecution: {}
+              f:domain:
+                .: {}
+                f:cpu:
+                  .: {}
+                  f:cores: {}
+                f:devices:
+                  .: {}
+                  f:disks: {}
+                f:resources:
+                  .: {}
+                  f:limits:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+              f:evictionStrategy: {}
+              f:networks: {}
+              f:volumes: {}
+      manager: docker-machine-driver-harvester
+      operation: Update
+      time: "2024-08-06T02:24:06Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubevirt.io/latest-observed-api-version: {}
+            f:kubevirt.io/storage-observed-api-version: {}
+          f:finalizers:
+            .: {}
+            v:"kubevirt.io/virtualMachineControllerFinalize"null: {}
+      manager: Go-http-client
+      operation: Update
+      time: "2024-08-06T02:24:07Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:harvesterhci.io/vmRunStrategy: {}
+          f:finalizers:
+            v:"harvesterhci.io/VMController.UnsetOwnerOfPVCs"null: {}
+        f:spec:
+          f:template:
+            f:spec:
+              f:domain:
+                f:devices:
+                  f:interfaces: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T02:25:04Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:created: {}
+          f:desiredGeneration: {}
+          f:observedGeneration: {}
+          f:printableStatus: {}
+          f:ready: {}
+          f:volumeSnapshotStatuses: {}
+      manager: Go-http-client
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:25:52Z"
+    name: gputest-primary-c31607d4-hpllh
+    namespace: default
+    resourceVersion: "41138"
+    uid: d1ad9368-5f8b-4975-b921-8750497a82ec
+  spec:
+    runStrategy: RerunOnFailure
+    template:
+      metadata:
+        annotations:
+          harvesterhci.io/sshNames: '[]'
+          harvesterhci.io/waitForLeaseInterfaceNames: '[]'
+        creationTimestamp: "null"
+        labels:
+          harvesterhci.io/creator: docker-machine-driver-harvester
+          harvesterhci.io/vmName: gputest-primary-c31607d4-hpllh
+      spec:
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: network.harvesterhci.io/mgmt
+                  operator: In
+                  values:
+                  - "true"
+          podAntiAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                  - key: harvesterhci.io/creator
+                    operator: Exists
+                topologyKey: kubernetes.io/hostname
+              weight: 100
+        architecture: amd64
+        domain:
+          cpu:
+            cores: 4
+          devices:
+            disks:
+            - disk:
+                bus: virtio
+              name: cloudinitdisk
+            - bootOrder: 1
+              disk:
+                bus: virtio
+              name: disk-0
+            interfaces:
+            - bridge: {}
+              macAddress: 16:b4:cb:c5:31:6e
+              model: virtio
+              name: nic-0
+          machine:
+            type: q35
+          memory:
+            guest: 8092Mi
+          resources:
+            limits:
+              cpu: "4"
+              memory: 8Gi
+            requests:
+              cpu: 250m
+              memory: 5461Mi
+        evictionStrategy: LiveMigrate
+        networks:
+        - multus:
+            networkName: default/350vlan
+          name: nic-0
+        terminationGracePeriodSeconds: 120
+        volumes:
+        - cloudInitNoCloud:
+            secretRef:
+              name: gputest-primary-c31607d4-hpllh-cloudinit
+          name: cloudinitdisk
+        - name: disk-0
+          persistentVolumeClaim:
+            claimName: gputest-primary-c31607d4-hpllh-disk-0-9xgqk
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:25:01Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "null"
+      status: "True"
+      type: LiveMigratable
+    - lastProbeTime: "2024-08-06T02:25:52Z"
+      lastTransitionTime: "null"
+      status: "True"
+      type: AgentConnected
+    created: true
+    desiredGeneration: 2
+    observedGeneration: 2
+    printableStatus: Running
+    ready: true
+    volumeSnapshotStatuses:
+    - enabled: false
+      name: cloudinitdisk
+      reason: Snapshot is not supported for this volumeSource type [cloudinitdisk]
+    - enabled: false
+      name: disk-0
+      reason: 2 matching VolumeSnapshotClasses for longhorn-image-qwfqg
+- apiVersion: kubevirt.io/v1
+  kind: VirtualMachine
+  metadata:
+    annotations:
+      harvesterhci.io/vmRunStrategy: RerunOnFailure
+      harvesterhci.io/volumeClaimTemplates: '[{"metadata":{"name":"gputest-primary-c31607d4-nr27s-disk-0-rlg2q","creationTimestamp":"null","annotations":{"harvesterhci.io/imageId":"default/image-qwfqg"}},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"40Gi"}},"storageClassName":"longhorn-image-qwfqg","volumeMode":"Block"},"status":{}}]'
+      kubevirt.io/latest-observed-api-version: v1
+      kubevirt.io/storage-observed-api-version: v1
+    creationTimestamp: "2024-08-06T02:24:13Z"
+    finalizers:
+    - kubevirt.io/virtualMachineControllerFinalize
+    - harvesterhci.io/VMController.UnsetOwnerOfPVCs
+    generation: 2
+    labels:
+      harvesterhci.io/creator: docker-machine-driver-harvester
+      harvesterhci.io/vmName: gputest-primary-c31607d4-nr27s
+    managedFields:
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubevirt.io/latest-observed-api-version: {}
+            f:kubevirt.io/storage-observed-api-version: {}
+          f:finalizers:
+            .: {}
+            v:"kubevirt.io/virtualMachineControllerFinalize"null: {}
+      manager: Go-http-client
+      operation: Update
+      time: "2024-08-06T02:24:13Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/volumeClaimTemplates: {}
+          f:labels:
+            .: {}
+            f:harvesterhci.io/creator: {}
+            f:harvesterhci.io/vmName: {}
+        f:spec:
+          .: {}
+          f:runStrategy: {}
+          f:template:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:harvesterhci.io/sshNames: {}
+                f:harvesterhci.io/waitForLeaseInterfaceNames: {}
+              f:creationTimestamp: {}
+              f:labels:
+                .: {}
+                f:harvesterhci.io/creator: {}
+                f:harvesterhci.io/vmName: {}
+            f:spec:
+              .: {}
+              f:affinity:
+                .: {}
+                f:podAntiAffinity:
+                  .: {}
+                  f:preferredDuringSchedulingIgnoredDuringExecution: {}
+              f:domain:
+                .: {}
+                f:cpu:
+                  .: {}
+                  f:cores: {}
+                f:devices:
+                  .: {}
+                  f:disks: {}
+                f:resources:
+                  .: {}
+                  f:limits:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+              f:evictionStrategy: {}
+              f:networks: {}
+              f:volumes: {}
+      manager: docker-machine-driver-harvester
+      operation: Update
+      time: "2024-08-06T02:24:13Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:harvesterhci.io/vmRunStrategy: {}
+          f:finalizers:
+            v:"harvesterhci.io/VMController.UnsetOwnerOfPVCs"null: {}
+        f:spec:
+          f:template:
+            f:spec:
+              f:domain:
+                f:devices:
+                  f:interfaces: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T02:24:37Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:created: {}
+          f:desiredGeneration: {}
+          f:observedGeneration: {}
+          f:printableStatus: {}
+          f:ready: {}
+          f:volumeSnapshotStatuses: {}
+      manager: Go-http-client
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:25:13Z"
+    name: gputest-primary-c31607d4-nr27s
+    namespace: default
+    resourceVersion: "40465"
+    uid: 3b9537ac-c024-4c35-b3f5-da034b05f5ba
+  spec:
+    runStrategy: RerunOnFailure
+    template:
+      metadata:
+        annotations:
+          harvesterhci.io/sshNames: '[]'
+          harvesterhci.io/waitForLeaseInterfaceNames: '[]'
+        creationTimestamp: "null"
+        labels:
+          harvesterhci.io/creator: docker-machine-driver-harvester
+          harvesterhci.io/vmName: gputest-primary-c31607d4-nr27s
+      spec:
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: network.harvesterhci.io/mgmt
+                  operator: In
+                  values:
+                  - "true"
+          podAntiAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                  - key: harvesterhci.io/creator
+                    operator: Exists
+                topologyKey: kubernetes.io/hostname
+              weight: 100
+        architecture: amd64
+        domain:
+          cpu:
+            cores: 4
+          devices:
+            disks:
+            - disk:
+                bus: virtio
+              name: cloudinitdisk
+            - bootOrder: 1
+              disk:
+                bus: virtio
+              name: disk-0
+            interfaces:
+            - bridge: {}
+              macAddress: d6:bb:d7:15:62:2a
+              model: virtio
+              name: nic-0
+          machine:
+            type: q35
+          memory:
+            guest: 8092Mi
+          resources:
+            limits:
+              cpu: "4"
+              memory: 8Gi
+            requests:
+              cpu: 250m
+              memory: 5461Mi
+        evictionStrategy: LiveMigrate
+        networks:
+        - multus:
+            networkName: default/350vlan
+          name: nic-0
+        terminationGracePeriodSeconds: 120
+        volumes:
+        - cloudInitNoCloud:
+            secretRef:
+              name: gputest-primary-c31607d4-nr27s-cloudinit
+          name: cloudinitdisk
+        - name: disk-0
+          persistentVolumeClaim:
+            claimName: gputest-primary-c31607d4-nr27s-disk-0-rlg2q
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:24:34Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "null"
+      status: "True"
+      type: LiveMigratable
+    - lastProbeTime: "2024-08-06T02:25:13Z"
+      lastTransitionTime: "null"
+      status: "True"
+      type: AgentConnected
+    created: true
+    desiredGeneration: 2
+    observedGeneration: 2
+    printableStatus: Running
+    ready: true
+    volumeSnapshotStatuses:
+    - enabled: false
+      name: cloudinitdisk
+      reason: Snapshot is not supported for this volumeSource type [cloudinitdisk]
+    - enabled: false
+      name: disk-0
+      reason: 2 matching VolumeSnapshotClasses for longhorn-image-qwfqg
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770184"

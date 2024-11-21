@@ -1,0 +1,1422 @@
+apiVersion: v1
+items:
+- apiVersion: kubevirt.io/v1
+  kind: VirtualMachineInstance
+  metadata:
+    annotations:
+      harvesterhci.io/sshNames: '[]'
+      kubevirt.io/latest-observed-api-version: v1
+      kubevirt.io/storage-observed-api-version: v1
+      kubevirt.io/vm-generation: "1"
+    creationTimestamp: "2024-08-06T13:39:34Z"
+    finalizers:
+    - kubevirt.io/virtualMachineControllerFinalize
+    - foregroundDeleteVirtualMachine
+    - wrangler.cattle.io/VMIController.UnsetOwnerOfPVCs
+    - wrangler.cattle.io/harvester-lb-vmi-controller
+    generation: 2
+    labels:
+      harvesterhci.io/vmName: gpu
+    managedFields:
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/sshNames: {}
+            f:kubevirt.io/latest-observed-api-version: {}
+            f:kubevirt.io/storage-observed-api-version: {}
+            f:kubevirt.io/vm-generation: {}
+          f:finalizers:
+            .: {}
+            v:"kubevirt.io/virtualMachineControllerFinalize"null: {}
+          f:labels:
+            .: {}
+            f:harvesterhci.io/vmName: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"861f8ee6-1b9d-4134-a0a8-d584f5516ced"}: {}
+        f:spec:
+          .: {}
+          f:affinity:
+            .: {}
+            f:nodeAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution:
+                .: {}
+                f:nodeSelectorTerms: {}
+          f:architecture: {}
+          f:domain:
+            .: {}
+            f:cpu:
+              .: {}
+              f:cores: {}
+              f:sockets: {}
+              f:threads: {}
+            f:devices:
+              .: {}
+              f:disks: {}
+              f:gpus: {}
+              f:inputs: {}
+              f:interfaces: {}
+            f:features:
+              .: {}
+              f:acpi:
+                .: {}
+                f:enabled: {}
+            f:firmware:
+              .: {}
+              f:uuid: {}
+            f:machine:
+              .: {}
+              f:type: {}
+            f:memory:
+              .: {}
+              f:guest: {}
+            f:resources:
+              .: {}
+              f:limits:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+              f:requests:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+          f:evictionStrategy: {}
+          f:hostname: {}
+          f:networks: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes: {}
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:currentCPUTopology:
+            .: {}
+            f:cores: {}
+            f:sockets: {}
+            f:threads: {}
+          f:guestOSInfo: {}
+          f:runtimeUser: {}
+          f:virtualMachineRevisionName: {}
+      manager: Go-http-client
+      operation: Update
+      time: "2024-08-06T13:39:34Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            v:"wrangler.cattle.io/VMIController.UnsetOwnerOfPVCs"null: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T13:39:34Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            v:"wrangler.cattle.io/harvester-lb-vmi-controller"null: {}
+      manager: harvester-load-balancer
+      operation: Update
+      time: "2024-08-06T13:39:34Z"
+    name: gpu
+    namespace: default
+    ownerReferences:
+    - apiVersion: kubevirt.io/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: VirtualMachine
+      name: gpu
+      uid: 861f8ee6-1b9d-4134-a0a8-d584f5516ced
+    resourceVersion: "736672"
+    uid: 7e8664ff-26ba-4fe4-b3a0-20bab69a61d7
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: network.harvesterhci.io/mgmt
+              operator: In
+              values:
+              - "true"
+    architecture: amd64
+    domain:
+      cpu:
+        cores: 8
+        model: host-model
+        sockets: 1
+        threads: 1
+      devices:
+        disks:
+        - bootOrder: 1
+          cdrom:
+            bus: sata
+            readonly: true
+            tray: closed
+          name: disk-0
+        - bootOrder: 2
+          disk:
+            bus: virtio
+          name: disk-1
+        - disk:
+            bus: virtio
+          name: cloudinitdisk
+        gpus:
+        - deviceName: nvidia.com/NVIDIA_RTX5000-Ada-8Q
+          name: harvesterdev7-00000b007
+        inputs:
+        - bus: usb
+          name: tablet
+          type: tablet
+        interfaces:
+        - bridge: {}
+          model: virtio
+          name: default
+      features:
+        acpi:
+          enabled: true
+      firmware:
+        uuid: c9ecf11d-ca29-5a88-a41c-1d9da93fc16c
+      machine:
+        type: q35
+      memory:
+        guest: 16284Mi
+      resources:
+        limits:
+          cpu: "8"
+          memory: 16Gi
+        requests:
+          cpu: 500m
+          memory: 16284Mi
+    evictionStrategy: LiveMigrateIfPossible
+    hostname: gpu
+    networks:
+    - multus:
+        networkName: default/350vlan
+      name: default
+    terminationGracePeriodSeconds: 120
+    volumes:
+    - name: disk-0
+      persistentVolumeClaim:
+        claimName: gpu-disk-0-losvf
+    - name: disk-1
+      persistentVolumeClaim:
+        claimName: gpu-disk-1-kfxss
+    - cloudInitNoCloud:
+        networkDataSecretRef:
+          name: gpu-nzngd
+        secretRef:
+          name: gpu-nzngd
+      name: cloudinitdisk
+  status:
+    conditions:
+    - lastProbeTime: "2024-08-06T13:39:34Z"
+      lastTransitionTime: "2024-08-06T13:39:34Z"
+      message: virt-launcher pod has not yet been scheduled
+      reason: PodNotExists
+      status: "False"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T13:39:34Z"
+      message: 'failed to render launch manifest: GPU nvidia.com/NVIDIA_RTX5000-Ada-8Q
+        is not permitted in permittedHostDevices configuration'
+      reason: FailedCreate
+      status: "False"
+      type: Synchronized
+    currentCPUTopology:
+      cores: 8
+      sockets: 1
+      threads: 1
+    guestOSInfo: {}
+    memory:
+      guestAtBoot: 16284Mi
+      guestCurrent: 16284Mi
+      guestRequested: 16284Mi
+    phase: Pending
+    phaseTransitionTimestamps:
+    - phase: Pending
+      phaseTransitionTimestamp: "2024-08-06T13:39:34Z"
+    runtimeUser: 107
+    virtualMachineRevisionName: revision-start-vm-861f8ee6-1b9d-4134-a0a8-d584f5516ced-1
+- apiVersion: kubevirt.io/v1
+  kind: VirtualMachineInstance
+  metadata:
+    annotations:
+      harvesterhci.io/sshNames: '[]'
+      harvesterhci.io/waitForLeaseInterfaceNames: '[]'
+      kubevirt.io/latest-observed-api-version: v1
+      kubevirt.io/storage-observed-api-version: v1
+      kubevirt.io/vm-generation: "1"
+    creationTimestamp: "2024-08-06T14:09:05Z"
+    finalizers:
+    - kubevirt.io/virtualMachineControllerFinalize
+    - foregroundDeleteVirtualMachine
+    - wrangler.cattle.io/VMIController.UnsetOwnerOfPVCs
+    - wrangler.cattle.io/harvester-lb-vmi-controller
+    generation: 2
+    labels:
+      harvesterhci.io/creator: docker-machine-driver-harvester
+      harvesterhci.io/vmName: gputest-gpu1-1df5240c-87trc
+    managedFields:
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/sshNames: {}
+            f:harvesterhci.io/waitForLeaseInterfaceNames: {}
+            f:kubevirt.io/latest-observed-api-version: {}
+            f:kubevirt.io/storage-observed-api-version: {}
+            f:kubevirt.io/vm-generation: {}
+          f:finalizers:
+            .: {}
+            v:"kubevirt.io/virtualMachineControllerFinalize"null: {}
+          f:labels:
+            .: {}
+            f:harvesterhci.io/creator: {}
+            f:harvesterhci.io/vmName: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"d913b608-c1b8-4fe1-ab4a-1df4bf821e5f"}: {}
+        f:spec:
+          .: {}
+          f:affinity:
+            .: {}
+            f:nodeAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution:
+                .: {}
+                f:nodeSelectorTerms: {}
+            f:podAntiAffinity:
+              .: {}
+              f:preferredDuringSchedulingIgnoredDuringExecution: {}
+          f:architecture: {}
+          f:domain:
+            .: {}
+            f:cpu:
+              .: {}
+              f:cores: {}
+            f:devices:
+              .: {}
+              f:disks: {}
+              f:gpus: {}
+              f:interfaces: {}
+            f:firmware:
+              .: {}
+              f:uuid: {}
+            f:machine:
+              .: {}
+              f:type: {}
+            f:memory:
+              .: {}
+              f:guest: {}
+            f:resources:
+              .: {}
+              f:limits:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+              f:requests:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+          f:evictionStrategy: {}
+          f:networks: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes: {}
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:currentCPUTopology:
+            .: {}
+            f:cores: {}
+            f:sockets: {}
+            f:threads: {}
+          f:guestOSInfo: {}
+          f:runtimeUser: {}
+          f:virtualMachineRevisionName: {}
+      manager: Go-http-client
+      operation: Update
+      time: "2024-08-06T14:09:05Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            v:"wrangler.cattle.io/VMIController.UnsetOwnerOfPVCs"null: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T14:09:05Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            v:"wrangler.cattle.io/harvester-lb-vmi-controller"null: {}
+      manager: harvester-load-balancer
+      operation: Update
+      time: "2024-08-06T14:09:05Z"
+    name: gputest-gpu1-1df5240c-87trc
+    namespace: default
+    ownerReferences:
+    - apiVersion: kubevirt.io/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: VirtualMachine
+      name: gputest-gpu1-1df5240c-87trc
+      uid: d913b608-c1b8-4fe1-ab4a-1df4bf821e5f
+    resourceVersion: "766982"
+    uid: 80ed41b4-399f-451d-903b-b3e28a4f216d
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: network.harvesterhci.io/mgmt
+              operator: In
+              values:
+              - "true"
+      podAntiAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+              - key: harvesterhci.io/creator
+                operator: Exists
+            topologyKey: kubernetes.io/hostname
+          weight: 100
+    architecture: amd64
+    domain:
+      cpu:
+        cores: 8
+        model: host-model
+      devices:
+        disks:
+        - disk:
+            bus: virtio
+          name: cloudinitdisk
+        - bootOrder: 1
+          disk:
+            bus: virtio
+          name: disk-0
+        gpus:
+        - deviceName: nvidia.com/NVIDIA_RTX5000-Ada-8Q
+          name: harvesterdev7-00000b004
+        interfaces:
+        - bridge: {}
+          model: virtio
+          name: nic-0
+      features:
+        acpi:
+          enabled: true
+      firmware:
+        uuid: be039232-ad10-50d7-aa98-5fb1edfab245
+      machine:
+        type: q35
+      memory:
+        guest: 16284Mi
+      resources:
+        limits:
+          cpu: "8"
+          memory: 16Gi
+        requests:
+          cpu: 500m
+          memory: 16284Mi
+    evictionStrategy: LiveMigrate
+    networks:
+    - multus:
+        networkName: default/350vlan
+      name: nic-0
+    terminationGracePeriodSeconds: 120
+    volumes:
+    - cloudInitNoCloud:
+        secretRef:
+          name: gputest-gpu1-1df5240c-87trc-cloudinit
+      name: cloudinitdisk
+    - name: disk-0
+      persistentVolumeClaim:
+        claimName: gputest-gpu1-1df5240c-87trc-disk-0-k6q7q
+  status:
+    conditions:
+    - lastProbeTime: "2024-08-06T14:09:05Z"
+      lastTransitionTime: "2024-08-06T14:09:05Z"
+      message: virt-launcher pod has not yet been scheduled
+      reason: PodNotExists
+      status: "False"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T14:09:05Z"
+      message: 'failed to render launch manifest: GPU nvidia.com/NVIDIA_RTX5000-Ada-8Q
+        is not permitted in permittedHostDevices configuration'
+      reason: FailedCreate
+      status: "False"
+      type: Synchronized
+    currentCPUTopology:
+      cores: 8
+      sockets: 1
+      threads: 1
+    guestOSInfo: {}
+    memory:
+      guestAtBoot: 16284Mi
+      guestCurrent: 16284Mi
+      guestRequested: 16284Mi
+    phase: Pending
+    phaseTransitionTimestamps:
+    - phase: Pending
+      phaseTransitionTimestamp: "2024-08-06T14:09:05Z"
+    runtimeUser: 107
+    virtualMachineRevisionName: revision-start-vm-d913b608-c1b8-4fe1-ab4a-1df4bf821e5f-1
+- apiVersion: kubevirt.io/v1
+  kind: VirtualMachineInstance
+  metadata:
+    annotations:
+      harvesterhci.io/sshNames: '[]'
+      harvesterhci.io/waitForLeaseInterfaceNames: '[]'
+      kubernetes.io/hostname: harvesterdev2
+      kubevirt.io/latest-observed-api-version: v1
+      kubevirt.io/storage-observed-api-version: v1
+      kubevirt.io/vm-generation: "2"
+    creationTimestamp: "2024-08-06T02:24:15Z"
+    finalizers:
+    - kubevirt.io/virtualMachineControllerFinalize
+    - foregroundDeleteVirtualMachine
+    - wrangler.cattle.io/VMIController.UnsetOwnerOfPVCs
+    - wrangler.cattle.io/harvester-lb-vmi-controller
+    generation: 51
+    labels:
+      harvesterhci.io/creator: docker-machine-driver-harvester
+      harvesterhci.io/vmName: gputest-primary-c31607d4-fqgjd
+      kubevirt.io/nodeName: harvesterdev2
+    managedFields:
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            v:"wrangler.cattle.io/harvester-lb-vmi-controller"null: {}
+      manager: harvester-load-balancer
+      operation: Update
+      time: "2024-08-06T02:24:15Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubernetes.io/hostname: {}
+          f:finalizers:
+            v:"wrangler.cattle.io/VMIController.UnsetOwnerOfPVCs"null: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T02:24:41Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/sshNames: {}
+            f:harvesterhci.io/waitForLeaseInterfaceNames: {}
+            f:kubevirt.io/latest-observed-api-version: {}
+            f:kubevirt.io/storage-observed-api-version: {}
+            f:kubevirt.io/vm-generation: {}
+          f:finalizers:
+            .: {}
+            v:"kubevirt.io/virtualMachineControllerFinalize"null: {}
+          f:labels:
+            .: {}
+            f:harvesterhci.io/creator: {}
+            f:harvesterhci.io/vmName: {}
+            f:kubevirt.io/nodeName: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"108a1b8a-a5ef-49c6-893b-ff6df41e949f"}: {}
+        f:spec:
+          .: {}
+          f:affinity:
+            .: {}
+            f:nodeAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution:
+                .: {}
+                f:nodeSelectorTerms: {}
+            f:podAntiAffinity:
+              .: {}
+              f:preferredDuringSchedulingIgnoredDuringExecution: {}
+          f:architecture: {}
+          f:domain:
+            .: {}
+            f:cpu:
+              .: {}
+              f:cores: {}
+            f:devices:
+              .: {}
+              f:disks: {}
+              f:interfaces: {}
+            f:firmware:
+              .: {}
+              f:uuid: {}
+            f:machine:
+              .: {}
+              f:type: {}
+            f:memory:
+              .: {}
+              f:guest: {}
+            f:resources:
+              .: {}
+              f:limits:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+              f:requests:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+          f:evictionStrategy: {}
+          f:networks: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes: {}
+        f:status:
+          .: {}
+          f:activePods:
+            .: {}
+            f:130b264e-6f97-4806-b72c-2019cb1263ea: {}
+          f:conditions: {}
+          f:currentCPUTopology:
+            .: {}
+            f:cores: {}
+            f:sockets: {}
+            f:threads: {}
+          f:guestOSInfo:
+            .: {}
+            f:id: {}
+            f:kernelRelease: {}
+            f:kernelVersion: {}
+            f:name: {}
+            f:prettyName: {}
+            f:version: {}
+            f:versionId: {}
+          f:interfaces: {}
+          f:launcherContainerImageVersion: {}
+          f:machine:
+            .: {}
+            f:type: {}
+          f:migrationMethod: {}
+          f:migrationTransport: {}
+          f:nodeName: {}
+          f:phase: {}
+          f:phaseTransitionTimestamps: {}
+          f:qosClass: {}
+          f:runtimeUser: {}
+          f:selinuxContext: {}
+          f:virtualMachineRevisionName: {}
+          f:volumeStatus: {}
+      manager: Go-http-client
+      operation: Update
+      time: "2024-08-06T14:09:47Z"
+    name: gputest-primary-c31607d4-fqgjd
+    namespace: default
+    ownerReferences:
+    - apiVersion: kubevirt.io/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: VirtualMachine
+      name: gputest-primary-c31607d4-fqgjd
+      uid: 108a1b8a-a5ef-49c6-893b-ff6df41e949f
+    resourceVersion: "767708"
+    uid: 68fc2748-220d-443b-bb03-82d9565843f8
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: network.harvesterhci.io/mgmt
+              operator: In
+              values:
+              - "true"
+      podAntiAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+              - key: harvesterhci.io/creator
+                operator: Exists
+            topologyKey: kubernetes.io/hostname
+          weight: 100
+    architecture: amd64
+    domain:
+      cpu:
+        cores: 4
+        model: host-model
+      devices:
+        disks:
+        - disk:
+            bus: virtio
+          name: cloudinitdisk
+        - bootOrder: 1
+          disk:
+            bus: virtio
+          name: disk-0
+        interfaces:
+        - bridge: {}
+          model: virtio
+          name: nic-0
+      features:
+        acpi:
+          enabled: true
+      firmware:
+        uuid: 9bb7ed1b-6b66-51fd-9772-0bb907d30236
+      machine:
+        type: q35
+      memory:
+        guest: 8092Mi
+      resources:
+        limits:
+          cpu: "4"
+          memory: 8Gi
+        requests:
+          cpu: 250m
+          memory: 5461Mi
+    evictionStrategy: LiveMigrate
+    networks:
+    - multus:
+        networkName: default/350vlan
+      name: nic-0
+    terminationGracePeriodSeconds: 120
+    volumes:
+    - cloudInitNoCloud:
+        secretRef:
+          name: gputest-primary-c31607d4-fqgjd-cloudinit
+      name: cloudinitdisk
+    - name: disk-0
+      persistentVolumeClaim:
+        claimName: gputest-primary-c31607d4-fqgjd-disk-0-4xtb4
+  status:
+    activePods:
+      130b264e-6f97-4806-b72c-2019cb1263ea: harvesterdev2
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:24:41Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "null"
+      status: "True"
+      type: LiveMigratable
+    - lastProbeTime: "2024-08-06T02:25:17Z"
+      lastTransitionTime: "null"
+      status: "True"
+      type: AgentConnected
+    currentCPUTopology:
+      cores: 4
+      sockets: 1
+      threads: 1
+    guestOSInfo:
+      id: ubuntu
+      kernelRelease: 5.4.0-1117-kvm
+      kernelVersion: '#124-Ubuntu SMP Fri Jul 12 08:37:41 UTC 2024'
+      name: Ubuntu
+      prettyName: Ubuntu 20.04.6 LTS
+      version: "20.04"
+      versionId: "20.04"
+    interfaces:
+    - infoSource: domain, guest-agent, multus-status
+      interfaceName: enp1s0
+      ipAddress: 10.10.200.27
+      ipAddresses:
+      - 10.10.200.27
+      - fe80::2034:36ff:fe42:a8ed
+      mac: 22:34:36:42:a8:ed
+      name: nic-0
+      queueCount: 1
+    - infoSource: domain, guest-agent
+      interfaceName: calicc3ce8af4f9
+      ipAddress: fe80::ecee:eeff:feee:eeee
+      ipAddresses:
+      - fe80::ecee:eeff:feee:eeee
+      mac: ee:ee:ee:ee:ee:ee
+    - infoSource: guest-agent
+      interfaceName: vxlan.calico
+      ipAddress: 10.42.246.192
+      ipAddresses:
+      - 10.42.246.192
+      - fe80::64d8:6ff:fef6:5708
+      mac: 66:d8:06:f6:57:08
+    launcherContainerImageVersion: registry.suse.com/suse/sles/15.5/virt-launcher:1.1.1-150500.8.15.1
+    machine:
+      type: pc-q35-7.1
+    memory:
+      guestAtBoot: 8092Mi
+      guestCurrent: 8092Mi
+      guestRequested: 8092Mi
+    migrationMethod: BlockMigration
+    migrationTransport: Unix
+    nodeName: harvesterdev2
+    phase: Running
+    phaseTransitionTimestamps:
+    - phase: Pending
+      phaseTransitionTimestamp: "2024-08-06T02:24:15Z"
+    - phase: Scheduling
+      phaseTransitionTimestamp: "2024-08-06T02:24:15Z"
+    - phase: Scheduled
+      phaseTransitionTimestamp: "2024-08-06T02:24:41Z"
+    - phase: Running
+      phaseTransitionTimestamp: "2024-08-06T02:24:43Z"
+    qosClass: Burstable
+    runtimeUser: 107
+    selinuxContext: none
+    virtualMachineRevisionName: revision-start-vm-108a1b8a-a5ef-49c6-893b-ff6df41e949f-1
+    volumeStatus:
+    - name: cloudinitdisk
+      size: 1.048576e+06
+      target: vda
+    - name: disk-0
+      persistentVolumeClaimInfo:
+        accessModes:
+        - ReadWriteMany
+        capacity:
+          storage: 40Gi
+        filesystemOverhead: "0.055"
+        requests:
+          storage: 40Gi
+        volumeMode: Block
+      target: vdb
+- apiVersion: kubevirt.io/v1
+  kind: VirtualMachineInstance
+  metadata:
+    annotations:
+      harvesterhci.io/sshNames: '[]'
+      harvesterhci.io/waitForLeaseInterfaceNames: '[]'
+      kubernetes.io/hostname: harvesterdev7
+      kubevirt.io/latest-observed-api-version: v1
+      kubevirt.io/storage-observed-api-version: v1
+      kubevirt.io/vm-generation: "2"
+    creationTimestamp: "2024-08-06T02:24:07Z"
+    finalizers:
+    - kubevirt.io/virtualMachineControllerFinalize
+    - foregroundDeleteVirtualMachine
+    - wrangler.cattle.io/harvester-lb-vmi-controller
+    - wrangler.cattle.io/VMIController.UnsetOwnerOfPVCs
+    generation: 124
+    labels:
+      harvesterhci.io/creator: docker-machine-driver-harvester
+      harvesterhci.io/vmName: gputest-primary-c31607d4-hpllh
+      kubevirt.io/nodeName: harvesterdev7
+    managedFields:
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            v:"wrangler.cattle.io/harvester-lb-vmi-controller"null: {}
+      manager: harvester-load-balancer
+      operation: Update
+      time: "2024-08-06T02:24:07Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubernetes.io/hostname: {}
+          f:finalizers:
+            v:"wrangler.cattle.io/VMIController.UnsetOwnerOfPVCs"null: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T02:25:01Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/sshNames: {}
+            f:harvesterhci.io/waitForLeaseInterfaceNames: {}
+            f:kubevirt.io/latest-observed-api-version: {}
+            f:kubevirt.io/storage-observed-api-version: {}
+            f:kubevirt.io/vm-generation: {}
+          f:finalizers:
+            .: {}
+            v:"kubevirt.io/virtualMachineControllerFinalize"null: {}
+          f:labels:
+            .: {}
+            f:harvesterhci.io/creator: {}
+            f:harvesterhci.io/vmName: {}
+            f:kubevirt.io/nodeName: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"d1ad9368-5f8b-4975-b921-8750497a82ec"}: {}
+        f:spec:
+          .: {}
+          f:affinity:
+            .: {}
+            f:nodeAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution:
+                .: {}
+                f:nodeSelectorTerms: {}
+            f:podAntiAffinity:
+              .: {}
+              f:preferredDuringSchedulingIgnoredDuringExecution: {}
+          f:architecture: {}
+          f:domain:
+            .: {}
+            f:cpu:
+              .: {}
+              f:cores: {}
+            f:devices:
+              .: {}
+              f:disks: {}
+              f:interfaces: {}
+            f:firmware:
+              .: {}
+              f:uuid: {}
+            f:machine:
+              .: {}
+              f:type: {}
+            f:memory:
+              .: {}
+              f:guest: {}
+            f:resources:
+              .: {}
+              f:limits:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+              f:requests:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+          f:evictionStrategy: {}
+          f:networks: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes: {}
+        f:status:
+          .: {}
+          f:activePods:
+            .: {}
+            f:f3cc28b0-2df2-4b9a-b801-909286dbe195: {}
+          f:conditions: {}
+          f:currentCPUTopology:
+            .: {}
+            f:cores: {}
+            f:sockets: {}
+            f:threads: {}
+          f:guestOSInfo:
+            .: {}
+            f:id: {}
+            f:kernelRelease: {}
+            f:kernelVersion: {}
+            f:name: {}
+            f:prettyName: {}
+            f:version: {}
+            f:versionId: {}
+          f:interfaces: {}
+          f:launcherContainerImageVersion: {}
+          f:machine:
+            .: {}
+            f:type: {}
+          f:migrationMethod: {}
+          f:migrationTransport: {}
+          f:nodeName: {}
+          f:phase: {}
+          f:phaseTransitionTimestamps: {}
+          f:qosClass: {}
+          f:runtimeUser: {}
+          f:selinuxContext: {}
+          f:virtualMachineRevisionName: {}
+          f:volumeStatus: {}
+      manager: Go-http-client
+      operation: Update
+      time: "2024-08-06T14:08:22Z"
+    name: gputest-primary-c31607d4-hpllh
+    namespace: default
+    ownerReferences:
+    - apiVersion: kubevirt.io/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: VirtualMachine
+      name: gputest-primary-c31607d4-hpllh
+      uid: d1ad9368-5f8b-4975-b921-8750497a82ec
+    resourceVersion: "766155"
+    uid: f9859e88-71a2-48ee-990b-add5675c8753
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: network.harvesterhci.io/mgmt
+              operator: In
+              values:
+              - "true"
+      podAntiAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+              - key: harvesterhci.io/creator
+                operator: Exists
+            topologyKey: kubernetes.io/hostname
+          weight: 100
+    architecture: amd64
+    domain:
+      cpu:
+        cores: 4
+        model: host-model
+      devices:
+        disks:
+        - disk:
+            bus: virtio
+          name: cloudinitdisk
+        - bootOrder: 1
+          disk:
+            bus: virtio
+          name: disk-0
+        interfaces:
+        - bridge: {}
+          model: virtio
+          name: nic-0
+      features:
+        acpi:
+          enabled: true
+      firmware:
+        uuid: 9c872897-3a4f-545d-b39f-0698fa56042b
+      machine:
+        type: q35
+      memory:
+        guest: 8092Mi
+      resources:
+        limits:
+          cpu: "4"
+          memory: 8Gi
+        requests:
+          cpu: 250m
+          memory: 5461Mi
+    evictionStrategy: LiveMigrate
+    networks:
+    - multus:
+        networkName: default/350vlan
+      name: nic-0
+    terminationGracePeriodSeconds: 120
+    volumes:
+    - cloudInitNoCloud:
+        secretRef:
+          name: gputest-primary-c31607d4-hpllh-cloudinit
+      name: cloudinitdisk
+    - name: disk-0
+      persistentVolumeClaim:
+        claimName: gputest-primary-c31607d4-hpllh-disk-0-9xgqk
+  status:
+    activePods:
+      f3cc28b0-2df2-4b9a-b801-909286dbe195: harvesterdev7
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:25:01Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "null"
+      status: "True"
+      type: LiveMigratable
+    - lastProbeTime: "2024-08-06T02:25:52Z"
+      lastTransitionTime: "null"
+      status: "True"
+      type: AgentConnected
+    currentCPUTopology:
+      cores: 4
+      sockets: 1
+      threads: 1
+    guestOSInfo:
+      id: ubuntu
+      kernelRelease: 5.4.0-1117-kvm
+      kernelVersion: '#124-Ubuntu SMP Fri Jul 12 08:37:41 UTC 2024'
+      name: Ubuntu
+      prettyName: Ubuntu 20.04.6 LTS
+      version: "20.04"
+      versionId: "20.04"
+    interfaces:
+    - infoSource: domain, guest-agent, multus-status
+      interfaceName: enp1s0
+      ipAddress: 10.10.200.72
+      ipAddresses:
+      - 10.10.200.72
+      - fe80::14b4:cbff:fec5:316e
+      mac: 16:b4:cb:c5:31:6e
+      name: nic-0
+      queueCount: 1
+    - infoSource: guest-agent
+      interfaceName: vxlan.calico
+      ipAddress: 10.42.218.0
+      ipAddresses:
+      - 10.42.218.0
+      - fe80::648d:5bff:fe76:72c6
+      mac: 66:8d:5b:76:72:c6
+    - infoSource: guest-agent
+      interfaceName: cali7fe3752adb5
+      ipAddress: fe80::ecee:eeff:feee:eeee
+      ipAddresses:
+      - fe80::ecee:eeff:feee:eeee
+      mac: ee:ee:ee:ee:ee:ee
+    launcherContainerImageVersion: registry.suse.com/suse/sles/15.5/virt-launcher:1.1.1-150500.8.15.1
+    machine:
+      type: pc-q35-7.1
+    memory:
+      guestAtBoot: 8092Mi
+      guestCurrent: 8092Mi
+      guestRequested: 8092Mi
+    migrationMethod: BlockMigration
+    migrationTransport: Unix
+    nodeName: harvesterdev7
+    phase: Running
+    phaseTransitionTimestamps:
+    - phase: Pending
+      phaseTransitionTimestamp: "2024-08-06T02:24:07Z"
+    - phase: Scheduling
+      phaseTransitionTimestamp: "2024-08-06T02:24:07Z"
+    - phase: Scheduled
+      phaseTransitionTimestamp: "2024-08-06T02:25:01Z"
+    - phase: Running
+      phaseTransitionTimestamp: "2024-08-06T02:25:04Z"
+    qosClass: Burstable
+    runtimeUser: 107
+    selinuxContext: none
+    virtualMachineRevisionName: revision-start-vm-d1ad9368-5f8b-4975-b921-8750497a82ec-1
+    volumeStatus:
+    - name: cloudinitdisk
+      size: 1.048576e+06
+      target: vda
+    - name: disk-0
+      persistentVolumeClaimInfo:
+        accessModes:
+        - ReadWriteMany
+        capacity:
+          storage: 40Gi
+        filesystemOverhead: "0.055"
+        requests:
+          storage: 40Gi
+        volumeMode: Block
+      target: vdb
+- apiVersion: kubevirt.io/v1
+  kind: VirtualMachineInstance
+  metadata:
+    annotations:
+      harvesterhci.io/sshNames: '[]'
+      harvesterhci.io/waitForLeaseInterfaceNames: '[]'
+      kubernetes.io/hostname: harvesterdev3
+      kubevirt.io/latest-observed-api-version: v1
+      kubevirt.io/storage-observed-api-version: v1
+      kubevirt.io/vm-generation: "2"
+    creationTimestamp: "2024-08-06T02:24:13Z"
+    finalizers:
+    - kubevirt.io/virtualMachineControllerFinalize
+    - foregroundDeleteVirtualMachine
+    - wrangler.cattle.io/VMIController.UnsetOwnerOfPVCs
+    - wrangler.cattle.io/harvester-lb-vmi-controller
+    generation: 65
+    labels:
+      harvesterhci.io/creator: docker-machine-driver-harvester
+      harvesterhci.io/vmName: gputest-primary-c31607d4-nr27s
+      kubevirt.io/nodeName: harvesterdev3
+    managedFields:
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            v:"wrangler.cattle.io/harvester-lb-vmi-controller"null: {}
+      manager: harvester-load-balancer
+      operation: Update
+      time: "2024-08-06T02:24:14Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubernetes.io/hostname: {}
+          f:finalizers:
+            v:"wrangler.cattle.io/VMIController.UnsetOwnerOfPVCs"null: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T02:24:34Z"
+    - apiVersion: kubevirt.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/sshNames: {}
+            f:harvesterhci.io/waitForLeaseInterfaceNames: {}
+            f:kubevirt.io/latest-observed-api-version: {}
+            f:kubevirt.io/storage-observed-api-version: {}
+            f:kubevirt.io/vm-generation: {}
+          f:finalizers:
+            .: {}
+            v:"kubevirt.io/virtualMachineControllerFinalize"null: {}
+          f:labels:
+            .: {}
+            f:harvesterhci.io/creator: {}
+            f:harvesterhci.io/vmName: {}
+            f:kubevirt.io/nodeName: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"3b9537ac-c024-4c35-b3f5-da034b05f5ba"}: {}
+        f:spec:
+          .: {}
+          f:affinity:
+            .: {}
+            f:nodeAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution:
+                .: {}
+                f:nodeSelectorTerms: {}
+            f:podAntiAffinity:
+              .: {}
+              f:preferredDuringSchedulingIgnoredDuringExecution: {}
+          f:architecture: {}
+          f:domain:
+            .: {}
+            f:cpu:
+              .: {}
+              f:cores: {}
+            f:devices:
+              .: {}
+              f:disks: {}
+              f:interfaces: {}
+            f:firmware:
+              .: {}
+              f:uuid: {}
+            f:machine:
+              .: {}
+              f:type: {}
+            f:memory:
+              .: {}
+              f:guest: {}
+            f:resources:
+              .: {}
+              f:limits:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+              f:requests:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+          f:evictionStrategy: {}
+          f:networks: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes: {}
+        f:status:
+          .: {}
+          f:activePods:
+            .: {}
+            f:da811880-3d91-4aaa-92a5-df9008058dae: {}
+          f:conditions: {}
+          f:currentCPUTopology:
+            .: {}
+            f:cores: {}
+            f:sockets: {}
+            f:threads: {}
+          f:guestOSInfo:
+            .: {}
+            f:id: {}
+            f:kernelRelease: {}
+            f:kernelVersion: {}
+            f:name: {}
+            f:prettyName: {}
+            f:version: {}
+            f:versionId: {}
+          f:interfaces: {}
+          f:launcherContainerImageVersion: {}
+          f:machine:
+            .: {}
+            f:type: {}
+          f:migrationMethod: {}
+          f:migrationTransport: {}
+          f:nodeName: {}
+          f:phase: {}
+          f:phaseTransitionTimestamps: {}
+          f:qosClass: {}
+          f:runtimeUser: {}
+          f:selinuxContext: {}
+          f:virtualMachineRevisionName: {}
+          f:volumeStatus: {}
+      manager: Go-http-client
+      operation: Update
+      time: "2024-08-06T13:33:43Z"
+    name: gputest-primary-c31607d4-nr27s
+    namespace: default
+    ownerReferences:
+    - apiVersion: kubevirt.io/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: VirtualMachine
+      name: gputest-primary-c31607d4-nr27s
+      uid: 3b9537ac-c024-4c35-b3f5-da034b05f5ba
+    resourceVersion: "730581"
+    uid: 3dbb34cd-039e-4d53-83e9-3cdded895aa5
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: network.harvesterhci.io/mgmt
+              operator: In
+              values:
+              - "true"
+      podAntiAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+              - key: harvesterhci.io/creator
+                operator: Exists
+            topologyKey: kubernetes.io/hostname
+          weight: 100
+    architecture: amd64
+    domain:
+      cpu:
+        cores: 4
+        model: host-model
+      devices:
+        disks:
+        - disk:
+            bus: virtio
+          name: cloudinitdisk
+        - bootOrder: 1
+          disk:
+            bus: virtio
+          name: disk-0
+        interfaces:
+        - bridge: {}
+          model: virtio
+          name: nic-0
+      features:
+        acpi:
+          enabled: true
+      firmware:
+        uuid: 27d10d2d-2487-55f0-8898-28487e4adda6
+      machine:
+        type: q35
+      memory:
+        guest: 8092Mi
+      resources:
+        limits:
+          cpu: "4"
+          memory: 8Gi
+        requests:
+          cpu: 250m
+          memory: 5461Mi
+    evictionStrategy: LiveMigrate
+    networks:
+    - multus:
+        networkName: default/350vlan
+      name: nic-0
+    terminationGracePeriodSeconds: 120
+    volumes:
+    - cloudInitNoCloud:
+        secretRef:
+          name: gputest-primary-c31607d4-nr27s-cloudinit
+      name: cloudinitdisk
+    - name: disk-0
+      persistentVolumeClaim:
+        claimName: gputest-primary-c31607d4-nr27s-disk-0-rlg2q
+  status:
+    activePods:
+      da811880-3d91-4aaa-92a5-df9008058dae: harvesterdev3
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:24:34Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "null"
+      status: "True"
+      type: LiveMigratable
+    - lastProbeTime: "2024-08-06T02:25:13Z"
+      lastTransitionTime: "null"
+      status: "True"
+      type: AgentConnected
+    currentCPUTopology:
+      cores: 4
+      sockets: 1
+      threads: 1
+    guestOSInfo:
+      id: ubuntu
+      kernelRelease: 5.4.0-1117-kvm
+      kernelVersion: '#124-Ubuntu SMP Fri Jul 12 08:37:41 UTC 2024'
+      name: Ubuntu
+      prettyName: Ubuntu 20.04.6 LTS
+      version: "20.04"
+      versionId: "20.04"
+    interfaces:
+    - infoSource: domain, guest-agent, multus-status
+      interfaceName: enp1s0
+      ipAddress: 10.10.200.188
+      ipAddresses:
+      - 10.10.200.188
+      - fe80::d4bb:d7ff:fe15:622a
+      mac: d6:bb:d7:15:62:2a
+      name: nic-0
+      queueCount: 1
+    - infoSource: domain, guest-agent
+      interfaceName: cali802a2c9d7ba
+      ipAddress: fe80::ecee:eeff:feee:eeee
+      ipAddresses:
+      - fe80::ecee:eeff:feee:eeee
+      mac: ee:ee:ee:ee:ee:ee
+    - infoSource: guest-agent
+      interfaceName: vxlan.calico
+      ipAddress: 10.42.186.64
+      ipAddresses:
+      - 10.42.186.64
+      - fe80::645f:88ff:fed2:94fb
+      mac: 66:5f:88:d2:94:fb
+    launcherContainerImageVersion: registry.suse.com/suse/sles/15.5/virt-launcher:1.1.1-150500.8.15.1
+    machine:
+      type: pc-q35-7.1
+    memory:
+      guestAtBoot: 8092Mi
+      guestCurrent: 8092Mi
+      guestRequested: 8092Mi
+    migrationMethod: BlockMigration
+    migrationTransport: Unix
+    nodeName: harvesterdev3
+    phase: Running
+    phaseTransitionTimestamps:
+    - phase: Pending
+      phaseTransitionTimestamp: "2024-08-06T02:24:13Z"
+    - phase: Scheduling
+      phaseTransitionTimestamp: "2024-08-06T02:24:14Z"
+    - phase: Scheduled
+      phaseTransitionTimestamp: "2024-08-06T02:24:34Z"
+    - phase: Running
+      phaseTransitionTimestamp: "2024-08-06T02:24:37Z"
+    qosClass: Burstable
+    runtimeUser: 107
+    selinuxContext: none
+    virtualMachineRevisionName: revision-start-vm-3b9537ac-c024-4c35-b3f5-da034b05f5ba-1
+    volumeStatus:
+    - name: cloudinitdisk
+      size: 1.048576e+06
+      target: vda
+    - name: disk-0
+      persistentVolumeClaimInfo:
+        accessModes:
+        - ReadWriteMany
+        capacity:
+          storage: 40Gi
+        filesystemOverhead: "0.055"
+        requests:
+          storage: 40Gi
+        volumeMode: Block
+      target: vdb
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770184"

@@ -1,0 +1,212 @@
+apiVersion: v1
+items:
+- apiVersion: network.harvesterhci.io/v1beta1
+  kind: LinkMonitor
+  metadata:
+    creationTimestamp: "2024-08-06T01:55:54Z"
+    finalizers:
+    - wrangler.cattle.io/harvester-network-link-monitor-controller
+    generation: 35
+    managedFields:
+    - apiVersion: network.harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/harvester-network-link-monitor-controller"null: {}
+        f:spec:
+          .: {}
+          f:targetLinkRule:
+            .: {}
+            f:nameRule: {}
+        f:status:
+          .: {}
+          f:linkStatus:
+            .: {}
+            f:harvesterdev1: {}
+            f:harvesterdev2: {}
+            f:harvesterdev3: {}
+            f:harvesterdev7: {}
+      manager: harvester-network-controller
+      operation: Update
+      time: "2024-08-06T14:01:23Z"
+    name: mgmt
+    resourceVersion: "759079"
+    uid: 23ea8823-e058-4ca3-8652-42f9e73dec6c
+  spec:
+    targetLinkRule:
+      nameRule: mgmt(-br|-bo)
+  status:
+    linkStatus:
+      harvesterdev1:
+      - index: 5
+        mac: d0:50:99:d5:35:24
+        name: mgmt-br
+        state: up
+        type: bridge
+      - index: 6
+        mac: d0:50:99:d5:35:24
+        masterIndex: 5
+        name: mgmt-bo
+        state: up
+        type: bond
+      harvesterdev2:
+      - index: 5
+        mac: d0:50:99:d4:d0:64
+        name: mgmt-br
+        promiscuous: true
+        state: up
+        type: bridge
+      - index: 6
+        mac: d0:50:99:d4:d0:64
+        masterIndex: 5
+        name: mgmt-bo
+        state: up
+        type: bond
+      harvesterdev3:
+      - index: 5
+        mac: d0:50:99:db:a9:bd
+        name: mgmt-br
+        promiscuous: true
+        state: up
+        type: bridge
+      - index: 6
+        mac: d0:50:99:db:a9:bd
+        masterIndex: 5
+        name: mgmt-bo
+        state: up
+        type: bond
+      harvesterdev7:
+      - index: 6
+        mac: d0:50:99:d7:26:4f
+        name: mgmt-br
+        promiscuous: true
+        state: up
+        type: bridge
+      - index: 7
+        mac: d0:50:99:d7:26:4f
+        masterIndex: 6
+        name: mgmt-bo
+        state: up
+        type: bond
+- apiVersion: network.harvesterhci.io/v1beta1
+  kind: LinkMonitor
+  metadata:
+    creationTimestamp: "2024-08-06T01:55:54Z"
+    finalizers:
+    - wrangler.cattle.io/harvester-network-link-monitor-controller
+    generation: 33
+    managedFields:
+    - apiVersion: network.harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/harvester-network-link-monitor-controller"null: {}
+        f:spec:
+          .: {}
+          f:targetLinkRule:
+            .: {}
+            f:typeRule: {}
+        f:status:
+          .: {}
+          f:linkStatus:
+            .: {}
+            f:harvesterdev1: {}
+            f:harvesterdev2: {}
+            f:harvesterdev3: {}
+            f:harvesterdev7: {}
+      manager: harvester-network-controller
+      operation: Update
+      time: "2024-08-06T14:01:23Z"
+    name: nic
+    resourceVersion: "759078"
+    uid: f4c02154-2ec2-485a-b779-9e448d111de4
+  spec:
+    targetLinkRule:
+      typeRule: device
+  status:
+    linkStatus:
+      harvesterdev1:
+      - index: 2
+        mac: d0:50:99:d5:35:24
+        masterIndex: 6
+        name: enp65s0f0
+        state: up
+        type: device
+      - index: 3
+        mac: d0:50:99:d5:35:25
+        masterIndex: 6
+        name: enp65s0f1
+        state: up
+        type: device
+      - index: 4
+        mac: 1a:80:d8:6a:c3:67
+        name: enp68s0f3u2u2c2
+        state: down
+        type: device
+      harvesterdev2:
+      - index: 2
+        mac: d0:50:99:d4:d0:64
+        masterIndex: 6
+        name: enp65s0f0
+        state: up
+        type: device
+      - index: 3
+        mac: 66:65:95:9f:c6:44
+        name: enp68s0f3u2u2c2
+        state: down
+        type: device
+      - index: 4
+        mac: d0:50:99:d4:d0:64
+        masterIndex: 6
+        name: enp65s0f1
+        state: up
+        type: device
+      harvesterdev3:
+      - index: 2
+        mac: d0:50:99:db:a9:bd
+        masterIndex: 6
+        name: enp65s0f0
+        state: up
+        type: device
+      - index: 3
+        mac: d0:50:99:db:a9:be
+        masterIndex: 6
+        name: enp65s0f1
+        state: up
+        type: device
+      - index: 4
+        mac: 86:b5:d9:03:18:65
+        name: enp68s0f3u2u2c2
+        state: down
+        type: device
+      harvesterdev7:
+      - index: 2
+        mac: d0:50:99:d7:26:50
+        masterIndex: 7
+        name: enp9s0f0
+        state: down
+        type: device
+      - index: 3
+        mac: d0:50:99:d7:26:4f
+        masterIndex: 7
+        name: enp9s0f1
+        state: up
+        type: device
+      - index: 4
+        mac: f4:52:14:9c:dd:46
+        name: enp65s0
+        state: up
+        type: device
+      - index: 5
+        mac: ea:f9:1c:38:f7:ff
+        name: enp1s0f0u12u2c2
+        state: down
+        type: device
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770167"

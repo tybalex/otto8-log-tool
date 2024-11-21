@@ -1,0 +1,75 @@
+2024-08-06T01:56:52.265032591Z fluentd -c /fluentd/etc/fluent.conf --dry-run
+2024-08-06T01:56:53.287016294Z 2024-08-06 01:56:53 +0000 [info]: parsing config file is succeeded path="/fluentd/etc/fluent.conf"
+2024-08-06T01:56:53.363148763Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-mixin-config-placeholders' version '0.4.0'
+2024-08-06T01:56:53.363179259Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-aws-elasticsearch-service' version '2.4.1'
+2024-08-06T01:56:53.363187933Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-azure-storage-append-blob' version '0.2.1'
+2024-08-06T01:56:53.363196336Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-cloudwatch-logs' version '0.14.2'
+2024-08-06T01:56:53.363222866Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-concat' version '2.5.0'
+2024-08-06T01:56:53.363238210Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-datadog' version '0.14.1'
+2024-08-06T01:56:53.363249237Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-dedot_filter' version '1.0.0'
+2024-08-06T01:56:53.363257620Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-detect-exceptions' version '0.0.14'
+2024-08-06T01:56:53.363266002Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-elasticsearch' version '5.2.2'
+2024-08-06T01:56:53.363273674Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-enhance-k8s-metadata' version '2.0.0'
+2024-08-06T01:56:53.363293475Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-gcs' version '0.4.0'
+2024-08-06T01:56:53.363312834Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-gelf-hs' version '1.0.8'
+2024-08-06T01:56:53.363342069Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-geoip' version '1.3.2'
+2024-08-06T01:56:53.363371895Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-grafana-loki' version '1.2.18'
+2024-08-06T01:56:53.363402842Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-grok-parser' version '2.6.2'
+2024-08-06T01:56:53.363410634Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-kafka' version '0.17.5'
+2024-08-06T01:56:53.363423694Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-kinesis' version '3.4.2'
+2024-08-06T01:56:53.363430515Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-kube-events-timestamp' version '0.1.3'
+2024-08-06T01:56:53.363437205Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-kubernetes-metadata-filter' version '2.5.3'
+2024-08-06T01:56:53.363450115Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-kubernetes-sumologic' version '2.0.0'
+2024-08-06T01:56:53.363464727Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-label-router' version '0.2.10'
+2024-08-06T01:56:53.363471638Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-logdna' version '0.4.0'
+2024-08-06T01:56:53.363483767Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-logzio' version '0.0.21'
+2024-08-06T01:56:53.363502796Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-multi-format-parser' version '1.0.0'
+2024-08-06T01:56:53.363512390Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-newrelic' version '1.2.1'
+2024-08-06T01:56:53.363527454Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-opensearch' version '1.0.5'
+2024-08-06T01:56:53.363589158Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-oss' version '0.0.2'
+2024-08-06T01:56:53.363601357Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-parser-logfmt' version '0.0.0'
+2024-08-06T01:56:53.363636641Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-prometheus' version '2.0.3'
+2024-08-06T01:56:53.363646616Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-record-modifier' version '2.1.0'
+2024-08-06T01:56:53.363653497Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-redis' version '0.3.5'
+2024-08-06T01:56:53.363661149Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-remote-syslog' version '1.1'
+2024-08-06T01:56:53.363690484Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-rewrite-tag-filter' version '2.4.0'
+2024-08-06T01:56:53.363729794Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-s3' version '1.6.1'
+2024-08-06T01:56:53.363750005Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-splunk-hec' version '1.2.13'
+2024-08-06T01:56:53.363758197Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-sqs' version '3.0.0'
+2024-08-06T01:56:53.363766029Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-sumologic_output' version '1.8.0'
+2024-08-06T01:56:53.363774563Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-syslog_rfc5424' version '0.9.0.rc.8'
+2024-08-06T01:56:53.363783096Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-tag-normaliser' version '0.1.1'
+2024-08-06T01:56:53.363808875Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-throttle' version '0.0.5'
+2024-08-06T01:56:53.363817258Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluent-plugin-webhdfs' version '1.5.0'
+2024-08-06T01:56:53.363825691Z 2024-08-06 01:56:53 +0000 [info]: gem 'fluentd' version '1.14.6'
+2024-08-06T01:56:53.363839092Z 2024-08-06 01:56:53 +0000 [info]: starting fluentd-1.14.6 as dry run mode ruby="2.7.6"
+2024-08-06T01:56:53.495690557Z 2024-08-06 01:56:53 +0000 [warn]: define <match fluent.**> to capture fluentd logs in top level is deprecated. Use <label @FLUENT_LOG> instead
+2024-08-06T01:56:53.495844703Z 2024-08-06 01:56:53 +0000 [info]: using configuration file: <ROOT>
+2024-08-06T01:56:53.495852125Z   <system>
+2024-08-06T01:56:53.495856702Z     rpc_endpoint "127.0.0.1:24444"
+2024-08-06T01:56:53.495860958Z     log_level info
+2024-08-06T01:56:53.495864965Z     workers 1
+2024-08-06T01:56:53.495869111Z   </system>
+2024-08-06T01:56:53.495873518Z   <source>
+2024-08-06T01:56:53.495877384Z     @type forward
+2024-08-06T01:56:53.495881410Z     @id main_forward
+2024-08-06T01:56:53.495885386Z     bind "0.0.0.0"
+2024-08-06T01:56:53.495889562Z     port 24240
+2024-08-06T01:56:53.495893689Z   </source>
+2024-08-06T01:56:53.495900910Z   <match **>
+2024-08-06T01:56:53.495905246Z     @type label_router
+2024-08-06T01:56:53.495909633Z     @id main
+2024-08-06T01:56:53.495914040Z     metrics false
+2024-08-06T01:56:53.495917836Z   </match>
+2024-08-06T01:56:53.495921862Z   <label @ERROR>
+2024-08-06T01:56:53.495926038Z     <match **>
+2024-08-06T01:56:53.495930485Z       @type null
+2024-08-06T01:56:53.495934471Z       @id main-fluentd-error
+2024-08-06T01:56:53.495938057Z     </match>
+2024-08-06T01:56:53.495942143Z   </label>
+2024-08-06T01:56:53.495945768Z   <match **>
+2024-08-06T01:56:53.495949414Z     @type null
+2024-08-06T01:56:53.495953250Z     @id main-no-output
+2024-08-06T01:56:53.495957857Z   </match>
+2024-08-06T01:56:53.495961893Z </ROOT>
+2024-08-06T01:56:53.495985880Z 2024-08-06 01:56:53 +0000 [info]: finished dry run mode

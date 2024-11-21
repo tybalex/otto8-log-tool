@@ -1,0 +1,1878 @@
+apiVersion: v1
+items:
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: allow-collecting-longhorn-usage-metrics
+    namespace: longhorn-system
+    resourceVersion: "5101"
+    uid: a709fdea-045e-420a-8cdd-3d475597412f
+  value: "true"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    name: allow-empty-disk-selector-volume
+    namespace: longhorn-system
+    resourceVersion: "5169"
+    uid: c93bf71d-aa8e-4578-a81b-67d86182c163
+  value: "true"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    name: allow-empty-node-selector-volume
+    namespace: longhorn-system
+    resourceVersion: "5168"
+    uid: 6752fb8c-26f4-4da0-88bf-ed4738bbc22a
+  value: "true"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: allow-recurring-job-while-volume-detached
+    namespace: longhorn-system
+    resourceVersion: "5091"
+    uid: 2ea056a7-0dae-4b25-a2b1-ea1f8657ccb5
+  value: "false"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: allow-volume-creation-with-degraded-availability
+    namespace: longhorn-system
+    resourceVersion: "5126"
+    uid: 8a1f3651-d252-4bba-927a-d1fd8007ed8c
+  value: "true"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: auto-cleanup-recurring-job-backup-snapshot
+    namespace: longhorn-system
+    resourceVersion: "5129"
+    uid: 7487494f-e653-4c15-9ddb-b3eb256d043e
+  value: "true"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: auto-cleanup-system-generated-snapshot
+    namespace: longhorn-system
+    resourceVersion: "5128"
+    uid: 007fc0a6-3707-444a-a91b-507e8941c3c6
+  value: "true"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: auto-delete-pod-when-volume-detached-unexpectedly
+    namespace: longhorn-system
+    resourceVersion: "5112"
+    uid: d4a27606-31b4-41c6-82fc-435b012b0df8
+  value: "true"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: auto-salvage
+    namespace: longhorn-system
+    resourceVersion: "5111"
+    uid: 592c63e0-a292-4010-8ac5-88430f072200
+  value: "true"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: backing-image-cleanup-wait-interval
+    namespace: longhorn-system
+    resourceVersion: "5131"
+    uid: 4af641d1-ad0e-4c95-aa15-6122ca5ea71f
+  value: "60"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: backing-image-recovery-wait-interval
+    namespace: longhorn-system
+    resourceVersion: "5132"
+    uid: 32566879-f943-424f-8fc2-3b4e9af244fb
+  value: "300"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    name: backup-compression-method
+    namespace: longhorn-system
+    resourceVersion: "5157"
+    uid: 84116ab7-8b4e-474a-8dd9-2a7bc2e7a5c3
+  value: lz4
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    name: backup-concurrent-limit
+    namespace: longhorn-system
+    resourceVersion: "5158"
+    uid: 95c5b8c5-dceb-4d98-b75b-8014599a3928
+  value: "2"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 2
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:value: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T01:56:40Z"
+    name: backup-target
+    namespace: longhorn-system
+    resourceVersion: "6417"
+    uid: 0fffdca3-4cfd-4f6b-bd6d-8f52947aae55
+  value: nfs://server.unraid:/mnt/user/koat/harvester
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: backup-target-credential-secret
+    namespace: longhorn-system
+    resourceVersion: "5089"
+    uid: d8cdee03-17ee-48b5-b242-45146b846483
+  value: "null"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: backupstore-poll-interval
+    namespace: longhorn-system
+    resourceVersion: "5108"
+    uid: 02a4f879-693f-4ca8-b683-c40547794a8c
+  value: "300"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: concurrent-automatic-engine-upgrade-per-node-limit
+    namespace: longhorn-system
+    resourceVersion: "5130"
+    uid: 85e273a4-85a6-4f81-8021-292166457bd4
+  value: "3"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: concurrent-replica-rebuild-per-node-limit
+    namespace: longhorn-system
+    resourceVersion: "5123"
+    uid: 570ad5ea-43be-458b-bc22-dfc08cce21a8
+  value: "5"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: concurrent-volume-backup-restore-per-node-limit
+    namespace: longhorn-system
+    resourceVersion: "5124"
+    uid: 3b4d3677-b428-49a8-aa35-fadefb1a4731
+  value: "5"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: crd-api-version
+    namespace: longhorn-system
+    resourceVersion: "5083"
+    uid: f93d29f9-62d2-4dcf-9646-461d1c259c83
+  value: longhorn.io/v1beta2
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: create-default-disk-labeled-nodes
+    namespace: longhorn-system
+    resourceVersion: "5093"
+    uid: 21525be9-cbaa-46f4-a184-fad425d42a6c
+  value: "false"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: current-longhorn-version
+    namespace: longhorn-system
+    resourceVersion: "5102"
+    uid: 7c1f16a7-4106-4ef3-8ecb-a0a2142b28d7
+  value: v1.6.2
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "null"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: default-backing-image-manager-image
+    namespace: longhorn-system
+    resourceVersion: "5092"
+    uid: f56fcb2b-6fcc-427f-87bc-2f7ae573bbf1
+  value: longhornio/backing-image-manager:v1.6.2
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: default-data-locality
+    namespace: longhorn-system
+    resourceVersion: "5106"
+    uid: 33ec2122-ae09-486d-aed4-3cc8a6e3e6c5
+  value: disabled
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: default-data-path
+    namespace: longhorn-system
+    resourceVersion: "5094"
+    uid: ea7ab80c-b2d3-4e3f-8ab8-f71e7a4cfff8
+  value: /var/lib/harvester/defaultdisk
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "null"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: default-engine-image
+    namespace: longhorn-system
+    resourceVersion: "5088"
+    uid: 3ca4acb4-398e-471e-a97a-4afc2a3cb14c
+  value: longhornio/longhorn-engine:v1.6.2
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "null"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: default-instance-manager-image
+    namespace: longhorn-system
+    resourceVersion: "5090"
+    uid: 0757819f-3f47-4bab-b4b7-a2d576e8e8d6
+  value: longhornio/longhorn-instance-manager:v1.6.2
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: default-longhorn-static-storage-class
+    namespace: longhorn-system
+    resourceVersion: "5107"
+    uid: 3c7820c6-1f9f-445d-9790-e7eb1c3dedd1
+  value: longhorn-static
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: default-replica-count
+    namespace: longhorn-system
+    resourceVersion: "5105"
+    uid: e56cbadf-713e-4f75-835e-eb64de4d05ec
+  value: "3"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: deleting-confirmation-flag
+    namespace: longhorn-system
+    resourceVersion: "5143"
+    uid: 232d3a3c-7b3e-4a9c-bb73-8abee98accc4
+  value: "false"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: detach-manually-attached-volumes-when-cordoned
+    namespace: longhorn-system
+    resourceVersion: "5118"
+    uid: f2106b78-0d4d-4146-b1ae-fce657fe6fdf
+  value: "false"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: disable-revision-counter
+    namespace: longhorn-system
+    resourceVersion: "5121"
+    uid: 7a1f70e3-f29d-4746-85d4-3020d13c583e
+  value: "false"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: disable-scheduling-on-cordoned-node
+    namespace: longhorn-system
+    resourceVersion: "5114"
+    uid: f3b33c35-7537-472c-990c-ec47c3640b1d
+  value: "true"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    name: disable-snapshot-purge
+    namespace: longhorn-system
+    resourceVersion: "5170"
+    uid: 0523cdfa-d214-4426-8edc-176a2d5b30fa
+  value: "false"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: engine-replica-timeout
+    namespace: longhorn-system
+    resourceVersion: "5144"
+    uid: cbed56fd-791b-45f2-a7eb-547f3c78d063
+  value: "8"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: failed-backup-ttl
+    namespace: longhorn-system
+    resourceVersion: "5138"
+    uid: 37b724a9-a7c2-40d9-809c-053eb452fe87
+  value: "1440"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: fast-replica-rebuild-enabled
+    namespace: longhorn-system
+    resourceVersion: "5152"
+    uid: a0db2520-8ca1-4a95-8d10-e13d83b6e6fe
+  value: "true"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: guaranteed-instance-manager-cpu
+    namespace: longhorn-system
+    resourceVersion: "5133"
+    uid: c8fb55d9-01ce-46b4-ac86-e2e3cf167f2e
+  value: "12"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: kubernetes-cluster-autoscaler-enabled
+    namespace: longhorn-system
+    resourceVersion: "5134"
+    uid: e5a2b676-487e-4aa1-b800-8f8c2b99e3d4
+  value: "false"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 2
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T02:11:47Z"
+    name: latest-longhorn-version
+    namespace: longhorn-system
+    resourceVersion: "23669"
+    uid: 489def79-1f5e-459d-bd19-8b15739f52c0
+  value: v1.6.2
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    name: log-level
+    namespace: longhorn-system
+    resourceVersion: "5160"
+    uid: a35e3d67-dadd-43ab-8b32-611f7809e077
+  value: Info
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: node-down-pod-deletion-policy
+    namespace: longhorn-system
+    resourceVersion: "5116"
+    uid: d32b1655-906d-48ec-8aeb-07c0417044db
+  value: do-nothing
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: node-drain-policy
+    namespace: longhorn-system
+    resourceVersion: "5117"
+    uid: b5cfc11a-368a-4c7d-b9c4-04c24f824288
+  value: block-if-contains-last-replica
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    name: offline-replica-rebuilding
+    namespace: longhorn-system
+    resourceVersion: "5165"
+    uid: c8086048-4f7a-4aa0-b501-556bba914c2b
+  value: enabled
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: orphan-auto-deletion
+    namespace: longhorn-system
+    resourceVersion: "5135"
+    uid: c8820d45-e5cc-4ef8-af0c-519626642f64
+  value: "false"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: priority-class
+    namespace: longhorn-system
+    resourceVersion: "5120"
+    uid: 5ceb219b-6d4a-4240-b6c2-e295468847ad
+  value: system-cluster-critical
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: recurring-failed-jobs-history-limit
+    namespace: longhorn-system
+    resourceVersion: "5140"
+    uid: dcf97d23-e112-41af-b86a-92d1ea8315d5
+  value: "1"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: recurring-job-max-retention
+    namespace: longhorn-system
+    resourceVersion: "5141"
+    uid: 87047f0d-c0d0-4dc4-9211-154ff722f1f9
+  value: "100"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: recurring-successful-jobs-history-limit
+    namespace: longhorn-system
+    resourceVersion: "5139"
+    uid: d0feead7-e00b-4534-9946-ffc17b649db3
+  value: "1"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: registry-secret
+    namespace: longhorn-system
+    resourceVersion: "5113"
+    uid: 4b87a47f-503c-4200-9a09-29db3867bec3
+  value: "null"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: remove-snapshots-during-filesystem-trim
+    namespace: longhorn-system
+    resourceVersion: "5151"
+    uid: 8eba033d-7df1-4fb7-90b7-e34130729ebc
+  value: "false"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: replica-auto-balance
+    namespace: longhorn-system
+    resourceVersion: "5096"
+    uid: b26a0e62-e65d-4b7c-920c-a1ed5f327ad9
+  value: disabled
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    name: replica-disk-soft-anti-affinity
+    namespace: longhorn-system
+    resourceVersion: "5167"
+    uid: 822b2d33-df23-4128-9495-c0f196756eef
+  value: "true"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    name: replica-file-sync-http-client-timeout
+    namespace: longhorn-system
+    resourceVersion: "5153"
+    uid: 79dc11fb-3c86-41f3-8e67-be9c7319af62
+  value: "30"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: replica-replenishment-wait-interval
+    namespace: longhorn-system
+    resourceVersion: "5122"
+    uid: 87d4fba2-5ea0-4298-a508-7a7cdf173a43
+  value: "600"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: replica-soft-anti-affinity
+    namespace: longhorn-system
+    resourceVersion: "5095"
+    uid: 6ac297bc-514b-4e6a-ae53-a0c4212ba66b
+  value: "false"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: replica-zone-soft-anti-affinity
+    namespace: longhorn-system
+    resourceVersion: "5115"
+    uid: 00e3ef3b-c049-49d9-b7a9-e38c9bfb9570
+  value: "true"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    name: restore-concurrent-limit
+    namespace: longhorn-system
+    resourceVersion: "5159"
+    uid: abc5e1f5-4f57-468d-9fff-950b82f8fd4d
+  value: "2"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: restore-volume-recurring-jobs
+    namespace: longhorn-system
+    resourceVersion: "5150"
+    uid: 4ead3708-a760-4b4e-b44e-574cc743083d
+  value: "false"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: snapshot-data-integrity
+    namespace: longhorn-system
+    resourceVersion: "5145"
+    uid: 27a66657-48cd-481e-b488-b77e9f5ea28a
+  value: fast-check
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: snapshot-data-integrity-cronjob
+    namespace: longhorn-system
+    resourceVersion: "5147"
+    uid: 41a13d6d-3f01-4c76-8d98-94b36167b3fc
+  value: 0 0 */7 * *
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: snapshot-data-integrity-immediate-check-after-snapshot-creation
+    namespace: longhorn-system
+    resourceVersion: "5148"
+    uid: 253fac4c-c0b0-4720-a162-357a65c7a27a
+  value: "false"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: snapshot-max-count
+    namespace: longhorn-system
+    resourceVersion: "5149"
+    uid: 452fea6e-1521-4f56-b66a-00f2568d677b
+  value: "250"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 2
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T02:11:47Z"
+    name: stable-longhorn-versions
+    namespace: longhorn-system
+    resourceVersion: "23671"
+    uid: 3d100193-a978-47c6-9ab0-85cfd3be1097
+  value: v1.3.3,v1.4.4,v1.5.5,v1.6.2
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: storage-minimal-available-percentage
+    namespace: longhorn-system
+    resourceVersion: "5098"
+    uid: c0faf9a9-cd4f-42d2-b888-a8849eeb6396
+  value: "25"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: storage-network
+    namespace: longhorn-system
+    resourceVersion: "5136"
+    uid: a24ba738-f042-4f98-8854-2f0f40d43797
+  value: "null"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: storage-over-provisioning-percentage
+    namespace: longhorn-system
+    resourceVersion: "5097"
+    uid: aa62d277-6330-4c33-b862-972f38d213b4
+  value: "100"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: storage-reserved-percentage-for-default-disk
+    namespace: longhorn-system
+    resourceVersion: "5099"
+    uid: ca98a834-c5d4-4472-81e1-773126de9c6b
+  value: "30"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: support-bundle-failed-history-limit
+    namespace: longhorn-system
+    resourceVersion: "5142"
+    uid: 572f27c9-633f-48ea-9d05-373163bed63a
+  value: "1"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "null"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: support-bundle-manager-image
+    namespace: longhorn-system
+    resourceVersion: "5085"
+    uid: c6df1cd1-3ead-4fa0-bf37-d68a765e2c33
+  value: longhornio/support-bundle-kit:v0.0.37
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: system-managed-components-node-selector
+    namespace: longhorn-system
+    resourceVersion: "5110"
+    uid: c1051358-7d4e-4740-97cb-79eefce250eb
+  value: "null"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: system-managed-pods-image-pull-policy
+    namespace: longhorn-system
+    resourceVersion: "5125"
+    uid: 472e3825-9e8f-46f5-8ed3-a29f7ef12021
+  value: if-not-present
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: taint-toleration
+    namespace: longhorn-system
+    resourceVersion: "5109"
+    uid: 5f2e2f6b-ccb1-4038-a2a3-e702eb18d62c
+  value: kubevirt.io/drain:NoSchedule
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:47Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:47Z"
+    name: upgrade-checker
+    namespace: longhorn-system
+    resourceVersion: "5100"
+    uid: 40b2e261-d6d8-4603-aa67-166a59005cb0
+  value: "true"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    name: v1-data-engine
+    namespace: longhorn-system
+    resourceVersion: "5161"
+    uid: 9e7ca774-c07d-4db9-97b4-1e7ae0fb1737
+  value: "true"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    name: v2-data-engine
+    namespace: longhorn-system
+    resourceVersion: "5162"
+    uid: 720740d5-50ff-40dc-835d-678a197836f3
+  value: "false"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    name: v2-data-engine-guaranteed-instance-manager-cpu
+    namespace: longhorn-system
+    resourceVersion: "5164"
+    uid: 6d7ac78f-3c2c-41a2-a936-c2d36e8e0bae
+  value: "1250"
+- apiVersion: longhorn.io/v1beta2
+  kind: Setting
+  metadata:
+    annotations:
+      longhorn.io/configmap-resource-version: "4111"
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/configmap-resource-version: {}
+        f:value: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    name: v2-data-engine-hugepage-limit
+    namespace: longhorn-system
+    resourceVersion: "5163"
+    uid: 30f34bd6-a61f-43ec-9cf4-9980d6b838f3
+  value: "2048"
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770281"

@@ -1,0 +1,82 @@
+2024-08-06T01:52:03.963225713Z if [[ ${KUBERNETES_SERVICE_HOST} =~ .*:.* ]]; then
+2024-08-06T01:52:03.963265308Z 	echo "KUBERNETES_SERVICE_HOST is using IPv6"
+2024-08-06T01:52:03.963273413Z 	CHART="${CHART//%\{KUBERNETES_API\}%/[${KUBERNETES_SERVICE_HOST}]:${KUBERNETES_SERVICE_PORT}}"
+2024-08-06T01:52:03.963280367Z else
+2024-08-06T01:52:03.963287310Z 	CHART="${CHART//%\{KUBERNETES_API\}%/${KUBERNETES_SERVICE_HOST}:${KUBERNETES_SERVICE_PORT}}"
+2024-08-06T01:52:03.963308149Z fi
+2024-08-06T01:52:03.963322937Z 
+2024-08-06T01:52:03.963329870Z set +v -x
+2024-08-06T01:52:03.963420772Z + [[ '' != \t\r\u\e ]]
+2024-08-06T01:52:03.963811469Z + export HELM_HOST=127.0.0.1:44134
+2024-08-06T01:52:03.963818973Z + HELM_HOST=127.0.0.1:44134
+2024-08-06T01:52:03.963898403Z + helm_v2 init --skip-refresh --client-only --stable-repo-url https://charts.helm.sh/stable/
+2024-08-06T01:52:03.963967263Z + tiller --listen=127.0.0.1:44134 --storage=secret
+2024-08-06T01:52:04.030348525Z [main] 2024/08/06 01:52:04 Starting Tiller v2.17.0 (tls=false)
+2024-08-06T01:52:04.030376117Z [main] 2024/08/06 01:52:04 GRPC listening on 127.0.0.1:44134
+2024-08-06T01:52:04.030383040Z [main] 2024/08/06 01:52:04 Probes listening on :44135
+2024-08-06T01:52:04.030389633Z [main] 2024/08/06 01:52:04 Storage driver is Secret
+2024-08-06T01:52:04.030396285Z [main] 2024/08/06 01:52:04 Max history per release is 0
+2024-08-06T01:52:04.032021552Z Creating /home/klipper-helm/.helm/repository 
+2024-08-06T01:52:04.032033625Z Creating /home/klipper-helm/.helm/repository/cache 
+2024-08-06T01:52:04.032052751Z Creating /home/klipper-helm/.helm/repository/local 
+2024-08-06T01:52:04.032082236Z Creating /home/klipper-helm/.helm/plugins 
+2024-08-06T01:52:04.032106502Z Creating /home/klipper-helm/.helm/starters 
+2024-08-06T01:52:04.032132762Z Creating /home/klipper-helm/.helm/cache/archive 
+2024-08-06T01:52:04.032141138Z Creating /home/klipper-helm/.helm/repository/repositories.yaml 
+2024-08-06T01:52:04.032150175Z Adding stable repo with URL: https://charts.helm.sh/stable/ 
+2024-08-06T01:52:04.032203335Z Adding local repo with URL: http://127.0.0.1:8879/charts 
+2024-08-06T01:52:04.032792937Z $HELM_HOME has been configured at /home/klipper-helm/.helm.
+2024-08-06T01:52:04.032808877Z Not installing Tiller due to 'client-only' flag having been set
+2024-08-06T01:52:04.036292711Z ++ jq -r '.Releases | length'
+2024-08-06T01:52:04.036310454Z ++ timeout -s KILL 30 helm_v2 ls --all '^rke2-metrics-server$' --output json
+2024-08-06T01:52:04.113388298Z [storage] 2024/08/06 01:52:04 listing all releases with filter
+2024-08-06T01:52:04.144257023Z + V2_CHART_EXISTS=
+2024-08-06T01:52:04.144390605Z + [[ '' == \1 ]]
+2024-08-06T01:52:04.144423958Z + [[ '' == \v\2 ]]
+2024-08-06T01:52:04.144442904Z + shopt -s nullglob
+2024-08-06T01:52:04.144545687Z + [[ -f /config/ca-file.pem ]]
+2024-08-06T01:52:04.144673258Z + [[ -f /tmp/ca-file.pem ]]
+2024-08-06T01:52:04.144793124Z + [[ -n '' ]]
+2024-08-06T01:52:04.144827028Z + helm_content_decode
+2024-08-06T01:52:04.144839392Z + set -e
+2024-08-06T01:52:04.144908622Z + ENC_CHART_PATH=/chart/rke2-metrics-server.tgz.base64
+2024-08-06T01:52:04.144929291Z + CHART_PATH=/tmp/rke2-metrics-server.tgz
+2024-08-06T01:52:04.144946534Z + [[ ! -f /chart/rke2-metrics-server.tgz.base64 ]]
+2024-08-06T01:52:04.145004674Z + base64 -d /chart/rke2-metrics-server.tgz.base64
+2024-08-06T01:52:04.147152205Z + CHART=/tmp/rke2-metrics-server.tgz
+2024-08-06T01:52:04.147171301Z + set +e
+2024-08-06T01:52:04.147245722Z + [[ install != \d\e\l\e\t\e ]]
+2024-08-06T01:52:04.147262163Z + helm_repo_init
+2024-08-06T01:52:04.147341743Z + grep -q -e 'https\?://'
+2024-08-06T01:52:04.148929268Z + [[ helm_v3 == \h\e\l\m\_\v\3 ]]
+2024-08-06T01:52:04.148967040Z + [[ /tmp/rke2-metrics-server.tgz == stable/* ]]
+2024-08-06T01:52:04.148984292Z + [[ -n '' ]]
+2024-08-06T01:52:04.149100902Z + helm_update install --set-string global.clusterCIDR=10.52.0.0/16 --set-string global.clusterCIDRv4=10.52.0.0/16 --set-string global.clusterDNS=10.53.0.10 --set-string global.clusterDomain=cluster.local --set-string global.rke2DataDir=/var/lib/rancher/rke2 --set-string global.serviceCIDR=10.53.0.0/16
+2024-08-06T01:52:04.149249533Z + [[ helm_v3 == \h\e\l\m\_\v\3 ]]
+2024-08-06T01:52:04.150538084Z ++ helm_v3 ls --all -f '^rke2-metrics-server$' --namespace kube-system --output json
+2024-08-06T01:52:04.150706442Z ++ jq -r '"\(.[0].chart),\(.[0].status)"'
+2024-08-06T01:52:04.150956283Z ++ tr '[:upper:]' '[:lower:]'
+2024-08-06T01:52:04.240332562Z + LINE=null,null
+2024-08-06T01:52:04.240406051Z + IFS=,
+2024-08-06T01:52:04.240439504Z + read -r INSTALLED_VERSION STATUS _
+2024-08-06T01:52:04.240554020Z + VALUES=
+2024-08-06T01:52:04.240634642Z + [[ install = \d\e\l\e\t\e ]]
+2024-08-06T01:52:04.240672784Z + [[ null =~ ^(|null)$ ]]
+2024-08-06T01:52:04.240804413Z + [[ null =~ ^(|null)$ ]]
+2024-08-06T01:52:04.240901145Z + echo 'Installing helm_v3 chart'
+2024-08-06T01:52:04.241122553Z + helm_v3 install --set-string global.clusterCIDR=10.52.0.0/16 --set-string global.clusterCIDRv4=10.52.0.0/16 --set-string global.clusterDNS=10.53.0.10 --set-string global.clusterDomain=cluster.local --set-string global.rke2DataDir=/var/lib/rancher/rke2 --set-string global.serviceCIDR=10.53.0.0/16 rke2-metrics-server /tmp/rke2-metrics-server.tgz
+2024-08-06T01:52:04.690334956Z NAME: rke2-metrics-server
+2024-08-06T01:52:04.690357499Z LAST DEPLOYED: Tue Aug  6 01:52:04 2024
+2024-08-06T01:52:04.690362939Z NAMESPACE: kube-system
+2024-08-06T01:52:04.690366926Z STATUS: deployed
+2024-08-06T01:52:04.690370533Z REVISION: 1
+2024-08-06T01:52:04.690374090Z TEST SUITE: None
+2024-08-06T01:52:04.690377767Z NOTES:
+2024-08-06T01:52:04.690383147Z ***********************************************************************
+2024-08-06T01:52:04.690386914Z * Metrics Server                                                      *
+2024-08-06T01:52:04.690390551Z ***********************************************************************
+2024-08-06T01:52:04.690394128Z   Chart version: 3.12.002
+2024-08-06T01:52:04.690397765Z   App version:   0.7.1
+2024-08-06T01:52:04.690401371Z   Image tag:     rancher/hardened-k8s-metrics-server:v0.7.1-build20240401
+2024-08-06T01:52:04.690405038Z ***********************************************************************
+2024-08-06T01:52:04.695020237Z + exit

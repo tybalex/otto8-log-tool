@@ -1,0 +1,10 @@
+2024-08-06T02:13:32.555370933Z I0806 02:13:32.555209   10919 main.go:135] Version: v2.9.2
+2024-08-06T02:13:32.555402232Z I0806 02:13:32.555305   10919 main.go:136] Running node-driver-registrar in mode=
+2024-08-06T02:13:32.555408394Z I0806 02:13:32.555311   10919 main.go:157] Attempting to open a gRPC connection with: "/csi/csi.sock"
+2024-08-06T02:13:35.461925547Z I0806 02:13:35.461803   10919 main.go:164] Calling CSI driver to discover driver name
+2024-08-06T02:13:35.469240516Z I0806 02:13:35.469172   10919 main.go:173] CSI driver name: "driver.longhorn.io"
+2024-08-06T02:13:35.469260503Z I0806 02:13:35.469206   10919 node_register.go:55] Starting Registration Server at: /registration/driver.longhorn.io-reg.sock
+2024-08-06T02:13:35.469510271Z I0806 02:13:35.469403   10919 node_register.go:64] Registration Server started at: /registration/driver.longhorn.io-reg.sock
+2024-08-06T02:13:35.470866615Z I0806 02:13:35.470288   10919 node_register.go:88] Skipping HTTP server because endpoint is set to: ""
+2024-08-06T02:13:35.805117707Z I0806 02:13:35.805044   10919 main.go:90] Received GetInfo call: &InfoRequest{}
+2024-08-06T02:13:35.829422248Z I0806 02:13:35.829333   10919 main.go:101] Received NotifyRegistrationStatus call: &RegistrationStatus{PluginRegistered:true,Error:,}

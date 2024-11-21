@@ -1,0 +1,43 @@
+2024-08-06T02:15:32.808580067Z Done configuring CNI.  Sleep=false
+2024-08-06T02:15:32.989461691Z 2024-08-06T02:15:32Z [debug] Filtering pods with filter key 'spec.nodeName' and filter value 'harvesterdev7'
+2024-08-06T02:15:33.091476713Z 2024-08-06T02:15:33Z [verbose] pod controller created
+2024-08-06T02:15:33.091506050Z 2024-08-06T02:15:33Z [verbose] Starting informer factories ...
+2024-08-06T02:15:33.091513465Z 2024-08-06T02:15:33Z [verbose] Informer factories started
+2024-08-06T02:15:33.091520739Z 2024-08-06T02:15:33Z [verbose] starting network controller
+2024-08-06T02:15:33.392319234Z 2024-08-06T02:15:33Z [verbose] using expression: 30 4 * * *
+2024-08-06T02:30:43.098314186Z 2024-08-06T02:30:43Z [verbose] deleted pod [cattle-system/apply-sync-additional-ca-on-harvesterdev7-with-2c27af4f7e-hjfnc]
+2024-08-06T02:30:43.098373089Z 2024-08-06T02:30:43Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T02:31:16.115342659Z 2024-08-06T02:31:16Z [verbose] deleted pod [cattle-system/apply-system-agent-upgrader-on-harvesterdev7-with-6f6e842-c245h]
+2024-08-06T02:31:16.115432421Z 2024-08-06T02:31:16Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T02:50:33.424248730Z 2024-08-06T02:50:33Z [verbose] deleted pod [harvester-system/supportbundle-agent-bundle-jk7b5-nlv9l]
+2024-08-06T02:50:33.424336824Z 2024-08-06T02:50:33Z [verbose] skipped net-attach-def for default network
+2024-08-06T02:50:33.424346903Z 2024-08-06T02:50:33Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T02:50:37.440180733Z 2024-08-06T02:50:37Z [verbose] deleted pod [harvester-system/supportbundle-manager-bundle-jk7b5-5875b5598f-tj7dc]
+2024-08-06T02:50:37.440210800Z 2024-08-06T02:50:37Z [verbose] skipped net-attach-def for default network
+2024-08-06T02:50:37.440215408Z 2024-08-06T02:50:37Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T04:30:00.001246405Z 2024-08-06T04:30:00Z [verbose] starting reconciler run
+2024-08-06T04:30:00.001296369Z 2024-08-06T04:30:00Z [debug] NewReconcileLooper - inferred connection data
+2024-08-06T04:30:00.001475337Z 2024-08-06T04:30:00Z [debug] listing IP pools
+2024-08-06T04:30:01.087033241Z 2024-08-06T04:30:01Z [debug] no IP addresses to cleanup
+2024-08-06T04:30:01.087086572Z 2024-08-06T04:30:01Z [verbose] reconciler success
+2024-08-06T11:55:33.846063691Z 2024-08-06T11:55:33Z [verbose] deleted pod [harvester-system/nvidia-driver-runtime-d5kpg]
+2024-08-06T11:55:33.846149834Z 2024-08-06T11:55:33Z [verbose] skipped net-attach-def for default network
+2024-08-06T11:55:33.846174450Z 2024-08-06T11:55:33Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T11:56:27.780511309Z 2024-08-06T11:56:27Z [verbose] deleted pod [cattle-monitoring-system/rancher-monitoring-admission-create-n58t6]
+2024-08-06T11:56:27.780573386Z 2024-08-06T11:56:27Z [verbose] skipped net-attach-def for default network
+2024-08-06T11:56:27.780581151Z 2024-08-06T11:56:27Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T11:56:30.288537587Z 2024-08-06T11:56:30Z [verbose] deleted pod [cattle-monitoring-system/rancher-monitoring-upgrade-d7rff]
+2024-08-06T11:56:30.288607068Z 2024-08-06T11:56:30Z [verbose] skipped net-attach-def for default network
+2024-08-06T11:56:30.288617378Z 2024-08-06T11:56:30Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T11:56:57.891738747Z 2024-08-06T11:56:57Z [verbose] deleted pod [cattle-monitoring-system/rancher-monitoring-admission-patch-d22q9]
+2024-08-06T11:56:57.891821513Z 2024-08-06T11:56:57Z [verbose] skipped net-attach-def for default network
+2024-08-06T11:56:57.891846029Z 2024-08-06T11:56:57Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T11:57:00.012198779Z 2024-08-06T11:57:00Z [verbose] deleted pod [cattle-monitoring-system/rancher-monitoring-patch-sa-rlmps]
+2024-08-06T11:57:00.012297445Z 2024-08-06T11:57:00Z [verbose] skipped net-attach-def for default network
+2024-08-06T11:57:00.012307073Z 2024-08-06T11:57:00Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T13:46:22.395684560Z 2024-08-06T13:46:22Z [verbose] deleted pod [harvester-system/nvidia-driver-runtime-nthg4]
+2024-08-06T13:46:22.395732962Z 2024-08-06T13:46:22Z [verbose] skipped net-attach-def for default network
+2024-08-06T13:46:22.395741908Z 2024-08-06T13:46:22Z [verbose] result of garbage collecting pods: <nil>
+2024-08-06T13:47:30.609947311Z 2024-08-06T13:47:30Z [verbose] deleted pod [harvester-system/nvidia-driver-runtime-c6lqf]
+2024-08-06T13:47:30.610013637Z 2024-08-06T13:47:30Z [verbose] skipped net-attach-def for default network
+2024-08-06T13:47:30.610019057Z 2024-08-06T13:47:30Z [verbose] result of garbage collecting pods: <nil>

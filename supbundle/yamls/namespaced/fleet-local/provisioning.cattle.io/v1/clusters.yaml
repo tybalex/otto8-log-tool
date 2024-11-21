@@ -1,0 +1,135 @@
+apiVersion: v1
+items:
+- apiVersion: provisioning.cattle.io/v1
+  kind: Cluster
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"provisioning.cattle.io/v1","kind":"Cluster","metadata":{"annotations":{},"labels":{"provisioning.cattle.io/management-cluster-name":"local"},"name":"local","namespace":"fleet-local"},"spec":{"kubernetesVersion":"v1.27.13+rke2r1","rkeConfig":{"controlPlaneConfig":{"disable":["rke2-snapshot-controller","rke2-snapshot-controller-crd","rke2-snapshot-validation-webhook"]}}}}
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4yQzU7DMBCEXwXt2Slt079Y4oAQ4sCVF9jYS2Ow15G9CYfK746SVqJC4udo78xovjlBIEGLgqBPgMxRUFzkPD1j+0ZGMskiubgwKOJp4eKts6ChT3F02UV2fKyMH7JQqkwiFAL1ozV+MKXqOL6DhoCMRwrEciUYa3Xz7NjePZwj/8xiDAQafDTo/yXOPZrJAUXB3NdFfnGBsmDoQfPgvQKPLflfR+gwd6Bhu9ztt3XdUGNwc7Crdr9u6jW1y/pg91vb2LXdbHarA6jzYpbSVwho6DCNNIMWBd9Yrtu+eiKpzpeiIPdkpnbzx2Wq+0G6R7Z9dCygT2WSCcpwwciURrJPxJRmZtDLUj4DAAD//5CVWGcAAgAA
+      objectset.rio.cattle.io/id: provisioning-cluster-create
+      objectset.rio.cattle.io/owner-gvk: management.cattle.io/v3, Kind=Cluster
+      objectset.rio.cattle.io/owner-name: local
+      objectset.rio.cattle.io/owner-namespace: "null"
+    creationTimestamp: "2024-08-06T01:52:31Z"
+    finalizers:
+    - wrangler.cattle.io/provisioning-cluster-remove
+    - wrangler.cattle.io/rke-cluster-remove
+    generation: 2
+    labels:
+      objectset.rio.cattle.io/hash: 50675339e9ca48d1b72932eb038d75d9d2d44618
+      provider.cattle.io: harvester
+      provisioning.cattle.io/management-cluster-name: local
+    managedFields:
+    - apiVersion: provisioning.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/provisioning-cluster-remove"null: {}
+            v:"wrangler.cattle.io/rke-cluster-remove"null: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+            f:provider.cattle.io: {}
+        f:spec:
+          .: {}
+          f:localClusterAuthEndpoint: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:31Z"
+    - apiVersion: provisioning.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            f:provisioning.cattle.io/management-cluster-name: {}
+        f:spec:
+          f:kubernetesVersion: {}
+          f:rkeConfig: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2024-08-06T01:53:30Z"
+    - apiVersion: provisioning.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:fleetWorkspaceName: {}
+      manager: kubectl-patch
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:54:34Z"
+    - apiVersion: provisioning.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:clientSecretName: {}
+          f:clusterName: {}
+          f:conditions: {}
+          f:observedGeneration: {}
+          f:ready: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:25:00Z"
+    name: local
+    namespace: fleet-local
+    resourceVersion: "40203"
+    uid: 5370fd35-1f8e-4682-8006-64c1054f4925
+  spec:
+    kubernetesVersion: v1.27.13+rke2r1
+    localClusterAuthEndpoint: {}
+    rkeConfig: {}
+  status:
+    clientSecretName: local-kubeconfig
+    clusterName: local
+    conditions:
+    - lastUpdateTime: "2024-08-06T01:55:16Z"
+      message: non-ready bootstrap machine(s) custom-574243167723 and join url to
+        be available on bootstrap node
+      reason: Waiting
+      status: Unknown
+      type: Ready
+    - status: Unknown
+      type: DefaultProjectCreated
+    - status: Unknown
+      type: SystemProjectCreated
+    - lastUpdateTime: "2024-08-06T01:52:31Z"
+      status: "False"
+      type: Reconciling
+    - lastUpdateTime: "2024-08-06T01:52:31Z"
+      status: "False"
+      type: Stalled
+    - lastUpdateTime: "2024-08-06T01:53:30Z"
+      status: "True"
+      type: Created
+    - lastUpdateTime: "2024-08-06T02:25:00Z"
+      status: "True"
+      type: RKECluster
+    - lastUpdateTime: "2024-08-06T01:52:46Z"
+      status: "True"
+      type: Connected
+    - lastUpdateTime: "2024-08-06T02:25:00Z"
+      status: "True"
+      type: Updated
+    - lastUpdateTime: "2024-08-06T02:25:00Z"
+      status: "True"
+      type: Provisioned
+    fleetWorkspaceName: fleet-local
+    observedGeneration: 2
+    ready: true
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770253"

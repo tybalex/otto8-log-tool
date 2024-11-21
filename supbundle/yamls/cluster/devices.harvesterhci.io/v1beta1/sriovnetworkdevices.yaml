@@ -1,0 +1,41 @@
+apiVersion: v1
+items:
+- apiVersion: devices.harvesterhci.io/v1beta1
+  kind: SRIOVNetworkDevice
+  metadata:
+    annotations:
+      sriov.devices.harvesterhi.io/interface-name: enp65s0
+    creationTimestamp: "2024-08-06T02:18:01Z"
+    generation: 1
+    labels:
+      nodename: harvesterdev7
+    managedFields:
+    - apiVersion: devices.harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:sriov.devices.harvesterhi.io/interface-name: {}
+          f:labels:
+            .: {}
+            f:nodename: {}
+        f:spec:
+          .: {}
+          f:address: {}
+          f:nodeName: {}
+          f:numVFs: {}
+      manager: pcidevices
+      operation: Update
+      time: "2024-08-06T02:18:01Z"
+    name: harvesterdev7-enp65s0
+    resourceVersion: "32573"
+    uid: 38457326-4099-4dbc-bcb4-3a066ff5ed76
+  spec:
+    address: "0000:41:00.0"
+    nodeName: harvesterdev7
+    numVFs: 0
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770153"

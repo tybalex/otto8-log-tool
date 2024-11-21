@@ -1,0 +1,434 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:55:42Z"
+    creationTimestamp: "2024-08-06T01:55:39Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: snapshot-validation-webhook
+      app.kubernetes.io/part-of: snapshot-validation-webhook
+      app.kubernetes.io/version: 1.17.0
+      helm.sh/chart: snapshot-validation-webhook-0.2.0
+      helm.sh/release: harvester
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:helm.sh/chart: {}
+            f:helm.sh/release: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:55:42Z"
+    name: harvester-snapshot-validation-webhook
+    namespace: kube-system
+    resourceVersion: "4947"
+    uid: 0627e729-c663-4fe8-9d56-1dd9bbe885c5
+  subsets:
+  - addresses:
+    - ip: 10.52.0.39
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: harvester-snapshot-validation-webhook-b75f94bcb-sghrd
+        namespace: kube-system
+        uid: a7e40478-1f67-4094-8f73-068e26e95393
+    - ip: 10.52.0.41
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: harvester-snapshot-validation-webhook-b75f94bcb-xf7n6
+        namespace: kube-system
+        uid: 370030b8-e1a4-4ed8-bd58-da853952c4b2
+    ports:
+    - name: https
+      port: 443
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:16:25Z"
+    creationTimestamp: "2024-08-06T01:56:39Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:16:25Z"
+    name: ingress-expose
+    namespace: kube-system
+    resourceVersion: "30843"
+    uid: e6d387ad-116a-465f-accd-e37d1462a005
+  subsets:
+  - addresses:
+    - ip: 10.52.0.29
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: rke2-ingress-nginx-controller-ddpjc
+        namespace: kube-system
+        uid: 36ac3aa1-348b-4545-98a5-b9c970d30da4
+    - ip: 10.52.1.4
+      nodeName: harvesterdev2
+      targetRef:
+        kind: Pod
+        name: rke2-ingress-nginx-controller-kz8qf
+        namespace: kube-system
+        uid: 3ab38831-8942-4614-ac70-f434e8731f16
+    - ip: 10.52.2.10
+      nodeName: harvesterdev3
+      targetRef:
+        kind: Pod
+        name: rke2-ingress-nginx-controller-gtgfl
+        namespace: kube-system
+        uid: 998ba49c-3601-49a6-9d23-ebff420a29f0
+    - ip: 10.52.3.11
+      nodeName: harvesterdev7
+      targetRef:
+        kind: Pod
+        name: rke2-ingress-nginx-controller-kvsmb
+        namespace: kube-system
+        uid: ffbf40cd-a5d9-4337-ace0-26af794b6339
+    ports:
+    - name: https-internal
+      port: 443
+      protocol: TCP
+    - name: http
+      port: 80
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:12:05Z"
+    creationTimestamp: "2024-08-06T01:56:59Z"
+    labels:
+      app: rancher-monitoring-coredns
+      app.kubernetes.io/instance: rancher-monitoring
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/part-of: rancher-monitoring
+      app.kubernetes.io/version: 103.0.3_up45.31.1
+      chart: rancher-monitoring-103.0.3_up45.31.1
+      heritage: Helm
+      jobLabel: coredns
+      release: rancher-monitoring
+      service.kubernetes.io/headless: "null"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:chart: {}
+            f:heritage: {}
+            f:jobLabel: {}
+            f:release: {}
+            f:service.kubernetes.io/headless: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:12:05Z"
+    name: rancher-monitoring-coredns
+    namespace: kube-system
+    resourceVersion: "24052"
+    uid: b69abf4a-41df-49b8-9dfa-eecc5504f75d
+  subsets:
+  - addresses:
+    - ip: 10.52.0.4
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: rke2-coredns-rke2-coredns-864fbd7785-jc77s
+        namespace: kube-system
+        uid: dec5c1bd-dfb3-4178-a3d4-20d3dd79e4fd
+    - ip: 10.52.1.2
+      nodeName: harvesterdev2
+      targetRef:
+        kind: Pod
+        name: rke2-coredns-rke2-coredns-864fbd7785-bwfcp
+        namespace: kube-system
+        uid: b25c1dbc-f4cc-4be1-86aa-2a59f674edf9
+    ports:
+    - name: http-metrics
+      port: 9153
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    creationTimestamp: "2024-08-06T01:57:02Z"
+    labels:
+      app.kubernetes.io/managed-by: prometheus-operator
+      app.kubernetes.io/name: kubelet
+      k8s-app: kubelet
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:k8s-app: {}
+        f:subsets: {}
+      manager: PrometheusOperator
+      operation: Update
+      time: "2024-08-06T02:18:02Z"
+    name: rancher-monitoring-kubelet
+    namespace: kube-system
+    resourceVersion: "32607"
+    uid: a8b1dee4-22a3-4830-96c3-46cf29e27935
+  subsets:
+  - addresses:
+    - ip: 10.10.110.11
+      targetRef:
+        kind: Node
+        name: harvesterdev1
+        uid: 9b6fb3e0-6ead-4e4f-bb03-9bc72f605557
+    - ip: 10.10.110.71
+      targetRef:
+        kind: Node
+        name: harvesterdev2
+        uid: 141de37b-4cad-4b6f-9831-ffeed49d0658
+    - ip: 10.10.110.61
+      targetRef:
+        kind: Node
+        name: harvesterdev3
+        uid: 450a2bb5-9551-4e4f-aa7a-6a8a583bbef8
+    - ip: 10.10.110.232
+      targetRef:
+        kind: Node
+        name: harvesterdev7
+        uid: cb77b855-ef85-4af4-b07c-b9963a49007b
+    ports:
+    - name: https-metrics
+      port: 10250
+      protocol: TCP
+    - name: http-metrics
+      port: 10255
+      protocol: TCP
+    - name: cadvisor
+      port: 4194
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:12:05Z"
+    creationTimestamp: "2024-08-06T01:51:48Z"
+    labels:
+      app.kubernetes.io/instance: rke2-coredns
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: rke2-coredns
+      helm.sh/chart: rke2-coredns-1.29.002
+      k8s-app: kube-dns
+      kubernetes.io/cluster-service: "true"
+      kubernetes.io/name: CoreDNS
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:helm.sh/chart: {}
+            f:k8s-app: {}
+            f:kubernetes.io/cluster-service: {}
+            f:kubernetes.io/name: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:12:05Z"
+    name: rke2-coredns-rke2-coredns
+    namespace: kube-system
+    resourceVersion: "24053"
+    uid: 5c87b2d5-3882-4c3a-aa23-783978ca0695
+  subsets:
+  - addresses:
+    - ip: 10.52.0.4
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: rke2-coredns-rke2-coredns-864fbd7785-jc77s
+        namespace: kube-system
+        uid: dec5c1bd-dfb3-4178-a3d4-20d3dd79e4fd
+    - ip: 10.52.1.2
+      nodeName: harvesterdev2
+      targetRef:
+        kind: Pod
+        name: rke2-coredns-rke2-coredns-864fbd7785-bwfcp
+        namespace: kube-system
+        uid: b25c1dbc-f4cc-4be1-86aa-2a59f674edf9
+    ports:
+    - name: tcp-53
+      port: 53
+      protocol: TCP
+    - name: udp-53
+      port: 53
+      protocol: UDP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:16:25Z"
+    creationTimestamp: "2024-08-06T01:52:13Z"
+    labels:
+      app.kubernetes.io/component: controller
+      app.kubernetes.io/instance: rke2-ingress-nginx
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: rke2-ingress-nginx
+      app.kubernetes.io/part-of: rke2-ingress-nginx
+      app.kubernetes.io/version: 1.9.6
+      helm.sh/chart: rke2-ingress-nginx-4.9.100
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:helm.sh/chart: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:16:25Z"
+    name: rke2-ingress-nginx-controller-admission
+    namespace: kube-system
+    resourceVersion: "30844"
+    uid: 99d6922f-c961-4416-9475-1b85a10c6217
+  subsets:
+  - addresses:
+    - ip: 10.52.0.29
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: rke2-ingress-nginx-controller-ddpjc
+        namespace: kube-system
+        uid: 36ac3aa1-348b-4545-98a5-b9c970d30da4
+    - ip: 10.52.1.4
+      nodeName: harvesterdev2
+      targetRef:
+        kind: Pod
+        name: rke2-ingress-nginx-controller-kz8qf
+        namespace: kube-system
+        uid: 3ab38831-8942-4614-ac70-f434e8731f16
+    - ip: 10.52.2.10
+      nodeName: harvesterdev3
+      targetRef:
+        kind: Pod
+        name: rke2-ingress-nginx-controller-gtgfl
+        namespace: kube-system
+        uid: 998ba49c-3601-49a6-9d23-ebff420a29f0
+    - ip: 10.52.3.11
+      nodeName: harvesterdev7
+      targetRef:
+        kind: Pod
+        name: rke2-ingress-nginx-controller-kvsmb
+        namespace: kube-system
+        uid: ffbf40cd-a5d9-4337-ace0-26af794b6339
+    ports:
+    - appProtocol: https
+      name: https-webhook
+      port: 8444
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:52:25Z"
+    creationTimestamp: "2024-08-06T01:52:04Z"
+    labels:
+      app: rke2-metrics-server
+      app.kubernetes.io/instance: rke2-metrics-server
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: rke2-metrics-server
+      app.kubernetes.io/version: 0.7.1
+      helm.sh/chart: rke2-metrics-server-3.12.002
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:helm.sh/chart: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:52:25Z"
+    name: rke2-metrics-server
+    namespace: kube-system
+    resourceVersion: "1156"
+    uid: 4d67ec60-bb72-498d-96a3-de65a91d21f6
+  subsets:
+  - addresses:
+    - ip: 10.52.0.3
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: rke2-metrics-server-7f745dbddf-5trhx
+        namespace: kube-system
+        uid: a647228b-6b72-4814-a113-692e6613e13e
+    ports:
+    - name: https
+      port: 10250
+      protocol: TCP
+kind: List
+metadata:
+  resourceVersion: "770187"

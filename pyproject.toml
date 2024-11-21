@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "otto8-log-tool"
+version = "0.1.0"
+description = ""
+authors = ["Yingbei <yingbei@acorn.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+drain3 = "^0.9.11"
+ipykernel = "^6.29.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

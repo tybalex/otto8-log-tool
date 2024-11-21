@@ -1,0 +1,19 @@
+2024-08-06T02:11:23.048424188Z I0806 02:11:23.048229       1 server.go:226] "Warning, all flags other than --config, --write-config-to, and --cleanup are deprecated, please begin using a config file ASAP"
+2024-08-06T02:11:23.057886236Z I0806 02:11:23.057811       1 node.go:141] Successfully retrieved node IP: 10.10.110.71
+2024-08-06T02:11:23.057917064Z I0806 02:11:23.057829       1 server_others.go:110] "Detected node IP" address="10.10.110.71"
+2024-08-06T02:11:23.153502939Z I0806 02:11:23.153420       1 server_others.go:192] "Using iptables Proxier"
+2024-08-06T02:11:23.153534127Z I0806 02:11:23.153480       1 server_others.go:199] "kube-proxy running in dual-stack mode" ipFamily=IPv4
+2024-08-06T02:11:23.153538446Z I0806 02:11:23.153495       1 server_others.go:200] "Creating dualStackProxier for iptables"
+2024-08-06T02:11:23.153568762Z I0806 02:11:23.153532       1 server_others.go:484] "Detect-local-mode set to ClusterCIDR, but no IPv6 cluster CIDR defined, defaulting to no-op detect-local for IPv6"
+2024-08-06T02:11:23.153655084Z I0806 02:11:23.153599       1 proxier.go:253] "Setting route_localnet=1 to allow node-ports on localhost; to change this either disable iptables.localhostNodePorts (--iptables-localhost-nodeports) or set nodePortAddresses (--nodeport-addresses) to filter loopback addresses"
+2024-08-06T02:11:23.155419203Z I0806 02:11:23.155307       1 server.go:658] "Version info" version="v1.27.13+rke2r1"
+2024-08-06T02:11:23.155446104Z I0806 02:11:23.155328       1 server.go:660] "Golang settings" GOGC="" GOMAXPROCS="" GOTRACEBACK=""
+2024-08-06T02:11:23.157349364Z I0806 02:11:23.157178       1 config.go:315] "Starting node config controller"
+2024-08-06T02:11:23.157383077Z I0806 02:11:23.157200       1 config.go:97] "Starting endpoint slice config controller"
+2024-08-06T02:11:23.157390180Z I0806 02:11:23.157228       1 config.go:188] "Starting service config controller"
+2024-08-06T02:11:23.157397314Z I0806 02:11:23.157242       1 shared_informer.go:311] Waiting for caches to sync for endpoint slice config
+2024-08-06T02:11:23.157404036Z I0806 02:11:23.157255       1 shared_informer.go:311] Waiting for caches to sync for service config
+2024-08-06T02:11:23.157410839Z I0806 02:11:23.157258       1 shared_informer.go:311] Waiting for caches to sync for node config
+2024-08-06T02:11:23.257444958Z I0806 02:11:23.257341       1 shared_informer.go:318] Caches are synced for service config
+2024-08-06T02:11:23.258589345Z I0806 02:11:23.258510       1 shared_informer.go:318] Caches are synced for endpoint slice config
+2024-08-06T02:11:23.258678362Z I0806 02:11:23.258625       1 shared_informer.go:318] Caches are synced for node config

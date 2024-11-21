@@ -1,0 +1,204 @@
+apiVersion: v1
+items:
+- apiVersion: longhorn.io/v1beta2
+  kind: BackingImage
+  metadata:
+    annotations:
+      harvesterhci.io/imageId: default/image-nntjr
+    creationTimestamp: "2024-08-06T12:53:00Z"
+    finalizers:
+    - longhorn.io
+    generation: 2
+    labels:
+      longhorn.io/component: backing-image
+      longhorn.io/managed-by: longhorn-manager
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/imageId: {}
+        f:spec:
+          .: {}
+          f:checksum: {}
+          f:sourceParameters:
+            .: {}
+            f:url: {}
+          f:sourceType: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T12:53:00Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:disks:
+            f:7b70705b-57bb-4ccb-b9bb-5e6ec0c76249: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T12:53:01Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:checksum: {}
+          f:diskFileStatusMap:
+            .: {}
+            f:7b70705b-57bb-4ccb-b9bb-5e6ec0c76249:
+              .: {}
+              f:lastStateTransitionTime: {}
+              f:message: {}
+              f:progress: {}
+              f:state: {}
+          f:diskLastRefAtMap: {}
+          f:ownerID: {}
+          f:size: {}
+          f:uuid: {}
+          f:virtualSize: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T12:54:42Z"
+    name: default-image-nntjr
+    namespace: longhorn-system
+    resourceVersion: "736675"
+    uid: 3754b272-365c-41c8-afce-c14290cbe3a9
+  spec:
+    checksum: "null"
+    disks:
+      7b70705b-57bb-4ccb-b9bb-5e6ec0c76249: "null"
+    sourceParameters:
+      url: https://releases.ubuntu.com/20.04.6/ubuntu-20.04.6-live-server-amd64.iso
+    sourceType: download
+  status:
+    checksum: 1b35a52bd32f5257b3454787c87688fdbe3fdd018a47ed2cf9a7cca71630f54230ceefd544cd984adf7593974b0087a9da2e51eaf9fea8a105ce86ef4be5fc76
+    diskFileStatusMap:
+      7b70705b-57bb-4ccb-b9bb-5e6ec0c76249:
+        lastStateTransitionTime: "2024-08-06T12:54:42Z"
+        message: "null"
+        progress: 100
+        state: ready
+    diskLastRefAtMap: {}
+    ownerID: harvesterdev2
+    size: 1.48733952e+09
+    uuid: a0ffc77a
+    virtualSize: 1.48733952e+09
+- apiVersion: longhorn.io/v1beta2
+  kind: BackingImage
+  metadata:
+    annotations:
+      harvesterhci.io/imageId: default/image-qwfqg
+    creationTimestamp: "2024-08-06T02:09:26Z"
+    finalizers:
+    - longhorn.io
+    generation: 4
+    labels:
+      longhorn.io/component: backing-image
+      longhorn.io/managed-by: longhorn-manager
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/imageId: {}
+        f:spec:
+          .: {}
+          f:checksum: {}
+          f:sourceParameters:
+            .: {}
+            f:url: {}
+          f:sourceType: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T02:09:26Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:disks:
+            f:7b70705b-57bb-4ccb-b9bb-5e6ec0c76249: {}
+            f:c9ff8501-8c22-4cc0-810e-65214001909d: {}
+            f:d74b8deb-1d56-46de-9058-b1e6c18a775a: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T02:24:11Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:checksum: {}
+          f:diskFileStatusMap:
+            .: {}
+            f:7b70705b-57bb-4ccb-b9bb-5e6ec0c76249:
+              .: {}
+              f:lastStateTransitionTime: {}
+              f:message: {}
+              f:progress: {}
+              f:state: {}
+            f:c9ff8501-8c22-4cc0-810e-65214001909d:
+              .: {}
+              f:lastStateTransitionTime: {}
+              f:message: {}
+              f:progress: {}
+              f:state: {}
+            f:d74b8deb-1d56-46de-9058-b1e6c18a775a:
+              .: {}
+              f:lastStateTransitionTime: {}
+              f:message: {}
+              f:progress: {}
+              f:state: {}
+          f:diskLastRefAtMap: {}
+          f:ownerID: {}
+          f:size: {}
+          f:uuid: {}
+          f:virtualSize: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:24:21Z"
+    name: default-image-qwfqg
+    namespace: longhorn-system
+    resourceVersion: "39388"
+    uid: 97786078-cd8e-4f02-8df3-b7250f7292e7
+  spec:
+    checksum: "null"
+    disks:
+      7b70705b-57bb-4ccb-b9bb-5e6ec0c76249: "null"
+      c9ff8501-8c22-4cc0-810e-65214001909d: "null"
+      d74b8deb-1d56-46de-9058-b1e6c18a775a: "null"
+    sourceParameters:
+      url: https://cloud-images.ubuntu.com/minimal/releases/focal/release/ubuntu-20.04-minimal-cloudimg-amd64.img
+    sourceType: download
+  status:
+    checksum: 1a9518d76cd3fa3adf7ee4126f6ab7e89b209d7056be7d7a6b57e7760f4b9a5a6bae54cb11a0cb125571011135bb3f47052189d74a523aa5e81ab1af6de0acfb
+    diskFileStatusMap:
+      7b70705b-57bb-4ccb-b9bb-5e6ec0c76249:
+        lastStateTransitionTime: "2024-08-06T02:24:21Z"
+        message: "null"
+        progress: 100
+        state: ready
+      c9ff8501-8c22-4cc0-810e-65214001909d:
+        lastStateTransitionTime: "2024-08-06T02:11:11Z"
+        message: "null"
+        progress: 100
+        state: ready
+      d74b8deb-1d56-46de-9058-b1e6c18a775a:
+        lastStateTransitionTime: "2024-08-06T02:24:21Z"
+        message: "null"
+        progress: 100
+        state: ready
+    diskLastRefAtMap: {}
+    ownerID: harvesterdev1
+    size: 2.61357568e+08
+    uuid: 59c0d774
+    virtualSize: 2.361393152e+09
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770281"

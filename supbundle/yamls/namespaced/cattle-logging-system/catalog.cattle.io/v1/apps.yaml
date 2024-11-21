@@ -1,0 +1,901 @@
+apiVersion: v1
+items:
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: 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
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.rancher-logging.v2
+      objectset.rio.cattle.io/owner-namespace: cattle-logging-system
+    creationTimestamp: "2024-08-06T01:57:40Z"
+    generation: 4
+    labels:
+      objectset.rio.cattle.io/hash: 57ee254f0588b978ab546e86649bfc3717b94e67
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:chart:
+            f:metadata:
+              f:annotations:
+                f:catalog.cattle.io/managed: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T01:57:40Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"cfa1791a-9c1b-4ede-a95b-4dce090269aa"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:catalog.cattle.io/auto-install: {}
+                f:catalog.cattle.io/certified: {}
+                f:catalog.cattle.io/deploys-on-os: {}
+                f:catalog.cattle.io/display-name: {}
+                f:catalog.cattle.io/kube-version: {}
+                f:catalog.cattle.io/namespace: {}
+                f:catalog.cattle.io/permits-os: {}
+                f:catalog.cattle.io/provides-gvr: {}
+                f:catalog.cattle.io/rancher-version: {}
+                f:catalog.cattle.io/release-name: {}
+                f:catalog.cattle.io/type: {}
+                f:catalog.cattle.io/ui-component: {}
+                f:catalog.cattle.io/upstream-version: {}
+              f:apiVersion: {}
+              f:appVersion: {}
+              f:description: {}
+              f:icon: {}
+              f:keywords: {}
+              f:name: {}
+              f:version: {}
+            f:values:
+              .: {}
+              f:additionalLoggingSources:
+                .: {}
+                f:aks:
+                  .: {}
+                  f:enabled: {}
+                f:eks:
+                  .: {}
+                  f:enabled: {}
+                f:gke:
+                  .: {}
+                  f:enabled: {}
+                f:k3s:
+                  .: {}
+                  f:container_engine: {}
+                  f:enabled: {}
+                  f:stripUnderscores: {}
+                f:kubeAudit:
+                  .: {}
+                  f:auditFilename: {}
+                  f:enabled: {}
+                  f:fluentbit:
+                    .: {}
+                    f:logTag: {}
+                    f:tolerations: {}
+                  f:pathPrefix: {}
+                f:rke:
+                  .: {}
+                  f:enabled: {}
+                  f:fluentbit:
+                    .: {}
+                    f:log_level: {}
+                    f:mem_buffer_limit: {}
+                f:rke2:
+                  .: {}
+                  f:enabled: {}
+                  f:stripUnderscores: {}
+              f:affinity: {}
+              f:annotations: {}
+              f:createCustomResource: {}
+              f:debug: {}
+              f:disablePvc: {}
+              f:env: {}
+              f:extraArgs: {}
+              f:fluentbit:
+                .: {}
+                f:filterKubernetes:
+                  .: {}
+                  f:Merge_Log: {}
+                  f:Merge_Log_Key: {}
+                  f:Merge_Log_Trim: {}
+                  f:Merge_Parser: {}
+                f:inputTail:
+                  .: {}
+                  f:Buffer_Chunk_Size: {}
+                  f:Buffer_Max_Size: {}
+                  f:Mem_Buf_Limit: {}
+                  f:Multiline_Flush: {}
+                  f:Skip_Long_Lines: {}
+                f:resources: {}
+                f:tolerations: {}
+              f:fluentd:
+                .: {}
+                f:bufferStorageVolume: {}
+                f:env: {}
+                f:livenessProbe:
+                  .: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:tcpSocket:
+                    .: {}
+                    f:port: {}
+                f:nodeSelector: {}
+                f:resources: {}
+                f:tolerations: {}
+              f:fullnameOverride: {}
+              f:global:
+                .: {}
+                f:cattle:
+                  .: {}
+                  f:psp:
+                    .: {}
+                    f:enabled: {}
+                  f:systemDefaultRegistry: {}
+                f:dockerRootDirectory: {}
+                f:rkeWindowsPathPrefix: {}
+                f:seLinux:
+                  .: {}
+                  f:enabled: {}
+              f:http:
+                .: {}
+                f:port: {}
+                f:service:
+                  .: {}
+                  f:annotations: {}
+                  f:clusterIP: {}
+                  f:labels: {}
+                  f:type: {}
+              f:image:
+                .: {}
+                f:pullPolicy: {}
+                f:repository: {}
+                f:tag: {}
+              f:imagePullSecrets: {}
+              f:images:
+                .: {}
+                f:config_reloader:
+                  .: {}
+                  f:repository: {}
+                  f:tag: {}
+                f:fluentbit:
+                  .: {}
+                  f:repository: {}
+                  f:tag: {}
+                f:fluentbit_debug:
+                  .: {}
+                  f:repository: {}
+                  f:tag: {}
+                f:fluentd:
+                  .: {}
+                  f:repository: {}
+                  f:tag: {}
+                f:nodeagent_fluentbit:
+                  .: {}
+                  f:os: {}
+                  f:repository: {}
+                  f:tag: {}
+              f:monitoring:
+                .: {}
+                f:serviceMonitor:
+                  .: {}
+                  f:additionalLabels: {}
+                  f:enabled: {}
+                  f:metricRelabelings: {}
+                  f:relabelings: {}
+              f:nameOverride: {}
+              f:namespaceOverride: {}
+              f:nodeAgents:
+                .: {}
+                f:tls:
+                  .: {}
+                  f:enabled: {}
+              f:nodeSelector:
+                .: {}
+                f:kubernetes.io/os: {}
+              f:podLabels: {}
+              f:podSecurityContext: {}
+              f:priorityClassName: {}
+              f:rbac:
+                .: {}
+                f:enabled: {}
+                f:psp:
+                  .: {}
+                  f:annotations:
+                    .: {}
+                    f:seccomp.security.alpha.kubernetes.io/allowedProfileNames: {}
+                    f:seccomp.security.alpha.kubernetes.io/defaultProfileName: {}
+              f:replicaCount: {}
+              f:resources: {}
+              f:securityContext: {}
+              f:serviceAccount:
+                .: {}
+                f:annotations: {}
+              f:systemdLogPath: {}
+              f:tolerations: {}
+              f:volumeMounts: {}
+              f:volumes: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:readme: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:values:
+            .: {}
+            f:additionalLoggingSources:
+              .: {}
+              f:kubeAudit:
+                .: {}
+                f:auditFilename: {}
+                f:enabled: {}
+                f:fluentbit:
+                  .: {}
+                  f:logTag: {}
+                  f:tolerations: {}
+                f:loggingRef: {}
+                f:pathPrefix: {}
+              f:rke2:
+                .: {}
+                f:enabled: {}
+            f:disablePvc: {}
+            f:eventTailer:
+              .: {}
+              f:controlNamespace: {}
+              f:name: {}
+              f:namespace: {}
+              f:workloadOverrides:
+                .: {}
+                f:containers: {}
+            f:fluentbit:
+              .: {}
+              f:resources:
+                .: {}
+                f:limits:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+            f:fluentd:
+              .: {}
+              f:resources:
+                .: {}
+                f:limits:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+            f:systemdLogPath: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T11:55:36Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2024-08-06T11:55:36Z"
+    name: rancher-logging
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.rancher-logging.v2
+      uid: cfa1791a-9c1b-4ede-a95b-4dce090269aa
+    resourceVersion: "630312"
+    uid: b3d857f7-3fde-434f-ab7d-9b14ac9b6b76
+  spec:
+    chart:
+      metadata:
+        annotations:
+          catalog.cattle.io/auto-install: rancher-logging-crd=match
+          catalog.cattle.io/certified: rancher
+          catalog.cattle.io/deploys-on-os: windows
+          catalog.cattle.io/display-name: Logging
+          catalog.cattle.io/kube-version: '>= 1.23.0-0 < 1.28.0-0'
+          catalog.cattle.io/managed: "true"
+          catalog.cattle.io/namespace: cattle-logging-system
+          catalog.cattle.io/permits-os: linux,windows
+          catalog.cattle.io/provides-gvr: logging.banzaicloud.io.clusterflow/v1beta1
+          catalog.cattle.io/rancher-version: '>= 2.8.0-0 < 2.9.0-0'
+          catalog.cattle.io/release-name: rancher-logging
+          catalog.cattle.io/type: cluster-tool
+          catalog.cattle.io/ui-component: logging
+          catalog.cattle.io/upstream-version: 3.17.10
+        apiVersion: v1
+        appVersion: 3.17.10
+        description: Collects and filter logs using highly configurable CRDs. Powered
+          by Banzai Cloud Logging Operator.
+        icon: https://charts.rancher.io/assets/logos/logging.svg
+        keywords:
+        - logging
+        - monitoring
+        - security
+        name: rancher-logging
+        version: 103.0.0+up3.17.10
+      values:
+        additionalLoggingSources:
+          aks:
+            enabled: false
+          eks:
+            enabled: false
+          gke:
+            enabled: false
+          k3s:
+            container_engine: systemd
+            enabled: false
+            stripUnderscores: false
+          kubeAudit:
+            auditFilename: "null"
+            enabled: false
+            fluentbit:
+              logTag: kube-audit
+              tolerations:
+              - effect: NoSchedule
+                key: node-role.kubernetes.io/controlplane
+                value: "true"
+              - effect: NoExecute
+                key: node-role.kubernetes.io/etcd
+                value: "true"
+            pathPrefix: "null"
+          rke:
+            enabled: false
+            fluentbit:
+              log_level: info
+              mem_buffer_limit: 5MB
+          rke2:
+            enabled: false
+            stripUnderscores: false
+        affinity: {}
+        annotations: {}
+        createCustomResource: false
+        debug: false
+        disablePvc: true
+        env: "null"
+        extraArgs:
+        - -enable-leader-election=true
+        fluentbit:
+          filterKubernetes:
+            Merge_Log: "null"
+            Merge_Log_Key: "null"
+            Merge_Log_Trim: "null"
+            Merge_Parser: "null"
+          inputTail:
+            Buffer_Chunk_Size: "null"
+            Buffer_Max_Size: "null"
+            Mem_Buf_Limit: "null"
+            Multiline_Flush: "null"
+            Skip_Long_Lines: "null"
+          resources: {}
+          tolerations:
+          - effect: NoSchedule
+            key: node-role.kubernetes.io/controlplane
+            value: "true"
+          - effect: NoExecute
+            key: node-role.kubernetes.io/etcd
+            value: "true"
+        fluentd:
+          bufferStorageVolume: {}
+          env: "null"
+          livenessProbe:
+            initialDelaySeconds: 30
+            periodSeconds: 15
+            tcpSocket:
+              port: 24240
+          nodeSelector: {}
+          resources: {}
+          tolerations: {}
+        fullnameOverride: "null"
+        global:
+          cattle:
+            psp:
+              enabled: false
+            systemDefaultRegistry: "null"
+          dockerRootDirectory: "null"
+          rkeWindowsPathPrefix: c:\
+          seLinux:
+            enabled: false
+        http:
+          port: 8080
+          service:
+            annotations: {}
+            clusterIP: None
+            labels: {}
+            type: ClusterIP
+        image:
+          pullPolicy: IfNotPresent
+          repository: rancher/mirrored-banzaicloud-logging-operator
+          tag: 3.17.10
+        imagePullSecrets: "null"
+        images:
+          config_reloader:
+            repository: rancher/mirrored-jimmidyson-configmap-reload
+            tag: v0.4.0
+          fluentbit:
+            repository: rancher/mirrored-fluent-fluent-bit
+            tag: 2.2.0
+          fluentbit_debug:
+            repository: rancher/mirrored-fluent-fluent-bit
+            tag: 2.2.0-debug
+          fluentd:
+            repository: rancher/mirrored-banzaicloud-fluentd
+            tag: v1.14.6-alpine-5
+          nodeagent_fluentbit:
+            os: windows
+            repository: rancher/fluent-bit
+            tag: 1.8.9
+        monitoring:
+          serviceMonitor:
+            additionalLabels: {}
+            enabled: false
+            metricRelabelings: "null"
+            relabelings: null
+        nameOverride: "null"
+        namespaceOverride: "null"
+        nodeAgents:
+          tls:
+            enabled: false
+        nodeSelector:
+          kubernetes.io/os: linux
+        podLabels: {}
+        podSecurityContext: {}
+        priorityClassName: {}
+        rbac:
+          enabled: true
+          psp:
+            annotations:
+              seccomp.security.alpha.kubernetes.io/allowedProfileNames: docker/default,runtime/default
+              seccomp.security.alpha.kubernetes.io/defaultProfileName: runtime/default
+        replicaCount: 1
+        resources: {}
+        securityContext: {}
+        serviceAccount:
+          annotations: {}
+        systemdLogPath: /run/log/journal
+        tolerations:
+        - effect: NoSchedule
+          key: cattle.io/os
+          operator: Equal
+          value: linux
+        volumeMounts: "null"
+        volumes: null
+    helmVersion: 3
+    info:
+      description: Upgrade complete
+      firstDeployed: "2024-08-06T01:56:41Z"
+      lastDeployed: "2024-08-06T11:55:31Z"
+      readme: |2
+
+        # Logging operator Chart
+
+        [Logging operator](https://github.com/banzaicloud/logging-operator) Managed centralized logging component fluentd and fluent-bit instance on cluster.
+
+        ## tl;dr:
+
+        ```bash
+        $ helm repo add banzaicloud-stable https://kubernetes-charts.banzaicloud.com
+        $ helm repo update
+        $ helm install banzaicloud-stable/logging-operator
+        ```
+
+        ## Introduction
+
+        This chart bootstraps a [Logging Operator](https://github.com/banzaicloud/logging-operator) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+
+        ## Prerequisites
+
+        - Kubernetes 1.8+ with Beta APIs enabled
+
+        ## Installing the Chart
+
+        To install the chart with the release name `my-release`:
+
+        ```bash
+        $ helm install --name my-release banzaicloud-stable/logging-operator
+        ```
+
+        ### CRDs
+        Use `createCustomResource=false` with Helm v3 to avoid trying to create CRDs from the `crds` folder and from templates at the same time.
+
+        The command deploys **Logging operator** on the Kubernetes cluster with the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
+
+        ## Uninstalling the Chart
+
+        To uninstall/delete the `my-release` deployment:
+
+        ```bash
+        $ helm delete my-release
+        ```
+
+        The command removes all Kubernetes components associated with the chart and deletes the release.
+
+        ## Configuration
+
+        The following tables lists the configurable parameters of the logging-operator chart and their default values.
+
+        |                      Parameter                      |                        Description                     | Default                                                               |
+        | --------------------------------------------------- | ------------------------------------------------------ |-----------------------------------------------------------------------|
+        | `image.repository`                                  | Container image repository                             | `ghcr.io/banzaicloud/logging-operator`                                |
+        | `image.tag`                                         | Container image tag                                    | `3.17.10`                                                             |
+        | `image.pullPolicy`                                  | Container pull policy                                  | `IfNotPresent`                                                        |
+        | `nameOverride`                                      | Override name of app                                   | ``                                                                    |
+        | `fullnameOverride`                                  | Override full name of app                              | ``                                                                    |
+        | `namespaceOverride`                                 | Override namespace of app                              | ``                                                                    |
+        | `watchNamespace`                                    | Namespace to watch for LoggingOperator CRD             | ``                                                                    |
+        | `rbac.enabled`                                      | Create rbac service account and roles                  | `true`                                                                |
+        | `rbac.psp.enabled`                                  | Must be used with `rbac.enabled` true. If true, creates & uses RBAC resources required in the cluster with [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/) enabled.    | `false`                                                               |
+        | `priorityClassName`                                 | Operator priorityClassName                             | `{}`                                                                  |
+        | `affinity`                                          | Node Affinity                                          | `{}`                                                                  |
+        | `resources`                                         | CPU/Memory resource requests/limits                    | `{}`                                                                  |
+        | `tolerations`                                       | Node Tolerations                                       | `[]`                                                                  |
+        | `nodeSelector`                                      | Define which Nodes the Pods are scheduled on.          | `{}`                                                                  |
+        | `podLabels`                                         | Define custom labels for logging-operator pods         | `{}`                                                                  |
+        | `annotations`                                       | Define annotations for logging-operator pods           | `{}`                                                                  |
+        | `podSecurityContext`                                | Pod SecurityContext for Logging operator. [More info](https://kubernetes.io/docs/concepts/policy/security-context/)                                                                                             | `{"runAsNonRoot": true, "runAsUser": 1000, "fsGroup": 2000}`          |
+        | `securityContext`                                   | Container SecurityContext for Logging operator. [More info](https://kubernetes.io/docs/concepts/policy/security-context/) | `{"allowPrivilegeEscalation": false, "readOnlyRootFilesystem": true}` |
+        | `createCustomResource`                              | Create CRDs. | `true`                                                                |
+        | `monitoring.serviceMonitor.enabled`                 | Create Prometheus Operator servicemonitor. | `false`                                                               |
+        | `serviceAccount.annotations`                        | Define annotations for logging-operator ServiceAccount | `{}`                                                                  |
+        | `global.seLinux.enabled`                            | Add seLinuxOptions to Logging resources, requires the [rke2-selinux RPM](https://github.com/rancher/rke2-selinux/releases) | `false` |
+
+        Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example:
+
+        ```bash
+        $ helm install --name my-release -f values.yaml banzaicloud-stable/logging-operator
+        ```
+
+        > **Tip**: You can use the default [values.yaml](values.yaml)
+
+        ## Installing Fluentd and Fluent-bit via logging
+
+        The previous chart does **not** install `logging` resource to deploy Fluentd and Fluent-bit on cluster. To install them please use the [Logging Operator Logging](https://github.com/banzaicloud/logging-operator/tree/master/charts/logging-operator-logging) chart.
+
+        ## tl;dr:
+
+        ```bash
+        $ helm repo add banzaicloud-stable https://kubernetes-charts.banzaicloud.com
+        $ helm repo update
+        $ helm install banzaicloud-stable/logging-operator-logging
+        ```
+
+        ## Configuration
+
+        The following tables lists the configurable parameters of the logging-operator-logging chart and their default values.
+        ## tl;dr:
+
+        ```bash
+        $ helm repo add banzaicloud-stable https://kubernetes-charts.banzaicloud.com
+        $ helm repo update
+        $ helm install banzaicloud-stable/logging-operator-logging
+        ```
+
+        ## Configuration
+
+        The following tables lists the configurable parameters of the logging-operator-logging chart and their default values.
+
+        |                      Parameter                      |                        Description                     | Default                                                    |
+        | --------------------------------------------------- | ------------------------------------------------------ |------------------------------------------------------------|
+        | `tls.enabled`                                       | Enabled TLS communication between components           | true                                                       |
+        | `tls.fluentdSecretName`                                    | Specified secret name, which contain tls certs         | This will overwrite automatic Helm certificate generation. |
+        | `tls.fluentbitSecretName`                                    | Specified secret name, which contain tls certs         | This will overwrite automatic Helm certificate generation. |
+        | `tls.sharedKey`                                     | Shared key between nodes (fluentd-fluentbit)           | [autogenerated]                                            |
+        | `fluentbit.enabled`                                 | Install fluent-bit                                     | true                                                       |
+        | `fluentbit.namespace`                               | Specified fluentbit installation namespace             | same as operator namespace                                 |
+        | `fluentbit.image.tag`                               | Fluentbit container image tag                          | `1.9.5`                                                    |
+        | `fluentbit.image.repository`                        | Fluentbit container image repository                   | `fluent/fluent-bit`                                        |
+        | `fluentbit.image.pullPolicy`                        | Fluentbit container pull policy                        | `IfNotPresent`                                             |
+        | `fluentd.enabled`                                   | Install fluentd                                        | true                                                       |
+        | `fluentd.image.tag`                                 | Fluentd container image tag                            | `v1.14.6-alpine-5`                                         |
+        | `fluentd.image.repository`                          | Fluentd container image repository                     | `ghcr.io/banzaicloud/fluentd`                              |
+        | `fluentd.image.pullPolicy`                          | Fluentd container pull policy                          | `IfNotPresent`                                             |
+        | `fluentd.volumeModImage.tag`                        | Fluentd volumeModImage container image tag             | `latest`                                                   |
+        | `fluentd.volumeModImage.repository`                 | Fluentd volumeModImage container image repository      | `busybox`                                                  |
+        | `fluentd.volumeModImage.pullPolicy`                 | Fluentd volumeModImage container pull policy           | `IfNotPresent`                                             |
+        | `fluentd.configReloaderImage.tag`                   | Fluentd configReloaderImage container image tag        | `v0.2.2`                                                   |
+        | `fluentd.configReloaderImage.repository`            | Fluentd configReloaderImage container image repository | `jimmidyson/configmap-reload`                              |
+        | `fluentd.configReloaderImage.pullPolicy`            | Fluentd configReloaderImage container pull policy      | `IfNotPresent`                                             |
+        | `fluentd.fluentdPvcSpec.accessModes`                | Fluentd persistence volume access modes                | `[ReadWriteOnce]`                                          |
+        | `fluentd.fluentdPvcSpec.resources.requests.storage` | Fluentd persistence volume size                        | `21Gi`                                                     |
+        | `fluentd.fluentdPvcSpec.storageClassName`           | Fluentd persistence volume storageclass                | `"""`                                                      |
+      status: deployed
+    name: rancher-logging
+    namespace: cattle-logging-system
+    resources:
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: rancher-logging-rke2-journald-aggregator
+      namespace: cattle-logging-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: rancher-logging
+      namespace: cattle-logging-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: rancher-logging-rke2
+      namespace: cattle-logging-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: rancher-logging
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: logging-admin
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: logging-view
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: rancher-logging
+    - apiVersion: v1
+      kind: Service
+      name: rancher-logging
+      namespace: cattle-logging-system
+    - apiVersion: apps/v1
+      kind: DaemonSet
+      name: rancher-logging-rke2-journald-aggregator
+      namespace: cattle-logging-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: rancher-logging
+      namespace: cattle-logging-system
+    - apiVersion: logging-extensions.banzaicloud.io/v1alpha1
+      kind: EventTailer
+      name: harvester-default
+      namespace: cattle-logging-system
+    - apiVersion: logging.banzaicloud.io/v1beta1
+      kind: Logging
+      name: rancher-logging-kube-audit
+      namespace: cattle-logging-system
+    - apiVersion: logging.banzaicloud.io/v1beta1
+      kind: Logging
+      name: rancher-logging-root
+      namespace: cattle-logging-system
+    values:
+      additionalLoggingSources:
+        kubeAudit:
+          auditFilename: audit.log
+          enabled: true
+          fluentbit:
+            logTag: kube-audit
+            tolerations:
+            - effect: NoSchedule
+              key: node-role.kubernetes.io/controlplane
+              value: "true"
+            - effect: NoExecute
+              key: node-role.kubernetes.io/etcd
+              value: "true"
+          loggingRef: harvester-kube-audit-log-ref
+          pathPrefix: /var/lib/rancher/rke2/server/logs/
+        rke2:
+          enabled: true
+      disablePvc: true
+      eventTailer:
+        controlNamespace: cattle-logging-system
+        name: harvester-default
+        namespace: cattle-logging-system
+        workloadOverrides:
+          containers:
+          - image: rancher/harvester-eventrouter:v0.2.0
+            name: event-tailer
+            resources:
+              limits:
+                cpu: 100m
+                memory: 100Mi
+              requests:
+                cpu: 20m
+                memory: 20Mi
+      fluentbit:
+        resources:
+          limits:
+            cpu: 200m
+            memory: 200Mi
+          requests:
+            cpu: 50m
+            memory: 50Mi
+      fluentd:
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 800Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+      systemdLogPath: /var/log/journal
+    version: 2
+  status:
+    observedGeneration: 4
+    summary:
+      state: deployed
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/8RWzW7jNhB+FWF6rKSVZMVNBPRQbICi6KFAuuih7R5G5MhiTZEEOfI2DfTuBWmvYyRuEhQL780yh/PN96OBHmAiRomM0D0AGmMZWVkT4qPt/yLBgbj0ypYCmTWVyr5TEjoYSU8FOgf5f9bZT4Z8sdltoYN3uzrPflZGfv8rCU/86jWDE0EHYSwjUulJEwYqd3Xp0YiRfKHtZqPMphBelrv6TQ2DQxG77s+OHcJ9YJpgyUF4Svw/qIkC4+SgM7PWOWjsSb+oyohhhA4qQZLqoV/hgOJmaG7atrlpr4d23aybAeubSlIvVtcR7cDxDCHYH748bw6J2R0N5MkICtD98QDo1G/kg7IGOki69NqK7S+x9JY0cToZUAfKQVjD3mpNHjr2M+WwVSbae3Tpf/gwp4Csr4gkiqGQV6Iv2r6+KvpV0xb1eo3rGgU1jYTl45JDcCSismJEz/HHC5kUyKjt5kR3QZ7VoEg+Kgn5mbpRSUlRk8jzbMVbFH9+66BI8aKZgybik0u4IcPnIpkKC20F6kfQp7f72UhNRZJ5EqJ4G+aWyBWegp19ygqkDJwpDOR3SlCBQtjZMHQQw/o8V5KC8MrtAwU/mcCodch4pOz93W3IBuuzJ6OV8Erq+d7FQ3ROK5Fshxx2R9y6WpVVWX07u1VZf1fWFSxLnnbRcbZVDsoMNobl7ICZsJPTxIm58oFvyWl7n/LTVE1bVNdFtf5Q1d1V2zXN7xBf/rdUeUKZmH3zlHXk9qf5Ibvb/52loGc8ImfqmWpz8iQw8hxNkp9xv8S+OHH/6aZAp+hvJhMfQ7m9DjEJyebDRng/B7bT3aHDLQ3KqIM/h7loR4YZlSYfys/YJ017NP+gEtrOslQWlvzLjzDa8JUnEHoOTH7Q9tNxhAvi2pndzBdFvjjVA9RFMV/T9ePJlqqXx/c3fi/EfUryRzLk9xutq3II8zShv4fuYVmWfwMAAP//wtqV9YcJAAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.rancher-logging-crd.v1
+      objectset.rio.cattle.io/owner-namespace: cattle-logging-system
+    creationTimestamp: "2024-08-06T01:54:24Z"
+    generation: 2
+    labels:
+      objectset.rio.cattle.io/hash: 0cede1fb3afac9f29442948f46262fa190debc38
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"65eedacf-d5cb-4b15-b324-166a61ace22d"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:catalog.cattle.io/certified: {}
+                f:catalog.cattle.io/hidden: {}
+                f:catalog.cattle.io/namespace: {}
+                f:catalog.cattle.io/release-name: {}
+                f:fleet.cattle.io/agent-namespace: {}
+                f:fleet.cattle.io/bundle-id: {}
+                f:fleet.cattle.io/keep-resources: {}
+                f:fleet.cattle.io/service-account: {}
+              f:apiVersion: {}
+              f:description: {}
+              f:name: {}
+              f:type: {}
+              f:version: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:readme: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:54:24Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:54:24Z"
+    name: rancher-logging-crd
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.rancher-logging-crd.v1
+      uid: 65eedacf-d5cb-4b15-b324-166a61ace22d
+    resourceVersion: "3285"
+    uid: 0e475c97-f08d-4bd9-b561-3a17391e5025
+  spec:
+    chart:
+      metadata:
+        annotations:
+          catalog.cattle.io/certified: rancher
+          catalog.cattle.io/hidden: "true"
+          catalog.cattle.io/namespace: cattle-logging-system
+          catalog.cattle.io/release-name: rancher-logging-crd
+          fleet.cattle.io/agent-namespace: cattle-fleet-local-system
+          fleet.cattle.io/bundle-id: mcc-rancher-logging-crd
+          fleet.cattle.io/keep-resources: "false"
+          fleet.cattle.io/service-account: "null"
+        apiVersion: v1
+        description: Installs the CRDs for rancher-logging.
+        name: rancher-logging-crd
+        type: application
+        version: 103.0.0+up3.17.10
+    helmVersion: 3
+    info:
+      description: Install complete
+      firstDeployed: "2024-08-06T01:54:22Z"
+      lastDeployed: "2024-08-06T01:54:22Z"
+      readme: |
+        # rancher-logging-crd
+        A Rancher chart that installs the CRDs used by rancher-logging.
+      status: deployed
+    name: rancher-logging-crd
+    namespace: cattle-logging-system
+    resources:
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: eventtailers.logging-extensions.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: hosttailers.logging-extensions.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: clusterflows.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: clusteroutputs.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: flows.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: loggings.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: outputs.logging.banzaicloud.io
+    version: 1
+  status:
+    observedGeneration: 2
+    summary:
+      state: deployed
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770286"

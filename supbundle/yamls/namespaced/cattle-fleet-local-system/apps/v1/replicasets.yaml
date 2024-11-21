@@ -1,0 +1,185 @@
+apiVersion: v1
+items:
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "1"
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4xTX3PaPhD8LvdsHCAhCX5j+PmXMk0pE9K+ZJiMkM+gRta50olCGX/3jjA4Tv/QPmGf7/b2dpc9FMgiEywg2YMwhliwIuPCKy2/oGSHHFtFsRTMGmNFFyqDBHKNyB2xQsOdJRE7tqLs1E2d+qMmKXTH7RxjAVUE0uIB/FEV6FgUJSTGax2BFkvUZ1euhVtDApfX/W7/Mr8Z9PEm7w1vh9nt8nrQx25/uMz68npwK/BGXl2FbUYU+JYn1EVXChm+nOXqSpSBkEONksmG50KwXN83XEVZ/oRfhUG2gnG1g2RfRcBYlFowHsZbSv+DFH+AP/ISea6M4rAGDGU4ar2XFnO0FrP/vFVmNZdrzLxWZjVZGWrK6RalDxwgeTrNoJHYXJpuS4vO1Wl42sML7k6EWs6clKUSrTgIBRMDEWyE9hgGga1HWFSLKoJvqFZrhqRXLcIxkgwLZdDWC9BsDr9H56ajD+l8NhqnJ7T/LRWBXa5QZw+YN88zwSEdJ4HjV5erqooawNFdOn18no8/zhrIv8SgGR2/S8fvJ9PnyfQxffg8um/N9wZF10G1iEAVYhUqVhi5RnvR8i7ZdONh3Idj08xrPSOtZFB0kk+JZxbda0R/ya1FR97KIOi+CruC5/NWNl/8Eq1BRhdMIQcJaGX89pBllN4q3o3JMG45tFtvRu7Oki8h6XW73aiuTMk8EDEkwbNj7ZNDWzcdoOxGSRxJSd7w9HdUmXRIQhMbzHOUHPykYxIRomOYwhWx1OSz0tJGZWjjt4d4E1KthFbfMXubsvSrF7rlwyFmwbJzC19zS+483FG9RVX/qQX7WvsfAQAA//+6MlDxMgUAAA
+      objectset.rio.cattle.io/id: fleet-agent-bootstrap-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T02:14:20Z"
+    generation: 1
+    labels:
+      app: fleet-agent
+      pod-template-hash: 6d5df7d9cd
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deployment.kubernetes.io/desired-replicas: {}
+            f:deployment.kubernetes.io/max-replicas: {}
+            f:deployment.kubernetes.io/revision: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"716f81eb-09d4-42cf-b4b3-396e6ffe2e54"}: {}
+        f:spec:
+          f:replicas: {}
+          f:selector: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:app: {}
+                f:pod-template-hash: {}
+            f:spec:
+              f:affinity:
+                .: {}
+                f:nodeAffinity:
+                  .: {}
+                  f:preferredDuringSchedulingIgnoredDuringExecution: {}
+              f:containers:
+                k:{"name":"fleet-agent"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"AGENT_SCOPE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CHECKIN_INTERVAL"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"NAMESPACE"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:dnsPolicy: {}
+              f:nodeSelector: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext:
+                .: {}
+                f:runAsGroup: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:tolerations: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:14:20Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:availableReplicas: {}
+          f:fullyLabeledReplicas: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:14:21Z"
+    name: fleet-agent-6d5df7d9cd
+    namespace: cattle-fleet-local-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: fleet-agent
+      uid: 716f81eb-09d4-42cf-b4b3-396e6ffe2e54
+    resourceVersion: "28026"
+    uid: 4f9182a6-045b-42de-8efe-e25c6481066f
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: fleet-agent
+        pod-template-hash: 6d5df7d9cd
+    template:
+      metadata:
+        creationTimestamp: "null"
+        labels:
+          app: fleet-agent
+          pod-template-hash: 6d5df7d9cd
+      spec:
+        affinity:
+          nodeAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - preference:
+                matchExpressions:
+                - key: fleet.cattle.io/agent
+                  operator: In
+                  values:
+                  - "true"
+              weight: 1
+        containers:
+        - env:
+          - name: NAMESPACE
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+          - name: AGENT_SCOPE
+            value: cattle-fleet-local-system
+          - name: CHECKIN_INTERVAL
+            value: 15m0s
+          image: rancher/fleet-agent:v0.9.2
+          imagePullPolicy: IfNotPresent
+          name: fleet-agent
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        nodeSelector:
+          kubernetes.io/os: linux
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext:
+          runAsGroup: 1000
+          runAsNonRoot: true
+          runAsUser: 1000
+        serviceAccount: fleet-agent
+        serviceAccountName: fleet-agent
+        terminationGracePeriodSeconds: 30
+        tolerations:
+        - effect: NoSchedule
+          key: node.cloudprovider.kubernetes.io/uninitialized
+          operator: Equal
+          value: "true"
+        - effect: NoSchedule
+          key: cattle.io/os
+          operator: Equal
+          value: linux
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+kind: List
+metadata:
+  resourceVersion: "770217"

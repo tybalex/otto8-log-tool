@@ -1,0 +1,58 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{},"name":"rancher-expose","namespace":"cattle-system"},"spec":{"rules":[{"http":{"paths":[{"backend":{"service":{"name":"rancher","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}]}}
+    creationTimestamp: "2024-08-06T01:53:30Z"
+    generation: 1
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          f:rules: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2024-08-06T01:53:30Z"
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:loadBalancer:
+            f:ingress: {}
+      manager: nginx-ingress-controller
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:16:33Z"
+    name: rancher-expose
+    namespace: cattle-system
+    resourceVersion: "30973"
+    uid: c41678ee-82f6-41b3-a551-3060694a426a
+  spec:
+    rules:
+    - http:
+        paths:
+        - backend:
+            service:
+              name: rancher
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 10.10.110.11
+      - ip: 10.10.110.232
+      - ip: 10.10.110.61
+      - ip: 10.10.110.71
+kind: List
+metadata:
+  resourceVersion: "770206"

@@ -1,0 +1,678 @@
+apiVersion: v1
+items:
+- apiVersion: harvesterhci.io/v1beta1
+  kind: BlockDevice
+  metadata:
+    creationTimestamp: "2024-08-06T02:11:27Z"
+    finalizers:
+    - wrangler.cattle.io/harvester-block-device-handler
+    generation: 7
+    labels:
+      kubernetes.io/hostname: harvesterdev2
+      ndm.harvesterhci.io/device-type: disk
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/harvester-block-device-handler"null: {}
+          f:labels:
+            .: {}
+            f:kubernetes.io/hostname: {}
+            f:ndm.harvesterhci.io/device-type: {}
+        f:spec:
+          .: {}
+          f:devPath: {}
+          f:fileSystem:
+            .: {}
+            f:forceFormatted: {}
+            f:mountPoint: {}
+            f:provisioned: {}
+          f:nodeName: {}
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:deviceStatus:
+            .: {}
+            f:capacity:
+              .: {}
+              f:physicalBlockSizeBytes: {}
+              f:sizeBytes: {}
+            f:details:
+              .: {}
+              f:busPath: {}
+              f:deviceType: {}
+              f:driveType: {}
+              f:isRemovable: {}
+              f:model: {}
+              f:serialNumber: {}
+              f:storageController: {}
+              f:uuid: {}
+              f:vendor: {}
+              f:wwn: {}
+            f:devPath: {}
+            f:fileSystem:
+              .: {}
+              f:LastFormattedAt: {}
+              f:mountPoint: {}
+              f:type: {}
+            f:partitioned: {}
+          f:provisionPhase: {}
+          f:state: {}
+      manager: node-disk-manager
+      operation: Update
+      time: "2024-08-06T02:12:20Z"
+    name: 730bfc287c4891698a05e8f30cfec23f
+    namespace: longhorn-system
+    resourceVersion: "24508"
+    uid: 965ca7e4-4832-4acb-ab64-55b8dc537cc8
+  spec:
+    devPath: /dev/sda
+    fileSystem:
+      forceFormatted: true
+      mountPoint: "null"
+      provisioned: true
+    nodeName: harvesterdev2
+  status:
+    conditions:
+    - lastUpdateTime: "2024-08-06T02:11:45Z"
+      message: Done device ext4 filesystem formatting
+      status: "False"
+      type: Formatting
+    - lastUpdateTime: "2024-08-06T02:11:45Z"
+      status: "True"
+      type: Mounted
+    - lastUpdateTime: "2024-08-06T02:12:20Z"
+      message: Added disk 730bfc287c4891698a05e8f30cfec23f to longhorn node `harvesterdev2`
+        as an additional disk
+      status: "True"
+      type: AddedToNode
+    deviceStatus:
+      capacity:
+        physicalBlockSizeBytes: 4096
+        sizeBytes: 8.001563222016e+12
+      details:
+        busPath: pci-0000:45:00.0-ata-3.0
+        deviceType: disk
+        driveType: HDD
+        isRemovable: true
+        model: ST8000NE001-2M7101
+        serialNumber: WSD4NVFE
+        storageController: SCSI
+        uuid: e4fecd79-388d-4107-b7a5-c63d3137d8f8
+        vendor: ATA
+        wwn: "0x5000c500dcf47ee4"
+      devPath: /dev/sda
+      fileSystem:
+        LastFormattedAt: "2024-08-06T02:11:45Z"
+        mountPoint: /var/lib/harvester/extra-disks/730bfc287c4891698a05e8f30cfec23f
+        type: ext4
+      partitioned: false
+    provisionPhase: Provisioned
+    state: Active
+- apiVersion: harvesterhci.io/v1beta1
+  kind: BlockDevice
+  metadata:
+    creationTimestamp: "2024-08-06T02:11:27Z"
+    finalizers:
+    - wrangler.cattle.io/harvester-block-device-handler
+    generation: 6
+    labels:
+      kubernetes.io/hostname: harvesterdev2
+      ndm.harvesterhci.io/device-type: disk
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/harvester-block-device-handler"null: {}
+          f:labels:
+            .: {}
+            f:kubernetes.io/hostname: {}
+            f:ndm.harvesterhci.io/device-type: {}
+        f:spec:
+          .: {}
+          f:devPath: {}
+          f:fileSystem:
+            .: {}
+            f:forceFormatted: {}
+            f:mountPoint: {}
+            f:provisioned: {}
+          f:nodeName: {}
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:deviceStatus:
+            .: {}
+            f:capacity:
+              .: {}
+              f:physicalBlockSizeBytes: {}
+              f:sizeBytes: {}
+            f:details:
+              .: {}
+              f:busPath: {}
+              f:deviceType: {}
+              f:driveType: {}
+              f:isRemovable: {}
+              f:model: {}
+              f:serialNumber: {}
+              f:storageController: {}
+              f:uuid: {}
+              f:vendor: {}
+              f:wwn: {}
+            f:devPath: {}
+            f:fileSystem:
+              .: {}
+              f:LastFormattedAt: {}
+              f:mountPoint: {}
+              f:type: {}
+            f:partitioned: {}
+          f:provisionPhase: {}
+          f:state: {}
+      manager: node-disk-manager
+      operation: Update
+      time: "2024-08-06T02:11:50Z"
+    name: 849b277109de3bb257c476b1d38cf56d
+    namespace: longhorn-system
+    resourceVersion: "23731"
+    uid: 584a9755-28e3-42c3-aad8-f1ddf67e8429
+  spec:
+    devPath: /dev/sdb
+    fileSystem:
+      forceFormatted: true
+      mountPoint: "null"
+      provisioned: true
+    nodeName: harvesterdev2
+  status:
+    conditions:
+    - lastUpdateTime: "2024-08-06T02:11:32Z"
+      message: Done device ext4 filesystem formatting
+      status: "False"
+      type: Formatting
+    - lastUpdateTime: "2024-08-06T02:11:33Z"
+      status: "True"
+      type: Mounted
+    - lastUpdateTime: "2024-08-06T02:11:50Z"
+      message: Added disk 849b277109de3bb257c476b1d38cf56d to longhorn node `harvesterdev2`
+        as an additional disk
+      status: "True"
+      type: AddedToNode
+    deviceStatus:
+      capacity:
+        physicalBlockSizeBytes: 512
+        sizeBytes: 2.000398934016e+12
+      details:
+        busPath: pci-0000:45:00.0-ata-1.0
+        deviceType: disk
+        driveType: SSD
+        isRemovable: true
+        model: Samsung_SSD_870_QVO_2TB
+        serialNumber: S6R4NJ0T204488Y
+        storageController: SCSI
+        uuid: 24fc3592-ff84-4924-bb88-5735ad978c39
+        vendor: ATA
+        wwn: "0x5002538f32202590"
+      devPath: /dev/sdb
+      fileSystem:
+        LastFormattedAt: "2024-08-06T02:11:32Z"
+        mountPoint: /var/lib/harvester/extra-disks/849b277109de3bb257c476b1d38cf56d
+        type: ext4
+      partitioned: false
+    provisionPhase: Provisioned
+    state: Active
+- apiVersion: harvesterhci.io/v1beta1
+  kind: BlockDevice
+  metadata:
+    creationTimestamp: "2024-08-06T02:13:19Z"
+    finalizers:
+    - wrangler.cattle.io/harvester-block-device-handler
+    generation: 7
+    labels:
+      kubernetes.io/hostname: harvesterdev3
+      ndm.harvesterhci.io/device-type: disk
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/harvester-block-device-handler"null: {}
+          f:labels:
+            .: {}
+            f:kubernetes.io/hostname: {}
+            f:ndm.harvesterhci.io/device-type: {}
+        f:spec:
+          .: {}
+          f:devPath: {}
+          f:fileSystem:
+            .: {}
+            f:forceFormatted: {}
+            f:mountPoint: {}
+            f:provisioned: {}
+          f:nodeName: {}
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:deviceStatus:
+            .: {}
+            f:capacity:
+              .: {}
+              f:physicalBlockSizeBytes: {}
+              f:sizeBytes: {}
+            f:details:
+              .: {}
+              f:busPath: {}
+              f:deviceType: {}
+              f:driveType: {}
+              f:isRemovable: {}
+              f:model: {}
+              f:serialNumber: {}
+              f:storageController: {}
+              f:uuid: {}
+              f:vendor: {}
+              f:wwn: {}
+            f:devPath: {}
+            f:fileSystem:
+              .: {}
+              f:LastFormattedAt: {}
+              f:mountPoint: {}
+              f:type: {}
+            f:partitioned: {}
+          f:provisionPhase: {}
+          f:state: {}
+      manager: node-disk-manager
+      operation: Update
+      time: "2024-08-06T02:14:11Z"
+    name: 915fa611e156447cca7d848466c26b01
+    namespace: longhorn-system
+    resourceVersion: "27703"
+    uid: 6fda68a0-fbd2-4bbd-b459-efa634f83321
+  spec:
+    devPath: /dev/sda
+    fileSystem:
+      forceFormatted: true
+      mountPoint: "null"
+      provisioned: true
+    nodeName: harvesterdev3
+  status:
+    conditions:
+    - lastUpdateTime: "2024-08-06T02:13:24Z"
+      message: Done device ext4 filesystem formatting
+      status: "False"
+      type: Formatting
+    - lastUpdateTime: "2024-08-06T02:13:25Z"
+      status: "True"
+      type: Mounted
+    - lastUpdateTime: "2024-08-06T02:14:11Z"
+      message: Added disk 915fa611e156447cca7d848466c26b01 to longhorn node `harvesterdev3`
+        as an additional disk
+      status: "True"
+      type: AddedToNode
+    deviceStatus:
+      capacity:
+        physicalBlockSizeBytes: 512
+        sizeBytes: 2.000398934016e+12
+      details:
+        busPath: pci-0000:45:00.0-ata-1.0
+        deviceType: disk
+        driveType: SSD
+        isRemovable: true
+        model: Samsung_SSD_870_QVO_2TB
+        serialNumber: S6R4NJ0T204484L
+        storageController: SCSI
+        uuid: 05fb919f-e737-49cc-b91e-febd3033b95c
+        vendor: ATA
+        wwn: "0x5002538f3220258c"
+      devPath: /dev/sda
+      fileSystem:
+        LastFormattedAt: "2024-08-06T02:13:24Z"
+        mountPoint: /var/lib/harvester/extra-disks/915fa611e156447cca7d848466c26b01
+        type: ext4
+      partitioned: false
+    provisionPhase: Provisioned
+    state: Active
+- apiVersion: harvesterhci.io/v1beta1
+  kind: BlockDevice
+  metadata:
+    creationTimestamp: "2024-08-06T02:13:19Z"
+    finalizers:
+    - wrangler.cattle.io/harvester-block-device-handler
+    generation: 5
+    labels:
+      kubernetes.io/hostname: harvesterdev3
+      ndm.harvesterhci.io/device-type: disk
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/harvester-block-device-handler"null: {}
+          f:labels:
+            .: {}
+            f:kubernetes.io/hostname: {}
+            f:ndm.harvesterhci.io/device-type: {}
+        f:spec:
+          .: {}
+          f:devPath: {}
+          f:fileSystem:
+            .: {}
+            f:forceFormatted: {}
+            f:mountPoint: {}
+            f:provisioned: {}
+          f:nodeName: {}
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:deviceStatus:
+            .: {}
+            f:capacity:
+              .: {}
+              f:physicalBlockSizeBytes: {}
+              f:sizeBytes: {}
+            f:details:
+              .: {}
+              f:busPath: {}
+              f:deviceType: {}
+              f:driveType: {}
+              f:isRemovable: {}
+              f:model: {}
+              f:serialNumber: {}
+              f:storageController: {}
+              f:uuid: {}
+              f:vendor: {}
+              f:wwn: {}
+            f:devPath: {}
+            f:fileSystem:
+              .: {}
+              f:LastFormattedAt: {}
+              f:mountPoint: {}
+              f:type: {}
+            f:partitioned: {}
+          f:provisionPhase: {}
+          f:state: {}
+      manager: node-disk-manager
+      operation: Update
+      time: "2024-08-06T02:13:38Z"
+    name: af108f336cb053734c93658d7551aa93
+    namespace: longhorn-system
+    resourceVersion: "26851"
+    uid: 33ec134e-57d1-4c4c-950d-c364bfed5565
+  spec:
+    devPath: /dev/sdb
+    fileSystem:
+      forceFormatted: true
+      mountPoint: "null"
+      provisioned: true
+    nodeName: harvesterdev3
+  status:
+    conditions:
+    - lastUpdateTime: "2024-08-06T02:13:37Z"
+      message: Done device ext4 filesystem formatting
+      status: "False"
+      type: Formatting
+    - lastUpdateTime: "2024-08-06T02:13:38Z"
+      status: "True"
+      type: Mounted
+    - lastUpdateTime: "2024-08-06T02:13:38Z"
+      message: Added disk af108f336cb053734c93658d7551aa93 to longhorn node `harvesterdev3`
+        as an additional disk
+      status: "True"
+      type: AddedToNode
+    deviceStatus:
+      capacity:
+        physicalBlockSizeBytes: 4096
+        sizeBytes: 8.001563222016e+12
+      details:
+        busPath: pci-0000:45:00.0-ata-3.0
+        deviceType: disk
+        driveType: HDD
+        isRemovable: true
+        model: ST8000NE001-2M7101
+        serialNumber: WSD4H7K7
+        storageController: SCSI
+        uuid: 3d13245c-50fa-4d78-9661-cdfffe91e555
+        vendor: ATA
+        wwn: "0x5000c500dcf4ade3"
+      devPath: /dev/sdb
+      fileSystem:
+        LastFormattedAt: "2024-08-06T02:13:37Z"
+        mountPoint: /var/lib/harvester/extra-disks/af108f336cb053734c93658d7551aa93
+        type: ext4
+      partitioned: false
+    provisionPhase: Provisioned
+    state: Active
+- apiVersion: harvesterhci.io/v1beta1
+  kind: BlockDevice
+  metadata:
+    creationTimestamp: "2024-08-06T01:55:43Z"
+    finalizers:
+    - wrangler.cattle.io/harvester-block-device-handler
+    generation: 7
+    labels:
+      kubernetes.io/hostname: harvesterdev1
+      ndm.harvesterhci.io/device-type: disk
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/harvester-block-device-handler"null: {}
+          f:labels:
+            .: {}
+            f:kubernetes.io/hostname: {}
+            f:ndm.harvesterhci.io/device-type: {}
+        f:spec:
+          .: {}
+          f:devPath: {}
+          f:fileSystem:
+            .: {}
+            f:forceFormatted: {}
+            f:mountPoint: {}
+            f:provisioned: {}
+          f:nodeName: {}
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:deviceStatus:
+            .: {}
+            f:capacity:
+              .: {}
+              f:physicalBlockSizeBytes: {}
+              f:sizeBytes: {}
+            f:details:
+              .: {}
+              f:busPath: {}
+              f:deviceType: {}
+              f:driveType: {}
+              f:isRemovable: {}
+              f:model: {}
+              f:serialNumber: {}
+              f:storageController: {}
+              f:uuid: {}
+              f:vendor: {}
+              f:wwn: {}
+            f:devPath: {}
+            f:fileSystem:
+              .: {}
+              f:LastFormattedAt: {}
+              f:mountPoint: {}
+              f:type: {}
+            f:partitioned: {}
+          f:provisionPhase: {}
+          f:state: {}
+      manager: node-disk-manager
+      operation: Update
+      time: "2024-08-06T01:59:23Z"
+    name: c2675a090f3de6d1ec528e9c57791af5
+    namespace: longhorn-system
+    resourceVersion: "11449"
+    uid: 5ee8f5b9-8a4b-4cb5-89ec-901222530daf
+  spec:
+    devPath: /dev/sda
+    fileSystem:
+      forceFormatted: true
+      mountPoint: "null"
+      provisioned: true
+    nodeName: harvesterdev1
+  status:
+    conditions:
+    - lastUpdateTime: "2024-08-06T01:59:06Z"
+      message: Done device ext4 filesystem formatting
+      status: "False"
+      type: Formatting
+    - lastUpdateTime: "2024-08-06T01:59:06Z"
+      status: "True"
+      type: Mounted
+    - lastUpdateTime: "2024-08-06T01:59:23Z"
+      message: Added disk c2675a090f3de6d1ec528e9c57791af5 to longhorn node `harvesterdev1`
+        as an additional disk
+      status: "True"
+      type: AddedToNode
+    deviceStatus:
+      capacity:
+        physicalBlockSizeBytes: 4096
+        sizeBytes: 8.001563222016e+12
+      details:
+        busPath: pci-0000:45:00.0-ata-3.0
+        deviceType: disk
+        driveType: HDD
+        isRemovable: true
+        model: ST8000NE001-2M7101
+        serialNumber: WSD4SNSZ
+        storageController: SCSI
+        uuid: 00c9d9e8-4f9b-4adf-ad6c-233b1c7908b3
+        vendor: ATA
+        wwn: "0x5000c500dcf4716d"
+      devPath: /dev/sda
+      fileSystem:
+        LastFormattedAt: "2024-08-06T01:59:06Z"
+        mountPoint: /var/lib/harvester/extra-disks/c2675a090f3de6d1ec528e9c57791af5
+        type: ext4
+      partitioned: false
+    provisionPhase: Provisioned
+    state: Active
+- apiVersion: harvesterhci.io/v1beta1
+  kind: BlockDevice
+  metadata:
+    creationTimestamp: "2024-08-06T01:55:43Z"
+    finalizers:
+    - wrangler.cattle.io/harvester-block-device-handler
+    generation: 6
+    labels:
+      kubernetes.io/hostname: harvesterdev1
+      ndm.harvesterhci.io/device-type: disk
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/harvester-block-device-handler"null: {}
+          f:labels:
+            .: {}
+            f:kubernetes.io/hostname: {}
+            f:ndm.harvesterhci.io/device-type: {}
+        f:spec:
+          .: {}
+          f:devPath: {}
+          f:fileSystem:
+            .: {}
+            f:forceFormatted: {}
+            f:mountPoint: {}
+            f:provisioned: {}
+          f:nodeName: {}
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:deviceStatus:
+            .: {}
+            f:capacity:
+              .: {}
+              f:physicalBlockSizeBytes: {}
+              f:sizeBytes: {}
+            f:details:
+              .: {}
+              f:busPath: {}
+              f:deviceType: {}
+              f:driveType: {}
+              f:isRemovable: {}
+              f:model: {}
+              f:serialNumber: {}
+              f:storageController: {}
+              f:uuid: {}
+              f:vendor: {}
+              f:wwn: {}
+            f:devPath: {}
+            f:fileSystem:
+              .: {}
+              f:LastFormattedAt: {}
+              f:mountPoint: {}
+              f:type: {}
+            f:partitioned: {}
+          f:provisionPhase: {}
+          f:state: {}
+      manager: node-disk-manager
+      operation: Update
+      time: "2024-08-06T01:58:54Z"
+    name: e8bc66bcba288703f89f5d245fd2a6d8
+    namespace: longhorn-system
+    resourceVersion: "10995"
+    uid: e9e978c8-0daf-4310-a581-ac70a0febc21
+  spec:
+    devPath: /dev/sdb
+    fileSystem:
+      forceFormatted: true
+      mountPoint: "null"
+      provisioned: true
+    nodeName: harvesterdev1
+  status:
+    conditions:
+    - lastUpdateTime: "2024-08-06T01:58:53Z"
+      message: Done device ext4 filesystem formatting
+      status: "False"
+      type: Formatting
+    - lastUpdateTime: "2024-08-06T01:58:54Z"
+      status: "True"
+      type: Mounted
+    - lastUpdateTime: "2024-08-06T01:58:54Z"
+      message: Added disk e8bc66bcba288703f89f5d245fd2a6d8 to longhorn node `harvesterdev1`
+        as an additional disk
+      status: "True"
+      type: AddedToNode
+    deviceStatus:
+      capacity:
+        physicalBlockSizeBytes: 512
+        sizeBytes: 2.000398934016e+12
+      details:
+        busPath: pci-0000:45:00.0-ata-1.0
+        deviceType: disk
+        driveType: SSD
+        isRemovable: true
+        model: Samsung_SSD_870_QVO_2TB
+        serialNumber: S6R4NJ0T204431J
+        storageController: SCSI
+        uuid: 0ff3150b-b4a5-4e58-bd71-4958c95b5ed3
+        vendor: ATA
+        wwn: "0x5002538f32202557"
+      devPath: /dev/sdb
+      fileSystem:
+        LastFormattedAt: "2024-08-06T01:58:53Z"
+        mountPoint: /var/lib/harvester/extra-disks/e8bc66bcba288703f89f5d245fd2a6d8
+        type: ext4
+      partitioned: false
+    provisionPhase: Provisioned
+    state: Active
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770272"

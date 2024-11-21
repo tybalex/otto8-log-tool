@@ -1,0 +1,79 @@
+2024-08-06T01:51:36.217384438Z I0806 01:51:36.217193       1 serving.go:387] Generated self-signed cert in-memory
+2024-08-06T01:51:36.500226758Z I0806 01:51:36.500132       1 serving.go:387] Generated self-signed cert in-memory
+2024-08-06T01:51:36.710698841Z I0806 01:51:36.710568       1 controllermanager.go:169] Version: v1.29.3-k3s1
+2024-08-06T01:51:36.714781175Z I0806 01:51:36.714703       1 requestheader_controller.go:169] Starting RequestHeaderAuthRequestController
+2024-08-06T01:51:36.714807675Z I0806 01:51:36.714716       1 configmap_cafile_content.go:202] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"
+2024-08-06T01:51:36.714817363Z I0806 01:51:36.714704       1 configmap_cafile_content.go:202] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::client-ca-file"
+2024-08-06T01:51:36.714825618Z I0806 01:51:36.714753       1 shared_informer.go:311] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+2024-08-06T01:51:36.714833714Z I0806 01:51:36.714757       1 shared_informer.go:311] Waiting for caches to sync for RequestHeaderAuthRequestController
+2024-08-06T01:51:36.714872647Z I0806 01:51:36.714756       1 shared_informer.go:311] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+2024-08-06T01:51:36.715835863Z I0806 01:51:36.715768       1 secure_serving.go:213] Serving securely on 127.0.0.1:10258
+2024-08-06T01:51:36.715864386Z I0806 01:51:36.715830       1 tlsconfig.go:240] "Starting DynamicServingCertificateController"
+2024-08-06T01:51:36.716047890Z I0806 01:51:36.716007       1 leaderelection.go:250] attempting to acquire leader lease kube-system/rke2-cloud-controller-manager...
+2024-08-06T01:51:36.726133351Z I0806 01:51:36.726091       1 leaderelection.go:260] successfully acquired lease kube-system/rke2-cloud-controller-manager
+2024-08-06T01:51:36.726267032Z I0806 01:51:36.726229       1 event.go:376] "Event occurred" object="kube-system/rke2-cloud-controller-manager" fieldPath="" kind="Lease" apiVersion="coordination.k8s.io/v1" type="Normal" reason="LeaderElection" message="harvesterdev1_f245f2a6-31f3-4ea6-8d40-e710a3e5b3fa became leader"
+2024-08-06T01:51:36.730129885Z I0806 01:51:36.730083       1 controllermanager.go:338] Started "cloud-node-controller"
+2024-08-06T01:51:36.730149201Z I0806 01:51:36.730124       1 node_controller.go:165] Sending events to api server.
+2024-08-06T01:51:36.730263315Z I0806 01:51:36.730234       1 node_controller.go:174] Waiting for informer caches to sync
+2024-08-06T01:51:36.730426471Z I0806 01:51:36.730335       1 controllermanager.go:338] Started "cloud-node-lifecycle-controller"
+2024-08-06T01:51:36.730454042Z W0806 01:51:36.730343       1 controllermanager.go:315] "service-lb-controller" is disabled
+2024-08-06T01:51:36.730461867Z W0806 01:51:36.730347       1 controllermanager.go:315] "node-route-controller" is disabled
+2024-08-06T01:51:36.730477927Z I0806 01:51:36.730390       1 node_lifecycle_controller.go:113] Sending events to api server
+2024-08-06T01:51:36.814935148Z I0806 01:51:36.814851       1 shared_informer.go:318] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+2024-08-06T01:51:36.814973359Z I0806 01:51:36.814904       1 shared_informer.go:318] Caches are synced for RequestHeaderAuthRequestController
+2024-08-06T01:51:36.816076187Z I0806 01:51:36.816015       1 shared_informer.go:318] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+2024-08-06T01:51:36.831347281Z I0806 01:51:36.831275       1 node_controller.go:431] Initializing node harvesterdev1 with cloud provider
+2024-08-06T01:51:36.837967264Z I0806 01:51:36.837839       1 node_controller.go:502] Successfully initialized node harvesterdev1 with cloud provider
+2024-08-06T01:51:36.838096436Z I0806 01:51:36.838014       1 event.go:376] "Event occurred" object="harvesterdev1" fieldPath="" kind="Node" apiVersion="v1" type="Normal" reason="Synced" message="Node synced successfully"
+2024-08-06T02:11:20.153455255Z I0806 02:11:20.153265       1 node_controller.go:431] Initializing node harvesterdev2 with cloud provider
+2024-08-06T02:11:20.153520587Z E0806 02:11:20.153471       1 node_controller.go:240] error syncing 'harvesterdev2': failed to get instance metadata for node harvesterdev2: address annotations not yet set, requeuing
+2024-08-06T02:11:20.158944994Z I0806 02:11:20.158853       1 node_controller.go:431] Initializing node harvesterdev2 with cloud provider
+2024-08-06T02:11:20.158997402Z E0806 02:11:20.158952       1 node_controller.go:240] error syncing 'harvesterdev2': failed to get instance metadata for node harvesterdev2: address annotations not yet set, requeuing
+2024-08-06T02:11:20.163614433Z I0806 02:11:20.163041       1 node_controller.go:431] Initializing node harvesterdev2 with cloud provider
+2024-08-06T02:11:20.163625604Z E0806 02:11:20.163129       1 node_controller.go:240] error syncing 'harvesterdev2': failed to get instance metadata for node harvesterdev2: address annotations not yet set, requeuing
+2024-08-06T02:11:20.169772558Z I0806 02:11:20.169694       1 node_controller.go:431] Initializing node harvesterdev2 with cloud provider
+2024-08-06T02:11:20.169820668Z E0806 02:11:20.169799       1 node_controller.go:240] error syncing 'harvesterdev2': failed to get instance metadata for node harvesterdev2: address annotations not yet set, requeuing
+2024-08-06T02:11:20.179248390Z I0806 02:11:20.176425       1 node_controller.go:431] Initializing node harvesterdev2 with cloud provider
+2024-08-06T02:11:20.179295889Z E0806 02:11:20.176592       1 node_controller.go:240] error syncing 'harvesterdev2': failed to get instance metadata for node harvesterdev2: address annotations not yet set, requeuing
+2024-08-06T02:11:20.185592302Z I0806 02:11:20.184085       1 node_controller.go:431] Initializing node harvesterdev2 with cloud provider
+2024-08-06T02:11:20.185613512Z E0806 02:11:20.184148       1 node_controller.go:240] error syncing 'harvesterdev2': failed to get instance metadata for node harvesterdev2: address annotations not yet set, requeuing
+2024-08-06T02:11:20.201785303Z I0806 02:11:20.201621       1 node_controller.go:431] Initializing node harvesterdev2 with cloud provider
+2024-08-06T02:11:20.201816682Z E0806 02:11:20.201700       1 node_controller.go:240] error syncing 'harvesterdev2': failed to get instance metadata for node harvesterdev2: address annotations not yet set, requeuing
+2024-08-06T02:11:20.210937462Z I0806 02:11:20.210885       1 node_controller.go:431] Initializing node harvesterdev2 with cloud provider
+2024-08-06T02:11:20.210970273Z E0806 02:11:20.210956       1 node_controller.go:240] error syncing 'harvesterdev2': failed to get instance metadata for node harvesterdev2: address annotations not yet set, requeuing
+2024-08-06T02:11:20.213638179Z I0806 02:11:20.212790       1 node_controller.go:431] Initializing node harvesterdev2 with cloud provider
+2024-08-06T02:11:20.221384075Z I0806 02:11:20.221052       1 node_controller.go:502] Successfully initialized node harvesterdev2 with cloud provider
+2024-08-06T02:11:20.221410144Z I0806 02:11:20.221298       1 event.go:376] "Event occurred" object="harvesterdev2" fieldPath="" kind="Node" apiVersion="v1" type="Normal" reason="Synced" message="Node synced successfully"
+2024-08-06T02:13:11.817412792Z I0806 02:13:11.815871       1 node_controller.go:431] Initializing node harvesterdev3 with cloud provider
+2024-08-06T02:13:11.817434895Z E0806 02:13:11.815968       1 node_controller.go:240] error syncing 'harvesterdev3': failed to get instance metadata for node harvesterdev3: address annotations not yet set, requeuing
+2024-08-06T02:13:11.821224250Z I0806 02:13:11.821159       1 node_controller.go:431] Initializing node harvesterdev3 with cloud provider
+2024-08-06T02:13:11.821264087Z E0806 02:13:11.821221       1 node_controller.go:240] error syncing 'harvesterdev3': failed to get instance metadata for node harvesterdev3: address annotations not yet set, requeuing
+2024-08-06T02:13:11.825717005Z I0806 02:13:11.825651       1 node_controller.go:431] Initializing node harvesterdev3 with cloud provider
+2024-08-06T02:13:11.825851625Z E0806 02:13:11.825709       1 node_controller.go:240] error syncing 'harvesterdev3': failed to get instance metadata for node harvesterdev3: address annotations not yet set, requeuing
+2024-08-06T02:13:11.831686475Z I0806 02:13:11.831615       1 node_controller.go:431] Initializing node harvesterdev3 with cloud provider
+2024-08-06T02:13:11.831726963Z E0806 02:13:11.831686       1 node_controller.go:240] error syncing 'harvesterdev3': failed to get instance metadata for node harvesterdev3: address annotations not yet set, requeuing
+2024-08-06T02:13:11.841924556Z I0806 02:13:11.841244       1 node_controller.go:431] Initializing node harvesterdev3 with cloud provider
+2024-08-06T02:13:11.841939625Z E0806 02:13:11.841313       1 node_controller.go:240] error syncing 'harvesterdev3': failed to get instance metadata for node harvesterdev3: address annotations not yet set, requeuing
+2024-08-06T02:13:11.853113395Z I0806 02:13:11.852821       1 node_controller.go:431] Initializing node harvesterdev3 with cloud provider
+2024-08-06T02:13:11.853127191Z E0806 02:13:11.852896       1 node_controller.go:240] error syncing 'harvesterdev3': failed to get instance metadata for node harvesterdev3: address annotations not yet set, requeuing
+2024-08-06T02:13:11.863386143Z I0806 02:13:11.863202       1 node_controller.go:431] Initializing node harvesterdev3 with cloud provider
+2024-08-06T02:13:11.863409398Z E0806 02:13:11.863285       1 node_controller.go:240] error syncing 'harvesterdev3': failed to get instance metadata for node harvesterdev3: address annotations not yet set, requeuing
+2024-08-06T02:13:11.873727294Z I0806 02:13:11.870970       1 node_controller.go:431] Initializing node harvesterdev3 with cloud provider
+2024-08-06T02:13:11.873771860Z E0806 02:13:11.871036       1 node_controller.go:240] error syncing 'harvesterdev3': failed to get instance metadata for node harvesterdev3: address annotations not yet set, requeuing
+2024-08-06T02:13:11.873777731Z I0806 02:13:11.872137       1 node_controller.go:431] Initializing node harvesterdev3 with cloud provider
+2024-08-06T02:13:11.873782631Z E0806 02:13:11.872187       1 node_controller.go:240] error syncing 'harvesterdev3': failed to get instance metadata for node harvesterdev3: address annotations not yet set, requeuing
+2024-08-06T02:13:11.883785396Z I0806 02:13:11.883671       1 node_controller.go:431] Initializing node harvesterdev3 with cloud provider
+2024-08-06T02:13:11.883863217Z E0806 02:13:11.883742       1 node_controller.go:240] error syncing 'harvesterdev3': failed to get instance metadata for node harvesterdev3: address annotations not yet set, requeuing
+2024-08-06T02:13:11.897903318Z I0806 02:13:11.897814       1 node_controller.go:431] Initializing node harvesterdev3 with cloud provider
+2024-08-06T02:13:11.907703092Z I0806 02:13:11.907578       1 node_controller.go:502] Successfully initialized node harvesterdev3 with cloud provider
+2024-08-06T02:13:11.907842101Z I0806 02:13:11.907728       1 event.go:376] "Event occurred" object="harvesterdev3" fieldPath="" kind="Node" apiVersion="v1" type="Normal" reason="Synced" message="Node synced successfully"
+2024-08-06T02:15:24.071149244Z I0806 02:15:24.070954       1 node_controller.go:431] Initializing node harvesterdev7 with cloud provider
+2024-08-06T02:15:24.071224026Z E0806 02:15:24.071057       1 node_controller.go:240] error syncing 'harvesterdev7': failed to get instance metadata for node harvesterdev7: address annotations not yet set, requeuing
+2024-08-06T02:15:24.076358962Z I0806 02:15:24.076301       1 node_controller.go:431] Initializing node harvesterdev7 with cloud provider
+2024-08-06T02:15:24.076396303Z E0806 02:15:24.076344       1 node_controller.go:240] error syncing 'harvesterdev7': failed to get instance metadata for node harvesterdev7: address annotations not yet set, requeuing
+2024-08-06T02:15:24.081504839Z I0806 02:15:24.081430       1 node_controller.go:431] Initializing node harvesterdev7 with cloud provider
+2024-08-06T02:15:24.089209087Z I0806 02:15:24.089137       1 node_controller.go:502] Successfully initialized node harvesterdev7 with cloud provider
+2024-08-06T02:15:24.089244805Z I0806 02:15:24.089226       1 node_controller.go:431] Initializing node harvesterdev7 with cloud provider
+2024-08-06T02:15:24.089501144Z I0806 02:15:24.089445       1 event.go:376] "Event occurred" object="harvesterdev7" fieldPath="" kind="Node" apiVersion="v1" type="Normal" reason="Synced" message="Node synced successfully"
+2024-08-06T02:15:24.196927437Z I0806 02:15:24.196845       1 node_controller.go:502] Successfully initialized node harvesterdev7 with cloud provider
+2024-08-06T02:15:24.197049750Z I0806 02:15:24.197009       1 event.go:376] "Event occurred" object="harvesterdev7" fieldPath="" kind="Node" apiVersion="v1" type="Normal" reason="Synced" message="Node synced successfully"

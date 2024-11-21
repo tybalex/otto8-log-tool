@@ -1,0 +1,192 @@
+2024-08-06T02:15:55.343062567Z Fluent Bit v2.2.0
+2024-08-06T02:15:55.343103975Z * Copyright (C) 2015-2023 The Fluent Bit Authors
+2024-08-06T02:15:55.343112370Z * Fluent Bit is a CNCF sub-project under the umbrella of Fluentd
+2024-08-06T02:15:55.343118161Z * https://fluentbit.io
+2024-08-06T02:15:55.343123672Z 
+2024-08-06T02:15:55.344948399Z [2024/08/06 02:15:55] [ info] [fluent bit] version=2.2.0, commit=db8487d123, pid=1
+2024-08-06T02:15:55.344992060Z [2024/08/06 02:15:55] [ info] [storage] ver=1.5.1, type=memory, sync=normal, checksum=off, max_chunks_up=128
+2024-08-06T02:15:55.345007299Z [2024/08/06 02:15:55] [ info] [cmetrics] version=0.6.4
+2024-08-06T02:15:55.345013240Z [2024/08/06 02:15:55] [ info] [ctraces ] version=0.3.1
+2024-08-06T02:15:55.345070897Z [2024/08/06 02:15:55] [ info] [input:systemd:systemd.0] initializing
+2024-08-06T02:15:55.345078381Z [2024/08/06 02:15:55] [ info] [input:systemd:systemd.0] storage_strategy='memory' (memory only)
+2024-08-06T02:15:55.345401875Z [2024/08/06 02:15:55] [ info] [input:tail:tail.1] initializing
+2024-08-06T02:15:55.345406514Z [2024/08/06 02:15:55] [ info] [input:tail:tail.1] storage_strategy='memory' (memory only)
+2024-08-06T02:15:55.345587312Z [2024/08/06 02:15:55] [ info] [input:tail:tail.2] initializing
+2024-08-06T02:15:55.345598452Z [2024/08/06 02:15:55] [ info] [input:tail:tail.2] storage_strategy='memory' (memory only)
+2024-08-06T02:15:55.346008648Z [2024/08/06 02:15:55] [ info] [sp] stream processor started
+2024-08-06T02:15:55.375747746Z [2024/08/06 02:15:55] [ info] [output:forward:forward.0] worker #0 started
+2024-08-06T02:15:55.375763716Z [2024/08/06 02:15:55] [ info] [output:forward:forward.0] worker #1 started
+2024-08-06T02:15:55.436521840Z [2024/08/06 02:15:55] [ info] [input:tail:tail.2] inotify_fs_add(): inode=5767953 watch_fd=1 name=/var/log/audit/audit.log
+2024-08-06T02:15:55.436540164Z [2024/08/06 02:15:55] [ info] [input:tail:tail.1] inotify_fs_add(): inode=5767342 watch_fd=1 name=/var/lib/rancher/rke2/agent/logs/kubelet.log
+2024-08-06T03:11:50.684037006Z [2024/08/06 03:11:50] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T03:11:50.684094616Z [2024/08/06 03:11:50] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T03:11:50.684103873Z [2024/08/06 03:11:50] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T03:11:50.684110957Z [2024/08/06 03:11:50] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T03:11:50.684134501Z [2024/08/06 03:11:50] [ warn] [engine] failed to flush chunk '1-1722913900.864017019.flb', retry in 8 seconds: task_id=1, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T03:11:50.684262284Z [2024/08/06 03:11:50] [ warn] [engine] failed to flush chunk '1-1722913901.35032751.flb', retry in 11 seconds: task_id=0, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:11:54.683864687Z [2024/08/06 03:11:54] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T03:11:54.683906666Z [2024/08/06 03:11:54] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T03:11:54.683914682Z [2024/08/06 03:11:54] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T03:11:54.683920994Z [2024/08/06 03:11:54] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T03:11:54.684246292Z [2024/08/06 03:11:54] [ warn] [engine] failed to flush chunk '1-1722913905.535150967.flb', retry in 10 seconds: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:11:54.684281950Z [2024/08/06 03:11:54] [ warn] [engine] failed to flush chunk '1-1722913905.151769906.flb', retry in 9 seconds: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T03:11:58.686880254Z [2024/08/06 03:11:58] [ info] [engine] flush chunk '1-1722913900.864017019.flb' succeeded at retry 1: task_id=1, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T03:12:01.686889706Z [2024/08/06 03:12:01] [ info] [engine] flush chunk '1-1722913901.35032751.flb' succeeded at retry 1: task_id=0, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:12:03.684067887Z [2024/08/06 03:12:03] [ info] [engine] flush chunk '1-1722913905.151769906.flb' succeeded at retry 1: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T03:12:04.684225506Z [2024/08/06 03:12:04] [ info] [engine] flush chunk '1-1722913905.535150967.flb' succeeded at retry 1: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:18:31.684054765Z [2024/08/06 03:18:31] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T03:18:31.684132223Z [2024/08/06 03:18:31] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T03:18:31.684146510Z [2024/08/06 03:18:31] [ warn] [engine] failed to flush chunk '1-1722914302.534989879.flb', retry in 9 seconds: task_id=0, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:18:36.684090998Z [2024/08/06 03:18:36] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T03:18:36.684152375Z [2024/08/06 03:18:36] [ warn] [engine] failed to flush chunk '1-1722914306.935423748.flb', retry in 9 seconds: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:18:36.684161793Z [2024/08/06 03:18:36] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T03:18:40.687121233Z [2024/08/06 03:18:40] [ info] [engine] flush chunk '1-1722914302.534989879.flb' succeeded at retry 1: task_id=0, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:18:45.684309052Z [2024/08/06 03:18:45] [ info] [engine] flush chunk '1-1722914306.935423748.flb' succeeded at retry 1: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:21:42.683859917Z [2024/08/06 03:21:42] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T03:21:42.683930451Z [2024/08/06 03:21:42] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T03:21:42.683960869Z [2024/08/06 03:21:42] [ warn] [engine] failed to flush chunk '1-1722914493.403875226.flb', retry in 8 seconds: task_id=0, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T03:21:43.683736377Z [2024/08/06 03:21:43] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T03:21:43.683786382Z [2024/08/06 03:21:43] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T03:21:43.683806370Z [2024/08/06 03:21:43] [ warn] [engine] failed to flush chunk '1-1722914493.683604318.flb', retry in 6 seconds: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:21:47.683967237Z [2024/08/06 03:21:47] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T03:21:47.684033603Z [2024/08/06 03:21:47] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T03:21:47.684043221Z [2024/08/06 03:21:47] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T03:21:47.684050505Z [2024/08/06 03:21:47] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T03:21:47.684091814Z [2024/08/06 03:21:47] [ warn] [engine] failed to flush chunk '1-1722914497.831790455.flb', retry in 6 seconds: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T03:21:47.684099258Z [2024/08/06 03:21:47] [ warn] [engine] failed to flush chunk '1-1722914498.285101564.flb', retry in 7 seconds: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:21:49.687348059Z [2024/08/06 03:21:49] [ info] [engine] flush chunk '1-1722914493.683604318.flb' succeeded at retry 1: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:21:50.684234083Z [2024/08/06 03:21:50] [ info] [engine] flush chunk '1-1722914493.403875226.flb' succeeded at retry 1: task_id=0, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T03:21:53.683898749Z [2024/08/06 03:21:53] [ info] [engine] flush chunk '1-1722914497.831790455.flb' succeeded at retry 1: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T03:21:54.684195588Z [2024/08/06 03:21:54] [ info] [engine] flush chunk '1-1722914498.285101564.flb' succeeded at retry 1: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:38:59.684196788Z [2024/08/06 03:38:59] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T03:38:59.684263794Z [2024/08/06 03:38:59] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T03:38:59.684277840Z [2024/08/06 03:38:59] [ warn] [engine] failed to flush chunk '1-1722915530.512639899.flb', retry in 9 seconds: task_id=0, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:39:00.683970402Z [2024/08/06 03:39:00] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T03:39:00.684017290Z [2024/08/06 03:39:00] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T03:39:00.684230292Z [2024/08/06 03:39:00] [ warn] [engine] failed to flush chunk '1-1722915530.683768001.flb', retry in 6 seconds: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:39:06.684099207Z [2024/08/06 03:39:06] [ info] [engine] flush chunk '1-1722915530.683768001.flb' succeeded at retry 1: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T03:39:08.684101866Z [2024/08/06 03:39:08] [ info] [engine] flush chunk '1-1722915530.512639899.flb' succeeded at retry 1: task_id=0, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T04:07:30.684013542Z [2024/08/06 04:07:30] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T04:07:30.684072042Z [2024/08/06 04:07:30] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T04:07:30.684095497Z [2024/08/06 04:07:30] [ warn] [engine] failed to flush chunk '1-1722917241.643890551.flb', retry in 7 seconds: task_id=0, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T04:07:31.683851230Z [2024/08/06 04:07:31] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T04:07:31.683901825Z [2024/08/06 04:07:31] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T04:07:31.684281569Z [2024/08/06 04:07:31] [ warn] [engine] failed to flush chunk '1-1722917241.683581528.flb', retry in 7 seconds: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T04:07:35.683778704Z [2024/08/06 04:07:35] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T04:07:35.683821354Z [2024/08/06 04:07:35] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T04:07:35.683989370Z [2024/08/06 04:07:35] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T04:07:35.684001453Z [2024/08/06 04:07:35] [ warn] [engine] failed to flush chunk '1-1722917246.285230852.flb', retry in 9 seconds: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T04:07:35.684009428Z [2024/08/06 04:07:35] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T04:07:35.684151705Z [2024/08/06 04:07:35] [ warn] [engine] failed to flush chunk '1-1722917245.956000662.flb', retry in 8 seconds: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T04:07:37.686193814Z [2024/08/06 04:07:37] [ info] [engine] flush chunk '1-1722917241.643890551.flb' succeeded at retry 1: task_id=0, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T04:07:38.686912679Z [2024/08/06 04:07:38] [ info] [engine] flush chunk '1-1722917241.683581528.flb' succeeded at retry 1: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T04:07:43.683844683Z [2024/08/06 04:07:43] [ info] [engine] flush chunk '1-1722917245.956000662.flb' succeeded at retry 1: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T04:07:44.684136084Z [2024/08/06 04:07:44] [ info] [engine] flush chunk '1-1722917246.285230852.flb' succeeded at retry 1: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T05:34:28.684364071Z [2024/08/06 05:34:28] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T05:34:28.684415067Z [2024/08/06 05:34:28] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T05:34:28.684424695Z [2024/08/06 05:34:28] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T05:34:28.684431308Z [2024/08/06 05:34:28] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T05:34:28.684440215Z [2024/08/06 05:34:28] [ warn] [engine] failed to flush chunk '1-1722922459.535161415.flb', retry in 7 seconds: task_id=0, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T05:34:28.684446657Z [2024/08/06 05:34:28] [ warn] [engine] failed to flush chunk '1-1722922459.256093013.flb', retry in 7 seconds: task_id=1, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T05:34:30.683846781Z [2024/08/06 05:34:30] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T05:34:30.683897577Z [2024/08/06 05:34:30] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T05:34:30.683916543Z [2024/08/06 05:34:30] [ warn] [engine] failed to flush chunk '1-1722922461.512083105.flb', retry in 10 seconds: task_id=2, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T05:34:35.684182892Z [2024/08/06 05:34:35] [ info] [engine] flush chunk '1-1722922459.256093013.flb' succeeded at retry 1: task_id=1, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T05:34:35.686917804Z [2024/08/06 05:34:35] [ info] [engine] flush chunk '1-1722922459.535161415.flb' succeeded at retry 1: task_id=0, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T05:34:40.684144311Z [2024/08/06 05:34:40] [ info] [engine] flush chunk '1-1722922461.512083105.flb' succeeded at retry 1: task_id=2, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T06:15:23.684396284Z [2024/08/06 06:15:23] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T06:15:23.684445216Z [2024/08/06 06:15:23] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T06:15:23.684474422Z [2024/08/06 06:15:23] [ warn] [engine] failed to flush chunk '1-1722924914.659974808.flb', retry in 8 seconds: task_id=0, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T06:15:24.683927612Z [2024/08/06 06:15:24] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T06:15:24.683990981Z [2024/08/06 06:15:24] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T06:15:24.684017962Z [2024/08/06 06:15:24] [ warn] [engine] failed to flush chunk '1-1722924914.683692819.flb', retry in 11 seconds: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T06:15:28.683694293Z [2024/08/06 06:15:28] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T06:15:28.683753295Z [2024/08/06 06:15:28] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T06:15:28.683763634Z [2024/08/06 06:15:28] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T06:15:28.683773202Z [2024/08/06 06:15:28] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T06:15:28.683865476Z [2024/08/06 06:15:28] [ warn] [engine] failed to flush chunk '1-1722924919.249258575.flb', retry in 7 seconds: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T06:15:28.683936440Z [2024/08/06 06:15:28] [ warn] [engine] failed to flush chunk '1-1722924919.96152582.flb', retry in 7 seconds: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T06:15:31.686779128Z [2024/08/06 06:15:31] [ info] [engine] flush chunk '1-1722924914.659974808.flb' succeeded at retry 1: task_id=0, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T06:15:35.684061053Z [2024/08/06 06:15:35] [ info] [engine] flush chunk '1-1722924914.683692819.flb' succeeded at retry 1: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T06:15:35.687143791Z [2024/08/06 06:15:35] [ info] [engine] flush chunk '1-1722924919.249258575.flb' succeeded at retry 1: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T06:15:35.687730919Z [2024/08/06 06:15:35] [ info] [engine] flush chunk '1-1722924919.96152582.flb' succeeded at retry 1: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T09:59:17.684485585Z [2024/08/06 09:59:17] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T09:59:17.684546260Z [2024/08/06 09:59:17] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T09:59:17.684558152Z [2024/08/06 09:59:17] [ warn] [engine] failed to flush chunk '1-1722938348.211934421.flb', retry in 6 seconds: task_id=1, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T09:59:17.684565226Z [2024/08/06 09:59:17] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T09:59:17.684572560Z [2024/08/06 09:59:17] [ warn] [engine] failed to flush chunk '1-1722938348.535085245.flb', retry in 8 seconds: task_id=0, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T09:59:17.684580144Z [2024/08/06 09:59:17] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T09:59:21.683946139Z [2024/08/06 09:59:21] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T09:59:21.684006593Z [2024/08/06 09:59:21] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T09:59:21.684017935Z [2024/08/06 09:59:21] [ warn] [engine] failed to flush chunk '1-1722938352.555935919.flb', retry in 7 seconds: task_id=2, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T09:59:22.683915459Z [2024/08/06 09:59:22] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T09:59:22.683975082Z [2024/08/06 09:59:22] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T09:59:22.683984329Z [2024/08/06 09:59:22] [ warn] [engine] failed to flush chunk '1-1722938352.683767230.flb', retry in 10 seconds: task_id=3, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T09:59:23.686960595Z [2024/08/06 09:59:23] [ info] [engine] flush chunk '1-1722938348.211934421.flb' succeeded at retry 1: task_id=1, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T09:59:25.684325277Z [2024/08/06 09:59:25] [ info] [engine] flush chunk '1-1722938348.535085245.flb' succeeded at retry 1: task_id=0, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T09:59:28.683942480Z [2024/08/06 09:59:28] [ info] [engine] flush chunk '1-1722938352.555935919.flb' succeeded at retry 1: task_id=2, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T09:59:32.684308644Z [2024/08/06 09:59:32] [ info] [engine] flush chunk '1-1722938352.683767230.flb' succeeded at retry 1: task_id=3, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T10:53:08.684056899Z [2024/08/06 10:53:08] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T10:53:08.684122052Z [2024/08/06 10:53:08] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T10:53:08.684146398Z [2024/08/06 10:53:08] [ warn] [engine] failed to flush chunk '1-1722941579.424036939.flb', retry in 9 seconds: task_id=0, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T10:53:09.683901009Z [2024/08/06 10:53:09] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T10:53:09.683960461Z [2024/08/06 10:53:09] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T10:53:09.684052625Z [2024/08/06 10:53:09] [ warn] [engine] failed to flush chunk '1-1722941579.683656520.flb', retry in 8 seconds: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T10:53:13.683864016Z [2024/08/06 10:53:13] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T10:53:13.683916264Z [2024/08/06 10:53:13] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T10:53:13.683926824Z [2024/08/06 10:53:13] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T10:53:13.683935892Z [2024/08/06 10:53:13] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T10:53:13.683968693Z [2024/08/06 10:53:13] [ warn] [engine] failed to flush chunk '1-1722941583.839968954.flb', retry in 6 seconds: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T10:53:13.684058353Z [2024/08/06 10:53:13] [ warn] [engine] failed to flush chunk '1-1722941583.987954171.flb', retry in 8 seconds: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T10:53:17.686548940Z [2024/08/06 10:53:17] [ info] [engine] flush chunk '1-1722941579.424036939.flb' succeeded at retry 1: task_id=0, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T10:53:17.686966328Z [2024/08/06 10:53:17] [ info] [engine] flush chunk '1-1722941579.683656520.flb' succeeded at retry 1: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T10:53:19.684062400Z [2024/08/06 10:53:19] [ info] [engine] flush chunk '1-1722941583.839968954.flb' succeeded at retry 1: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T10:53:21.684214911Z [2024/08/06 10:53:21] [ info] [engine] flush chunk '1-1722941583.987954171.flb' succeeded at retry 1: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T11:06:54.684105789Z [2024/08/06 11:06:54] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T11:06:54.684167455Z [2024/08/06 11:06:54] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T11:06:54.684203834Z [2024/08/06 11:06:54] [ warn] [engine] failed to flush chunk '1-1722942405.544241978.flb', retry in 11 seconds: task_id=0, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T11:06:55.683816049Z [2024/08/06 11:06:55] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T11:06:55.683865011Z [2024/08/06 11:06:55] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T11:06:55.684086700Z [2024/08/06 11:06:55] [ warn] [engine] failed to flush chunk '1-1722942405.683681574.flb', retry in 11 seconds: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T11:06:59.683776061Z [2024/08/06 11:06:59] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T11:06:59.683819654Z [2024/08/06 11:06:59] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T11:06:59.683828120Z [2024/08/06 11:06:59] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T11:06:59.683835213Z [2024/08/06 11:06:59] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T11:06:59.683915144Z [2024/08/06 11:06:59] [ warn] [engine] failed to flush chunk '1-1722942409.875915559.flb', retry in 10 seconds: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T11:06:59.684036523Z [2024/08/06 11:06:59] [ warn] [engine] failed to flush chunk '1-1722942410.285086170.flb', retry in 10 seconds: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T11:07:05.687481879Z [2024/08/06 11:07:05] [ info] [engine] flush chunk '1-1722942405.544241978.flb' succeeded at retry 1: task_id=0, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T11:07:06.687339667Z [2024/08/06 11:07:06] [ info] [engine] flush chunk '1-1722942405.683681574.flb' succeeded at retry 1: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T11:07:09.684127406Z [2024/08/06 11:07:09] [ info] [engine] flush chunk '1-1722942409.875915559.flb' succeeded at retry 1: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T11:07:09.684203079Z [2024/08/06 11:07:09] [ info] [engine] flush chunk '1-1722942410.285086170.flb' succeeded at retry 1: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T11:23:05.683897393Z [2024/08/06 11:23:05] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T11:23:05.683958468Z [2024/08/06 11:23:05] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T11:23:05.684163204Z [2024/08/06 11:23:05] [ warn] [engine] failed to flush chunk '1-1722943376.647940990.flb', retry in 11 seconds: task_id=0, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T11:23:06.683932159Z [2024/08/06 11:23:06] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T11:23:06.683980760Z [2024/08/06 11:23:06] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T11:23:06.684058196Z [2024/08/06 11:23:06] [ warn] [engine] failed to flush chunk '1-1722943376.683627319.flb', retry in 6 seconds: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T11:23:10.683791685Z [2024/08/06 11:23:10] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T11:23:10.683849894Z [2024/08/06 11:23:10] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T11:23:10.683859192Z [2024/08/06 11:23:10] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T11:23:10.683866135Z [2024/08/06 11:23:10] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T11:23:10.684018052Z [2024/08/06 11:23:10] [ warn] [engine] failed to flush chunk '1-1722943381.285276544.flb', retry in 7 seconds: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T11:23:10.684202900Z [2024/08/06 11:23:10] [ warn] [engine] failed to flush chunk '1-1722943381.79937414.flb', retry in 7 seconds: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T11:23:12.687159452Z [2024/08/06 11:23:12] [ info] [engine] flush chunk '1-1722943376.683627319.flb' succeeded at retry 1: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T11:23:16.687298973Z [2024/08/06 11:23:16] [ info] [engine] flush chunk '1-1722943376.647940990.flb' succeeded at retry 1: task_id=0, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T11:23:17.684343933Z [2024/08/06 11:23:17] [ info] [engine] flush chunk '1-1722943381.79937414.flb' succeeded at retry 1: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T11:23:17.684403065Z [2024/08/06 11:23:17] [ info] [engine] flush chunk '1-1722943381.285276544.flb' succeeded at retry 1: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T14:01:24.684193677Z [2024/08/06 14:01:24] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T14:01:24.684267155Z [2024/08/06 14:01:24] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T14:01:24.684286722Z [2024/08/06 14:01:24] [ warn] [engine] failed to flush chunk '1-1722952875.376018809.flb', retry in 8 seconds: task_id=0, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T14:01:25.683805464Z [2024/08/06 14:01:25] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T14:01:25.683856049Z [2024/08/06 14:01:25] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T14:01:25.683994411Z [2024/08/06 14:01:25] [ warn] [engine] failed to flush chunk '1-1722952875.683674837.flb', retry in 11 seconds: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T14:01:29.683947803Z [2024/08/06 14:01:29] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T14:01:29.684004440Z [2024/08/06 14:01:29] [ warn] [net] getaddrinfo(host='rancher-logging-root-fluentd.cattle-logging-system.svc', err=12): Timeout while contacting DNS servers
+2024-08-06T14:01:29.684013127Z [2024/08/06 14:01:29] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T14:01:29.684019318Z [2024/08/06 14:01:29] [error] [output:forward:forward.0] no upstream connections available
+2024-08-06T14:01:29.684026853Z [2024/08/06 14:01:29] [ warn] [engine] failed to flush chunk '1-1722952879.724049641.flb', retry in 10 seconds: task_id=3, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T14:01:29.684033655Z [2024/08/06 14:01:29] [ warn] [engine] failed to flush chunk '1-1722952880.35213481.flb', retry in 6 seconds: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T14:01:32.687346879Z [2024/08/06 14:01:32] [ info] [engine] flush chunk '1-1722952875.376018809.flb' succeeded at retry 1: task_id=0, input=tail.2 > output=forward.0 (out_id=0)
+2024-08-06T14:01:35.687847099Z [2024/08/06 14:01:35] [ info] [engine] flush chunk '1-1722952880.35213481.flb' succeeded at retry 1: task_id=2, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T14:01:36.684119351Z [2024/08/06 14:01:36] [ info] [engine] flush chunk '1-1722952875.683674837.flb' succeeded at retry 1: task_id=1, input=systemd.0 > output=forward.0 (out_id=0)
+2024-08-06T14:01:39.684173540Z [2024/08/06 14:01:39] [ info] [engine] flush chunk '1-1722952879.724049641.flb' succeeded at retry 1: task_id=3, input=tail.2 > output=forward.0 (out_id=0)

@@ -1,0 +1,20 @@
+2024-08-06T02:11:40.555432906Z Fluent Bit v2.2.0
+2024-08-06T02:11:40.555464264Z * Copyright (C) 2015-2023 The Fluent Bit Authors
+2024-08-06T02:11:40.555469765Z * Fluent Bit is a CNCF sub-project under the umbrella of Fluentd
+2024-08-06T02:11:40.555472991Z * https://fluentbit.io
+2024-08-06T02:11:40.555476307Z 
+2024-08-06T02:11:40.557415154Z [2024/08/06 02:11:40] [ info] [fluent bit] version=2.2.0, commit=db8487d123, pid=1
+2024-08-06T02:11:40.557490004Z [2024/08/06 02:11:40] [ info] [storage] ver=1.5.1, type=memory, sync=normal, checksum=off, max_chunks_up=128
+2024-08-06T02:11:40.557497428Z [2024/08/06 02:11:40] [ info] [cmetrics] version=0.6.4
+2024-08-06T02:11:40.557504521Z [2024/08/06 02:11:40] [ info] [ctraces ] version=0.3.1
+2024-08-06T02:11:40.557628885Z [2024/08/06 02:11:40] [ info] [input:systemd:systemd.0] initializing
+2024-08-06T02:11:40.557633493Z [2024/08/06 02:11:40] [ info] [input:systemd:systemd.0] storage_strategy='memory' (memory only)
+2024-08-06T02:11:40.558294964Z [2024/08/06 02:11:40] [ info] [input:tail:tail.1] initializing
+2024-08-06T02:11:40.558299513Z [2024/08/06 02:11:40] [ info] [input:tail:tail.1] storage_strategy='memory' (memory only)
+2024-08-06T02:11:40.558639691Z [2024/08/06 02:11:40] [ info] [input:tail:tail.2] initializing
+2024-08-06T02:11:40.558644840Z [2024/08/06 02:11:40] [ info] [input:tail:tail.2] storage_strategy='memory' (memory only)
+2024-08-06T02:11:40.559461402Z [2024/08/06 02:11:40] [ info] [sp] stream processor started
+2024-08-06T02:11:40.600737005Z [2024/08/06 02:11:40] [ info] [output:forward:forward.0] worker #1 started
+2024-08-06T02:11:40.600754918Z [2024/08/06 02:11:40] [ info] [output:forward:forward.0] worker #0 started
+2024-08-06T02:11:40.647895172Z [2024/08/06 02:11:40] [ info] [input:tail:tail.1] inotify_fs_add(): inode=56623278 watch_fd=1 name=/var/lib/rancher/rke2/agent/logs/kubelet.log
+2024-08-06T02:11:40.647919758Z [2024/08/06 02:11:40] [ info] [input:tail:tail.2] inotify_fs_add(): inode=56623890 watch_fd=1 name=/var/log/audit/audit.log

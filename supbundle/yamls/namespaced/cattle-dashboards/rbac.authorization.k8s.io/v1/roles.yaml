@@ -1,0 +1,151 @@
+apiVersion: v1
+items:
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: rancher-monitoring
+      meta.helm.sh/release-namespace: cattle-monitoring-system
+    creationTimestamp: "2024-08-06T01:56:59Z"
+    labels:
+      app.kubernetes.io/instance: rancher-monitoring
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/part-of: rancher-monitoring
+      app.kubernetes.io/version: 103.0.3_up45.31.1
+      chart: rancher-monitoring-103.0.3_up45.31.1
+      heritage: Helm
+      release: rancher-monitoring
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:chart: {}
+            f:heritage: {}
+            f:release: {}
+        f:rules: {}
+      manager: helm
+      operation: Update
+      time: "2024-08-06T01:56:59Z"
+    name: monitoring-dashboard-admin
+    namespace: cattle-dashboards
+    resourceVersion: "7664"
+    uid: f48ea92a-4529-4208-8cb7-7e4d62c912ae
+  rules:
+  - apiGroups:
+    - "null"
+    resources:
+    - configmaps
+    verbs:
+    - '*'
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: rancher-monitoring
+      meta.helm.sh/release-namespace: cattle-monitoring-system
+    creationTimestamp: "2024-08-06T01:56:59Z"
+    labels:
+      app.kubernetes.io/instance: rancher-monitoring
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/part-of: rancher-monitoring
+      app.kubernetes.io/version: 103.0.3_up45.31.1
+      chart: rancher-monitoring-103.0.3_up45.31.1
+      heritage: Helm
+      release: rancher-monitoring
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:chart: {}
+            f:heritage: {}
+            f:release: {}
+        f:rules: {}
+      manager: helm
+      operation: Update
+      time: "2024-08-06T01:56:59Z"
+    name: monitoring-dashboard-edit
+    namespace: cattle-dashboards
+    resourceVersion: "7665"
+    uid: 4c0d2c98-3b1f-4338-bd29-f9ec9a7fefcf
+  rules:
+  - apiGroups:
+    - "null"
+    resources:
+    - configmaps
+    verbs:
+    - '*'
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: rancher-monitoring
+      meta.helm.sh/release-namespace: cattle-monitoring-system
+    creationTimestamp: "2024-08-06T01:56:59Z"
+    labels:
+      app.kubernetes.io/instance: rancher-monitoring
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/part-of: rancher-monitoring
+      app.kubernetes.io/version: 103.0.3_up45.31.1
+      chart: rancher-monitoring-103.0.3_up45.31.1
+      heritage: Helm
+      release: rancher-monitoring
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:chart: {}
+            f:heritage: {}
+            f:release: {}
+        f:rules: {}
+      manager: helm
+      operation: Update
+      time: "2024-08-06T01:56:59Z"
+    name: monitoring-dashboard-view
+    namespace: cattle-dashboards
+    resourceVersion: "7666"
+    uid: a7371def-40e5-49e6-b03b-7bfea1da2488
+  rules:
+  - apiGroups:
+    - "null"
+    resources:
+    - configmaps
+    verbs:
+    - get
+    - list
+    - watch
+kind: List
+metadata:
+  resourceVersion: "770215"

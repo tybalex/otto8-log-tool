@@ -1,0 +1,390 @@
+apiVersion: v1
+items:
+- apiVersion: rke.cattle.io/v1
+  kind: CustomMachine
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4ySYY7bIBCFr1LNbztrjHGMpZ6gP9sLjIdh4wZDBOPdSlHuXjndVtm2SfsP0HvDe3ycYWFBh4IwngFjTIIyp1i2bZq+Mklh2eU57QhFAu/m9DQ7GGGNC0Z8ZlcvSIc5MlR3Dek1cq6fX44wwtOLqj58mqP7+Jkps/zTFnFhGIHWImmpzb5rO636/b7V/2UtJ6TNHxJhgEsFlPla8cu8cBFcTjDGNYQKAk4crsUprEU4777Vx6Fs494Ofmb5Mav6iy5FySnUp4BxE0peH73LAcsBRtDTwBrZ936wqFpvW6dUa50i2yhuLDbGT41uoIJ85Bv/nVi/iW4z1TmFm2DvlSzkHgreSNfXD4BEQ7c3PZF2dnCWdcfWeOv8pFTfq8mwa3tjdEtEjqhxzmNnPPmJDP5Z5jXlI+d3918qeEj/lq8PzFL/olxOTDCet5WgrBvWy+V7AAAA//8ftPjP7gIAAA
+      objectset.rio.cattle.io/id: unmanaged-machine
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: custom-574243167723
+      objectset.rio.cattle.io/owner-namespace: local
+    creationTimestamp: "2024-08-06T01:54:55Z"
+    finalizers:
+    - wrangler.cattle.io/unmanaged-machine
+    generation: 2
+    labels:
+      cluster.x-k8s.io/cluster-name: local
+      cluster.x-k8s.io/control-plane: "true"
+      objectset.rio.cattle.io/hash: 3b8e3aef6f89a12f92d1129d1c901e09a05fb030
+      rke.cattle.io/cluster-name: local
+      rke.cattle.io/control-plane-role: "true"
+      rke.cattle.io/etcd-role: "true"
+      rke.cattle.io/machine-id: acc84756cc3d98d9e34e95f9dfb11661b5ed265532cccdcc0ddfa45fcfbc5a0
+      rke.cattle.io/worker-role: "true"
+    managedFields:
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"eaa66080-a1da-4838-b41d-47f5076d13ab"}: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T01:54:55Z"
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/unmanaged-machine"null: {}
+          f:labels:
+            .: {}
+            f:cluster.x-k8s.io/cluster-name: {}
+            f:cluster.x-k8s.io/control-plane: {}
+            f:objectset.rio.cattle.io/hash: {}
+            f:rke.cattle.io/cluster-name: {}
+            f:rke.cattle.io/control-plane-role: {}
+            f:rke.cattle.io/etcd-role: {}
+            f:rke.cattle.io/machine-id: {}
+            f:rke.cattle.io/worker-role: {}
+        f:spec:
+          .: {}
+          f:providerID: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:55:16Z"
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:addresses: {}
+          f:conditions: {}
+          f:ready: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:55:16Z"
+    name: custom-574243167723
+    namespace: fleet-local
+    ownerReferences:
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Machine
+      name: custom-574243167723
+      uid: eaa66080-a1da-4838-b41d-47f5076d13ab
+    resourceVersion: "4012"
+    uid: a607f840-c56c-4a81-aa1b-5b7b5bcc37e0
+  spec:
+    providerID: rke2://harvesterdev1
+  status:
+    addresses:
+    - address: 10.10.110.11
+      type: InternalIP
+    - address: harvesterdev1
+      type: Hostname
+    conditions:
+    - lastUpdateTime: "2024-08-06T01:54:55Z"
+      status: "True"
+      type: Ready
+    ready: true
+- apiVersion: rke.cattle.io/v1
+  kind: CustomMachine
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4yR227bMAyGX2XgtZ1a8jEC9gS73F6AouhaiywFEp0OCPLug7N06DC0250O/Aj+/K6wsqBDQTBXwBiToPgUy35N9juTFJZD9ulAKBL44NOTd2BgiytGfGZXr0iLjwzVu0B6iZzr58sJDDxdVPXpi4/u81emzPJPLOLKYIC2ImmtJxqUGjSR1uN/oeWMtPMhEQa4VUCZ7xG/+ZWL4HoGE7cQKghoOdyDU9iKcD78qE9T2ds9Hl5n+dWrggXzhfePhfxe9tgIGJC8fbSQBcsCBpSeqZm7rhvGmUetuGVWY9vPk2WnFempnZqpa6CCfOI3/Dvz/Fn08FLfdbkZ9dAPrlNtb5U6ajrykdF1ylKPrmlnbV3DQ9t3ukWlcBp1p5XqJzva8e8JXlI+ca5zCvwa91bBh67e2pgDs9S/nZQzE5jrfhKUbZdwu/0MAAD//xargaWcAgAA
+      objectset.rio.cattle.io/id: unmanaged-machine
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: custom-8c61162cc227
+      objectset.rio.cattle.io/owner-namespace: local
+    creationTimestamp: "2024-08-06T02:15:15Z"
+    finalizers:
+    - wrangler.cattle.io/unmanaged-machine
+    generation: 2
+    labels:
+      cluster.x-k8s.io/cluster-name: local
+      harvesterhci.io/managed: "true"
+      objectset.rio.cattle.io/hash: 12fc0f44467fe721e3ee1735f8bed21c28380840
+      rke.cattle.io/cluster-name: local
+      rke.cattle.io/machine-id: dfa2656d4135b1192c9e9ead41bc5ad03f2bd0e635423a11a872421158b7b70
+      rke.cattle.io/worker-role: "true"
+    managedFields:
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"3f9f632f-12f9-4656-8379-79f38a44ec8a"}: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T02:15:15Z"
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/unmanaged-machine"null: {}
+          f:labels:
+            .: {}
+            f:cluster.x-k8s.io/cluster-name: {}
+            f:harvesterhci.io/managed: {}
+            f:objectset.rio.cattle.io/hash: {}
+            f:rke.cattle.io/cluster-name: {}
+            f:rke.cattle.io/machine-id: {}
+            f:rke.cattle.io/worker-role: {}
+        f:spec:
+          .: {}
+          f:providerID: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T02:15:41Z"
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:addresses: {}
+          f:conditions: {}
+          f:ready: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:15:41Z"
+    name: custom-8c61162cc227
+    namespace: fleet-local
+    ownerReferences:
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Machine
+      name: custom-8c61162cc227
+      uid: 3f9f632f-12f9-4656-8379-79f38a44ec8a
+    resourceVersion: "29859"
+    uid: 5b868331-5746-4c6f-af55-07e403328b0b
+  spec:
+    providerID: rke2://harvesterdev7
+  status:
+    addresses:
+    - address: 10.10.110.232
+      type: InternalIP
+    - address: harvesterdev7
+      type: Hostname
+    conditions:
+    - lastUpdateTime: "2024-08-06T02:15:15Z"
+      status: "True"
+      type: Ready
+    ready: true
+- apiVersion: rke.cattle.io/v1
+  kind: CustomMachine
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4yR227bMAyGX2XgtZ1Glg+ygT3BLrcXoCmq1iJLgUSnA4K8++AsHToM7XanAz+CP78rrCxoURCmK2CMSVB8imW/pvk7kxSWQ/bpQCgS+ODTk7cwwRZXjPjMtl6RFh8ZqneB9BI518+XE0zwdFHVpy8+2s9fmTLLP7GIK8MEtBVJa41aOxyYx3lU/4WWM9LOh0QY4FYBZb5H/OZXLoLrGaa4hVBBwJnDPTiFrQjnw4/6ZMre7vHwOsuvXhUsmC+8fyzk97LHRmACydtHC1mwLDBBN49tN7SMzjplBnts28H0yrmxQ6OoGQzOo1UDVJBP/IZ/Z54/ix5e6rsuTb3pO2qGRnOnNWvuR4fYk2FjLTXzbE3DXa9M3/VaUYNzR0N7VMejdaP+q/lLyifOdU6BX+PeKvjQ1VsbLjBL/dtJOTPBdN1PgrLtEm63nwEAAP//GBu3BZwCAAA
+      objectset.rio.cattle.io/id: unmanaged-machine
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: custom-a33fa7ee9b91
+      objectset.rio.cattle.io/owner-namespace: local
+    creationTimestamp: "2024-08-06T02:13:05Z"
+    finalizers:
+    - wrangler.cattle.io/unmanaged-machine
+    generation: 2
+    labels:
+      cluster.x-k8s.io/cluster-name: local
+      harvesterhci.io/managed: "true"
+      objectset.rio.cattle.io/hash: 5b94574eafdf187d0447861ff95a81c278ab9d17
+      rke.cattle.io/cluster-name: local
+      rke.cattle.io/machine-id: 3c6865c2723e533e3e69faa6c8e8ddc2bbd82e561865631c2ab5c740100df93
+      rke.cattle.io/worker-role: "true"
+    managedFields:
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"50d0913d-af99-45ed-b61a-458690977c3d"}: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T02:13:05Z"
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/unmanaged-machine"null: {}
+          f:labels:
+            .: {}
+            f:cluster.x-k8s.io/cluster-name: {}
+            f:harvesterhci.io/managed: {}
+            f:objectset.rio.cattle.io/hash: {}
+            f:rke.cattle.io/cluster-name: {}
+            f:rke.cattle.io/machine-id: {}
+            f:rke.cattle.io/worker-role: {}
+        f:spec:
+          .: {}
+          f:providerID: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T02:13:25Z"
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:addresses: {}
+          f:conditions: {}
+          f:ready: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:13:25Z"
+    name: custom-a33fa7ee9b91
+    namespace: fleet-local
+    ownerReferences:
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Machine
+      name: custom-a33fa7ee9b91
+      uid: 50d0913d-af99-45ed-b61a-458690977c3d
+    resourceVersion: "26352"
+    uid: d85e0c37-650d-4065-95d0-77f3fc717cc1
+  spec:
+    providerID: rke2://harvesterdev3
+  status:
+    addresses:
+    - address: 10.10.110.61
+      type: InternalIP
+    - address: harvesterdev3
+      type: Hostname
+    conditions:
+    - lastUpdateTime: "2024-08-06T02:13:05Z"
+      status: "True"
+      type: Ready
+    ready: true
+- apiVersion: rke.cattle.io/v1
+  kind: CustomMachine
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4yR247bIBCGX6WaazvrA+DYUp+gl+0LDDCsaTBEMM5WivLuFWm22qrabe84zPdrZr4rbMRokRGWK2CMiZF9iqVek/5OhgvxIft0MMgc6ODTk7ewwB43jPhMtt3QrD4SNO8C6SVSbp8vJ1jg6dI3n774aD9/JZOJ/4lF3AgWMHvhtLVEZiDby1Hb43+h5Yym8iEZDHBrwGS6j/jNb1QYtzMscQ+hgYCawn1wE/bClA8/2tOx1LjHw2svv7IaWDFfqH6sxteyx0ZgAc77RwtZsaywgJzJKqWEHuV8nPtOuH7U0yCF6pwiPA4opLSmJuUTveHf6efPooeX9q6rkwKnCSfZ9VZO4yCV0GKeyTonlRidEaRHPU6uo1n1chiM1jSLbuon5dT8V/hLyifKbU6BXse9NfChq7c2XCDi9reTciYDy7WeGHmvEm63nwEAAP//fouI7ZwCAAA
+      objectset.rio.cattle.io/id: unmanaged-machine
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: custom-eec2ed153bd8
+      objectset.rio.cattle.io/owner-namespace: local
+    creationTimestamp: "2024-08-06T02:11:13Z"
+    finalizers:
+    - wrangler.cattle.io/unmanaged-machine
+    generation: 2
+    labels:
+      cluster.x-k8s.io/cluster-name: local
+      harvesterhci.io/managed: "true"
+      objectset.rio.cattle.io/hash: 59ed6664b35989104f13b725460f6ea82a455dce
+      rke.cattle.io/cluster-name: local
+      rke.cattle.io/machine-id: 054a77a7501d5732564b499edff5643fc4eb3b37f0e961522cbbe9407176f69
+      rke.cattle.io/worker-role: "true"
+    managedFields:
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"dea33257-7c8d-484d-a419-b708bf2a4627"}: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T02:11:13Z"
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/unmanaged-machine"null: {}
+          f:labels:
+            .: {}
+            f:cluster.x-k8s.io/cluster-name: {}
+            f:harvesterhci.io/managed: {}
+            f:objectset.rio.cattle.io/hash: {}
+            f:rke.cattle.io/cluster-name: {}
+            f:rke.cattle.io/machine-id: {}
+            f:rke.cattle.io/worker-role: {}
+        f:spec:
+          .: {}
+          f:providerID: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T02:11:28Z"
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:addresses: {}
+          f:conditions: {}
+          f:ready: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:11:28Z"
+    name: custom-eec2ed153bd8
+    namespace: fleet-local
+    ownerReferences:
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Machine
+      name: custom-eec2ed153bd8
+      uid: dea33257-7c8d-484d-a419-b708bf2a4627
+    resourceVersion: "23073"
+    uid: 38b32fb8-8034-469a-8962-074de78be94f
+  spec:
+    providerID: rke2://harvesterdev2
+  status:
+    addresses:
+    - address: 10.10.110.71
+      type: InternalIP
+    - address: harvesterdev2
+      type: Hostname
+    conditions:
+    - lastUpdateTime: "2024-08-06T02:11:13Z"
+      status: "True"
+      type: Ready
+    ready: true
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770253"

@@ -1,0 +1,351 @@
+apiVersion: v1
+items:
+- apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+  kind: PriorityLevelConfiguration
+  metadata:
+    annotations:
+      apf.kubernetes.io/autoupdate-spec: "true"
+    creationTimestamp: "2024-08-06T01:51:30Z"
+    generation: 1
+    managedFields:
+    - apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:apf.kubernetes.io/autoupdate-spec: {}
+        f:spec:
+          f:limited:
+            .: {}
+            f:lendablePercent: {}
+            f:limitResponse:
+              .: {}
+              f:type: {}
+            f:nominalConcurrencyShares: {}
+          f:type: {}
+      manager: api-priority-and-fairness-config-producer-v1
+      operation: Update
+      time: "2024-08-06T01:51:30Z"
+    name: catch-all
+    resourceVersion: "61"
+    uid: 41860893-a5d2-45cb-b8aa-469d6ce624fd
+  spec:
+    limited:
+      lendablePercent: 0
+      limitResponse:
+        type: Reject
+      nominalConcurrencyShares: 5
+    type: Limited
+  status: {}
+- apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+  kind: PriorityLevelConfiguration
+  metadata:
+    annotations:
+      apf.kubernetes.io/autoupdate-spec: "true"
+    creationTimestamp: "2024-08-06T01:51:30Z"
+    generation: 1
+    managedFields:
+    - apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:apf.kubernetes.io/autoupdate-spec: {}
+        f:spec:
+          f:type: {}
+      manager: api-priority-and-fairness-config-producer-v1
+      operation: Update
+      time: "2024-08-06T01:51:30Z"
+    name: exempt
+    resourceVersion: "63"
+    uid: 60293d3d-f92b-4dd8-8787-be4cf594b8de
+  spec:
+    type: Exempt
+  status: {}
+- apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+  kind: PriorityLevelConfiguration
+  metadata:
+    annotations:
+      apf.kubernetes.io/autoupdate-spec: "true"
+    creationTimestamp: "2024-08-06T01:51:30Z"
+    generation: 1
+    managedFields:
+    - apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:apf.kubernetes.io/autoupdate-spec: {}
+        f:spec:
+          f:limited:
+            .: {}
+            f:lendablePercent: {}
+            f:limitResponse:
+              .: {}
+              f:queuing:
+                .: {}
+                f:handSize: {}
+                f:queueLengthLimit: {}
+                f:queues: {}
+              f:type: {}
+            f:nominalConcurrencyShares: {}
+          f:type: {}
+      manager: api-priority-and-fairness-config-producer-v1
+      operation: Update
+      time: "2024-08-06T01:51:30Z"
+    name: global-default
+    resourceVersion: "38"
+    uid: 5bbb4fd0-4363-4214-b3cc-b11de119322e
+  spec:
+    limited:
+      lendablePercent: 50
+      limitResponse:
+        queuing:
+          handSize: 6
+          queueLengthLimit: 50
+          queues: 128
+        type: Queue
+      nominalConcurrencyShares: 20
+    type: Limited
+  status: {}
+- apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+  kind: PriorityLevelConfiguration
+  metadata:
+    annotations:
+      apf.kubernetes.io/autoupdate-spec: "true"
+    creationTimestamp: "2024-08-06T01:51:30Z"
+    generation: 1
+    managedFields:
+    - apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:apf.kubernetes.io/autoupdate-spec: {}
+        f:spec:
+          f:limited:
+            .: {}
+            f:lendablePercent: {}
+            f:limitResponse:
+              .: {}
+              f:queuing:
+                .: {}
+                f:handSize: {}
+                f:queueLengthLimit: {}
+                f:queues: {}
+              f:type: {}
+            f:nominalConcurrencyShares: {}
+          f:type: {}
+      manager: api-priority-and-fairness-config-producer-v1
+      operation: Update
+      time: "2024-08-06T01:51:30Z"
+    name: leader-election
+    resourceVersion: "20"
+    uid: 156292cb-559e-4e86-8f5c-6009353796cb
+  spec:
+    limited:
+      lendablePercent: 0
+      limitResponse:
+        queuing:
+          handSize: 4
+          queueLengthLimit: 50
+          queues: 16
+        type: Queue
+      nominalConcurrencyShares: 10
+    type: Limited
+  status: {}
+- apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+  kind: PriorityLevelConfiguration
+  metadata:
+    annotations:
+      apf.kubernetes.io/autoupdate-spec: "true"
+    creationTimestamp: "2024-08-06T01:51:30Z"
+    generation: 1
+    managedFields:
+    - apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:apf.kubernetes.io/autoupdate-spec: {}
+        f:spec:
+          f:limited:
+            .: {}
+            f:lendablePercent: {}
+            f:limitResponse:
+              .: {}
+              f:queuing:
+                .: {}
+                f:handSize: {}
+                f:queueLengthLimit: {}
+                f:queues: {}
+              f:type: {}
+            f:nominalConcurrencyShares: {}
+          f:type: {}
+      manager: api-priority-and-fairness-config-producer-v1
+      operation: Update
+      time: "2024-08-06T01:51:30Z"
+    name: node-high
+    resourceVersion: "14"
+    uid: 9218a4cb-1ce5-4c26-b07f-a562be0aac33
+  spec:
+    limited:
+      lendablePercent: 25
+      limitResponse:
+        queuing:
+          handSize: 6
+          queueLengthLimit: 50
+          queues: 64
+        type: Queue
+      nominalConcurrencyShares: 40
+    type: Limited
+  status: {}
+- apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+  kind: PriorityLevelConfiguration
+  metadata:
+    annotations:
+      apf.kubernetes.io/autoupdate-spec: "true"
+    creationTimestamp: "2024-08-06T01:51:30Z"
+    generation: 1
+    managedFields:
+    - apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:apf.kubernetes.io/autoupdate-spec: {}
+        f:spec:
+          f:limited:
+            .: {}
+            f:lendablePercent: {}
+            f:limitResponse:
+              .: {}
+              f:queuing:
+                .: {}
+                f:handSize: {}
+                f:queueLengthLimit: {}
+                f:queues: {}
+              f:type: {}
+            f:nominalConcurrencyShares: {}
+          f:type: {}
+      manager: api-priority-and-fairness-config-producer-v1
+      operation: Update
+      time: "2024-08-06T01:51:30Z"
+    name: system
+    resourceVersion: "7"
+    uid: 10f1ce1a-e39c-4dd3-afc8-d6f344289d1b
+  spec:
+    limited:
+      lendablePercent: 33
+      limitResponse:
+        queuing:
+          handSize: 6
+          queueLengthLimit: 50
+          queues: 64
+        type: Queue
+      nominalConcurrencyShares: 30
+    type: Limited
+  status: {}
+- apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+  kind: PriorityLevelConfiguration
+  metadata:
+    annotations:
+      apf.kubernetes.io/autoupdate-spec: "true"
+    creationTimestamp: "2024-08-06T01:51:30Z"
+    generation: 1
+    managedFields:
+    - apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:apf.kubernetes.io/autoupdate-spec: {}
+        f:spec:
+          f:limited:
+            .: {}
+            f:lendablePercent: {}
+            f:limitResponse:
+              .: {}
+              f:queuing:
+                .: {}
+                f:handSize: {}
+                f:queueLengthLimit: {}
+                f:queues: {}
+              f:type: {}
+            f:nominalConcurrencyShares: {}
+          f:type: {}
+      manager: api-priority-and-fairness-config-producer-v1
+      operation: Update
+      time: "2024-08-06T01:51:30Z"
+    name: workload-high
+    resourceVersion: "26"
+    uid: d1685864-8f2c-4fb8-b42e-f9b39c7db71d
+  spec:
+    limited:
+      lendablePercent: 50
+      limitResponse:
+        queuing:
+          handSize: 6
+          queueLengthLimit: 50
+          queues: 128
+        type: Queue
+      nominalConcurrencyShares: 40
+    type: Limited
+  status: {}
+- apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+  kind: PriorityLevelConfiguration
+  metadata:
+    annotations:
+      apf.kubernetes.io/autoupdate-spec: "true"
+    creationTimestamp: "2024-08-06T01:51:30Z"
+    generation: 1
+    managedFields:
+    - apiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:apf.kubernetes.io/autoupdate-spec: {}
+        f:spec:
+          f:limited:
+            .: {}
+            f:lendablePercent: {}
+            f:limitResponse:
+              .: {}
+              f:queuing:
+                .: {}
+                f:handSize: {}
+                f:queueLengthLimit: {}
+                f:queues: {}
+              f:type: {}
+            f:nominalConcurrencyShares: {}
+          f:type: {}
+      manager: api-priority-and-fairness-config-producer-v1
+      operation: Update
+      time: "2024-08-06T01:51:30Z"
+    name: workload-low
+    resourceVersion: "31"
+    uid: 4b06aa0e-f0a6-4ff2-8caf-bd5b01cd6d96
+  spec:
+    limited:
+      lendablePercent: 90
+      limitResponse:
+        queuing:
+          handSize: 6
+          queueLengthLimit: 50
+          queues: 128
+        type: Queue
+      nominalConcurrencyShares: 100
+    type: Limited
+  status: {}
+kind: List
+metadata:
+  resourceVersion: "770152"

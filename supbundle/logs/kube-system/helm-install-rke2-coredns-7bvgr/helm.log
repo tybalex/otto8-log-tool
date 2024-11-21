@@ -1,0 +1,62 @@
+2024-08-06T01:51:48.007207185Z if [[ ${KUBERNETES_SERVICE_HOST} =~ .*:.* ]]; then
+2024-08-06T01:51:48.007247883Z 	echo "KUBERNETES_SERVICE_HOST is using IPv6"
+2024-08-06T01:51:48.007255798Z 	CHART="${CHART//%\{KUBERNETES_API\}%/[${KUBERNETES_SERVICE_HOST}]:${KUBERNETES_SERVICE_PORT}}"
+2024-08-06T01:51:48.007282860Z else
+2024-08-06T01:51:48.007302747Z 	CHART="${CHART//%\{KUBERNETES_API\}%/${KUBERNETES_SERVICE_HOST}:${KUBERNETES_SERVICE_PORT}}"
+2024-08-06T01:51:48.007306585Z fi
+2024-08-06T01:51:48.007361560Z 
+2024-08-06T01:51:48.007371769Z set +v -x
+2024-08-06T01:51:48.007456631Z + [[ true != \t\r\u\e ]]
+2024-08-06T01:51:48.007584315Z + [[ '' == \1 ]]
+2024-08-06T01:51:48.007629942Z + [[ '' == \v\2 ]]
+2024-08-06T01:51:48.007671241Z + shopt -s nullglob
+2024-08-06T01:51:48.007716557Z + [[ -f /config/ca-file.pem ]]
+2024-08-06T01:51:48.007839512Z + [[ -f /tmp/ca-file.pem ]]
+2024-08-06T01:51:48.007888826Z + [[ -n '' ]]
+2024-08-06T01:51:48.007930876Z + helm_content_decode
+2024-08-06T01:51:48.007945474Z + set -e
+2024-08-06T01:51:48.007984589Z + ENC_CHART_PATH=/chart/rke2-coredns.tgz.base64
+2024-08-06T01:51:48.008012702Z + CHART_PATH=/tmp/rke2-coredns.tgz
+2024-08-06T01:51:48.008026639Z + [[ ! -f /chart/rke2-coredns.tgz.base64 ]]
+2024-08-06T01:51:48.008082275Z + base64 -d /chart/rke2-coredns.tgz.base64
+2024-08-06T01:51:48.010641358Z + CHART=/tmp/rke2-coredns.tgz
+2024-08-06T01:51:48.010648201Z + set +e
+2024-08-06T01:51:48.010667909Z + [[ install != \d\e\l\e\t\e ]]
+2024-08-06T01:51:48.010671045Z + helm_repo_init
+2024-08-06T01:51:48.010717934Z + grep -q -e 'https\?://'
+2024-08-06T01:51:48.012537466Z + [[ helm_v3 == \h\e\l\m\_\v\3 ]]
+2024-08-06T01:51:48.012557635Z + [[ /tmp/rke2-coredns.tgz == stable/* ]]
+2024-08-06T01:51:48.012565660Z + [[ -n '' ]]
+2024-08-06T01:51:48.012599965Z + helm_update install --set-string global.clusterCIDR=10.52.0.0/16 --set-string global.clusterCIDRv4=10.52.0.0/16 --set-string global.clusterDNS=10.53.0.10 --set-string global.clusterDomain=cluster.local --set-string global.rke2DataDir=/var/lib/rancher/rke2 --set-string global.serviceCIDR=10.53.0.0/16
+2024-08-06T01:51:48.012663817Z + [[ helm_v3 == \h\e\l\m\_\v\3 ]]
+2024-08-06T01:51:48.013664367Z ++ helm_v3 ls --all -f '^rke2-coredns$' --namespace kube-system --output json
+2024-08-06T01:51:48.013704874Z ++ jq -r '"\(.[0].chart),\(.[0].status)"'
+2024-08-06T01:51:48.013824181Z ++ tr '[:upper:]' '[:lower:]'
+2024-08-06T01:51:48.076386843Z + LINE=null,null
+2024-08-06T01:51:48.076410619Z + IFS=,
+2024-08-06T01:51:48.076414406Z + read -r INSTALLED_VERSION STATUS _
+2024-08-06T01:51:48.076442189Z + VALUES=
+2024-08-06T01:51:48.076510730Z + [[ install = \d\e\l\e\t\e ]]
+2024-08-06T01:51:48.076542280Z + [[ null =~ ^(|null)$ ]]
+2024-08-06T01:51:48.076584530Z + [[ null =~ ^(|null)$ ]]
+2024-08-06T01:51:48.076620589Z + echo 'Installing helm_v3 chart'
+2024-08-06T01:51:48.076738624Z + helm_v3 install --set-string global.clusterCIDR=10.52.0.0/16 --set-string global.clusterCIDRv4=10.52.0.0/16 --set-string global.clusterDNS=10.53.0.10 --set-string global.clusterDomain=cluster.local --set-string global.rke2DataDir=/var/lib/rancher/rke2 --set-string global.serviceCIDR=10.53.0.0/16 rke2-coredns /tmp/rke2-coredns.tgz
+2024-08-06T01:51:48.649026982Z NAME: rke2-coredns
+2024-08-06T01:51:48.649069333Z LAST DEPLOYED: Tue Aug  6 01:51:48 2024
+2024-08-06T01:51:48.649080304Z NAMESPACE: kube-system
+2024-08-06T01:51:48.649087968Z STATUS: deployed
+2024-08-06T01:51:48.649096765Z REVISION: 1
+2024-08-06T01:51:48.649104330Z TEST SUITE: None
+2024-08-06T01:51:48.649111844Z NOTES:
+2024-08-06T01:51:48.649119228Z CoreDNS is now running in the cluster as a cluster-service.
+2024-08-06T01:51:48.649149005Z 
+2024-08-06T01:51:48.649157461Z It can be tested with the following:
+2024-08-06T01:51:48.649172880Z 
+2024-08-06T01:51:48.649184733Z 1. Launch a Pod with DNS tools:
+2024-08-06T01:51:48.649192538Z 
+2024-08-06T01:51:48.649201254Z kubectl run -it --rm --restart=Never --image=infoblox/dnstools:latest dnstools
+2024-08-06T01:51:48.649208809Z 
+2024-08-06T01:51:48.649216263Z 2. Query the DNS server:
+2024-08-06T01:51:48.649223737Z 
+2024-08-06T01:51:48.649239417Z / # host kubernetes
+2024-08-06T01:51:48.659667025Z + exit

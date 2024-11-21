@@ -1,0 +1,247 @@
+apiVersion: v1
+items:
+- apiVersion: rke.cattle.io/v1
+  kind: RKEControlPlane
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/+RU3XLaTAx9lW90G0NsYCB45rtggCb9S9LS0p87eS3M1utdRytDGYZ379g4TNI0ndzXdzpztNI5krWHggRTFIR4D2itExTtrK9Dl/wgJZ6ky9p1FYoY6mp3rlOIgXPqKFN5IYbgWarbWuJOtskhhpLdRnvtrLbZA8omCv57q236//SFr1ksCGIwTqF5EdmXqOqMlSGSzn0e5/SA3Urp+JIUxHA18K8n7Xd+tlhsP49m7ye7y/5u+fXOFdeT6M0Gp9H22/jdh5urquyFy2ik1j/Xd9/L0WCEcAhAMTVeftIFecGihNhWxgRgMCHzV4fX6NcQQxReDIfJRZL0B8mYhqTC3qC/CtVFOB6qNME0Gqc0HI2fqNFWS8e6lDoFqrW21GlmVnf1m3vP+XMI4GjFHtQaWZZoKvL3Clq3rh+/lVcJsSUhvySuBw0xbKJub9SN+mecU48jCI7sdtaTStZzm5ZOW4F4fwig7ffSuATN1NmVzu6LFmgxo4KsTP9YviozxpQWwiiU7ZrWnRV25tagpRmjtjflabtTMiQ0L0rZzTTPml9ghcZTAKn2mBiab7SSRkaLk63h9BSvHNfGtVHGqOiWWLsU4jAAnVnHNEMqnF2QnMw74nNmx/6UXDovTYdXzuUnasn0FPS5Lr+glleOZ42GesFcJQtSzqa+qS1HCOLwEMDWcU78r+o/1KssKFWjWhGLXmmFQh/bW3dJlhiPQsP6nnjiDaWP4MPhVwAAAP//UcQJCioFAAA
+      objectset.rio.cattle.io/id: rke-cluster
+      objectset.rio.cattle.io/owner-gvk: provisioning.cattle.io/v1, Kind=Cluster
+      objectset.rio.cattle.io/owner-name: local
+      objectset.rio.cattle.io/owner-namespace: fleet-local
+      rke.cattle.io/cluster-spec: H4sIAAAAAAAA/+SSwU7DMAyG3yVXqomNA1JvaC1wY9LQOHup20V17chxhqZp747asSJ4BW7J//1y8kk+uz7vURkN0w41BWFXuuNysXpcLB/utMeVLl3htMe1cBs6V55djp1Cg1tTMOxOY+SFTYU2BIyVQuC3aEE4jQwZ9oSNK1ughIVrRT3Ot9CxKFaAg/AWLbmSM9Etr1VF01xukNCwHqKdqqAVGPygkMZn6mPwNll8552Cxw1qkMaV94WzMKBkm86pD/EDgj2LVtPk9yvcohdu0tSJehV6Fennz0VJ9je9FO5TtEf9r/6XwvkDqO2AMs7VAfwhML6Q7IFuO/QLbUSowhYyjfbncQ6JB1pTTob6lO1QcxMlsE34CwAA//8BAAD//xgxzrW0AgAA
+    creationTimestamp: "2024-08-06T01:53:30Z"
+    finalizers:
+    - wrangler.cattle.io/rke-control-plane-remove
+    generation: 1
+    labels:
+      cluster.x-k8s.io/cluster-name: local
+      objectset.rio.cattle.io/hash: 10866b8bb34b9e6ec0243f0c8096cdbad19de679
+      rke.cattle.io/init-node-machine-id: "null"
+    managedFields:
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+            f:rke.cattle.io/cluster-spec: {}
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/rke-control-plane-remove"null: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+            f:rke.cattle.io/init-node-machine-id: {}
+        f:spec:
+          .: {}
+          f:chartValues: {}
+          f:clusterName: {}
+          f:kubernetesVersion: {}
+          f:localClusterAuthEndpoint: {}
+          f:machineGlobalConfig: {}
+          f:managementClusterName: {}
+          f:upgradeStrategy:
+            .: {}
+            f:controlPlaneDrainOptions:
+              .: {}
+              f:deleteEmptyDirData: {}
+              f:disableEviction: {}
+              f:enabled: {}
+              f:force: {}
+              f:gracePeriod: {}
+              f:ignoreDaemonSets: {}
+              f:ignoreErrors: {}
+              f:postDrainHooks: {}
+              f:preDrainHooks: {}
+              f:skipWaitForDeleteTimeoutSeconds: {}
+              f:timeout: {}
+            f:workerDrainOptions:
+              .: {}
+              f:deleteEmptyDirData: {}
+              f:disableEviction: {}
+              f:enabled: {}
+              f:force: {}
+              f:gracePeriod: {}
+              f:ignoreDaemonSets: {}
+              f:ignoreErrors: {}
+              f:postDrainHooks: {}
+              f:preDrainHooks: {}
+              f:skipWaitForDeleteTimeoutSeconds: {}
+              f:timeout: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:53:33Z"
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            f:cluster.x-k8s.io/cluster-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"2d7e76f9-bc59-40c5-bca5-5f107c5c834e"}: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T01:54:06Z"
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:agentConnected: {}
+          f:appliedSpec:
+            .: {}
+            f:chartValues: {}
+            f:clusterName: {}
+            f:kubernetesVersion: {}
+            f:localClusterAuthEndpoint: {}
+            f:machineGlobalConfig: {}
+            f:managementClusterName: {}
+            f:upgradeStrategy:
+              .: {}
+              f:controlPlaneDrainOptions:
+                .: {}
+                f:deleteEmptyDirData: {}
+                f:disableEviction: {}
+                f:enabled: {}
+                f:force: {}
+                f:gracePeriod: {}
+                f:ignoreDaemonSets: {}
+                f:ignoreErrors: {}
+                f:postDrainHooks: {}
+                f:preDrainHooks: {}
+                f:skipWaitForDeleteTimeoutSeconds: {}
+                f:timeout: {}
+              f:workerDrainOptions:
+                .: {}
+                f:deleteEmptyDirData: {}
+                f:disableEviction: {}
+                f:enabled: {}
+                f:force: {}
+                f:gracePeriod: {}
+                f:ignoreDaemonSets: {}
+                f:ignoreErrors: {}
+                f:postDrainHooks: {}
+                f:preDrainHooks: {}
+                f:skipWaitForDeleteTimeoutSeconds: {}
+                f:timeout: {}
+          f:certificateRotationGeneration: {}
+          f:conditions: {}
+          f:initialized: {}
+          f:observedGeneration: {}
+          f:ready: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:25:00Z"
+    name: local
+    namespace: fleet-local
+    ownerReferences:
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Cluster
+      name: local
+      uid: 2d7e76f9-bc59-40c5-bca5-5f107c5c834e
+    resourceVersion: "40196"
+    uid: dd496567-98e7-44a1-bf71-c111dcd50dc0
+  spec:
+    chartValues: "null"
+    clusterName: local
+    kubernetesVersion: v1.27.13+rke2r1
+    localClusterAuthEndpoint: {}
+    machineGlobalConfig: "null"
+    managementClusterName: local
+    upgradeStrategy:
+      controlPlaneDrainOptions:
+        deleteEmptyDirData: false
+        disableEviction: false
+        enabled: false
+        force: false
+        gracePeriod: 0
+        ignoreDaemonSets: "null"
+        ignoreErrors: false
+        postDrainHooks: "null"
+        preDrainHooks: "null"
+        skipWaitForDeleteTimeoutSeconds: 0
+        timeout: 0
+      workerDrainOptions:
+        deleteEmptyDirData: false
+        disableEviction: false
+        enabled: false
+        force: false
+        gracePeriod: 0
+        ignoreDaemonSets: "null"
+        ignoreErrors: false
+        postDrainHooks: "null"
+        preDrainHooks: "null"
+        skipWaitForDeleteTimeoutSeconds: 0
+        timeout: 0
+  status:
+    agentConnected: true
+    appliedSpec:
+      chartValues: "null"
+      clusterName: local
+      kubernetesVersion: v1.27.13+rke2r1
+      localClusterAuthEndpoint: {}
+      machineGlobalConfig: "null"
+      managementClusterName: local
+      upgradeStrategy:
+        controlPlaneDrainOptions:
+          deleteEmptyDirData: false
+          disableEviction: false
+          enabled: false
+          force: false
+          gracePeriod: 0
+          ignoreDaemonSets: "null"
+          ignoreErrors: false
+          postDrainHooks: "null"
+          preDrainHooks: "null"
+          skipWaitForDeleteTimeoutSeconds: 0
+          timeout: 0
+        workerDrainOptions:
+          deleteEmptyDirData: false
+          disableEviction: false
+          enabled: false
+          force: false
+          gracePeriod: 0
+          ignoreDaemonSets: "null"
+          ignoreErrors: false
+          postDrainHooks: "null"
+          preDrainHooks: "null"
+          skipWaitForDeleteTimeoutSeconds: 0
+          timeout: 0
+    certificateRotationGeneration: 0
+    conditions:
+    - lastUpdateTime: "2024-08-06T02:25:00Z"
+      status: "True"
+      type: Ready
+    - lastUpdateTime: "2024-08-06T02:25:00Z"
+      status: "True"
+      type: Reconciled
+    - lastUpdateTime: "2024-08-06T01:57:44Z"
+      status: "True"
+      type: Stable
+    - lastUpdateTime: "2024-08-06T01:54:44Z"
+      message: eyJQc3BFbmFibGVkIjpmYWxzZX0=
+      status: "True"
+      type: SystemUpgradeControllerReady
+    - lastUpdateTime: "2024-08-06T01:54:55Z"
+      status: "True"
+      type: Provisioned
+    - lastUpdateTime: "2024-08-06T01:54:55Z"
+      status: "True"
+      type: Bootstrapped
+    initialized: true
+    observedGeneration: 1
+    ready: true
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770253"

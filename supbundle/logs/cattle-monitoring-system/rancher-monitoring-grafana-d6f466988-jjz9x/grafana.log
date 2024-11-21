@@ -1,0 +1,841 @@
+2024-08-06T01:57:24.141194090Z logger=settings t=2024-08-06T01:57:24.141073456Z level=info msg="Starting Grafana" version=9.1.5 commit=df015a9301 branch=HEAD compiled=2022-09-12T17:19:23Z
+2024-08-06T01:57:24.141286505Z logger=settings t=2024-08-06T01:57:24.141253536Z level=info msg="Config loaded from" file=/usr/share/grafana/conf/defaults.ini
+2024-08-06T01:57:24.141291484Z logger=settings t=2024-08-06T01:57:24.141262913Z level=info msg="Config loaded from" file=/etc/grafana/grafana.ini
+2024-08-06T01:57:24.141296142Z logger=settings t=2024-08-06T01:57:24.141267792Z level=info msg="Config overridden from command line" arg="default.paths.data=/var/lib/grafana/"
+2024-08-06T01:57:24.141300009Z logger=settings t=2024-08-06T01:57:24.141273622Z level=info msg="Config overridden from command line" arg="default.paths.logs=/var/log/grafana"
+2024-08-06T01:57:24.141308574Z logger=settings t=2024-08-06T01:57:24.141277779Z level=info msg="Config overridden from command line" arg="default.paths.plugins=/var/lib/grafana/plugins"
+2024-08-06T01:57:24.141313292Z logger=settings t=2024-08-06T01:57:24.141282137Z level=info msg="Config overridden from command line" arg="default.paths.provisioning=/etc/grafana/provisioning"
+2024-08-06T01:57:24.141317239Z logger=settings t=2024-08-06T01:57:24.141286254Z level=info msg="Config overridden from command line" arg="default.log.mode=console"
+2024-08-06T01:57:24.141326716Z logger=settings t=2024-08-06T01:57:24.141291203Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_DATA=/var/lib/grafana/"
+2024-08-06T01:57:24.141330393Z logger=settings t=2024-08-06T01:57:24.141295932Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_LOGS=/var/log/grafana"
+2024-08-06T01:57:24.141334099Z logger=settings t=2024-08-06T01:57:24.141300019Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_PLUGINS=/var/lib/grafana/plugins"
+2024-08-06T01:57:24.141342234Z logger=settings t=2024-08-06T01:57:24.141304367Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_PROVISIONING=/etc/grafana/provisioning"
+2024-08-06T01:57:24.141345961Z logger=settings t=2024-08-06T01:57:24.141308644Z level=info msg="Config overridden from Environment variable" var="GF_SECURITY_ADMIN_USER=admin"
+2024-08-06T01:57:24.141349647Z logger=settings t=2024-08-06T01:57:24.141313292Z level=info msg="Config overridden from Environment variable" var="GF_SECURITY_ADMIN_PASSWORD=*********"
+2024-08-06T01:57:24.141353965Z logger=settings t=2024-08-06T01:57:24.14131748Z level=info msg="Path Home" path=/usr/share/grafana
+2024-08-06T01:57:24.141367198Z logger=settings t=2024-08-06T01:57:24.141322088Z level=info msg="Path Data" path=/var/lib/grafana/
+2024-08-06T01:57:24.141385280Z logger=settings t=2024-08-06T01:57:24.141326366Z level=info msg="Path Logs" path=/var/log/grafana
+2024-08-06T01:57:24.141390249Z logger=settings t=2024-08-06T01:57:24.141331435Z level=info msg="Path Plugins" path=/var/lib/grafana/plugins
+2024-08-06T01:57:24.141403092Z logger=settings t=2024-08-06T01:57:24.141336023Z level=info msg="Path Provisioning" path=/etc/grafana/provisioning
+2024-08-06T01:57:24.141408472Z logger=settings t=2024-08-06T01:57:24.141341753Z level=info msg="App mode production"
+2024-08-06T01:57:24.141461476Z logger=sqlstore t=2024-08-06T01:57:24.141427045Z level=info msg="Connecting to DB" dbtype=sqlite3
+2024-08-06T01:57:24.141487883Z logger=sqlstore t=2024-08-06T01:57:24.141454053Z level=info msg="Creating SQLite database file" path=/var/lib/grafana/grafana.db
+2024-08-06T01:57:24.142660709Z logger=migrator t=2024-08-06T01:57:24.142618183Z level=info msg="Starting DB migrations"
+2024-08-06T01:57:24.142704867Z logger=migrator t=2024-08-06T01:57:24.142682367Z level=info msg="Executing migration" id="create migration_log table"
+2024-08-06T01:57:24.187831501Z logger=migrator t=2024-08-06T01:57:24.187743685Z level=info msg="Executing migration" id="create user table"
+2024-08-06T01:57:24.192212473Z logger=migrator t=2024-08-06T01:57:24.192139102Z level=info msg="Executing migration" id="add unique index user.login"
+2024-08-06T01:57:24.197270088Z logger=migrator t=2024-08-06T01:57:24.197169759Z level=info msg="Executing migration" id="add unique index user.email"
+2024-08-06T01:57:24.222098934Z logger=migrator t=2024-08-06T01:57:24.22202362Z level=info msg="Executing migration" id="drop index UQE_user_login - v1"
+2024-08-06T01:57:24.226302430Z logger=migrator t=2024-08-06T01:57:24.226238396Z level=info msg="Executing migration" id="drop index UQE_user_email - v1"
+2024-08-06T01:57:24.230583282Z logger=migrator t=2024-08-06T01:57:24.230524919Z level=info msg="Executing migration" id="Rename table user to user_v1 - v1"
+2024-08-06T01:57:24.237386482Z logger=migrator t=2024-08-06T01:57:24.237278089Z level=info msg="Executing migration" id="create user table v2"
+2024-08-06T01:57:24.242460536Z logger=migrator t=2024-08-06T01:57:24.242374302Z level=info msg="Executing migration" id="create index UQE_user_login - v2"
+2024-08-06T01:57:24.245289777Z logger=migrator t=2024-08-06T01:57:24.245244236Z level=info msg="Executing migration" id="create index UQE_user_email - v2"
+2024-08-06T01:57:24.248174287Z logger=migrator t=2024-08-06T01:57:24.248117976Z level=info msg="Executing migration" id="copy data_source v1 to v2"
+2024-08-06T01:57:24.250920641Z logger=migrator t=2024-08-06T01:57:24.250877524Z level=info msg="Executing migration" id="Drop old table user_v1"
+2024-08-06T01:57:24.254063611Z logger=migrator t=2024-08-06T01:57:24.254011628Z level=info msg="Executing migration" id="Add column help_flags1 to user table"
+2024-08-06T01:57:24.257757360Z logger=migrator t=2024-08-06T01:57:24.257705387Z level=info msg="Executing migration" id="Update user table charset"
+2024-08-06T01:57:24.261499395Z logger=migrator t=2024-08-06T01:57:24.261440199Z level=info msg="Executing migration" id="Add last_seen_at column to user"
+2024-08-06T01:57:24.265278966Z logger=migrator t=2024-08-06T01:57:24.265229658Z level=info msg="Executing migration" id="Add missing user data"
+2024-08-06T01:57:24.268999092Z logger=migrator t=2024-08-06T01:57:24.268944465Z level=info msg="Executing migration" id="Add is_disabled column to user"
+2024-08-06T01:57:24.272886386Z logger=migrator t=2024-08-06T01:57:24.272829154Z level=info msg="Executing migration" id="Add index user.login/user.email"
+2024-08-06T01:57:24.276908198Z logger=migrator t=2024-08-06T01:57:24.276842141Z level=info msg="Executing migration" id="Add is_service_account column to user"
+2024-08-06T01:57:24.279900429Z logger=migrator t=2024-08-06T01:57:24.279835414Z level=info msg="Executing migration" id="Update is_service_account column to nullable"
+2024-08-06T01:57:24.284616407Z logger=migrator t=2024-08-06T01:57:24.284538779Z level=info msg="Executing migration" id="create temp user table v1-7"
+2024-08-06T01:57:24.295975137Z logger=migrator t=2024-08-06T01:57:24.295398672Z level=info msg="Executing migration" id="create index IDX_temp_user_email - v1-7"
+2024-08-06T01:57:24.309089009Z logger=migrator t=2024-08-06T01:57:24.308957054Z level=info msg="Executing migration" id="create index IDX_temp_user_org_id - v1-7"
+2024-08-06T01:57:24.312410576Z logger=migrator t=2024-08-06T01:57:24.312359726Z level=info msg="Executing migration" id="create index IDX_temp_user_code - v1-7"
+2024-08-06T01:57:24.315502415Z logger=migrator t=2024-08-06T01:57:24.315451244Z level=info msg="Executing migration" id="create index IDX_temp_user_status - v1-7"
+2024-08-06T01:57:24.320446508Z logger=migrator t=2024-08-06T01:57:24.320388154Z level=info msg="Executing migration" id="Update temp_user table charset"
+2024-08-06T01:57:24.323359207Z logger=migrator t=2024-08-06T01:57:24.323302176Z level=info msg="Executing migration" id="drop index IDX_temp_user_email - v1"
+2024-08-06T01:57:24.326398984Z logger=migrator t=2024-08-06T01:57:24.326354815Z level=info msg="Executing migration" id="drop index IDX_temp_user_org_id - v1"
+2024-08-06T01:57:24.329812805Z logger=migrator t=2024-08-06T01:57:24.329763357Z level=info msg="Executing migration" id="drop index IDX_temp_user_code - v1"
+2024-08-06T01:57:24.333246642Z logger=migrator t=2024-08-06T01:57:24.333179673Z level=info msg="Executing migration" id="drop index IDX_temp_user_status - v1"
+2024-08-06T01:57:24.337269877Z logger=migrator t=2024-08-06T01:57:24.337218635Z level=info msg="Executing migration" id="Rename table temp_user to temp_user_tmp_qwerty - v1"
+2024-08-06T01:57:24.340717628Z logger=migrator t=2024-08-06T01:57:24.340669222Z level=info msg="Executing migration" id="create temp_user v2"
+2024-08-06T01:57:24.342899388Z logger=migrator t=2024-08-06T01:57:24.342855941Z level=info msg="Executing migration" id="create index IDX_temp_user_email - v2"
+2024-08-06T01:57:24.346123422Z logger=migrator t=2024-08-06T01:57:24.346084092Z level=info msg="Executing migration" id="create index IDX_temp_user_org_id - v2"
+2024-08-06T01:57:24.350245102Z logger=migrator t=2024-08-06T01:57:24.35017634Z level=info msg="Executing migration" id="create index IDX_temp_user_code - v2"
+2024-08-06T01:57:24.354006231Z logger=migrator t=2024-08-06T01:57:24.353963535Z level=info msg="Executing migration" id="create index IDX_temp_user_status - v2"
+2024-08-06T01:57:24.357786835Z logger=migrator t=2024-08-06T01:57:24.357737036Z level=info msg="Executing migration" id="copy temp_user v1 to v2"
+2024-08-06T01:57:24.361020245Z logger=migrator t=2024-08-06T01:57:24.360965318Z level=info msg="Executing migration" id="drop temp_user_tmp_qwerty"
+2024-08-06T01:57:24.365089171Z logger=migrator t=2024-08-06T01:57:24.365020609Z level=info msg="Executing migration" id="Set created for temp users that will otherwise prematurely expire"
+2024-08-06T01:57:24.369224846Z logger=migrator t=2024-08-06T01:57:24.36914806Z level=info msg="Executing migration" id="create star table"
+2024-08-06T01:57:24.373784075Z logger=migrator t=2024-08-06T01:57:24.373715473Z level=info msg="Executing migration" id="add unique index star.user_id_dashboard_id"
+2024-08-06T01:57:24.377514990Z logger=migrator t=2024-08-06T01:57:24.37744766Z level=info msg="Executing migration" id="create org table v1"
+2024-08-06T01:57:24.381366629Z logger=migrator t=2024-08-06T01:57:24.381296835Z level=info msg="Executing migration" id="create index UQE_org_name - v1"
+2024-08-06T01:57:24.385632226Z logger=migrator t=2024-08-06T01:57:24.385551813Z level=info msg="Executing migration" id="create org_user table v1"
+2024-08-06T01:57:24.389822828Z logger=migrator t=2024-08-06T01:57:24.389755569Z level=info msg="Executing migration" id="create index IDX_org_user_org_id - v1"
+2024-08-06T01:57:24.394011387Z logger=migrator t=2024-08-06T01:57:24.393947774Z level=info msg="Executing migration" id="create index UQE_org_user_org_id_user_id - v1"
+2024-08-06T01:57:24.398015869Z logger=migrator t=2024-08-06T01:57:24.397913016Z level=info msg="Executing migration" id="create index IDX_org_user_user_id - v1"
+2024-08-06T01:57:24.404268609Z logger=migrator t=2024-08-06T01:57:24.404183848Z level=info msg="Executing migration" id="Update org table charset"
+2024-08-06T01:57:24.408137009Z logger=migrator t=2024-08-06T01:57:24.408073927Z level=info msg="Executing migration" id="Update org_user table charset"
+2024-08-06T01:57:24.411516078Z logger=migrator t=2024-08-06T01:57:24.411420668Z level=info msg="Executing migration" id="Migrate all Read Only Viewers to Viewers"
+2024-08-06T01:57:24.416285510Z logger=migrator t=2024-08-06T01:57:24.416220655Z level=info msg="Executing migration" id="create dashboard table"
+2024-08-06T01:57:24.439750541Z logger=migrator t=2024-08-06T01:57:24.439663827Z level=info msg="Executing migration" id="add index dashboard.account_id"
+2024-08-06T01:57:24.442822344Z logger=migrator t=2024-08-06T01:57:24.44278662Z level=info msg="Executing migration" id="add unique index dashboard_account_id_slug"
+2024-08-06T01:57:24.448639820Z logger=migrator t=2024-08-06T01:57:24.448578591Z level=info msg="Executing migration" id="create dashboard_tag table"
+2024-08-06T01:57:24.456555217Z logger=migrator t=2024-08-06T01:57:24.45648378Z level=info msg="Executing migration" id="add unique index dashboard_tag.dasboard_id_term"
+2024-08-06T01:57:24.469044749Z logger=migrator t=2024-08-06T01:57:24.468956552Z level=info msg="Executing migration" id="drop index UQE_dashboard_tag_dashboard_id_term - v1"
+2024-08-06T01:57:24.497512055Z logger=migrator t=2024-08-06T01:57:24.497416686Z level=info msg="Executing migration" id="Rename table dashboard to dashboard_v1 - v1"
+2024-08-06T01:57:24.504869640Z logger=migrator t=2024-08-06T01:57:24.504772818Z level=info msg="Executing migration" id="create dashboard v2"
+2024-08-06T01:57:24.509338338Z logger=migrator t=2024-08-06T01:57:24.509279694Z level=info msg="Executing migration" id="create index IDX_dashboard_org_id - v2"
+2024-08-06T01:57:24.514607138Z logger=migrator t=2024-08-06T01:57:24.514549325Z level=info msg="Executing migration" id="create index UQE_dashboard_org_id_slug - v2"
+2024-08-06T01:57:24.518445163Z logger=migrator t=2024-08-06T01:57:24.518379907Z level=info msg="Executing migration" id="copy dashboard v1 to v2"
+2024-08-06T01:57:24.521997361Z logger=migrator t=2024-08-06T01:57:24.521916698Z level=info msg="Executing migration" id="drop table dashboard_v1"
+2024-08-06T01:57:24.526387077Z logger=migrator t=2024-08-06T01:57:24.526302607Z level=info msg="Executing migration" id="alter dashboard.data to mediumtext v1"
+2024-08-06T01:57:24.530124654Z logger=migrator t=2024-08-06T01:57:24.530043841Z level=info msg="Executing migration" id="Add column updated_by in dashboard - v2"
+2024-08-06T01:57:24.534642589Z logger=migrator t=2024-08-06T01:57:24.534581912Z level=info msg="Executing migration" id="Add column created_by in dashboard - v2"
+2024-08-06T01:57:24.538350263Z logger=migrator t=2024-08-06T01:57:24.538282323Z level=info msg="Executing migration" id="Add column gnetId in dashboard"
+2024-08-06T01:57:24.546316220Z logger=migrator t=2024-08-06T01:57:24.546266421Z level=info msg="Executing migration" id="Add index for gnetId in dashboard"
+2024-08-06T01:57:24.554475792Z logger=migrator t=2024-08-06T01:57:24.554383277Z level=info msg="Executing migration" id="Add column plugin_id in dashboard"
+2024-08-06T01:57:24.558088276Z logger=migrator t=2024-08-06T01:57:24.558032707Z level=info msg="Executing migration" id="Add index for plugin_id in dashboard"
+2024-08-06T01:57:24.563188366Z logger=migrator t=2024-08-06T01:57:24.563076056Z level=info msg="Executing migration" id="Add index for dashboard_id in dashboard_tag"
+2024-08-06T01:57:24.565983056Z logger=migrator t=2024-08-06T01:57:24.565927147Z level=info msg="Executing migration" id="Update dashboard table charset"
+2024-08-06T01:57:24.568301319Z logger=migrator t=2024-08-06T01:57:24.568254235Z level=info msg="Executing migration" id="Update dashboard_tag table charset"
+2024-08-06T01:57:24.570121085Z logger=migrator t=2024-08-06T01:57:24.570079291Z level=info msg="Executing migration" id="Add column folder_id in dashboard"
+2024-08-06T01:57:24.573127111Z logger=migrator t=2024-08-06T01:57:24.57309302Z level=info msg="Executing migration" id="Add column isFolder in dashboard"
+2024-08-06T01:57:24.575683237Z logger=migrator t=2024-08-06T01:57:24.575444583Z level=info msg="Executing migration" id="Add column has_acl in dashboard"
+2024-08-06T01:57:24.578809387Z logger=migrator t=2024-08-06T01:57:24.578765349Z level=info msg="Executing migration" id="Add column uid in dashboard"
+2024-08-06T01:57:24.582375078Z logger=migrator t=2024-08-06T01:57:24.58222401Z level=info msg="Executing migration" id="Update uid column values in dashboard"
+2024-08-06T01:57:24.585963630Z logger=migrator t=2024-08-06T01:57:24.585908642Z level=info msg="Executing migration" id="Add unique index dashboard_org_id_uid"
+2024-08-06T01:57:24.589424064Z logger=migrator t=2024-08-06T01:57:24.58936002Z level=info msg="Executing migration" id="Remove unique index org_id_slug"
+2024-08-06T01:57:24.592958991Z logger=migrator t=2024-08-06T01:57:24.592874861Z level=info msg="Executing migration" id="Update dashboard title length"
+2024-08-06T01:57:24.595894492Z logger=migrator t=2024-08-06T01:57:24.595817815Z level=info msg="Executing migration" id="Add unique index for dashboard_org_id_title_folder_id"
+2024-08-06T01:57:24.600198716Z logger=migrator t=2024-08-06T01:57:24.600114507Z level=info msg="Executing migration" id="create dashboard_provisioning"
+2024-08-06T01:57:24.605010934Z logger=migrator t=2024-08-06T01:57:24.604920593Z level=info msg="Executing migration" id="Rename table dashboard_provisioning to dashboard_provisioning_tmp_qwerty - v1"
+2024-08-06T01:57:24.612113085Z logger=migrator t=2024-08-06T01:57:24.612047308Z level=info msg="Executing migration" id="create dashboard_provisioning v2"
+2024-08-06T01:57:24.615881587Z logger=migrator t=2024-08-06T01:57:24.615822912Z level=info msg="Executing migration" id="create index IDX_dashboard_provisioning_dashboard_id - v2"
+2024-08-06T01:57:24.620536696Z logger=migrator t=2024-08-06T01:57:24.620462574Z level=info msg="Executing migration" id="create index IDX_dashboard_provisioning_dashboard_id_name - v2"
+2024-08-06T01:57:24.624953190Z logger=migrator t=2024-08-06T01:57:24.624889126Z level=info msg="Executing migration" id="copy dashboard_provisioning v1 to v2"
+2024-08-06T01:57:24.628676852Z logger=migrator t=2024-08-06T01:57:24.62861951Z level=info msg="Executing migration" id="drop dashboard_provisioning_tmp_qwerty"
+2024-08-06T01:57:24.632640030Z logger=migrator t=2024-08-06T01:57:24.63257781Z level=info msg="Executing migration" id="Add check_sum column"
+2024-08-06T01:57:24.637176749Z logger=migrator t=2024-08-06T01:57:24.637079606Z level=info msg="Executing migration" id="Add index for dashboard_title"
+2024-08-06T01:57:24.643503360Z logger=migrator t=2024-08-06T01:57:24.64342413Z level=info msg="Executing migration" id="delete tags for deleted dashboards"
+2024-08-06T01:57:24.646511159Z logger=migrator t=2024-08-06T01:57:24.646440113Z level=info msg="Executing migration" id="delete stars for deleted dashboards"
+2024-08-06T01:57:24.649092610Z logger=migrator t=2024-08-06T01:57:24.649046198Z level=info msg="Executing migration" id="Add index for dashboard_is_folder"
+2024-08-06T01:57:24.654112959Z logger=migrator t=2024-08-06T01:57:24.654058812Z level=info msg="Executing migration" id="Add isPublic for dashboard"
+2024-08-06T01:57:24.657516552Z logger=migrator t=2024-08-06T01:57:24.657459921Z level=info msg="Executing migration" id="create data_source table"
+2024-08-06T01:57:24.660726861Z logger=migrator t=2024-08-06T01:57:24.660673276Z level=info msg="Executing migration" id="add index data_source.account_id"
+2024-08-06T01:57:24.663699728Z logger=migrator t=2024-08-06T01:57:24.663645972Z level=info msg="Executing migration" id="add unique index data_source.account_id_name"
+2024-08-06T01:57:24.667242989Z logger=migrator t=2024-08-06T01:57:24.667168206Z level=info msg="Executing migration" id="drop index IDX_data_source_account_id - v1"
+2024-08-06T01:57:24.671986225Z logger=migrator t=2024-08-06T01:57:24.671905071Z level=info msg="Executing migration" id="drop index UQE_data_source_account_id_name - v1"
+2024-08-06T01:57:24.676650530Z logger=migrator t=2024-08-06T01:57:24.676569165Z level=info msg="Executing migration" id="Rename table data_source to data_source_v1 - v1"
+2024-08-06T01:57:24.683010881Z logger=migrator t=2024-08-06T01:57:24.682944513Z level=info msg="Executing migration" id="create data_source table v2"
+2024-08-06T01:57:24.687455726Z logger=migrator t=2024-08-06T01:57:24.687382386Z level=info msg="Executing migration" id="create index IDX_data_source_org_id - v2"
+2024-08-06T01:57:24.692315699Z logger=migrator t=2024-08-06T01:57:24.692238702Z level=info msg="Executing migration" id="create index UQE_data_source_org_id_name - v2"
+2024-08-06T01:57:24.696905983Z logger=migrator t=2024-08-06T01:57:24.696831591Z level=info msg="Executing migration" id="Drop old table data_source_v1 #2"
+2024-08-06T01:57:24.701037050Z logger=migrator t=2024-08-06T01:57:24.700977814Z level=info msg="Executing migration" id="Add column with_credentials"
+2024-08-06T01:57:24.703697842Z logger=migrator t=2024-08-06T01:57:24.7036291Z level=info msg="Executing migration" id="Add secure json data column"
+2024-08-06T01:57:24.708490615Z logger=migrator t=2024-08-06T01:57:24.7084426Z level=info msg="Executing migration" id="Update data_source table charset"
+2024-08-06T01:57:24.712148611Z logger=migrator t=2024-08-06T01:57:24.71208648Z level=info msg="Executing migration" id="Update initial version to 1"
+2024-08-06T01:57:24.715654586Z logger=migrator t=2024-08-06T01:57:24.715570556Z level=info msg="Executing migration" id="Add read_only data column"
+2024-08-06T01:57:24.719635115Z logger=migrator t=2024-08-06T01:57:24.71957093Z level=info msg="Executing migration" id="Migrate logging ds to loki ds"
+2024-08-06T01:57:24.723882538Z logger=migrator t=2024-08-06T01:57:24.723813355Z level=info msg="Executing migration" id="Update json_data with nulls"
+2024-08-06T01:57:24.737664619Z logger=migrator t=2024-08-06T01:57:24.737555054Z level=info msg="Executing migration" id="Add uid column"
+2024-08-06T01:57:24.743019212Z logger=migrator t=2024-08-06T01:57:24.7429506Z level=info msg="Executing migration" id="Update uid value"
+2024-08-06T01:57:24.747203724Z logger=migrator t=2024-08-06T01:57:24.747155037Z level=info msg="Executing migration" id="Add unique index datasource_org_id_uid"
+2024-08-06T01:57:24.750192118Z logger=migrator t=2024-08-06T01:57:24.750148531Z level=info msg="Executing migration" id="add unique index datasource_org_id_is_default"
+2024-08-06T01:57:24.754398108Z logger=migrator t=2024-08-06T01:57:24.754324297Z level=info msg="Executing migration" id="create api_key table"
+2024-08-06T01:57:24.759239929Z logger=migrator t=2024-08-06T01:57:24.759095863Z level=info msg="Executing migration" id="add index api_key.account_id"
+2024-08-06T01:57:24.762896231Z logger=migrator t=2024-08-06T01:57:24.762837607Z level=info msg="Executing migration" id="add index api_key.key"
+2024-08-06T01:57:24.766470718Z logger=migrator t=2024-08-06T01:57:24.766397408Z level=info msg="Executing migration" id="add index api_key.account_id_name"
+2024-08-06T01:57:24.772296409Z logger=migrator t=2024-08-06T01:57:24.772206609Z level=info msg="Executing migration" id="drop index IDX_api_key_account_id - v1"
+2024-08-06T01:57:24.775961377Z logger=migrator t=2024-08-06T01:57:24.775905878Z level=info msg="Executing migration" id="drop index UQE_api_key_key - v1"
+2024-08-06T01:57:24.779007083Z logger=migrator t=2024-08-06T01:57:24.778938912Z level=info msg="Executing migration" id="drop index UQE_api_key_account_id_name - v1"
+2024-08-06T01:57:24.783052027Z logger=migrator t=2024-08-06T01:57:24.782961476Z level=info msg="Executing migration" id="Rename table api_key to api_key_v1 - v1"
+2024-08-06T01:57:24.789247956Z logger=migrator t=2024-08-06T01:57:24.789168595Z level=info msg="Executing migration" id="create api_key table v2"
+2024-08-06T01:57:24.793508583Z logger=migrator t=2024-08-06T01:57:24.793437537Z level=info msg="Executing migration" id="create index IDX_api_key_org_id - v2"
+2024-08-06T01:57:24.797007616Z logger=migrator t=2024-08-06T01:57:24.79693667Z level=info msg="Executing migration" id="create index UQE_api_key_key - v2"
+2024-08-06T01:57:24.801147649Z logger=migrator t=2024-08-06T01:57:24.801069991Z level=info msg="Executing migration" id="create index UQE_api_key_org_id_name - v2"
+2024-08-06T01:57:24.836953447Z logger=migrator t=2024-08-06T01:57:24.836874867Z level=info msg="Executing migration" id="copy api_key v1 to v2"
+2024-08-06T01:57:24.841014409Z logger=migrator t=2024-08-06T01:57:24.840960513Z level=info msg="Executing migration" id="Drop old table api_key_v1"
+2024-08-06T01:57:24.845255662Z logger=migrator t=2024-08-06T01:57:24.845195625Z level=info msg="Executing migration" id="Update api_key table charset"
+2024-08-06T01:57:24.847856577Z logger=migrator t=2024-08-06T01:57:24.847802782Z level=info msg="Executing migration" id="Add expires to api_key table"
+2024-08-06T01:57:24.851966797Z logger=migrator t=2024-08-06T01:57:24.851893707Z level=info msg="Executing migration" id="Add service account foreign key"
+2024-08-06T01:57:24.857902012Z logger=migrator t=2024-08-06T01:57:24.857818283Z level=info msg="Executing migration" id="set service account foreign key to nil if 0"
+2024-08-06T01:57:24.861404521Z logger=migrator t=2024-08-06T01:57:24.861343232Z level=info msg="Executing migration" id="Add last_used_at to api_key table"
+2024-08-06T01:57:24.864638362Z logger=migrator t=2024-08-06T01:57:24.86456397Z level=info msg="Executing migration" id="create dashboard_snapshot table v4"
+2024-08-06T01:57:24.868774969Z logger=migrator t=2024-08-06T01:57:24.868716735Z level=info msg="Executing migration" id="drop table dashboard_snapshot_v4 #1"
+2024-08-06T01:57:24.871254338Z logger=migrator t=2024-08-06T01:57:24.871196405Z level=info msg="Executing migration" id="create dashboard_snapshot table v5 #2"
+2024-08-06T01:57:24.874519906Z logger=migrator t=2024-08-06T01:57:24.874450142Z level=info msg="Executing migration" id="create index UQE_dashboard_snapshot_key - v5"
+2024-08-06T01:57:24.878755689Z logger=migrator t=2024-08-06T01:57:24.878700671Z level=info msg="Executing migration" id="create index UQE_dashboard_snapshot_delete_key - v5"
+2024-08-06T01:57:24.882305762Z logger=migrator t=2024-08-06T01:57:24.882265811Z level=info msg="Executing migration" id="create index IDX_dashboard_snapshot_user_id - v5"
+2024-08-06T01:57:24.886032240Z logger=migrator t=2024-08-06T01:57:24.885972303Z level=info msg="Executing migration" id="alter dashboard_snapshot to mediumtext v2"
+2024-08-06T01:57:24.889967418Z logger=migrator t=2024-08-06T01:57:24.889893106Z level=info msg="Executing migration" id="Update dashboard_snapshot table charset"
+2024-08-06T01:57:24.894276241Z logger=migrator t=2024-08-06T01:57:24.894183336Z level=info msg="Executing migration" id="Add column external_delete_url to dashboard_snapshots table"
+2024-08-06T01:57:24.898999321Z logger=migrator t=2024-08-06T01:57:24.898939454Z level=info msg="Executing migration" id="Add encrypted dashboard json column"
+2024-08-06T01:57:24.902578216Z logger=migrator t=2024-08-06T01:57:24.902521344Z level=info msg="Executing migration" id="Change dashboard_encrypted column to MEDIUMBLOB"
+2024-08-06T01:57:24.905993359Z logger=migrator t=2024-08-06T01:57:24.905928474Z level=info msg="Executing migration" id="create quota table v1"
+2024-08-06T01:57:24.909941871Z logger=migrator t=2024-08-06T01:57:24.909858623Z level=info msg="Executing migration" id="create index UQE_quota_org_id_user_id_target - v1"
+2024-08-06T01:57:24.915193631Z logger=migrator t=2024-08-06T01:57:24.915092321Z level=info msg="Executing migration" id="Update quota table charset"
+2024-08-06T01:57:24.935527163Z logger=migrator t=2024-08-06T01:57:24.93541852Z level=info msg="Executing migration" id="create plugin_setting table"
+2024-08-06T01:57:24.940984007Z logger=migrator t=2024-08-06T01:57:24.94090675Z level=info msg="Executing migration" id="create index UQE_plugin_setting_org_id_plugin_id - v1"
+2024-08-06T01:57:24.944708321Z logger=migrator t=2024-08-06T01:57:24.944668199Z level=info msg="Executing migration" id="Add column plugin_version to plugin_settings"
+2024-08-06T01:57:24.946766010Z logger=migrator t=2024-08-06T01:57:24.946724356Z level=info msg="Executing migration" id="Update plugin_setting table charset"
+2024-08-06T01:57:24.949444844Z logger=migrator t=2024-08-06T01:57:24.949387062Z level=info msg="Executing migration" id="create session table"
+2024-08-06T01:57:24.953391573Z logger=migrator t=2024-08-06T01:57:24.953308105Z level=info msg="Executing migration" id="Drop old table playlist table"
+2024-08-06T01:57:24.957735068Z logger=migrator t=2024-08-06T01:57:24.957650688Z level=info msg="Executing migration" id="Drop old table playlist_item table"
+2024-08-06T01:57:24.960980730Z logger=migrator t=2024-08-06T01:57:24.960915895Z level=info msg="Executing migration" id="create playlist table v2"
+2024-08-06T01:57:24.965062640Z logger=migrator t=2024-08-06T01:57:24.964990531Z level=info msg="Executing migration" id="create playlist item table v2"
+2024-08-06T01:57:24.969036406Z logger=migrator t=2024-08-06T01:57:24.968952898Z level=info msg="Executing migration" id="Update playlist table charset"
+2024-08-06T01:57:24.971148292Z logger=migrator t=2024-08-06T01:57:24.971072307Z level=info msg="Executing migration" id="Update playlist_item table charset"
+2024-08-06T01:57:24.974415513Z logger=migrator t=2024-08-06T01:57:24.974364692Z level=info msg="Executing migration" id="drop preferences table v2"
+2024-08-06T01:57:24.978001460Z logger=migrator t=2024-08-06T01:57:24.977925455Z level=info msg="Executing migration" id="drop preferences table v3"
+2024-08-06T01:57:24.982159175Z logger=migrator t=2024-08-06T01:57:24.982031888Z level=info msg="Executing migration" id="create preferences table v3"
+2024-08-06T01:57:24.987044743Z logger=migrator t=2024-08-06T01:57:24.986963819Z level=info msg="Executing migration" id="Update preferences table charset"
+2024-08-06T01:57:24.991085239Z logger=migrator t=2024-08-06T01:57:24.991023138Z level=info msg="Executing migration" id="Add column team_id in preferences"
+2024-08-06T01:57:24.995952264Z logger=migrator t=2024-08-06T01:57:24.995880707Z level=info msg="Executing migration" id="Update team_id column values in preferences"
+2024-08-06T01:57:24.999689941Z logger=migrator t=2024-08-06T01:57:24.99962199Z level=info msg="Executing migration" id="Add column week_start in preferences"
+2024-08-06T01:57:25.004133614Z logger=migrator t=2024-08-06T01:57:25.004046259Z level=info msg="Executing migration" id="Add column preferences.json_data"
+2024-08-06T01:57:25.008419630Z logger=migrator t=2024-08-06T01:57:25.008337674Z level=info msg="Executing migration" id="alter preferences.json_data to mediumtext v1"
+2024-08-06T01:57:25.012450128Z logger=migrator t=2024-08-06T01:57:25.012379081Z level=info msg="Executing migration" id="create alert table v1"
+2024-08-06T01:57:25.017783486Z logger=migrator t=2024-08-06T01:57:25.01770759Z level=info msg="Executing migration" id="add index alert org_id & id "
+2024-08-06T01:57:25.039869447Z logger=migrator t=2024-08-06T01:57:25.039791338Z level=info msg="Executing migration" id="add index alert state"
+2024-08-06T01:57:25.044808612Z logger=migrator t=2024-08-06T01:57:25.044735632Z level=info msg="Executing migration" id="add index alert dashboard_id"
+2024-08-06T01:57:25.050570874Z logger=migrator t=2024-08-06T01:57:25.050473841Z level=info msg="Executing migration" id="Create alert_rule_tag table v1"
+2024-08-06T01:57:25.055984725Z logger=migrator t=2024-08-06T01:57:25.055923035Z level=info msg="Executing migration" id="Add unique index alert_rule_tag.alert_id_tag_id"
+2024-08-06T01:57:25.061806983Z logger=migrator t=2024-08-06T01:57:25.061732631Z level=info msg="Executing migration" id="drop index UQE_alert_rule_tag_alert_id_tag_id - v1"
+2024-08-06T01:57:25.066251709Z logger=migrator t=2024-08-06T01:57:25.066170294Z level=info msg="Executing migration" id="Rename table alert_rule_tag to alert_rule_tag_v1 - v1"
+2024-08-06T01:57:25.073561606Z logger=migrator t=2024-08-06T01:57:25.07347378Z level=info msg="Executing migration" id="Create alert_rule_tag table v2"
+2024-08-06T01:57:25.078696981Z logger=migrator t=2024-08-06T01:57:25.078614825Z level=info msg="Executing migration" id="create index UQE_alert_rule_tag_alert_id_tag_id - Add unique index alert_rule_tag.alert_id_tag_id V2"
+2024-08-06T01:57:25.083331644Z logger=migrator t=2024-08-06T01:57:25.083264685Z level=info msg="Executing migration" id="copy alert_rule_tag v1 to v2"
+2024-08-06T01:57:25.086757255Z logger=migrator t=2024-08-06T01:57:25.086711664Z level=info msg="Executing migration" id="drop table alert_rule_tag_v1"
+2024-08-06T01:57:25.092223970Z logger=migrator t=2024-08-06T01:57:25.092150489Z level=info msg="Executing migration" id="create alert_notification table v1"
+2024-08-06T01:57:25.096309997Z logger=migrator t=2024-08-06T01:57:25.09625012Z level=info msg="Executing migration" id="Add column is_default"
+2024-08-06T01:57:25.139181723Z logger=migrator t=2024-08-06T01:57:25.13907313Z level=info msg="Executing migration" id="Add column frequency"
+2024-08-06T01:57:25.144535136Z logger=migrator t=2024-08-06T01:57:25.144459802Z level=info msg="Executing migration" id="Add column send_reminder"
+2024-08-06T01:57:25.149395272Z logger=migrator t=2024-08-06T01:57:25.149333091Z level=info msg="Executing migration" id="Add column disable_resolve_message"
+2024-08-06T01:57:25.153321684Z logger=migrator t=2024-08-06T01:57:25.153248053Z level=info msg="Executing migration" id="add index alert_notification org_id & name"
+2024-08-06T01:57:25.157473217Z logger=migrator t=2024-08-06T01:57:25.157394327Z level=info msg="Executing migration" id="Update alert table charset"
+2024-08-06T01:57:25.161584218Z logger=migrator t=2024-08-06T01:57:25.161508373Z level=info msg="Executing migration" id="Update alert_notification table charset"
+2024-08-06T01:57:25.165636234Z logger=migrator t=2024-08-06T01:57:25.165565478Z level=info msg="Executing migration" id="create notification_journal table v1"
+2024-08-06T01:57:25.170273041Z logger=migrator t=2024-08-06T01:57:25.170200402Z level=info msg="Executing migration" id="add index notification_journal org_id & alert_id & notifier_id"
+2024-08-06T01:57:25.175487787Z logger=migrator t=2024-08-06T01:57:25.175391857Z level=info msg="Executing migration" id="drop alert_notification_journal"
+2024-08-06T01:57:25.180512887Z logger=migrator t=2024-08-06T01:57:25.180429118Z level=info msg="Executing migration" id="create alert_notification_state table v1"
+2024-08-06T01:57:25.185228645Z logger=migrator t=2024-08-06T01:57:25.185149313Z level=info msg="Executing migration" id="add index alert_notification_state org_id & alert_id & notifier_id"
+2024-08-06T01:57:25.189867355Z logger=migrator t=2024-08-06T01:57:25.189795888Z level=info msg="Executing migration" id="Add for to alert table"
+2024-08-06T01:57:25.193840530Z logger=migrator t=2024-08-06T01:57:25.193779442Z level=info msg="Executing migration" id="Add column uid in alert_notification"
+2024-08-06T01:57:25.198544527Z logger=migrator t=2024-08-06T01:57:25.198480423Z level=info msg="Executing migration" id="Update uid column values in alert_notification"
+2024-08-06T01:57:25.202499060Z logger=migrator t=2024-08-06T01:57:25.202406875Z level=info msg="Executing migration" id="Add unique index alert_notification_org_id_uid"
+2024-08-06T01:57:25.207250221Z logger=migrator t=2024-08-06T01:57:25.207162565Z level=info msg="Executing migration" id="Remove unique index org_id_name"
+2024-08-06T01:57:25.211915329Z logger=migrator t=2024-08-06T01:57:25.211839063Z level=info msg="Executing migration" id="Add column secure_settings in alert_notification"
+2024-08-06T01:57:25.238643487Z logger=migrator t=2024-08-06T01:57:25.238577359Z level=info msg="Executing migration" id="alter alert.settings to mediumtext"
+2024-08-06T01:57:25.242369281Z logger=migrator t=2024-08-06T01:57:25.242314905Z level=info msg="Executing migration" id="Add non-unique index alert_notification_state_alert_id"
+2024-08-06T01:57:25.246024350Z logger=migrator t=2024-08-06T01:57:25.245954776Z level=info msg="Executing migration" id="Add non-unique index alert_rule_tag_alert_id"
+2024-08-06T01:57:25.249948839Z logger=migrator t=2024-08-06T01:57:25.249843401Z level=info msg="Executing migration" id="Drop old annotation table v4"
+2024-08-06T01:57:25.254018707Z logger=migrator t=2024-08-06T01:57:25.253928506Z level=info msg="Executing migration" id="create annotation table v5"
+2024-08-06T01:57:25.259058982Z logger=migrator t=2024-08-06T01:57:25.258971787Z level=info msg="Executing migration" id="add index annotation 0 v3"
+2024-08-06T01:57:25.264126337Z logger=migrator t=2024-08-06T01:57:25.264048999Z level=info msg="Executing migration" id="add index annotation 1 v3"
+2024-08-06T01:57:25.268659970Z logger=migrator t=2024-08-06T01:57:25.268587341Z level=info msg="Executing migration" id="add index annotation 2 v3"
+2024-08-06T01:57:25.273540812Z logger=migrator t=2024-08-06T01:57:25.273470928Z level=info msg="Executing migration" id="add index annotation 3 v3"
+2024-08-06T01:57:25.278016593Z logger=migrator t=2024-08-06T01:57:25.277922675Z level=info msg="Executing migration" id="add index annotation 4 v3"
+2024-08-06T01:57:25.282763075Z logger=migrator t=2024-08-06T01:57:25.282693661Z level=info msg="Executing migration" id="Update annotation table charset"
+2024-08-06T01:57:25.287024854Z logger=migrator t=2024-08-06T01:57:25.286930035Z level=info msg="Executing migration" id="Add column region_id to annotation table"
+2024-08-06T01:57:25.292246193Z logger=migrator t=2024-08-06T01:57:25.292167874Z level=info msg="Executing migration" id="Drop category_id index"
+2024-08-06T01:57:25.296633476Z logger=migrator t=2024-08-06T01:57:25.296561658Z level=info msg="Executing migration" id="Add column tags to annotation table"
+2024-08-06T01:57:25.300724271Z logger=migrator t=2024-08-06T01:57:25.300655028Z level=info msg="Executing migration" id="Create annotation_tag table v2"
+2024-08-06T01:57:25.304726859Z logger=migrator t=2024-08-06T01:57:25.30464913Z level=info msg="Executing migration" id="Add unique index annotation_tag.annotation_id_tag_id"
+2024-08-06T01:57:25.309492525Z logger=migrator t=2024-08-06T01:57:25.309426468Z level=info msg="Executing migration" id="drop index UQE_annotation_tag_annotation_id_tag_id - v2"
+2024-08-06T01:57:25.314139871Z logger=migrator t=2024-08-06T01:57:25.314067773Z level=info msg="Executing migration" id="Rename table annotation_tag to annotation_tag_v2 - v2"
+2024-08-06T01:57:25.342585478Z logger=migrator t=2024-08-06T01:57:25.342506437Z level=info msg="Executing migration" id="Create annotation_tag table v3"
+2024-08-06T01:57:25.347626405Z logger=migrator t=2024-08-06T01:57:25.347536425Z level=info msg="Executing migration" id="create index UQE_annotation_tag_annotation_id_tag_id - Add unique index annotation_tag.annotation_id_tag_id V3"
+2024-08-06T01:57:25.352364513Z logger=migrator t=2024-08-06T01:57:25.35227853Z level=info msg="Executing migration" id="copy annotation_tag v2 to v3"
+2024-08-06T01:57:25.356002060Z logger=migrator t=2024-08-06T01:57:25.355929441Z level=info msg="Executing migration" id="drop table annotation_tag_v2"
+2024-08-06T01:57:25.360176384Z logger=migrator t=2024-08-06T01:57:25.36009559Z level=info msg="Executing migration" id="Update alert annotations and set TEXT to empty"
+2024-08-06T01:57:25.364328779Z logger=migrator t=2024-08-06T01:57:25.364258874Z level=info msg="Executing migration" id="Add created time to annotation table"
+2024-08-06T01:57:25.369655334Z logger=migrator t=2024-08-06T01:57:25.369580581Z level=info msg="Executing migration" id="Add updated time to annotation table"
+2024-08-06T01:57:25.374776694Z logger=migrator t=2024-08-06T01:57:25.374712079Z level=info msg="Executing migration" id="Add index for created in annotation table"
+2024-08-06T01:57:25.378660631Z logger=migrator t=2024-08-06T01:57:25.378590506Z level=info msg="Executing migration" id="Add index for updated in annotation table"
+2024-08-06T01:57:25.383373444Z logger=migrator t=2024-08-06T01:57:25.383297188Z level=info msg="Executing migration" id="Convert existing annotations from seconds to milliseconds"
+2024-08-06T01:57:25.387375631Z logger=migrator t=2024-08-06T01:57:25.387294366Z level=info msg="Executing migration" id="Add epoch_end column"
+2024-08-06T01:57:25.393242829Z logger=migrator t=2024-08-06T01:57:25.393156315Z level=info msg="Executing migration" id="Add index for epoch_end"
+2024-08-06T01:57:25.398594389Z logger=migrator t=2024-08-06T01:57:25.398508065Z level=info msg="Executing migration" id="Make epoch_end the same as epoch"
+2024-08-06T01:57:25.403481362Z logger=migrator t=2024-08-06T01:57:25.403405877Z level=info msg="Executing migration" id="Move region to single row"
+2024-08-06T01:57:25.436882393Z logger=migrator t=2024-08-06T01:57:25.436769052Z level=info msg="Executing migration" id="Remove index org_id_epoch from annotation table"
+2024-08-06T01:57:25.441723434Z logger=migrator t=2024-08-06T01:57:25.441639294Z level=info msg="Executing migration" id="Remove index org_id_dashboard_id_panel_id_epoch from annotation table"
+2024-08-06T01:57:25.446764632Z logger=migrator t=2024-08-06T01:57:25.446703302Z level=info msg="Executing migration" id="Add index for org_id_dashboard_id_epoch_end_epoch on annotation table"
+2024-08-06T01:57:25.451790532Z logger=migrator t=2024-08-06T01:57:25.451703507Z level=info msg="Executing migration" id="Add index for org_id_epoch_end_epoch on annotation table"
+2024-08-06T01:57:25.455094295Z logger=migrator t=2024-08-06T01:57:25.455009815Z level=info msg="Executing migration" id="Remove index org_id_epoch_epoch_end from annotation table"
+2024-08-06T01:57:25.458828485Z logger=migrator t=2024-08-06T01:57:25.458764411Z level=info msg="Executing migration" id="Add index for alert_id on annotation table"
+2024-08-06T01:57:25.464615962Z logger=migrator t=2024-08-06T01:57:25.464534867Z level=info msg="Executing migration" id="create test_data table"
+2024-08-06T01:57:25.468754442Z logger=migrator t=2024-08-06T01:57:25.468699794Z level=info msg="Executing migration" id="create dashboard_version table v1"
+2024-08-06T01:57:25.472274490Z logger=migrator t=2024-08-06T01:57:25.472216286Z level=info msg="Executing migration" id="add index dashboard_version.dashboard_id"
+2024-08-06T01:57:25.476379490Z logger=migrator t=2024-08-06T01:57:25.476302062Z level=info msg="Executing migration" id="add unique index dashboard_version.dashboard_id and dashboard_version.version"
+2024-08-06T01:57:25.481181472Z logger=migrator t=2024-08-06T01:57:25.481100237Z level=info msg="Executing migration" id="Set dashboard version to 1 where 0"
+2024-08-06T01:57:25.484941537Z logger=migrator t=2024-08-06T01:57:25.484871312Z level=info msg="Executing migration" id="save existing dashboard data in dashboard_version table v1"
+2024-08-06T01:57:25.487586227Z logger=migrator t=2024-08-06T01:57:25.487513638Z level=info msg="Executing migration" id="alter dashboard_version.data to mediumtext v1"
+2024-08-06T01:57:25.491484660Z logger=migrator t=2024-08-06T01:57:25.491408224Z level=info msg="Executing migration" id="create team table"
+2024-08-06T01:57:25.496485676Z logger=migrator t=2024-08-06T01:57:25.496404511Z level=info msg="Executing migration" id="add index team.org_id"
+2024-08-06T01:57:25.502338478Z logger=migrator t=2024-08-06T01:57:25.502269155Z level=info msg="Executing migration" id="add unique index team_org_id_name"
+2024-08-06T01:57:25.506873805Z logger=migrator t=2024-08-06T01:57:25.506807517Z level=info msg="Executing migration" id="create team member table"
+2024-08-06T01:57:25.510917165Z logger=migrator t=2024-08-06T01:57:25.510845407Z level=info msg="Executing migration" id="add index team_member.org_id"
+2024-08-06T01:57:25.514602258Z logger=migrator t=2024-08-06T01:57:25.514536651Z level=info msg="Executing migration" id="add unique index team_member_org_id_team_id_user_id"
+2024-08-06T01:57:25.519123470Z logger=migrator t=2024-08-06T01:57:25.519027288Z level=info msg="Executing migration" id="add index team_member.team_id"
+2024-08-06T01:57:25.539212123Z logger=migrator t=2024-08-06T01:57:25.539137971Z level=info msg="Executing migration" id="Add column email to team table"
+2024-08-06T01:57:25.544238284Z logger=migrator t=2024-08-06T01:57:25.544161127Z level=info msg="Executing migration" id="Add column external to team_member table"
+2024-08-06T01:57:25.548230534Z logger=migrator t=2024-08-06T01:57:25.548182619Z level=info msg="Executing migration" id="Add column permission to team_member table"
+2024-08-06T01:57:25.552478779Z logger=migrator t=2024-08-06T01:57:25.552411079Z level=info msg="Executing migration" id="create dashboard acl table"
+2024-08-06T01:57:25.559443211Z logger=migrator t=2024-08-06T01:57:25.559372636Z level=info msg="Executing migration" id="add index dashboard_acl_dashboard_id"
+2024-08-06T01:57:25.562901490Z logger=migrator t=2024-08-06T01:57:25.562855839Z level=info msg="Executing migration" id="add unique index dashboard_acl_dashboard_id_user_id"
+2024-08-06T01:57:25.565877239Z logger=migrator t=2024-08-06T01:57:25.565843579Z level=info msg="Executing migration" id="add unique index dashboard_acl_dashboard_id_team_id"
+2024-08-06T01:57:25.568548686Z logger=migrator t=2024-08-06T01:57:25.568504818Z level=info msg="Executing migration" id="add index dashboard_acl_user_id"
+2024-08-06T01:57:25.572022392Z logger=migrator t=2024-08-06T01:57:25.571985497Z level=info msg="Executing migration" id="add index dashboard_acl_team_id"
+2024-08-06T01:57:25.576550827Z logger=migrator t=2024-08-06T01:57:25.576480001Z level=info msg="Executing migration" id="add index dashboard_acl_org_id_role"
+2024-08-06T01:57:25.580072088Z logger=migrator t=2024-08-06T01:57:25.580005389Z level=info msg="Executing migration" id="add index dashboard_permission"
+2024-08-06T01:57:25.583940146Z logger=migrator t=2024-08-06T01:57:25.583866475Z level=info msg="Executing migration" id="save default acl rules in dashboard_acl table"
+2024-08-06T01:57:25.587379972Z logger=migrator t=2024-08-06T01:57:25.587303646Z level=info msg="Executing migration" id="delete acl rules for deleted dashboards and folders"
+2024-08-06T01:57:25.592794494Z logger=migrator t=2024-08-06T01:57:25.592732093Z level=info msg="Executing migration" id="create tag table"
+2024-08-06T01:57:25.598463199Z logger=migrator t=2024-08-06T01:57:25.598418319Z level=info msg="Executing migration" id="add index tag.key_value"
+2024-08-06T01:57:25.602835185Z logger=migrator t=2024-08-06T01:57:25.602780087Z level=info msg="Executing migration" id="create login attempt table"
+2024-08-06T01:57:25.607972323Z logger=migrator t=2024-08-06T01:57:25.607882243Z level=info msg="Executing migration" id="add index login_attempt.username"
+2024-08-06T01:57:25.611969571Z logger=migrator t=2024-08-06T01:57:25.611890681Z level=info msg="Executing migration" id="drop index IDX_login_attempt_username - v1"
+2024-08-06T01:57:25.615571686Z logger=migrator t=2024-08-06T01:57:25.615504176Z level=info msg="Executing migration" id="Rename table login_attempt to login_attempt_tmp_qwerty - v1"
+2024-08-06T01:57:25.638991102Z logger=migrator t=2024-08-06T01:57:25.638915066Z level=info msg="Executing migration" id="create login_attempt v2"
+2024-08-06T01:57:25.643672969Z logger=migrator t=2024-08-06T01:57:25.643592596Z level=info msg="Executing migration" id="create index IDX_login_attempt_username - v2"
+2024-08-06T01:57:25.648066373Z logger=migrator t=2024-08-06T01:57:25.647981662Z level=info msg="Executing migration" id="copy login_attempt v1 to v2"
+2024-08-06T01:57:25.652362123Z logger=migrator t=2024-08-06T01:57:25.652273294Z level=info msg="Executing migration" id="drop login_attempt_tmp_qwerty"
+2024-08-06T01:57:25.656360994Z logger=migrator t=2024-08-06T01:57:25.656284958Z level=info msg="Executing migration" id="create user auth table"
+2024-08-06T01:57:25.661053120Z logger=migrator t=2024-08-06T01:57:25.660976553Z level=info msg="Executing migration" id="create index IDX_user_auth_auth_module_auth_id - v1"
+2024-08-06T01:57:25.666457043Z logger=migrator t=2024-08-06T01:57:25.666377872Z level=info msg="Executing migration" id="alter user_auth.auth_id to length 190"
+2024-08-06T01:57:25.669979707Z logger=migrator t=2024-08-06T01:57:25.669911776Z level=info msg="Executing migration" id="Add OAuth access token to user_auth"
+2024-08-06T01:57:25.674200453Z logger=migrator t=2024-08-06T01:57:25.674124738Z level=info msg="Executing migration" id="Add OAuth refresh token to user_auth"
+2024-08-06T01:57:25.678463965Z logger=migrator t=2024-08-06T01:57:25.678389392Z level=info msg="Executing migration" id="Add OAuth token type to user_auth"
+2024-08-06T01:57:25.683958720Z logger=migrator t=2024-08-06T01:57:25.683883346Z level=info msg="Executing migration" id="Add OAuth expiry to user_auth"
+2024-08-06T01:57:25.689400451Z logger=migrator t=2024-08-06T01:57:25.689328263Z level=info msg="Executing migration" id="Add index to user_id column in user_auth"
+2024-08-06T01:57:25.693384446Z logger=migrator t=2024-08-06T01:57:25.693312017Z level=info msg="Executing migration" id="Add OAuth ID token to user_auth"
+2024-08-06T01:57:25.698042842Z logger=migrator t=2024-08-06T01:57:25.69798016Z level=info msg="Executing migration" id="create server_lock table"
+2024-08-06T01:57:25.702674921Z logger=migrator t=2024-08-06T01:57:25.702619402Z level=info msg="Executing migration" id="add index server_lock.operation_uid"
+2024-08-06T01:57:25.740195488Z logger=migrator t=2024-08-06T01:57:25.740111768Z level=info msg="Executing migration" id="create user auth token table"
+2024-08-06T01:57:25.745300118Z logger=migrator t=2024-08-06T01:57:25.745204618Z level=info msg="Executing migration" id="add unique index user_auth_token.auth_token"
+2024-08-06T01:57:25.750106448Z logger=migrator t=2024-08-06T01:57:25.75002345Z level=info msg="Executing migration" id="add unique index user_auth_token.prev_auth_token"
+2024-08-06T01:57:25.755119004Z logger=migrator t=2024-08-06T01:57:25.755017503Z level=info msg="Executing migration" id="add index user_auth_token.user_id"
+2024-08-06T01:57:25.760417690Z logger=migrator t=2024-08-06T01:57:25.760335373Z level=info msg="Executing migration" id="Add revoked_at to the user auth token"
+2024-08-06T01:57:25.765786420Z logger=migrator t=2024-08-06T01:57:25.765719511Z level=info msg="Executing migration" id="create cache_data table"
+2024-08-06T01:57:25.769363801Z logger=migrator t=2024-08-06T01:57:25.769298424Z level=info msg="Executing migration" id="add unique index cache_data.cache_key"
+2024-08-06T01:57:25.773211383Z logger=migrator t=2024-08-06T01:57:25.773142651Z level=info msg="Executing migration" id="create short_url table v1"
+2024-08-06T01:57:25.778793494Z logger=migrator t=2024-08-06T01:57:25.77874071Z level=info msg="Executing migration" id="add index short_url.org_id-uid"
+2024-08-06T01:57:25.782995697Z logger=migrator t=2024-08-06T01:57:25.782945378Z level=info msg="Executing migration" id="delete alert_definition table"
+2024-08-06T01:57:25.786271180Z logger=migrator t=2024-08-06T01:57:25.786217925Z level=info msg="Executing migration" id="recreate alert_definition table"
+2024-08-06T01:57:25.792294086Z logger=migrator t=2024-08-06T01:57:25.792244247Z level=info msg="Executing migration" id="add index in alert_definition on org_id and title columns"
+2024-08-06T01:57:25.796629085Z logger=migrator t=2024-08-06T01:57:25.796585097Z level=info msg="Executing migration" id="add index in alert_definition on org_id and uid columns"
+2024-08-06T01:57:25.800246608Z logger=migrator t=2024-08-06T01:57:25.800193914Z level=info msg="Executing migration" id="alter alert_definition table data column to mediumtext in mysql"
+2024-08-06T01:57:25.803163242Z logger=migrator t=2024-08-06T01:57:25.803095692Z level=info msg="Executing migration" id="drop index in alert_definition on org_id and title columns"
+2024-08-06T01:57:25.807072874Z logger=migrator t=2024-08-06T01:57:25.806992191Z level=info msg="Executing migration" id="drop index in alert_definition on org_id and uid columns"
+2024-08-06T01:57:25.811420296Z logger=migrator t=2024-08-06T01:57:25.811365719Z level=info msg="Executing migration" id="add unique index in alert_definition on org_id and title columns"
+2024-08-06T01:57:25.838549118Z logger=migrator t=2024-08-06T01:57:25.838473343Z level=info msg="Executing migration" id="add unique index in alert_definition on org_id and uid columns"
+2024-08-06T01:57:25.843327357Z logger=migrator t=2024-08-06T01:57:25.843244669Z level=info msg="Executing migration" id="Add column paused in alert_definition"
+2024-08-06T01:57:25.848952334Z logger=migrator t=2024-08-06T01:57:25.848876899Z level=info msg="Executing migration" id="drop alert_definition table"
+2024-08-06T01:57:25.853586296Z logger=migrator t=2024-08-06T01:57:25.853524496Z level=info msg="Executing migration" id="delete alert_definition_version table"
+2024-08-06T01:57:25.857030880Z logger=migrator t=2024-08-06T01:57:25.856968379Z level=info msg="Executing migration" id="recreate alert_definition_version table"
+2024-08-06T01:57:25.861254933Z logger=migrator t=2024-08-06T01:57:25.861180089Z level=info msg="Executing migration" id="add index in alert_definition_version table on alert_definition_id and version columns"
+2024-08-06T01:57:25.865779340Z logger=migrator t=2024-08-06T01:57:25.865691864Z level=info msg="Executing migration" id="add index in alert_definition_version table on alert_definition_uid and version columns"
+2024-08-06T01:57:25.870380573Z logger=migrator t=2024-08-06T01:57:25.870299479Z level=info msg="Executing migration" id="alter alert_definition_version table data column to mediumtext in mysql"
+2024-08-06T01:57:25.874584410Z logger=migrator t=2024-08-06T01:57:25.874494339Z level=info msg="Executing migration" id="drop alert_definition_version table"
+2024-08-06T01:57:25.879206921Z logger=migrator t=2024-08-06T01:57:25.879140062Z level=info msg="Executing migration" id="create alert_instance table"
+2024-08-06T01:57:25.882844199Z logger=migrator t=2024-08-06T01:57:25.882779814Z level=info msg="Executing migration" id="add index in alert_instance table on def_org_id, def_uid and current_state columns"
+2024-08-06T01:57:25.886897026Z logger=migrator t=2024-08-06T01:57:25.886816442Z level=info msg="Executing migration" id="add index in alert_instance table on def_org_id, current_state columns"
+2024-08-06T01:57:25.891764264Z logger=migrator t=2024-08-06T01:57:25.891687177Z level=info msg="Executing migration" id="add column current_state_end to alert_instance"
+2024-08-06T01:57:25.897383951Z logger=migrator t=2024-08-06T01:57:25.897308808Z level=info msg="Executing migration" id="remove index def_org_id, def_uid, current_state on alert_instance"
+2024-08-06T01:57:25.902081236Z logger=migrator t=2024-08-06T01:57:25.902011252Z level=info msg="Executing migration" id="remove index def_org_id, current_state on alert_instance"
+2024-08-06T01:57:25.905965794Z logger=migrator t=2024-08-06T01:57:25.905894978Z level=info msg="Executing migration" id="rename def_org_id to rule_org_id in alert_instance"
+2024-08-06T01:57:25.941328679Z logger=migrator t=2024-08-06T01:57:25.941237907Z level=info msg="Executing migration" id="rename def_uid to rule_uid in alert_instance"
+2024-08-06T01:57:25.950007444Z logger=migrator t=2024-08-06T01:57:25.94993175Z level=info msg="Executing migration" id="add index rule_org_id, rule_uid, current_state on alert_instance"
+2024-08-06T01:57:25.954509341Z logger=migrator t=2024-08-06T01:57:25.954426804Z level=info msg="Executing migration" id="add index rule_org_id, current_state on alert_instance"
+2024-08-06T01:57:25.959149595Z logger=migrator t=2024-08-06T01:57:25.959066336Z level=info msg="Executing migration" id="add current_reason column related to current_state"
+2024-08-06T01:57:25.964554329Z logger=migrator t=2024-08-06T01:57:25.964499622Z level=info msg="Executing migration" id="create alert_rule table"
+2024-08-06T01:57:25.969205252Z logger=migrator t=2024-08-06T01:57:25.969138062Z level=info msg="Executing migration" id="add index in alert_rule on org_id and title columns"
+2024-08-06T01:57:25.974902468Z logger=migrator t=2024-08-06T01:57:25.974811596Z level=info msg="Executing migration" id="add index in alert_rule on org_id and uid columns"
+2024-08-06T01:57:25.980115681Z logger=migrator t=2024-08-06T01:57:25.980065953Z level=info msg="Executing migration" id="add index in alert_rule on org_id, namespace_uid, group_uid columns"
+2024-08-06T01:57:25.983805653Z logger=migrator t=2024-08-06T01:57:25.983759009Z level=info msg="Executing migration" id="alter alert_rule table data column to mediumtext in mysql"
+2024-08-06T01:57:25.986571378Z logger=migrator t=2024-08-06T01:57:25.986489923Z level=info msg="Executing migration" id="add column for to alert_rule"
+2024-08-06T01:57:26.038752273Z logger=migrator t=2024-08-06T01:57:26.038661421Z level=info msg="Executing migration" id="add column annotations to alert_rule"
+2024-08-06T01:57:26.044242382Z logger=migrator t=2024-08-06T01:57:26.044189257Z level=info msg="Executing migration" id="add column labels to alert_rule"
+2024-08-06T01:57:26.048146834Z logger=migrator t=2024-08-06T01:57:26.048098788Z level=info msg="Executing migration" id="remove unique index from alert_rule on org_id, title columns"
+2024-08-06T01:57:26.051707523Z logger=migrator t=2024-08-06T01:57:26.051654739Z level=info msg="Executing migration" id="add index in alert_rule on org_id, namespase_uid and title columns"
+2024-08-06T01:57:26.057077067Z logger=migrator t=2024-08-06T01:57:26.057010979Z level=info msg="Executing migration" id="add dashboard_uid column to alert_rule"
+2024-08-06T01:57:26.062390481Z logger=migrator t=2024-08-06T01:57:26.062330073Z level=info msg="Executing migration" id="add panel_id column to alert_rule"
+2024-08-06T01:57:26.067681004Z logger=migrator t=2024-08-06T01:57:26.067629062Z level=info msg="Executing migration" id="add index in alert_rule on org_id, dashboard_uid and panel_id columns"
+2024-08-06T01:57:26.071756101Z logger=migrator t=2024-08-06T01:57:26.071700572Z level=info msg="Executing migration" id="add rule_group_idx column to alert_rule"
+2024-08-06T01:57:26.076700486Z logger=migrator t=2024-08-06T01:57:26.076631523Z level=info msg="Executing migration" id="create alert_rule_version table"
+2024-08-06T01:57:26.082010495Z logger=migrator t=2024-08-06T01:57:26.081947112Z level=info msg="Executing migration" id="add index in alert_rule_version table on rule_org_id, rule_uid and version columns"
+2024-08-06T01:57:26.086868476Z logger=migrator t=2024-08-06T01:57:26.08679742Z level=info msg="Executing migration" id="add index in alert_rule_version table on rule_org_id, rule_namespace_uid and rule_group columns"
+2024-08-06T01:57:26.090879008Z logger=migrator t=2024-08-06T01:57:26.090830892Z level=info msg="Executing migration" id="alter alert_rule_version table data column to mediumtext in mysql"
+2024-08-06T01:57:26.094415253Z logger=migrator t=2024-08-06T01:57:26.094340079Z level=info msg="Executing migration" id="add column for to alert_rule_version"
+2024-08-06T01:57:26.137560794Z logger=migrator t=2024-08-06T01:57:26.137479369Z level=info msg="Executing migration" id="add column annotations to alert_rule_version"
+2024-08-06T01:57:26.143367507Z logger=migrator t=2024-08-06T01:57:26.143284499Z level=info msg="Executing migration" id="add column labels to alert_rule_version"
+2024-08-06T01:57:26.147932948Z logger=migrator t=2024-08-06T01:57:26.147877369Z level=info msg="Executing migration" id="add rule_group_idx column to alert_rule_version"
+2024-08-06T01:57:26.155813069Z logger=migrator t=2024-08-06T01:57:26.155739357Z level=info msg="Executing migration" id=create_alert_configuration_table
+2024-08-06T01:57:26.159944064Z logger=migrator t=2024-08-06T01:57:26.159861397Z level=info msg="Executing migration" id="Add column default in alert_configuration"
+2024-08-06T01:57:26.165048546Z logger=migrator t=2024-08-06T01:57:26.164831028Z level=info msg="Executing migration" id="alert alert_configuration alertmanager_configuration column from TEXT to MEDIUMTEXT if mysql"
+2024-08-06T01:57:26.166640405Z logger=migrator t=2024-08-06T01:57:26.166574998Z level=info msg="Executing migration" id="add column org_id in alert_configuration"
+2024-08-06T01:57:26.169852672Z logger=migrator t=2024-08-06T01:57:26.169811779Z level=info msg="Executing migration" id="add index in alert_configuration table on org_id column"
+2024-08-06T01:57:26.173044102Z logger=migrator t=2024-08-06T01:57:26.173008789Z level=info msg="Executing migration" id="add configuration_hash column to alert_configuration"
+2024-08-06T01:57:26.176483145Z logger=migrator t=2024-08-06T01:57:26.176443724Z level=info msg="Executing migration" id=create_ngalert_configuration_table
+2024-08-06T01:57:26.179929159Z logger=migrator t=2024-08-06T01:57:26.179881664Z level=info msg="Executing migration" id="add index in ngalert_configuration on org_id column"
+2024-08-06T01:57:26.184040370Z logger=migrator t=2024-08-06T01:57:26.183962661Z level=info msg="Executing migration" id="add column send_alerts_to in ngalert_configuration"
+2024-08-06T01:57:26.189305437Z logger=migrator t=2024-08-06T01:57:26.189231435Z level=info msg="Executing migration" id="create provenance_type table"
+2024-08-06T01:57:26.194515237Z logger=migrator t=2024-08-06T01:57:26.194408106Z level=info msg="Executing migration" id="add index to uniquify (record_key, record_type, org_id) columns"
+2024-08-06T01:57:26.199582532Z logger=migrator t=2024-08-06T01:57:26.199502489Z level=info msg="Executing migration" id="create alert_image table"
+2024-08-06T01:57:26.236927090Z logger=migrator t=2024-08-06T01:57:26.236842118Z level=info msg="Executing migration" id="add unique index on token to alert_image table"
+2024-08-06T01:57:26.241997240Z logger=migrator t=2024-08-06T01:57:26.241921675Z level=info msg="Executing migration" id="support longer URLs in alert_image table"
+2024-08-06T01:57:26.246502643Z logger=migrator t=2024-08-06T01:57:26.24641698Z level=info msg="Executing migration" id="clear migration entry \"remove unified alerting data\""
+2024-08-06T01:57:26.246743032Z logger=migrator t=2024-08-06T01:57:26.246687673Z level=info msg="Executing migration" id="move dashboard alerts to unified alerting"
+2024-08-06T01:57:26.246997095Z logger=migrator t=2024-08-06T01:57:26.2469159Z level=info msg="alerts found to migrate" alerts=0
+2024-08-06T01:57:26.251945047Z logger=migrator t=2024-08-06T01:57:26.251863031Z level=info msg="Executing migration" id="create library_element table v1"
+2024-08-06T01:57:26.256938441Z logger=migrator t=2024-08-06T01:57:26.256862816Z level=info msg="Executing migration" id="add index library_element org_id-folder_id-name-kind"
+2024-08-06T01:57:26.261746113Z logger=migrator t=2024-08-06T01:57:26.261679755Z level=info msg="Executing migration" id="create library_element_connection table v1"
+2024-08-06T01:57:26.265986925Z logger=migrator t=2024-08-06T01:57:26.265908094Z level=info msg="Executing migration" id="add index library_element_connection element_id-kind-connection_id"
+2024-08-06T01:57:26.270548288Z logger=migrator t=2024-08-06T01:57:26.270466041Z level=info msg="Executing migration" id="add unique index library_element org_id_uid"
+2024-08-06T01:57:26.275487695Z logger=migrator t=2024-08-06T01:57:26.275396853Z level=info msg="Executing migration" id="increase max description length to 2048"
+2024-08-06T01:57:26.279500641Z logger=migrator t=2024-08-06T01:57:26.279421049Z level=info msg="Executing migration" id="clone move dashboard alerts to unified alerting"
+2024-08-06T01:57:26.283665877Z logger=migrator t=2024-08-06T01:57:26.283590312Z level=info msg="Executing migration" id="create data_keys table"
+2024-08-06T01:57:26.289808410Z logger=migrator t=2024-08-06T01:57:26.289725191Z level=info msg="Executing migration" id="create secrets table"
+2024-08-06T01:57:26.295716514Z logger=migrator t=2024-08-06T01:57:26.295637734Z level=info msg="Executing migration" id="rename data_keys name column to id"
+2024-08-06T01:57:26.339272246Z logger=migrator t=2024-08-06T01:57:26.339194377Z level=info msg="Executing migration" id="add name column into data_keys"
+2024-08-06T01:57:26.345100108Z logger=migrator t=2024-08-06T01:57:26.345043126Z level=info msg="Executing migration" id="copy data_keys id column values into name"
+2024-08-06T01:57:26.347651337Z logger=migrator t=2024-08-06T01:57:26.347597341Z level=info msg="Executing migration" id="rename data_keys name column to label"
+2024-08-06T01:57:26.354095036Z logger=migrator t=2024-08-06T01:57:26.35402967Z level=info msg="Executing migration" id="rename data_keys id column back to name"
+2024-08-06T01:57:26.360908776Z logger=migrator t=2024-08-06T01:57:26.360828773Z level=info msg="Executing migration" id="create kv_store table v1"
+2024-08-06T01:57:26.366243458Z logger=migrator t=2024-08-06T01:57:26.366170808Z level=info msg="Executing migration" id="add index kv_store.org_id-namespace-key"
+2024-08-06T01:57:26.370801655Z logger=migrator t=2024-08-06T01:57:26.370728955Z level=info msg="Executing migration" id="update dashboard_uid and panel_id from existing annotations"
+2024-08-06T01:57:26.374637004Z logger=migrator t=2024-08-06T01:57:26.374564164Z level=info msg="Executing migration" id="create permission table"
+2024-08-06T01:57:26.378941600Z logger=migrator t=2024-08-06T01:57:26.378854825Z level=info msg="Executing migration" id="add unique index permission.role_id"
+2024-08-06T01:57:26.383830667Z logger=migrator t=2024-08-06T01:57:26.383763507Z level=info msg="Executing migration" id="add unique index role_id_action_scope"
+2024-08-06T01:57:26.388217088Z logger=migrator t=2024-08-06T01:57:26.388159004Z level=info msg="Executing migration" id="create role table"
+2024-08-06T01:57:26.392563167Z logger=migrator t=2024-08-06T01:57:26.392513859Z level=info msg="Executing migration" id="add column display_name"
+2024-08-06T01:57:26.439865650Z logger=migrator t=2024-08-06T01:57:26.439745886Z level=info msg="Executing migration" id="add column group_name"
+2024-08-06T01:57:26.446037605Z logger=migrator t=2024-08-06T01:57:26.445952904Z level=info msg="Executing migration" id="add index role.org_id"
+2024-08-06T01:57:26.450595011Z logger=migrator t=2024-08-06T01:57:26.450542407Z level=info msg="Executing migration" id="add unique index role_org_id_name"
+2024-08-06T01:57:26.455355309Z logger=migrator t=2024-08-06T01:57:26.455290393Z level=info msg="Executing migration" id="add index role_org_id_uid"
+2024-08-06T01:57:26.459695448Z logger=migrator t=2024-08-06T01:57:26.459638356Z level=info msg="Executing migration" id="create team role table"
+2024-08-06T01:57:26.463285710Z logger=migrator t=2024-08-06T01:57:26.463233667Z level=info msg="Executing migration" id="add index team_role.org_id"
+2024-08-06T01:57:26.466744346Z logger=migrator t=2024-08-06T01:57:26.466683337Z level=info msg="Executing migration" id="add unique index team_role_org_id_team_id_role_id"
+2024-08-06T01:57:26.471286776Z logger=migrator t=2024-08-06T01:57:26.471196405Z level=info msg="Executing migration" id="add index team_role.team_id"
+2024-08-06T01:57:26.476476089Z logger=migrator t=2024-08-06T01:57:26.476389184Z level=info msg="Executing migration" id="create user role table"
+2024-08-06T01:57:26.480757042Z logger=migrator t=2024-08-06T01:57:26.480695081Z level=info msg="Executing migration" id="add index user_role.org_id"
+2024-08-06T01:57:26.485072076Z logger=migrator t=2024-08-06T01:57:26.485002772Z level=info msg="Executing migration" id="add unique index user_role_org_id_user_id_role_id"
+2024-08-06T01:57:26.489753113Z logger=migrator t=2024-08-06T01:57:26.489660608Z level=info msg="Executing migration" id="add index user_role.user_id"
+2024-08-06T01:57:26.494564140Z logger=migrator t=2024-08-06T01:57:26.494487875Z level=info msg="Executing migration" id="create builtin role table"
+2024-08-06T01:57:26.498027656Z logger=migrator t=2024-08-06T01:57:26.497959114Z level=info msg="Executing migration" id="add index builtin_role.role_id"
+2024-08-06T01:57:26.501775860Z logger=migrator t=2024-08-06T01:57:26.501711144Z level=info msg="Executing migration" id="add index builtin_role.name"
+2024-08-06T01:57:26.505849894Z logger=migrator t=2024-08-06T01:57:26.505765243Z level=info msg="Executing migration" id="Add column org_id to builtin_role table"
+2024-08-06T01:57:26.540993988Z logger=migrator t=2024-08-06T01:57:26.540907924Z level=info msg="Executing migration" id="add index builtin_role.org_id"
+2024-08-06T01:57:26.545567352Z logger=migrator t=2024-08-06T01:57:26.545497087Z level=info msg="Executing migration" id="add unique index builtin_role_org_id_role_id_role"
+2024-08-06T01:57:26.549546788Z logger=migrator t=2024-08-06T01:57:26.549476943Z level=info msg="Executing migration" id="Remove unique index role_org_id_uid"
+2024-08-06T01:57:26.552719455Z logger=migrator t=2024-08-06T01:57:26.552667372Z level=info msg="Executing migration" id="add unique index role.uid"
+2024-08-06T01:57:26.555838096Z logger=migrator t=2024-08-06T01:57:26.55578471Z level=info msg="Executing migration" id="create seed assignment table"
+2024-08-06T01:57:26.559913592Z logger=migrator t=2024-08-06T01:57:26.559813995Z level=info msg="Executing migration" id="add unique index builtin_role_role_name"
+2024-08-06T01:57:26.565271345Z logger=migrator t=2024-08-06T01:57:26.565179131Z level=info msg="Executing migration" id="add column hidden to role table"
+2024-08-06T01:57:26.572810178Z logger=migrator t=2024-08-06T01:57:26.572730616Z level=info msg="Executing migration" id="create query_history table v1"
+2024-08-06T01:57:26.578514248Z logger=migrator t=2024-08-06T01:57:26.57844778Z level=info msg="Executing migration" id="add index query_history.org_id-created_by-datasource_uid"
+2024-08-06T01:57:26.582562797Z logger=migrator t=2024-08-06T01:57:26.582494846Z level=info msg="Executing migration" id="teams permissions migration"
+2024-08-06T01:57:26.586802567Z logger=migrator t=2024-08-06T01:57:26.586730038Z level=info msg="Executing migration" id="dashboard permissions"
+2024-08-06T01:57:26.591151711Z logger=migrator t=2024-08-06T01:57:26.591055289Z level=info msg="Executing migration" id="dashboard permissions uid scopes"
+2024-08-06T01:57:26.594740310Z logger=migrator t=2024-08-06T01:57:26.594642265Z level=info msg="Executing migration" id="drop managed folder create actions"
+2024-08-06T01:57:26.598578444Z logger=migrator t=2024-08-06T01:57:26.59850317Z level=info msg="Executing migration" id="alerting notification permissions"
+2024-08-06T01:57:26.603206576Z logger=migrator t=2024-08-06T01:57:26.603154694Z level=info msg="Executing migration" id="create query_history_star table v1"
+2024-08-06T01:57:26.636609165Z logger=migrator t=2024-08-06T01:57:26.636552714Z level=info msg="Executing migration" id="add index query_history.user_id-query_uid"
+2024-08-06T01:57:26.640889667Z logger=migrator t=2024-08-06T01:57:26.640837144Z level=info msg="Executing migration" id="add column org_id in query_history_star"
+2024-08-06T01:57:26.646222305Z logger=migrator t=2024-08-06T01:57:26.646152912Z level=info msg="Executing migration" id="create correlation table v1"
+2024-08-06T01:57:26.651052388Z logger=migrator t=2024-08-06T01:57:26.650982683Z level=info msg="Executing migration" id="create entity_events table"
+2024-08-06T01:57:26.655047982Z logger=migrator t=2024-08-06T01:57:26.654993405Z level=info msg="Executing migration" id="create dashboard public config v1"
+2024-08-06T01:57:26.659073439Z logger=migrator t=2024-08-06T01:57:26.659009716Z level=info msg="Executing migration" id="drop index UQE_dashboard_public_config_uid - v1"
+2024-08-06T01:57:26.659287070Z logger=migrator t=2024-08-06T01:57:26.659227584Z level=warn msg="Skipping migration: Already executed, but not recorded in migration log" id="drop index UQE_dashboard_public_config_uid - v1"
+2024-08-06T01:57:26.662948719Z logger=migrator t=2024-08-06T01:57:26.662884054Z level=info msg="Executing migration" id="drop index IDX_dashboard_public_config_org_id_dashboard_uid - v1"
+2024-08-06T01:57:26.663106401Z logger=migrator t=2024-08-06T01:57:26.663053987Z level=warn msg="Skipping migration: Already executed, but not recorded in migration log" id="drop index IDX_dashboard_public_config_org_id_dashboard_uid - v1"
+2024-08-06T01:57:26.667230234Z logger=migrator t=2024-08-06T01:57:26.667172291Z level=info msg="Executing migration" id="Drop old dashboard public config table"
+2024-08-06T01:57:26.671776871Z logger=migrator t=2024-08-06T01:57:26.671729166Z level=info msg="Executing migration" id="recreate dashboard public config v1"
+2024-08-06T01:57:26.675640730Z logger=migrator t=2024-08-06T01:57:26.675581665Z level=info msg="Executing migration" id="create index UQE_dashboard_public_config_uid - v1"
+2024-08-06T01:57:26.679481078Z logger=migrator t=2024-08-06T01:57:26.679429856Z level=info msg="Executing migration" id="create index IDX_dashboard_public_config_org_id_dashboard_uid - v1"
+2024-08-06T01:57:26.683701934Z logger=migrator t=2024-08-06T01:57:26.68363805Z level=info msg="Executing migration" id="drop index UQE_dashboard_public_config_uid - v2"
+2024-08-06T01:57:26.687767032Z logger=migrator t=2024-08-06T01:57:26.687706604Z level=info msg="Executing migration" id="drop index IDX_dashboard_public_config_org_id_dashboard_uid - v2"
+2024-08-06T01:57:26.692629161Z logger=migrator t=2024-08-06T01:57:26.692567281Z level=info msg="Executing migration" id="Drop public config table"
+2024-08-06T01:57:26.697222652Z logger=migrator t=2024-08-06T01:57:26.697145204Z level=info msg="Executing migration" id="Recreate dashboard public config v2"
+2024-08-06T01:57:26.701309769Z logger=migrator t=2024-08-06T01:57:26.701234575Z level=info msg="Executing migration" id="create index UQE_dashboard_public_config_uid - v2"
+2024-08-06T01:57:26.706077270Z logger=migrator t=2024-08-06T01:57:26.705997288Z level=info msg="Executing migration" id="create index IDX_dashboard_public_config_org_id_dashboard_uid - v2"
+2024-08-06T01:57:26.710731028Z logger=migrator t=2024-08-06T01:57:26.710651006Z level=info msg="Executing migration" id="create index UQE_dashboard_public_config_access_token - v2"
+2024-08-06T01:57:26.714972410Z logger=migrator t=2024-08-06T01:57:26.71489943Z level=info msg="Executing migration" id="Rename table dashboard_public_config to dashboard_public - v2"
+2024-08-06T01:57:26.738880009Z logger=migrator t=2024-08-06T01:57:26.738796561Z level=info msg="Executing migration" id="create default alerting folders"
+2024-08-06T01:57:26.744064724Z logger=migrator t=2024-08-06T01:57:26.743968362Z level=info msg="Executing migration" id="create file table"
+2024-08-06T01:57:26.748297812Z logger=migrator t=2024-08-06T01:57:26.748222167Z level=info msg="Executing migration" id="file table idx: path natural pk"
+2024-08-06T01:57:26.752857462Z logger=migrator t=2024-08-06T01:57:26.75277223Z level=info msg="Executing migration" id="file table idx: parent_folder_path_hash fast folder retrieval"
+2024-08-06T01:57:26.759040286Z logger=migrator t=2024-08-06T01:57:26.758959412Z level=info msg="Executing migration" id="create file_meta table"
+2024-08-06T01:57:26.764935498Z logger=migrator t=2024-08-06T01:57:26.7648472Z level=info msg="Executing migration" id="file table idx: path key"
+2024-08-06T01:57:26.769809308Z logger=migrator t=2024-08-06T01:57:26.769732962Z level=info msg="Executing migration" id="set path collation in file table"
+2024-08-06T01:57:26.773407744Z logger=migrator t=2024-08-06T01:57:26.773349721Z level=info msg="Executing migration" id="managed permissions migration"
+2024-08-06T01:57:26.777407676Z logger=migrator t=2024-08-06T01:57:26.77734237Z level=info msg="Executing migration" id="managed folder permissions alert actions migration"
+2024-08-06T01:57:26.781001875Z logger=migrator t=2024-08-06T01:57:26.780944703Z level=info msg="Executing migration" id="RBAC action name migrator"
+2024-08-06T01:57:26.786032074Z logger=migrator t=2024-08-06T01:57:26.785959675Z level=info msg="Executing migration" id="Add UID column to playlist"
+2024-08-06T01:57:26.792142870Z logger=migrator t=2024-08-06T01:57:26.792065873Z level=info msg="Executing migration" id="Update uid column values in playlist"
+2024-08-06T01:57:26.796468523Z logger=migrator t=2024-08-06T01:57:26.796379694Z level=info msg="Executing migration" id="Add index for uid in playlist"
+2024-08-06T01:57:26.839246298Z logger=migrator t=2024-08-06T01:57:26.83916319Z level=info msg="Executing migration" id="update group index for alert rules"
+2024-08-06T01:57:26.843213812Z logger=migrator t=2024-08-06T01:57:26.843150559Z level=info msg="Executing migration" id="managed folder permissions alert actions repeated migration"
+2024-08-06T01:57:26.847277678Z logger=migrator t=2024-08-06T01:57:26.847183891Z level=info msg="migrations completed" performed=447 skipped=0 duration=2.70452179s
+2024-08-06T01:57:26.863025478Z logger=sqlstore t=2024-08-06T01:57:26.862945916Z level=info msg="Created default admin" user=admin
+2024-08-06T01:57:26.863155970Z logger=sqlstore t=2024-08-06T01:57:26.863038851Z level=info msg="Created default organization"
+2024-08-06T01:57:27.345700515Z logger=plugin.manager t=2024-08-06T01:57:27.345588736Z level=info msg="Plugin registered" pluginId=input
+2024-08-06T01:57:27.346093767Z logger=secrets t=2024-08-06T01:57:27.346043407Z level=info msg="Envelope encryption state" enabled=true currentprovider=secretKey.v1
+2024-08-06T01:57:27.348645663Z logger=query_data t=2024-08-06T01:57:27.348553077Z level=info msg="Query Service initialization"
+2024-08-06T01:57:27.354541397Z logger=live.push_http t=2024-08-06T01:57:27.354484426Z level=info msg="Live Push Gateway initialization"
+2024-08-06T01:57:27.491020043Z logger=ticker t=2024-08-06T01:57:27.490877889Z level=info msg=starting first_tick=2024-08-06T01:57:30Z
+2024-08-06T01:57:28.039629791Z logger=infra.usagestats.collector t=2024-08-06T01:57:28.039527749Z level=info msg="registering usage stat providers" usageStatsProvidersLen=2
+2024-08-06T01:57:28.095469383Z logger=provisioning.datasources t=2024-08-06T01:57:28.095378451Z level=info msg="inserting datasource from configuration " name=Prometheus uid=prometheus
+2024-08-06T01:57:28.149060217Z logger=provisioning.alerting t=2024-08-06T01:57:28.148973682Z level=info msg="starting to provision alerting"
+2024-08-06T01:57:28.149110867Z logger=provisioning.alerting t=2024-08-06T01:57:28.14898941Z level=info msg="finished to provision alerting"
+2024-08-06T01:57:28.535667462Z logger=ngalert t=2024-08-06T01:57:28.15043845Z level=info msg="warming cache for startup"
+2024-08-06T01:57:28.535722681Z logger=grafanaStorageLogger t=2024-08-06T01:57:28.335776642Z level=info msg="storage starting"
+2024-08-06T01:57:28.536532478Z logger=ngalert.multiorg.alertmanager t=2024-08-06T01:57:28.536401414Z level=info msg="starting MultiOrg Alertmanager"
+2024-08-06T01:57:28.638087089Z logger=http.server t=2024-08-06T01:57:28.637936019Z level=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+2024-08-06T01:57:30.103399348Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.103303637Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE5119717162
+2024-08-06T01:57:30.103469724Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.103398026Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=1 duration=1.340761ms size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.116667768Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.116503374Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE1000487675
+2024-08-06T01:57:30.116705285Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.11659626Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=1 duration=1.085965ms size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.123721229Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.123584494Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE2117564548
+2024-08-06T01:57:30.123757213Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.123661752Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=1 duration=1.26253ms size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.129361989Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.129304396Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE9161452450
+2024-08-06T01:57:30.129394488Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.12936249Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=892.027µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.133880341Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.133834879Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE9179961239
+2024-08-06T01:57:30.133894857Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.133868479Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=507.168µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.137985852Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.137921026Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE9817185152
+2024-08-06T01:57:30.138027447Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.137952152Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=493.965µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.142199888Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.142122329Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE0585353901
+2024-08-06T01:57:30.142240140Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.14218966Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=1 duration=1.084161ms size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.146986891Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.14691398Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE9498917425
+2024-08-06T01:57:30.147022925Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.14696981Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=987.208µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.151646514Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.151562304Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE4657304342
+2024-08-06T01:57:30.151680575Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.151617252Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=971.2µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.157081357Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.157013064Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE5890976334
+2024-08-06T01:57:30.157108675Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.157067462Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=908.256µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.162062556Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.161944936Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE0358132337
+2024-08-06T01:57:30.162135537Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.16200897Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=921µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.166428094Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.166351537Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE6667062634
+2024-08-06T01:57:30.166466272Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.166411915Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=912.635µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.171587062Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.171499455Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE8337888750
+2024-08-06T01:57:30.171628546Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.171556798Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=958.927µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.175832635Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.175744096Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE4027706733
+2024-08-06T01:57:30.175873518Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.175804134Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=946.966µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.180108391Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.180027506Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE1768126778
+2024-08-06T01:57:30.180160885Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.180082064Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=908.606µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.184812254Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.184728554Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE6133336332
+2024-08-06T01:57:30.184840856Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.184785907Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=918.865µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.189770162Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.189688105Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE3006653585
+2024-08-06T01:57:30.189807098Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.189742893Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=910.51µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.194000538Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.193936182Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE2226290790
+2024-08-06T01:57:30.194046921Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.193976364Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=821.992µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.205470707Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.205395533Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE3049563639
+2024-08-06T01:57:30.205507624Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.205455821Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=1 duration=1.038549ms size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.213019585Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.212937518Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE0892276211
+2024-08-06T01:57:30.213070486Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.213001753Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=1 duration=1.052785ms size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.236535375Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.236418946Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE3778936886
+2024-08-06T01:57:30.236567813Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.236470469Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=908.767µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.246658973Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.246568812Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE1063631321
+2024-08-06T01:57:30.246691411Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.246616066Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=891.216µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.250795561Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.250690723Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE5309913200
+2024-08-06T01:57:30.250836554Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.25072825Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=567.336µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.255016128Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.254968473Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE2002205868
+2024-08-06T01:57:30.255050119Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.254994169Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=447.942µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.259311540Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.259262212Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE6484154828
+2024-08-06T01:57:30.259345521Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.259312823Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=788.903µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.264513986Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.26445457Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE6228767079
+2024-08-06T01:57:30.264533561Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.26448249Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=506.207µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.269576882Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.269498863Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE5291434987
+2024-08-06T01:57:30.269618246Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.26956445Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=954.449µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.274824971Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.274737895Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE6355547455
+2024-08-06T01:57:30.274863980Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.274811476Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=1 duration=1.156912ms size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.286256410Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.286180745Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE7484395771
+2024-08-06T01:57:30.286290952Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.28623398Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=0 duration=934.653µs size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:57:30.537548510Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.537214461Z level=error msg="Error from access control system" error="no resolver found" accessErrorID=ACE0556081535
+2024-08-06T01:57:30.537683842Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:57:30.537450374Z level=info msg="Request Completed" method=POST path=/api/admin/provisioning/dashboards/reload status=403 remote_addr=[::1] time_ms=242 duration=242.139199ms size=169 referer= traceID=00000000000000000000000000000000 handler=/api/admin/provisioning/dashboards/reload
+2024-08-06T01:58:09.892168774Z logger=http.server t=2024-08-06T01:58:09.892048807Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T01:58:09.892234118Z logger=http.server t=2024-08-06T01:58:09.892079275Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T01:58:09.892244798Z logger=http.server t=2024-08-06T01:58:09.89208725Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T01:58:09.892297087Z logger=http.server t=2024-08-06T01:58:09.892139218Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T01:58:09.892330510Z logger=http.server t=2024-08-06T01:58:09.892182981Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T01:58:09.892341691Z logger=http.server t=2024-08-06T01:58:09.892197578Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T01:58:09.892377820Z logger=http.server t=2024-08-06T01:58:09.892309741Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T01:58:09.892407556Z logger=http.server t=2024-08-06T01:58:09.892340689Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T01:58:09.892418597Z logger=http.server t=2024-08-06T01:58:09.892350067Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T01:58:10.239515023Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:58:10.239366212Z level=error msg="Error from access control system" error="no resolver found"
+2024-08-06T01:59:39.579756897Z logger=http.server t=2024-08-06T01:59:39.579639511Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T01:59:39.579796008Z logger=http.server t=2024-08-06T01:59:39.579677661Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T01:59:39.579801208Z logger=http.server t=2024-08-06T01:59:39.579687329Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T01:59:39.580620742Z logger=http.server t=2024-08-06T01:59:39.580575569Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T01:59:39.580627354Z logger=http.server t=2024-08-06T01:59:39.580592911Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T01:59:39.580632133Z logger=http.server t=2024-08-06T01:59:39.580601347Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T01:59:39.583187714Z logger=http.server t=2024-08-06T01:59:39.583086989Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T01:59:39.583196159Z logger=http.server t=2024-08-06T01:59:39.583148061Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T01:59:39.583201179Z logger=http.server t=2024-08-06T01:59:39.583156927Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T01:59:39.663891345Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:59:39.663784799Z level=error msg="Error from access control system" error="no resolver found"
+2024-08-06T01:59:43.361749511Z logger=http.server t=2024-08-06T01:59:43.361568499Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T01:59:43.361798641Z logger=http.server t=2024-08-06T01:59:43.361612951Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T01:59:43.361807818Z logger=http.server t=2024-08-06T01:59:43.361627457Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T01:59:43.361829969Z logger=http.server t=2024-08-06T01:59:43.36171599Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T01:59:43.361845047Z logger=http.server t=2024-08-06T01:59:43.361764559Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T01:59:43.361857690Z logger=http.server t=2024-08-06T01:59:43.36181952Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T01:59:43.369403898Z logger=http.server t=2024-08-06T01:59:43.369300518Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T01:59:43.369421811Z logger=http.server t=2024-08-06T01:59:43.369350119Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T01:59:43.369433372Z logger=http.server t=2024-08-06T01:59:43.369373131Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T01:59:43.639996927Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:59:43.639882097Z level=error msg="Error from access control system" error="no resolver found"
+2024-08-06T01:59:44.846742220Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:59:44.846643129Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=10.10.110.11 time_ms=1 duration=1.164266ms size=0 referer= traceID=00000000000000000000000000000000 handler=/api/live/ws
+2024-08-06T01:59:50.017801877Z logger=http.server t=2024-08-06T01:59:50.017675886Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T01:59:50.017854964Z logger=http.server t=2024-08-06T01:59:50.017707384Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T01:59:50.017864552Z logger=http.server t=2024-08-06T01:59:50.017714888Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T01:59:50.017997797Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:59:50.017873128Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=10.10.110.11 traceID=00000000000000000000000000000000
+2024-08-06T01:59:50.018043731Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:59:50.017942034Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rancher-etcd-nodes-1 status=404 remote_addr=10.10.110.11 time_ms=1 duration=1.952712ms size=78 referer=https://harvester.calgaryserver.ca/dashboard/c/local/explorer traceID=00000000000000000000000000000000 handler=/api/dashboards/uid/:uid
+2024-08-06T01:59:50.020436751Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:59:50.020346755Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=10.10.110.11 traceID=00000000000000000000000000000000
+2024-08-06T01:59:50.020473448Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:59:50.020375588Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rancher-k8s-components-nodes-1 status=404 remote_addr=10.10.110.11 time_ms=0 duration=806.429µs size=78 referer=https://harvester.calgaryserver.ca/dashboard/c/local/explorer traceID=00000000000000000000000000000000 handler=/api/dashboards/uid/:uid
+2024-08-06T01:59:50.021321043Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:59:50.021249912Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=10.10.110.11 traceID=00000000000000000000000000000000
+2024-08-06T01:59:50.021343704Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:59:50.021279256Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rancher-k8s-components-1 status=404 remote_addr=10.10.110.11 time_ms=0 duration=782.826µs size=78 referer=https://harvester.calgaryserver.ca/dashboard/c/local/explorer traceID=00000000000000000000000000000000 handler=/api/dashboards/uid/:uid
+2024-08-06T01:59:50.021493499Z logger=http.server t=2024-08-06T01:59:50.021428299Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T01:59:50.021510049Z logger=http.server t=2024-08-06T01:59:50.021444389Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T01:59:50.021518325Z logger=http.server t=2024-08-06T01:59:50.021451001Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T01:59:50.022208801Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:59:50.022160863Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=10.10.110.11 traceID=00000000000000000000000000000000
+2024-08-06T01:59:50.022256489Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:59:50.022187061Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rancher-etcd-1 status=404 remote_addr=10.10.110.11 time_ms=2 duration=2.07119ms size=78 referer=https://harvester.calgaryserver.ca/dashboard/c/local/explorer traceID=00000000000000000000000000000000 handler=/api/dashboards/uid/:uid
+2024-08-06T01:59:51.138793947Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T01:59:51.138627451Z level=error msg="Error from access control system" error="no resolver found"
+2024-08-06T02:00:07.237578639Z logger=http.server t=2024-08-06T02:00:07.23740693Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:00:07.237657665Z logger=http.server t=2024-08-06T02:00:07.23745762Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:00:07.237670441Z logger=http.server t=2024-08-06T02:00:07.237472059Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:00:07.240272118Z logger=http.server t=2024-08-06T02:00:07.240159897Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:00:07.240302348Z logger=http.server t=2024-08-06T02:00:07.240209765Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:00:07.240313550Z logger=http.server t=2024-08-06T02:00:07.240225065Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:00:38.904507600Z logger=http.server t=2024-08-06T02:00:38.904377769Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:00:38.904565361Z logger=http.server t=2024-08-06T02:00:38.904426684Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:00:38.904576863Z logger=http.server t=2024-08-06T02:00:38.90444547Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:00:38.904692766Z logger=http.server t=2024-08-06T02:00:38.904595369Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:00:38.904723275Z logger=http.server t=2024-08-06T02:00:38.90464273Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:00:38.904732673Z logger=http.server t=2024-08-06T02:00:38.904657719Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:01:14.705319902Z logger=http.server t=2024-08-06T02:01:14.705185838Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:01:14.705367312Z logger=http.server t=2024-08-06T02:01:14.705234701Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:01:14.705374185Z logger=http.server t=2024-08-06T02:01:14.705249118Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:01:14.705601586Z logger=http.server t=2024-08-06T02:01:14.705502458Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:01:14.705609631Z logger=http.server t=2024-08-06T02:01:14.705548245Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:01:14.705615893Z logger=http.server t=2024-08-06T02:01:14.705565317Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:11:49.397619421Z logger=http.server t=2024-08-06T02:11:49.397478508Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:11:49.397689071Z logger=http.server t=2024-08-06T02:11:49.397509907Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:11:49.397699240Z logger=http.server t=2024-08-06T02:11:49.397518383Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:11:49.400480796Z logger=http.server t=2024-08-06T02:11:49.400408782Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:11:49.400501595Z logger=http.server t=2024-08-06T02:11:49.400423008Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:11:49.400511673Z logger=http.server t=2024-08-06T02:11:49.400429791Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:12:27.447329680Z logger=sqlstore t=2024-08-06T02:12:27.447158211Z level=info msg="Database locked, sleeping then retrying" error="database is locked" retry=0
+2024-08-06T02:15:44.260785625Z logger=http.server t=2024-08-06T02:15:44.260670326Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:15:44.260837704Z logger=http.server t=2024-08-06T02:15:44.260700593Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:15:44.260847663Z logger=http.server t=2024-08-06T02:15:44.260707046Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:15:44.260929249Z logger=http.server t=2024-08-06T02:15:44.260855108Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:15:44.260957944Z logger=http.server t=2024-08-06T02:15:44.260895334Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:15:44.260975497Z logger=http.server t=2024-08-06T02:15:44.260910042Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:16:48.752922609Z logger=http.server t=2024-08-06T02:16:48.752749691Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:16:48.752982863Z logger=http.server t=2024-08-06T02:16:48.75279639Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:16:48.752992281Z logger=http.server t=2024-08-06T02:16:48.752811278Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:16:48.758670154Z logger=http.server t=2024-08-06T02:16:48.75852587Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:16:48.758704239Z logger=http.server t=2024-08-06T02:16:48.758586796Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:16:48.758713757Z logger=http.server t=2024-08-06T02:16:48.758605571Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:18:59.819282237Z logger=http.server t=2024-08-06T02:18:59.819148555Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:18:59.819347050Z logger=http.server t=2024-08-06T02:18:59.819203869Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:18:59.819356517Z logger=http.server t=2024-08-06T02:18:59.819218948Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:18:59.820086565Z logger=http.server t=2024-08-06T02:18:59.819974123Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:18:59.820143632Z logger=http.server t=2024-08-06T02:18:59.820019478Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:18:59.820161196Z logger=http.server t=2024-08-06T02:18:59.820033625Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:19:45.714132481Z logger=http.server t=2024-08-06T02:19:45.714001294Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:19:45.714180632Z logger=http.server t=2024-08-06T02:19:45.714056729Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:19:45.714192154Z logger=http.server t=2024-08-06T02:19:45.714072028Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:19:45.714213514Z logger=http.server t=2024-08-06T02:19:45.714019629Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:19:45.714242328Z logger=http.server t=2024-08-06T02:19:45.714141058Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:19:45.714252087Z logger=http.server t=2024-08-06T02:19:45.714161005Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:36:29.579048606Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T02:36:29.578947764Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=10.52.0.0 traceID=00000000000000000000000000000000
+2024-08-06T02:36:29.579121214Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T02:36:29.579010223Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rancher-k8s-components-nodes-1 status=404 remote_addr=10.52.0.0 time_ms=1 duration=1.490162ms size=78 referer=https://harvester.calgaryserver.ca/dashboard/c/local/explorer traceID=00000000000000000000000000000000 handler=/api/dashboards/uid/:uid
+2024-08-06T02:36:29.580467042Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T02:36:29.580414452Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=10.10.110.11 traceID=00000000000000000000000000000000
+2024-08-06T02:36:29.580479275Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T02:36:29.580449238Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rancher-k8s-components-1 status=404 remote_addr=10.10.110.11 time_ms=1 duration=1.067438ms size=78 referer=https://harvester.calgaryserver.ca/dashboard/c/local/explorer traceID=00000000000000000000000000000000 handler=/api/dashboards/uid/:uid
+2024-08-06T02:36:29.580604513Z logger=http.server t=2024-08-06T02:36:29.580559678Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:36:29.580610334Z logger=http.server t=2024-08-06T02:36:29.580578103Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:36:29.580614452Z logger=http.server t=2024-08-06T02:36:29.580586619Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:36:29.585929704Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T02:36:29.585863909Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=10.52.0.0 traceID=00000000000000000000000000000000
+2024-08-06T02:36:29.585967576Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T02:36:29.585910968Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rancher-etcd-1 status=404 remote_addr=10.52.0.0 time_ms=6 duration=6.431032ms size=78 referer=https://harvester.calgaryserver.ca/dashboard/c/local/explorer traceID=00000000000000000000000000000000 handler=/api/dashboards/uid/:uid
+2024-08-06T02:36:29.641271072Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T02:36:29.641168777Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=10.52.0.0 traceID=00000000000000000000000000000000
+2024-08-06T02:36:29.641335013Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T02:36:29.64125429Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rancher-etcd-nodes-1 status=404 remote_addr=10.52.0.0 time_ms=61 duration=61.44047ms size=78 referer=https://harvester.calgaryserver.ca/dashboard/c/local/explorer traceID=00000000000000000000000000000000 handler=/api/dashboards/uid/:uid
+2024-08-06T02:36:29.641817591Z logger=http.server t=2024-08-06T02:36:29.641732449Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:36:29.641851044Z logger=http.server t=2024-08-06T02:36:29.641766534Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:36:29.641862796Z logger=http.server t=2024-08-06T02:36:29.641774829Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:36:29.808484265Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T02:36:29.808341012Z level=error msg="Error from access control system" error="no resolver found"
+2024-08-06T02:36:30.554839807Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T02:36:30.554677579Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=10.10.110.11 time_ms=1 duration=1.269022ms size=0 referer= traceID=00000000000000000000000000000000 handler=/api/live/ws
+2024-08-06T02:36:30.595106964Z logger=http.server t=2024-08-06T02:36:30.595002345Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:36:30.595144055Z logger=http.server t=2024-08-06T02:36:30.595038244Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:36:30.595148854Z logger=http.server t=2024-08-06T02:36:30.595053292Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:36:30.629930055Z logger=live t=2024-08-06T02:36:30.629815698Z level=info msg="Initialized channel handler" channel=grafana/dashboard/uid/rancher-cluster-nodes-1 address=grafana/dashboard/uid/rancher-cluster-nodes-1
+2024-08-06T02:49:04.338110199Z logger=http.server t=2024-08-06T02:49:04.337992438Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:49:04.338156136Z logger=http.server t=2024-08-06T02:49:04.338022955Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:49:04.338165674Z logger=http.server t=2024-08-06T02:49:04.33803097Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:49:04.341394191Z logger=http.server t=2024-08-06T02:49:04.341308019Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:49:04.341440548Z logger=http.server t=2024-08-06T02:49:04.341320873Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:49:04.341449816Z logger=http.server t=2024-08-06T02:49:04.341327235Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:50:25.461178311Z logger=http.server t=2024-08-06T02:50:25.461043587Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:50:25.461238594Z logger=http.server t=2024-08-06T02:50:25.461089313Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:50:25.461251228Z logger=http.server t=2024-08-06T02:50:25.461104051Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:50:25.462051764Z logger=http.server t=2024-08-06T02:50:25.461930236Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:50:25.462095747Z logger=http.server t=2024-08-06T02:50:25.461972535Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:50:25.462106056Z logger=http.server t=2024-08-06T02:50:25.461989297Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:58:27.567809299Z logger=http.server t=2024-08-06T02:58:27.567636844Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:58:27.567869351Z logger=http.server t=2024-08-06T02:58:27.567666901Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:58:27.567879490Z logger=http.server t=2024-08-06T02:58:27.567673944Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:58:27.571519339Z logger=http.server t=2024-08-06T02:58:27.571430983Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:58:27.571563382Z logger=http.server t=2024-08-06T02:58:27.571456712Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:58:27.571600792Z logger=http.server t=2024-08-06T02:58:27.571463374Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:58:46.090602766Z logger=http.server t=2024-08-06T02:58:46.090473884Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:58:46.090661226Z logger=http.server t=2024-08-06T02:58:46.09051977Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:58:46.090672437Z logger=http.server t=2024-08-06T02:58:46.090536321Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:58:46.090983060Z logger=http.server t=2024-08-06T02:58:46.090843228Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:58:46.091000383Z logger=http.server t=2024-08-06T02:58:46.090890877Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:58:46.091010532Z logger=http.server t=2024-08-06T02:58:46.090905084Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:59:47.637356578Z logger=http.server t=2024-08-06T02:59:47.637226193Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:59:47.637415739Z logger=http.server t=2024-08-06T02:59:47.63725651Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:59:47.637427321Z logger=http.server t=2024-08-06T02:59:47.637262912Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T02:59:47.641349029Z logger=http.server t=2024-08-06T02:59:47.64128589Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T02:59:47.641389485Z logger=http.server t=2024-08-06T02:59:47.641303032Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T02:59:47.641399584Z logger=http.server t=2024-08-06T02:59:47.641316347Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T03:00:15.534175963Z logger=http.server t=2024-08-06T03:00:15.534090973Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T03:00:15.534214255Z logger=http.server t=2024-08-06T03:00:15.534122262Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T03:00:15.534218693Z logger=http.server t=2024-08-06T03:00:15.534129125Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T03:00:15.536167955Z logger=http.server t=2024-08-06T03:00:15.536078426Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T03:00:15.536198993Z logger=http.server t=2024-08-06T03:00:15.536129202Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T03:00:15.536220062Z logger=http.server t=2024-08-06T03:00:15.536146264Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T03:00:51.747402701Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T03:00:51.747268369Z level=error msg="Error from access control system" error="no resolver found"
+2024-08-06T12:47:19.353522778Z logger=http.server t=2024-08-06T12:47:19.353398333Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T12:47:19.353573544Z logger=http.server t=2024-08-06T12:47:19.353430975Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T12:47:19.353582972Z logger=http.server t=2024-08-06T12:47:19.353438238Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T12:47:19.354264051Z logger=http.server t=2024-08-06T12:47:19.354189239Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T12:47:19.354275202Z logger=http.server t=2024-08-06T12:47:19.354224907Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T12:47:19.354283407Z logger=http.server t=2024-08-06T12:47:19.354235557Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T12:47:19.356361890Z logger=http.server t=2024-08-06T12:47:19.356246802Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T12:47:19.356436441Z logger=http.server t=2024-08-06T12:47:19.356261941Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T12:47:19.356445939Z logger=http.server t=2024-08-06T12:47:19.356269054Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T12:47:19.513402863Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T12:47:19.513225748Z level=error msg="Error from access control system" error="no resolver found"
+2024-08-06T12:47:20.725061964Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T12:47:20.724912612Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=10.10.110.11 time_ms=1 duration=1.975828ms size=0 referer= traceID=00000000000000000000000000000000 handler=/api/live/ws
+2024-08-06T12:47:20.801963724Z logger=http.server t=2024-08-06T12:47:20.801788583Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T12:47:20.802019640Z logger=http.server t=2024-08-06T12:47:20.801827486Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T12:47:20.802031212Z logger=http.server t=2024-08-06T12:47:20.801842214Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:40:59.597062644Z logger=http.server t=2024-08-06T13:40:59.596925013Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:40:59.597128158Z logger=http.server t=2024-08-06T13:40:59.596969177Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:40:59.597168204Z logger=http.server t=2024-08-06T13:40:59.596983474Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:42:05.439281846Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T13:42:05.439077328Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=10.10.110.11 traceID=00000000000000000000000000000000
+2024-08-06T13:42:05.439314127Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T13:42:05.439210921Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rancher-k8s-components-nodes-1 status=404 remote_addr=10.10.110.11 time_ms=2 duration=2.348884ms size=78 referer=https://harvester.calgaryserver.ca/dashboard/c/local/explorer traceID=00000000000000000000000000000000 handler=/api/dashboards/uid/:uid
+2024-08-06T13:42:05.441234669Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T13:42:05.441173202Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=10.52.0.0 traceID=00000000000000000000000000000000
+2024-08-06T13:42:05.441247634Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T13:42:05.441196477Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rancher-etcd-nodes-1 status=404 remote_addr=10.52.0.0 time_ms=0 duration=907.941µs size=78 referer=https://harvester.calgaryserver.ca/dashboard/c/local/explorer traceID=00000000000000000000000000000000 handler=/api/dashboards/uid/:uid
+2024-08-06T13:42:05.442943499Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T13:42:05.442858137Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=10.52.0.0 traceID=00000000000000000000000000000000
+2024-08-06T13:42:05.442966393Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T13:42:05.442909655Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rancher-etcd-1 status=404 remote_addr=10.52.0.0 time_ms=1 duration=1.952532ms size=78 referer=https://harvester.calgaryserver.ca/dashboard/c/local/explorer traceID=00000000000000000000000000000000 handler=/api/dashboards/uid/:uid
+2024-08-06T13:42:05.444122174Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T13:42:05.444038015Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=10.10.110.11 traceID=00000000000000000000000000000000
+2024-08-06T13:42:05.444218367Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T13:42:05.444101786Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rancher-k8s-components-1 status=404 remote_addr=10.10.110.11 time_ms=2 duration=2.318837ms size=78 referer=https://harvester.calgaryserver.ca/dashboard/c/local/explorer traceID=00000000000000000000000000000000 handler=/api/dashboards/uid/:uid
+2024-08-06T13:42:05.451155371Z logger=http.server t=2024-08-06T13:42:05.451067204Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:42:05.635604552Z logger=http.server t=2024-08-06T13:42:05.635423428Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:42:05.635657201Z logger=http.server t=2024-08-06T13:42:05.635485165Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:42:05.635668994Z logger=http.server t=2024-08-06T13:42:05.453395138Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:42:05.635721323Z logger=http.server t=2024-08-06T13:42:05.635581528Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:42:05.635732725Z logger=http.server t=2024-08-06T13:42:05.635629579Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:42:05.758536150Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T13:42:05.758323837Z level=error msg="Error from access control system" error="no resolver found"
+2024-08-06T13:42:06.587419363Z logger=http.server t=2024-08-06T13:42:06.587265661Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:42:06.587464288Z logger=http.server t=2024-08-06T13:42:06.587308022Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:42:06.587473505Z logger=http.server t=2024-08-06T13:42:06.587321958Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:42:06.633395294Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T13:42:06.633270187Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=10.52.0.0 time_ms=1 duration=1.090417ms size=0 referer= traceID=00000000000000000000000000000000 handler=/api/live/ws
+2024-08-06T13:43:33.620686048Z logger=http.server t=2024-08-06T13:43:33.620546253Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:43:33.620738688Z logger=http.server t=2024-08-06T13:43:33.620596548Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:43:33.620750921Z logger=http.server t=2024-08-06T13:43:33.620610956Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:43:33.620773514Z logger=http.server t=2024-08-06T13:43:33.620623129Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:43:33.620784384Z logger=http.server t=2024-08-06T13:43:33.620653767Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:43:33.620793031Z logger=http.server t=2024-08-06T13:43:33.620671801Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:44:56.127188984Z logger=http.server t=2024-08-06T13:44:56.126971782Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:44:56.127243477Z logger=http.server t=2024-08-06T13:44:56.12700773Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:44:56.127254869Z logger=http.server t=2024-08-06T13:44:56.127015385Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:44:56.127455319Z logger=http.server t=2024-08-06T13:44:56.127357353Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:44:56.127493471Z logger=http.server t=2024-08-06T13:44:56.12738734Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:44:56.127528467Z logger=http.server t=2024-08-06T13:44:56.127395776Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:46:27.703918623Z logger=http.server t=2024-08-06T13:46:27.703770322Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:46:27.703988546Z logger=http.server t=2024-08-06T13:46:27.703815848Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:46:27.704000508Z logger=http.server t=2024-08-06T13:46:27.703830386Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:46:27.708911070Z logger=http.server t=2024-08-06T13:46:27.708823343Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:46:27.708946737Z logger=http.server t=2024-08-06T13:46:27.708847639Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:46:27.708958680Z logger=http.server t=2024-08-06T13:46:27.708854472Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:46:56.188931857Z logger=http.server t=2024-08-06T13:46:56.188805889Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:46:56.188978436Z logger=http.server t=2024-08-06T13:46:56.188834092Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:46:56.188983135Z logger=http.server t=2024-08-06T13:46:56.188844632Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:46:56.189003884Z logger=http.server t=2024-08-06T13:46:56.188791682Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:46:56.189018331Z logger=http.server t=2024-08-06T13:46:56.188912821Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:46:56.189022910Z logger=http.server t=2024-08-06T13:46:56.188925896Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:47:32.735662540Z logger=http.server t=2024-08-06T13:47:32.735546199Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:47:32.735716382Z logger=http.server t=2024-08-06T13:47:32.735577529Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:47:32.735726351Z logger=http.server t=2024-08-06T13:47:32.735586085Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:47:32.738381655Z logger=http.server t=2024-08-06T13:47:32.738284912Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:47:32.738408536Z logger=http.server t=2024-08-06T13:47:32.738319217Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:47:32.738446769Z logger=http.server t=2024-08-06T13:47:32.738334416Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:49:49.677963408Z logger=http.server t=2024-08-06T13:49:49.677829334Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:49:49.678015367Z logger=http.server t=2024-08-06T13:49:49.677873758Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:49:49.678025446Z logger=http.server t=2024-08-06T13:49:49.677889578Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:49:49.678934018Z logger=http.server t=2024-08-06T13:49:49.67884536Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:49:49.678952534Z logger=http.server t=2024-08-06T13:49:49.678891378Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:49:49.678979615Z logger=http.server t=2024-08-06T13:49:49.678905905Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:51:23.035692627Z logger=http.server t=2024-08-06T13:51:22.807080841Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:51:23.035751719Z logger=http.server t=2024-08-06T13:51:23.035607696Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:51:23.035763551Z logger=http.server t=2024-08-06T13:51:23.035635418Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:51:23.137864784Z logger=http.server t=2024-08-06T13:51:23.137675605Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:51:23.137912134Z logger=http.server t=2024-08-06T13:51:23.137716092Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:51:23.137921381Z logger=http.server t=2024-08-06T13:51:23.137730329Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:52:43.321120062Z logger=http.server t=2024-08-06T13:52:43.320999664Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:52:43.321163834Z logger=http.server t=2024-08-06T13:52:43.321029871Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:52:43.321170467Z logger=http.server t=2024-08-06T13:52:43.321037606Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:52:43.323083606Z logger=http.server t=2024-08-06T13:52:43.32298525Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:52:43.323139131Z logger=http.server t=2024-08-06T13:52:43.323031728Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:52:43.323177373Z logger=http.server t=2024-08-06T13:52:43.323047979Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:52:59.242654657Z logger=http.server t=2024-08-06T13:52:59.242509061Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:52:59.242718648Z logger=http.server t=2024-08-06T13:52:59.242567011Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:52:59.242729418Z logger=http.server t=2024-08-06T13:52:59.242588922Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:52:59.438142805Z logger=http.server t=2024-08-06T13:52:59.437990858Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:52:59.438183953Z logger=http.server t=2024-08-06T13:52:59.438031905Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:52:59.438193251Z logger=http.server t=2024-08-06T13:52:59.438046192Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:53:21.459398285Z logger=http.server t=2024-08-06T13:53:21.459284991Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:53:21.459456505Z logger=http.server t=2024-08-06T13:53:21.459327872Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:53:21.459468117Z logger=http.server t=2024-08-06T13:53:21.45934271Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:53:21.468615061Z logger=http.server t=2024-08-06T13:53:21.468506024Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:53:21.468635669Z logger=http.server t=2024-08-06T13:53:21.468544156Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:53:21.468646821Z logger=http.server t=2024-08-06T13:53:21.468558564Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:53:53.143162690Z logger=http.server t=2024-08-06T13:53:53.142976177Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:53:53.143225428Z logger=http.server t=2024-08-06T13:53:53.143015772Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:53:53.143235507Z logger=http.server t=2024-08-06T13:53:53.143029808Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T13:53:53.149401804Z logger=http.server t=2024-08-06T13:53:53.149321602Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T13:53:53.149441359Z logger=http.server t=2024-08-06T13:53:53.149338464Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T13:53:53.149446268Z logger=http.server t=2024-08-06T13:53:53.149346289Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T14:10:11.010903635Z logger=http.server t=2024-08-06T14:10:11.010740286Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T14:10:11.010967136Z logger=http.server t=2024-08-06T14:10:11.01078982Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T14:10:11.010980070Z logger=http.server t=2024-08-06T14:10:11.010806191Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T14:10:11.011648907Z logger=http.server t=2024-08-06T14:10:11.011562143Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T14:10:11.011677852Z logger=http.server t=2024-08-06T14:10:11.011589324Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T14:10:11.011682982Z logger=http.server t=2024-08-06T14:10:11.011596107Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T14:10:11.012015622Z logger=http.server t=2024-08-06T14:10:11.01193545Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T14:10:11.012047593Z logger=http.server t=2024-08-06T14:10:11.011961429Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T14:10:11.012051931Z logger=http.server t=2024-08-06T14:10:11.011969385Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T14:10:11.843256707Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T14:10:11.843082637Z level=error msg="Error from access control system" error="no resolver found"
+2024-08-06T14:10:13.314605360Z logger=http.server t=2024-08-06T14:10:13.314482718Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T14:10:13.314645927Z logger=http.server t=2024-08-06T14:10:13.314517984Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T14:10:13.314657459Z logger=http.server t=2024-08-06T14:10:13.314532452Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T14:10:13.993922668Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T14:10:13.993729292Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=10.52.0.0 time_ms=1 duration=1.870354ms size=0 referer= traceID=00000000000000000000000000000000 handler=/api/live/ws
+2024-08-06T14:10:48.724776215Z logger=http.server t=2024-08-06T14:10:48.724624939Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T14:10:48.724838563Z logger=http.server t=2024-08-06T14:10:48.724664043Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T14:10:48.724848642Z logger=http.server t=2024-08-06T14:10:48.724673471Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T14:10:48.725593874Z logger=http.server t=2024-08-06T14:10:48.725479488Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T14:10:48.725639391Z logger=http.server t=2024-08-06T14:10:48.725500948Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T14:10:48.725648929Z logger=http.server t=2024-08-06T14:10:48.725509915Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T14:10:48.729762984Z logger=http.server t=2024-08-06T14:10:48.729679045Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T14:10:48.729785507Z logger=http.server t=2024-08-06T14:10:48.729710274Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T14:10:48.729789795Z logger=http.server t=2024-08-06T14:10:48.72972949Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T14:10:49.688803241Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T14:10:49.688673285Z level=error msg="Error from access control system" error="no resolver found"
+2024-08-06T14:10:50.884893334Z logger=http.server t=2024-08-06T14:10:50.884775651Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T14:10:50.884932358Z logger=http.server t=2024-08-06T14:10:50.884812962Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T14:10:50.884938219Z logger=http.server t=2024-08-06T14:10:50.88482801Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T14:10:51.715055334Z logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2024-08-06T14:10:51.714912052Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=10.10.110.11 time_ms=1 duration=1.91065ms size=0 referer= traceID=00000000000000000000000000000000 handler=/api/live/ws
+2024-08-06T14:10:53.150595412Z logger=live t=2024-08-06T14:10:53.150416082Z level=info msg="Initialized channel handler" channel=grafana/dashboard/uid/harvester-vm-dashboard-1 address=grafana/dashboard/uid/harvester-vm-dashboard-1
+2024-08-06T14:11:27.208022110Z logger=http.server t=2024-08-06T14:11:27.207856146Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T14:11:27.208086312Z logger=http.server t=2024-08-06T14:11:27.20788445Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T14:11:27.208097814Z logger=http.server t=2024-08-06T14:11:27.207892064Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T14:11:27.209455015Z logger=http.server t=2024-08-06T14:11:27.209381757Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T14:11:27.209464012Z logger=http.server t=2024-08-06T14:11:27.209422263Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T14:11:27.209496554Z logger=http.server t=2024-08-06T14:11:27.209439757Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization
+2024-08-06T14:11:27.236380703Z logger=http.server t=2024-08-06T14:11:27.236281796Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:create scope=annotations:type:organization
+2024-08-06T14:11:27.236407855Z logger=http.server t=2024-08-06T14:11:27.236323395Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:delete scope=annotations:type:organization
+2024-08-06T14:11:27.236426540Z logger=http.server t=2024-08-06T14:11:27.236337611Z level=warn msg="Failed to evaluate permission" err="no resolver found" action=annotations:write scope=annotations:type:organization

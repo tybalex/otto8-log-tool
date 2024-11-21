@@ -1,0 +1,855 @@
+apiVersion: v1
+items:
+- apiVersion: apps/v1
+  kind: StatefulSet
+  metadata:
+    annotations:
+      banzaicloud.com/last-applied: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAb3JpZ2luYWzEVE9v1D4Q/S5zdnaz+fUH3dwqQAiJllX5c0E9zDqTXauObexxaKjy3dEklN1WRe0Jbrbzxn7vzbzcQkeMDTJCfQsWt2STrDCExXXeUnTElBbGL41LjE4T1LDH2FNiikVDLWbLBfXkuGA0liKoR6oddlJ5Dzcq+HX85IWCSwGn1zUyWyqs3+2M2xVpSEwdKPDfHcVLaimS05Sg/ioyzBeKyXgHNdxV0A2Tk7O02KL7gUZbnxth2a/Qhj2uQIH2jqO38nzNMZOCa+MaqOGNMPt0TOwxAaAgG4GvX66r5hTXRVU1WJw0/62LddOeFnjy/ymW1JQnL1oYr0YFKZAW6yMFazQmqFcKElnS7KN86JD1/v3fbdGogKkLFpkmCv9uWI4ckt6gcRTnJpsOd4KP6PSe4vLw4nRD9Jkp1n25qBYlqBm+ydZuvDV6gBretReeN5ESOT709AHNSMnnOA3WLVjTGZ5WOmSoYVWWMoIddT4O8/7cyIBH+pYpHUOr+8hqAo4Kem9zR+c+O55ldbLcIO+hhiWxXh6pObDU3rVmV8zVE01sPjg7zFM7qgf39BiXwafHVRbBJ8MSlvFqvJLh0zkaHl55x3TDoqFNb6PPAeqqLEsFMbuzdOHdpfd8l5Pp7HOS4KzKspS+UeyNpjOthcrFMzM/S5q9mFWeYxAOz/tpjH+wSCyhLvDw2kiqxqedGBXk0CDTR47ItBukTGQxcp4D0KOxuLV0+Tu7Ys5hM44/AwAA//9QSwcIk02uWzQCAABpBQAAUEsBAhQAFAAIAAgAAAAAAJNNrls0AgAAaQUAAAgAAAAAAAAAAAAAAAAAAAAAAG9yaWdpbmFsUEsFBgAAAAABAAEANgAAAGoCAAAAAA==
+    creationTimestamp: "2024-08-06T01:56:46Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/instance: harvester-default-event-tailer
+      app.kubernetes.io/name: event-tailer
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:banzaicloud.com/last-applied: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"9792d8a9-22da-4d39-9df8-a458a0ed046f"}: {}
+        f:spec:
+          f:persistentVolumeClaimRetentionPolicy:
+            .: {}
+            f:whenDeleted: {}
+            f:whenScaled: {}
+          f:podManagementPolicy: {}
+          f:replicas: {}
+          f:revisionHistoryLimit: {}
+          f:selector: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:app.kubernetes.io/instance: {}
+                f:app.kubernetes.io/name: {}
+            f:spec:
+              f:containers:
+                k:{"name":"event-tailer"}:
+                  .: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources:
+                    .: {}
+                    f:limits:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/eventrouter"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/var/pos"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:dnsPolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext:
+                .: {}
+                f:fsGroup: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:volumes:
+                .: {}
+                k:{"name":"config-volume"}:
+                  .: {}
+                  f:configMap:
+                    .: {}
+                    f:defaultMode: {}
+                    f:name: {}
+                  f:name: {}
+                k:{"name":"event-tailer-position"}:
+                  .: {}
+                  f:emptyDir: {}
+                  f:name: {}
+          f:updateStrategy:
+            f:rollingUpdate:
+              .: {}
+              f:partition: {}
+            f:type: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T01:56:46Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:availableReplicas: {}
+          f:collisionCount: {}
+          f:currentReplicas: {}
+          f:currentRevision: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updateRevision: {}
+          f:updatedReplicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:56:48Z"
+    name: harvester-default-event-tailer
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: logging-extensions.banzaicloud.io/v1alpha1
+      controller: true
+      kind: EventTailer
+      name: harvester-default
+      uid: 9792d8a9-22da-4d39-9df8-a458a0ed046f
+    resourceVersion: "7221"
+    uid: d2822e56-d36c-49db-ad9c-f5f742d646e4
+  spec:
+    persistentVolumeClaimRetentionPolicy:
+      whenDeleted: Retain
+      whenScaled: Retain
+    podManagementPolicy: OrderedReady
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app.kubernetes.io/instance: harvester-default-event-tailer
+        app.kubernetes.io/name: event-tailer
+    serviceName: "null"
+    template:
+      metadata:
+        creationTimestamp: "null"
+        labels:
+          app.kubernetes.io/instance: harvester-default-event-tailer
+          app.kubernetes.io/name: event-tailer
+      spec:
+        containers:
+        - image: rancher/harvester-eventrouter:v0.2.0
+          imagePullPolicy: IfNotPresent
+          name: event-tailer
+          resources:
+            limits:
+              cpu: 100m
+              memory: 100Mi
+            requests:
+              cpu: 20m
+              memory: 20Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /etc/eventrouter
+            name: config-volume
+            readOnly: true
+          - mountPath: /var/pos
+            name: event-tailer-position
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext:
+          fsGroup: 2000
+          runAsNonRoot: true
+          runAsUser: 1000
+        serviceAccount: harvester-default-event-tailer
+        serviceAccountName: harvester-default-event-tailer
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - configMap:
+            defaultMode: 420
+            name: harvester-default-event-tailer
+          name: config-volume
+        - emptyDir: {}
+          name: event-tailer-position
+    updateStrategy:
+      rollingUpdate:
+        partition: 0
+      type: RollingUpdate
+  status:
+    availableReplicas: 1
+    collisionCount: 0
+    currentReplicas: 1
+    currentRevision: harvester-default-event-tailer-86d5bc84cb
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+    updateRevision: harvester-default-event-tailer-86d5bc84cb
+    updatedReplicas: 1
+- apiVersion: apps/v1
+  kind: StatefulSet
+  metadata:
+    annotations:
+      banzaicloud.com/last-applied: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAb3JpZ2luYWzMVU1z2zYQ/S97BkRSoWWVMzm4+Wg7E7saO+ml4+lA4FJCDWIRfChRPPzvHZC0Ply71TiX3CBo33L37duHe2gxiFoEAdU9aLFE7dNJWDu5i0t0BgP6iaJMUmvJoAlQQaMjmlADeyKuFUassObLLVTghJFrdFzTaqXMiqdQLmKtwpNYI1o8SN8xGG+ez8P3taRYb4VMAClC0LiL91sfsAUG9MWgu8YGHRqJHqo/U6/qD3RekYEKRsRkKcw3oaSmWKfKNsUSgyiAgSQTHGmNDqrgIjK4U6aGCj4MSDihaGAQVcLM5Kt5k5cln8lZzsvzYsl/anDO57P5tJ41500xbaC77Rh4izINxlJ92TPcogkL0komnn93NTqsr1HUW2DgUaMM5BKgFUGuP/xgg00NodsoiVf/x9XDgPkaRa3Re2AQsLVaBOz7+4H1ezC3JBuhDLpRc26VDgeVcAIG2fg707TKKKav8PRx7iiIgFysEBgU+eN7r74Nf5Tzs/NZDrcM0Gz6L401/fzp/ft3138tLj7+Cgw2Qsd0my1j06SaulsGqk3pd01nrXKOXKJivwsP06g2xaQoJzMutFUG+RmM+EXUeifL35orCguHPtHOQKsNGvR+4WjZz04ZFZTQb1GL7Q1KMrWH6lXOwKJTVO+uijMGQdobkncYhi1wAappOS3zbu8SezLT/wPRO94Xe8gjAFfG9lRbR4Ekaajg45tFz4lDT9H1TnEPWrUq9CdpI1SQ7KDFllzqdZ7nlypZlsPPEf1RXJ63h6HTIbRfAhmdCts3ZAJ+Ta11DDakY4uXFM3YQ5uOCxHWaWIPCsEgs73XSDKNWkHHnokW1vIxZoc5uHsW51E6DHsMxWBj4OP1v2APcjrBA3d7PWB6l9vvBecDC7xW7vVhz73yn/rvqEPOv+ByTXTHo9Ov1yHYKsuK6fkkn+STopqWZVlmwqpsQEwcahI1/NcS/K3aVtVbT2b8TCssH3DVJp+Uk/yUFTga1whHB8dCO1kDL53qwOMj6dwmvRuq8ebg9Tj2N/LphVQmfoUnxQuN/8VRtFAVecHARXPhP/n0UhZ5vvf8CylTVSdbf3J80uhEUGQGOrBpUCYrv6IbucY66uR/d7jdvf1jvQzIJmRqB959jkIf2N/Yyu0D3/7QMXfEjmKv7sfT6XV3aQJPbs53ZOVDpqPkR0J4eWZh7ZAWWxu2b5UbxPiSXe4YRFuLgDfBiYCrbUqVJBBEiMMTvRFKi6XGa7RaSeGhytMe7H503T8BAAD//1BLBwh68aq+uQMAAJ4KAABQSwECFAAUAAgACAAAAAAAevGqvrkDAACeCgAACAAAAAAAAAAAAAAAAAAAAAAAb3JpZ2luYWxQSwUGAAAAAAEAAQA2AAAA7wMAAAAA
+    creationTimestamp: "2024-08-06T01:57:00Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-kube-audit
+      app.kubernetes.io/name: fluentd
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:banzaicloud.com/last-applied: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"6c38f044-6c60-471b-9fe8-8682d6f7f12f"}: {}
+        f:spec:
+          f:persistentVolumeClaimRetentionPolicy:
+            .: {}
+            f:whenDeleted: {}
+            f:whenScaled: {}
+          f:podManagementPolicy: {}
+          f:replicas: {}
+          f:revisionHistoryLimit: {}
+          f:selector: {}
+          f:serviceName: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:app.kubernetes.io/component: {}
+                f:app.kubernetes.io/managed-by: {}
+                f:app.kubernetes.io/name: {}
+            f:spec:
+              f:containers:
+                k:{"name":"config-reloader"}:
+                  .: {}
+                  f:args: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/fluentd/app-config"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/fluentd/etc"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                k:{"name":"fluentd"}:
+                  .: {}
+                  f:args: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"BUFFER_PATH"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:livenessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:tcpSocket:
+                      .: {}
+                      f:port: {}
+                    f:timeoutSeconds: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":24240,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                  f:resources:
+                    .: {}
+                    f:limits:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:securityContext: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/buffers"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/fluentd/app-config"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/fluentd/etc/"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/fluentd/secret"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:dnsPolicy: {}
+              f:nodeSelector: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext:
+                .: {}
+                f:fsGroup: {}
+                f:runAsUser: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:tolerations: {}
+              f:volumes:
+                .: {}
+                k:{"name":"app-config"}:
+                  .: {}
+                  f:name: {}
+                  f:secret:
+                    .: {}
+                    f:defaultMode: {}
+                    f:secretName: {}
+                k:{"name":"config"}:
+                  .: {}
+                  f:name: {}
+                  f:secret:
+                    .: {}
+                    f:defaultMode: {}
+                    f:secretName: {}
+                k:{"name":"output-secret"}:
+                  .: {}
+                  f:name: {}
+                  f:secret:
+                    .: {}
+                    f:defaultMode: {}
+                    f:secretName: {}
+                k:{"name":"rancher-logging-kube-audit-fluentd-buffer"}:
+                  .: {}
+                  f:emptyDir: {}
+                  f:name: {}
+          f:updateStrategy:
+            f:rollingUpdate:
+              .: {}
+              f:partition: {}
+            f:type: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T01:57:00Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:availableReplicas: {}
+          f:collisionCount: {}
+          f:currentReplicas: {}
+          f:currentRevision: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updateRevision: {}
+          f:updatedReplicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:57:02Z"
+    name: rancher-logging-kube-audit-fluentd
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: logging.banzaicloud.io/v1beta1
+      controller: true
+      kind: Logging
+      name: rancher-logging-kube-audit
+      uid: 6c38f044-6c60-471b-9fe8-8682d6f7f12f
+    resourceVersion: "7959"
+    uid: 89cb9e14-9c36-4a33-8d81-01f23837e4bc
+  spec:
+    persistentVolumeClaimRetentionPolicy:
+      whenDeleted: Retain
+      whenScaled: Retain
+    podManagementPolicy: OrderedReady
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app.kubernetes.io/component: fluentd
+        app.kubernetes.io/managed-by: rancher-logging-kube-audit
+        app.kubernetes.io/name: fluentd
+    serviceName: rancher-logging-kube-audit-fluentd-headless
+    template:
+      metadata:
+        creationTimestamp: "null"
+        labels:
+          app.kubernetes.io/component: fluentd
+          app.kubernetes.io/managed-by: rancher-logging-kube-audit
+          app.kubernetes.io/name: fluentd
+      spec:
+        containers:
+        - args:
+          - fluentd
+          - -o
+          - /fluentd/log/out
+          - --log-rotate-age
+          - "10"
+          - --log-rotate-size
+          - "10485760"
+          env:
+          - name: BUFFER_PATH
+            value: /buffers
+          image: rancher/mirrored-banzaicloud-fluentd:v1.14.6-alpine-5
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 30
+            periodSeconds: 15
+            successThreshold: 1
+            tcpSocket:
+              port: 24240
+            timeoutSeconds: 1
+          name: fluentd
+          ports:
+          - containerPort: 24240
+            name: fluent-input
+            protocol: TCP
+          resources:
+            limits:
+              cpu: "1"
+              memory: 800Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi
+          securityContext: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /fluentd/etc/
+            name: config
+          - mountPath: /fluentd/app-config
+            name: app-config
+          - mountPath: /fluentd/secret
+            name: output-secret
+          - mountPath: /buffers
+            name: rancher-logging-kube-audit-fluentd-buffer
+        - args:
+          - --volume-dir=/fluentd/etc
+          - --volume-dir=/fluentd/app-config
+          - --webhook-url=http://127.0.0.1:24444/api/config.reload
+          image: rancher/mirrored-jimmidyson-configmap-reload:v0.4.0
+          imagePullPolicy: IfNotPresent
+          name: config-reloader
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /fluentd/app-config
+            name: app-config
+          - mountPath: /fluentd/etc
+            name: config
+        dnsPolicy: ClusterFirst
+        nodeSelector:
+          kubernetes.io/os: linux
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext:
+          fsGroup: 101
+          runAsUser: 100
+        serviceAccount: rancher-logging-kube-audit-fluentd
+        serviceAccountName: rancher-logging-kube-audit-fluentd
+        terminationGracePeriodSeconds: 30
+        tolerations:
+        - effect: NoSchedule
+          key: cattle.io/os
+          operator: Equal
+          value: linux
+        volumes:
+        - name: config
+          secret:
+            defaultMode: 420
+            secretName: rancher-logging-kube-audit-fluentd
+        - name: output-secret
+          secret:
+            defaultMode: 420
+            secretName: rancher-logging-kube-audit-fluentd-output
+        - name: app-config
+          secret:
+            defaultMode: 420
+            secretName: rancher-logging-kube-audit-fluentd-app
+        - emptyDir: {}
+          name: rancher-logging-kube-audit-fluentd-buffer
+    updateStrategy:
+      rollingUpdate:
+        partition: 0
+      type: RollingUpdate
+  status:
+    availableReplicas: 1
+    collisionCount: 0
+    currentReplicas: 1
+    currentRevision: rancher-logging-kube-audit-fluentd-6b6f6f859c
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+    updateRevision: rancher-logging-kube-audit-fluentd-6b6f6f859c
+    updatedReplicas: 1
+- apiVersion: apps/v1
+  kind: StatefulSet
+  metadata:
+    annotations:
+      banzaicloud.com/last-applied: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAb3JpZ2luYWzMVVtz2zYT/S/7DIikLFkKZ/KQL5evnUlcjZ30pePpgOBSQg1iEVyUKB7+9w5IWhdXSV0/5Q0E9yx2zx4c3EOLQdQiCCjvQYsKtU8rYe3kLlboDAb0E0WZpNaSQROghEZHNKEGdiauFUassebVDkpwwsgNOq5pvVZmzR1ROIsyosWjxB2DcedcBn44P0V5K2QKlSIEjftIv/MBW2BAXwy6a2zQoZHoofwj9ad+R+cVGShhREwqYb4JJTXFOtW0LSoMogAGkkxwpDU6KIOLyOBOmRpKeD8g4YflAoOoUvRy3ryYNqLgzYvFnM+Wi5xXl8sFv5hfXCyraj5fXC6gu+0YeIsyjcFS/aHns0UTVqSVTKz+5mp0WF+jqHfAwKNGGcglQCuC3Lz/acaYWkG3VRKv/n2cfIOi1ug9MAjYWi0C9j39lAo9mlKSh1AG3agtt06Loxo4AYNs/M40rTOK6RSejuWOggjIxRqBQZE/3vfq2/BjtpwvLnO4ZYBm25801vS/T+/evb3+c/Xq4y/AYCt0TLtZFZsm1dTdMlBtSr9vN2uVc+QSCQfNP8yh3BaTYja55EJbZZDPYcSvotZ7Ef7aXFFYOfSJcAZabdGg9ytHVT81ZVRQQr9BLXY3KMnUHsqLnIFFp6jebxVzBkHaG5J3GAbNuwDldDad5d3BBw5kpv8D0XveVwfIIwBXxvZUW0eBJGko4ePrVc+JQ0/R9Y5wD1q1KvQraSOUkK59iy251Osyzz+oZEoOP0f0J3F53h6HTofQXvgyOhV2r8kE/Jpa6xhsSccWP1A0Yw9tWq5E2KSJPSgEg8wOniLJNGoNHftOtLCWjzF7zNHed3EepcNwwFAMNgY+bv8D9iCnJ1kzH6J7NzvcCM6H/nmt3MvjbnvNn/t30hvnX7DaEN3x6PTLTQi2zLJiupjkk3xSlNPZbDbLhFXZgJg41CRq+JH8/1Jtq+qdJzMe0wrLB1y5zSezSf4U8Z8MaoSjg1OJPXn6z53nwOMj0dwmpRuq8ebolTh1NvLpDVQmfoWzsoXG/99RtFAWecHARfPKf/LpLSzy/ODwr6RMVT3B6JO/k0YngiIzEIFNgzIZ9xXdyA3WUSfPu8Pd/l0fK2VANiFTI/D2cxT6yPLGJm4fmPbHLrmndBR4eT+unlJxl1g/e0+elY8POU7Snoz9OTmFtUNCbG3YvVFuEN1/u60dg2hrEfAmOBFwvUtJ0pCDCHF4eLdCaVFpvEarlRQeyjwpff/RdX8HAAD//1BLBwg/jgwdswMAAFYKAABQSwECFAAUAAgACAAAAAAAP44MHbMDAABWCgAACAAAAAAAAAAAAAAAAAAAAAAAb3JpZ2luYWxQSwUGAAAAAAEAAQA2AAAA6QMAAAAA
+    creationTimestamp: "2024-08-06T01:57:11Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-root
+      app.kubernetes.io/name: fluentd
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:banzaicloud.com/last-applied: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"85f92fa1-f975-4870-b687-35338bb55767"}: {}
+        f:spec:
+          f:persistentVolumeClaimRetentionPolicy:
+            .: {}
+            f:whenDeleted: {}
+            f:whenScaled: {}
+          f:podManagementPolicy: {}
+          f:replicas: {}
+          f:revisionHistoryLimit: {}
+          f:selector: {}
+          f:serviceName: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:app.kubernetes.io/component: {}
+                f:app.kubernetes.io/managed-by: {}
+                f:app.kubernetes.io/name: {}
+            f:spec:
+              f:containers:
+                k:{"name":"config-reloader"}:
+                  .: {}
+                  f:args: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/fluentd/app-config"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/fluentd/etc"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                k:{"name":"fluentd"}:
+                  .: {}
+                  f:args: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"BUFFER_PATH"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:livenessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:tcpSocket:
+                      .: {}
+                      f:port: {}
+                    f:timeoutSeconds: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":24240,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                  f:resources:
+                    .: {}
+                    f:limits:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:securityContext: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/buffers"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/fluentd/app-config"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/fluentd/etc/"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/fluentd/secret"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:dnsPolicy: {}
+              f:nodeSelector: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext:
+                .: {}
+                f:fsGroup: {}
+                f:runAsUser: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:tolerations: {}
+              f:volumes:
+                .: {}
+                k:{"name":"app-config"}:
+                  .: {}
+                  f:name: {}
+                  f:secret:
+                    .: {}
+                    f:defaultMode: {}
+                    f:secretName: {}
+                k:{"name":"config"}:
+                  .: {}
+                  f:name: {}
+                  f:secret:
+                    .: {}
+                    f:defaultMode: {}
+                    f:secretName: {}
+                k:{"name":"output-secret"}:
+                  .: {}
+                  f:name: {}
+                  f:secret:
+                    .: {}
+                    f:defaultMode: {}
+                    f:secretName: {}
+                k:{"name":"rancher-logging-root-fluentd-buffer"}:
+                  .: {}
+                  f:emptyDir: {}
+                  f:name: {}
+          f:updateStrategy:
+            f:rollingUpdate:
+              .: {}
+              f:partition: {}
+            f:type: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T01:57:11Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:availableReplicas: {}
+          f:collisionCount: {}
+          f:currentReplicas: {}
+          f:currentRevision: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updateRevision: {}
+          f:updatedReplicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:57:13Z"
+    name: rancher-logging-root-fluentd
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: logging.banzaicloud.io/v1beta1
+      controller: true
+      kind: Logging
+      name: rancher-logging-root
+      uid: 85f92fa1-f975-4870-b687-35338bb55767
+    resourceVersion: "8666"
+    uid: c5c8e3a4-9b87-4aa7-87dc-bb784d700bb6
+  spec:
+    persistentVolumeClaimRetentionPolicy:
+      whenDeleted: Retain
+      whenScaled: Retain
+    podManagementPolicy: OrderedReady
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app.kubernetes.io/component: fluentd
+        app.kubernetes.io/managed-by: rancher-logging-root
+        app.kubernetes.io/name: fluentd
+    serviceName: rancher-logging-root-fluentd-headless
+    template:
+      metadata:
+        creationTimestamp: "null"
+        labels:
+          app.kubernetes.io/component: fluentd
+          app.kubernetes.io/managed-by: rancher-logging-root
+          app.kubernetes.io/name: fluentd
+      spec:
+        containers:
+        - args:
+          - fluentd
+          - -o
+          - /fluentd/log/out
+          - --log-rotate-age
+          - "10"
+          - --log-rotate-size
+          - "10485760"
+          env:
+          - name: BUFFER_PATH
+            value: /buffers
+          image: rancher/mirrored-banzaicloud-fluentd:v1.14.6-alpine-5
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 30
+            periodSeconds: 15
+            successThreshold: 1
+            tcpSocket:
+              port: 24240
+            timeoutSeconds: 1
+          name: fluentd
+          ports:
+          - containerPort: 24240
+            name: fluent-input
+            protocol: TCP
+          resources:
+            limits:
+              cpu: "1"
+              memory: 800Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi
+          securityContext: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /fluentd/etc/
+            name: config
+          - mountPath: /fluentd/app-config
+            name: app-config
+          - mountPath: /fluentd/secret
+            name: output-secret
+          - mountPath: /buffers
+            name: rancher-logging-root-fluentd-buffer
+        - args:
+          - --volume-dir=/fluentd/etc
+          - --volume-dir=/fluentd/app-config
+          - --webhook-url=http://127.0.0.1:24444/api/config.reload
+          image: rancher/mirrored-jimmidyson-configmap-reload:v0.4.0
+          imagePullPolicy: IfNotPresent
+          name: config-reloader
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /fluentd/app-config
+            name: app-config
+          - mountPath: /fluentd/etc
+            name: config
+        dnsPolicy: ClusterFirst
+        nodeSelector:
+          kubernetes.io/os: linux
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext:
+          fsGroup: 101
+          runAsUser: 100
+        serviceAccount: rancher-logging-root-fluentd
+        serviceAccountName: rancher-logging-root-fluentd
+        terminationGracePeriodSeconds: 30
+        tolerations:
+        - effect: NoSchedule
+          key: cattle.io/os
+          operator: Equal
+          value: linux
+        volumes:
+        - name: config
+          secret:
+            defaultMode: 420
+            secretName: rancher-logging-root-fluentd
+        - name: output-secret
+          secret:
+            defaultMode: 420
+            secretName: rancher-logging-root-fluentd-output
+        - name: app-config
+          secret:
+            defaultMode: 420
+            secretName: rancher-logging-root-fluentd-app
+        - emptyDir: {}
+          name: rancher-logging-root-fluentd-buffer
+    updateStrategy:
+      rollingUpdate:
+        partition: 0
+      type: RollingUpdate
+  status:
+    availableReplicas: 1
+    collisionCount: 0
+    currentReplicas: 1
+    currentRevision: rancher-logging-root-fluentd-c5db964cf
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+    updateRevision: rancher-logging-root-fluentd-c5db964cf
+    updatedReplicas: 1
+kind: List
+metadata:
+  resourceVersion: "770286"

@@ -1,0 +1,170 @@
+apiVersion: v1
+items:
+- apiVersion: harvesterhci.io/v1beta1
+  kind: VirtualMachineImage
+  metadata:
+    annotations:
+      harvesterhci.io/storageClassName: harvester-longhorn
+    creationTimestamp: "2024-08-06T12:53:00Z"
+    finalizers:
+    - wrangler.cattle.io/vm-image-controller
+    generateName: image-
+    generation: 29
+    labels:
+      harvesterhci.io/image-type: iso
+      harvesterhci.io/imageDisplayName: ubuntu-20.04.6
+      harvesterhci.io/os-type: ubuntu
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/storageClassName: {}
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/vm-image-controller"null: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:harvesterhci.io/image-type: {}
+            f:harvesterhci.io/imageDisplayName: {}
+            f:harvesterhci.io/os-type: {}
+        f:spec:
+          .: {}
+          f:checksum: {}
+          f:displayName: {}
+          f:pvcName: {}
+          f:pvcNamespace: {}
+          f:retry: {}
+          f:sourceType: {}
+          f:url: {}
+        f:status:
+          .: {}
+          f:appliedUrl: {}
+          f:conditions: {}
+          f:failed: {}
+          f:progress: {}
+          f:size: {}
+          f:storageClassName: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T12:54:39Z"
+    name: image-nntjr
+    namespace: default
+    resourceVersion: "690951"
+    uid: 5e9228ef-0b46-4ae1-93b4-7ff21600fa9c
+  spec:
+    checksum: "null"
+    displayName: ubuntu-20.04.6
+    pvcName: "null"
+    pvcNamespace: "null"
+    retry: 3
+    sourceType: download
+    storageClassParameters:
+      migratable: "true"
+      numberOfReplicas: "3"
+      staleReplicaTimeout: "30"
+    url: https://releases.ubuntu.com/20.04.6/ubuntu-20.04.6-live-server-amd64.iso
+  status:
+    appliedUrl: https://releases.ubuntu.com/20.04.6/ubuntu-20.04.6-live-server-amd64.iso
+    conditions:
+    - lastUpdateTime: "2024-08-06T12:54:39Z"
+      reason: Imported
+      status: "True"
+      type: Imported
+    - lastUpdateTime: "2024-08-06T12:53:00Z"
+      reason: Initialized
+      status: "True"
+      type: Initialized
+    failed: 0
+    progress: 100
+    size: 1.48733952e+09
+    storageClassName: longhorn-image-nntjr
+- apiVersion: harvesterhci.io/v1beta1
+  kind: VirtualMachineImage
+  metadata:
+    annotations:
+      harvesterhci.io/storageClassName: harvester-longhorn
+    creationTimestamp: "2024-08-06T02:09:25Z"
+    finalizers:
+    - wrangler.cattle.io/vm-image-controller
+    generateName: image-
+    generation: 24
+    labels:
+      harvesterhci.io/image-type: raw_qcow2
+      harvesterhci.io/imageDisplayName: ubuntu-20.04-minimal-cloudimg
+      harvesterhci.io/os-type: ubuntu
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/storageClassName: {}
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/vm-image-controller"null: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:harvesterhci.io/image-type: {}
+            f:harvesterhci.io/imageDisplayName: {}
+            f:harvesterhci.io/os-type: {}
+        f:spec:
+          .: {}
+          f:checksum: {}
+          f:displayName: {}
+          f:pvcName: {}
+          f:pvcNamespace: {}
+          f:retry: {}
+          f:sourceType: {}
+          f:url: {}
+        f:status:
+          .: {}
+          f:appliedUrl: {}
+          f:conditions: {}
+          f:failed: {}
+          f:progress: {}
+          f:size: {}
+          f:storageClassName: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T02:11:08Z"
+    name: image-qwfqg
+    namespace: default
+    resourceVersion: "22239"
+    uid: d26778c9-4133-4407-afde-1c14924664ab
+  spec:
+    checksum: "null"
+    displayName: ubuntu-20.04-minimal-cloudimg
+    pvcName: "null"
+    pvcNamespace: "null"
+    retry: 3
+    sourceType: download
+    storageClassParameters:
+      migratable: "true"
+      numberOfReplicas: "3"
+      staleReplicaTimeout: "30"
+    url: https://cloud-images.ubuntu.com/minimal/releases/focal/release/ubuntu-20.04-minimal-cloudimg-amd64.img
+  status:
+    appliedUrl: https://cloud-images.ubuntu.com/minimal/releases/focal/release/ubuntu-20.04-minimal-cloudimg-amd64.img
+    conditions:
+    - lastUpdateTime: "2024-08-06T02:11:08Z"
+      reason: Imported
+      status: "True"
+      type: Imported
+    - lastUpdateTime: "2024-08-06T02:09:26Z"
+      reason: Initialized
+      status: "True"
+      type: Initialized
+    failed: 0
+    progress: 100
+    size: 2.61357568e+08
+    storageClassName: longhorn-image-qwfqg
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770184"

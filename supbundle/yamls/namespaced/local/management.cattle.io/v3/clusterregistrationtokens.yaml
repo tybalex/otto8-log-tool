@@ -1,0 +1,60 @@
+apiVersion: v1
+items:
+- apiVersion: management.cattle.io/v3
+  kind: ClusterRegistrationToken
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"management.cattle.io/v3","kind":"ClusterRegistrationToken","metadata":{"annotations":{},"name":"default-token","namespace":"local"},"spec":{"clusterName":"local"},"status":{"token":"K0@things!"}}
+    creationTimestamp: "2024-08-06T01:52:31Z"
+    generation: 3
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:clusterName: {}
+        f:status:
+          .: {}
+          f:command: {}
+          f:insecureCommand: {}
+          f:insecureNodeCommand: {}
+          f:insecureWindowsNodeCommand: {}
+          f:manifestUrl: {}
+          f:nodeCommand: {}
+          f:windowsNodeCommand: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:31Z"
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:status:
+          f:token: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2024-08-06T01:53:30Z"
+    name: default-token
+    namespace: local
+    resourceVersion: "2371"
+    uid: 363c3e3a-8c42-4a7d-a023-e03d9cfc317f
+  spec:
+    clusterName: local
+  status:
+    command: "null"
+    insecureCommand: "null"
+    insecureNodeCommand: "null"
+    insecureWindowsNodeCommand: "null"
+    manifestUrl: "null"
+    nodeCommand: "null"
+    token: K0@things!
+    windowsNodeCommand: "null"
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770270"

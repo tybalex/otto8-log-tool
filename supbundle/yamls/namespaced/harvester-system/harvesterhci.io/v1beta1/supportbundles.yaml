@@ -1,0 +1,36 @@
+apiVersion: v1
+items:
+- apiVersion: harvesterhci.io/v1beta1
+  kind: SupportBundle
+  metadata:
+    creationTimestamp: "2024-08-06T14:12:10Z"
+    generation: 3
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:description: {}
+          f:issueURL: {}
+        f:status:
+          .: {}
+          f:progress: {}
+          f:state: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T14:12:13Z"
+    name: bundle-vuocj
+    namespace: harvester-system
+    resourceVersion: "770180"
+    uid: 765a3083-6d77-49f4-a9df-6aaeeb166bf3
+  spec:
+    description: the gpu vm does not start
+    issueURL: "null"
+  status:
+    progress: 20
+    state: generating
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770255"

@@ -1,0 +1,68 @@
+2024-08-06T01:51:48.017812172Z if [[ ${KUBERNETES_SERVICE_HOST} =~ .*:.* ]]; then
+2024-08-06T01:51:48.017851697Z 	echo "KUBERNETES_SERVICE_HOST is using IPv6"
+2024-08-06T01:51:48.017860975Z 	CHART="${CHART//%\{KUBERNETES_API\}%/[${KUBERNETES_SERVICE_HOST}]:${KUBERNETES_SERVICE_PORT}}"
+2024-08-06T01:51:48.017871164Z else
+2024-08-06T01:51:48.017900420Z 	CHART="${CHART//%\{KUBERNETES_API\}%/${KUBERNETES_SERVICE_HOST}:${KUBERNETES_SERVICE_PORT}}"
+2024-08-06T01:51:48.017914487Z fi
+2024-08-06T01:51:48.017961296Z 
+2024-08-06T01:51:48.017970885Z set +v -x
+2024-08-06T01:51:48.018055476Z + [[ true != \t\r\u\e ]]
+2024-08-06T01:51:48.018190313Z + [[ '' == \1 ]]
+2024-08-06T01:51:48.018242503Z + [[ '' == \v\2 ]]
+2024-08-06T01:51:48.018283241Z + shopt -s nullglob
+2024-08-06T01:51:48.018337003Z + [[ -f /config/ca-file.pem ]]
+2024-08-06T01:51:48.018447284Z + [[ -f /tmp/ca-file.pem ]]
+2024-08-06T01:51:48.018504643Z + [[ -n '' ]]
+2024-08-06T01:51:48.018530352Z + helm_content_decode
+2024-08-06T01:51:48.018573294Z + set -e
+2024-08-06T01:51:48.018608161Z + ENC_CHART_PATH=/chart/rke2-multus.tgz.base64
+2024-08-06T01:51:48.018634541Z + CHART_PATH=/tmp/rke2-multus.tgz
+2024-08-06T01:51:48.018656583Z + [[ ! -f /chart/rke2-multus.tgz.base64 ]]
+2024-08-06T01:51:48.018709264Z + base64 -d /chart/rke2-multus.tgz.base64
+2024-08-06T01:51:48.019997923Z + CHART=/tmp/rke2-multus.tgz
+2024-08-06T01:51:48.020019334Z + set +e
+2024-08-06T01:51:48.020118864Z + [[ install != \d\e\l\e\t\e ]]
+2024-08-06T01:51:48.020155173Z + helm_repo_init
+2024-08-06T01:51:48.020215819Z + grep -q -e 'https\?://'
+2024-08-06T01:51:48.021724988Z + [[ helm_v3 == \h\e\l\m\_\v\3 ]]
+2024-08-06T01:51:48.021732372Z + [[ /tmp/rke2-multus.tgz == stable/* ]]
+2024-08-06T01:51:48.021748894Z + [[ -n '' ]]
+2024-08-06T01:51:48.021795242Z + helm_update install --set-string global.clusterCIDR=10.52.0.0/16 --set-string global.clusterCIDRv4=10.52.0.0/16 --set-string global.clusterDNS=10.53.0.10 --set-string global.clusterDomain=cluster.local --set-string global.rke2DataDir=/var/lib/rancher/rke2 --set-string global.serviceCIDR=10.53.0.0/16
+2024-08-06T01:51:48.021861088Z + [[ helm_v3 == \h\e\l\m\_\v\3 ]]
+2024-08-06T01:51:48.022986195Z ++ helm_v3 ls --all -f '^rke2-multus$' --namespace kube-system --output json
+2024-08-06T01:51:48.023027474Z ++ jq -r '"\(.[0].chart),\(.[0].status)"'
+2024-08-06T01:51:48.023440111Z ++ tr '[:upper:]' '[:lower:]'
+2024-08-06T01:51:48.089780822Z + LINE=null,null
+2024-08-06T01:51:48.089807252Z + IFS=,
+2024-08-06T01:51:48.089824435Z + read -r INSTALLED_VERSION STATUS _
+2024-08-06T01:51:48.089940737Z + VALUES=
+2024-08-06T01:51:48.089995361Z + [[ install = \d\e\l\e\t\e ]]
+2024-08-06T01:51:48.090036530Z + [[ null =~ ^(|null)$ ]]
+2024-08-06T01:51:48.090152712Z + [[ null =~ ^(|null)$ ]]
+2024-08-06T01:51:48.090246661Z + echo 'Installing helm_v3 chart'
+2024-08-06T01:51:48.090462212Z + helm_v3 install --set-string global.clusterCIDR=10.52.0.0/16 --set-string global.clusterCIDRv4=10.52.0.0/16 --set-string global.clusterDNS=10.53.0.10 --set-string global.clusterDomain=cluster.local --set-string global.rke2DataDir=/var/lib/rancher/rke2 --set-string global.serviceCIDR=10.53.0.0/16 rke2-multus /tmp/rke2-multus.tgz
+2024-08-06T01:51:48.359294776Z NAME: rke2-multus
+2024-08-06T01:51:48.359320966Z LAST DEPLOYED: Tue Aug  6 01:51:48 2024
+2024-08-06T01:51:48.359328992Z NAMESPACE: kube-system
+2024-08-06T01:51:48.359335604Z STATUS: deployed
+2024-08-06T01:51:48.359342227Z REVISION: 1
+2024-08-06T01:51:48.359348699Z TEST SUITE: None
+2024-08-06T01:51:48.359355482Z NOTES:
+2024-08-06T01:51:48.359362956Z ======
+2024-08-06T01:51:48.359371272Z 1. The following components have been deployed as part of this helm chart:
+2024-08-06T01:51:48.359405908Z Cluster Role: multus
+2024-08-06T01:51:48.359414024Z Cluster Role Binding: rke2-multus
+2024-08-06T01:51:48.359421879Z Custom Resource Definition: network-attachment-definitions.k8s.cni.cncf.io
+2024-08-06T01:51:48.359429794Z Daemon Set: rke2-multus
+2024-08-06T01:51:48.359446977Z Service Account: multus
+2024-08-06T01:51:48.359455232Z 
+2024-08-06T01:51:48.359462256Z You can now deploy any other CNI and create its Network Attachment Defintion.
+2024-08-06T01:51:48.359469640Z ---------
+2024-08-06T01:51:48.359477375Z 
+2024-08-06T01:51:48.359484919Z 2. To uninstall helm chart use the command:
+2024-08-06T01:51:48.359491712Z helm delete rke2-multus
+2024-08-06T01:51:48.359498124Z 
+2024-08-06T01:51:48.359504857Z You may have to manually delete CRD -
+2024-08-06T01:51:48.359511871Z kubectl delete crd network-attachment-definitions.k8s.cni.cncf.io
+2024-08-06T01:51:48.359518764Z ---------
+2024-08-06T01:51:48.366984370Z + exit

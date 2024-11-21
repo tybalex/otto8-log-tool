@@ -1,0 +1,74 @@
+apiVersion: v1
+items:
+- apiVersion: devices.harvesterhci.io/v1beta1
+  kind: Node
+  metadata:
+    creationTimestamp: "2024-08-06T01:57:21Z"
+    generation: 1
+    managedFields:
+    - apiVersion: devices.harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec: {}
+      manager: pcidevices
+      operation: Update
+      time: "2024-08-06T01:57:21Z"
+    name: harvesterdev1
+    resourceVersion: "8923"
+    uid: b6c49c1d-0437-4cdb-916b-d4478424ac07
+  spec: {}
+- apiVersion: devices.harvesterhci.io/v1beta1
+  kind: Node
+  metadata:
+    creationTimestamp: "2024-08-06T02:12:26Z"
+    generation: 1
+    managedFields:
+    - apiVersion: devices.harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec: {}
+      manager: pcidevices
+      operation: Update
+      time: "2024-08-06T02:12:26Z"
+    name: harvesterdev2
+    resourceVersion: "24665"
+    uid: e3f13655-aff5-4ac6-b56e-2a75ea861dcf
+  spec: {}
+- apiVersion: devices.harvesterhci.io/v1beta1
+  kind: Node
+  metadata:
+    creationTimestamp: "2024-08-06T02:14:13Z"
+    generation: 1
+    managedFields:
+    - apiVersion: devices.harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec: {}
+      manager: pcidevices
+      operation: Update
+      time: "2024-08-06T02:14:13Z"
+    name: harvesterdev3
+    resourceVersion: "27777"
+    uid: 25191e76-093f-4bb9-b7b4-727e2c4a472e
+  spec: {}
+- apiVersion: devices.harvesterhci.io/v1beta1
+  kind: Node
+  metadata:
+    creationTimestamp: "2024-08-06T02:16:37Z"
+    generation: 1
+    managedFields:
+    - apiVersion: devices.harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec: {}
+      manager: pcidevices
+      operation: Update
+      time: "2024-08-06T02:16:37Z"
+    name: harvesterdev7
+    resourceVersion: "31029"
+    uid: 7cb8bbfb-91ba-4360-bfa3-ad7fafa0fe95
+  spec: {}
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770159"

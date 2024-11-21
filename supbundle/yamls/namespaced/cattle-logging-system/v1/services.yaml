@@ -1,0 +1,409 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: rancher-logging
+      meta.helm.sh/release-namespace: cattle-logging-system
+    creationTimestamp: "2024-08-06T01:56:42Z"
+    labels:
+      app.kubernetes.io/instance: rancher-logging
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: rancher-logging
+      app.kubernetes.io/version: 3.17.10
+      helm.sh/chart: rancher-logging-103.0.0_up3.17.10
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:helm.sh/chart: {}
+        f:spec:
+          f:clusterIP: {}
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":8080,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: helm
+      operation: Update
+      time: "2024-08-06T01:56:42Z"
+    name: rancher-logging
+    namespace: cattle-logging-system
+    resourceVersion: "6814"
+    uid: 1f4f8014-353c-41db-be2d-b8710571d252
+  spec:
+    clusterIP: None
+    clusterIPs:
+    - None
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: http
+    selector:
+      app.kubernetes.io/instance: rancher-logging
+      app.kubernetes.io/name: rancher-logging
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      banzaicloud.com/last-applied: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAb3JpZ2luYWzMkkGP0zAQhf/LO9ulLVG2+MhyQeJQIeCC9jCxJyFax7bsMahU+e/IbLW7hyL1yC16ee/zs2fOWFjIkRDMGZ4G9qV9UUqbxzpwDixcNnN8Y+OSYuAgMBh95SAO6opvoUATOz2cYJAp2B+ctY/TNIdJN6um6ma5mg208Cv8qnBR/s3RL12atySyLWBJxPOzv5yK8AKF+Ctw/swjZw6WC8z3dtf5G+cyxwCDS2IzUPhNs/Wxutbs525goR0UbAySo/ecYSRXVnicg4PBp6ckbigNhTq3TG/fHsZt1+ne9lvd3e0G/W7kgz70h73rx7txtx+xPqwKJbFtg0kxy1Ptyyli06s3aL9h9t2+2yqkHCXa6GHw5f4IBaE8sRxfPKt65lR3C+frh+ucB4XCnq3E/D+tj5xSU+59LcL547FpRUjq3yX3kdx78hRsG+Z5Xdc/AQAA//9QSwcISDU6alMBAAAPAwAAUEsBAhQAFAAIAAgAAAAAAEg1OmpTAQAADwMAAAgAAAAAAAAAAAAAAAAAAAAAAG9yaWdpbmFsUEsFBgAAAAABAAEANgAAAIkBAAAAAA==
+    creationTimestamp: "2024-08-06T01:57:00Z"
+    labels:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-kube-audit
+      app.kubernetes.io/name: fluentd
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:banzaicloud.com/last-applied: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"6c38f044-6c60-471b-9fe8-8682d6f7f12f"}: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":24240,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+            k:{"port":24240,"protocol":"UDP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T01:57:00Z"
+    name: rancher-logging-kube-audit-fluentd
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: logging.banzaicloud.io/v1beta1
+      controller: true
+      kind: Logging
+      name: rancher-logging-kube-audit
+      uid: 6c38f044-6c60-471b-9fe8-8682d6f7f12f
+    resourceVersion: "7846"
+    uid: 0b92b112-8147-4452-98d8-4bc85df3ec35
+  spec:
+    clusterIP: 10.53.219.99
+    clusterIPs:
+    - 10.53.219.99
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: tcp-fluentd
+      port: 24240
+      protocol: TCP
+      targetPort: 24240
+    - name: udp-fluentd
+      port: 24240
+      protocol: UDP
+      targetPort: 24240
+    selector:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-kube-audit
+      app.kubernetes.io/name: fluentd
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      banzaicloud.com/last-applied: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAb3JpZ2luYWzMk0GP0zAQhf/LO9ulLVW2+MhyQUKoQsAF7WFiT7LROrZlj0Glyn9HplWXQ5H2uLdo8r7nmXn2CTMLORKCOcFTz760L0pp9VR7zoGFy2qKb2ycUwwcBAaDrxzEQd3QzRRoZKf7IwwyBfvIWfs4jlMYdZNqqm6Sm2ygmf+xXxQulf/76ItYPzI5z6XgDJVEtpGWRDxfwXIswjMU4q/A+QsPnDlYLjA/2tDTd85ligEGF2LVU/hNk/Wxutbiz03PQhso2BgkR+85w0iurPA0BQeDT2cSL+geCnVqTGff7of1bqc726317m7T63cD7/W+229dN9wNm+2A5WFRKIltS8j6WoTzxwMMPsfAUEgxy3mSy8Fik37Oqv2G2e62u7VCylGijR4GX+8PUBDKI8vhWbOoq091L/H59uG2z4NCYc9WYn5NV0uOqVXur3tsyxWS+vcB+EjuPXkKtuV7WpblTwAAAP//UEsHCFfmkhhjAQAAKwMAAFBLAQIUABQACAAIAAAAAABX5pIYYwEAACsDAAAIAAAAAAAAAAAAAAAAAAAAAABvcmlnaW5hbFBLBQYAAAAAAQABADYAAACZAQAAAAA=
+    creationTimestamp: "2024-08-06T01:57:00Z"
+    labels:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-kube-audit
+      app.kubernetes.io/name: fluentd
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:banzaicloud.com/last-applied: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"6c38f044-6c60-471b-9fe8-8682d6f7f12f"}: {}
+        f:spec:
+          f:clusterIP: {}
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":24240,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+            k:{"port":24240,"protocol":"UDP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T01:57:00Z"
+    name: rancher-logging-kube-audit-fluentd-headless
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: logging.banzaicloud.io/v1beta1
+      controller: true
+      kind: Logging
+      name: rancher-logging-kube-audit
+      uid: 6c38f044-6c60-471b-9fe8-8682d6f7f12f
+    resourceVersion: "7850"
+    uid: 603771be-4efb-4ce4-ac58-f48319b9cc5f
+  spec:
+    clusterIP: None
+    clusterIPs:
+    - None
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: tcp-fluentd
+      port: 24240
+      protocol: TCP
+      targetPort: 24240
+    - name: udp-fluentd
+      port: 24240
+      protocol: UDP
+      targetPort: 24240
+    selector:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-kube-audit
+      app.kubernetes.io/name: fluentd
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      banzaicloud.com/last-applied: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAb3JpZ2luYWzMkk1v1DAQhv/Le3aW7kearY+UCxKHFQIuqIeJMwlRHY9lT0DLKv8dma7aHiLEsbdo8szjdzRzwcRKHSnBXuCpZZ/LF8W4eZxbToGV82aUd06mKIGDwqL3MwftYFa4iQIN3FXtGRaJgvvBqfIyDGMYqiSiq12BJn4lXgyulTVD9fJ+oXIkV1BHqp6fyXzOyhMM5Ffg9Jl7ThwcZ9jvZb7xG6c8SoDFtWPTUvhNo/MydyXTz23LSlsYOAmaxHtOsJpmNngcQweLT0+d+GdcGMxjoY91f7fraVv1d01dHY7NTdXeHptqX+/3x7at6+a2wfKwGOTIrqwhStKnwFe/uvhq+vIbdnfYHW4MYhIVJx4WX+5PMFBKA+vphVnMs2fu/sfz9cO658Egs2enkt7Gseg5lsq9n7Ny+ngqtayk899j9kLde/IUXFngZVmWPwEAAP//UEsHCAFqJT9RAQAA9wIAAFBLAQIUABQACAAIAAAAAAABaiU/UQEAAPcCAAAIAAAAAAAAAAAAAAAAAAAAAABvcmlnaW5hbFBLBQYAAAAAAQABADYAAACHAQAAAAA=
+    creationTimestamp: "2024-08-06T01:57:11Z"
+    labels:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-root
+      app.kubernetes.io/name: fluentd
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:banzaicloud.com/last-applied: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"85f92fa1-f975-4870-b687-35338bb55767"}: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":24240,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+            k:{"port":24240,"protocol":"UDP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T01:57:11Z"
+    name: rancher-logging-root-fluentd
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: logging.banzaicloud.io/v1beta1
+      controller: true
+      kind: Logging
+      name: rancher-logging-root
+      uid: 85f92fa1-f975-4870-b687-35338bb55767
+    resourceVersion: "8587"
+    uid: ff47aee5-a2c3-44bc-9807-5b35e638a206
+  spec:
+    clusterIP: 10.53.239.193
+    clusterIPs:
+    - 10.53.239.193
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: tcp-fluentd
+      port: 24240
+      protocol: TCP
+      targetPort: 24240
+    - name: udp-fluentd
+      port: 24240
+      protocol: UDP
+      targetPort: 24240
+    selector:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-root
+      app.kubernetes.io/name: fluentd
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      banzaicloud.com/last-applied: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAb3JpZ2luYWzMkk+P0zAQxb/LO9tl+yebro8sFySEKgRc0B4mziQbreOJ7AmoVPnuyLTqcqgQR27R5L2fZ+bNCSMrtaQEd0KghkMuXzRNq5e54RRZOa8GeeNlnCRyVDh0YeaoLcwN3UiRem5tc4RDouifOdkgfT/E3iYRvemKNPIf4MXgUrlFsBeZfWZqA+eMszxP5IvHk2rgqyUfs/IIA/kROX3ijhNHzxnuWxl0+MopDxLhcHGsGoo/afBB5rY0933dsNIaBl6iJgmBE5ymmQ1ehtjC4cPZib/2DYN5KOp91T1sOlrb7qGu7G5f39nmfl/bbbXd7pumqur7GsvTYpAn9iUPH+asnN4f4PBRIsNgkqTnGS5Pqp/sazLlN9xmt9ndGUxJVLwEOHx+PMBAKfWsh1fNYq6cuf0Xzpd3tzlPBpkDe5X0fxySHqdSebxusKxVSeffhx6E2rcUKPqS6WlZll8BAAD//1BLBwgViuoqYQEAABMDAABQSwECFAAUAAgACAAAAAAAFYrqKmEBAAATAwAACAAAAAAAAAAAAAAAAAAAAAAAb3JpZ2luYWxQSwUGAAAAAAEAAQA2AAAAlwEAAAAA
+    creationTimestamp: "2024-08-06T01:57:11Z"
+    labels:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-root
+      app.kubernetes.io/name: fluentd
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:banzaicloud.com/last-applied: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"85f92fa1-f975-4870-b687-35338bb55767"}: {}
+        f:spec:
+          f:clusterIP: {}
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":24240,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+            k:{"port":24240,"protocol":"UDP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: manager
+      operation: Update
+      time: "2024-08-06T01:57:11Z"
+    name: rancher-logging-root-fluentd-headless
+    namespace: cattle-logging-system
+    ownerReferences:
+    - apiVersion: logging.banzaicloud.io/v1beta1
+      controller: true
+      kind: Logging
+      name: rancher-logging-root
+      uid: 85f92fa1-f975-4870-b687-35338bb55767
+    resourceVersion: "8590"
+    uid: 9df363cf-d259-44a4-9214-6ac3c3cc13bb
+  spec:
+    clusterIP: None
+    clusterIPs:
+    - None
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: tcp-fluentd
+      port: 24240
+      protocol: TCP
+      targetPort: 24240
+    - name: udp-fluentd
+      port: 24240
+      protocol: UDP
+      targetPort: 24240
+    selector:
+      app.kubernetes.io/component: fluentd
+      app.kubernetes.io/managed-by: rancher-logging-root
+      app.kubernetes.io/name: fluentd
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: "770286"

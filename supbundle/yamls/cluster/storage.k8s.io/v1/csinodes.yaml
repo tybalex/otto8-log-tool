@@ -1,0 +1,165 @@
+apiVersion: v1
+items:
+- apiVersion: storage.k8s.io/v1
+  kind: CSINode
+  metadata:
+    annotations:
+      storage.alpha.kubernetes.io/migrated-plugins: kubernetes.io/aws-ebs,kubernetes.io/azure-disk,kubernetes.io/azure-file,kubernetes.io/cinder,kubernetes.io/gce-pd,kubernetes.io/vsphere-volume
+    creationTimestamp: "2024-08-06T01:51:30Z"
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:storage.alpha.kubernetes.io/migrated-plugins: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"9b6fb3e0-6ead-4e4f-bb03-9bc72f605557"}: {}
+        f:spec:
+          f:drivers:
+            k:{"name":"driver.longhorn.io"}:
+              .: {}
+              f:name: {}
+              f:nodeID: {}
+              f:topologyKeys: {}
+      manager: kubelet
+      operation: Update
+      time: "2024-08-06T01:55:54Z"
+    name: harvesterdev1
+    ownerReferences:
+    - apiVersion: v1
+      kind: Node
+      name: harvesterdev1
+      uid: 9b6fb3e0-6ead-4e4f-bb03-9bc72f605557
+    resourceVersion: "5540"
+    uid: ba5911c8-d8f0-445c-8a2c-ce1327f62b2e
+  spec:
+    drivers:
+    - name: driver.longhorn.io
+      nodeID: harvesterdev1
+      topologyKeys: null
+- apiVersion: storage.k8s.io/v1
+  kind: CSINode
+  metadata:
+    annotations:
+      storage.alpha.kubernetes.io/migrated-plugins: kubernetes.io/aws-ebs,kubernetes.io/azure-disk,kubernetes.io/azure-file,kubernetes.io/cinder,kubernetes.io/gce-pd,kubernetes.io/vsphere-volume
+    creationTimestamp: "2024-08-06T02:11:20Z"
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:storage.alpha.kubernetes.io/migrated-plugins: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"141de37b-4cad-4b6f-9831-ffeed49d0658"}: {}
+        f:spec:
+          f:drivers:
+            k:{"name":"driver.longhorn.io"}:
+              .: {}
+              f:name: {}
+              f:nodeID: {}
+              f:topologyKeys: {}
+      manager: kubelet
+      operation: Update
+      time: "2024-08-06T02:11:44Z"
+    name: harvesterdev2
+    ownerReferences:
+    - apiVersion: v1
+      kind: Node
+      name: harvesterdev2
+      uid: 141de37b-4cad-4b6f-9831-ffeed49d0658
+    resourceVersion: "23574"
+    uid: f3961e96-efc7-48f5-a991-028150233eda
+  spec:
+    drivers:
+    - name: driver.longhorn.io
+      nodeID: harvesterdev2
+      topologyKeys: null
+- apiVersion: storage.k8s.io/v1
+  kind: CSINode
+  metadata:
+    annotations:
+      storage.alpha.kubernetes.io/migrated-plugins: kubernetes.io/aws-ebs,kubernetes.io/azure-disk,kubernetes.io/azure-file,kubernetes.io/cinder,kubernetes.io/gce-pd,kubernetes.io/vsphere-volume
+    creationTimestamp: "2024-08-06T02:13:12Z"
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:storage.alpha.kubernetes.io/migrated-plugins: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"450a2bb5-9551-4e4f-aa7a-6a8a583bbef8"}: {}
+        f:spec:
+          f:drivers:
+            k:{"name":"driver.longhorn.io"}:
+              .: {}
+              f:name: {}
+              f:nodeID: {}
+              f:topologyKeys: {}
+      manager: kubelet
+      operation: Update
+      time: "2024-08-06T02:13:35Z"
+    name: harvesterdev3
+    ownerReferences:
+    - apiVersion: v1
+      kind: Node
+      name: harvesterdev3
+      uid: 450a2bb5-9551-4e4f-aa7a-6a8a583bbef8
+    resourceVersion: "26760"
+    uid: 24ddf6c5-8e45-4344-8fa4-260b7298cac3
+  spec:
+    drivers:
+    - name: driver.longhorn.io
+      nodeID: harvesterdev3
+      topologyKeys: null
+- apiVersion: storage.k8s.io/v1
+  kind: CSINode
+  metadata:
+    annotations:
+      storage.alpha.kubernetes.io/migrated-plugins: kubernetes.io/aws-ebs,kubernetes.io/azure-disk,kubernetes.io/azure-file,kubernetes.io/cinder,kubernetes.io/gce-pd,kubernetes.io/vsphere-volume
+    creationTimestamp: "2024-08-06T02:15:24Z"
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:storage.alpha.kubernetes.io/migrated-plugins: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"cb77b855-ef85-4af4-b07c-b9963a49007b"}: {}
+        f:spec:
+          f:drivers:
+            k:{"name":"driver.longhorn.io"}:
+              .: {}
+              f:name: {}
+              f:nodeID: {}
+              f:topologyKeys: {}
+      manager: kubelet
+      operation: Update
+      time: "2024-08-06T02:16:06Z"
+    name: harvesterdev7
+    ownerReferences:
+    - apiVersion: v1
+      kind: Node
+      name: harvesterdev7
+      uid: cb77b855-ef85-4af4-b07c-b9963a49007b
+    resourceVersion: "30476"
+    uid: 8549d2cc-9c6d-4bf2-a63a-ba3bb6be0445
+  spec:
+    drivers:
+    - name: driver.longhorn.io
+      nodeID: harvesterdev7
+      topologyKeys: null
+kind: List
+metadata:
+  resourceVersion: "770146"

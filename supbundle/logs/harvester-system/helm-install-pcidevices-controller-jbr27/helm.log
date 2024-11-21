@@ -1,0 +1,96 @@
+2024-08-06T11:55:31.023656012Z if [[ ${KUBERNETES_SERVICE_HOST} =~ .*:.* ]]; then
+2024-08-06T11:55:31.023703562Z 	echo "KUBERNETES_SERVICE_HOST is using IPv6"
+2024-08-06T11:55:31.023707620Z 	CHART="${CHART//%\{KUBERNETES_API\}%/[${KUBERNETES_SERVICE_HOST}]:${KUBERNETES_SERVICE_PORT}}"
+2024-08-06T11:55:31.023713831Z else
+2024-08-06T11:55:31.023717268Z 	CHART="${CHART//%\{KUBERNETES_API\}%/${KUBERNETES_SERVICE_HOST}:${KUBERNETES_SERVICE_PORT}}"
+2024-08-06T11:55:31.023721706Z fi
+2024-08-06T11:55:31.023730693Z 
+2024-08-06T11:55:31.023733949Z set +v -x
+2024-08-06T11:55:31.023739720Z + [[ '' != \t\r\u\e ]]
+2024-08-06T11:55:31.024062740Z + export HELM_HOST=127.0.0.1:44134
+2024-08-06T11:55:31.024079031Z + HELM_HOST=127.0.0.1:44134
+2024-08-06T11:55:31.024120419Z + helm_v2 init --skip-refresh --client-only --stable-repo-url https://charts.helm.sh/stable/
+2024-08-06T11:55:31.024225898Z + tiller --listen=127.0.0.1:44134 --storage=secret
+2024-08-06T11:55:31.094138493Z Creating /home/klipper-helm/.helm/repository 
+2024-08-06T11:55:31.094185231Z Creating /home/klipper-helm/.helm/repository/cache 
+2024-08-06T11:55:31.094189529Z Creating /home/klipper-helm/.helm/repository/local 
+2024-08-06T11:55:31.094193366Z Creating /home/klipper-helm/.helm/plugins 
+2024-08-06T11:55:31.094220939Z Creating /home/klipper-helm/.helm/starters 
+2024-08-06T11:55:31.094238762Z Creating /home/klipper-helm/.helm/cache/archive 
+2024-08-06T11:55:31.094242680Z Creating /home/klipper-helm/.helm/repository/repositories.yaml 
+2024-08-06T11:55:31.094245976Z Adding stable repo with URL: https://charts.helm.sh/stable/ 
+2024-08-06T11:55:31.094257147Z Adding local repo with URL: http://127.0.0.1:8879/charts 
+2024-08-06T11:55:31.095023594Z $HELM_HOME has been configured at /home/klipper-helm/.helm.
+2024-08-06T11:55:31.095046036Z Not installing Tiller due to 'client-only' flag having been set
+2024-08-06T11:55:31.099993446Z ++ timeout -s KILL 30 helm_v2 ls --all '^pcidevices-controller$' --output json
+2024-08-06T11:55:31.100092543Z ++ jq -r '.Releases | length'
+2024-08-06T11:55:31.104558614Z [main] 2024/08/06 11:55:31 Starting Tiller v2.17.0 (tls=false)
+2024-08-06T11:55:31.104566970Z [main] 2024/08/06 11:55:31 GRPC listening on 127.0.0.1:44134
+2024-08-06T11:55:31.104575756Z [main] 2024/08/06 11:55:31 Probes listening on :44135
+2024-08-06T11:55:31.104582359Z [main] 2024/08/06 11:55:31 Storage driver is Secret
+2024-08-06T11:55:31.104585675Z [main] 2024/08/06 11:55:31 Max history per release is 0
+2024-08-06T11:55:31.170004636Z [storage] 2024/08/06 11:55:31 listing all releases with filter
+2024-08-06T11:55:31.203358473Z + V2_CHART_EXISTS=
+2024-08-06T11:55:31.203529386Z + [[ '' == \1 ]]
+2024-08-06T11:55:31.203539375Z + [[ '' == \v\2 ]]
+2024-08-06T11:55:31.203567648Z + shopt -s nullglob
+2024-08-06T11:55:31.203631408Z + [[ -f /config/ca-file.pem ]]
+2024-08-06T11:55:31.203772966Z + [[ -f /tmp/ca-file.pem ]]
+2024-08-06T11:55:31.203822599Z + [[ -n '' ]]
+2024-08-06T11:55:31.203830775Z + helm_content_decode
+2024-08-06T11:55:31.203858126Z + set -e
+2024-08-06T11:55:31.203879437Z + ENC_CHART_PATH=/chart/pcidevices-controller.tgz.base64
+2024-08-06T11:55:31.203906287Z + CHART_PATH=/tmp/pcidevices-controller.tgz
+2024-08-06T11:55:31.203921787Z + [[ ! -f /chart/pcidevices-controller.tgz.base64 ]]
+2024-08-06T11:55:31.203967303Z + return
+2024-08-06T11:55:31.204014442Z + [[ install != \d\e\l\e\t\e ]]
+2024-08-06T11:55:31.204038868Z + helm_repo_init
+2024-08-06T11:55:31.204131102Z + grep -q -e 'https\?://'
+2024-08-06T11:55:31.206059001Z + [[ helm_v3 == \h\e\l\m\_\v\3 ]]
+2024-08-06T11:55:31.206075593Z + [[ pcidevices-controller/harvester-pcidevices-controller == stable/* ]]
+2024-08-06T11:55:31.206118213Z + [[ -n http://harvester-cluster-repo.cattle-system.svc/charts ]]
+2024-08-06T11:55:31.206128022Z + [[ -f /auth/username ]]
+2024-08-06T11:55:31.206204777Z + helm_v3 repo add pcidevices-controller http://harvester-cluster-repo.cattle-system.svc/charts
+2024-08-06T11:55:31.276245282Z "pcidevices-controller" has been added to your repositories
+2024-08-06T11:55:31.281344258Z + helm_v3 repo update
+2024-08-06T11:55:31.344104800Z Hang tight while we grab the latest from your chart repositories...
+2024-08-06T11:55:31.351706361Z ...Successfully got an update from the "pcidevices-controller" chart repository
+2024-08-06T11:55:31.351733101Z Update Complete. ⎈Happy Helming!⎈
+2024-08-06T11:55:31.358365172Z + helm_update install --version 0.3.2
+2024-08-06T11:55:31.358425816Z + [[ helm_v3 == \h\e\l\m\_\v\3 ]]
+2024-08-06T11:55:31.359602227Z ++ helm_v3 ls --all -f '^pcidevices-controller$' --namespace harvester-system --output json
+2024-08-06T11:55:31.360148318Z ++ jq -r '"\(.[0].chart),\(.[0].status)"'
+2024-08-06T11:55:31.360381428Z ++ tr '[:upper:]' '[:lower:]'
+2024-08-06T11:55:31.562003640Z + LINE=harvester-pcidevices-controller-0.3.2,deployed
+2024-08-06T11:55:31.562065426Z + IFS=,
+2024-08-06T11:55:31.562078601Z + read -r INSTALLED_VERSION STATUS _
+2024-08-06T11:55:31.562113868Z + VALUES=
+2024-08-06T11:55:31.562213256Z + for VALUES_FILE in /config/*.yaml
+2024-08-06T11:55:31.562231801Z + VALUES=' --values /config/values-01_HelmChart.yaml'
+2024-08-06T11:55:31.562263721Z + [[ install = \d\e\l\e\t\e ]]
+2024-08-06T11:55:31.562308906Z + [[ harvester-pcidevices-controller-0.3.2 =~ ^(|null)$ ]]
+2024-08-06T11:55:31.562437439Z + [[ deployed =~ ^(pending-install|pending-upgrade|pending-rollback)$ ]]
+2024-08-06T11:55:31.562604594Z + [[ deployed == \d\e\p\l\o\y\e\d ]]
+2024-08-06T11:55:31.562646413Z Already installed pcidevices-controller
+2024-08-06T11:55:31.562650311Z + echo 'Already installed pcidevices-controller'
+2024-08-06T11:55:31.562695606Z + [[ helm_v3 == \h\e\l\m\_\v\3 ]]
+2024-08-06T11:55:31.562708360Z + helm_v3 mapkubeapis pcidevices-controller --namespace harvester-system
+2024-08-06T11:55:31.661751639Z 2024/08/06 11:55:31 Release 'pcidevices-controller' will be checked for deprecated or removed Kubernetes APIs and will be updated if necessary to supported API versions.
+2024-08-06T11:55:31.661877727Z 2024/08/06 11:55:31 Get release 'pcidevices-controller' latest version.
+2024-08-06T11:55:31.678076688Z 2024/08/06 11:55:31 Check release 'pcidevices-controller' for deprecated or removed APIs...
+2024-08-06T11:55:31.682396753Z 2024/08/06 11:55:31 Finished checking release 'pcidevices-controller' for deprecated or removed APIs.
+2024-08-06T11:55:31.682416551Z 2024/08/06 11:55:31 Release 'pcidevices-controller' has no deprecated or removed APIs.
+2024-08-06T11:55:31.682424816Z 2024/08/06 11:55:31 Map of release 'pcidevices-controller' deprecated or removed APIs to supported versions, completed successfully.
+2024-08-06T11:55:31.689313481Z + echo 'Upgrading helm_v3 chart'
+2024-08-06T11:55:31.689368736Z + echo 'Upgrading pcidevices-controller'
+2024-08-06T11:55:31.689380788Z + shift 1
+2024-08-06T11:55:31.689401808Z Upgrading pcidevices-controller
+2024-08-06T11:55:31.689429090Z + helm_v3 upgrade --version 0.3.2 pcidevices-controller pcidevices-controller/harvester-pcidevices-controller --values /config/values-01_HelmChart.yaml
+2024-08-06T11:55:33.428279690Z Release "pcidevices-controller" has been upgraded. Happy Helming!
+2024-08-06T11:55:33.428337128Z NAME: pcidevices-controller
+2024-08-06T11:55:33.428343220Z LAST DEPLOYED: Tue Aug  6 11:55:31 2024
+2024-08-06T11:55:33.428348139Z NAMESPACE: harvester-system
+2024-08-06T11:55:33.428351986Z STATUS: deployed
+2024-08-06T11:55:33.428379619Z REVISION: 2
+2024-08-06T11:55:33.428383306Z TEST SUITE: None
+2024-08-06T11:55:33.433307011Z + exit

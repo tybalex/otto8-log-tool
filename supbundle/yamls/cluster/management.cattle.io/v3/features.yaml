@@ -1,0 +1,385 @@
+apiVersion: v1
+items:
+- apiVersion: management.cattle.io/v3
+  kind: Feature
+  metadata:
+    creationTimestamp: "2024-08-06T01:52:26Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:value: {}
+        f:status:
+          .: {}
+          f:default: {}
+          f:description: {}
+          f:dynamic: {}
+          f:lockedValue: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:26Z"
+    name: continuous-delivery
+    resourceVersion: "1168"
+    uid: 6cabe9c5-a0ff-4f4f-aebc-16b1043ff203
+  spec:
+    value: null
+  status:
+    default: true
+    description: Gitops components in fleet
+    dynamic: false
+    lockedValue: null
+- apiVersion: management.cattle.io/v3
+  kind: Feature
+  metadata:
+    creationTimestamp: "2024-08-06T01:52:26Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:value: {}
+        f:status:
+          .: {}
+          f:default: {}
+          f:description: {}
+          f:dynamic: {}
+          f:lockedValue: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:26Z"
+    name: fleet
+    resourceVersion: "1170"
+    uid: fccca6e7-82e1-4363-af09-d2566e692392
+  spec:
+    value: null
+  status:
+    default: true
+    description: Install Fleet when starting Rancher
+    dynamic: false
+    lockedValue: null
+- apiVersion: management.cattle.io/v3
+  kind: Feature
+  metadata:
+    creationTimestamp: "2024-08-06T01:52:26Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:value: {}
+        f:status:
+          .: {}
+          f:default: {}
+          f:description: {}
+          f:dynamic: {}
+          f:lockedValue: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:26Z"
+    name: harvester
+    resourceVersion: "1166"
+    uid: 66367f02-e1f0-4bbd-829c-9ff037a30669
+  spec:
+    value: null
+  status:
+    default: true
+    description: Enable Harvester integration, with ability to import and manage Harvester
+      clusters
+    dynamic: true
+    lockedValue: null
+- apiVersion: management.cattle.io/v3
+  kind: Feature
+  metadata:
+    creationTimestamp: "2024-08-06T01:52:26Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:value: {}
+        f:status:
+          .: {}
+          f:default: {}
+          f:description: {}
+          f:dynamic: {}
+          f:lockedValue: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:26Z"
+    name: harvester-baremetal-container-workload
+    resourceVersion: "1173"
+    uid: a6a5dfae-63c1-4645-81ae-a4aca76adeb3
+  spec:
+    value: null
+  status:
+    default: false
+    description: '[Experimental]: Deploy container workloads to underlying harvester
+      cluster'
+    dynamic: true
+    lockedValue: null
+- apiVersion: management.cattle.io/v3
+  kind: Feature
+  metadata:
+    creationTimestamp: "2024-08-06T01:52:26Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:value: {}
+        f:status:
+          .: {}
+          f:default: {}
+          f:description: {}
+          f:dynamic: {}
+          f:lockedValue: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:26Z"
+    name: istio-virtual-service-ui
+    resourceVersion: "1174"
+    uid: 68e9e2c2-0792-4b92-b81e-45c6f53b8d59
+  spec:
+    value: null
+  status:
+    default: true
+    description: Exposes a UI that enables users to create, read, update and delete
+      virtual services and destination rules, which are traffic management features
+      of Istio.
+    dynamic: true
+    lockedValue: null
+- apiVersion: management.cattle.io/v3
+  kind: Feature
+  metadata:
+    creationTimestamp: "2024-08-06T01:52:26Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:value: {}
+        f:status:
+          .: {}
+          f:default: {}
+          f:description: {}
+          f:dynamic: {}
+          f:lockedValue: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:26Z"
+    name: legacy
+    resourceVersion: "1169"
+    uid: c3bb40e4-08df-4302-9105-7785bfd0a177
+  spec:
+    value: null
+  status:
+    default: false
+    description: Enable legacy features
+    dynamic: true
+    lockedValue: null
+- apiVersion: management.cattle.io/v3
+  kind: Feature
+  metadata:
+    creationTimestamp: "2024-08-06T01:52:26Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:value: {}
+        f:status:
+          .: {}
+          f:default: {}
+          f:description: {}
+          f:dynamic: {}
+          f:lockedValue: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:26Z"
+    name: multi-cluster-management
+    resourceVersion: "1175"
+    uid: 1791a1a4-6a36-477c-9356-a2921268ee15
+  spec:
+    value: null
+  status:
+    default: false
+    description: Multi-cluster provisioning and management of Kubernetes clusters.
+    dynamic: false
+    lockedValue: null
+- apiVersion: management.cattle.io/v3
+  kind: Feature
+  metadata:
+    creationTimestamp: "2024-08-06T01:52:26Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:value: {}
+        f:status:
+          .: {}
+          f:default: {}
+          f:description: {}
+          f:dynamic: {}
+          f:lockedValue: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:26Z"
+    name: provisioningv2-fleet-workspace-back-population
+    resourceVersion: "1177"
+    uid: d2d4dcc0-3f3c-42e6-8bed-4abe6ac1de25
+  spec:
+    value: null
+  status:
+    default: false
+    description: '[Experimental]: Allow Fleet workspace name to be changed on clusters
+      administrated by provisioning v2'
+    dynamic: false
+    lockedValue: null
+- apiVersion: management.cattle.io/v3
+  kind: Feature
+  metadata:
+    creationTimestamp: "2024-08-06T01:52:26Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:value: {}
+        f:status:
+          .: {}
+          f:default: {}
+          f:description: {}
+          f:dynamic: {}
+          f:lockedValue: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:26Z"
+    name: rke1-custom-node-cleanup
+    resourceVersion: "1176"
+    uid: cb69dd63-6616-48d9-82db-2bf21c6182da
+  spec:
+    value: null
+  status:
+    default: true
+    description: Enable cleanup RKE1 custom cluster nodes when they are deleted
+    dynamic: true
+    lockedValue: null
+- apiVersion: management.cattle.io/v3
+  kind: Feature
+  metadata:
+    creationTimestamp: "2024-08-06T01:52:26Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:value: {}
+        f:status:
+          .: {}
+          f:default: {}
+          f:description: {}
+          f:dynamic: {}
+          f:lockedValue: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:26Z"
+    name: rke2
+    resourceVersion: "1171"
+    uid: 846757ba-6794-4529-a8b0-9e967e8c8f76
+  spec:
+    value: null
+  status:
+    default: true
+    description: Enable provisioning of RKE2
+    dynamic: false
+    lockedValue: null
+- apiVersion: management.cattle.io/v3
+  kind: Feature
+  metadata:
+    creationTimestamp: "2024-08-06T01:52:26Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:value: {}
+        f:status:
+          .: {}
+          f:default: {}
+          f:description: {}
+          f:dynamic: {}
+          f:lockedValue: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:26Z"
+    name: token-hashing
+    resourceVersion: "1172"
+    uid: 8c3bdaa7-92c5-4568-a680-2e81e77fac0d
+  spec:
+    value: null
+  status:
+    default: false
+    description: Enable one way hashing of tokens. Once enabled token hashing can
+      not be disabled
+    dynamic: true
+    lockedValue: null
+- apiVersion: management.cattle.io/v3
+  kind: Feature
+  metadata:
+    creationTimestamp: "2024-08-06T01:52:26Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:value: {}
+        f:status:
+          .: {}
+          f:default: {}
+          f:description: {}
+          f:dynamic: {}
+          f:lockedValue: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:26Z"
+    name: unsupported-storage-drivers
+    resourceVersion: "1167"
+    uid: 1b609f36-80fe-4aa8-a57c-e97a2937a99d
+  spec:
+    value: null
+  status:
+    default: false
+    description: Allows the use of types for storage providers and provisioners that
+      are not enabled by default.
+    dynamic: true
+    lockedValue: null
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770167"

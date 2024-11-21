@@ -1,0 +1,1161 @@
+apiVersion: v1
+items:
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/6xUzY7bNhB+lWCuFRWKkmVJQA9tAxRFDy2SoIcWOYzIkc2aIgWS8mK70LsXlN2NuthsNsnebHBmvpnvR3cwUkSFEaG7A7TWRYza2ZD+uv5vkjFQzL12ucQYDeXavdYKOjiSGRlOE2SfrHM3ljw7nE/Qwetzkb36VVv1/TuSnuJn2yyOBB2EY56Qck+GMFB+LnLjJBo2osUDKRZuQ6SR4YFszM/Fs+aGCWUafnm7joAlA+lpPf+9HilEHCfo7GxMBgZ7Mk+ScsRwhA6qUtS1KIt9g8XAy5ajQiGroZE9SlLYKNFUxZ4S2vXET98Dl5rH181gPegtDeTJSgrQ/XUHOOk/yAftLHSw0tEbJ0+/pdI3ZCiuLwOaQBlIZ6N3xpCHLvqZMjhpm8S91+jrVZhXl9RVWbb7SjChKs4qQsWaslGsqLEQ5Y4PolKwfFgyCBPJxK88oo/pxxPGHAxR3HC/wj6m7FrILqve0/awu5+tMsTWfZ/U4mHjiWhinoKb/Uo/rLQ+UhjIn7UkhlK62UboIMn/f6kEPM8Q548tPOc5/y6wei92xVAPgteDalsaSsTdIDmKghf7ahBqaPuaV327l2VBTdOKth8qWJZsjfH9FmUG2g4uUawoSK+ni13gFxsiGvNKunEyFNcbtQ/xDU3G3VJiTnBRMd4wXr/nRberul35J6TgPKcqRIxzYlD9V/oC8dgo8zAYvkeZ4xyPzut/Vl/lpyYkqVbvXlPwk5lDJP/WGdpEYbMAm6eDR0UeluxbEX7UVml7+GKg68vGbVuA3w3az418isWXh2M32ip3E74Mdgvy7pKmH65h+pbrPmzyVCwffZg+8ym0pH4mSx4vMeAZhHkc0d9Cd7csy78BAAD//1wFu7w9BwAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.local-managed-system-agent.v1
+      objectset.rio.cattle.io/owner-namespace: cattle-system
+    creationTimestamp: "2024-08-06T01:54:54Z"
+    generation: 2
+    labels:
+      objectset.rio.cattle.io/hash: 4326623178a1f0390ada2c4f8cbaceda8d28417e
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"64339742-2d40-4ead-838d-16a12350f24d"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:fleet.cattle.io/agent-namespace: {}
+                f:fleet.cattle.io/bundle-id: {}
+                f:fleet.cattle.io/keep-resources: {}
+                f:fleet.cattle.io/service-account: {}
+              f:apiVersion: {}
+              f:name: {}
+              f:version: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:54:54Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:54:54Z"
+    name: local-managed-system-agent
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.local-managed-system-agent.v1
+      uid: 64339742-2d40-4ead-838d-16a12350f24d
+    resourceVersion: "3694"
+    uid: 221ca8d4-5ef2-48e1-9f3b-f978825d3b8b
+  spec:
+    chart:
+      metadata:
+        annotations:
+          fleet.cattle.io/agent-namespace: cattle-fleet-local-system
+          fleet.cattle.io/bundle-id: local-managed-system-agent
+          fleet.cattle.io/keep-resources: "false"
+          fleet.cattle.io/service-account: "null"
+        apiVersion: v2
+        name: local-managed-system-agent
+        version: v0.0.0+s-67251f6f206fd99ef3aa5fc0a210174f2df9b604b97c31e88929bf40183cc
+    helmVersion: 3
+    info:
+      description: Install complete
+      firstDeployed: "2024-08-06T01:54:53Z"
+      lastDeployed: "2024-08-06T01:54:53Z"
+      status: deployed
+    name: local-managed-system-agent
+    namespace: cattle-system
+    resources:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: system-agent-upgrader
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: system-agent-upgrader
+    - apiVersion: upgrade.cattle.io/v1
+      kind: Plan
+      name: system-agent-upgrader
+      namespace: cattle-system
+    - apiVersion: upgrade.cattle.io/v1
+      kind: Plan
+      name: system-agent-upgrader-windows
+      namespace: cattle-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: system-agent-upgrader
+      namespace: cattle-system
+    version: 1
+  status:
+    observedGeneration: 2
+    summary:
+      state: deployed
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/7RWwW7jNhD9FWOulWjZcuxYwB7aDdBDURRIt3voNocRNZJZUyRBUkrTQP9ekFIcZ+M4Cbp7siQO53HevDf0PbTksUKPUNwDKqU9eqGVC6+6/Ju4d+SZFZpx9F4SE3ouKihgR7JN0RhIXozTt4ps2vR7KGDeL5LZL0JVH34nbsm/uk1hS1CA27GAxCxJQkesX7CW81RqjjJtUWFDVerunKc27UxjsaKUa+WtlpIs69+E4wzyADauTelgSIBbinR8Ei05j62BQnVSJiCxJHmWpB26HRSA9XbLs4tqk6+pWtebmnBRZpe4XK5XWPNtXZXlZlvXAW0q+R31wbjp9PkTiBVeU02WFCcHxZd7QCM+k3VCKyigX0ACpdR8/1sIvSJJPq7UKB0lcIRUeNtRAnuhQvcPTfxGbVpCAl3UVV6vN9l6u0hXOcd0tV1sU1yu1mm+2mxX5WZd5VjBcDMk4Azx0AG+Q+vDwxkpc/QodXPUH07Wi1pQwLSo+C6y+TxuJ6qKAleh/pMR+66ktD9w+leXZTl9mC3YMmdZms3iBx7et+H9ZI5zXXwerR0UIIXq/jm5bMi2wrv0MSy5FarSt+5k+FT9iRKW7PK4giV7uYCp8QfbnlFsLYn80VZsSPlTPoyBk4YObHy9u+xUJSmN2nmfc77OtCcyqSWnOxvNAtEEJwId2V5wSpFz3SkPBQT3PjcWGnP0JWOLnIXPFTluhRmNBj+TIotyZjprtKPZ4xFnXs9a3NNsLGImqSc560yFnlxYVLqi0NKdjpzvvDeumM8b4XddybhuH1o7n2iITnHzUupyXlGf9kt2OZ8+WoQEgpQ/v6jkI7ufofXA35f/faJRl/vcPSBZuEngUaeLLGcZW/zQmYytWRa60KPsKFq+kbpEOZnfSwpPxpnwQwpLGZwfPB0mSTzMFdXYSX9NjXDe3sW2DiMn3MdEosUm5rFktBNex6iHkh4CE/DYRA0E3vKYZET4Y6zi49FUfS3pOaYnmElYwxCAwhQ+dDBPQKhah+RPRTcdZMZ1ayT5KHJhnb8iI/VdnInLbLlKs8s0W3/KFsXFqshXf0K4+F6JughRzqPvgoWqh9Dvcb0defXkxXa4q6Jdf5zc+iYRn/tXcAbqo1a1aH5F8waU8FiL5n1gtkTOsPM7bcW/8Xpj+0sXhtKTY8jOebLXWtJPQlVCNW+p+hkYGuOe5B0b39I3YPHmvVaNw/i8V4ej2bAcHlUY/qSFmU3VOGxHE2QJuK5tMey+H4bhvwAAAP//HUWzZwsLAAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.mcc-local-managed-system-upgrade-controller.v2
+      objectset.rio.cattle.io/owner-namespace: cattle-system
+    creationTimestamp: "2024-08-06T01:54:34Z"
+    generation: 4
+    labels:
+      objectset.rio.cattle.io/hash: af99c05d736ed6f7fea1b08a2264afc9fdbb79ff
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"3f670691-43ca-4919-a246-34794b76d3ad"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:catalog.cattle.io/certified: {}
+                f:catalog.cattle.io/hidden: {}
+                f:catalog.cattle.io/kube-version: {}
+                f:catalog.cattle.io/namespace: {}
+                f:catalog.cattle.io/os: {}
+                f:catalog.cattle.io/permits-os: {}
+                f:catalog.cattle.io/rancher-version: {}
+                f:catalog.cattle.io/release-name: {}
+                f:fleet.cattle.io/agent-namespace: {}
+                f:fleet.cattle.io/bundle-id: {}
+                f:fleet.cattle.io/keep-resources: {}
+                f:fleet.cattle.io/service-account: {}
+              f:apiVersion: {}
+              f:appVersion: {}
+              f:description: {}
+              f:home: {}
+              f:kubeVersion: {}
+              f:name: {}
+              f:sources: {}
+              f:version: {}
+            f:values:
+              .: {}
+              f:global:
+                .: {}
+                f:cattle:
+                  .: {}
+                  f:psp:
+                    .: {}
+                    f:enabled: {}
+                  f:systemDefaultRegistry: {}
+              f:kubectl:
+                .: {}
+                f:image:
+                  .: {}
+                  f:repository: {}
+                  f:tag: {}
+              f:systemUpgradeController:
+                .: {}
+                f:image:
+                  .: {}
+                  f:repository: {}
+                  f:tag: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:values:
+            .: {}
+            f:global:
+              .: {}
+              f:cattle:
+                .: {}
+                f:psp:
+                  .: {}
+                  f:enabled: {}
+                f:systemDefaultRegistry: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:54:35Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:54:35Z"
+    name: mcc-local-managed-system-upgrade-controller
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.mcc-local-managed-system-upgrade-controller.v2
+      uid: 3f670691-43ca-4919-a246-34794b76d3ad
+    resourceVersion: "3497"
+    uid: 85402725-fbf7-402d-8ede-9312e7947107
+  spec:
+    chart:
+      metadata:
+        annotations:
+          catalog.cattle.io/certified: rancher
+          catalog.cattle.io/hidden: "true"
+          catalog.cattle.io/kube-version: '>= 1.23.0-0 < 1.29.0-0'
+          catalog.cattle.io/namespace: cattle-system
+          catalog.cattle.io/os: linux
+          catalog.cattle.io/permits-os: linux,windows
+          catalog.cattle.io/rancher-version: '>= 2.8.0-0 < 2.9.0-0'
+          catalog.cattle.io/release-name: system-upgrade-controller
+          fleet.cattle.io/agent-namespace: cattle-fleet-local-system
+          fleet.cattle.io/bundle-id: mcc-local-managed-system-upgrade-controller
+          fleet.cattle.io/keep-resources: "false"
+          fleet.cattle.io/service-account: "null"
+        apiVersion: v1
+        appVersion: v0.13.1
+        description: General purpose controller to make system level updates to nodes.
+        home: https://github.com/rancher/system-charts/blob/dev-v2.8/charts/rancher-k3s-upgrader
+        kubeVersion: '>= 1.23.0-0'
+        name: system-upgrade-controller
+        sources:
+        - https://github.com/rancher/system-charts/blob/dev-v2.8/charts/rancher-k3s-upgrader
+        version: 103.0.1+up0.6.0
+      values:
+        global:
+          cattle:
+            psp:
+              enabled: true
+            systemDefaultRegistry: "null"
+        kubectl:
+          image:
+            repository: rancher/kubectl
+            tag: v1.23.3
+        systemUpgradeController:
+          image:
+            repository: rancher/system-upgrade-controller
+            tag: v0.13.1
+    helmVersion: 3
+    info:
+      description: Upgrade complete
+      firstDeployed: "2024-08-06T01:54:34Z"
+      lastDeployed: "2024-08-06T01:54:35Z"
+      status: deployed
+    name: mcc-local-managed-system-upgrade-controller
+    namespace: cattle-system
+    resources:
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: system-upgrade-controller
+      namespace: cattle-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: system-upgrade-controller-config
+      namespace: cattle-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: system-upgrade-controller
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: system-upgrade-controller
+      namespace: cattle-system
+    values:
+      global:
+        cattle:
+          psp:
+            enabled: false
+          systemDefaultRegistry: "null"
+    version: 2
+  status:
+    observedGeneration: 4
+    summary:
+      state: deployed
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/6RXbW/bOBL+K8J8lmTJL3kxsMClabAomm2NJrsH3DYfKGpk80yROnLk1g383w9DyXLcuGmKRb6I5nBen5l58gg1kigFCZg/gjDGkiBljeejLf6LkjxS6pRNpSDSmCo7UiXMYYW6TkTTQPxDOfvFoEuWmzXMYbTJ4+i9MuVvdygd0k+fGVEjzMGvUraUOtQoPKabPHXCyBW6dJO/SolvhGRN3V3it56whl0M0mGI9V7V6EnUDcxNq3UMWhSoX8zASvgVzAFlXuXTbDYT4rKaZuc5ytnlrDo/vxTTssxwel5lMykKttbH0zsP3Q+nfYsheP8JK3RoJHqY//0IolF/ofPKGphDiL3QVq4/suhb1EjhphLaYwzSGnJWa3QwJ9diDGtluGxD9l+Z3zYUe4KzmTy7nCXVtBonU3ExSy5wcpZMqwrPzrLy/LK8gN3DLgbfoOTMyZVwxB9H+DoKYQwxiKY5/HKZTeW4KrLLpFSOthBDiV461XShwTvjSWgdfeocjO7QbdBFZKNaGLHE6H1boDNI6COpW0/ofCSks95HjbMbiGFlQ9QrosbPR6N9qNJy1pUMZvaXS0WrtuC7vdyoVaNC22JUC1Y+atpCKzkS3iP5karFEv1IQwxr3H6xruTCDRV/iGHdFngI93ObZRMZ5en4Ms2SDGKohTIklEHXlRxroTTDg5Pp/3XsbV/AfTJuReFh93ACaN62rgPRS6Ed5F8Q8iHjSVfchxg2QzDj9CKddHXjF7WiZCgnw38jdIuhp0RZ3lopOC5GJoOgLBWXWOh7x1Urr6/8gGRhSF1VlTKKtjCHxnFXOCz5XVsqurVL1lqiJ2VEjxSvSpQiBGM9LQStwggSbqTtcogmvB9x4blyrKVptV5YrSSbeld9sLRw6NFwwzhsrFdk3faQ3VGtnLMOy6SQKqmVdBZiILGEOeSzdJrm03TC4WvcoIZ5xjX+esXG8vD5Rsh12+xPd+ob32TZLobCWvLkRLMQ3jOYYA4Qg0RHHdodO3woQJhorSdb39ql7TItJXr/hy0DTlCU/3aK8KORnHQ0otBYDnn2wTbkvyuIYWN1W+P7bmQ0bMMTGvor/HythaoHobu2aAStgkGsC3R/Kp6M/MUyLYbzpkXY7bihi3Y52Kw0InVxLbUtGBOP/SwM1fBN0Lr3FGDHOkK1Fq3W3Szz+7GtzNKh90dPutmHX8mJq6PlxnqM1G2Jb7ESraabZzLd217rtRbef+haC2Joekj1n/fbhi/e1Y3GGk2n4q5BqSoluQXRbZTEheWZeJHFQN1+8SGCXi1pn/S4Svax7Lv3SUPvApzI3xjptg114W6Us4YthxaxZStDJxwlRXIIXRZj0GqDBr1fOFuEZHODKaHfohbbO5TW8PQ6y2Iuv7Ll8NOEwWnswtmv3Aj5+DzN+G90EefZ4fN8nOZn4ZCP4/ySTxfd8SxO/UbGaTehOYHWU1hgeKJ0ammsQ17RtqUbbrYBPUPXnuxMv0Kth2bcZGmejif7RRz27q3yxEOxX74BjIcV/P1K3lfGNugEWbe/eYiBOu9gno85OY1T1inaPoXM/rV0ihQPvyC2EYTXV0NAvdC7Li54PpkdilL9vGqz00Vz2GglBR/5MKyFx3DnySlJWF6VtTrwiB64z8nhLgbqQM857XLRd9InXCpPoRjQIx0OeCbbWG2X2/fIAuthYwdaZT2F9RVD6/FNa0qN5V3Qfd3xid6tL1isrF3vwcwMZtirEwZ9ZfulcII+SMttGqBXKcfYa7TdhgEzzsbTJLtIsrP7LJ/P8vlk8h9gQvgaKWOJ0wnf0ZOV8FGBaCLV2ccy/Ww+mw8f72/mA5WpxTYiscbI42YodUDOm+3+oTLLiFbKR6IJheSw4mhr24gHfUMRrTD6+8aU0Z+eCYGSaDxH6UlQy56V+xh+lY8+Qcv3TNTLFZYtO5euL0IVA2/s6ebiaS/A91YP7bCLTxHcgbMGEF5JaVtDz7S86PuLiq+tqdTyD9Gc8Cxc/ZpqVwiZipZW1qlvoTynUnLdMdNPVuMbZUplls8jek06/mEeRNP4I786gNf4yxl+OGJ3x3TN4f9a1bG1U4RGhGETQ4WCWhe6p241qaSn70lHddip37rW/9F1Ipad0Cu5RNAW6ERgiGExZ6c5RCfK/d0PuOMR+fOp/URg8RLBfCJ3322twKrh6ehOJq+YtviV0JmwZX4wR3m57p7w93x3GBP8b28g+uXvaHjZBYksBt/WtWBLj7vd7v8BAAD//70+mlk6EAAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.rancher.v1
+      objectset.rio.cattle.io/owner-namespace: cattle-system
+    creationTimestamp: "2024-08-06T01:52:31Z"
+    generation: 2
+    labels:
+      objectset.rio.cattle.io/hash: ec1f14055aa9f4071ec595f779a4dd0e47f05cab
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"3e55c695-f4f2-4a85-8e36-4ffe660d79d8"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:apiVersion: {}
+              f:appVersion: {}
+              f:description: {}
+              f:home: {}
+              f:icon: {}
+              f:keywords: {}
+              f:kubeVersion: {}
+              f:maintainers: {}
+              f:name: {}
+              f:sources: {}
+              f:version: {}
+            f:values:
+              .: {}
+              f:addLocal: {}
+              f:additionalTrustedCAs: {}
+              f:antiAffinity: {}
+              f:auditLog:
+                .: {}
+                f:destination: {}
+                f:hostPath: {}
+                f:image:
+                  .: {}
+                  f:pullPolicy: {}
+                  f:repository: {}
+                  f:tag: {}
+                f:level: {}
+                f:maxAge: {}
+                f:maxBackup: {}
+                f:maxSize: {}
+              f:bootstrapPassword: {}
+              f:certmanager:
+                .: {}
+                f:version: {}
+              f:customLogos:
+                .: {}
+                f:accessMode: {}
+                f:enabled: {}
+                f:size: {}
+                f:volumeKind: {}
+                f:volumeSubpaths:
+                  .: {}
+                  f:emberUi: {}
+                  f:vueUi: {}
+              f:debug: {}
+              f:fleet: {}
+              f:global:
+                .: {}
+                f:cattle:
+                  .: {}
+                  f:psp:
+                    .: {}
+                    f:enabled: {}
+              f:imagePullSecrets: {}
+              f:ingress:
+                .: {}
+                f:enabled: {}
+                f:extraAnnotations: {}
+                f:includeDefaultExtraAnnotations: {}
+                f:ingressClassName: {}
+                f:path: {}
+                f:pathType: {}
+                f:servicePort: {}
+                f:tls:
+                  .: {}
+                  f:secretName: {}
+                  f:source: {}
+              f:letsEncrypt:
+                .: {}
+                f:environment: {}
+                f:ingress:
+                  .: {}
+                  f:class: {}
+              f:livenessProbe:
+                .: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+              f:noProxy: {}
+              f:postDelete:
+                .: {}
+                f:enabled: {}
+                f:ignoreTimeoutError: {}
+                f:image:
+                  .: {}
+                  f:repository: {}
+                  f:tag: {}
+                f:namespaceList: {}
+                f:timeout: {}
+              f:priorityClassName: {}
+              f:privateCA: {}
+              f:rancherImage: {}
+              f:readinessProbe:
+                .: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+              f:replicas: {}
+              f:resources: {}
+              f:restrictedAdmin: {}
+              f:service:
+                .: {}
+                f:annotations: {}
+                f:type: {}
+              f:systemDefaultRegistry: {}
+              f:tls: {}
+              f:topologyKey: {}
+              f:useBundledSystemChart: {}
+              f:webhook: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:notes: {}
+            f:readme: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:values:
+            .: {}
+            f:antiAffinity: {}
+            f:bootstrapPassword: {}
+            f:features: {}
+            f:global:
+              .: {}
+              f:cattle:
+                .: {}
+                f:psp:
+                  .: {}
+                  f:enabled: {}
+            f:hostPort: {}
+            f:ingress:
+              .: {}
+              f:enabled: {}
+            f:noDefaultAdmin: {}
+            f:rancherImage: {}
+            f:rancherImagePullPolicy: {}
+            f:rancherImageTag: {}
+            f:replicas: {}
+            f:systemDefaultRegistry: {}
+            f:tls: {}
+            f:useBundledSystemChart: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:52:31Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:chart:
+            f:metadata:
+              f:annotations:
+                .: {}
+                f:catalog.cattle.io/managed: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T01:56:40Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:56:40Z"
+    name: rancher
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.rancher.v1
+      uid: 3e55c695-f4f2-4a85-8e36-4ffe660d79d8
+    resourceVersion: "6470"
+    uid: 676f8ae4-0512-454f-bf6c-35fa606df4b2
+  spec:
+    chart:
+      metadata:
+        annotations:
+          catalog.cattle.io/managed: "true"
+        apiVersion: v2
+        appVersion: 904c2fb09-dirty
+        description: Install Rancher Server to manage Kubernetes clusters across providers.
+        home: https://rancher.com
+        icon: https://github.com/rancher/ui/blob/master/public/assets/images/logos/welcome-cow.svg
+        keywords:
+        - rancher
+        kubeVersion: < 1.29.0-0
+        maintainers:
+        - email: charts@rancher.com
+          name: Rancher Labs
+        name: rancher
+        sources:
+        - https://github.com/rancher/rancher
+        - https://github.com/rancher/server-chart
+        version: 2.8.3-dirty.commit-904c2fb09
+      values:
+        addLocal: "true"
+        additionalTrustedCAs: false
+        antiAffinity: preferred
+        auditLog:
+          destination: sidecar
+          hostPath: /var/log/rancher/audit/
+          image:
+            pullPolicy: IfNotPresent
+            repository: rancher/mirrored-bci-micro
+            tag: 15.4.14.3
+          level: 0
+          maxAge: 1
+          maxBackup: 1
+          maxSize: 100
+        bootstrapPassword: "null"
+        certmanager:
+          version: "null"
+        customLogos:
+          accessMode: ReadWriteOnce
+          enabled: false
+          size: 1Gi
+          volumeKind: persistentVolumeClaim
+          volumeSubpaths:
+            emberUi: ember
+            vueUi: vue
+        debug: false
+        fleet: "null"
+        global:
+          cattle:
+            psp:
+              enabled: "null"
+        imagePullSecrets: "null"
+        ingress:
+          enabled: true
+          extraAnnotations: {}
+          includeDefaultExtraAnnotations: true
+          ingressClassName: "null"
+          path: /
+          pathType: ImplementationSpecific
+          servicePort: 80
+          tls:
+            secretName: tls-rancher-ingress
+            source: rancher
+        letsEncrypt:
+          environment: production
+          ingress:
+            class: "null"
+        livenessProbe:
+          initialDelaySeconds: 60
+          periodSeconds: 30
+        noProxy: 127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.svc,.cluster.local
+        postDelete:
+          enabled: true
+          ignoreTimeoutError: false
+          image:
+            repository: rancher/shell
+            tag: v0.1.23
+          namespaceList:
+          - cattle-fleet-system
+          - cattle-system
+          - rancher-operator-system
+          timeout: 120
+        priorityClassName: rancher-critical
+        privateCA: false
+        rancherImage: rancher/rancher
+        readinessProbe:
+          initialDelaySeconds: 5
+          periodSeconds: 30
+        replicas: 3
+        resources: {}
+        restrictedAdmin: false
+        service:
+          annotations: {}
+          type: "null"
+        systemDefaultRegistry: "null"
+        tls: ingress
+        topologyKey: kubernetes.io/hostname
+        useBundledSystemChart: false
+        webhook: "null"
+    helmVersion: 3
+    info:
+      description: Install complete
+      firstDeployed: "2024-08-06T01:51:33Z"
+      lastDeployed: "2024-08-06T01:51:33Z"
+      notes: |
+        Rancher Server has been installed.
+
+        NOTE: Rancher may take several minutes to fully initialize. Please standby while Certificates are being issued, Containers are started and the Ingress rule comes up.
+
+        Check out our docs at https://rancher.com/docs/
+
+        If you provided your own bootstrap password during installation, browse to https:// to get started.
+
+        If this is the first time you installed Rancher, get started by running this command and clicking the URL it generates:
+
+        ```
+        echo https:///dashboard/?setup=$(kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{.data.bootstrapPassword|base64decode}}')
+        ```
+
+        To get just the bootstrap password on its own, run:
+
+        ```
+        kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{.data.bootstrapPassword|base64decode}}{{ "\n" }}'
+        ```
+
+
+        Happy Containering!
+      readme: |
+        By installing this application, you accept the [End User License Agreement & Terms & Conditions](https://www.suse.com/licensing/eula/).
+
+        # Rancher
+
+        ***Rancher*** is open source software that combines everything an organization needs to adopt and run containers in production. Built on Kubernetes, Rancher makes it easy for DevOps teams to test, deploy and manage their applications.
+
+        ### Introduction
+
+        This chart bootstraps a [Rancher Server](https://ranchermanager.docs.rancher.com/pages-for-subheaders/install-upgrade-on-a-kubernetes-cluster) on a Kubernetes cluster using the [Helm](https://helm.sh/) package manager. For a Rancher Supported Deployment please follow our [HA install instructions](https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-cluster-setup/high-availability-installs).
+
+
+        ### Prerequisites Details
+
+        *For installations covered under [Rancher Support SLA](https://www.suse.com/suse-rancher/support-matrix/all-supported-versions) the target cluster must be **[RKE1](https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-cluster-setup/rke1-for-rancher)**, **[RKE2](https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-cluster-setup/rke2-for-rancher)**, **[K3s](https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-cluster-setup/k3s-for-rancher)**, **[AKS](https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/install-upgrade-on-a-kubernetes-cluster/rancher-on-aks)**, **[EKS](https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/install-upgrade-on-a-kubernetes-cluster/rancher-on-amazon-eks)**, or **[GKE](https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/install-upgrade-on-a-kubernetes-cluster/rancher-on-gke)**.*
+
+        Make sure the node(s) for the Rancher server fulfill the following requirements:
+
+        [Operating Systems and Container Runtime Requirements](https://ranchermanager.docs.rancher.com/pages-for-subheaders/installation-requirements#operating-systems-and-container-runtime-requirements)
+        [Hardware Requirements](https://ranchermanager.docs.rancher.com/pages-for-subheaders/installation-requirements#hardware-requirements)
+
+        - [CPU and Memory](https://ranchermanager.docs.rancher.com/pages-for-subheaders/installation-requirements#cpu-and-memory)
+        - [Ingress](https://ranchermanager.docs.rancher.com/pages-for-subheaders/installation-requirements#ingress)
+        - [Disks](https://ranchermanager.docs.rancher.com/pages-for-subheaders/installation-requirements#disks)
+
+        [Networking Requirements](https://ranchermanager.docs.rancher.com/pages-for-subheaders/installation-requirements#networking-requirements)
+        - [Node IP Addresses](https://ranchermanager.docs.rancher.com/pages-for-subheaders/installation-requirements#node-ip-addresses)
+        - [Port Requirements](https://ranchermanager.docs.rancher.com/pages-for-subheaders/installation-requirements#port-requirements)
+
+        [Install the Required CLI Tools](https://ranchermanager.docs.rancher.com/pages-for-subheaders/cli-with-rancher)
+
+        - [kubectl](https://ranchermanager.docs.rancher.com/reference-guides/cli-with-rancher/kubectl-utility) - Kubernetes command-line tool.
+        - [helm](https://docs.helm.sh/using_helm/#installing-helm) - Package management for Kubernetes. Refer to the [Helm version requirements](https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/resources/helm-version-requirements) to choose a version of Helm to install Rancher.
+
+        For a list of best practices that we recommend for running the Rancher server in production, refer to the [best practices section](https://ranchermanager.docs.rancher.com/pages-for-subheaders/best-practices).
+
+        ## Installing Rancher
+
+        For production environments, we recommend installing Rancher in a [high-availability Kubernetes installation](https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-cluster-setup/high-availability-installs) so that your user base can always access Rancher Server. When installed in a Kubernetes cluster, Rancher will integrate with the cluster’s etcd database and take advantage of Kubernetes scheduling for high-availability.
+
+        Optional: Installing Rancher on a [Single-node](https://ranchermanager.docs.rancher.com/pages-for-subheaders/rancher-on-a-single-node-with-docker) Kubernetes Cluster
+
+        #### Add the Helm Chart Repository
+
+        Use [helm repo add](https://helm.sh/docs/helm/helm_repo_add/) command to add the Helm chart repository that contains charts to install Rancher. For more information about the repository choices and which is best for your use case, see Choosing a Version of Rancher.
+
+        ```bash
+        helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
+        ```
+
+        #### Create a Namespace for Rancher
+
+        We’ll need to define a Kubernetes namespace where the resources created by the Chart should be installed. This should always be cattle-system:
+
+        ```bash
+        kubectl create namespace cattle-system
+        ```
+
+        #### Choose your SSL Configuration
+
+        The Rancher management server is designed to be secure by default and requires SSL/TLS configuration.
+
+        There are three recommended options for the source of the certificate used for TLS termination at the Rancher server:
+
+        - [Rancher-generated TLS certificate](https://ranchermanager.docs.rancher.com/pages-for-subheaders/install-upgrade-on-a-kubernetes-cluster#3-choose-your-ssl-configuration)
+        - [Let’s Encrypt](https://ranchermanager.docs.rancher.com/pages-for-subheaders/install-upgrade-on-a-kubernetes-cluster#3-choose-your-ssl-configuration)
+        - [Bring your own certificate](https://ranchermanager.docs.rancher.com/pages-for-subheaders/install-upgrade-on-a-kubernetes-cluster#3-choose-your-ssl-configuration)
+
+        #### Install cert-manager
+
+        This step is only required to use certificates issued by Rancher’s generated CA **`(ingress.tls.source=rancher)`** or to request Let’s Encrypt issued certificates **`(ingress.tls.source=letsEncrypt)`**.
+
+        [These instructions are adapted from the official cert-manager documentation.](https://ranchermanager.docs.rancher.com/pages-for-subheaders/install-upgrade-on-a-kubernetes-cluster#4-install-cert-manager)
+
+        #### Install Rancher with Helm and Your Chosen Certificate Option
+
+        - [Rancher to generated certificates](https://ranchermanager.docs.rancher.com/pages-for-subheaders/install-upgrade-on-a-kubernetes-cluster#5-install-rancher-with-helm-and-your-chosen-certificate-option)
+        ```bash
+        helm install rancher rancher-latest/rancher \
+          --namespace cattle-system \
+          --set hostname=rancher.my.org
+        ```
+
+        - [Let’s Encrypt](https://ranchermanager.docs.rancher.com/pages-for-subheaders/install-upgrade-on-a-kubernetes-cluster#5-install-rancher-with-helm-and-your-chosen-certificate-option)
+
+        ```bash
+        helm install rancher rancher-latest/rancher \
+          --namespace cattle-system \
+          --set hostname=rancher.my.org \
+          --set ingress.tls.source=letsEncrypt \
+          --set letsEncrypt.email=me@example.org
+        ```
+
+        - [Certificates from Files](https://ranchermanager.docs.rancher.com/pages-for-subheaders/install-upgrade-on-a-kubernetes-cluster#5-install-rancher-with-helm-and-your-chosen-certificate-option)
+
+        ```bash
+        helm install rancher rancher-latest/rancher \
+          --namespace cattle-system \
+          --set hostname=rancher.my.org \
+          --set ingress.tls.source=secret
+        ```
+
+        *If you are using a Private CA signed certificate , add **--set privateCA=true** to the command:`*
+
+        ```bash
+        helm install rancher rancher-latest/rancher \
+          --namespace cattle-system \
+          --set hostname=rancher.my.org \
+          --set ingress.tls.source=secret \
+          --set privateCA=true
+        ```
+
+        #### Verify that the Rancher Server is Successfully Deployed
+
+        After adding the secrets, check if Rancher was rolled out successfully:
+
+        ```bash
+        kubectl -n cattle-system rollout status deploy/rancher
+        Waiting for deployment "rancher" rollout to finish: 0 of 3 updated replicas are available...
+        deployment "rancher" successfully rolled out
+        ```
+
+        If you see the following **`error: error: deployment "rancher" exceeded its progress deadline`**, you can check the status of the deployment by running the following command:
+
+        ```bash
+        kubectl -n cattle-system get deploy rancher
+        NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+        rancher   3         3         3            3           3m
+        ```
+
+        It should show the same count for **`DESIRED`** and **`AVAILABLE`**.
+
+        #### Save Your Options
+
+        Make sure you save the **`--set`** options you used. You will need to use the same options when you upgrade Rancher to new versions with Helm.
+
+        #### Finishing Up
+
+        That’s it. You should have a functional Rancher server.
+
+        In a web browser, go to the DNS name that forwards traffic to your load balancer. Then you should be greeted by the colorful login page.
+
+        Doesn’t work? Take a look at the [Troubleshooting Page](https://ranchermanager.docs.rancher.com/troubleshooting/general-troubleshooting)
+
+        ***All of these instructions are defined in detailed in the [Rancher Documentation](https://ranchermanager.docs.rancher.com/pages-for-subheaders/install-upgrade-on-a-kubernetes-cluster#install-the-rancher-helm-chart).***
+
+        ### Helm Chart Options for Kubernetes Installations
+
+        The full [Helm Chart Options](https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/installation-references/helm-chart-options) can be found here.
+
+        Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
+
+        #### Common Options
+
+        | Parameter                 | Default Value | Description                                                                                  |
+        | ------------------------- | ------------- | -------------------------------------------------------------------------------------------- |
+        | `hostname`                | " "           | ***string*** - the Fully Qualified Domain Name for your Rancher Server                       |
+        | `ingress.tls.source`      | "rancher"     | ***string*** - Where to get the cert for the ingress. - "***rancher, letsEncrypt, secret***" |
+        | `letsEncrypt.email`       | " "           | ***string*** - Your email address                                                            |
+        | `letsEncrypt.environment` | "production"  | ***string*** - Valid options: "***staging, production***"                                    |
+        | `privateCA`               | false         | ***bool*** - Set to true if your cert is signed by a private CA                              |
+
+        #### Advanced Options
+
+        | Parameter                                | Default Value                                                             | Description                                                                                                                                                                                                                                                                             |
+        | ---------------------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+        | `additionalTrustedCAs`                   | false                                                                     | ***bool*** - [See Additional Trusted CAs Server](https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/installation-references/helm-chart-options#additional-trusted-cas)                                                                                                                                   |
+        | `addLocal`                               | "true"                                                                    | ***string*** - As of Rancher v2.5.0 this flag is deprecated and must be set to "true"                                                                                                                                                                                                   |
+        | `antiAffinity`                           | "preferred"                                                               | ***string*** - AntiAffinity rule for Rancher pods - *"preferred, required"*                                                                                                                                                                                                             |
+        | `replicas`                               | 3                                                                         | ***int*** - Number of replicas of Rancher pods                                                                                                                                                                                                                                          |
+        | `auditLog.destination`                   | "sidecar"                                                                 | ***string*** - Stream to sidecar container console or hostPath volume - *"sidecar, hostPath"*                                                                                                                                                                                           |
+        | `auditLog.hostPath`                      | "/var/log/rancher/audit"                                                  | ***string*** - log file destination on host (only applies when **auditLog.destination** is set to **hostPath**)                                                                                                                                                                         |
+        | `auditLog.level`                         | 0                                                                         | ***int*** - set the [API Audit Log level](https://ranchermanager.docs.rancher.com/how-to-guides/advanced-user-guides/enable-api-audit-log#audit-log-levels). 0 is off. [0-3]                                                                                                                                                          |
+        | `auditLog.maxAge`                        | 1                                                                         | ***int*** - maximum number of days to retain old audit log files (only applies when **auditLog.destination** is set to **hostPath**)                                                                                                                                                    |
+        | `auditLog.maxBackup`                     | 1                                                                         | int - maximum number of audit log files to retain (only applies when **auditLog.destination** is set to **hostPath**)                                                                                                                                                                   |
+        | `auditLog.maxSize`                       | 100                                                                       | ***int*** - maximum size in megabytes of the audit log file before it gets rotated (only applies when **auditLog.destination** is set to **hostPath**)                                                                                                                                  |
+        | `auditLog.image.repository`              | "rancher/mirrored-bci-micro"                                              | ***string*** - Location for the image used to collect audit logs *Note: Available as of v2.7.0*                                                                                                                                                                                         |
+        | `auditLog.image.tag`                     | "15.4.14.3"                                                               | ***string*** - Tag for the image used to collect audit logs *Note: Available as of v2.7.0*                                                                                                                                                                                              |
+        | `auditLog.image.pullPolicy`              | "IfNotPresent"                                                            | ***string*** - Override imagePullPolicy for auditLog images - *"Always", "Never", "IfNotPresent"* *Note: Available as of v2.7.0*                                                                                                                                                        |
+        | `busyboxImage`                           | ""                                                                        | ***string*** - *Deprecated `auditlog.image.repository` should be used to control auditing sidecar image.* Image location for busybox image used to collect audit logs *Note: Available as of v2.2.0, and  Deprecated as of v2.7.0*                                                      |
+        | `busyboxImagePullPolicy`                 | "IfNotPresent"                                                            | ***string*** - - *Deprecated `auditlog.image.pullPolicy` should be used to control auditing sidecar image.* Override imagePullPolicy for busybox images - *"Always", "Never", "IfNotPresent"* *Deprecated as of v2.7.0*                                                                 |
+        | `debug`                                  | false                                                                     | ***bool*** - set debug flag on rancher server                                                                                                                                                                                                                                           |
+        | `certmanager.version`                    | " "                                                                       | ***string*** - set cert-manager compatibility                                                                                                                                                                                                                                           |
+        | `extraEnv`                               | []                                                                        | ***list*** - set additional environment variables for Rancher Note: *Available as of v2.2.0*                                                                                                                                                                                            |
+        | `imagePullSecrets`                       | []                                                                        | ***list*** - list of names of Secret resource containing private registry credentials                                                                                                                                                                                                   |
+        | `ingress.enabled`                        | true                                                                      | ***bool*** - install ingress resource                                                                                                                                                                                                                                                   |
+        | `ingress.ingressClassName`               | " "                                                                       | ***string*** - class name of ingress if not set manually or by the ingress controller's defaults                                                                                                                                                                                        |
+        | `ingress.includeDefaultExtraAnnotations` | true                                                                      | ***bool*** - Add default nginx annotations                                                                                                                                                                                                                                              |
+        | `ingress.extraAnnotations`               | {}                                                                        | ***map*** - additional annotations to customize the ingress                                                                                                                                                                                                                             |
+        | `ingress.configurationSnippet`           | " "                                                                       | ***string*** - Add additional Nginx configuration. Can be used for proxy configuration. Note: *Available as of v2.0.15, v2.1.10 and v2.2.4*                                                                                                                                             |
+        | `service.annotations`                    | {}                                                                        | ***map*** - annotations to customize the service                                                                                                                                                                                                                                        |
+        | `service.type`                           | " "                                                                       | ***string*** - Override the type used for the service - *"NodePort", "LoadBalancer", "ClusterIP"*                                                                                                                                                                                       |
+        | `letsEncrypt.ingress.class`              | " "                                                                       | ***string*** - optional ingress class for the cert-manager acmesolver ingress that responds to the Let’s *Encrypt ACME challenges*                                                                                                                                                      |
+        | `proxy`                                  | " "                                                                       | ***string** - HTTP[S] proxy server for Rancher                                                                                                                                                                                                                                          |
+        | `noProxy`                                | "127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.svc,.cluster.local" | ***string*** - comma separated list of hostnames or ip address not to use the proxy                                                                                                                                                                                                     |
+        | `resources`                              | {}                                                                        | ***map*** - rancher pod resource requests & limits                                                                                                                                                                                                                                      |
+        | `rancherImage`                           | "rancher/rancher"                                                         | ***string*** - rancher image source                                                                                                                                                                                                                                                     |
+        | `rancherImageTag`                        | same as chart version                                                     | ***string*** - rancher/rancher image tag                                                                                                                                                                                                                                                |
+        | `rancherImagePullPolicy`                 | "IfNotPresent"                                                            | ***string*** - Override imagePullPolicy for rancher server images - *"Always", "Never", "IfNotPresent"*                                                                                                                                                                                 |
+        | `tls`                                    | "ingress"                                                                 | ***string*** - See External TLS Termination for details. - *"ingress, external"*                                                                                                                                                                                                        |
+        | `systemDefaultRegistry`                  | ""                                                                        | ***string*** - private registry to be used for all system Docker images, e.g., [http://registry.example.com/] *Available as of v2.3.0*                                                                                                                                                  |
+        | `useBundledSystemChart`                  | false                                                                     | ***bool*** - select to use the system-charts packaged with Rancher server. This option is used for air gapped installations.  *Available as of v2.3.0*                                                                                                                                  |
+        | `customLogos.enabled`                    | false                                                                     | ***bool*** - Enabled [Ember Rancher UI (cluster manager) custom logos](https://github.com/rancher/ui/tree/master/public/assets/images/logos) and [Vue Rancher UI (cluster explorer) custom logos](https://github.com/rancher/dashboard/tree/master/shell/assets/images/pl) persistence volume |
+        | `customLogos.volumeSubpaths.emberUi`     | "ember"                                                                   | ***string*** - Volume subpath for [Ember Rancher UI (cluster manager) custom logos](https://github.com/rancher/ui/tree/master/public/assets/images/logos) persistence                                                                                                                   |
+        | `customLogos.volumeSubpaths.vueUi`       | "vue"                                                                     | ***string*** - Volume subpath for [Vue Rancher UI (cluster explorer) custom logos](https://github.com/rancher/dashboard/tree/master/shell/assets/images/pl) persistence                                                                                                                       |
+        | `customLogos.volumeName`                 | ""                                                                        | ***string*** - Use an existing volume. Custom logos should be copied to the proper `volume/subpath` folder by the user. Optional for persistentVolumeClaim, required for configMap                                                                                                      |
+        | `customLogos.storageClass`               | ""                                                                        | ***string*** - Set custom logos persistentVolumeClaim storage class. Required for dynamic pv                                                                                                                                                                                            |
+        | `customLogos.accessMode`                 | "ReadWriteOnce"                                                           | ***string*** - Set custom persistentVolumeClaim access mode                                                                                                                                                                                                                             |
+        | `customLogos.size`                       | "1Gi"                                                                     | ***string*** - Set custom persistentVolumeClaim size                                                                                                                                                                                                                                    |
+      status: deployed
+    name: rancher
+    namespace: cattle-system
+    resources:
+    - apiVersion: scheduling.k8s.io/v1
+      kind: PriorityClass
+      name: rancher-critical
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: rancher
+      namespace: cattle-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: rancher-config
+      namespace: cattle-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: rancher
+    - apiVersion: v1
+      kind: Service
+      name: rancher
+      namespace: cattle-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: rancher
+      namespace: cattle-system
+    values:
+      antiAffinity: required
+      bootstrapPassword: admin
+      features: multi-cluster-management=false,multi-cluster-management-agent=false
+      global:
+        cattle:
+          psp:
+            enabled: false
+      hostPort: 0
+      ingress:
+        enabled: false
+      noDefaultAdmin: false
+      rancherImage: rancher/rancher
+      rancherImagePullPolicy: IfNotPresent
+      rancherImageTag: v2.8.3
+      replicas: -3
+      systemDefaultRegistry: "null"
+      tls: external
+      useBundledSystemChart: true
+    version: 1
+  status:
+    observedGeneration: 2
+    summary:
+      state: deployed
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/6xWXW/jNhD8K8a+VtLpw58C7iFNgKIomga56xVoew8UubJYUyRBruymgf57QcmOcxfbvfTuKfoY7mpmZyd+hBaJCUYMykdgWhtiJI324dZUfyEnj5Q4aRLOiBQm0ryRAkpoULUxsxaisziz0+ji9XYDJbzZZtHkJ6nF23fIHdJ/HtOsRSjBN0nolDhUyDwm2yxxTPMGXbzDqjFmk2zzLyrmLeOh4vgu9g+esIU+Au5w4PxetuiJtRZK3SkVgWIVqotKNMw3UMJyiTO2qhdZtspEscBivsgxW9ZTrGZFxuaLepmLYjkP3fa8PiMB44vT3xjBwOIea3SoOXoo/3gEZuUHdF4aDSVsM4igUoZvfgnQG1RIw5uaKY8RcKPJGaXQQUmuwwg2UocxPk3jlXp3gwlWxbwqplUep/MZj6fLvIpXdcHjIl1yPhOimFUz6D/2EXiLPCjJG+YoXFzwHWfElFk/05mjI1lLFEflIDqBa6QQGPQIHE8iNl2F8fZJtz+7NC3w7SRL8iJJ43QyPODhfhXuT9a4NKmXaOOhBCV19/fJ1xZdK8nHR1i0k1qYnT8JPwzjJYU8WT5nkCfnCeyHG5/xYh99Zq4wcGbt8UmaTJMCIhDouZN2tBp8YEoKRlKvr0QrfcD+Npac1MZN7sc2E3qw6OHCJhy5ZWmRpEn+XWfHjn0EW6Y6HGzCOmqGv0qZHYrrW39YXK4karq+ghLCkbUyFVN7Z5HCcDUO7AZr1im6x7X05B72+MZ4ukXaGbfZL1AfgWzZejg5XNx1St0ZJXk482N9a+jOoUcdNsmhNV6SGert2b15yZLYOmj7RKzlbSiPmlUqGD1YOOSFEfgOFXIyDsrHPgJrwgatptMiAuukcZIerhXz/nYUNNQ2Ct1hoYImfaCFqn0aYRGB1LUJHT8d4q927ZjACTetVUhhi2rpPN2gVeZh2MA8zadxuozT+fs0K2dFmS5+hxCXl1CLcjYLKE+MuuB1cYD+31B06E3nzsfhU8K5reR4xbnpNF3y3aX/El/fIPadMK/r4irGk2Bz4+Q/wziTzdKHDX7e/1p1ntDdG4XfSy2kXp8n+SVEvpFEzFr/yXeO3mjxmw2BHVLGjft7VqGfOxpiaZ9G10bXct2N+BffcszJr+h4jMJX9/z4PONeF10nUuQQX6eC4iA+d5IkZ2qI1wPXvD/uavgB5NFtUfyAeh8sUKYR+K5tWWj+2Pf9vwEAAP//jwYNj0wKAAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.rancher-webhook.v2
+      objectset.rio.cattle.io/owner-namespace: cattle-system
+    creationTimestamp: "2024-08-06T01:53:08Z"
+    generation: 5
+    labels:
+      objectset.rio.cattle.io/hash: 88e5a9f71191d37e3672e18f4eb531a67f82d386
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:chart:
+            f:metadata:
+              f:annotations:
+                f:catalog.cattle.io/managed: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T01:56:40Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"936b34b2-065c-482b-9f3c-308cc5dd35b5"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:catalog.cattle.io/certified: {}
+                f:catalog.cattle.io/hidden: {}
+                f:catalog.cattle.io/kube-version: {}
+                f:catalog.cattle.io/namespace: {}
+                f:catalog.cattle.io/os: {}
+                f:catalog.cattle.io/permits-os: {}
+                f:catalog.cattle.io/rancher-version: {}
+                f:catalog.cattle.io/release-name: {}
+              f:apiVersion: {}
+              f:appVersion: {}
+              f:description: {}
+              f:name: {}
+              f:version: {}
+            f:values:
+              .: {}
+              f:auth:
+                .: {}
+                f:allowedCNs: {}
+                f:clientCA: {}
+              f:global:
+                .: {}
+                f:cattle:
+                  .: {}
+                  f:systemDefaultRegistry: {}
+                f:hostNetwork: {}
+              f:image:
+                .: {}
+                f:imagePullPolicy: {}
+                f:repository: {}
+                f:tag: {}
+              f:mcm:
+                .: {}
+                f:enabled: {}
+              f:nodeSelector: {}
+              f:port: {}
+              f:priorityClassName: {}
+              f:tolerations: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:values:
+            .: {}
+            f:global:
+              .: {}
+              f:cattle:
+                .: {}
+                f:systemDefaultRegistry: {}
+            f:mcm:
+              .: {}
+              f:enabled: {}
+            f:priorityClassName: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2024-08-06T01:57:56Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:57:56Z"
+    name: rancher-webhook
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.rancher-webhook.v2
+      uid: 936b34b2-065c-482b-9f3c-308cc5dd35b5
+    resourceVersion: "9905"
+    uid: dcec698c-3ce7-4f1e-9d3b-34f82b3cb27e
+  spec:
+    chart:
+      metadata:
+        annotations:
+          catalog.cattle.io/certified: rancher
+          catalog.cattle.io/hidden: "true"
+          catalog.cattle.io/kube-version: '>= 1.23.0-0 < 1.29.0-0'
+          catalog.cattle.io/managed: "true"
+          catalog.cattle.io/namespace: cattle-system
+          catalog.cattle.io/os: linux
+          catalog.cattle.io/permits-os: linux,windows
+          catalog.cattle.io/rancher-version: '>= 2.8.0-0 < 2.9.0-0'
+          catalog.cattle.io/release-name: rancher-webhook
+        apiVersion: v2
+        appVersion: 0.4.3
+        description: ValidatingAdmissionWebhook for Rancher types
+        name: rancher-webhook
+        version: 103.0.2+up0.4.3
+      values:
+        auth:
+          allowedCNs: "null"
+          clientCA: "null"
+        global:
+          cattle:
+            systemDefaultRegistry: "null"
+          hostNetwork: false
+        image:
+          imagePullPolicy: IfNotPresent
+          repository: rancher/rancher-webhook
+          tag: v0.4.3
+        mcm:
+          enabled: true
+        nodeSelector: {}
+        port: 9443
+        priorityClassName: "null"
+        tolerations: null
+    helmVersion: 3
+    info:
+      description: Upgrade complete
+      firstDeployed: "2024-08-06T01:53:07Z"
+      lastDeployed: "2024-08-06T01:57:55Z"
+      status: deployed
+    name: rancher-webhook
+    namespace: cattle-system
+    resources:
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: rancher-webhook
+      namespace: cattle-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: rancher-webhook-sudo
+      namespace: cattle-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: rancher-webhook
+    - apiVersion: v1
+      kind: Service
+      name: rancher-webhook
+      namespace: cattle-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: rancher-webhook
+      namespace: cattle-system
+    - apiVersion: admissionregistration.k8s.io/v1
+      kind: MutatingWebhookConfiguration
+      name: rancher.cattle.io
+    - apiVersion: admissionregistration.k8s.io/v1
+      kind: ValidatingWebhookConfiguration
+      name: rancher.cattle.io
+    values:
+      global:
+        cattle:
+          systemDefaultRegistry: "null"
+      mcm:
+        enabled: false
+      priorityClassName: rancher-critical
+    version: 2
+  status:
+    observedGeneration: 5
+    summary:
+      state: deployed
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770206"

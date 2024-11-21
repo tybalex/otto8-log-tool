@@ -1,0 +1,8 @@
+2024-08-06T01:57:20.014984712Z ts=2024-08-06T01:57:20.014Z caller=main.go:240 level=info msg="Starting Alertmanager" version="(version=0.25.0, branch=HEAD, revision=258fab7cdd551f2cf251ed0348f0ad7289aee789)"
+2024-08-06T01:57:20.015037094Z ts=2024-08-06T01:57:20.014Z caller=main.go:241 level=info build_context="(go=go1.19.4, user=root@abe866dd5717, date=20221222-14:51:36)"
+2024-08-06T01:57:20.054830085Z ts=2024-08-06T01:57:20.054Z caller=coordinator.go:113 level=info component=configuration msg="Loading configuration file" file=/etc/alertmanager/config_out/alertmanager.env.yaml
+2024-08-06T01:57:20.055162102Z ts=2024-08-06T01:57:20.055Z caller=coordinator.go:126 level=info component=configuration msg="Completed loading of configuration file" file=/etc/alertmanager/config_out/alertmanager.env.yaml
+2024-08-06T01:57:20.059484079Z ts=2024-08-06T01:57:20.059Z caller=tls_config.go:232 level=info msg="Listening on" address=[::]:9093
+2024-08-06T01:57:20.059618136Z ts=2024-08-06T01:57:20.059Z caller=tls_config.go:271 level=info msg="TLS is disabled." http2=false address=[::]:9093
+2024-08-06T01:57:20.187795878Z ts=2024-08-06T01:57:20.187Z caller=coordinator.go:113 level=info component=configuration msg="Loading configuration file" file=/etc/alertmanager/config_out/alertmanager.env.yaml
+2024-08-06T01:57:20.188146908Z ts=2024-08-06T01:57:20.188Z caller=coordinator.go:126 level=info component=configuration msg="Completed loading of configuration file" file=/etc/alertmanager/config_out/alertmanager.env.yaml

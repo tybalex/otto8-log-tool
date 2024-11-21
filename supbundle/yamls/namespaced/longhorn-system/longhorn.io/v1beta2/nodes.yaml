@@ -1,0 +1,886 @@
+apiVersion: v1
+items:
+- apiVersion: longhorn.io/v1beta2
+  kind: Node
+  metadata:
+    creationTimestamp: "2024-08-06T01:55:48Z"
+    finalizers:
+    - longhorn.io
+    - wrangler.cattle.io/harvester-ndm-node-handler
+    generation: 3
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:allowScheduling: {}
+          f:disks:
+            .: {}
+            f:default-disk-37c5e936f4cd103:
+              .: {}
+              f:allowScheduling: {}
+              f:diskType: {}
+              f:evictionRequested: {}
+              f:path: {}
+              f:storageReserved: {}
+              f:tags: {}
+          f:evictionRequested: {}
+          f:instanceManagerCPURequest: {}
+          f:name: {}
+          f:tags: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T01:55:48Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            v:"wrangler.cattle.io/harvester-ndm-node-handler"null: {}
+        f:spec:
+          f:disks:
+            f:c2675a090f3de6d1ec528e9c57791af5:
+              .: {}
+              f:allowScheduling: {}
+              f:diskType: {}
+              f:evictionRequested: {}
+              f:path: {}
+              f:storageReserved: {}
+            f:e8bc66bcba288703f89f5d245fd2a6d8:
+              .: {}
+              f:allowScheduling: {}
+              f:diskType: {}
+              f:evictionRequested: {}
+              f:path: {}
+              f:storageReserved: {}
+      manager: node-disk-manager
+      operation: Update
+      time: "2024-08-06T01:59:23Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:autoEvicting: {}
+          f:conditions: {}
+          f:diskStatus:
+            .: {}
+            f:c2675a090f3de6d1ec528e9c57791af5:
+              .: {}
+              f:conditions: {}
+              f:diskType: {}
+              f:diskUUID: {}
+              f:filesystemType: {}
+              f:scheduledReplica:
+                .: {}
+                f:pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-1b014d82: {}
+                f:pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-c78350c4: {}
+                f:pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-274cce36: {}
+                f:pvc-865168f6-f0e4-440b-9d85-5729a45b1445-r-4d60ad73: {}
+                f:pvc-6900257a-3f92-48a9-8c07-4928c79b253f-r-28f320da: {}
+                f:pvc-cfe1ee5d-630f-47d5-9585-8282eb4d31fb-r-632acdc0: {}
+              f:storageAvailable: {}
+              f:storageMaximum: {}
+              f:storageScheduled: {}
+            f:default-disk-37c5e936f4cd103:
+              .: {}
+              f:conditions: {}
+              f:diskType: {}
+              f:diskUUID: {}
+              f:filesystemType: {}
+              f:scheduledReplica:
+                .: {}
+                f:pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-37451462: {}
+                f:pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-5da778b4: {}
+                f:pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-e6ee394a: {}
+              f:storageAvailable: {}
+              f:storageMaximum: {}
+              f:storageScheduled: {}
+            f:e8bc66bcba288703f89f5d245fd2a6d8:
+              .: {}
+              f:conditions: {}
+              f:diskType: {}
+              f:diskUUID: {}
+              f:filesystemType: {}
+              f:scheduledReplica: {}
+              f:storageAvailable: {}
+              f:storageMaximum: {}
+              f:storageScheduled: {}
+          f:region: {}
+          f:snapshotCheckStatus: {}
+          f:zone: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T14:11:18Z"
+    name: harvesterdev1
+    namespace: longhorn-system
+    resourceVersion: "769216"
+    uid: 9d0d58af-5bb1-48d9-974b-4de138a3f883
+  spec:
+    allowScheduling: true
+    disks:
+      c2675a090f3de6d1ec528e9c57791af5:
+        allowScheduling: true
+        diskType: filesystem
+        evictionRequested: false
+        path: /var/lib/harvester/extra-disks/c2675a090f3de6d1ec528e9c57791af5
+        storageReserved: 0
+        tags: []
+      default-disk-37c5e936f4cd103:
+        allowScheduling: true
+        diskType: filesystem
+        evictionRequested: false
+        path: /var/lib/harvester/defaultdisk
+        storageReserved: 5.86529485209e+11
+        tags: []
+      e8bc66bcba288703f89f5d245fd2a6d8:
+        allowScheduling: true
+        diskType: filesystem
+        evictionRequested: false
+        path: /var/lib/harvester/extra-disks/e8bc66bcba288703f89f5d245fd2a6d8
+        storageReserved: 0
+        tags: []
+    evictionRequested: false
+    instanceManagerCPURequest: 0
+    name: harvesterdev1
+    tags: []
+  status:
+    autoEvicting: false
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T01:55:48Z"
+      message: Node harvesterdev1 is ready
+      reason: "null"
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T01:55:48Z"
+      message: "null"
+      reason: "null"
+      status: "True"
+      type: Schedulable
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T01:55:48Z"
+      message: "null"
+      reason: "null"
+      status: "True"
+      type: MountPropagation
+    diskStatus:
+      c2675a090f3de6d1ec528e9c57791af5:
+        conditions:
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T01:59:48Z"
+          message: Disk c2675a090f3de6d1ec528e9c57791af5(/var/lib/harvester/extra-disks/c2675a090f3de6d1ec528e9c57791af5)
+            on node harvesterdev1 is ready
+          reason: "null"
+          status: "True"
+          type: Ready
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T01:59:48Z"
+          message: Disk c2675a090f3de6d1ec528e9c57791af5(/var/lib/harvester/extra-disks/c2675a090f3de6d1ec528e9c57791af5)
+            on node harvesterdev1 is schedulable
+          reason: "null"
+          status: "True"
+          type: Schedulable
+        diskType: filesystem
+        diskUUID: c9ff8501-8c22-4cc0-810e-65214001909d
+        filesystemType: ext2/ext3
+        scheduledReplica:
+          pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-1b014d82: 4.294967296e+10
+          pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-c78350c4: 4.294967296e+10
+          pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-274cce36: 4.294967296e+10
+          pvc-865168f6-f0e4-440b-9d85-5729a45b1445-r-4d60ad73: 4.294967296e+10
+          pvc-6900257a-3f92-48a9-8c07-4928c79b253f-r-28f320da: 4.294967296e+10
+          pvc-cfe1ee5d-630f-47d5-9585-8282eb4d31fb-r-632acdc0: 4.294967296e+10
+        storageAvailable: 7.9065776128e+12
+        storageMaximum: 7.93730377728e+12
+        storageScheduled: 2.5769803776e+11
+      default-disk-37c5e936f4cd103:
+        conditions:
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T01:55:48Z"
+          message: Disk default-disk-37c5e936f4cd103(/var/lib/harvester/defaultdisk)
+            on node harvesterdev1 is ready
+          reason: "null"
+          status: "True"
+          type: Ready
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T01:55:48Z"
+          message: Disk default-disk-37c5e936f4cd103(/var/lib/harvester/defaultdisk)
+            on node harvesterdev1 is schedulable
+          reason: "null"
+          status: "True"
+          type: Schedulable
+        diskType: filesystem
+        diskUUID: a262aa67-fef9-4a35-8f28-e94b5643d00f
+        filesystemType: ext2/ext3
+        scheduledReplica:
+          pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-37451462: 5.36870912e+09
+          pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-5da778b4: 5.36870912e+10
+          pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-e6ee394a: 2.147483648e+09
+        storageAvailable: 1.9195232256e+12
+        storageMaximum: 1.955098284032e+12
+        storageScheduled: 6.1203283968e+10
+      e8bc66bcba288703f89f5d245fd2a6d8:
+        conditions:
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T01:59:18Z"
+          message: Disk e8bc66bcba288703f89f5d245fd2a6d8(/var/lib/harvester/extra-disks/e8bc66bcba288703f89f5d245fd2a6d8)
+            on node harvesterdev1 is ready
+          reason: "null"
+          status: "True"
+          type: Ready
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T01:59:18Z"
+          message: Disk e8bc66bcba288703f89f5d245fd2a6d8(/var/lib/harvester/extra-disks/e8bc66bcba288703f89f5d245fd2a6d8)
+            on node harvesterdev1 is schedulable
+          reason: "null"
+          status: "True"
+          type: Schedulable
+        diskType: filesystem
+        diskUUID: 3c3a4475-2866-471c-b398-f4a0a9ed1c1e
+        filesystemType: ext2/ext3
+        scheduledReplica: {}
+        storageAvailable: 1.9677577216e+12
+        storageMaximum: 1.96784713728e+12
+        storageScheduled: 0
+    region: "null"
+    snapshotCheckStatus: {}
+    zone: "null"
+- apiVersion: longhorn.io/v1beta2
+  kind: Node
+  metadata:
+    creationTimestamp: "2024-08-06T02:11:47Z"
+    finalizers:
+    - longhorn.io
+    - wrangler.cattle.io/harvester-ndm-node-handler
+    generation: 3
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:allowScheduling: {}
+          f:disks:
+            .: {}
+            f:default-disk-e18ad486a0077488:
+              .: {}
+              f:allowScheduling: {}
+              f:diskType: {}
+              f:evictionRequested: {}
+              f:path: {}
+              f:storageReserved: {}
+              f:tags: {}
+          f:evictionRequested: {}
+          f:instanceManagerCPURequest: {}
+          f:name: {}
+          f:tags: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T02:11:47Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            v:"wrangler.cattle.io/harvester-ndm-node-handler"null: {}
+        f:spec:
+          f:disks:
+            f:730bfc287c4891698a05e8f30cfec23f:
+              .: {}
+              f:allowScheduling: {}
+              f:diskType: {}
+              f:evictionRequested: {}
+              f:path: {}
+              f:storageReserved: {}
+            f:849b277109de3bb257c476b1d38cf56d:
+              .: {}
+              f:allowScheduling: {}
+              f:diskType: {}
+              f:evictionRequested: {}
+              f:path: {}
+              f:storageReserved: {}
+      manager: node-disk-manager
+      operation: Update
+      time: "2024-08-06T02:12:20Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:autoEvicting: {}
+          f:conditions: {}
+          f:diskStatus:
+            .: {}
+            f:730bfc287c4891698a05e8f30cfec23f:
+              .: {}
+              f:conditions: {}
+              f:diskType: {}
+              f:diskUUID: {}
+              f:filesystemType: {}
+              f:scheduledReplica:
+                .: {}
+                f:pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-f850ce89: {}
+                f:pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-9dca53e0: {}
+                f:pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-98a2fe36: {}
+                f:pvc-865168f6-f0e4-440b-9d85-5729a45b1445-r-45eee0d5: {}
+                f:pvc-6900257a-3f92-48a9-8c07-4928c79b253f-r-ec86ba48: {}
+                f:pvc-cfe1ee5d-630f-47d5-9585-8282eb4d31fb-r-7a2aefbd: {}
+              f:storageAvailable: {}
+              f:storageMaximum: {}
+              f:storageScheduled: {}
+            f:849b277109de3bb257c476b1d38cf56d:
+              .: {}
+              f:conditions: {}
+              f:diskType: {}
+              f:diskUUID: {}
+              f:filesystemType: {}
+              f:scheduledReplica: {}
+              f:storageAvailable: {}
+              f:storageMaximum: {}
+              f:storageScheduled: {}
+            f:default-disk-e18ad486a0077488:
+              .: {}
+              f:conditions: {}
+              f:diskType: {}
+              f:diskUUID: {}
+              f:filesystemType: {}
+              f:scheduledReplica:
+                .: {}
+                f:pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-1e482fcb: {}
+                f:pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-6c887529: {}
+                f:pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-27278376: {}
+              f:storageAvailable: {}
+              f:storageMaximum: {}
+              f:storageScheduled: {}
+          f:region: {}
+          f:snapshotCheckStatus: {}
+          f:zone: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T14:09:47Z"
+    name: harvesterdev2
+    namespace: longhorn-system
+    resourceVersion: "767689"
+    uid: c5c31265-ee1d-485f-ac9a-29aa7ca0f71c
+  spec:
+    allowScheduling: true
+    disks:
+      730bfc287c4891698a05e8f30cfec23f:
+        allowScheduling: true
+        diskType: filesystem
+        evictionRequested: false
+        path: /var/lib/harvester/extra-disks/730bfc287c4891698a05e8f30cfec23f
+        storageReserved: 0
+        tags: []
+      849b277109de3bb257c476b1d38cf56d:
+        allowScheduling: true
+        diskType: filesystem
+        evictionRequested: false
+        path: /var/lib/harvester/extra-disks/849b277109de3bb257c476b1d38cf56d
+        storageReserved: 0
+        tags: []
+      default-disk-e18ad486a0077488:
+        allowScheduling: true
+        diskType: filesystem
+        evictionRequested: false
+        path: /var/lib/harvester/defaultdisk
+        storageReserved: 5.86529485209e+11
+        tags: []
+    evictionRequested: false
+    instanceManagerCPURequest: 0
+    name: harvesterdev2
+    tags: []
+  status:
+    autoEvicting: false
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:11:47Z"
+      message: Node harvesterdev2 is ready
+      reason: "null"
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:11:47Z"
+      message: "null"
+      reason: "null"
+      status: "True"
+      type: Schedulable
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:11:47Z"
+      message: "null"
+      reason: "null"
+      status: "True"
+      type: MountPropagation
+    diskStatus:
+      730bfc287c4891698a05e8f30cfec23f:
+        conditions:
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T02:12:47Z"
+          message: Disk 730bfc287c4891698a05e8f30cfec23f(/var/lib/harvester/extra-disks/730bfc287c4891698a05e8f30cfec23f)
+            on node harvesterdev2 is ready
+          reason: "null"
+          status: "True"
+          type: Ready
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T02:12:47Z"
+          message: Disk 730bfc287c4891698a05e8f30cfec23f(/var/lib/harvester/extra-disks/730bfc287c4891698a05e8f30cfec23f)
+            on node harvesterdev2 is schedulable
+          reason: "null"
+          status: "True"
+          type: Schedulable
+        diskType: filesystem
+        diskUUID: 7b70705b-57bb-4ccb-b9bb-5e6ec0c76249
+        filesystemType: ext2/ext3
+        scheduledReplica:
+          pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-f850ce89: 4.294967296e+10
+          pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-9dca53e0: 4.294967296e+10
+          pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-98a2fe36: 4.294967296e+10
+          pvc-865168f6-f0e4-440b-9d85-5729a45b1445-r-45eee0d5: 4.294967296e+10
+          pvc-6900257a-3f92-48a9-8c07-4928c79b253f-r-ec86ba48: 4.294967296e+10
+          pvc-cfe1ee5d-630f-47d5-9585-8282eb4d31fb-r-7a2aefbd: 4.294967296e+10
+        storageAvailable: 7.9051096064e+12
+        storageMaximum: 7.93730377728e+12
+        storageScheduled: 2.5769803776e+11
+      849b277109de3bb257c476b1d38cf56d:
+        conditions:
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T02:12:17Z"
+          message: Disk 849b277109de3bb257c476b1d38cf56d(/var/lib/harvester/extra-disks/849b277109de3bb257c476b1d38cf56d)
+            on node harvesterdev2 is ready
+          reason: "null"
+          status: "True"
+          type: Ready
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T02:12:17Z"
+          message: Disk 849b277109de3bb257c476b1d38cf56d(/var/lib/harvester/extra-disks/849b277109de3bb257c476b1d38cf56d)
+            on node harvesterdev2 is schedulable
+          reason: "null"
+          status: "True"
+          type: Schedulable
+        diskType: filesystem
+        diskUUID: 5717dc86-5288-4256-a94a-265972c8eb19
+        filesystemType: ext2/ext3
+        scheduledReplica: {}
+        storageAvailable: 1.9677577216e+12
+        storageMaximum: 1.96784713728e+12
+        storageScheduled: 0
+      default-disk-e18ad486a0077488:
+        conditions:
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T02:11:47Z"
+          message: Disk default-disk-e18ad486a0077488(/var/lib/harvester/defaultdisk)
+            on node harvesterdev2 is ready
+          reason: "null"
+          status: "True"
+          type: Ready
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T02:11:47Z"
+          message: Disk default-disk-e18ad486a0077488(/var/lib/harvester/defaultdisk)
+            on node harvesterdev2 is schedulable
+          reason: "null"
+          status: "True"
+          type: Schedulable
+        diskType: filesystem
+        diskUUID: 1df1c99a-188e-4628-81c7-d64c0e9e1836
+        filesystemType: ext2/ext3
+        scheduledReplica:
+          pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-1e482fcb: 5.36870912e+09
+          pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-6c887529: 5.36870912e+10
+          pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-27278376: 2.147483648e+09
+        storageAvailable: 1.9267584e+12
+        storageMaximum: 1.955098284032e+12
+        storageScheduled: 6.1203283968e+10
+    region: "null"
+    snapshotCheckStatus: {}
+    zone: "null"
+- apiVersion: longhorn.io/v1beta2
+  kind: Node
+  metadata:
+    creationTimestamp: "2024-08-06T02:13:36Z"
+    finalizers:
+    - longhorn.io
+    - wrangler.cattle.io/harvester-ndm-node-handler
+    generation: 3
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:allowScheduling: {}
+          f:disks:
+            .: {}
+            f:default-disk-e31768682918c1d8:
+              .: {}
+              f:allowScheduling: {}
+              f:diskType: {}
+              f:evictionRequested: {}
+              f:path: {}
+              f:storageReserved: {}
+              f:tags: {}
+          f:evictionRequested: {}
+          f:instanceManagerCPURequest: {}
+          f:name: {}
+          f:tags: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T02:13:36Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            v:"wrangler.cattle.io/harvester-ndm-node-handler"null: {}
+        f:spec:
+          f:disks:
+            f:915fa611e156447cca7d848466c26b01:
+              .: {}
+              f:allowScheduling: {}
+              f:diskType: {}
+              f:evictionRequested: {}
+              f:path: {}
+              f:storageReserved: {}
+            f:af108f336cb053734c93658d7551aa93:
+              .: {}
+              f:allowScheduling: {}
+              f:diskType: {}
+              f:evictionRequested: {}
+              f:path: {}
+              f:storageReserved: {}
+      manager: node-disk-manager
+      operation: Update
+      time: "2024-08-06T02:14:11Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:autoEvicting: {}
+          f:conditions: {}
+          f:diskStatus:
+            .: {}
+            f:915fa611e156447cca7d848466c26b01:
+              .: {}
+              f:conditions: {}
+              f:diskType: {}
+              f:diskUUID: {}
+              f:filesystemType: {}
+              f:scheduledReplica: {}
+              f:storageAvailable: {}
+              f:storageMaximum: {}
+              f:storageScheduled: {}
+            f:af108f336cb053734c93658d7551aa93:
+              .: {}
+              f:conditions: {}
+              f:diskType: {}
+              f:diskUUID: {}
+              f:filesystemType: {}
+              f:scheduledReplica:
+                .: {}
+                f:pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-31d96bbd: {}
+                f:pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-18666713: {}
+                f:pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-e76f3c50: {}
+                f:pvc-865168f6-f0e4-440b-9d85-5729a45b1445-r-1ffbe33d: {}
+                f:pvc-6900257a-3f92-48a9-8c07-4928c79b253f-r-13163dfa: {}
+                f:pvc-cfe1ee5d-630f-47d5-9585-8282eb4d31fb-r-9a9fe44c: {}
+              f:storageAvailable: {}
+              f:storageMaximum: {}
+              f:storageScheduled: {}
+            f:default-disk-e31768682918c1d8:
+              .: {}
+              f:conditions: {}
+              f:diskType: {}
+              f:diskUUID: {}
+              f:filesystemType: {}
+              f:scheduledReplica:
+                .: {}
+                f:pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-5910e157: {}
+                f:pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-f8c5a5f0: {}
+                f:pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-9738d5fe: {}
+              f:storageAvailable: {}
+              f:storageMaximum: {}
+              f:storageScheduled: {}
+          f:region: {}
+          f:snapshotCheckStatus: {}
+          f:zone: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T14:11:07Z"
+    name: harvesterdev3
+    namespace: longhorn-system
+    resourceVersion: "769019"
+    uid: d114675f-1444-46a0-b886-23f43de0681b
+  spec:
+    allowScheduling: true
+    disks:
+      915fa611e156447cca7d848466c26b01:
+        allowScheduling: true
+        diskType: filesystem
+        evictionRequested: false
+        path: /var/lib/harvester/extra-disks/915fa611e156447cca7d848466c26b01
+        storageReserved: 0
+        tags: []
+      af108f336cb053734c93658d7551aa93:
+        allowScheduling: true
+        diskType: filesystem
+        evictionRequested: false
+        path: /var/lib/harvester/extra-disks/af108f336cb053734c93658d7551aa93
+        storageReserved: 0
+        tags: []
+      default-disk-e31768682918c1d8:
+        allowScheduling: true
+        diskType: filesystem
+        evictionRequested: false
+        path: /var/lib/harvester/defaultdisk
+        storageReserved: 5.86529485209e+11
+        tags: []
+    evictionRequested: false
+    instanceManagerCPURequest: 0
+    name: harvesterdev3
+    tags: []
+  status:
+    autoEvicting: false
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:13:37Z"
+      message: Node harvesterdev3 is ready
+      reason: "null"
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:13:37Z"
+      message: "null"
+      reason: "null"
+      status: "True"
+      type: Schedulable
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:13:37Z"
+      message: "null"
+      reason: "null"
+      status: "True"
+      type: MountPropagation
+    diskStatus:
+      915fa611e156447cca7d848466c26b01:
+        conditions:
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T02:14:37Z"
+          message: Disk 915fa611e156447cca7d848466c26b01(/var/lib/harvester/extra-disks/915fa611e156447cca7d848466c26b01)
+            on node harvesterdev3 is ready
+          reason: "null"
+          status: "True"
+          type: Ready
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T02:14:37Z"
+          message: Disk 915fa611e156447cca7d848466c26b01(/var/lib/harvester/extra-disks/915fa611e156447cca7d848466c26b01)
+            on node harvesterdev3 is schedulable
+          reason: "null"
+          status: "True"
+          type: Schedulable
+        diskType: filesystem
+        diskUUID: bb9c2920-0170-4d78-987e-80e730fbf1ff
+        filesystemType: ext2/ext3
+        scheduledReplica: {}
+        storageAvailable: 1.9677577216e+12
+        storageMaximum: 1.96784713728e+12
+        storageScheduled: 0
+      af108f336cb053734c93658d7551aa93:
+        conditions:
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T02:14:07Z"
+          message: Disk af108f336cb053734c93658d7551aa93(/var/lib/harvester/extra-disks/af108f336cb053734c93658d7551aa93)
+            on node harvesterdev3 is ready
+          reason: "null"
+          status: "True"
+          type: Ready
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T02:14:07Z"
+          message: Disk af108f336cb053734c93658d7551aa93(/var/lib/harvester/extra-disks/af108f336cb053734c93658d7551aa93)
+            on node harvesterdev3 is schedulable
+          reason: "null"
+          status: "True"
+          type: Schedulable
+        diskType: filesystem
+        diskUUID: d74b8deb-1d56-46de-9058-b1e6c18a775a
+        filesystemType: ext2/ext3
+        scheduledReplica:
+          pvc-19d9e182-85db-4649-a1d3-ff4d85d00bbb-r-31d96bbd: 4.294967296e+10
+          pvc-928d5ddc-47de-4481-9c34-abd84a3c9164-r-18666713: 4.294967296e+10
+          pvc-5086a1f6-bff9-4b02-a41d-cd9bac5005a6-r-e76f3c50: 4.294967296e+10
+          pvc-865168f6-f0e4-440b-9d85-5729a45b1445-r-1ffbe33d: 4.294967296e+10
+          pvc-6900257a-3f92-48a9-8c07-4928c79b253f-r-13163dfa: 4.294967296e+10
+          pvc-cfe1ee5d-630f-47d5-9585-8282eb4d31fb-r-9a9fe44c: 4.294967296e+10
+        storageAvailable: 7.9065776128e+12
+        storageMaximum: 7.93730377728e+12
+        storageScheduled: 2.5769803776e+11
+      default-disk-e31768682918c1d8:
+        conditions:
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T02:13:37Z"
+          message: Disk default-disk-e31768682918c1d8(/var/lib/harvester/defaultdisk)
+            on node harvesterdev3 is ready
+          reason: "null"
+          status: "True"
+          type: Ready
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T02:13:37Z"
+          message: Disk default-disk-e31768682918c1d8(/var/lib/harvester/defaultdisk)
+            on node harvesterdev3 is schedulable
+          reason: "null"
+          status: "True"
+          type: Schedulable
+        diskType: filesystem
+        diskUUID: a727b6f5-fc9c-45ae-b84f-669f5642db6e
+        filesystemType: ext2/ext3
+        scheduledReplica:
+          pvc-0c9a9baf-0cad-4301-9af1-6339ae7a3d7d-r-5910e157: 5.36870912e+09
+          pvc-3c987c88-f185-48c7-aa17-0efd85c3fbdb-r-f8c5a5f0: 5.36870912e+10
+          pvc-5cf144c9-2ae0-4981-b5e9-4ae03ebf1569-r-9738d5fe: 2.147483648e+09
+        storageAvailable: 1.9267584e+12
+        storageMaximum: 1.955098284032e+12
+        storageScheduled: 6.1203283968e+10
+    region: "null"
+    snapshotCheckStatus: {}
+    zone: "null"
+- apiVersion: longhorn.io/v1beta2
+  kind: Node
+  metadata:
+    creationTimestamp: "2024-08-06T02:16:03Z"
+    finalizers:
+    - longhorn.io
+    - wrangler.cattle.io/harvester-ndm-node-handler
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:allowScheduling: {}
+          f:disks:
+            .: {}
+            f:default-disk-c643bb424cb0cf81:
+              .: {}
+              f:allowScheduling: {}
+              f:diskType: {}
+              f:evictionRequested: {}
+              f:path: {}
+              f:storageReserved: {}
+              f:tags: {}
+          f:evictionRequested: {}
+          f:instanceManagerCPURequest: {}
+          f:name: {}
+          f:tags: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2024-08-06T02:16:03Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:autoEvicting: {}
+          f:conditions: {}
+          f:diskStatus:
+            .: {}
+            f:default-disk-c643bb424cb0cf81:
+              .: {}
+              f:conditions: {}
+              f:diskType: {}
+              f:diskUUID: {}
+              f:filesystemType: {}
+              f:scheduledReplica: {}
+              f:storageAvailable: {}
+              f:storageMaximum: {}
+              f:storageScheduled: {}
+          f:region: {}
+          f:snapshotCheckStatus: {}
+          f:zone: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:16:03Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            v:"wrangler.cattle.io/harvester-ndm-node-handler"null: {}
+      manager: node-disk-manager
+      operation: Update
+      time: "2024-08-06T02:16:03Z"
+    name: harvesterdev7
+    namespace: longhorn-system
+    resourceVersion: "30423"
+    uid: 50e6c99e-6292-4dc7-9cd8-677b945a9fa0
+  spec:
+    allowScheduling: true
+    disks:
+      default-disk-c643bb424cb0cf81:
+        allowScheduling: true
+        diskType: filesystem
+        evictionRequested: false
+        path: /var/lib/harvester/defaultdisk
+        storageReserved: 8.6539486003e+10
+        tags: []
+    evictionRequested: false
+    instanceManagerCPURequest: 0
+    name: harvesterdev7
+    tags: []
+  status:
+    autoEvicting: false
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:16:03Z"
+      message: Node harvesterdev7 is ready
+      reason: "null"
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:16:03Z"
+      message: "null"
+      reason: "null"
+      status: "True"
+      type: Schedulable
+    - lastProbeTime: "null"
+      lastTransitionTime: "2024-08-06T02:16:03Z"
+      message: "null"
+      reason: "null"
+      status: "True"
+      type: MountPropagation
+    diskStatus:
+      default-disk-c643bb424cb0cf81:
+        conditions:
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T02:16:03Z"
+          message: Disk default-disk-c643bb424cb0cf81(/var/lib/harvester/defaultdisk)
+            on node harvesterdev7 is ready
+          reason: "null"
+          status: "True"
+          type: Ready
+        - lastProbeTime: "null"
+          lastTransitionTime: "2024-08-06T02:16:03Z"
+          message: Disk default-disk-c643bb424cb0cf81(/var/lib/harvester/defaultdisk)
+            on node harvesterdev7 is schedulable
+          reason: "null"
+          status: "True"
+          type: Schedulable
+        diskType: filesystem
+        diskUUID: 8f9405be-b22f-4d1c-9d20-05dd609cf9bb
+        filesystemType: ext2/ext3
+        scheduledReplica: {}
+        storageAvailable: 2.884632576e+11
+        storageMaximum: 2.88464953344e+11
+        storageScheduled: 0
+    region: "null"
+    snapshotCheckStatus: {}
+    zone: "null"
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770275"

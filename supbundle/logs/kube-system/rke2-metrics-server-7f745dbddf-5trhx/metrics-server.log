@@ -1,0 +1,19 @@
+2024-08-06T01:52:05.904225814Z I0806 01:52:05.904039       1 serving.go:374] Generated self-signed cert (/tmp/apiserver.crt, /tmp/apiserver.key)
+2024-08-06T01:52:06.186418592Z I0806 01:52:06.186295       1 handler.go:275] Adding GroupVersion metrics.k8s.io v1beta1 to ResourceManager
+2024-08-06T01:52:06.296200336Z I0806 01:52:06.296024       1 requestheader_controller.go:169] Starting RequestHeaderAuthRequestController
+2024-08-06T01:52:06.296234190Z I0806 01:52:06.296038       1 configmap_cafile_content.go:202] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::client-ca-file"
+2024-08-06T01:52:06.296245762Z I0806 01:52:06.296054       1 shared_informer.go:311] Waiting for caches to sync for RequestHeaderAuthRequestController
+2024-08-06T01:52:06.296254388Z I0806 01:52:06.296072       1 shared_informer.go:311] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+2024-08-06T01:52:06.296265058Z I0806 01:52:06.296097       1 configmap_cafile_content.go:202] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"
+2024-08-06T01:52:06.296272312Z I0806 01:52:06.296137       1 shared_informer.go:311] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+2024-08-06T01:52:06.296534647Z I0806 01:52:06.296434       1 dynamic_serving_content.go:132] "Starting controller" name="serving-cert::/tmp/apiserver.crt::/tmp/apiserver.key"
+2024-08-06T01:52:06.297056320Z I0806 01:52:06.296970       1 secure_serving.go:213] Serving securely on [::]:10250
+2024-08-06T01:52:06.297066820Z I0806 01:52:06.297016       1 tlsconfig.go:240] "Starting DynamicServingCertificateController"
+2024-08-06T01:52:06.396774450Z I0806 01:52:06.396648       1 shared_informer.go:318] Caches are synced for RequestHeaderAuthRequestController
+2024-08-06T01:52:06.396822671Z I0806 01:52:06.396701       1 shared_informer.go:318] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+2024-08-06T01:52:06.396845214Z I0806 01:52:06.396730       1 shared_informer.go:318] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+2024-08-06T01:55:10.380093416Z E0806 01:55:06.290198       1 scraper.go:149] "Failed to scrape node" err="Get \"https://10.10.110.11:10250/metrics/resource\": dial tcp 10.10.110.11:10250: connect: connection refused" node="harvesterdev1"
+2024-08-06T01:55:18.758022433Z I0806 01:55:18.757765       1 server.go:191] "Failed probe" probe="metric-storage-ready" err="no metrics to serve"
+2024-08-06T01:55:18.762953478Z I0806 01:55:18.762841       1 server.go:191] "Failed probe" probe="metric-storage-ready" err="no metrics to serve"
+2024-08-06T01:55:28.756502437Z I0806 01:55:28.756398       1 server.go:191] "Failed probe" probe="metric-storage-ready" err="no metrics to serve"
+2024-08-06T02:24:46.307565193Z E0806 02:24:46.307475       1 scraper.go:147] "Failed to scrape node, timeout to access kubelet" err="Get \"https://10.10.110.232:10250/metrics/resource\": context deadline exceeded" node="harvesterdev7" timeout="10s"

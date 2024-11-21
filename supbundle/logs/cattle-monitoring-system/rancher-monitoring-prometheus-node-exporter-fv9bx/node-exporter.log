@@ -1,0 +1,51 @@
+2024-08-06T01:57:01.036833489Z ts=2024-08-06T01:57:01.036Z caller=node_exporter.go:182 level=info msg="Starting node_exporter" version="(version=1.3.1, branch=HEAD, revision=a2321e7b940ddcff26873612bccdf7cd4c42b6b6)"
+2024-08-06T01:57:01.036855315Z ts=2024-08-06T01:57:01.036Z caller=node_exporter.go:183 level=info msg="Build context" build_context="(go=go1.17.3, user=root@243aafa5525c, date=20211205-11:09:49)"
+2024-08-06T01:57:01.037031225Z ts=2024-08-06T01:57:01.036Z caller=filesystem_common.go:111 level=info collector=filesystem msg="Parsed flag --collector.filesystem.mount-points-exclude" flag=^/(dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($|/)
+2024-08-06T01:57:01.037050356Z ts=2024-08-06T01:57:01.037Z caller=filesystem_common.go:113 level=info collector=filesystem msg="Parsed flag --collector.filesystem.fs-types-exclude" flag=^(autofs|binfmt_misc|bpf|cgroup2?|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|iso9660|mqueue|nsfs|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|selinuxfs|squashfs|sysfs|tracefs)$
+2024-08-06T01:57:01.038266100Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:108 level=info msg="Enabled collectors"
+2024-08-06T01:57:01.038272070Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=arp
+2024-08-06T01:57:01.038280283Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=bcache
+2024-08-06T01:57:01.038287004Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=bonding
+2024-08-06T01:57:01.038294787Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=btrfs
+2024-08-06T01:57:01.038298804Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=conntrack
+2024-08-06T01:57:01.038306687Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=cpu
+2024-08-06T01:57:01.038314810Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=cpufreq
+2024-08-06T01:57:01.038318676Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=diskstats
+2024-08-06T01:57:01.038322393Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=dmi
+2024-08-06T01:57:01.038330125Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=edac
+2024-08-06T01:57:01.038339911Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=entropy
+2024-08-06T01:57:01.038344098Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=fibrechannel
+2024-08-06T01:57:01.038347915Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=filefd
+2024-08-06T01:57:01.038355828Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=filesystem
+2024-08-06T01:57:01.038362268Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=hwmon
+2024-08-06T01:57:01.038365974Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=infiniband
+2024-08-06T01:57:01.038369771Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=ipvs
+2024-08-06T01:57:01.038373567Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=loadavg
+2024-08-06T01:57:01.038381991Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=mdadm
+2024-08-06T01:57:01.038385807Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=meminfo
+2024-08-06T01:57:01.038389343Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=netclass
+2024-08-06T01:57:01.038392819Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=netdev
+2024-08-06T01:57:01.038399430Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=netstat
+2024-08-06T01:57:01.038403236Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=nfs
+2024-08-06T01:57:01.038417309Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=nfsd
+2024-08-06T01:57:01.038421406Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=nvme
+2024-08-06T01:57:01.038425212Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=os
+2024-08-06T01:57:01.038428948Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=powersupplyclass
+2024-08-06T01:57:01.038435469Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=pressure
+2024-08-06T01:57:01.038439536Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=rapl
+2024-08-06T01:57:01.038443232Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=schedstat
+2024-08-06T01:57:01.038446808Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=sockstat
+2024-08-06T01:57:01.038453108Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=softnet
+2024-08-06T01:57:01.038456764Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=stat
+2024-08-06T01:57:01.038463435Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=tapestats
+2024-08-06T01:57:01.038467171Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=textfile
+2024-08-06T01:57:01.038473321Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=thermal_zone
+2024-08-06T01:57:01.038477138Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=time
+2024-08-06T01:57:01.038494536Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=timex
+2024-08-06T01:57:01.038509130Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=udp_queues
+2024-08-06T01:57:01.038516763Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=uname
+2024-08-06T01:57:01.038530496Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=vmstat
+2024-08-06T01:57:01.038537768Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=xfs
+2024-08-06T01:57:01.038544609Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:115 level=info collector=zfs
+2024-08-06T01:57:01.038591085Z ts=2024-08-06T01:57:01.038Z caller=node_exporter.go:199 level=info msg="Listening on" address=[0.0.0.0]:9796
+2024-08-06T01:57:01.038777583Z ts=2024-08-06T01:57:01.038Z caller=tls_config.go:195 level=info msg="TLS is disabled." http2=false

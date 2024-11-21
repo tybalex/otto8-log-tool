@@ -1,0 +1,60 @@
+apiVersion: v1
+items:
+- apiVersion: k3s.cattle.io/v1
+  kind: ETCDSnapshotFile
+  metadata:
+    annotations:
+      etcd.rke2.cattle.io/snapshot-token-hash: d14a5304fdde
+    creationTimestamp: "2024-08-06T12:00:00Z"
+    finalizers:
+    - wrangler.cattle.io/managed-etcd-snapshots-controller
+    generation: 1
+    labels:
+      etcd.rke2.cattle.io/snapshot-storage-node: harvesterdev1
+    managedFields:
+    - apiVersion: k3s.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:etcd.rke2.cattle.io/snapshot-token-hash: {}
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/managed-etcd-snapshots-controller"null: {}
+          f:labels:
+            .: {}
+            f:etcd.rke2.cattle.io/snapshot-storage-node: {}
+        f:spec:
+          .: {}
+          f:location: {}
+          f:metadata:
+            .: {}
+            f:provisioning-cluster-spec: {}
+          f:nodeName: {}
+          f:snapshotName: {}
+        f:status:
+          .: {}
+          f:creationTime: {}
+          f:readyToUse: {}
+          f:size: {}
+      manager: rke2-supervisor
+      operation: Update
+      time: "2024-08-06T12:00:00Z"
+    name: local-etcd-snapshot-harvesterdev1-1722945600-e32537
+    resourceVersion: "635134"
+    uid: 090438dc-80e0-430f-ba44-7076fa6ef21d
+  spec:
+    location: file:///var/lib/rancher/rke2/server/db/snapshots/etcd-snapshot-harvesterdev1-1722945600
+    metadata:
+      provisioning-cluster-spec: H4sIAAAAAAAA/+SSwU7DMAyG3yVXqomNA1JvaC1wY9LQOHup20V17chxhqZp747asSJ4BW7J//1y8kk+uz7vURkN0w41BWFXuuNysXpcLB/utMeVLl3htMe1cBs6V55djp1Cg1tTMOxOY+SFTYU2BIyVQuC3aEE4jQwZ9oSNK1ughIVrRT3Ot9CxKFaAg/AWLbmSM9Etr1VF01xukNCwHqKdqqAVGPygkMZn6mPwNll8552Cxw1qkMaV94WzMKBkm86pD/EDgj2LVtPk9yvcohdu0tSJehV6Fennz0VJ9je9FO5TtEf9r/6XwvkDqO2AMs7VAfwhML6Q7IFuO/QLbUSowhYyjfbncQ6JB1pTTob6lO1QcxMlsE34CwAA//8BAAD//xgxzrW0AgAA
+    nodeName: harvesterdev1
+    snapshotName: etcd-snapshot-harvesterdev1-1722945600
+  status:
+    creationTime: "2024-08-06T12:00:00Z"
+    readyToUse: true
+    size: "87679008"
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "770167"

@@ -1,0 +1,1333 @@
+apiVersion: v1
+items:
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "2"
+      deployment.kubernetes.io/max-replicas: "3"
+      deployment.kubernetes.io/revision: "1"
+      management.cattle.io/scale-available: "2"
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/8RWX0/ruBP9LvOctiml/MlbBRG/CCioaZF+ukLV1JmkXhw7azuFCuW7r5w03FAKu+zd1T6liWfOHI/P8fQVsOAPpA1XEgLAojCDzRA8eOIygQAuqRBqm5O04EFOFhO0CMEroJTKouVKGveao8SMXFyfobWC+lwNDENBPdwgF7gSBAEcgQdq9Rsxa8j2NVedaO7qMVEaS7qnKePG6roAVB4IXJGoK32WvkazhgDGiMkQ/bGfsOTknM78NBmluBoOT8Zj9MdHw/PxGfNP0YFKzB2pBqPXlsas2a1bNQWyTojZGku5SzUFMcfGkCBmlW56YNn65o0oFsVn4JVDcLujbOtCtRKCy2xRJGipgXqJS50RBEPPvSxkp4t+5YHdFo7X7F2i+055IVqQznGJv0xrtzFMUy65relJldCk815oSklrSi5LzWUWszUlpeMRZVK9fQ5fiJX1+QU/2hySjN5aFb4UmoxpJPTjFZ5oC0FdrKeVoP5TuSItyZJx58uUtFqJQqAkp6KCNNaNh0iCBxsUJTkcsLokeKweKw+eiWdrC8HQ9yvvn+PQ+09J5OiO7N+u/tNY+774Xtnq0QNNv5f8G3JpFBfvrDUnnTfMvqC7Iot7fVLmPdmpsnt8n7lM1LOpKT868RcqmUjLf1nrKmkhHPk3/8X7l8XhvTiHftXmg95t2m5VoYTKttc10Pt+rJWx9Y23p4p6507ZyCXphgjJTf3c3ZAXk/n8JlxG8XJ2HbZcIIAUhXF4+4FxOHsIZ53AtbWFCQaDpzPTf1Jo+8gPpF1Mlhf/Cy+u48VtJ/dQ4M0inr8rUEvvY+D1Wby8nUwnV+HlnwfvUJez8CqK57P/f82h2ePyIZzF0d20E7s56p/1xwcyomk8n9zcLBeLqMvmeJQeH43ppMdOGPaOz9moh8lo3EvxdHicjPyhn54eRLuahXG8jO6Xl3e3k6hLwRjBiz5X4NzHc3SDBDRKtiY92D0b3QQ7truw+1KIeyU4c/KJ0qmy95rMz3n4YULXF9FGiTKnW1VKuzOq+3mP1g3kQStXTQlJy1EY+DB6361pwuROii0E7qCcNz0wpDec0YQxBz3tZoOTvSDd/hlx8k1TYrb2/M6wLupb8+WDVn4B89C8CF+4seZvIx8aAi3kY3sipuvhg602xDRZdx8llGIp7K1KCILRkd+uTT/L7p3742OWMqjcDVJVfwQAAP//3O/V9UoKAAA
+      objectset.rio.cattle.io/id: cluster-registration
+    creationTimestamp: "2024-08-06T01:56:40Z"
+    generation: 2
+    labels:
+      app: cattle-cluster-agent
+      pod-template-hash: 58bf658657
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deployment.kubernetes.io/desired-replicas: {}
+            f:deployment.kubernetes.io/max-replicas: {}
+            f:deployment.kubernetes.io/revision: {}
+            f:management.cattle.io/scale-available: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"ce0234c6-a8ae-4cd4-ade2-4d3966d7136c"}: {}
+        f:spec:
+          f:replicas: {}
+          f:selector: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:app: {}
+                f:pod-template-hash: {}
+            f:spec:
+              f:affinity:
+                .: {}
+                f:nodeAffinity:
+                  .: {}
+                  f:preferredDuringSchedulingIgnoredDuringExecution: {}
+                  f:requiredDuringSchedulingIgnoredDuringExecution: {}
+                f:podAntiAffinity:
+                  .: {}
+                  f:preferredDuringSchedulingIgnoredDuringExecution: {}
+              f:containers:
+                k:{"name":"cluster-register"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"CATTLE_CA_CHECKSUM"}:
+                      .: {}
+                      f:name: {}
+                    k:{"name":"CATTLE_CLUSTER"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CATTLE_CLUSTER_REGISTRY"}:
+                      .: {}
+                      f:name: {}
+                    k:{"name":"CATTLE_INGRESS_IP_DOMAIN"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CATTLE_INSTALL_UUID"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CATTLE_IS_RKE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CATTLE_K8S_MANAGED"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CATTLE_SERVER"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CATTLE_SERVER_VERSION"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/cattle-credentials"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+              f:dnsPolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:tolerations: {}
+              f:volumes:
+                .: {}
+                k:{"name":"cattle-credentials"}:
+                  .: {}
+                  f:name: {}
+                  f:secret:
+                    .: {}
+                    f:defaultMode: {}
+                    f:secretName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:11:20Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:availableReplicas: {}
+          f:fullyLabeledReplicas: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:11:21Z"
+    name: cattle-cluster-agent-58bf658657
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: cattle-cluster-agent
+      uid: ce0234c6-a8ae-4cd4-ade2-4d3966d7136c
+    resourceVersion: "22678"
+    uid: f3eae939-45f2-46a7-9834-5cb51a7869c2
+  spec:
+    replicas: 2
+    selector:
+      matchLabels:
+        app: cattle-cluster-agent
+        pod-template-hash: 58bf658657
+    template:
+      metadata:
+        creationTimestamp: "null"
+        labels:
+          app: cattle-cluster-agent
+          pod-template-hash: 58bf658657
+      spec:
+        affinity:
+          nodeAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - preference:
+                matchExpressions:
+                - key: node-role.kubernetes.io/controlplane
+                  operator: In
+                  values:
+                  - "true"
+              weight: 100
+            - preference:
+                matchExpressions:
+                - key: node-role.kubernetes.io/control-plane
+                  operator: In
+                  values:
+                  - "true"
+              weight: 100
+            - preference:
+                matchExpressions:
+                - key: node-role.kubernetes.io/master
+                  operator: In
+                  values:
+                  - "true"
+              weight: 100
+            - preference:
+                matchExpressions:
+                - key: cattle.io/cluster-agent
+                  operator: In
+                  values:
+                  - "true"
+              weight: 1
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: beta.kubernetes.io/os
+                  operator: NotIn
+                  values:
+                  - windows
+          podAntiAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                    - cattle-cluster-agent
+                topologyKey: kubernetes.io/hostname
+              weight: 100
+        containers:
+        - env:
+          - name: CATTLE_IS_RKE
+            value: "false"
+          - name: CATTLE_SERVER
+            value: https://k8s.koat.ai
+          - name: CATTLE_CA_CHECKSUM
+          - name: CATTLE_CLUSTER
+            value: "true"
+          - name: CATTLE_K8S_MANAGED
+            value: "true"
+          - name: CATTLE_CLUSTER_REGISTRY
+          - name: CATTLE_SERVER_VERSION
+            value: v2.8.5
+          - name: CATTLE_INSTALL_UUID
+            value: 43f425e6-c6ca-49c3-ad35-fa714d3010f7
+          - name: CATTLE_INGRESS_IP_DOMAIN
+            value: sslip.io
+          image: rancher/rancher-agent:v2.8.5
+          imagePullPolicy: IfNotPresent
+          name: cluster-register
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /cattle-credentials
+            name: cattle-credentials
+            readOnly: true
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        serviceAccount: cattle
+        serviceAccountName: cattle
+        terminationGracePeriodSeconds: 30
+        tolerations:
+        - effect: NoSchedule
+          key: node-role.kubernetes.io/controlplane
+          value: "true"
+        - effect: NoSchedule
+          key: node-role.kubernetes.io/control-plane
+          operator: Exists
+        - effect: NoSchedule
+          key: node-role.kubernetes.io/master
+          operator: Exists
+        volumes:
+        - name: cattle-credentials
+          secret:
+            defaultMode: 320
+            secretName: cattle-credentials-9054cfc
+  status:
+    availableReplicas: 2
+    fullyLabeledReplicas: 2
+    observedGeneration: 2
+    readyReplicas: 2
+    replicas: 2
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2024-08-06T01:53:30Z"
+    generation: 1
+    labels:
+      app: harvester-cluster-repo
+      pod-template-hash: 74b6b74b8c
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deployment.kubernetes.io/desired-replicas: {}
+            f:deployment.kubernetes.io/max-replicas: {}
+            f:deployment.kubernetes.io/revision: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"5f8fe7b1-ad2a-4103-920b-3a1ed1fc954c"}: {}
+        f:spec:
+          f:replicas: {}
+          f:selector: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:app: {}
+                f:pod-template-hash: {}
+            f:spec:
+              f:containers:
+                k:{"name":"httpd"}:
+                  .: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":80,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:protocol: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:dnsPolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:53:30Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:availableReplicas: {}
+          f:fullyLabeledReplicas: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:53:32Z"
+    name: harvester-cluster-repo-74b6b74b8c
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: harvester-cluster-repo
+      uid: 5f8fe7b1-ad2a-4103-920b-3a1ed1fc954c
+    resourceVersion: "2446"
+    uid: 1a7b483d-eb21-4ca3-a3f0-2c7cc5721186
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: harvester-cluster-repo
+        pod-template-hash: 74b6b74b8c
+    template:
+      metadata:
+        creationTimestamp: "null"
+        labels:
+          app: harvester-cluster-repo
+          pod-template-hash: 74b6b74b8c
+      spec:
+        containers:
+        - image: rancher/harvester-cluster-repo:v1.3.1
+          imagePullPolicy: IfNotPresent
+          name: httpd
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "3"
+      deployment.kubernetes.io/max-replicas: "4"
+      deployment.kubernetes.io/revision: "2"
+      management.cattle.io/scale-available: "3"
+      meta.helm.sh/release-name: rancher
+      meta.helm.sh/release-namespace: cattle-system
+    creationTimestamp: "2024-08-06T01:56:40Z"
+    generation: 3
+    labels:
+      app: rancher
+      pod-template-hash: 587557b8db
+      release: rancher
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deployment.kubernetes.io/desired-replicas: {}
+            f:deployment.kubernetes.io/max-replicas: {}
+            f:deployment.kubernetes.io/revision: {}
+            f:management.cattle.io/scale-available: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:pod-template-hash: {}
+            f:release: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"a8c5cb68-9c57-4513-83fc-65135105518d"}: {}
+        f:spec:
+          f:replicas: {}
+          f:selector: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                .: {}
+                f:harvesterhci.io/timestamp: {}
+              f:labels:
+                .: {}
+                f:app: {}
+                f:pod-template-hash: {}
+                f:release: {}
+            f:spec:
+              f:affinity:
+                .: {}
+                f:nodeAffinity:
+                  .: {}
+                  f:requiredDuringSchedulingIgnoredDuringExecution: {}
+                f:podAntiAffinity:
+                  .: {}
+                  f:requiredDuringSchedulingIgnoredDuringExecution: {}
+              f:containers:
+                k:{"name":"rancher"}:
+                  .: {}
+                  f:args: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"CATTLE_BOOTSTRAP_PASSWORD"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:secretKeyRef: {}
+                    k:{"name":"CATTLE_FEATURES"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CATTLE_NAMESPACE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CATTLE_PEER_SERVICE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CATTLE_SYSTEM_CATALOG"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:livenessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":80,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:protocol: {}
+                  f:readinessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:dnsPolicy: {}
+              f:priorityClassName: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:tolerations: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:13:11Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:availableReplicas: {}
+          f:fullyLabeledReplicas: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T02:14:16Z"
+    name: rancher-587557b8db
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: rancher
+      uid: a8c5cb68-9c57-4513-83fc-65135105518d
+    resourceVersion: "27832"
+    uid: 9d1a00ca-dd22-429a-bbd8-dc90366ee970
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: rancher
+        pod-template-hash: 587557b8db
+    template:
+      metadata:
+        annotations:
+          harvesterhci.io/timestamp: "2024-08-06T01:56:40Z"
+        creationTimestamp: "null"
+        labels:
+          app: rancher
+          pod-template-hash: 587557b8db
+          release: rancher
+      spec:
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: kubernetes.io/os
+                  operator: NotIn
+                  values:
+                  - windows
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - rancher
+              topologyKey: kubernetes.io/hostname
+        containers:
+        - args:
+          - --no-cacerts
+          - --http-listen-port=80
+          - --https-listen-port=443
+          - --add-local=true
+          env:
+          - name: CATTLE_NAMESPACE
+            value: cattle-system
+          - name: CATTLE_PEER_SERVICE
+            value: rancher
+          - name: CATTLE_FEATURES
+            value: multi-cluster-management=false,multi-cluster-management-agent=false
+          - name: CATTLE_SYSTEM_CATALOG
+            value: bundled
+          - name: CATTLE_BOOTSTRAP_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: bootstrapPassword
+                name: bootstrap-secret
+          image: rancher/rancher:v2.8.3
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /healthz
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 1
+          name: rancher
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /healthz
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 5
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        priorityClassName: rancher-critical
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        serviceAccount: rancher
+        serviceAccountName: rancher
+        terminationGracePeriodSeconds: 30
+        tolerations:
+        - effect: NoSchedule
+          key: cattle.io/os
+          operator: Equal
+          value: linux
+  status:
+    availableReplicas: 3
+    fullyLabeledReplicas: 3
+    observedGeneration: 3
+    readyReplicas: 3
+    replicas: 3
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "1"
+      management.cattle.io/scale-available: "3"
+      meta.helm.sh/release-name: rancher
+      meta.helm.sh/release-namespace: cattle-system
+    creationTimestamp: "2024-08-06T01:51:46Z"
+    generation: 2
+    labels:
+      app: rancher
+      pod-template-hash: 67cf66ccb6
+      release: rancher
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deployment.kubernetes.io/desired-replicas: {}
+            f:deployment.kubernetes.io/max-replicas: {}
+            f:deployment.kubernetes.io/revision: {}
+            f:management.cattle.io/scale-available: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:pod-template-hash: {}
+            f:release: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"a8c5cb68-9c57-4513-83fc-65135105518d"}: {}
+        f:spec:
+          f:replicas: {}
+          f:selector: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:app: {}
+                f:pod-template-hash: {}
+                f:release: {}
+            f:spec:
+              f:affinity:
+                .: {}
+                f:nodeAffinity:
+                  .: {}
+                  f:requiredDuringSchedulingIgnoredDuringExecution: {}
+                f:podAntiAffinity:
+                  .: {}
+                  f:requiredDuringSchedulingIgnoredDuringExecution: {}
+              f:containers:
+                k:{"name":"rancher"}:
+                  .: {}
+                  f:args: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"CATTLE_BOOTSTRAP_PASSWORD"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:secretKeyRef: {}
+                    k:{"name":"CATTLE_FEATURES"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CATTLE_NAMESPACE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CATTLE_PEER_SERVICE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CATTLE_SYSTEM_CATALOG"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:livenessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":80,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:protocol: {}
+                  f:readinessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:dnsPolicy: {}
+              f:priorityClassName: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:tolerations: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:56:40Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:observedGeneration: {}
+          f:replicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:56:40Z"
+    name: rancher-67cf66ccb6
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: rancher
+      uid: a8c5cb68-9c57-4513-83fc-65135105518d
+    resourceVersion: "6558"
+    uid: 41e6c901-74a3-41d7-8da7-7dfebbbf1d61
+  spec:
+    replicas: 0
+    selector:
+      matchLabels:
+        app: rancher
+        pod-template-hash: 67cf66ccb6
+    template:
+      metadata:
+        creationTimestamp: "null"
+        labels:
+          app: rancher
+          pod-template-hash: 67cf66ccb6
+          release: rancher
+      spec:
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: kubernetes.io/os
+                  operator: NotIn
+                  values:
+                  - windows
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - rancher
+              topologyKey: kubernetes.io/hostname
+        containers:
+        - args:
+          - --no-cacerts
+          - --http-listen-port=80
+          - --https-listen-port=443
+          - --add-local=true
+          env:
+          - name: CATTLE_NAMESPACE
+            value: cattle-system
+          - name: CATTLE_PEER_SERVICE
+            value: rancher
+          - name: CATTLE_FEATURES
+            value: multi-cluster-management=false,multi-cluster-management-agent=false
+          - name: CATTLE_SYSTEM_CATALOG
+            value: bundled
+          - name: CATTLE_BOOTSTRAP_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: bootstrapPassword
+                name: bootstrap-secret
+          image: rancher/rancher:v2.8.3
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /healthz
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 1
+          name: rancher
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /healthz
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 5
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        priorityClassName: rancher-critical
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        serviceAccount: rancher
+        serviceAccountName: rancher
+        terminationGracePeriodSeconds: 30
+        tolerations:
+        - effect: NoSchedule
+          key: cattle.io/os
+          operator: Equal
+          value: linux
+  status:
+    observedGeneration: 2
+    replicas: 0
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "1"
+      meta.helm.sh/release-name: rancher-webhook
+      meta.helm.sh/release-namespace: cattle-system
+    creationTimestamp: "2024-08-06T01:53:08Z"
+    generation: 1
+    labels:
+      app: rancher-webhook
+      pod-template-hash: 795765957f
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deployment.kubernetes.io/desired-replicas: {}
+            f:deployment.kubernetes.io/max-replicas: {}
+            f:deployment.kubernetes.io/revision: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"86536165-75a9-4f88-963c-49f4c8101f44"}: {}
+        f:spec:
+          f:replicas: {}
+          f:selector: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:app: {}
+                f:pod-template-hash: {}
+            f:spec:
+              f:containers:
+                k:{"name":"rancher-webhook"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"CATTLE_PORT"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ENABLE_MCM"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"NAMESPACE"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef: {}
+                    k:{"name":"STAMP"}:
+                      .: {}
+                      f:name: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:livenessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":9443,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                  f:resources: {}
+                  f:startupProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:dnsPolicy: {}
+              f:nodeSelector: {}
+              f:priorityClassName: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:tolerations: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:53:08Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:availableReplicas: {}
+          f:fullyLabeledReplicas: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:53:29Z"
+    name: rancher-webhook-795765957f
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: rancher-webhook
+      uid: 86536165-75a9-4f88-963c-49f4c8101f44
+    resourceVersion: "2243"
+    uid: ef2fe9a6-bcf0-4e08-9650-2829b03c5f69
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: rancher-webhook
+        pod-template-hash: 795765957f
+    template:
+      metadata:
+        creationTimestamp: "null"
+        labels:
+          app: rancher-webhook
+          pod-template-hash: 795765957f
+      spec:
+        containers:
+        - env:
+          - name: STAMP
+          - name: ENABLE_MCM
+            value: "false"
+          - name: CATTLE_PORT
+            value: "9443"
+          - name: NAMESPACE
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+          image: rancher/rancher-webhook:v0.4.3
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /healthz
+              port: https
+              scheme: HTTPS
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 1
+          name: rancher-webhook
+          ports:
+          - containerPort: 9443
+            name: https
+            protocol: TCP
+          resources: {}
+          startupProbe:
+            failureThreshold: 60
+            httpGet:
+              path: /healthz
+              port: https
+              scheme: HTTPS
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 1
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        nodeSelector:
+          kubernetes.io/os: linux
+        priorityClassName: rancher-critical
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        serviceAccount: rancher-webhook
+        serviceAccountName: rancher-webhook
+        terminationGracePeriodSeconds: 30
+        tolerations:
+        - effect: NoSchedule
+          key: cattle.io/os
+          operator: Equal
+          value: linux
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "1"
+      meta.helm.sh/release-name: mcc-local-managed-system-upgrade-controller
+      meta.helm.sh/release-namespace: cattle-system
+      objectset.rio.cattle.io/id: default-mcc-local-managed-system-upgrade-controller-cattl-22df4
+    creationTimestamp: "2024-08-06T01:54:34Z"
+    generation: 1
+    labels:
+      pod-template-hash: 78cfb99bb7
+      upgrade.cattle.io/controller: system-upgrade-controller
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deployment.kubernetes.io/desired-replicas: {}
+            f:deployment.kubernetes.io/max-replicas: {}
+            f:deployment.kubernetes.io/revision: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:pod-template-hash: {}
+            f:upgrade.cattle.io/controller: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"8036b4c0-3307-4d6e-b43f-3054251734ab"}: {}
+        f:spec:
+          f:replicas: {}
+          f:selector: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:pod-template-hash: {}
+                f:upgrade.cattle.io/controller: {}
+            f:spec:
+              f:affinity:
+                .: {}
+                f:nodeAffinity:
+                  .: {}
+                  f:preferredDuringSchedulingIgnoredDuringExecution: {}
+                  f:requiredDuringSchedulingIgnoredDuringExecution: {}
+              f:containers:
+                k:{"name":"system-upgrade-controller"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"SYSTEM_UPGRADE_CONTROLLER_NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef: {}
+                    k:{"name":"SYSTEM_UPGRADE_CONTROLLER_NAMESPACE"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef: {}
+                  f:envFrom: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/ssl"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/tmp"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:dnsPolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:tolerations: {}
+              f:volumes:
+                .: {}
+                k:{"name":"etc-ssl"}:
+                  .: {}
+                  f:hostPath:
+                    .: {}
+                    f:path: {}
+                    f:type: {}
+                  f:name: {}
+                k:{"name":"tmp"}:
+                  .: {}
+                  f:emptyDir: {}
+                  f:name: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:54:34Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:availableReplicas: {}
+          f:fullyLabeledReplicas: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T01:54:35Z"
+    name: system-upgrade-controller-78cfb99bb7
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: system-upgrade-controller
+      uid: 8036b4c0-3307-4d6e-b43f-3054251734ab
+    resourceVersion: "3512"
+    uid: c868b7e9-6dc6-4b1d-917f-1c99fa4ce138
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        pod-template-hash: 78cfb99bb7
+        upgrade.cattle.io/controller: system-upgrade-controller
+    template:
+      metadata:
+        creationTimestamp: "null"
+        labels:
+          pod-template-hash: 78cfb99bb7
+          upgrade.cattle.io/controller: system-upgrade-controller
+      spec:
+        affinity:
+          nodeAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - preference:
+                matchExpressions:
+                - key: node-role.kubernetes.io/control-plane
+                  operator: In
+                  values:
+                  - "true"
+              weight: 100
+            - preference:
+                matchExpressions:
+                - key: node-role.kubernetes.io/master
+                  operator: In
+                  values:
+                  - "true"
+              weight: 100
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: kubernetes.io/os
+                  operator: NotIn
+                  values:
+                  - windows
+        containers:
+        - env:
+          - name: SYSTEM_UPGRADE_CONTROLLER_NAME
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.labels['upgrade.cattle.io/controller']
+          - name: SYSTEM_UPGRADE_CONTROLLER_NAMESPACE
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+          envFrom:
+          - configMapRef:
+              name: system-upgrade-controller-config
+          image: rancher/system-upgrade-controller:v0.13.1
+          imagePullPolicy: IfNotPresent
+          name: system-upgrade-controller
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /etc/ssl
+            name: etc-ssl
+          - mountPath: /tmp
+            name: tmp
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        serviceAccount: system-upgrade-controller
+        serviceAccountName: system-upgrade-controller
+        terminationGracePeriodSeconds: 30
+        tolerations:
+        - operator: Exists
+        volumes:
+        - hostPath:
+            path: /etc/ssl
+            type: Directory
+          name: etc-ssl
+        - emptyDir: {}
+          name: tmp
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+kind: List
+metadata:
+  resourceVersion: "770206"

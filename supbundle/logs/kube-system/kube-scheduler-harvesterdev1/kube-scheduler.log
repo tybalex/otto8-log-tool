@@ -1,0 +1,17 @@
+2024-08-06T01:55:12.669024493Z I0806 01:55:12.668714       1 serving.go:342] Generated self-signed cert (/var/lib/rancher/rke2/server/tls/kube-scheduler/kube-scheduler.crt, /var/lib/rancher/rke2/server/tls/kube-scheduler/kube-scheduler.key)
+2024-08-06T01:55:12.781570113Z I0806 01:55:12.781472       1 server.go:154] "Starting Kubernetes Scheduler" version="v1.27.13+rke2r1"
+2024-08-06T01:55:12.781586925Z I0806 01:55:12.781490       1 server.go:156] "Golang settings" GOGC="" GOMAXPROCS="" GOTRACEBACK=""
+2024-08-06T01:55:12.783949371Z I0806 01:55:12.783894       1 requestheader_controller.go:169] Starting RequestHeaderAuthRequestController
+2024-08-06T01:55:12.783963347Z I0806 01:55:12.783900       1 configmap_cafile_content.go:202] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::client-ca-file"
+2024-08-06T01:55:12.783967946Z I0806 01:55:12.783916       1 shared_informer.go:311] Waiting for caches to sync for RequestHeaderAuthRequestController
+2024-08-06T01:55:12.784020897Z I0806 01:55:12.783924       1 shared_informer.go:311] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+2024-08-06T01:55:12.784034203Z I0806 01:55:12.783929       1 configmap_cafile_content.go:202] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"
+2024-08-06T01:55:12.784042208Z I0806 01:55:12.783960       1 shared_informer.go:311] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+2024-08-06T01:55:12.784537533Z I0806 01:55:12.784472       1 dynamic_serving_content.go:132] "Starting controller" name="serving-cert::/var/lib/rancher/rke2/server/tls/kube-scheduler/kube-scheduler.crt::/var/lib/rancher/rke2/server/tls/kube-scheduler/kube-scheduler.key"
+2024-08-06T01:55:12.785155521Z I0806 01:55:12.785118       1 secure_serving.go:213] Serving securely on 127.0.0.1:10259
+2024-08-06T01:55:12.785241165Z I0806 01:55:12.785192       1 tlsconfig.go:240] "Starting DynamicServingCertificateController"
+2024-08-06T01:55:12.884157117Z I0806 01:55:12.884060       1 shared_informer.go:318] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+2024-08-06T01:55:12.884189790Z I0806 01:55:12.884091       1 shared_informer.go:318] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+2024-08-06T01:55:12.884236909Z I0806 01:55:12.884147       1 shared_informer.go:318] Caches are synced for RequestHeaderAuthRequestController
+2024-08-06T01:55:12.885864734Z I0806 01:55:12.885813       1 leaderelection.go:245] attempting to acquire leader lease kube-system/kube-scheduler...
+2024-08-06T01:55:27.901734174Z I0806 01:55:27.901602       1 leaderelection.go:255] successfully acquired lease kube-system/kube-scheduler

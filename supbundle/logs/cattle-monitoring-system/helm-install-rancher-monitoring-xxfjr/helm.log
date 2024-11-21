@@ -1,0 +1,101 @@
+2024-08-06T11:55:31.018660371Z if [[ ${KUBERNETES_SERVICE_HOST} =~ .*:.* ]]; then
+2024-08-06T11:55:31.018713051Z 	echo "KUBERNETES_SERVICE_HOST is using IPv6"
+2024-08-06T11:55:31.018721867Z 	CHART="${CHART//%\{KUBERNETES_API\}%/[${KUBERNETES_SERVICE_HOST}]:${KUBERNETES_SERVICE_PORT}}"
+2024-08-06T11:55:31.018733129Z else
+2024-08-06T11:55:31.018740843Z 	CHART="${CHART//%\{KUBERNETES_API\}%/${KUBERNETES_SERVICE_HOST}:${KUBERNETES_SERVICE_PORT}}"
+2024-08-06T11:55:31.018772303Z fi
+2024-08-06T11:55:31.018874495Z 
+2024-08-06T11:55:31.018901677Z set +v -x
+2024-08-06T11:55:31.018966990Z + [[ '' != \t\r\u\e ]]
+2024-08-06T11:55:31.019612198Z + export HELM_HOST=127.0.0.1:44134
+2024-08-06T11:55:31.019624040Z + HELM_HOST=127.0.0.1:44134
+2024-08-06T11:55:31.019636544Z + helm_v2 init --skip-refresh --client-only --stable-repo-url https://charts.helm.sh/stable/
+2024-08-06T11:55:31.019800093Z + tiller --listen=127.0.0.1:44134 --storage=secret
+2024-08-06T11:55:31.101045562Z [main] 2024/08/06 11:55:31 Starting Tiller v2.17.0 (tls=false)
+2024-08-06T11:55:31.101061462Z [main] 2024/08/06 11:55:31 GRPC listening on 127.0.0.1:44134
+2024-08-06T11:55:31.101064908Z [main] 2024/08/06 11:55:31 Probes listening on :44135
+2024-08-06T11:55:31.101068134Z [main] 2024/08/06 11:55:31 Storage driver is Secret
+2024-08-06T11:55:31.101071441Z [main] 2024/08/06 11:55:31 Max history per release is 0
+2024-08-06T11:55:31.104077776Z Creating /home/klipper-helm/.helm/repository 
+2024-08-06T11:55:31.104093536Z Creating /home/klipper-helm/.helm/repository/cache 
+2024-08-06T11:55:31.104096832Z Creating /home/klipper-helm/.helm/repository/local 
+2024-08-06T11:55:31.104106180Z Creating /home/klipper-helm/.helm/plugins 
+2024-08-06T11:55:31.104118653Z Creating /home/klipper-helm/.helm/starters 
+2024-08-06T11:55:31.104129855Z Creating /home/klipper-helm/.helm/cache/archive 
+2024-08-06T11:55:31.104171313Z Creating /home/klipper-helm/.helm/repository/repositories.yaml 
+2024-08-06T11:55:31.104176262Z Adding stable repo with URL: https://charts.helm.sh/stable/ 
+2024-08-06T11:55:31.104235524Z Adding local repo with URL: http://127.0.0.1:8879/charts 
+2024-08-06T11:55:31.105108642Z $HELM_HOME has been configured at /home/klipper-helm/.helm.
+2024-08-06T11:55:31.105120615Z Not installing Tiller due to 'client-only' flag having been set
+2024-08-06T11:55:31.108811322Z ++ timeout -s KILL 30 helm_v2 ls --all '^rancher-monitoring$' --output json
+2024-08-06T11:55:31.108906693Z ++ jq -r '.Releases | length'
+2024-08-06T11:55:31.191266114Z [storage] 2024/08/06 11:55:31 listing all releases with filter
+2024-08-06T11:55:31.222400942Z + V2_CHART_EXISTS=
+2024-08-06T11:55:31.222455605Z + [[ '' == \1 ]]
+2024-08-06T11:55:31.222496963Z + [[ '' == \v\2 ]]
+2024-08-06T11:55:31.222503395Z + shopt -s nullglob
+2024-08-06T11:55:31.222517362Z + [[ -f /config/ca-file.pem ]]
+2024-08-06T11:55:31.222623252Z + [[ -f /tmp/ca-file.pem ]]
+2024-08-06T11:55:31.222645644Z + [[ -n '' ]]
+2024-08-06T11:55:31.222656985Z + helm_content_decode
+2024-08-06T11:55:31.222686421Z + set -e
+2024-08-06T11:55:31.222705767Z + ENC_CHART_PATH=/chart/rancher-monitoring.tgz.base64
+2024-08-06T11:55:31.222715205Z + CHART_PATH=/tmp/rancher-monitoring.tgz
+2024-08-06T11:55:31.222738119Z + [[ ! -f /chart/rancher-monitoring.tgz.base64 ]]
+2024-08-06T11:55:31.222754279Z + return
+2024-08-06T11:55:31.222784115Z + [[ install != \d\e\l\e\t\e ]]
+2024-08-06T11:55:31.222791439Z + helm_repo_init
+2024-08-06T11:55:31.222843347Z + grep -q -e 'https\?://'
+2024-08-06T11:55:31.224374007Z + [[ helm_v3 == \h\e\l\m\_\v\3 ]]
+2024-08-06T11:55:31.224387272Z + [[ rancher-monitoring/rancher-monitoring == stable/* ]]
+2024-08-06T11:55:31.224417509Z + [[ -n http://harvester-cluster-repo.cattle-system.svc/charts ]]
+2024-08-06T11:55:31.224458907Z + [[ -f /auth/username ]]
+2024-08-06T11:55:31.224482201Z + helm_v3 repo add rancher-monitoring http://harvester-cluster-repo.cattle-system.svc/charts
+2024-08-06T11:55:31.292190494Z "rancher-monitoring" has been added to your repositories
+2024-08-06T11:55:31.296928960Z + helm_v3 repo update
+2024-08-06T11:55:31.352185525Z Hang tight while we grab the latest from your chart repositories...
+2024-08-06T11:55:31.359512909Z ...Successfully got an update from the "rancher-monitoring" chart repository
+2024-08-06T11:55:31.359529560Z Update Complete. ⎈Happy Helming!⎈
+2024-08-06T11:55:31.363745148Z + helm_update install --version 103.0.3+up45.31.1
+2024-08-06T11:55:31.363820210Z + [[ helm_v3 == \h\e\l\m\_\v\3 ]]
+2024-08-06T11:55:31.364874030Z ++ helm_v3 ls --all -f '^rancher-monitoring$' --namespace cattle-monitoring-system --output json
+2024-08-06T11:55:31.365284434Z ++ jq -r '"\(.[0].chart),\(.[0].status)"'
+2024-08-06T11:55:31.365468682Z ++ tr '[:upper:]' '[:lower:]'
+2024-08-06T11:55:31.678567094Z + LINE=rancher-monitoring-103.0.3+up45.31.1,deployed
+2024-08-06T11:55:31.678589306Z + IFS=,
+2024-08-06T11:55:31.678595928Z + read -r INSTALLED_VERSION STATUS _
+2024-08-06T11:55:31.678759156Z + VALUES=
+2024-08-06T11:55:31.678826253Z + for VALUES_FILE in /config/*.yaml
+2024-08-06T11:55:31.678853955Z + VALUES=' --values /config/values-01_HelmChart.yaml'
+2024-08-06T11:55:31.678883571Z + [[ install = \d\e\l\e\t\e ]]
+2024-08-06T11:55:31.678958172Z + [[ rancher-monitoring-103.0.3+up45.31.1 =~ ^(|null)$ ]]
+2024-08-06T11:55:31.679047340Z + [[ deployed =~ ^(pending-install|pending-upgrade|pending-rollback)$ ]]
+2024-08-06T11:55:31.679230997Z + [[ deployed == \d\e\p\l\o\y\e\d ]]
+2024-08-06T11:55:31.679262967Z + echo 'Already installed rancher-monitoring'
+2024-08-06T11:55:31.679288906Z Already installed rancher-monitoring
+2024-08-06T11:55:31.679299767Z + [[ helm_v3 == \h\e\l\m\_\v\3 ]]
+2024-08-06T11:55:31.679338149Z + helm_v3 mapkubeapis rancher-monitoring --namespace cattle-monitoring-system
+2024-08-06T11:55:31.773687647Z 2024/08/06 11:55:31 Release 'rancher-monitoring' will be checked for deprecated or removed Kubernetes APIs and will be updated if necessary to supported API versions.
+2024-08-06T11:55:31.773768670Z 2024/08/06 11:55:31 Get release 'rancher-monitoring' latest version.
+2024-08-06T11:55:31.908806971Z 2024/08/06 11:55:31 Check release 'rancher-monitoring' for deprecated or removed APIs...
+2024-08-06T11:55:31.998474830Z 2024/08/06 11:55:31 Finished checking release 'rancher-monitoring' for deprecated or removed APIs.
+2024-08-06T11:55:31.998547537Z 2024/08/06 11:55:31 Release 'rancher-monitoring' has no deprecated or removed APIs.
+2024-08-06T11:55:31.998556695Z 2024/08/06 11:55:31 Map of release 'rancher-monitoring' deprecated or removed APIs to supported versions, completed successfully.
+2024-08-06T11:55:32.009846388Z + echo 'Upgrading helm_v3 chart'
+2024-08-06T11:55:32.009954452Z + echo 'Upgrading rancher-monitoring'
+2024-08-06T11:55:32.009968388Z + shift 1
+2024-08-06T11:55:32.009973007Z Upgrading rancher-monitoring
+2024-08-06T11:55:32.010062015Z + helm_v3 upgrade --version 103.0.3+up45.31.1 rancher-monitoring rancher-monitoring/rancher-monitoring --values /config/values-01_HelmChart.yaml
+2024-08-06T11:57:02.664917458Z Release "rancher-monitoring" has been upgraded. Happy Helming!
+2024-08-06T11:57:02.665003600Z NAME: rancher-monitoring
+2024-08-06T11:57:02.665014661Z LAST DEPLOYED: Tue Aug  6 11:55:32 2024
+2024-08-06T11:57:02.665021815Z NAMESPACE: cattle-monitoring-system
+2024-08-06T11:57:02.665029509Z STATUS: deployed
+2024-08-06T11:57:02.665036703Z REVISION: 2
+2024-08-06T11:57:02.665066489Z TEST SUITE: None
+2024-08-06T11:57:02.665075386Z NOTES:
+2024-08-06T11:57:02.665082780Z rancher-monitoring has been installed. Check its status by running:
+2024-08-06T11:57:02.665090254Z   kubectl --namespace cattle-monitoring-system get pods -l "release=rancher-monitoring"
+2024-08-06T11:57:02.665098369Z 
+2024-08-06T11:57:02.665109070Z Visit https://github.com/prometheus-operator/kube-prometheus for instructions on how to create & configure Alertmanager and Prometheus instances using the Operator.
+2024-08-06T11:57:02.681831919Z + exit

@@ -1,0 +1,414 @@
+apiVersion: v1
+items:
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      rbac.authorization.kubernetes.io/autoupdate: "true"
+    creationTimestamp: "2024-08-06T01:51:32Z"
+    labels:
+      kubernetes.io/bootstrapping: rbac-defaults
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:rbac.authorization.kubernetes.io/autoupdate: {}
+          f:labels:
+            .: {}
+            f:kubernetes.io/bootstrapping: {}
+        f:rules: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2024-08-06T01:51:32Z"
+    name: extension-apiserver-authentication-reader
+    namespace: kube-system
+    resourceVersion: "179"
+    uid: 9774e79d-9d02-4244-817d-874b1ba19b92
+  rules:
+  - apiGroups:
+    - "null"
+    resourceNames:
+    - extension-apiserver-authentication
+    resources:
+    - configmaps
+    verbs:
+    - get
+    - list
+    - watch
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: rke2-ingress-nginx
+      meta.helm.sh/release-namespace: kube-system
+    creationTimestamp: "2024-08-06T01:52:13Z"
+    labels:
+      app.kubernetes.io/component: controller
+      app.kubernetes.io/instance: rke2-ingress-nginx
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: rke2-ingress-nginx
+      app.kubernetes.io/part-of: rke2-ingress-nginx
+      app.kubernetes.io/version: 1.9.6
+      helm.sh/chart: rke2-ingress-nginx-4.9.100
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:helm.sh/chart: {}
+        f:rules: {}
+      manager: helm
+      operation: Update
+      time: "2024-08-06T01:52:13Z"
+    name: rke2-ingress-nginx
+    namespace: kube-system
+    resourceVersion: "1018"
+    uid: b7aeca9a-db1a-42e5-b656-5df7dcf965c7
+  rules:
+  - apiGroups:
+    - "null"
+    resources:
+    - namespaces
+    verbs:
+    - get
+  - apiGroups:
+    - "null"
+    resources:
+    - configmaps
+    - pods
+    - secrets
+    - endpoints
+    verbs:
+    - get
+    - list
+    - watch
+  - apiGroups:
+    - "null"
+    resources:
+    - services
+    verbs:
+    - get
+    - list
+    - watch
+  - apiGroups:
+    - networking.k8s.io
+    resources:
+    - ingresses
+    verbs:
+    - get
+    - list
+    - watch
+  - apiGroups:
+    - networking.k8s.io
+    resources:
+    - ingresses/status
+    verbs:
+    - update
+  - apiGroups:
+    - networking.k8s.io
+    resources:
+    - ingressclasses
+    verbs:
+    - get
+    - list
+    - watch
+  - apiGroups:
+    - coordination.k8s.io
+    resourceNames:
+    - rke2-ingress-nginx-leader
+    resources:
+    - leases
+    verbs:
+    - get
+    - update
+  - apiGroups:
+    - coordination.k8s.io
+    resources:
+    - leases
+    verbs:
+    - create
+  - apiGroups:
+    - "null"
+    resources:
+    - events
+    verbs:
+    - create
+    - patch
+  - apiGroups:
+    - discovery.k8s.io
+    resources:
+    - endpointslices
+    verbs:
+    - list
+    - watch
+    - get
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      helm.sh/resource-policy: keep
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:23Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:helm.sh/resource-policy: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:rules: {}
+      manager: fleetagent
+      operation: Update
+      time: "2024-08-06T01:55:23Z"
+    name: snapshot-controller-leaderelection
+    namespace: kube-system
+    resourceVersion: "4201"
+    uid: eaae185b-09ff-492d-9a41-6ac56c8a2ac2
+  rules:
+  - apiGroups:
+    - coordination.k8s.io
+    resources:
+    - leases
+    verbs:
+    - get
+    - watch
+    - list
+    - delete
+    - update
+    - create
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      rbac.authorization.kubernetes.io/autoupdate: "true"
+    creationTimestamp: "2024-08-06T01:51:32Z"
+    labels:
+      kubernetes.io/bootstrapping: rbac-defaults
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:rbac.authorization.kubernetes.io/autoupdate: {}
+          f:labels:
+            .: {}
+            f:kubernetes.io/bootstrapping: {}
+        f:rules: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2024-08-06T01:51:32Z"
+    name: system::leader-locking-kube-controller-manager
+    namespace: kube-system
+    resourceVersion: "183"
+    uid: 3f856606-ec3a-4092-8ad1-b5d71bda938e
+  rules:
+  - apiGroups:
+    - "null"
+    resources:
+    - configmaps
+    verbs:
+    - watch
+  - apiGroups:
+    - "null"
+    resourceNames:
+    - kube-controller-manager
+    resources:
+    - configmaps
+    verbs:
+    - get
+    - update
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      rbac.authorization.kubernetes.io/autoupdate: "true"
+    creationTimestamp: "2024-08-06T01:51:32Z"
+    labels:
+      kubernetes.io/bootstrapping: rbac-defaults
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:rbac.authorization.kubernetes.io/autoupdate: {}
+          f:labels:
+            .: {}
+            f:kubernetes.io/bootstrapping: {}
+        f:rules: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2024-08-06T01:51:32Z"
+    name: system::leader-locking-kube-scheduler
+    namespace: kube-system
+    resourceVersion: "184"
+    uid: 8fa04a45-5c5d-421d-a7d6-f8a73b8c3423
+  rules:
+  - apiGroups:
+    - "null"
+    resources:
+    - configmaps
+    verbs:
+    - watch
+  - apiGroups:
+    - "null"
+    resourceNames:
+    - kube-scheduler
+    resources:
+    - configmaps
+    verbs:
+    - get
+    - update
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      rbac.authorization.kubernetes.io/autoupdate: "true"
+    creationTimestamp: "2024-08-06T01:51:32Z"
+    labels:
+      kubernetes.io/bootstrapping: rbac-defaults
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:rbac.authorization.kubernetes.io/autoupdate: {}
+          f:labels:
+            .: {}
+            f:kubernetes.io/bootstrapping: {}
+        f:rules: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2024-08-06T01:51:32Z"
+    name: system:controller:bootstrap-signer
+    namespace: kube-system
+    resourceVersion: "180"
+    uid: 6882f4c7-f7fe-4b0f-9902-5d896940a664
+  rules:
+  - apiGroups:
+    - "null"
+    resources:
+    - secrets
+    verbs:
+    - get
+    - list
+    - watch
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      rbac.authorization.kubernetes.io/autoupdate: "true"
+    creationTimestamp: "2024-08-06T01:51:32Z"
+    labels:
+      kubernetes.io/bootstrapping: rbac-defaults
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:rbac.authorization.kubernetes.io/autoupdate: {}
+          f:labels:
+            .: {}
+            f:kubernetes.io/bootstrapping: {}
+        f:rules: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2024-08-06T01:51:32Z"
+    name: system:controller:cloud-provider
+    namespace: kube-system
+    resourceVersion: "181"
+    uid: f11b32dc-8b8f-4133-931f-264502e4c0c1
+  rules:
+  - apiGroups:
+    - "null"
+    resources:
+    - configmaps
+    verbs:
+    - create
+    - get
+    - list
+    - watch
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      rbac.authorization.kubernetes.io/autoupdate: "true"
+    creationTimestamp: "2024-08-06T01:51:32Z"
+    labels:
+      kubernetes.io/bootstrapping: rbac-defaults
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:rbac.authorization.kubernetes.io/autoupdate: {}
+          f:labels:
+            .: {}
+            f:kubernetes.io/bootstrapping: {}
+        f:rules: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2024-08-06T01:51:32Z"
+    name: system:controller:token-cleaner
+    namespace: kube-system
+    resourceVersion: "182"
+    uid: 2efa8dfe-ed3f-4f9b-b29e-642c64720f49
+  rules:
+  - apiGroups:
+    - "null"
+    resources:
+    - secrets
+    verbs:
+    - delete
+    - get
+    - list
+    - watch
+  - apiGroups:
+    - "null"
+    - events.k8s.io
+    resources:
+    - events
+    verbs:
+    - create
+    - patch
+    - update
+kind: List
+metadata:
+  resourceVersion: "770187"

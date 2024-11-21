@@ -1,0 +1,342 @@
+apiVersion: v1
+items:
+- apiVersion: batch/v1
+  kind: Job
+  metadata:
+    annotations:
+      batch.kubernetes.io/job-tracking: "null"
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/7RWXW/iOBT9K6v7uiEkobQQaR7CRxd2KUTQGe1qVSFjLuCtY0e2kxlU8d9XdsJMOnQ67Ur71CS+5+B7zvF1n4Dk7BMqzaSAGDbE0EO7DMGDRya2EMPvcgMeZGjIlhgC8RMQIaQhhkmh7avc/IPUaDS+YtKnxBiOPpNtZtEH5FmLSmGU5BxVix6IMi2Fe6aNchzg/ZBBfhaoWvvysSZqLJWh98sfTGw/TJBnQ0v6Ux5BMoQYFBH0gKrF5X7PxP5NMJ0TarHV2hna0kdtMIOTB1Sha+aeZagNyXKIRcG5B5xskDuZbAOue+1/14v7+q6dHYg+QAxk17umnSjadsOAXEXbzVWP9gLaIVHQ7W523aur/k2HdCK7w7p75wcT2hDOW5c/+KZmdY7UdrQh9FHudjOWMQNxGASBBwaznBODdv2VzLwihhQ7tp9UDa4mSdS9/tAfjYajKLoeD0f9oDfo9ga9wSjsBP2kN7wOujfhzfA2GXRuksEo7EbJoN8Pkigcdnr/mzWnhgw23YQJVBriv5+AqL19gFpk8KDVKuvz5UEYdPzAD34t8o4f3vhhAA8eoCgdtPZontyNwYOS8OKlwJ68r5WfxsvVdDFvFF/yN8qX43TRqD0Yk8ft9oGoErWxh5MX7q/C/Jy22nZfl7QSQzcJJ+PZ3Xq0nH4aLxu8GqlC06wbTpLl/dr2tUqTYbO5H4XsOfTHarRfUcft7ixR4/t9svxt/B+3k3y8n6zTZLVaD5fj0Xh+P01mqwbBjnCNTcB8sU6Xiz//atRYMT2/FtvnkhLuhYHfjaxz7fDavXTqlybXbTKdfVyO1+liNh02GRWe03Z68IBlZN+Qqv3IWZ6jatlsx2Xg9/xOa1Mwvo2C6CqIoh7UmLTgPJWc0SPEMN3NpUkVahQGns0P8EChloWiaI+PPQpIC8XMcSiFwS/GHXjO5edUsZJx3ONYU8KrcR87iTygJCcbxplhjgW2Sub23CSzGTyc7E+Q7ULw41JKc8s41l7ERhV48qCUvMjwThbCVOcus48pMXZutA8yw2d9t/1653UfzTUn8c/glNADXuKrz28icIPtBYbq+wWFyfJvxfblouJ7RpcG/UJdfT3WZXZeWU9PDzYsQm5xhRypkcra8FhsUAk0qN0VqCEGzkTxBZwl2hBlvkZkIW4J44WyurwQAVWIRM+lsA5WvrkyKrM8VXLHuLslzDF3s6kQhmU4wh0puKkGLKqSUUwotd3MGxfY5cVVxaFKAma5OY6Yqu6gLSsyiOEOM6mOjZvwIgHvg30z/p24b3a/DXi2/rnJ3nnKxk/1U61P9Q9WVXWh08kSVTu4I7nFiiaqTsYl7KXsOIcMMYWbAad/AwAA//9I/k94SAoAAA
+      objectset.rio.cattle.io/id: helm-controller-chart-registration
+      objectset.rio.cattle.io/owner-gvk: helm.cattle.io/v1, Kind=HelmChart
+      objectset.rio.cattle.io/owner-name: rancher-logging
+      objectset.rio.cattle.io/owner-namespace: cattle-logging-system
+    creationTimestamp: "2024-08-06T11:55:28Z"
+    finalizers:
+    - wrangler.cattle.io/promote-node-controller
+    generation: 1
+    labels:
+      helmcharts.helm.cattle.io/chart: rancher-logging
+      objectset.rio.cattle.io/hash: af86c322d510a42db48c80c3a2055bf544973a32
+    managedFields:
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/promote-node-controller"null: {}
+      manager: harvester
+      operation: Update
+      time: "2024-08-06T11:55:28Z"
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:helmcharts.helm.cattle.io/chart: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:backoffLimit: {}
+          f:completionMode: {}
+          f:completions: {}
+          f:parallelism: {}
+          f:suspend: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                .: {}
+                f:helmcharts.helm.cattle.io/configHash: {}
+              f:labels:
+                .: {}
+                f:helmcharts.helm.cattle.io/chart: {}
+            f:spec:
+              f:containers:
+                k:{"name":"helm"}:
+                  .: {}
+                  f:args: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"AUTH_PASS_CREDENTIALS"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CHART"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CHART_NAMESPACE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"FAILURE_POLICY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HELM_DRIVER"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HELM_VERSION"}:
+                      .: {}
+                      f:name: {}
+                    k:{"name":"NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"NO_PROXY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"REPO"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TARGET_NAMESPACE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"VERSION"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:readOnlyRootFilesystem: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/chart"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/config"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/home/klipper-helm/.cache"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/home/klipper-helm/.config"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/home/klipper-helm/.helm"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/tmp"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:dnsPolicy: {}
+              f:nodeSelector: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext:
+                .: {}
+                f:runAsNonRoot: {}
+                f:seccompProfile:
+                  .: {}
+                  f:type: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:volumes:
+                .: {}
+                k:{"name":"content"}:
+                  .: {}
+                  f:configMap:
+                    .: {}
+                    f:defaultMode: {}
+                    f:name: {}
+                  f:name: {}
+                k:{"name":"klipper-cache"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"klipper-config"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"klipper-helm"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"tmp"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"values"}:
+                  .: {}
+                  f:name: {}
+                  f:secret:
+                    .: {}
+                    f:defaultMode: {}
+                    f:secretName: {}
+      manager: helm-controller@harvesterdev1
+      operation: Update
+      time: "2024-08-06T11:55:28Z"
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:completionTime: {}
+          f:conditions: {}
+          f:ready: {}
+          f:startTime: {}
+          f:succeeded: {}
+          f:uncountedTerminatedPods: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-08-06T11:55:39Z"
+    name: helm-install-rancher-logging
+    namespace: cattle-logging-system
+    resourceVersion: "630379"
+    uid: 393482d2-0095-475c-9cb5-4b71aed4b6c2
+  spec:
+    backoffLimit: 1000
+    completionMode: NonIndexed
+    completions: 1
+    parallelism: 1
+    selector:
+      matchLabels:
+        batch.kubernetes.io/controller-uid: 393482d2-0095-475c-9cb5-4b71aed4b6c2
+    suspend: false
+    template:
+      metadata:
+        annotations:
+          helmcharts.helm.cattle.io/configHash: SHA256=9DDCD226ECD908B58B8BD1309A8C605717CFAB37ABD152AB990A21C386D90AA4
+        creationTimestamp: "null"
+        labels:
+          batch.kubernetes.io/controller-uid: 393482d2-0095-475c-9cb5-4b71aed4b6c2
+          batch.kubernetes.io/job-name: helm-install-rancher-logging
+          controller-uid: 393482d2-0095-475c-9cb5-4b71aed4b6c2
+          helmcharts.helm.cattle.io/chart: rancher-logging
+          job-name: helm-install-rancher-logging
+      spec:
+        containers:
+        - args:
+          - install
+          - --version
+          - 103.0.0+up3.17.10
+          env:
+          - name: NAME
+            value: rancher-logging
+          - name: VERSION
+            value: 103.0.0+up3.17.10
+          - name: REPO
+            value: http://harvester-cluster-repo.cattle-system.svc/charts
+          - name: HELM_DRIVER
+            value: secret
+          - name: CHART_NAMESPACE
+            value: cattle-logging-system
+          - name: CHART
+            value: rancher-logging/rancher-logging
+          - name: HELM_VERSION
+          - name: TARGET_NAMESPACE
+            value: cattle-logging-system
+          - name: AUTH_PASS_CREDENTIALS
+            value: "false"
+          - name: NO_PROXY
+            value: .svc,.cluster.local,10.52.0.0/16,10.53.0.0/16
+          - name: FAILURE_POLICY
+            value: reinstall
+          image: rancher/klipper-helm:v0.8.3-build20240228
+          imagePullPolicy: IfNotPresent
+          name: helm
+          resources: {}
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            readOnlyRootFilesystem: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /home/klipper-helm/.helm
+            name: klipper-helm
+          - mountPath: /home/klipper-helm/.cache
+            name: klipper-cache
+          - mountPath: /home/klipper-helm/.config
+            name: klipper-config
+          - mountPath: /tmp
+            name: tmp
+          - mountPath: /config
+            name: values
+          - mountPath: /chart
+            name: content
+        dnsPolicy: ClusterFirst
+        nodeSelector:
+          kubernetes.io/os: linux
+        restartPolicy: OnFailure
+        schedulerName: default-scheduler
+        securityContext:
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+        serviceAccount: helm-rancher-logging
+        serviceAccountName: helm-rancher-logging
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - emptyDir:
+            medium: Memory
+          name: klipper-helm
+        - emptyDir:
+            medium: Memory
+          name: klipper-cache
+        - emptyDir:
+            medium: Memory
+          name: klipper-config
+        - emptyDir:
+            medium: Memory
+          name: tmp
+        - name: values
+          secret:
+            defaultMode: 420
+            secretName: chart-values-rancher-logging
+        - configMap:
+            defaultMode: 420
+            name: chart-content-rancher-logging
+          name: content
+  status:
+    completionTime: "2024-08-06T11:55:39Z"
+    conditions:
+    - lastProbeTime: "2024-08-06T11:55:39Z"
+      lastTransitionTime: "2024-08-06T11:55:39Z"
+      status: "True"
+      type: Complete
+    ready: 0
+    startTime: "2024-08-06T11:55:28Z"
+    succeeded: 1
+    uncountedTerminatedPods: {}
+kind: List
+metadata:
+  resourceVersion: "770286"

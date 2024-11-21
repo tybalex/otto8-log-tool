@@ -1,0 +1,194 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:11:21Z"
+    creationTimestamp: "2024-08-06T01:56:40Z"
+    labels:
+      objectset.rio.cattle.io/hash: 5aad1a050dcd69e80fd3fab11655a0521958c07a
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:11:21Z"
+    name: cattle-cluster-agent
+    namespace: cattle-system
+    resourceVersion: "22676"
+    uid: 919dc0bc-557d-4d43-afe5-862e8b0d78c1
+  subsets:
+  - addresses:
+    - ip: 10.52.0.109
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: cattle-cluster-agent-58bf658657-6tbs9
+        namespace: cattle-system
+        uid: 1219722e-f25e-424b-bb2a-5b488bac3dcb
+    - ip: 10.52.0.70
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: cattle-cluster-agent-58bf658657-55mv4
+        namespace: cattle-system
+        uid: b4cfc5ab-0cb7-4481-aabd-4590158e0171
+    ports:
+    - name: http
+      port: 80
+      protocol: TCP
+    - name: https-internal
+      port: 444
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:53:32Z"
+    creationTimestamp: "2024-08-06T01:53:30Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:53:32Z"
+    name: harvester-cluster-repo
+    namespace: cattle-system
+    resourceVersion: "2445"
+    uid: 98f27360-c9c6-4fd6-bf66-ab024ddb1b3c
+  subsets:
+  - addresses:
+    - ip: 10.52.0.21
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: harvester-cluster-repo-74b6b74b8c-x6mqv
+        namespace: cattle-system
+        uid: 205566ff-dcc0-457a-a80f-7454892e5d77
+    ports:
+    - port: 80
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T02:14:16Z"
+    creationTimestamp: "2024-08-06T01:51:46Z"
+    labels:
+      app: rancher
+      app.kubernetes.io/managed-by: Helm
+      chart: rancher-2.8.3-dirty.commit-904c2fb09
+      heritage: Helm
+      release: rancher
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:chart: {}
+            f:heritage: {}
+            f:release: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T02:14:16Z"
+    name: rancher
+    namespace: cattle-system
+    resourceVersion: "27831"
+    uid: 62d237b1-4a12-4ea3-bf5f-e40fd14afd32
+  subsets:
+  - addresses:
+    - ip: 10.52.0.73
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: rancher-587557b8db-jwxsb
+        namespace: cattle-system
+        uid: fa402f30-3fdf-4169-b309-9869c39fd77b
+    - ip: 10.52.1.5
+      nodeName: harvesterdev2
+      targetRef:
+        kind: Pod
+        name: rancher-587557b8db-9wkx8
+        namespace: cattle-system
+        uid: e5e10f30-a4b7-4f48-ad92-929db8ba3d00
+    - ip: 10.52.2.3
+      nodeName: harvesterdev3
+      targetRef:
+        kind: Pod
+        name: rancher-587557b8db-8bjnk
+        namespace: cattle-system
+        uid: 908600c8-445a-41c8-af2c-bc37db8cac50
+    ports:
+    - name: http
+      port: 80
+      protocol: TCP
+    - name: https-internal
+      port: 444
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-06T01:53:29Z"
+    creationTimestamp: "2024-08-06T01:53:08Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:53:29Z"
+    name: rancher-webhook
+    namespace: cattle-system
+    resourceVersion: "2242"
+    uid: 9736bd1c-a49a-4cab-8ab2-44c40603571e
+  subsets:
+  - addresses:
+    - ip: 10.52.0.17
+      nodeName: harvesterdev1
+      targetRef:
+        kind: Pod
+        name: rancher-webhook-795765957f-8l8td
+        namespace: cattle-system
+        uid: ec8e0232-fafc-411c-b010-a09efea69c39
+    ports:
+    - name: https
+      port: 9443
+      protocol: TCP
+kind: List
+metadata:
+  resourceVersion: "770206"

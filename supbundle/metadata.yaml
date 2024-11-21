@@ -1,0 +1,7 @@
+bundlename: bundle-vuocj
+bundleversion: 0.1.0
+kubernetesversion: v1.27.13+rke2r1
+projectnamespaceuuid: fd618382-5e22-4766-bb60-1ca8bcd6f686
+bundlecreatedat: "2024-08-06T14:12:11Z"
+issueurl: ""
+issuedescription: the gpu vm does not start

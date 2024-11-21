@@ -1,0 +1,1544 @@
+apiVersion: v1
+items:
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          creationTimestamp: "null"
+          labels:
+            app.kubernetes.io/instance: harvester
+            app.kubernetes.io/name: harvester-network-controller
+        spec:
+          containers:
+          - args:
+            - agent
+            command:
+            - harvester-network-controller
+            env:
+            - name: NODENAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: spec.nodeName
+            - name: NAMESPACE
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
+            image: rancher/harvester-network-controller:v0.4.0
+            imagePullPolicy: IfNotPresent
+            name: harvester-network
+            resources:
+              limits:
+                cpu: 100m
+                memory: 128Mi
+              requests:
+                cpu: 10m
+                memory: 64Mi
+            securityContext:
+              privileged: true
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /dev
+              name: dev
+            - mountPath: /lib/modules
+              name: modules
+          dnsPolicy: ClusterFirst
+          hostNetwork: true
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: harvester-network-controller
+          serviceAccountName: harvester-network-controller
+          terminationGracePeriodSeconds: 30
+          tolerations:
+          - effect: NoSchedule
+            key: node-role.kubernetes.io/master
+          volumes:
+          - hostPath:
+              path: /dev
+              type: "null"
+            name: dev
+          - hostPath:
+              path: /lib/modules
+              type: "null"
+            name: modules
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      deprecated.daemonset.template.generation: "1"
+      helm.sh/resource-policy: keep
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:39Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: harvester-network-controller
+      controller-revision-hash: 5c94bdddb9
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deprecated.daemonset.template.generation: {}
+            f:helm.sh/resource-policy: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:controller-revision-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"2a999ca8-60ef-46d1-a406-78d20116c186"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:55:39Z"
+    name: harvester-network-controller-5c94bdddb9
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: harvester-network-controller
+      uid: 2a999ca8-60ef-46d1-a406-78d20116c186
+    resourceVersion: "4627"
+    uid: 3c18465f-0948-449c-94ca-5267d13a4b23
+  revision: 1
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          creationTimestamp: "null"
+          labels:
+            app.kubernetes.io/instance: harvester
+            app.kubernetes.io/name: harvester-node-disk-manager
+        spec:
+          containers:
+          - command:
+            - node-disk-manager
+            env:
+            - name: NDM_LABEL_FILTER
+              value: COS_*,HARV_*
+            - name: LONGHORN_NAMESPACE
+              value: longhorn-system
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: spec.nodeName
+            image: rancher/harvester-node-disk-manager:v0.6.3
+            imagePullPolicy: IfNotPresent
+            name: harvester-node-disk-manager
+            resources: {}
+            securityContext:
+              privileged: true
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /host/proc
+              name: host-proc
+              readOnly: true
+            - mountPath: /run/udev
+              name: host-run-udev
+              readOnly: true
+            - mountPath: /dev
+              name: host-dev
+              readOnly: true
+            - mountPath: /sys
+              name: host-sys
+              readOnly: true
+          dnsPolicy: ClusterFirst
+          hostNetwork: true
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: harvester-node-disk-manager
+          serviceAccountName: harvester-node-disk-manager
+          terminationGracePeriodSeconds: 30
+          volumes:
+          - hostPath:
+              path: /proc
+              type: Directory
+            name: host-proc
+          - hostPath:
+              path: /run/udev
+              type: Directory
+            name: host-run-udev
+          - hostPath:
+              path: /dev
+              type: Directory
+            name: host-dev
+          - hostPath:
+              path: /sys
+              type: Directory
+            name: host-sys
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      deprecated.daemonset.template.generation: "1"
+      helm.sh/resource-policy: keep
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:39Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: harvester-node-disk-manager
+      controller-revision-hash: 788f55776b
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deprecated.daemonset.template.generation: {}
+            f:helm.sh/resource-policy: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:controller-revision-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"636d87cd-54c9-4129-b07c-b419cd0d56f4"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:55:39Z"
+    name: harvester-node-disk-manager-788f55776b
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: harvester-node-disk-manager
+      uid: 636d87cd-54c9-4129-b07c-b419cd0d56f4
+    resourceVersion: "4628"
+    uid: 8a55203b-8105-4e84-aac3-8ef70778f685
+  revision: 1
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          creationTimestamp: "null"
+          labels:
+            app.kubernetes.io/instance: harvester
+            app.kubernetes.io/name: harvester-node-disk-manager
+        spec:
+          containers:
+          - command:
+            - node-disk-manager
+            env:
+            - name: NDM_LABEL_FILTER
+              value: COS_*,HARV_*
+            - name: NDM_AUTO_PROVISION_FILTER
+              value: /dev/sd*
+            - name: LONGHORN_NAMESPACE
+              value: longhorn-system
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: spec.nodeName
+            image: rancher/harvester-node-disk-manager:v0.6.3
+            imagePullPolicy: IfNotPresent
+            name: harvester-node-disk-manager
+            resources: {}
+            securityContext:
+              privileged: true
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /host/proc
+              name: host-proc
+              readOnly: true
+            - mountPath: /run/udev
+              name: host-run-udev
+              readOnly: true
+            - mountPath: /dev
+              name: host-dev
+              readOnly: true
+            - mountPath: /sys
+              name: host-sys
+              readOnly: true
+          dnsPolicy: ClusterFirst
+          hostNetwork: true
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: harvester-node-disk-manager
+          serviceAccountName: harvester-node-disk-manager
+          terminationGracePeriodSeconds: 30
+          volumes:
+          - hostPath:
+              path: /proc
+              type: Directory
+            name: host-proc
+          - hostPath:
+              path: /run/udev
+              type: Directory
+            name: host-run-udev
+          - hostPath:
+              path: /dev
+              type: Directory
+            name: host-dev
+          - hostPath:
+              path: /sys
+              type: Directory
+            name: host-sys
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      deprecated.daemonset.template.generation: "2"
+      helm.sh/resource-policy: keep
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:58:46Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: harvester-node-disk-manager
+      controller-revision-hash: cf749d96c
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deprecated.daemonset.template.generation: {}
+            f:helm.sh/resource-policy: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:controller-revision-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"636d87cd-54c9-4129-b07c-b419cd0d56f4"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:58:46Z"
+    name: harvester-node-disk-manager-cf749d96c
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: harvester-node-disk-manager
+      uid: 636d87cd-54c9-4129-b07c-b419cd0d56f4
+    resourceVersion: "10810"
+    uid: e59a1b05-f767-4a0f-9b43-9985febec180
+  revision: 2
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          creationTimestamp: "null"
+          labels:
+            app.kubernetes.io/instance: harvester
+            app.kubernetes.io/name: harvester-node-manager
+            name: harvester-node-manager
+        spec:
+          containers:
+          - command:
+            - harvester-node-manager
+            env:
+            - name: NODENAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: spec.nodeName
+            - name: HOST_PROC
+              value: /host/proc
+            image: rancher/harvester-node-manager:v0.2.1
+            imagePullPolicy: IfNotPresent
+            name: node-manager
+            resources:
+              limits:
+                cpu: 100m
+                memory: 128Mi
+              requests:
+                cpu: 10m
+                memory: 64Mi
+            securityContext:
+              privileged: true
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /sys/kernel/mm/ksm
+              name: ksm
+            - mountPath: /host/proc
+              name: proc
+              readOnly: true
+            - mountPath: /var/run/dbus/system_bus_socket
+              name: dbus-socket
+              readOnly: true
+            - mountPath: /host/etc/systemd
+              name: host-systemd
+            - mountPath: /host/oem
+              name: host-oem
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: harvester-node-manager
+          serviceAccountName: harvester-node-manager
+          terminationGracePeriodSeconds: 30
+          tolerations:
+          - effect: NoSchedule
+            key: node-role.kubernetes.io/master
+          - effect: NoExecute
+            operator: Exists
+          volumes:
+          - hostPath:
+              path: /sys/kernel/mm/ksm
+              type: "null"
+            name: ksm
+          - hostPath:
+              path: /proc
+              type: "null"
+            name: proc
+          - hostPath:
+              path: /var/run/dbus/system_bus_socket
+              type: "null"
+            name: dbus-socket
+          - hostPath:
+              path: /etc/systemd
+              type: "null"
+            name: host-systemd
+          - hostPath:
+              path: /oem
+              type: "null"
+            name: host-oem
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      deprecated.daemonset.template.generation: "1"
+      helm.sh/resource-policy: keep
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:39Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: harvester-node-manager
+      controller-revision-hash: 5557649fd7
+      name: harvester-node-manager
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deprecated.daemonset.template.generation: {}
+            f:helm.sh/resource-policy: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:controller-revision-hash: {}
+            f:name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"4d56340c-2162-4d7d-b7cd-99d82280b9ad"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:55:39Z"
+    name: harvester-node-manager-5557649fd7
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: harvester-node-manager
+      uid: 4d56340c-2162-4d7d-b7cd-99d82280b9ad
+    resourceVersion: "4639"
+    uid: d07965e7-6614-4a3f-8215-c84c5d937137
+  revision: 1
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          creationTimestamp: "null"
+          labels:
+            app.kubernetes.io/instance: pcidevices-controller
+            app.kubernetes.io/name: harvester-pcidevices-controller
+        spec:
+          containers:
+          - args:
+            - agent
+            env:
+            - name: GHW_DISABLE_WARNINGS
+              value: "1"
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: spec.nodeName
+            image: rancher/harvester-pcidevices:v0.3.2
+            imagePullPolicy: IfNotPresent
+            name: agent
+            resources:
+              limits:
+                cpu: 50m
+                memory: 300Mi
+              requests:
+                cpu: 20m
+                memory: 200Mi
+            securityContext:
+              privileged: true
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /var/lib/kubelet/device-plugins
+              name: device-plugins
+            - mountPath: /lib/modules
+              name: modules
+            - mountPath: /sys
+              name: sys
+            - mountPath: /host/proc
+              name: proc
+            - mountPath: /host/usr/lib
+              name: host-lib
+            - mountPath: /host/usr/bin/file
+              name: host-file
+              readOnly: true
+          dnsPolicy: ClusterFirst
+          priorityClassName: system-node-critical
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: harvester-pcidevices-controller
+          serviceAccountName: harvester-pcidevices-controller
+          terminationGracePeriodSeconds: 30
+          tolerations:
+          - effect: NoSchedule
+            key: node-role.kubernetes.io/master
+          volumes:
+          - hostPath:
+              path: /var/lib/kubelet/device-plugins
+              type: Directory
+            name: device-plugins
+          - hostPath:
+              path: /lib/modules
+              type: Directory
+            name: modules
+          - hostPath:
+              path: /sys
+              type: Directory
+            name: sys
+          - hostPath:
+              path: /proc
+              type: Directory
+            name: proc
+          - hostPath:
+              path: /usr/lib/
+              type: Directory
+            name: host-lib
+          - hostPath:
+              path: /usr/bin/file
+              type: File
+            name: host-file
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      deprecated.daemonset.template.generation: "1"
+      meta.helm.sh/release-name: pcidevices-controller
+      meta.helm.sh/release-namespace: harvester-system
+    creationTimestamp: "2024-08-06T01:56:42Z"
+    labels:
+      app.kubernetes.io/instance: pcidevices-controller
+      app.kubernetes.io/name: harvester-pcidevices-controller
+      controller-revision-hash: 566798679d
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deprecated.daemonset.template.generation: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:controller-revision-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"a653ca27-17aa-4729-8772-a63f70c663f4"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:56:42Z"
+    name: harvester-pcidevices-controller-566798679d
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: harvester-pcidevices-controller
+      uid: a653ca27-17aa-4729-8772-a63f70c663f4
+    resourceVersion: "6754"
+    uid: ae3c79ca-efc1-4453-b411-267d4b558fd4
+  revision: 1
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          creationTimestamp: "null"
+          labels:
+            app.kubernetes.io/instance: harvester
+            app.kubernetes.io/name: kube-vip
+        spec:
+          containers:
+          - args:
+            - manager
+            env:
+            - name: cp_enable
+              value: "false"
+            - name: enable_service_security
+              value: "true"
+            - name: lb_enable
+              value: "true"
+            - name: lb_port
+              value: "6443"
+            - name: svc_enable
+              value: "true"
+            - name: vip_arp
+              value: "true"
+            - name: vip_cidr
+              value: "32"
+            - name: vip_interface
+            - name: vip_leaderelection
+              value: "false"
+            image: ghcr.io/kube-vip/kube-vip-iptables:v0.6.0
+            imagePullPolicy: IfNotPresent
+            name: kube-vip
+            resources: {}
+            securityContext:
+              capabilities:
+                add:
+                - NET_ADMIN
+                - NET_RAW
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+          dnsPolicy: ClusterFirst
+          hostNetwork: true
+          nodeSelector:
+            node-role.kubernetes.io/control-plane: "true"
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: kube-vip
+          serviceAccountName: kube-vip
+          terminationGracePeriodSeconds: 30
+          tolerations:
+          - effect: NoSchedule
+            key: node-role.kubernetes.io/control-plane
+            operator: Exists
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      deprecated.daemonset.template.generation: "1"
+      helm.sh/resource-policy: keep
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2024-08-06T01:55:39Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: kube-vip
+      controller-revision-hash: 6cc75d79b8
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deprecated.daemonset.template.generation: {}
+            f:helm.sh/resource-policy: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:controller-revision-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"6a5a5386-27f4-4abb-a4ab-fb71fe92b78d"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:55:39Z"
+    name: kube-vip-6cc75d79b8
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: kube-vip
+      uid: 6a5a5386-27f4-4abb-a4ab-fb71fe92b78d
+    resourceVersion: "4640"
+    uid: f798ba25-f065-4d80-ab0b-d26fa0b89211
+  revision: 1
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          creationTimestamp: "null"
+          labels:
+            app: nvidia-driver-daemonset
+            app.kubernetes.io/instance: nvidia-driver-toolkit
+            app.kubernetes.io/name: nvidia-driver-runtime
+        spec:
+          containers:
+          - env:
+            - name: DRIVER_LOCATION
+              value: HTTPENDPOINT/NVIDIA-Linux-x86_64-vgpu-kvm.run
+            image: rancher/harvester-nvidia-driver-toolkit:v1.3-20240613
+            imagePullPolicy: Always
+            name: nvidia-driver-ctr
+            resources: {}
+            securityContext:
+              privileged: true
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /var/log
+              name: var-log
+            - mountPath: /dev/log
+              name: dev-log
+            - mountPath: /host-etc/os-release
+              name: host-os-release
+              readOnly: true
+            - mountPath: /sys
+              name: host-sys
+          dnsPolicy: ClusterFirst
+          hostPID: true
+          nodeSelector:
+            sriovgpu.harvesterhci.io/driver-needed: "true"
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: nvidia-driver-runtime
+          serviceAccountName: nvidia-driver-runtime
+          terminationGracePeriodSeconds: 30
+          volumes:
+          - hostPath:
+              path: /var/log
+              type: "null"
+            name: var-log
+          - hostPath:
+              path: /dev/log
+              type: "null"
+            name: dev-log
+          - hostPath:
+              path: /etc/os-release
+              type: "null"
+            name: host-os-release
+          - hostPath:
+              path: /sys
+              type: Directory
+            name: host-sys
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      deprecated.daemonset.template.generation: "1"
+      meta.helm.sh/release-name: nvidia-driver-toolkit
+      meta.helm.sh/release-namespace: harvester-system
+    creationTimestamp: "2024-08-06T01:56:42Z"
+    labels:
+      app: nvidia-driver-daemonset
+      app.kubernetes.io/instance: nvidia-driver-toolkit
+      app.kubernetes.io/name: nvidia-driver-runtime
+      controller-revision-hash: 64cd6cf58b
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deprecated.daemonset.template.generation: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:controller-revision-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"cbd0a9b8-1cd8-4272-b4b9-75a617505a71"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:56:42Z"
+    name: nvidia-driver-runtime-64cd6cf58b
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: nvidia-driver-runtime
+      uid: cbd0a9b8-1cd8-4272-b4b9-75a617505a71
+    resourceVersion: "6728"
+    uid: 0c562240-4107-4f02-8a13-9d70a155bc92
+  revision: 1
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          creationTimestamp: "null"
+          labels:
+            app: nvidia-driver-daemonset
+            app.kubernetes.io/instance: nvidia-driver-toolkit
+            app.kubernetes.io/name: nvidia-driver-runtime
+          namespace: harvester-system
+        spec:
+          containers:
+          - env:
+            - name: DRIVER_LOCATION
+              value: http://192.168.210.5:8080/vgpu/NVIDIA-Linux-x86_64-535.183.04-vgpu-kvm.run
+            image: registry.gitlab.com/koat-public/koat-nvidia-driver-toolkitregistry.gitlab.com/koat-public/koat-nvidia-driver-toolkit:latest
+            imagePullPolicy: Always
+            name: nvidia-driver-ctr
+            resources: {}
+            securityContext:
+              privileged: true
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /var/log
+              name: var-log
+            - mountPath: /dev/log
+              name: dev-log
+            - mountPath: /host-etc/os-release
+              name: host-os-release
+              readOnly: true
+            - mountPath: /sys
+              name: host-sys
+          dnsPolicy: ClusterFirst
+          hostPID: true
+          nodeSelector:
+            sriovgpu.harvesterhci.io/driver-needed: "true"
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: nvidia-driver-runtime
+          serviceAccountName: nvidia-driver-runtime
+          terminationGracePeriodSeconds: 30
+          volumes:
+          - hostPath:
+              path: /var/log
+              type: "null"
+            name: var-log
+          - hostPath:
+              path: /dev/log
+              type: "null"
+            name: dev-log
+          - hostPath:
+              path: /etc/os-release
+              type: "null"
+            name: host-os-release
+          - hostPath:
+              path: /sys
+              type: Directory
+            name: host-sys
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      deprecated.daemonset.template.generation: "5"
+      meta.helm.sh/release-name: nvidia-driver-toolkit
+      meta.helm.sh/release-namespace: harvester-system
+    creationTimestamp: "2024-08-06T13:46:21Z"
+    labels:
+      app: nvidia-driver-daemonset
+      app.kubernetes.io/instance: nvidia-driver-toolkit
+      app.kubernetes.io/name: nvidia-driver-runtime
+      controller-revision-hash: 665669b96f
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deprecated.daemonset.template.generation: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:controller-revision-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"cbd0a9b8-1cd8-4272-b4b9-75a617505a71"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T13:46:21Z"
+    name: nvidia-driver-runtime-665669b96f
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: nvidia-driver-runtime
+      uid: cbd0a9b8-1cd8-4272-b4b9-75a617505a71
+    resourceVersion: "743581"
+    uid: b14bfee0-2c7c-41f1-91a3-1ae750c43e3c
+  revision: 5
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          creationTimestamp: "null"
+          labels:
+            app: nvidia-driver-daemonset
+            app.kubernetes.io/instance: nvidia-driver-toolkit
+            app.kubernetes.io/name: nvidia-driver-runtime
+          namespace: harvester-system
+        spec:
+          containers:
+          - env:
+            - name: DRIVER_LOCATION
+              value: http://192.168.210.5:8080/vgpu/NVIDIA-Linux-x86_64-535.183.04-vgpu-kvm.run
+            image: registry.gitlab.com/koat-public/koat-nvidia-driver-toolkit:latest
+            imagePullPolicy: Always
+            name: nvidia-driver-ctr
+            resources: {}
+            securityContext:
+              privileged: true
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /var/log
+              name: var-log
+            - mountPath: /dev/log
+              name: dev-log
+            - mountPath: /host-etc/os-release
+              name: host-os-release
+              readOnly: true
+            - mountPath: /sys
+              name: host-sys
+          dnsPolicy: ClusterFirst
+          hostPID: true
+          nodeSelector:
+            sriovgpu.harvesterhci.io/driver-needed: "true"
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: nvidia-driver-runtime
+          serviceAccountName: nvidia-driver-runtime
+          terminationGracePeriodSeconds: 30
+          volumes:
+          - hostPath:
+              path: /var/log
+              type: "null"
+            name: var-log
+          - hostPath:
+              path: /dev/log
+              type: "null"
+            name: dev-log
+          - hostPath:
+              path: /etc/os-release
+              type: "null"
+            name: host-os-release
+          - hostPath:
+              path: /sys
+              type: Directory
+            name: host-sys
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      deprecated.daemonset.template.generation: "3"
+      meta.helm.sh/release-name: nvidia-driver-toolkit
+      meta.helm.sh/release-namespace: harvester-system
+    creationTimestamp: "2024-08-06T02:00:23Z"
+    labels:
+      app: nvidia-driver-daemonset
+      app.kubernetes.io/instance: nvidia-driver-toolkit
+      app.kubernetes.io/name: nvidia-driver-runtime
+      controller-revision-hash: 77f5df7f56
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deprecated.daemonset.template.generation: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:controller-revision-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"cbd0a9b8-1cd8-4272-b4b9-75a617505a71"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T13:47:29Z"
+    name: nvidia-driver-runtime-77f5df7f56
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: nvidia-driver-runtime
+      uid: cbd0a9b8-1cd8-4272-b4b9-75a617505a71
+    resourceVersion: "744866"
+    uid: 3252243a-bdb5-47d3-811b-82bad8906802
+  revision: 6
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          creationTimestamp: "null"
+          labels:
+            app: nvidia-driver-daemonset
+            app.kubernetes.io/instance: nvidia-driver-toolkit
+            app.kubernetes.io/name: nvidia-driver-runtime
+        spec:
+          containers:
+          - env:
+            - name: DRIVER_LOCATION
+              value: http://192.168.210.5:8080/vgpu/NVIDIA-Linux-x86_64-535.183.04-vgpu-kvm.run
+            image: rancher/harvester-nvidia-driver-toolkit:latest
+            imagePullPolicy: Always
+            name: nvidia-driver-ctr
+            resources: {}
+            securityContext:
+              privileged: true
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /var/log
+              name: var-log
+            - mountPath: /dev/log
+              name: dev-log
+            - mountPath: /host-etc/os-release
+              name: host-os-release
+              readOnly: true
+            - mountPath: /sys
+              name: host-sys
+          dnsPolicy: ClusterFirst
+          hostPID: true
+          nodeSelector:
+            sriovgpu.harvesterhci.io/driver-needed: "true"
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: nvidia-driver-runtime
+          serviceAccountName: nvidia-driver-runtime
+          terminationGracePeriodSeconds: 30
+          volumes:
+          - hostPath:
+              path: /var/log
+              type: "null"
+            name: var-log
+          - hostPath:
+              path: /dev/log
+              type: "null"
+            name: dev-log
+          - hostPath:
+              path: /etc/os-release
+              type: "null"
+            name: host-os-release
+          - hostPath:
+              path: /sys
+              type: Directory
+            name: host-sys
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      deprecated.daemonset.template.generation: "2"
+      meta.helm.sh/release-name: nvidia-driver-toolkit
+      meta.helm.sh/release-namespace: harvester-system
+    creationTimestamp: "2024-08-06T01:59:26Z"
+    labels:
+      app: nvidia-driver-daemonset
+      app.kubernetes.io/instance: nvidia-driver-toolkit
+      app.kubernetes.io/name: nvidia-driver-runtime
+      controller-revision-hash: 7b65d9b9bc
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deprecated.daemonset.template.generation: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:controller-revision-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"cbd0a9b8-1cd8-4272-b4b9-75a617505a71"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:59:26Z"
+    name: nvidia-driver-runtime-7b65d9b9bc
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: nvidia-driver-runtime
+      uid: cbd0a9b8-1cd8-4272-b4b9-75a617505a71
+    resourceVersion: "11526"
+    uid: f7370914-c1dd-47b3-89ac-786850e8c1eb
+  revision: 2
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          creationTimestamp: "null"
+          labels:
+            app: nvidia-driver-daemonset
+            app.kubernetes.io/instance: nvidia-driver-toolkit
+            app.kubernetes.io/name: nvidia-driver-runtime
+          namespace: harvester-system
+        spec:
+          containers:
+          - env:
+            - name: DRIVER_LOCATION
+              value: http://192.168.210.5:8080/vgpu/NVIDIA-Linux-x86_64-535.183.04-vgpu-kvm.run
+            image: rancher/harvester-nvidia-driver-toolkit:latest
+            imagePullPolicy: Always
+            name: nvidia-driver-ctr
+            resources: {}
+            securityContext:
+              privileged: true
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /var/log
+              name: var-log
+            - mountPath: /dev/log
+              name: dev-log
+            - mountPath: /host-etc/os-release
+              name: host-os-release
+              readOnly: true
+            - mountPath: /sys
+              name: host-sys
+          dnsPolicy: ClusterFirst
+          hostPID: true
+          nodeSelector:
+            sriovgpu.harvesterhci.io/driver-needed: "true"
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: nvidia-driver-runtime
+          serviceAccountName: nvidia-driver-runtime
+          terminationGracePeriodSeconds: 30
+          volumes:
+          - hostPath:
+              path: /var/log
+              type: "null"
+            name: var-log
+          - hostPath:
+              path: /dev/log
+              type: "null"
+            name: dev-log
+          - hostPath:
+              path: /etc/os-release
+              type: "null"
+            name: host-os-release
+          - hostPath:
+              path: /sys
+              type: Directory
+            name: host-sys
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      deprecated.daemonset.template.generation: "4"
+      meta.helm.sh/release-name: nvidia-driver-toolkit
+      meta.helm.sh/release-namespace: harvester-system
+    creationTimestamp: "2024-08-06T11:55:32Z"
+    labels:
+      app: nvidia-driver-daemonset
+      app.kubernetes.io/instance: nvidia-driver-toolkit
+      app.kubernetes.io/name: nvidia-driver-runtime
+      controller-revision-hash: 7df66fbf75
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deprecated.daemonset.template.generation: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:controller-revision-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"cbd0a9b8-1cd8-4272-b4b9-75a617505a71"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T11:55:32Z"
+    name: nvidia-driver-runtime-7df66fbf75
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: nvidia-driver-runtime
+      uid: cbd0a9b8-1cd8-4272-b4b9-75a617505a71
+    resourceVersion: "630177"
+    uid: 349084e0-cb38-443d-bfa5-da585116be9e
+  revision: 4
+- apiVersion: apps/v1
+  data:
+    spec:
+      template:
+        $patch: replace
+        metadata:
+          annotations:
+            kubevirt.io/install-strategy-identifier: 8c5c8323ebf23c689ce9bc87a13132d3fae18c7a
+            kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.5
+            kubevirt.io/install-strategy-version: 1.1.1-150500.8.15.1
+          creationTimestamp: "null"
+          labels:
+            app.kubernetes.io/component: kubevirt
+            app.kubernetes.io/managed-by: virt-operator
+            app.kubernetes.io/version: 1.1.1-150500.8.15.1
+            kubevirt.io: virt-handler
+            prometheus.kubevirt.io: "true"
+          name: virt-handler
+        spec:
+          containers:
+          - args:
+            - --port
+            - "8443"
+            - --hostname-override
+            - $(NODE_NAME)
+            - --pod-ip-address
+            - $(MY_POD_IP)
+            - --max-metric-requests
+            - "3"
+            - --console-server-port
+            - "8186"
+            - --graceful-shutdown-seconds
+            - "315"
+            - -v
+            - "2"
+            command:
+            - virt-handler
+            env:
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: spec.nodeName
+            - name: MY_POD_IP
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: status.podIP
+            image: registry.suse.com/suse/sles/15.5/virt-handler:1.1.1-150500.8.15.1
+            imagePullPolicy: IfNotPresent
+            livenessProbe:
+              failureThreshold: 3
+              httpGet:
+                path: /healthz
+                port: 8443
+                scheme: HTTPS
+              initialDelaySeconds: 15
+              periodSeconds: 45
+              successThreshold: 1
+              timeoutSeconds: 10
+            name: virt-handler
+            ports:
+            - containerPort: 8443
+              name: metrics
+              protocol: TCP
+            readinessProbe:
+              failureThreshold: 3
+              httpGet:
+                path: /healthz
+                port: 8443
+                scheme: HTTPS
+              initialDelaySeconds: 15
+              periodSeconds: 20
+              successThreshold: 1
+              timeoutSeconds: 10
+            resources:
+              limits:
+                cpu: 700m
+                memory: 1600Mi
+              requests:
+                cpu: 10m
+                memory: 357Mi
+            securityContext:
+              privileged: true
+              seLinuxOptions:
+                level: s0
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /etc/virt-handler/clientcertificates
+              name: kubevirt-virt-handler-certs
+              readOnly: true
+            - mountPath: /etc/virt-handler/servercertificates
+              name: kubevirt-virt-handler-server-certs
+              readOnly: true
+            - mountPath: /profile-data
+              name: profile-data
+            - mountPath: /var/run/kubevirt-libvirt-runtimes
+              name: libvirt-runtimes
+            - mountPath: /var/run/kubevirt
+              mountPropagation: Bidirectional
+              name: virt-share-dir
+            - mountPath: /var/lib/kubevirt
+              name: virt-lib-dir
+            - mountPath: /var/run/kubevirt-private
+              name: virt-private-dir
+            - mountPath: /var/lib/kubelet/device-plugins
+              name: device-plugin
+            - mountPath: /pods
+              name: kubelet-pods-shortened
+            - mountPath: /var/lib/kubelet/pods
+              mountPropagation: Bidirectional
+              name: kubelet-pods
+            - mountPath: /var/lib/kubevirt-node-labeller
+              name: node-labeller
+            - mountPath: /etc/podinfo
+              name: podinfo
+          dnsPolicy: ClusterFirst
+          hostPID: true
+          initContainers:
+          - args:
+            - node-labeller.sh
+            command:
+            - /bin/sh
+            - -c
+            image: registry.suse.com/suse/sles/15.5/virt-launcher:1.1.1-150500.8.15.1
+            imagePullPolicy: IfNotPresent
+            name: virt-launcher
+            resources: {}
+            securityContext:
+              privileged: true
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - mountPath: /var/lib/kubevirt-node-labeller
+              name: node-labeller
+          nodeSelector:
+            kubernetes.io/os: linux
+          priorityClassName: kubevirt-cluster-critical
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: kubevirt-handler
+          serviceAccountName: kubevirt-handler
+          terminationGracePeriodSeconds: 30
+          tolerations:
+          - key: CriticalAddonsOnly
+            operator: Exists
+          volumes:
+          - name: kubevirt-virt-handler-certs
+            secret:
+              defaultMode: 420
+              optional: true
+              secretName: kubevirt-virt-handler-certs
+          - name: kubevirt-virt-handler-server-certs
+            secret:
+              defaultMode: 420
+              optional: true
+              secretName: kubevirt-virt-handler-server-certs
+          - emptyDir: {}
+            name: profile-data
+          - hostPath:
+              path: /var/run/kubevirt-libvirt-runtimes
+              type: "null"
+            name: libvirt-runtimes
+          - hostPath:
+              path: /var/run/kubevirt
+              type: "null"
+            name: virt-share-dir
+          - hostPath:
+              path: /var/lib/kubevirt
+              type: "null"
+            name: virt-lib-dir
+          - hostPath:
+              path: /var/run/kubevirt-private
+              type: "null"
+            name: virt-private-dir
+          - hostPath:
+              path: /var/lib/kubelet/device-plugins
+              type: "null"
+            name: device-plugin
+          - hostPath:
+              path: /var/lib/kubelet/pods
+              type: "null"
+            name: kubelet-pods-shortened
+          - hostPath:
+              path: /var/lib/kubelet/pods
+              type: "null"
+            name: kubelet-pods
+          - hostPath:
+              path: /var/lib/kubevirt-node-labeller
+              type: "null"
+            name: node-labeller
+          - downwardAPI:
+              defaultMode: 420
+              items:
+              - fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.annotations['k8s.v1.cni.cncf.io/network-status']
+                path: network-status
+            name: podinfo
+  kind: ControllerRevision
+  metadata:
+    annotations:
+      deprecated.daemonset.template.generation: "1"
+      kubevirt.io/customizer-identifier: ed6c75fc7ef60740d09f9802c39ceb8c790d407e
+      kubevirt.io/generation: "2"
+      kubevirt.io/install-strategy-identifier: 8c5c8323ebf23c689ce9bc87a13132d3fae18c7a
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.5
+      kubevirt.io/install-strategy-version: 1.1.1-150500.8.15.1
+    creationTimestamp: "2024-08-06T01:56:43Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      app.kubernetes.io/version: 1.1.1-150500.8.15.1
+      controller-revision-hash: 59d95c5f9
+      kubevirt.io: virt-handler
+      prometheus.kubevirt.io: "true"
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deprecated.daemonset.template.generation: {}
+            f:kubevirt.io/customizer-identifier: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/version: {}
+            f:controller-revision-hash: {}
+            f:kubevirt.io: {}
+            f:prometheus.kubevirt.io: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"e604bd04-069e-40ae-8ba5-9edfe8b46362"}: {}
+        f:revision: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-08-06T01:56:43Z"
+    name: virt-handler-59d95c5f9
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: virt-handler
+      uid: e604bd04-069e-40ae-8ba5-9edfe8b46362
+    resourceVersion: "6926"
+    uid: 507881ec-0583-48ff-ba5a-864d451cd891
+  revision: 1
+kind: List
+metadata:
+  resourceVersion: "770255"

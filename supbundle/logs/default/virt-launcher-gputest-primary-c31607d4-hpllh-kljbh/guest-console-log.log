@@ -1,0 +1,910 @@
+2024-08-06T02:25:11.683941919Z Linux version 5.4.0-1117-kvm (buildd@lcy02-amd64-109) (gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2)) #124-Ubuntu SMP Fri Jul 12 08:37:41 UTC 2024 (Ubuntu 5.4.0-1117.124-kvm 5.4.275)
+2024-08-06T02:25:11.684024244Z Command line: BOOT_IMAGE=/boot/vmlinuz-5.4.0-1117-kvm root=PARTUUID=63e60317-ee8c-47fa-916e-b212c81dbe59 ro console=tty1 console=ttyS0 panic=-1
+2024-08-06T02:25:11.684032780Z BIOS-provided physical RAM map:
+2024-08-06T02:25:11.684039232Z BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+2024-08-06T02:25:11.684045084Z BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+2024-08-06T02:25:11.684051225Z BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+2024-08-06T02:25:11.684057657Z BIOS-e820: [mem 0x0000000000100000-0x000000007ffdcfff] usable
+2024-08-06T02:25:11.684063408Z BIOS-e820: [mem 0x000000007ffdd000-0x000000007fffffff] reserved
+2024-08-06T02:25:11.684069590Z BIOS-e820: [mem 0x00000000b0000000-0x00000000bfffffff] reserved
+2024-08-06T02:25:11.684075130Z BIOS-e820: [mem 0x00000000fed1c000-0x00000000fed1ffff] reserved
+2024-08-06T02:25:11.684081512Z BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+2024-08-06T02:25:11.684087063Z BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+2024-08-06T02:25:11.684093204Z BIOS-e820: [mem 0x0000000100000000-0x0000000279bfffff] usable
+2024-08-06T02:25:11.684098865Z BIOS-e820: [mem 0x000000fd00000000-0x000000ffffffffff] reserved
+2024-08-06T02:25:11.684105417Z NX (Execute Disable) protection: active
+2024-08-06T02:25:11.684112210Z SMBIOS 2.8 present.
+2024-08-06T02:25:11.684118261Z DMI: KubeVirt None, BIOS rel-1.16.0-0-gd239552c-rebuilt.opensuse.org 04/01/2014
+2024-08-06T02:25:11.684123922Z Hypervisor detected: KVM
+2024-08-06T02:25:11.684129783Z kvm-clock: Using msrs 4b564d01 and 4b564d00
+2024-08-06T02:25:11.684135283Z kvm-clock: cpu 0, msr fc38001, primary cpu clock
+2024-08-06T02:25:11.684156524Z kvm-clock: using sched offset of 7533182188 cycles
+2024-08-06T02:25:11.684163847Z clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+2024-08-06T02:25:11.684169638Z tsc: Detected 2994.138 MHz processor
+2024-08-06T02:25:11.684175249Z last_pfn = 0x279c00 max_arch_pfn = 0x400000000
+2024-08-06T02:25:11.684181060Z x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WB  WT  UC- UC  
+2024-08-06T02:25:11.684186660Z last_pfn = 0x7ffdd max_arch_pfn = 0x400000000
+2024-08-06T02:25:11.684192521Z found SMP MP-table at [mem 0x000f5b70-0x000f5b7f]
+2024-08-06T02:25:11.684197972Z Using GB pages for direct mapping
+2024-08-06T02:25:11.684203652Z ACPI: Early table checksum verification disabled
+2024-08-06T02:25:11.684209303Z ACPI: RSDP 0x00000000000F5980 000014 (v00 BOCHS )
+2024-08-06T02:25:11.684215555Z ACPI: RSDT 0x000000007FFE2976 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+2024-08-06T02:25:11.684221095Z ACPI: FACP 0x000000007FFE2756 0000F4 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+2024-08-06T02:25:11.684227197Z ACPI: DSDT 0x000000007FFE0040 002716 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+2024-08-06T02:25:11.684232707Z ACPI: FACS 0x000000007FFE0000 000040
+2024-08-06T02:25:11.684238528Z ACPI: APIC 0x000000007FFE284A 000090 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+2024-08-06T02:25:11.684243998Z ACPI: HPET 0x000000007FFE28DA 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+2024-08-06T02:25:11.684249519Z ACPI: MCFG 0x000000007FFE2912 00003C (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+2024-08-06T02:25:11.684255179Z ACPI: WAET 0x000000007FFE294E 000028 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+2024-08-06T02:25:11.684260600Z ACPI: Reserving FACP table memory at [mem 0x7ffe2756-0x7ffe2849]
+2024-08-06T02:25:11.684266381Z ACPI: Reserving DSDT table memory at [mem 0x7ffe0040-0x7ffe2755]
+2024-08-06T02:25:11.684306977Z ACPI: Reserving FACS table memory at [mem 0x7ffe0000-0x7ffe003f]
+2024-08-06T02:25:11.684313459Z ACPI: Reserving APIC table memory at [mem 0x7ffe284a-0x7ffe28d9]
+2024-08-06T02:25:11.684319230Z ACPI: Reserving HPET table memory at [mem 0x7ffe28da-0x7ffe2911]
+2024-08-06T02:25:11.684324851Z ACPI: Reserving MCFG table memory at [mem 0x7ffe2912-0x7ffe294d]
+2024-08-06T02:25:11.684330521Z ACPI: Reserving WAET table memory at [mem 0x7ffe294e-0x7ffe2975]
+2024-08-06T02:25:11.684336312Z No NUMA configuration found
+2024-08-06T02:25:11.684342183Z Faking a node at [mem 0x0000000000000000-0x0000000279bfffff]
+2024-08-06T02:25:11.684348205Z NODE_DATA(0) allocated [mem 0x279bfb000-0x279bfdfff]
+2024-08-06T02:25:11.684353865Z Zone ranges:
+2024-08-06T02:25:11.684360007Z   DMA32    [mem 0x0000000000001000-0x00000000ffffffff]
+2024-08-06T02:25:11.684373653Z   Normal   [mem 0x0000000100000000-0x0000000279bfffff]
+2024-08-06T02:25:11.684380315Z Movable zone start for each node
+2024-08-06T02:25:11.684386467Z Early memory node ranges
+2024-08-06T02:25:11.684391967Z   node   0: [mem 0x0000000000001000-0x000000000009efff]
+2024-08-06T02:25:11.783907596Z   node   0: [mem 0x0000000000100000-0x000000007ffdcfff]
+2024-08-06T02:25:11.783925430Z   node   0: [mem 0x0000000100000000-0x0000000279bfffff]
+2024-08-06T02:25:11.783932062Z Zeroed struct page in unavailable ranges: 25733 pages
+2024-08-06T02:25:11.783938013Z Initmem setup node 0 [mem 0x0000000000001000-0x0000000279bfffff]
+2024-08-06T02:25:11.783944305Z ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+2024-08-06T02:25:11.783950417Z IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+2024-08-06T02:25:11.783956298Z ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+2024-08-06T02:25:11.783965255Z ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+2024-08-06T02:25:11.783971106Z ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+2024-08-06T02:25:11.783977107Z ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+2024-08-06T02:25:11.783983709Z ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+2024-08-06T02:25:11.783989610Z Using ACPI (MADT) for SMP configuration information
+2024-08-06T02:25:11.783996123Z ACPI: HPET id: 0x8086a201 base: 0xfed00000
+2024-08-06T02:25:11.784002555Z TSC deadline timer available
+2024-08-06T02:25:11.784008777Z smpboot: Allowing 4 CPUs, 0 hotplug CPUs
+2024-08-06T02:25:11.784014818Z [mem 0xc0000000-0xfed1bfff] available for PCI devices
+2024-08-06T02:25:11.784020579Z Booting paravirtualized kernel on KVM
+2024-08-06T02:25:11.784027241Z clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+2024-08-06T02:25:11.784040627Z setup_percpu: NR_CPUS:64 nr_cpumask_bits:64 nr_cpu_ids:4 nr_node_ids:1
+2024-08-06T02:25:11.784046758Z percpu: Embedded 56 pages/cpu s190040 r8192 d31144 u524288
+2024-08-06T02:25:11.784053671Z setup async PF for cpu 0
+2024-08-06T02:25:11.784059472Z kvm-stealtime: cpu 0, msr 27181ae00
+2024-08-06T02:25:11.784165111Z Built 1 zonelists, mobility grouping on.  Total pages: 2039032
+2024-08-06T02:25:11.784209976Z Policy zone: Normal
+2024-08-06T02:25:11.784217470Z Kernel command line: BOOT_IMAGE=/boot/vmlinuz-5.4.0-1117-kvm root=PARTUUID=63e60317-ee8c-47fa-916e-b212c81dbe59 ro console=tty1 console=ttyS0 panic=-1
+2024-08-06T02:25:11.784224593Z Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
+2024-08-06T02:25:11.784231597Z Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+2024-08-06T02:25:11.784237878Z mem auto-init: stack:off, heap alloc:on, heap free:off
+2024-08-06T02:25:11.784265801Z Memory: 8052740K/8285676K available (10243K kernel code, 961K rwdata, 4788K rodata, 1144K init, 1884K bss, 232936K reserved, 0K cma-reserved)
+2024-08-06T02:25:11.784272794Z SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+2024-08-06T02:25:11.784279226Z rcu: Hierarchical RCU implementation.
+2024-08-06T02:25:11.883830182Z rcu: 	RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=4.
+2024-08-06T02:25:11.883849128Z rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+2024-08-06T02:25:11.883856281Z rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+2024-08-06T02:25:11.883862763Z NR_IRQS: 4352, nr_irqs: 456, preallocated irqs: 16
+2024-08-06T02:25:11.883869496Z random: crng init done
+2024-08-06T02:25:11.883875748Z printk: console [ttyS0] enabled
+2024-08-06T02:25:11.883881559Z ACPI: Core revision 20190816
+2024-08-06T02:25:11.883888141Z clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+2024-08-06T02:25:11.883894413Z APIC: Switch to symmetric I/O mode setup
+2024-08-06T02:25:11.883900254Z x2apic enabled
+2024-08-06T02:25:11.983736387Z Switched APIC routing to physical x2apic.
+2024-08-06T02:25:11.983754180Z ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+2024-08-06T02:25:11.983760783Z clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x2b28a4259f6, max_idle_ns: 440795351830 ns
+2024-08-06T02:25:11.983766794Z Calibrating delay loop (skipped) preset value.. 5988.27 BogoMIPS (lpj=11976552)
+2024-08-06T02:25:12.083869008Z AMD Zen1 DIV0 bug detected. Disable SMT for full protection.
+2024-08-06T02:25:12.083889336Z Last level iTLB entries: 4KB 512, 2MB 255, 4MB 127
+2024-08-06T02:25:12.083896941Z Last level dTLB entries: 4KB 512, 2MB 255, 4MB 127, 1GB 0
+2024-08-06T02:25:12.083904265Z Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+2024-08-06T02:25:12.083911809Z Spectre V2 : Mitigation: Retpolines
+2024-08-06T02:25:12.083918952Z Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+2024-08-06T02:25:12.083925575Z Spectre V2 : Spectre v2 / SpectreRSB : Filling RSB on VMEXIT
+2024-08-06T02:25:12.083932648Z RETBleed: Vulnerable
+2024-08-06T02:25:12.083939431Z Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+2024-08-06T02:25:12.083946414Z Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl and seccomp
+2024-08-06T02:25:12.183784094Z x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+2024-08-06T02:25:12.183823439Z x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+2024-08-06T02:25:12.183830973Z x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+2024-08-06T02:25:12.183838056Z x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+2024-08-06T02:25:12.183845520Z x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+2024-08-06T02:25:12.183853145Z Freeing SMP alternatives memory: 32K
+2024-08-06T02:25:12.183859847Z pid_max: default: 32768 minimum: 301
+2024-08-06T02:25:12.183866520Z LSM: Security Framework initializing
+2024-08-06T02:25:12.183873232Z Yama: becoming mindful.
+2024-08-06T02:25:12.183879765Z AppArmor: AppArmor initialized
+2024-08-06T02:25:12.183886027Z Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+2024-08-06T02:25:12.283645759Z Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+2024-08-06T02:25:12.283678070Z *** VALIDATE tmpfs ***
+2024-08-06T02:25:12.283686075Z *** VALIDATE proc ***
+2024-08-06T02:25:12.283693399Z *** VALIDATE cgroup1 ***
+2024-08-06T02:25:12.283700553Z *** VALIDATE cgroup2 ***
+2024-08-06T02:25:12.283707566Z smpboot: CPU0: AMD EPYC Processor (with IBPB) (family: 0x17, model: 0x1, stepping: 0x2)
+2024-08-06T02:25:12.283735338Z Performance Events: Fam17h+ core perfctr, AMD PMU driver.
+2024-08-06T02:25:12.283743353Z ... version:                0
+2024-08-06T02:25:12.283750016Z ... bit width:              48
+2024-08-06T02:25:12.283756628Z ... generic registers:      6
+2024-08-06T02:25:12.283763782Z ... value mask:             0000ffffffffffff
+2024-08-06T02:25:12.283770805Z ... max period:             00007fffffffffff
+2024-08-06T02:25:12.283790903Z ... fixed-purpose events:   0
+2024-08-06T02:25:12.283802064Z ... event mask:             000000000000003f
+2024-08-06T02:25:12.383964266Z rcu: Hierarchical SRCU implementation.
+2024-08-06T02:25:12.383996667Z smp: Bringing up secondary CPUs ...
+2024-08-06T02:25:12.384004332Z x86: Booting SMP configuration:
+2024-08-06T02:25:12.384011906Z .... node  #0, CPUs:      #1
+2024-08-06T02:25:12.384019901Z kvm-clock: cpu 1, msr fc38041, secondary cpu clock
+2024-08-06T02:25:12.384027716Z setup async PF for cpu 1
+2024-08-06T02:25:12.384033627Z kvm-stealtime: cpu 1, msr 27189ae00
+2024-08-06T02:25:12.384039668Z  #2
+2024-08-06T02:25:12.384045760Z kvm-clock: cpu 2, msr fc38081, secondary cpu clock
+2024-08-06T02:25:12.384051911Z setup async PF for cpu 2
+2024-08-06T02:25:12.384057993Z kvm-stealtime: cpu 2, msr 27191ae00
+2024-08-06T02:25:12.384063964Z  #3
+2024-08-06T02:25:12.384070116Z kvm-clock: cpu 3, msr fc380c1, secondary cpu clock
+2024-08-06T02:25:12.384076137Z setup async PF for cpu 3
+2024-08-06T02:25:12.384082038Z kvm-stealtime: cpu 3, msr 27199ae00
+2024-08-06T02:25:12.483748305Z smp: Brought up 1 node, 4 CPUs
+2024-08-06T02:25:12.483785234Z smpboot: Max logical packages: 1
+2024-08-06T02:25:12.483792528Z smpboot: Total of 4 processors activated (23953.10 BogoMIPS)
+2024-08-06T02:25:12.483798680Z devtmpfs: initialized
+2024-08-06T02:25:12.483804240Z x86/mm: Memory block size: 128MB
+2024-08-06T02:25:12.483811724Z clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+2024-08-06T02:25:12.483818958Z futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+2024-08-06T02:25:12.483826382Z NET: Registered protocol family 16
+2024-08-06T02:25:12.483833986Z audit: initializing netlink subsys (disabled)
+2024-08-06T02:25:12.483840679Z audit: type=2000 audit(1722911111.880:1): state=initialized audit_enabled=0 res=1
+2024-08-06T02:25:12.483848273Z cpuidle: using governor ladder
+2024-08-06T02:25:12.483855837Z cpuidle: using governor menu
+2024-08-06T02:25:12.483863131Z ACPI: bus type PCI registered
+2024-08-06T02:25:12.483871687Z acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+2024-08-06T02:25:12.483878831Z PCI: Using configuration type 1 for base access
+2024-08-06T02:25:12.483886796Z PCI: Using configuration type 1 for extended access
+2024-08-06T02:25:12.483895522Z HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+2024-08-06T02:25:12.483904760Z ACPI: Added _OSI(Module Device)
+2024-08-06T02:25:12.483910681Z ACPI: Added _OSI(Processor Device)
+2024-08-06T02:25:12.483917904Z ACPI: Added _OSI(3.0 _SCP Extensions)
+2024-08-06T02:25:12.483923525Z ACPI: Added _OSI(Processor Aggregator Device)
+2024-08-06T02:25:12.483929206Z ACPI: Added _OSI(Linux-Dell-Video)
+2024-08-06T02:25:12.483934886Z ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
+2024-08-06T02:25:12.483940487Z ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
+2024-08-06T02:25:12.483946057Z ACPI: 1 ACPI AML tables successfully acquired and loaded
+2024-08-06T02:25:12.483951668Z ACPI: Interpreter enabled
+2024-08-06T02:25:12.483958751Z ACPI: (supports S0 S5)
+2024-08-06T02:25:12.483964602Z ACPI: Using IOAPIC for interrupt routing
+2024-08-06T02:25:12.483993988Z PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+2024-08-06T02:25:12.483999859Z ACPI: Enabled 2 GPEs in block 00 to 3F
+2024-08-06T02:25:12.484005419Z ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+2024-08-06T02:25:12.484011080Z acpi PNP0A08:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI HPX-Type3]
+2024-08-06T02:25:12.484016791Z acpi PNP0A08:00: _OSC: platform does not support [PCIeHotplug LTR]
+2024-08-06T02:25:12.484022281Z acpi PNP0A08:00: _OSC: OS now controls [SHPCHotplug PME AER PCIeCapability]
+2024-08-06T02:25:12.484027781Z PCI host bridge to bus 0000:00
+2024-08-06T02:25:12.484033502Z pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+2024-08-06T02:25:12.484048120Z pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+2024-08-06T02:25:12.484054221Z pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+2024-08-06T02:25:12.484059792Z pci_bus 0000:00: root bus resource [mem 0x80000000-0xafffffff window]
+2024-08-06T02:25:12.484065322Z pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+2024-08-06T02:25:12.484070813Z pci_bus 0000:00: root bus resource [mem 0x280000000-0xa7fffffff window]
+2024-08-06T02:25:12.484076323Z pci_bus 0000:00: root bus resource [bus 00-ff]
+2024-08-06T02:25:12.484083406Z pci 0000:00:00.0: [8086:29c0] type 00 class 0x060000
+2024-08-06T02:25:12.484088947Z pci 0000:00:01.0: [1234:1111] type 00 class 0x030000
+2024-08-06T02:25:12.484102472Z pci 0000:00:01.0: reg 0x10: [mem 0xfb000000-0xfbffffff pref]
+2024-08-06T02:25:12.484108434Z pci 0000:00:01.0: reg 0x18: [mem 0xfea10000-0xfea10fff]
+2024-08-06T02:25:12.488105949Z pci 0000:00:01.0: reg 0x30: [mem 0xfea00000-0xfea0ffff pref]
+2024-08-06T02:25:12.489225529Z pci 0000:00:02.0: [1b36:000c] type 01 class 0x060400
+2024-08-06T02:25:12.583711201Z pci 0000:00:02.0: reg 0x10: [mem 0xfea11000-0xfea11fff]
+2024-08-06T02:25:12.583736228Z pci 0000:00:02.1: [1b36:000c] type 01 class 0x060400
+2024-08-06T02:25:12.583745325Z pci 0000:00:02.1: reg 0x10: [mem 0xfea12000-0xfea12fff]
+2024-08-06T02:25:12.583751958Z pci 0000:00:02.2: [1b36:000c] type 01 class 0x060400
+2024-08-06T02:25:12.583757819Z pci 0000:00:02.2: reg 0x10: [mem 0xfea13000-0xfea13fff]
+2024-08-06T02:25:12.583763610Z pci 0000:00:02.3: [1b36:000c] type 01 class 0x060400
+2024-08-06T02:25:12.583769842Z pci 0000:00:02.3: reg 0x10: [mem 0xfea14000-0xfea14fff]
+2024-08-06T02:25:12.583776574Z pci 0000:00:02.4: [1b36:000c] type 01 class 0x060400
+2024-08-06T02:25:12.583782636Z pci 0000:00:02.4: reg 0x10: [mem 0xfea15000-0xfea15fff]
+2024-08-06T02:25:12.583788867Z pci 0000:00:02.5: [1b36:000c] type 01 class 0x060400
+2024-08-06T02:25:12.583795410Z pci 0000:00:02.5: reg 0x10: [mem 0xfea16000-0xfea16fff]
+2024-08-06T02:25:12.583801501Z pci 0000:00:02.6: [1b36:000c] type 01 class 0x060400
+2024-08-06T02:25:12.583807112Z pci 0000:00:02.6: reg 0x10: [mem 0xfea17000-0xfea17fff]
+2024-08-06T02:25:12.583812712Z pci 0000:00:02.7: [1b36:000c] type 01 class 0x060400
+2024-08-06T02:25:12.583818363Z pci 0000:00:02.7: reg 0x10: [mem 0xfea18000-0xfea18fff]
+2024-08-06T02:25:12.583824084Z pci 0000:00:03.0: [1b36:000c] type 01 class 0x060400
+2024-08-06T02:25:12.583829634Z pci 0000:00:03.0: reg 0x10: [mem 0xfea19000-0xfea19fff]
+2024-08-06T02:25:12.583835355Z pci 0000:00:03.1: [1b36:000c] type 01 class 0x060400
+2024-08-06T02:25:12.683762043Z pci 0000:00:03.1: reg 0x10: [mem 0xfea1a000-0xfea1afff]
+2024-08-06T02:25:12.683788222Z pci 0000:00:1f.0: [8086:2918] type 00 class 0x060100
+2024-08-06T02:25:12.683798060Z pci 0000:00:1f.0: quirk: [io  0x0600-0x067f] claimed by ICH6 ACPI/GPIO/TCO
+2024-08-06T02:25:12.683836333Z pci 0000:00:1f.2: [8086:2922] type 00 class 0x010601
+2024-08-06T02:25:12.683845189Z pci 0000:00:1f.2: reg 0x20: [io  0xc040-0xc05f]
+2024-08-06T02:25:12.683853234Z pci 0000:00:1f.2: reg 0x24: [mem 0xfea1b000-0xfea1bfff]
+2024-08-06T02:25:12.783742783Z pci 0000:00:1f.3: [8086:2930] type 00 class 0x0c0500
+2024-08-06T02:25:12.783785383Z pci 0000:00:1f.3: reg 0x20: [io  0x0700-0x073f]
+2024-08-06T02:25:12.783792667Z acpiphp: Slot [0] registered
+2024-08-06T02:25:12.783798808Z pci 0000:01:00.0: [1af4:1041] type 00 class 0x020000
+2024-08-06T02:25:12.783805561Z pci 0000:01:00.0: reg 0x14: [mem 0xfe800000-0xfe800fff]
+2024-08-06T02:25:12.883670262Z pci 0000:01:00.0: reg 0x20: [mem 0xfd200000-0xfd203fff 64bit pref]
+2024-08-06T02:25:12.883695108Z pci 0000:00:02.0: PCI bridge to [bus 01]
+2024-08-06T02:25:12.883702422Z pci 0000:00:02.0:   bridge window [mem 0xfe800000-0xfe9fffff]
+2024-08-06T02:25:12.883708403Z pci 0000:00:02.0:   bridge window [mem 0xfd200000-0xfd3fffff 64bit pref]
+2024-08-06T02:25:12.883714465Z acpiphp: Slot [0-1] registered
+2024-08-06T02:25:12.883720246Z pci 0000:00:02.1: PCI bridge to [bus 02]
+2024-08-06T02:25:12.883726798Z pci 0000:00:02.1:   bridge window [mem 0xfe600000-0xfe7fffff]
+2024-08-06T02:25:12.884121111Z pci 0000:00:02.1:   bridge window [mem 0xfd000000-0xfd1fffff 64bit pref]
+2024-08-06T02:25:12.983672753Z acpiphp: Slot [0-2] registered
+2024-08-06T02:25:12.983699844Z pci 0000:00:02.2: PCI bridge to [bus 03]
+2024-08-06T02:25:12.983706586Z pci 0000:00:02.2:   bridge window [mem 0xfe400000-0xfe5fffff]
+2024-08-06T02:25:12.983712948Z pci 0000:00:02.2:   bridge window [mem 0xfce00000-0xfcffffff 64bit pref]
+2024-08-06T02:25:12.983718839Z acpiphp: Slot [0-3] registered
+2024-08-06T02:25:12.983725402Z pci 0000:00:02.3: PCI bridge to [bus 04]
+2024-08-06T02:25:12.983732355Z pci 0000:00:02.3:   bridge window [mem 0xfe200000-0xfe3fffff]
+2024-08-06T02:25:12.983739158Z pci 0000:00:02.3:   bridge window [mem 0xfcc00000-0xfcdfffff 64bit pref]
+2024-08-06T02:25:12.983746512Z acpiphp: Slot [0-4] registered
+2024-08-06T02:25:12.983752202Z pci 0000:05:00.0: [1af4:1048] type 00 class 0x010000
+2024-08-06T02:25:12.983758254Z pci 0000:05:00.0: reg 0x14: [mem 0xfe000000-0xfe000fff]
+2024-08-06T02:25:12.983763934Z pci 0000:05:00.0: reg 0x20: [mem 0xfca00000-0xfca03fff 64bit pref]
+2024-08-06T02:25:13.083859810Z pci 0000:00:02.4: PCI bridge to [bus 05]
+2024-08-06T02:25:13.083941294Z pci 0000:00:02.4:   bridge window [mem 0xfe000000-0xfe1fffff]
+2024-08-06T02:25:13.083951924Z pci 0000:00:02.4:   bridge window [mem 0xfca00000-0xfcbfffff 64bit pref]
+2024-08-06T02:25:13.083961472Z acpiphp: Slot [0-5] registered
+2024-08-06T02:25:13.083968094Z pci 0000:06:00.0: [1af4:1043] type 00 class 0x078000
+2024-08-06T02:25:13.083975689Z pci 0000:06:00.0: reg 0x14: [mem 0xfde00000-0xfde00fff]
+2024-08-06T02:25:13.083981790Z pci 0000:06:00.0: reg 0x20: [mem 0xfc800000-0xfc803fff 64bit pref]
+2024-08-06T02:25:13.083989986Z pci 0000:00:02.5: PCI bridge to [bus 06]
+2024-08-06T02:25:13.083996879Z pci 0000:00:02.5:   bridge window [mem 0xfde00000-0xfdffffff]
+2024-08-06T02:25:13.084003180Z pci 0000:00:02.5:   bridge window [mem 0xfc800000-0xfc9fffff 64bit pref]
+2024-08-06T02:25:13.084009452Z acpiphp: Slot [0-6] registered
+2024-08-06T02:25:13.084016526Z pci 0000:07:00.0: [1af4:1042] type 00 class 0x010000
+2024-08-06T02:25:13.084023218Z pci 0000:07:00.0: reg 0x14: [mem 0xfdc00000-0xfdc00fff]
+2024-08-06T02:25:13.084029059Z pci 0000:07:00.0: reg 0x20: [mem 0xfc600000-0xfc603fff 64bit pref]
+2024-08-06T02:25:13.084034970Z pci 0000:00:02.6: PCI bridge to [bus 07]
+2024-08-06T02:25:13.084042384Z pci 0000:00:02.6:   bridge window [mem 0xfdc00000-0xfddfffff]
+2024-08-06T02:25:13.084089964Z pci 0000:00:02.6:   bridge window [mem 0xfc600000-0xfc7fffff 64bit pref]
+2024-08-06T02:25:13.084097538Z acpiphp: Slot [0-7] registered
+2024-08-06T02:25:13.183740466Z pci 0000:08:00.0: [1af4:1042] type 00 class 0x010000
+2024-08-06T02:25:13.183775011Z pci 0000:08:00.0: reg 0x14: [mem 0xfda00000-0xfda00fff]
+2024-08-06T02:25:13.183783226Z pci 0000:08:00.0: reg 0x20: [mem 0xfc400000-0xfc403fff 64bit pref]
+2024-08-06T02:25:13.183789829Z pci 0000:00:02.7: PCI bridge to [bus 08]
+2024-08-06T02:25:13.183795890Z pci 0000:00:02.7:   bridge window [mem 0xfda00000-0xfdbfffff]
+2024-08-06T02:25:13.183802813Z pci 0000:00:02.7:   bridge window [mem 0xfc400000-0xfc5fffff 64bit pref]
+2024-08-06T02:25:13.183810668Z acpiphp: Slot [0-8] registered
+2024-08-06T02:25:13.183818062Z pci 0000:09:00.0: [1af4:1045] type 00 class 0x00ff00
+2024-08-06T02:25:13.183823723Z pci 0000:09:00.0: reg 0x20: [mem 0xfc200000-0xfc203fff 64bit pref]
+2024-08-06T02:25:13.183829473Z pci 0000:00:03.0: PCI bridge to [bus 09]
+2024-08-06T02:25:13.183835224Z pci 0000:00:03.0:   bridge window [mem 0xfd800000-0xfd9fffff]
+2024-08-06T02:25:13.183840905Z pci 0000:00:03.0:   bridge window [mem 0xfc200000-0xfc3fffff 64bit pref]
+2024-08-06T02:25:13.183847197Z acpiphp: Slot [0-9] registered
+2024-08-06T02:25:13.183852958Z pci 0000:00:03.1: PCI bridge to [bus 0a]
+2024-08-06T02:25:13.183858448Z pci 0000:00:03.1:   bridge window [mem 0xfd600000-0xfd7fffff]
+2024-08-06T02:25:13.183863908Z pci 0000:00:03.1:   bridge window [mem 0xfc000000-0xfc1fffff 64bit pref]
+2024-08-06T02:25:13.183869359Z ACPI: PCI Interrupt Link [LNKA] (IRQs 5 *10 11)
+2024-08-06T02:25:13.183874789Z ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+2024-08-06T02:25:13.183880189Z ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+2024-08-06T02:25:13.183887222Z ACPI: PCI Interrupt Link [LNKD] (IRQs 5 10 *11)
+2024-08-06T02:25:13.183894436Z ACPI: PCI Interrupt Link [LNKE] (IRQs 5 *10 11)
+2024-08-06T02:25:13.183900107Z ACPI: PCI Interrupt Link [LNKF] (IRQs 5 *10 11)
+2024-08-06T02:25:13.183905607Z ACPI: PCI Interrupt Link [LNKG] (IRQs 5 10 *11)
+2024-08-06T02:25:13.183911007Z ACPI: PCI Interrupt Link [LNKH] (IRQs 5 10 *11)
+2024-08-06T02:25:13.183927528Z ACPI: PCI Interrupt Link [GSIA] (IRQs *16)
+2024-08-06T02:25:13.183933910Z ACPI: PCI Interrupt Link [GSIB] (IRQs *17)
+2024-08-06T02:25:13.183939451Z ACPI: PCI Interrupt Link [GSIC] (IRQs *18)
+2024-08-06T02:25:13.183945011Z ACPI: PCI Interrupt Link [GSID] (IRQs *19)
+2024-08-06T02:25:13.183950492Z ACPI: PCI Interrupt Link [GSIE] (IRQs *20)
+2024-08-06T02:25:13.183955962Z ACPI: PCI Interrupt Link [GSIF] (IRQs *21)
+2024-08-06T02:25:13.183962584Z ACPI: PCI Interrupt Link [GSIG] (IRQs *22)
+2024-08-06T02:25:13.183969598Z ACPI: PCI Interrupt Link [GSIH] (IRQs *23)
+2024-08-06T02:25:13.183984155Z SCSI subsystem initialized
+2024-08-06T02:25:13.183990186Z pci 0000:00:01.0: vgaarb: setting as boot VGA device
+2024-08-06T02:25:13.183996388Z pci 0000:00:01.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+2024-08-06T02:25:13.184001838Z pci 0000:00:01.0: vgaarb: bridge control possible
+2024-08-06T02:25:13.184007910Z vgaarb: loaded
+2024-08-06T02:25:13.184013951Z PCI: Using ACPI for IRQ routing
+2024-08-06T02:25:13.283626060Z NetLabel: Initializing
+2024-08-06T02:25:13.283655355Z NetLabel:  domain hash size = 128
+2024-08-06T02:25:13.283661577Z NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+2024-08-06T02:25:13.283667588Z NetLabel:  unlabeled traffic allowed by default
+2024-08-06T02:25:13.283673329Z clocksource: Switched to clocksource kvm-clock
+2024-08-06T02:25:13.283678839Z *** VALIDATE bpf ***
+2024-08-06T02:25:13.283685151Z VFS: Disk quotas dquot_6.6.0
+2024-08-06T02:25:13.283711541Z VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+2024-08-06T02:25:13.283717733Z *** VALIDATE ramfs ***
+2024-08-06T02:25:13.283723253Z *** VALIDATE hugetlbfs ***
+2024-08-06T02:25:13.283735576Z AppArmor: AppArmor Filesystem Enabled
+2024-08-06T02:25:13.283741568Z pnp: PnP ACPI init
+2024-08-06T02:25:13.283747900Z system 00:04: [mem 0xb0000000-0xbfffffff window] has been reserved
+2024-08-06T02:25:13.383779459Z pnp: PnP ACPI: found 5 devices
+2024-08-06T02:25:13.383799827Z thermal_sys: Registered thermal governor 'step_wise'
+2024-08-06T02:25:13.383807161Z pci 0000:00:02.0: bridge window [io  0x1000-0x0fff] to [bus 01] add_size 1000
+2024-08-06T02:25:13.383812942Z pci 0000:00:02.1: bridge window [io  0x1000-0x0fff] to [bus 02] add_size 1000
+2024-08-06T02:25:13.383819124Z pci 0000:00:02.2: bridge window [io  0x1000-0x0fff] to [bus 03] add_size 1000
+2024-08-06T02:25:13.383825746Z pci 0000:00:02.3: bridge window [io  0x1000-0x0fff] to [bus 04] add_size 1000
+2024-08-06T02:25:13.383832549Z pci 0000:00:02.4: bridge window [io  0x1000-0x0fff] to [bus 05] add_size 1000
+2024-08-06T02:25:13.483713295Z pci 0000:00:02.5: bridge window [io  0x1000-0x0fff] to [bus 06] add_size 1000
+2024-08-06T02:25:13.483733643Z pci 0000:00:02.6: bridge window [io  0x1000-0x0fff] to [bus 07] add_size 1000
+2024-08-06T02:25:13.483739604Z pci 0000:00:02.7: bridge window [io  0x1000-0x0fff] to [bus 08] add_size 1000
+2024-08-06T02:25:13.483745355Z pci 0000:00:03.0: bridge window [io  0x1000-0x0fff] to [bus 09] add_size 1000
+2024-08-06T02:25:13.483751056Z pci 0000:00:03.1: bridge window [io  0x1000-0x0fff] to [bus 0a] add_size 1000
+2024-08-06T02:25:13.483756626Z pci 0000:00:02.0: BAR 7: assigned [io  0x1000-0x1fff]
+2024-08-06T02:25:13.483762588Z pci 0000:00:02.1: BAR 7: assigned [io  0x2000-0x2fff]
+2024-08-06T02:25:13.483768509Z pci 0000:00:02.2: BAR 7: assigned [io  0x3000-0x3fff]
+2024-08-06T02:25:13.483773949Z pci 0000:00:02.3: BAR 7: assigned [io  0x4000-0x4fff]
+2024-08-06T02:25:13.583860923Z pci 0000:00:02.4: BAR 7: assigned [io  0x5000-0x5fff]
+2024-08-06T02:25:13.583910426Z pci 0000:00:02.5: BAR 7: assigned [io  0x6000-0x6fff]
+2024-08-06T02:25:13.583918411Z pci 0000:00:02.6: BAR 7: assigned [io  0x7000-0x7fff]
+2024-08-06T02:25:13.583925034Z pci 0000:00:02.7: BAR 7: assigned [io  0x8000-0x8fff]
+2024-08-06T02:25:13.583932007Z pci 0000:00:03.0: BAR 7: assigned [io  0x9000-0x9fff]
+2024-08-06T02:25:13.583938138Z pci 0000:00:03.1: BAR 7: assigned [io  0xa000-0xafff]
+2024-08-06T02:25:13.583945552Z pci 0000:00:02.0: PCI bridge to [bus 01]
+2024-08-06T02:25:13.583952395Z pci 0000:00:02.0:   bridge window [io  0x1000-0x1fff]
+2024-08-06T02:25:13.583959789Z pci 0000:00:02.0:   bridge window [mem 0xfe800000-0xfe9fffff]
+2024-08-06T02:25:13.583968886Z pci 0000:00:02.0:   bridge window [mem 0xfd200000-0xfd3fffff 64bit pref]
+2024-08-06T02:25:13.583977853Z pci 0000:00:02.1: PCI bridge to [bus 02]
+2024-08-06T02:25:13.583983825Z pci 0000:00:02.1:   bridge window [io  0x2000-0x2fff]
+2024-08-06T02:25:13.583989756Z pci 0000:00:02.1:   bridge window [mem 0xfe600000-0xfe7fffff]
+2024-08-06T02:25:13.583995937Z pci 0000:00:02.1:   bridge window [mem 0xfd000000-0xfd1fffff 64bit pref]
+2024-08-06T02:25:13.683817341Z pci 0000:00:02.2: PCI bridge to [bus 03]
+2024-08-06T02:25:13.683874088Z pci 0000:00:02.2:   bridge window [io  0x3000-0x3fff]
+2024-08-06T02:25:13.683887232Z pci 0000:00:02.2:   bridge window [mem 0xfe400000-0xfe5fffff]
+2024-08-06T02:25:13.683898494Z pci 0000:00:02.2:   bridge window [mem 0xfce00000-0xfcffffff 64bit pref]
+2024-08-06T02:25:13.683908773Z pci 0000:00:02.3: PCI bridge to [bus 04]
+2024-08-06T02:25:13.683917469Z pci 0000:00:02.3:   bridge window [io  0x4000-0x4fff]
+2024-08-06T02:25:13.683950171Z pci 0000:00:02.3:   bridge window [mem 0xfe200000-0xfe3fffff]
+2024-08-06T02:25:13.683958236Z pci 0000:00:02.3:   bridge window [mem 0xfcc00000-0xfcdfffff 64bit pref]
+2024-08-06T02:25:13.683966051Z pci 0000:00:02.4: PCI bridge to [bus 05]
+2024-08-06T02:25:13.683972163Z pci 0000:00:02.4:   bridge window [io  0x5000-0x5fff]
+2024-08-06T02:25:13.683977583Z pci 0000:00:02.4:   bridge window [mem 0xfe000000-0xfe1fffff]
+2024-08-06T02:25:13.683983734Z pci 0000:00:02.4:   bridge window [mem 0xfca00000-0xfcbfffff 64bit pref]
+2024-08-06T02:25:13.683989185Z pci 0000:00:02.5: PCI bridge to [bus 06]
+2024-08-06T02:25:13.683994665Z pci 0000:00:02.5:   bridge window [io  0x6000-0x6fff]
+2024-08-06T02:25:13.684000386Z pci 0000:00:02.5:   bridge window [mem 0xfde00000-0xfdffffff]
+2024-08-06T02:25:13.684005996Z pci 0000:00:02.5:   bridge window [mem 0xfc800000-0xfc9fffff 64bit pref]
+2024-08-06T02:25:13.684011757Z pci 0000:00:02.6: PCI bridge to [bus 07]
+2024-08-06T02:25:13.684017558Z pci 0000:00:02.6:   bridge window [io  0x7000-0x7fff]
+2024-08-06T02:25:13.684023479Z pci 0000:00:02.6:   bridge window [mem 0xfdc00000-0xfddfffff]
+2024-08-06T02:25:13.684031234Z pci 0000:00:02.6:   bridge window [mem 0xfc600000-0xfc7fffff 64bit pref]
+2024-08-06T02:25:13.684038668Z pci 0000:00:02.7: PCI bridge to [bus 08]
+2024-08-06T02:25:13.684045561Z pci 0000:00:02.7:   bridge window [io  0x8000-0x8fff]
+2024-08-06T02:25:13.684052374Z pci 0000:00:02.7:   bridge window [mem 0xfda00000-0xfdbfffff]
+2024-08-06T02:25:13.684059708Z pci 0000:00:02.7:   bridge window [mem 0xfc400000-0xfc5fffff 64bit pref]
+2024-08-06T02:25:13.684066601Z pci 0000:00:03.0: PCI bridge to [bus 09]
+2024-08-06T02:25:13.684074235Z pci 0000:00:03.0:   bridge window [io  0x9000-0x9fff]
+2024-08-06T02:25:13.684089083Z pci 0000:00:03.0:   bridge window [mem 0xfd800000-0xfd9fffff]
+2024-08-06T02:25:13.783721019Z pci 0000:00:03.0:   bridge window [mem 0xfc200000-0xfc3fffff 64bit pref]
+2024-08-06T02:25:13.783766905Z pci 0000:00:03.1: PCI bridge to [bus 0a]
+2024-08-06T02:25:13.783776784Z pci 0000:00:03.1:   bridge window [io  0xa000-0xafff]
+2024-08-06T02:25:13.783783747Z pci 0000:00:03.1:   bridge window [mem 0xfd600000-0xfd7fffff]
+2024-08-06T02:25:13.783790650Z pci 0000:00:03.1:   bridge window [mem 0xfc000000-0xfc1fffff 64bit pref]
+2024-08-06T02:25:13.783802292Z pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+2024-08-06T02:25:13.783813904Z pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+2024-08-06T02:25:13.783825215Z pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+2024-08-06T02:25:13.783832038Z pci_bus 0000:00: resource 7 [mem 0x80000000-0xafffffff window]
+2024-08-06T02:25:13.783842358Z pci_bus 0000:00: resource 8 [mem 0xc0000000-0xfebfffff window]
+2024-08-06T02:25:13.783852867Z pci_bus 0000:00: resource 9 [mem 0x280000000-0xa7fffffff window]
+2024-08-06T02:25:13.783860502Z pci_bus 0000:01: resource 0 [io  0x1000-0x1fff]
+2024-08-06T02:25:13.783870451Z pci_bus 0000:01: resource 1 [mem 0xfe800000-0xfe9fffff]
+2024-08-06T02:25:13.783878015Z pci_bus 0000:01: resource 2 [mem 0xfd200000-0xfd3fffff 64bit pref]
+2024-08-06T02:25:13.783884998Z pci_bus 0000:02: resource 0 [io  0x2000-0x2fff]
+2024-08-06T02:25:13.883770272Z pci_bus 0000:02: resource 1 [mem 0xfe600000-0xfe7fffff]
+2024-08-06T02:25:13.883813113Z pci_bus 0000:02: resource 2 [mem 0xfd000000-0xfd1fffff 64bit pref]
+2024-08-06T02:25:13.883819776Z pci_bus 0000:03: resource 0 [io  0x3000-0x3fff]
+2024-08-06T02:25:13.883824234Z pci_bus 0000:03: resource 1 [mem 0xfe400000-0xfe5fffff]
+2024-08-06T02:25:13.883828161Z pci_bus 0000:03: resource 2 [mem 0xfce00000-0xfcffffff 64bit pref]
+2024-08-06T02:25:13.883832029Z pci_bus 0000:04: resource 0 [io  0x4000-0x4fff]
+2024-08-06T02:25:13.883861765Z pci_bus 0000:04: resource 1 [mem 0xfe200000-0xfe3fffff]
+2024-08-06T02:25:13.883868387Z pci_bus 0000:04: resource 2 [mem 0xfcc00000-0xfcdfffff 64bit pref]
+2024-08-06T02:25:13.883873266Z pci_bus 0000:05: resource 0 [io  0x5000-0x5fff]
+2024-08-06T02:25:13.883877254Z pci_bus 0000:05: resource 1 [mem 0xfe000000-0xfe1fffff]
+2024-08-06T02:25:13.883881011Z pci_bus 0000:05: resource 2 [mem 0xfca00000-0xfcbfffff 64bit pref]
+2024-08-06T02:25:13.883884868Z pci_bus 0000:06: resource 0 [io  0x6000-0x6fff]
+2024-08-06T02:25:13.883888696Z pci_bus 0000:06: resource 1 [mem 0xfde00000-0xfdffffff]
+2024-08-06T02:25:13.883892402Z pci_bus 0000:06: resource 2 [mem 0xfc800000-0xfc9fffff 64bit pref]
+2024-08-06T02:25:13.883896320Z pci_bus 0000:07: resource 0 [io  0x7000-0x7fff]
+2024-08-06T02:25:13.883900488Z pci_bus 0000:07: resource 1 [mem 0xfdc00000-0xfddfffff]
+2024-08-06T02:25:13.883904235Z pci_bus 0000:07: resource 2 [mem 0xfc600000-0xfc7fffff 64bit pref]
+2024-08-06T02:25:13.883907962Z pci_bus 0000:08: resource 0 [io  0x8000-0x8fff]
+2024-08-06T02:25:13.883911819Z pci_bus 0000:08: resource 1 [mem 0xfda00000-0xfdbfffff]
+2024-08-06T02:25:13.883915536Z pci_bus 0000:08: resource 2 [mem 0xfc400000-0xfc5fffff 64bit pref]
+2024-08-06T02:25:13.883919604Z pci_bus 0000:09: resource 0 [io  0x9000-0x9fff]
+2024-08-06T02:25:13.883923681Z pci_bus 0000:09: resource 1 [mem 0xfd800000-0xfd9fffff]
+2024-08-06T02:25:13.883928340Z pci_bus 0000:09: resource 2 [mem 0xfc200000-0xfc3fffff 64bit pref]
+2024-08-06T02:25:13.883932057Z pci_bus 0000:0a: resource 0 [io  0xa000-0xafff]
+2024-08-06T02:25:13.883948448Z pci_bus 0000:0a: resource 1 [mem 0xfd600000-0xfd7fffff]
+2024-08-06T02:25:13.883952746Z pci_bus 0000:0a: resource 2 [mem 0xfc000000-0xfc1fffff 64bit pref]
+2024-08-06T02:25:13.883956664Z NET: Registered protocol family 2
+2024-08-06T02:25:13.883960421Z IP idents hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+2024-08-06T02:25:13.883965200Z tcp_listen_portaddr_hash hash table entries: 4096 (order: 4, 65536 bytes, linear)
+2024-08-06T02:25:13.883969718Z TCP established hash table entries: 65536 (order: 7, 524288 bytes, linear)
+2024-08-06T02:25:13.883973455Z TCP bind hash table entries: 65536 (order: 8, 1048576 bytes, linear)
+2024-08-06T02:25:13.883977313Z TCP: Hash tables configured (established 65536 bind 65536)
+2024-08-06T02:25:13.883981010Z UDP hash table entries: 4096 (order: 5, 131072 bytes, linear)
+2024-08-06T02:25:13.883984717Z UDP-Lite hash table entries: 4096 (order: 5, 131072 bytes, linear)
+2024-08-06T02:25:13.883988554Z NET: Registered protocol family 1
+2024-08-06T02:25:13.883992371Z NET: Registered protocol family 44
+2024-08-06T02:25:13.883996218Z pci 0000:00:01.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+2024-08-06T02:25:13.884000396Z PCI: CLS 0 bytes, default 64
+2024-08-06T02:25:13.884004183Z PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+2024-08-06T02:25:13.884008171Z software IO TLB: mapped [mem 0x7bfdd000-0x7ffdd000] (64MB)
+2024-08-06T02:25:13.884013110Z clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x2b28a4259f6, max_idle_ns: 440795351830 ns
+2024-08-06T02:25:13.884017027Z Initialise system trusted keyrings
+2024-08-06T02:25:13.884021235Z Key type blacklist registered
+2024-08-06T02:25:13.884025053Z workingset: timestamp_bits=40 max_order=21 bucket_order=0
+2024-08-06T02:25:13.884028739Z squashfs: version 4.0 (2009/01/31) Phillip Lougher
+2024-08-06T02:25:13.884032637Z 9p: Installing v9fs 9p2000 file system support
+2024-08-06T02:25:13.884037236Z Key type asymmetric registered
+2024-08-06T02:25:13.884041143Z Asymmetric key parser 'x509' registered
+2024-08-06T02:25:13.884045030Z Block layer SCSI generic (bsg) driver version 0.4 loaded (major 251)
+2024-08-06T02:25:13.884057123Z io scheduler mq-deadline registered
+2024-08-06T02:25:13.884060930Z io scheduler kyber registered
+2024-08-06T02:25:13.884064817Z PCI Interrupt Link [GSIG] enabled at IRQ 22
+2024-08-06T02:25:13.884077662Z PCI Interrupt Link [GSIH] enabled at IRQ 23
+2024-08-06T02:25:13.884081840Z shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+2024-08-06T02:25:13.884086579Z input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+2024-08-06T02:25:13.884090436Z ACPI: Power Button [PWRF]
+2024-08-06T02:25:13.884094133Z Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+2024-08-06T02:25:13.884098120Z 00:00: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+2024-08-06T02:25:13.909653004Z virtio_blk virtio3: [vda] 2048 512-byte logical blocks (1.05 MB/1.00 MiB)
+2024-08-06T02:25:14.083710909Z virtio_blk virtio4: [vdb] 83886080 512-byte logical blocks (42.9 GB/40.0 GiB)
+2024-08-06T02:25:14.083743551Z GPT:Primary header thinks Alt. header is not at the end of the disk.
+2024-08-06T02:25:14.083751897Z GPT:4612095 != 83886079
+2024-08-06T02:25:14.083756215Z GPT:Alternate GPT header not at the end of the disk.
+2024-08-06T02:25:14.083760102Z GPT:4612095 != 83886079
+2024-08-06T02:25:14.083764531Z GPT: Use GNU Parted to correct GPT errors.
+2024-08-06T02:25:14.083768829Z  vdb: vdb1 vdb14 vdb15
+2024-08-06T02:25:14.083772636Z Loading iSCSI transport class v2.0-870.
+2024-08-06T02:25:14.083776162Z iscsi: registered transport (tcp)
+2024-08-06T02:25:14.083781983Z scsi host0: Virtio SCSI HBA
+2024-08-06T02:25:14.083785550Z tun: Universal TUN/TAP device driver, 1.6
+2024-08-06T02:25:14.083789067Z NET: Registered protocol family 10
+2024-08-06T02:25:14.083792824Z Segment Routing with IPv6
+2024-08-06T02:25:14.083796320Z NET: Registered protocol family 17
+2024-08-06T02:25:14.083801270Z bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+2024-08-06T02:25:14.083806910Z 9pnet: Installing 9P2000 support
+2024-08-06T02:25:14.083811349Z IPI shorthand broadcast: enabled
+2024-08-06T02:25:14.083815086Z sched_clock: Marking stable (2004463921, 328642265)->(2533171026, -200064840)
+2024-08-06T02:25:14.083820366Z registered taskstats version 1
+2024-08-06T02:25:14.083825205Z Loading compiled-in X.509 certificates
+2024-08-06T02:25:14.083840394Z Loaded X.509 cert 'Build time autogenerated kernel key: 224d1c7324ddb1eb8a3029782b8067b606213459'
+2024-08-06T02:25:14.083846004Z Loaded X.509 cert 'Canonical Ltd. Live Patch Signing: 14df34d1a87cf37625abec039ef2bf521249b969'
+2024-08-06T02:25:14.083849841Z Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing: 88f752e560a1e0737e31163a466ad7b70a850c19'
+2024-08-06T02:25:14.083853618Z blacklist: Loading compiled-in revocation X.509 certificates
+2024-08-06T02:25:14.083857426Z Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing: 61482aa2830d0ab2ad5af10b7250da9033ddcef0'
+2024-08-06T02:25:14.083861433Z Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2017): 242ade75ac4a15e50d50c84b0d45ff3eae707a03'
+2024-08-06T02:25:14.083865180Z Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (ESM 2018): 365188c1d374d6b07c3c8f240f8ef722433d6a8b'
+2024-08-06T02:25:14.083868947Z Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2019): c0746fd6c5da3ae827864651ad66ae47fe24b3e8'
+2024-08-06T02:25:14.083872704Z Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v1): a8d54bbb3825cfb94fa13c9f8a594a195c107b8d'
+2024-08-06T02:25:14.083876442Z Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v2): 4cf046892d6fd3c9a5b03f98d845f90851dc6a8c'
+2024-08-06T02:25:14.083880659Z Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v3): 100437bb6de6e469b581e61cd66bce3ef4ed53af'
+2024-08-06T02:25:14.083901098Z Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (Ubuntu Core 2019): c1d57b8f6b743f23ee41f4f7ee292f06eecadfb9'
+2024-08-06T02:25:14.083904855Z Key type ._fscrypt registered
+2024-08-06T02:25:14.083908452Z Key type .fscrypt registered
+2024-08-06T02:25:14.083912189Z AppArmor: AppArmor sha1 policy hashing enabled
+2024-08-06T02:25:14.083916146Z clk: Disabling unused clocks
+2024-08-06T02:25:14.183698009Z EXT4-fs (vdb1): mounted filesystem with ordered data mode. Opts: (null)
+2024-08-06T02:25:14.183745058Z VFS: Mounted root (ext4 filesystem) readonly on device 254:17.
+2024-08-06T02:25:14.183757692Z devtmpfs: mounted
+2024-08-06T02:25:14.183768282Z Freeing unused kernel image memory: 1144K
+2024-08-06T02:25:14.183776447Z Write protecting the kernel read-only data: 18432k
+2024-08-06T02:25:14.183784963Z Freeing unused kernel image memory: 2032K
+2024-08-06T02:25:14.183792317Z Freeing unused kernel image memory: 1356K
+2024-08-06T02:25:14.183798358Z x86/mm: Checked W+X mappings: passed, no W+X pages found.
+2024-08-06T02:25:14.183806263Z Run /sbin/init as init process
+2024-08-06T02:25:14.883750727Z systemd[1]: systemd 245.4-4ubuntu3.23 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD +IDN2 -IDN +PCRE2 default-hierarchy=hybrid)
+2024-08-06T02:25:14.883798487Z systemd[1]: Detected virtualization kvm.
+2024-08-06T02:25:14.883806231Z systemd[1]: Detected architecture x86-64.
+2024-08-06T02:25:14.883812503Z 
+2024-08-06T02:25:14.883818895Z Welcome to [1mUbuntu 20.04.6 LTS[0m!
+2024-08-06T02:25:14.883824486Z 
+2024-08-06T02:25:14.883830878Z systemd[1]: Set hostname to <ubuntu>.
+2024-08-06T02:25:14.883838282Z systemd[1]: Initializing machine ID from KVM UUID.
+2024-08-06T02:25:14.883844193Z systemd[1]: Installed transient /etc/machine-id file.
+2024-08-06T02:25:15.283844797Z systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+2024-08-06T02:25:15.383968648Z systemd[1]: /lib/systemd/system/cloud-init-local.service:15: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+2024-08-06T02:25:15.384031526Z systemd[1]: /lib/systemd/system/cloud-init.service:19: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+2024-08-06T02:25:15.384040203Z systemd[1]: /lib/systemd/system/cloud-init.target:15: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+2024-08-06T02:25:15.384047587Z systemd[1]: /lib/systemd/system/cloud-final.service:9: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+2024-08-06T02:25:15.386191539Z systemd[1]: /lib/systemd/system/cloud-config.service:8: Unknown key name 'ConditionEnvironment' in section 'Unit', ignoring.
+2024-08-06T02:25:15.583817308Z systemd[1]: Created slice system-getty.slice.
+2024-08-06T02:25:15.583841994Z [[0;32m  OK  [0m] Created slice [0;1;39msystem-getty.slice[0m.
+2024-08-06T02:25:15.583849568Z systemd[1]: Created slice system-modprobe.slice.
+2024-08-06T02:25:15.583856151Z [[0;32m  OK  [0m] Created slice [0;1;39msystem-modprobe.slice[0m.
+2024-08-06T02:25:15.583863134Z systemd[1]: Created slice system-serial\x2dgetty.slice.
+2024-08-06T02:25:15.583869115Z [[0;32m  OK  [0m] Created slice [0;1;39msystem-serial\x2dgetty.slice[0m.
+2024-08-06T02:25:15.583875608Z systemd[1]: Created slice system-systemd\x2dfsck.slice.
+2024-08-06T02:25:15.583881569Z [[0;32m  OK  [0m] Created slice [0;1;39msystem-systemd\x2dfsck.slice[0m.
+2024-08-06T02:25:15.583914551Z systemd[1]: Created slice User and Session Slice.
+2024-08-06T02:25:15.583923338Z [[0;32m  OK  [0m] Created slice [0;1;39mUser and Session Slice[0m.
+2024-08-06T02:25:15.583929539Z systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+2024-08-06T02:25:15.583935801Z [[0;32m  OK  [0m] Started [0;1;39mDispatch Password …ts to Console Directory Watch[0m.
+2024-08-06T02:25:15.583942043Z systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+2024-08-06T02:25:15.583947824Z [[0;32m  OK  [0m] Started [0;1;39mForward Password R…uests to Wall Directory Watch[0m.
+2024-08-06T02:25:15.583956200Z systemd[1]: Condition check resulted in Arbitrary Executable File Formats File System Automount Point being skipped.
+2024-08-06T02:25:15.583962161Z systemd[1]: Reached target Local Encrypted Volumes.
+2024-08-06T02:25:15.583968042Z [[0;32m  OK  [0m] Reached target [0;1;39mLocal Encrypted Volumes[0m.
+2024-08-06T02:25:15.583973853Z systemd[1]: Reached target Slices.
+2024-08-06T02:25:15.583979714Z [[0;32m  OK  [0m] Reached target [0;1;39mSlices[0m.
+2024-08-06T02:25:15.583985475Z systemd[1]: Reached target Mounting snaps.
+2024-08-06T02:25:15.583991436Z [[0;32m  OK  [0m] Reached target [0;1;39mMounting snaps[0m.
+2024-08-06T02:25:15.583997247Z systemd[1]: Reached target Mounted snaps.
+2024-08-06T02:25:15.584003188Z [[0;32m  OK  [0m] Reached target [0;1;39mMounted snaps[0m.
+2024-08-06T02:25:15.584009791Z systemd[1]: Reached target Swap.
+2024-08-06T02:25:15.584015632Z [[0;32m  OK  [0m] Reached target [0;1;39mSwap[0m.
+2024-08-06T02:25:15.584021473Z systemd[1]: Listening on Device-mapper event daemon FIFOs.
+2024-08-06T02:25:15.584027344Z [[0;32m  OK  [0m] Listening on [0;1;39mDevice-mapper event daemon FIFOs[0m.
+2024-08-06T02:25:15.584033135Z systemd[1]: Listening on LVM2 poll daemon socket.
+2024-08-06T02:25:15.584039447Z [[0;32m  OK  [0m] Listening on [0;1;39mLVM2 poll daemon socket[0m.
+2024-08-06T02:25:15.584045348Z systemd[1]: Listening on fsck to fsckd communication Socket.
+2024-08-06T02:25:15.584051209Z [[0;32m  OK  [0m] Listening on [0;1;39mfsck to fsckd communication Socket[0m.
+2024-08-06T02:25:15.584057060Z systemd[1]: Listening on initctl Compatibility Named Pipe.
+2024-08-06T02:25:15.584062871Z [[0;32m  OK  [0m] Listening on [0;1;39minitctl Compatibility Named Pipe[0m.
+2024-08-06T02:25:15.584068642Z systemd[1]: Listening on Journal Audit Socket.
+2024-08-06T02:25:15.584087547Z [[0;32m  OK  [0m] Listening on [0;1;39mJournal Audit Socket[0m.
+2024-08-06T02:25:15.584093949Z systemd[1]: Listening on Journal Socket (/dev/log).
+2024-08-06T02:25:15.683814571Z [[0;32m  OK  [0m] Listening on [0;1;39mJournal Socket (/dev/log)[0m.
+2024-08-06T02:25:15.683867701Z systemd[1]: Listening on Journal Socket.
+2024-08-06T02:25:15.683875726Z [[0;32m  OK  [0m] Listening on [0;1;39mJournal Socket[0m.
+2024-08-06T02:25:15.683882058Z systemd[1]: Listening on Network Service Netlink Socket.
+2024-08-06T02:25:15.683889242Z [[0;32m  OK  [0m] Listening on [0;1;39mNetwork Service Netlink Socket[0m.
+2024-08-06T02:25:15.683895363Z systemd[1]: Listening on udev Control Socket.
+2024-08-06T02:25:15.683902086Z [[0;32m  OK  [0m] Listening on [0;1;39mudev Control Socket[0m.
+2024-08-06T02:25:15.683908608Z systemd[1]: Listening on udev Kernel Socket.
+2024-08-06T02:25:15.683915591Z [[0;32m  OK  [0m] Listening on [0;1;39mudev Kernel Socket[0m.
+2024-08-06T02:25:15.683921953Z systemd[1]: Mounting Huge Pages File System...
+2024-08-06T02:25:15.683928165Z          Mounting [0;1;39mHuge Pages File System[0m...
+2024-08-06T02:25:15.683934026Z systemd[1]: Mounting POSIX Message Queue File System...
+2024-08-06T02:25:15.683962830Z          Mounting [0;1;39mPOSIX Message Queue File System[0m...
+2024-08-06T02:25:15.683969874Z systemd[1]: Mounting Kernel Debug File System...
+2024-08-06T02:25:15.683976306Z          Mounting [0;1;39mKernel Debug File System[0m...
+2024-08-06T02:25:15.683982557Z systemd[1]: Mounting Kernel Trace File System...
+2024-08-06T02:25:15.683988589Z          Mounting [0;1;39mKernel Trace File System[0m...
+2024-08-06T02:25:15.683994420Z systemd[1]: Starting Journal Service...
+2024-08-06T02:25:15.684000622Z          Starting [0;1;39mJournal Service[0m...
+2024-08-06T02:25:15.684007555Z systemd[1]: Starting Create list of static device nodes for the current kernel...
+2024-08-06T02:25:15.684033944Z          Starting [0;1;39mCreate list of st…odes for the current kernel[0m...
+2024-08-06T02:25:15.684043653Z systemd[1]: Starting Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+2024-08-06T02:25:15.684050245Z          Starting [0;1;39mMonitoring of LVM…meventd or progress polling[0m...
+2024-08-06T02:25:15.783696426Z systemd[1]: Starting Load Kernel Module chromeos_pstore...
+2024-08-06T02:25:15.783734407Z          Starting [0;1;39mLoad Kernel Module chromeos_pstore[0m...
+2024-08-06T02:25:15.783745037Z systemd[1]: Starting Load Kernel Module drm...
+2024-08-06T02:25:15.783753032Z          Starting [0;1;39mLoad Kernel Module drm[0m...
+2024-08-06T02:25:15.783761458Z systemd[1]: Starting Load Kernel Module efi_pstore...
+2024-08-06T02:25:15.783770635Z          Starting [0;1;39mLoad Kernel Module efi_pstore[0m...
+2024-08-06T02:25:15.783778590Z systemd[1]: Starting Load Kernel Module pstore_blk...
+2024-08-06T02:25:15.783786004Z          Starting [0;1;39mLoad Kernel Module pstore_blk[0m...
+2024-08-06T02:25:15.783793980Z systemd[1]: Starting Load Kernel Module pstore_zone...
+2024-08-06T02:25:15.783801824Z          Starting [0;1;39mLoad Kernel Module pstore_zone[0m...
+2024-08-06T02:25:15.783809108Z systemd[1]: Starting Load Kernel Module ramoops...
+2024-08-06T02:25:15.783815991Z          Starting [0;1;39mLoad Kernel Module ramoops[0m...
+2024-08-06T02:25:15.783824156Z systemd[1]: Condition check resulted in OpenVSwitch configuration for cleanup being skipped.
+2024-08-06T02:25:15.783831861Z systemd[1]: Condition check resulted in Set Up Additional Binary Formats being skipped.
+2024-08-06T02:25:15.783884791Z systemd[1]: Starting File System Check on Root Device...
+2024-08-06T02:25:15.783928092Z          Starting [0;1;39mFile System Check on Root Device[0m...
+2024-08-06T02:25:15.783935937Z systemd[1]: Starting Load Kernel Modules...
+2024-08-06T02:25:15.783942439Z          Starting [0;1;39mLoad Kernel Modules[0m...
+2024-08-06T02:25:15.783948962Z systemd[1]: Starting udev Coldplug all Devices...
+2024-08-06T02:25:15.783954893Z          Starting [0;1;39mudev Coldplug all Devices[0m...
+2024-08-06T02:25:15.783961515Z systemd[1]: Mounted Huge Pages File System.
+2024-08-06T02:25:15.783967857Z [[0;32m  OK  [0m] Mounted [0;1;39mHuge Pages File System[0m.
+2024-08-06T02:25:15.783974179Z systemd[1]: Mounted POSIX Message Queue File System.
+2024-08-06T02:25:15.783980601Z [[0;32m  OK  [0m] Mounted [0;1;39mPOSIX Message Queue File System[0m.
+2024-08-06T02:25:15.783986883Z systemd[1]: Mounted Kernel Debug File System.
+2024-08-06T02:25:15.783992935Z [[0;32m  OK  [0m] Mounted [0;1;39mKernel Debug File System[0m.
+2024-08-06T02:25:15.783999427Z systemd[1]: Mounted Kernel Trace File System.
+2024-08-06T02:25:15.784006741Z [[0;32m  OK  [0m] Mounted [0;1;39mKernel Trace File System[0m.
+2024-08-06T02:25:15.784012842Z systemd[1]: Finished Create list of static device nodes for the current kernel.
+2024-08-06T02:25:15.784020276Z [[0;32m  OK  [0m] Finished [0;1;39mCreate list of st… nodes for the current kernel[0m.
+2024-08-06T02:25:15.784049201Z systemd[1]: modprobe@chromeos_pstore.service: Succeeded.
+2024-08-06T02:25:15.784056054Z systemd[1]: Finished Load Kernel Module chromeos_pstore.
+2024-08-06T02:25:15.784061995Z [[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Module chromeos_pstore[0m.
+2024-08-06T02:25:15.784068307Z systemd[1]: Started Journal Service.
+2024-08-06T02:25:15.784074949Z [[0;32m  OK  [0m] Started [0;1;39mJournal Service[0m.
+2024-08-06T02:25:15.784080730Z [[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Module drm[0m.
+2024-08-06T02:25:15.784087052Z [[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Module efi_pstore[0m.
+2024-08-06T02:25:15.784093865Z [[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Module pstore_blk[0m.
+2024-08-06T02:25:15.784101079Z [[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Module pstore_zone[0m.
+2024-08-06T02:25:15.784106799Z [[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Module ramoops[0m.
+2024-08-06T02:25:15.784122669Z [[0;32m  OK  [0m] Finished [0;1;39mLoad Kernel Modules[0m.
+2024-08-06T02:25:15.883752379Z [[0;32m  OK  [0m] Started [0;1;39mFile System Check Daemon to report status[0m.
+2024-08-06T02:25:15.883789839Z          Starting [0;1;39mApply Kernel Variables[0m...
+2024-08-06T02:25:15.883796632Z [[0;32m  OK  [0m] Finished [0;1;39mFile System Check on Root Device[0m.
+2024-08-06T02:25:15.883802263Z [[0;32m  OK  [0m] Finished [0;1;39mudev Coldplug all Devices[0m.
+2024-08-06T02:25:15.883807773Z          Starting [0;1;39mRemount Root and Kernel File Systems[0m...
+2024-08-06T02:25:15.883813314Z [[0;32m  OK  [0m] Finished [0;1;39mApply Kernel Variables[0m.
+2024-08-06T02:25:15.983778055Z [[0;32m  OK  [0m] Finished [0;1;39mRemount Root and Kernel File Systems[0m.
+2024-08-06T02:25:15.983846333Z          Starting [0;1;39mFlush Journal to Persistent Storage[0m...
+2024-08-06T02:25:15.983858486Z          Starting [0;1;39mLoad/Save Random Seed[0m...
+2024-08-06T02:25:15.983866532Z          Starting [0;1;39mCreate System Users[0m...
+2024-08-06T02:25:15.983876130Z [[0;32m  OK  [0m] Finished [0;1;39mLoad/Save Random Seed[0m.
+2024-08-06T02:25:16.083753986Z [[0;32m  OK  [0m] Finished [0;1;39mFlush Journal to Persistent Storage[0m.
+2024-08-06T02:25:16.284274339Z [[0;32m  OK  [0m] Finished [0;1;39mCreate System Users[0m.
+2024-08-06T02:25:16.284314084Z          Starting [0;1;39mCreate Static Device Nodes in /dev[0m...
+2024-08-06T02:25:16.284321027Z [[0;32m  OK  [0m] Finished [0;1;39mCreate Static Device Nodes in /dev[0m.
+2024-08-06T02:25:16.284329072Z          Starting [0;1;39mudev Kernel Device Manager[0m...
+2024-08-06T02:25:16.383910825Z [[0;32m  OK  [0m] Started [0;1;39mudev Kernel Device Manager[0m.
+2024-08-06T02:25:16.383952274Z [[0;32m  OK  [0m] Found device [0;1;39m/dev/ttyS0[0m.
+2024-08-06T02:25:17.083880695Z [[0;32m  OK  [0m] Found device [0;1;39m/dev/disk/by-label/UEFI[0m.
+2024-08-06T02:25:17.083929778Z [[0;32m  OK  [0m] Finished [0;1;39mMonitoring of LVM… dmeventd or progress polling[0m.
+2024-08-06T02:25:17.083937592Z [[0;32m  OK  [0m] Reached target [0;1;39mLocal File Systems (Pre)[0m.
+2024-08-06T02:25:17.083943794Z          Starting [0;1;39mFile System Check on /dev/disk/by-label/UEFI[0m...
+2024-08-06T02:25:17.283803639Z [[0;32m  OK  [0m] Finished [0;1;39mFile System Check on /dev/disk/by-label/UEFI[0m.
+2024-08-06T02:25:17.283855216Z          Mounting [0;1;39m/boot/efi[0m...
+2024-08-06T02:25:17.283865165Z [[0;32m  OK  [0m] Mounted [0;1;39m/boot/efi[0m.
+2024-08-06T02:25:17.283873310Z [[0;32m  OK  [0m] Reached target [0;1;39mLocal File Systems[0m.
+2024-08-06T02:25:17.283918065Z          Starting [0;1;39mLoad AppArmor profiles[0m...
+2024-08-06T02:25:17.283925910Z          Starting [0;1;39mCreate final runt…dir for shutdown pivot root[0m...
+2024-08-06T02:25:17.283932422Z          Starting [0;1;39mInitial cloud-init job (pre-networking)[0m...
+2024-08-06T02:25:17.283939125Z          Starting [0;1;39mCommit a transient machine-id on disk[0m...
+2024-08-06T02:25:17.283944635Z          Starting [0;1;39mCreate Volatile Files and Directories[0m...
+2024-08-06T02:25:17.283950616Z [[0;32m  OK  [0m] Finished [0;1;39mCreate final runt…e dir for shutdown pivot root[0m.
+2024-08-06T02:25:17.383896469Z [[0;32m  OK  [0m] Finished [0;1;39mCreate Volatile Files and Directories[0m.
+2024-08-06T02:25:17.383936414Z          Starting [0;1;39mNetwork Time Synchronization[0m...
+2024-08-06T02:25:17.383944650Z          Starting [0;1;39mUpdate UTMP about System Boot/Shutdown[0m...
+2024-08-06T02:25:17.383951342Z [[0;32m  OK  [0m] Finished [0;1;39mCommit a transient machine-id on disk[0m.
+2024-08-06T02:25:17.383959087Z [[0;32m  OK  [0m] Finished [0;1;39mUpdate UTMP about System Boot/Shutdown[0m.
+2024-08-06T02:25:17.483868461Z [[0;32m  OK  [0m] Started [0;1;39mNetwork Time Synchronization[0m.
+2024-08-06T02:25:17.483906983Z [[0;32m  OK  [0m] Reached target [0;1;39mSystem Time Set[0m.
+2024-08-06T02:25:17.483914457Z [[0;32m  OK  [0m] Reached target [0;1;39mSystem Time Synchronized[0m.
+2024-08-06T02:25:18.072655116Z [[0;32m  OK  [0m] Finished [0;1;39mLoad AppArmor profiles[0m.
+2024-08-06T02:25:18.083732180Z          Starting [0;1;39mLoad AppArmor pro…managed internally by snapd[0m...
+2024-08-06T02:25:18.177077916Z [[0;32m  OK  [0m] Finished [0;1;39mLoad AppArmor pro…s managed internally by snapd[0m.
+2024-08-06T02:25:20.583767054Z cloud-init[269]: Cloud-init v. 24.1.3-0ubuntu1~20.04.5 running 'init-local' at Tue, 06 Aug 2024 02:25:19 +0000. Up 7.64 seconds.
+2024-08-06T02:25:20.584025592Z [[0;32m  OK  [0m] Finished [0;1;39mInitial cloud-init job (pre-networking)[0m.
+2024-08-06T02:25:20.683750146Z [[0;32m  OK  [0m] Reached target [0;1;39mNetwork (Pre)[0m.
+2024-08-06T02:25:20.683772808Z          Starting [0;1;39mNetwork Service[0m...
+2024-08-06T02:25:20.736065792Z [[0;32m  OK  [0m] Started [0;1;39mNetwork Service[0m.
+2024-08-06T02:25:20.783787750Z          Starting [0;1;39mWait for Network to be Configured[0m...
+2024-08-06T02:25:20.783807307Z          Starting [0;1;39mNetwork Name Resolution[0m...
+2024-08-06T02:25:20.983657632Z [[0;32m  OK  [0m] Started [0;1;39mNetwork Name Resolution[0m.
+2024-08-06T02:25:20.983698679Z [[0;32m  OK  [0m] Reached target [0;1;39mNetwork[0m.
+2024-08-06T02:25:20.983706554Z [[0;32m  OK  [0m] Reached target [0;1;39mHost and Network Name Lookups[0m.
+2024-08-06T02:25:22.583822176Z [[0;32m  OK  [0m] Finished [0;1;39mWait for Network to be Configured[0m.
+2024-08-06T02:25:22.583870016Z          Starting [0;1;39mInitial cloud-ini… (metadata service crawler)[0m...
+2024-08-06T02:25:23.184239044Z cloud-init[300]: Cloud-init v. 24.1.3-0ubuntu1~20.04.5 running 'init' at Tue, 06 Aug 2024 02:25:22 +0000. Up 10.89 seconds.
+2024-08-06T02:25:23.283736566Z cloud-init[300]: ci-info: +++++++++++++++++++++++++++++++++++++++Net device info+++++++++++++++++++++++++++++++++++++++
+2024-08-06T02:25:23.283778786Z cloud-init[300]: ci-info: +--------+------+------------------------------+---------------+--------+-------------------+
+2024-08-06T02:25:23.283785459Z cloud-init[300]: ci-info: | Device |  Up  |           Address            |      Mask     | Scope  |     Hw-Address    |
+2024-08-06T02:25:23.283791600Z cloud-init[300]: ci-info: +--------+------+------------------------------+---------------+--------+-------------------+
+2024-08-06T02:25:23.283817299Z cloud-init[300]: ci-info: | enp1s0 | True |         10.10.200.72         | 255.255.255.0 | global | 16:b4:cb:c5:31:6e |
+2024-08-06T02:25:23.283823561Z cloud-init[300]: ci-info: | enp1s0 | True | fe80::14b4:cbff:fec5:316e/64 |       .       |  link  | 16:b4:cb:c5:31:6e |
+2024-08-06T02:25:23.283829261Z cloud-init[300]: ci-info: |   lo   | True |          127.0.0.1           |   255.0.0.0   |  host  |         .         |
+2024-08-06T02:25:23.283834852Z cloud-init[300]: ci-info: |   lo   | True |           ::1/128            |       .       |  host  |         .         |
+2024-08-06T02:25:23.283840843Z cloud-init[300]: ci-info: +--------+------+------------------------------+---------------+--------+-------------------+
+2024-08-06T02:25:23.283846514Z cloud-init[300]: ci-info: ++++++++++++++++++++++++++++++Route IPv4 info++++++++++++++++++++++++++++++
+2024-08-06T02:25:23.283852024Z cloud-init[300]: ci-info: +-------+-------------+-------------+-----------------+-----------+-------+
+2024-08-06T02:25:23.283858366Z cloud-init[300]: ci-info: | Route | Destination |   Gateway   |     Genmask     | Interface | Flags |
+2024-08-06T02:25:23.283863847Z cloud-init[300]: ci-info: +-------+-------------+-------------+-----------------+-----------+-------+
+2024-08-06T02:25:23.283869557Z cloud-init[300]: ci-info: |   0   |   0.0.0.0   | 10.10.200.1 |     0.0.0.0     |   enp1s0  |   UG  |
+2024-08-06T02:25:23.283875288Z cloud-init[300]: ci-info: |   1   | 10.10.200.0 |   0.0.0.0   |  255.255.255.0  |   enp1s0  |   U   |
+2024-08-06T02:25:23.283882121Z cloud-init[300]: ci-info: |   2   | 10.10.200.1 |   0.0.0.0   | 255.255.255.255 |   enp1s0  |   UH  |
+2024-08-06T02:25:23.283888774Z cloud-init[300]: ci-info: +-------+-------------+-------------+-----------------+-----------+-------+
+2024-08-06T02:25:23.283896068Z cloud-init[300]: ci-info: +++++++++++++++++++Route IPv6 info+++++++++++++++++++
+2024-08-06T02:25:23.283902880Z cloud-init[300]: ci-info: +-------+-------------+---------+-----------+-------+
+2024-08-06T02:25:23.283908641Z cloud-init[300]: ci-info: | Route | Destination | Gateway | Interface | Flags |
+2024-08-06T02:25:23.283914432Z cloud-init[300]: ci-info: +-------+-------------+---------+-----------+-------+
+2024-08-06T02:25:23.283920834Z cloud-init[300]: ci-info: |   1   |  fe80::/64  |    ::   |   enp1s0  |   U   |
+2024-08-06T02:25:23.283937786Z cloud-init[300]: ci-info: |   3   |    local    |    ::   |   enp1s0  |   U   |
+2024-08-06T02:25:23.283944078Z cloud-init[300]: ci-info: |   4   |  multicast  |    ::   |   enp1s0  |   U   |
+2024-08-06T02:25:23.283949899Z cloud-init[300]: ci-info: +-------+-------------+---------+-----------+-------+
+2024-08-06T02:25:27.083912790Z cloud-init[300]: Generating public/private rsa key pair.
+2024-08-06T02:25:27.083941654Z cloud-init[300]: Your identification has been saved in /etc/ssh/ssh_host_rsa_key
+2024-08-06T02:25:27.083950130Z cloud-init[300]: Your public key has been saved in /etc/ssh/ssh_host_rsa_key.pub
+2024-08-06T02:25:27.083957384Z cloud-init[300]: The key fingerprint is:
+2024-08-06T02:25:27.083964498Z cloud-init[300]: SHA256:gl532OJ320cLbGjr0em++5ds/9OuCHX6PsNv7IcK1vw root@gputest-primary-c31607d4-hpllh
+2024-08-06T02:25:27.083971270Z cloud-init[300]: The key's randomart image is:
+2024-08-06T02:25:27.083977402Z cloud-init[300]: +---[RSA 3072]----+
+2024-08-06T02:25:27.083983904Z cloud-init[300]: |                 |
+2024-08-06T02:25:27.083990376Z cloud-init[300]: |                 |
+2024-08-06T02:25:27.083996408Z cloud-init[300]: |                 |
+2024-08-06T02:25:27.084003131Z cloud-init[300]: |     .   o       |
+2024-08-06T02:25:27.084009242Z cloud-init[300]: |    . o S o + .  |
+2024-08-06T02:25:27.084015113Z cloud-init[300]: |   . . + o *.*. .|
+2024-08-06T02:25:27.084043226Z cloud-init[300]: |    .   . *.B+o++|
+2024-08-06T02:25:27.084049698Z cloud-init[300]: |         o =o*=*B|
+2024-08-06T02:25:27.084055690Z cloud-init[300]: |          ..=BE@%|
+2024-08-06T02:25:27.084064577Z cloud-init[300]: +----[SHA256]-----+
+2024-08-06T02:25:27.084070558Z cloud-init[300]: Generating public/private ecdsa key pair.
+2024-08-06T02:25:27.084077130Z cloud-init[300]: Your identification has been saved in /etc/ssh/ssh_host_ecdsa_key
+2024-08-06T02:25:27.084083803Z cloud-init[300]: Your public key has been saved in /etc/ssh/ssh_host_ecdsa_key.pub
+2024-08-06T02:25:27.084089754Z cloud-init[300]: The key fingerprint is:
+2024-08-06T02:25:27.084095665Z cloud-init[300]: SHA256:LcZlYos2fh3quhpNNq19LeNgVk1Sze6iac43wZrLHIc root@gputest-primary-c31607d4-hpllh
+2024-08-06T02:25:27.084101446Z cloud-init[300]: The key's randomart image is:
+2024-08-06T02:25:27.084107427Z cloud-init[300]: +---[ECDSA 256]---+
+2024-08-06T02:25:27.084856251Z cloud-init[300]: |            .o   |
+2024-08-06T02:25:27.086603561Z cloud-init[300]: |           .  o  |
+2024-08-06T02:25:27.183838378Z cloud-init[300]: |        o + ..   |
+2024-08-06T02:25:27.183870178Z cloud-init[300]: |       = * +  .  |
+2024-08-06T02:25:27.183877201Z cloud-init[300]: |      B S +...   |
+2024-08-06T02:25:27.183884966Z cloud-init[300]: |     * * = ++ .  |
+2024-08-06T02:25:27.183892590Z cloud-init[300]: |    . + B E=oo   |
+2024-08-06T02:25:27.183898762Z cloud-init[300]: |     . = B*=o    |
+2024-08-06T02:25:27.183904553Z cloud-init[300]: |    ..oo.oBo .   |
+2024-08-06T02:25:27.183910173Z cloud-init[300]: +----[SHA256]-----+
+2024-08-06T02:25:27.183916085Z cloud-init[300]: Generating public/private ed25519 key pair.
+2024-08-06T02:25:27.183922316Z cloud-init[300]: Your identification has been saved in /etc/ssh/ssh_host_ed25519_key
+2024-08-06T02:25:27.183927857Z cloud-init[300]: Your public key has been saved in /etc/ssh/ssh_host_ed25519_key.pub
+2024-08-06T02:25:27.183933347Z cloud-init[300]: The key fingerprint is:
+2024-08-06T02:25:27.183939058Z cloud-init[300]: SHA256:BwyQZjFUtXB1QCdbK4MHOuBuMvnhvSpO33SuJgauJAY root@gputest-primary-c31607d4-hpllh
+2024-08-06T02:25:27.183944568Z cloud-init[300]: The key's randomart image is:
+2024-08-06T02:25:27.183950439Z cloud-init[300]: +--[ED25519 256]--+
+2024-08-06T02:25:27.183955840Z cloud-init[300]: |   .*=+.+o=.+    |
+2024-08-06T02:25:27.183963143Z cloud-init[300]: |   .+o * + * .   |
+2024-08-06T02:25:27.183969966Z cloud-init[300]: |   o. o = = .    |
+2024-08-06T02:25:27.183975537Z cloud-init[300]: |   o   . o o     |
+2024-08-06T02:25:27.183981398Z cloud-init[300]: |E + +   S .      |
+2024-08-06T02:25:27.183987570Z cloud-init[300]: |. .* o   .       |
+2024-08-06T02:25:27.183993230Z cloud-init[300]: |.+..o o .        |
+2024-08-06T02:25:27.183998841Z cloud-init[300]: |+.o.oo.+         |
+2024-08-06T02:25:27.184005083Z cloud-init[300]: |.o.oo++..        |
+2024-08-06T02:25:27.184011004Z cloud-init[300]: +----[SHA256]-----+
+2024-08-06T02:25:27.283698472Z [[0;32m  OK  [0m] Finished [0;1;39mInitial cloud-ini…ob (metadata service crawler)[0m.
+2024-08-06T02:25:27.283719091Z [[0;32m  OK  [0m] Reached target [0;1;39mCloud-config availability[0m.
+2024-08-06T02:25:27.283726545Z [[0;32m  OK  [0m] Reached target [0;1;39mNetwork is Online[0m.
+2024-08-06T02:25:27.283732897Z [[0;32m  OK  [0m] Reached target [0;1;39mSystem Initialization[0m.
+2024-08-06T02:25:27.283739009Z [[0;32m  OK  [0m] Started [0;1;39mDaily apt download activities[0m.
+2024-08-06T02:25:27.283745932Z [[0;32m  OK  [0m] Started [0;1;39mDaily apt upgrade and clean activities[0m.
+2024-08-06T02:25:27.283753025Z [[0;32m  OK  [0m] Started [0;1;39mPeriodic ext4 Onli…ata Check for All Filesystems[0m.
+2024-08-06T02:25:27.283777792Z [[0;32m  OK  [0m] Started [0;1;39mDiscard unused blocks once a week[0m.
+2024-08-06T02:25:27.283784555Z [[0;32m  OK  [0m] Started [0;1;39mMessage of the Day[0m.
+2024-08-06T02:25:27.383878870Z [[0;32m  OK  [0m] Started [0;1;39mDaily Cleanup of Temporary Directories[0m.
+2024-08-06T02:25:27.383900692Z [[0;32m  OK  [0m] Reached target [0;1;39mPaths[0m.
+2024-08-06T02:25:27.383907104Z [[0;32m  OK  [0m] Reached target [0;1;39mTimers[0m.
+2024-08-06T02:25:27.383913135Z [[0;32m  OK  [0m] Listening on [0;1;39mcloud-init hotplug hook socket[0m.
+2024-08-06T02:25:27.383919888Z [[0;32m  OK  [0m] Listening on [0;1;39mD-Bus System Message Bus Socket[0m.
+2024-08-06T02:25:27.383927332Z [[0;32m  OK  [0m] Listening on [0;1;39mOpen-iSCSI iscsid Socket[0m.
+2024-08-06T02:25:27.383934395Z          Starting [0;1;39mHelper to install lxd snap on demand[0m.
+2024-08-06T02:25:27.383941889Z          Starting [0;1;39mSocket activation for snappy daemon[0m.
+2024-08-06T02:25:27.383949083Z [[0;32m  OK  [0m] Reached target [0;1;39mRemote File Systems (Pre)[0m.
+2024-08-06T02:25:27.383956948Z [[0;32m  OK  [0m] Reached target [0;1;39mRemote File Systems[0m.
+2024-08-06T02:25:27.383966476Z          Starting [0;1;39mAvailability of block devices[0m...
+2024-08-06T02:25:27.383974160Z [[0;32m  OK  [0m] Listening on [0;1;39mHelper to install lxd snap on demand[0m.
+2024-08-06T02:25:27.483782397Z [[0;32m  OK  [0m] Listening on [0;1;39mSocket activation for snappy daemon[0m.
+2024-08-06T02:25:27.483844474Z [[0;32m  OK  [0m] Finished [0;1;39mAvailability of block devices[0m.
+2024-08-06T02:25:27.483853651Z [[0;32m  OK  [0m] Reached target [0;1;39mSockets[0m.
+2024-08-06T02:25:27.483860885Z [[0;32m  OK  [0m] Reached target [0;1;39mBasic System[0m.
+2024-08-06T02:25:27.483867978Z          Starting [0;1;39mLSB: automatic crash report generation[0m...
+2024-08-06T02:25:27.483879009Z          Starting [0;1;39mDeferred execution scheduler[0m...
+2024-08-06T02:25:27.483886092Z [[0;32m  OK  [0m] Started [0;1;39mD-Bus System Message Bus[0m.
+2024-08-06T02:25:27.483892825Z          Starting [0;1;39mRemove Stale Onli…t4 Metadata Check Snapshots[0m...
+2024-08-06T02:25:27.483899097Z          Starting [0;1;39mRecord successful boot for GRUB[0m...
+2024-08-06T02:25:27.483906631Z          Starting [0;1;39mDispatcher daemon for systemd-networkd[0m...
+2024-08-06T02:25:27.583710710Z          Starting [0;1;39mPollinate to seed…udo random number generator[0m...
+2024-08-06T02:25:27.583757338Z [[0;32m  OK  [0m] Reached target [0;1;39mLogin Prompts (Pre)[0m.
+2024-08-06T02:25:27.583767988Z          Starting [0;1;39mWait until snapd is fully seeded[0m...
+2024-08-06T02:25:27.583777916Z          Starting [0;1;39mSnap Daemon[0m...
+2024-08-06T02:25:27.583785902Z          Starting [0;1;39mLogin Service[0m...
+2024-08-06T02:25:27.583792544Z          Starting [0;1;39mPermit User Sessions[0m...
+2024-08-06T02:25:27.583814405Z [[0;32m  OK  [0m] Started [0;1;39mDeferred execution scheduler[0m.
+2024-08-06T02:25:27.584954348Z [[0;32m  OK  [0m] Finished [0;1;39mPermit User Sessions[0m.
+2024-08-06T02:25:27.683845642Z [[0;32m  OK  [0m] Finished [0;1;39mRemove Stale Onli…ext4 Metadata Check Snapshots[0m.
+2024-08-06T02:25:27.683906277Z [[0;32m  OK  [0m] Started [0;1;39mLogin Service[0m.
+2024-08-06T02:25:27.683915875Z [[0;32m  OK  [0m] Finished [0;1;39mRecord successful boot for GRUB[0m.
+2024-08-06T02:25:27.683924942Z          Starting [0;1;39mGRUB failed boot detection[0m...
+2024-08-06T02:25:27.683933979Z [[0;32m  OK  [0m] Started [0;1;39mSerial Getty on ttyS0[0m.
+2024-08-06T02:25:27.683943958Z [[0;32m  OK  [0m] Reached target [0;1;39mLogin Prompts[0m.
+2024-08-06T02:25:27.683982781Z          Starting [0;1;39mHostname Service[0m...
+2024-08-06T02:25:27.683990015Z [[0;32m  OK  [0m] Started [0;1;39mUnattended Upgrades Shutdown[0m.
+2024-08-06T02:25:27.683996086Z [[0;32m  OK  [0m] Started [0;1;39mLSB: automatic crash report generation[0m.
+2024-08-06T02:25:27.783764407Z [[0;32m  OK  [0m] Finished [0;1;39mGRUB failed boot detection[0m.
+2024-08-06T02:25:27.783829119Z [[0;32m  OK  [0m] Started [0;1;39mDispatcher daemon for systemd-networkd[0m.
+2024-08-06T02:25:27.783841513Z [[0;32m  OK  [0m] Started [0;1;39mHostname Service[0m.
+2024-08-06T02:25:28.423178791Z [[0;32m  OK  [0m] Finished [0;1;39mPollinate to seed…seudo random number generator[0m.
+2024-08-06T02:25:28.483875667Z          Starting [0;1;39mOpenBSD Secure Shell server[0m...
+2024-08-06T02:25:28.583873523Z [[0;32m  OK  [0m] Started [0;1;39mOpenBSD Secure Shell server[0m.
+2024-08-06T02:25:29.883961040Z [[0;32m  OK  [0m] Started [0;1;39mSnap Daemon[0m.
+2024-08-06T02:25:31.883696477Z          Starting [0;1;39mTime & Date Service[0m...
+2024-08-06T02:25:31.983603194Z [[0;32m  OK  [0m] Started [0;1;39mTime & Date Service[0m.
+2024-08-06T02:25:31.983636437Z [[0;32m  OK  [0m] Finished [0;1;39mWait until snapd is fully seeded[0m.
+2024-08-06T02:25:32.083680579Z          Starting [0;1;39mApply the settings specified in cloud-config[0m...
+2024-08-06T02:25:32.083701779Z [[0;32m  OK  [0m] Reached target [0;1;39mMulti-User System[0m.
+2024-08-06T02:25:32.083708272Z [[0;32m  OK  [0m] Reached target [0;1;39mGraphical Interface[0m.
+2024-08-06T02:25:32.083714443Z          Starting [0;1;39mUpdate UTMP about System Runlevel Changes[0m...
+2024-08-06T02:25:32.083720996Z [[0;32m  OK  [0m] Finished [0;1;39mUpdate UTMP about System Runlevel Changes[0m.
+2024-08-06T02:25:33.683786867Z cloud-init[558]: Cloud-init v. 24.1.3-0ubuntu1~20.04.5 running 'modules:config' at Tue, 06 Aug 2024 02:25:31 +0000. Up 20.38 seconds.
+2024-08-06T02:25:33.685512097Z 
+2024-08-06T02:25:33.783733791Z Ubuntu 20.04.6 LTS gputest-primary-c31607d4-hpllh ttyS0
+2024-08-06T02:25:33.783783866Z 
+2024-08-06T02:25:34.683713218Z gputest-primary-c31607d4-hpllh login: cloud-init[574]: Get:1 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
+2024-08-06T02:25:34.783957465Z cloud-init[574]: Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+2024-08-06T02:25:34.983824583Z cloud-init[574]: Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+2024-08-06T02:25:35.053498038Z cloud-init[574]: Get:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+2024-08-06T02:25:35.383770516Z cloud-init[574]: Get:5 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages [970 kB]
+2024-08-06T02:25:35.583718948Z cloud-init[574]: Get:6 http://archive.ubuntu.com/ubuntu focal/main Translation-en [506 kB]
+2024-08-06T02:25:35.583749196Z cloud-init[574]: Get:7 http://archive.ubuntu.com/ubuntu focal/restricted amd64 Packages [22.0 kB]
+2024-08-06T02:25:35.583756539Z cloud-init[574]: Get:8 http://archive.ubuntu.com/ubuntu focal/restricted Translation-en [6212 B]
+2024-08-06T02:25:35.583762791Z cloud-init[574]: Get:9 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [8628 kB]
+2024-08-06T02:25:35.800750948Z cloud-init[574]: Get:10 http://archive.ubuntu.com/ubuntu focal/universe Translation-en [5124 kB]
+2024-08-06T02:25:35.983681597Z cloud-init[574]: Get:11 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [144 kB]
+2024-08-06T02:25:35.983727063Z cloud-init[574]: Get:12 http://archive.ubuntu.com/ubuntu focal/multiverse Translation-en [104 kB]
+2024-08-06T02:25:35.983734537Z cloud-init[574]: Get:13 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [3463 kB]
+2024-08-06T02:25:36.083753243Z cloud-init[574]: Get:14 http://archive.ubuntu.com/ubuntu focal-updates/main Translation-en [539 kB]
+2024-08-06T02:25:36.083798278Z cloud-init[574]: Get:15 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [3092 kB]
+2024-08-06T02:25:36.083805903Z cloud-init[574]: Get:16 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [3114 kB]
+2024-08-06T02:25:36.083812856Z cloud-init[574]: Get:17 http://archive.ubuntu.com/ubuntu focal-updates/restricted Translation-en [436 kB]
+2024-08-06T02:25:36.083819799Z cloud-init[574]: Get:18 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1216 kB]
+2024-08-06T02:25:36.183638541Z cloud-init[574]: Get:19 http://archive.ubuntu.com/ubuntu focal-updates/universe Translation-en [293 kB]
+2024-08-06T02:25:36.183671774Z cloud-init[574]: Get:20 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [27.1 kB]
+2024-08-06T02:25:36.183678898Z cloud-init[574]: Get:21 http://archive.ubuntu.com/ubuntu focal-updates/multiverse Translation-en [7936 B]
+2024-08-06T02:25:36.183685390Z cloud-init[574]: Get:22 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [45.7 kB]
+2024-08-06T02:25:36.183691321Z cloud-init[574]: Get:23 http://archive.ubuntu.com/ubuntu focal-backports/main Translation-en [16.3 kB]
+2024-08-06T02:25:36.183697042Z cloud-init[574]: Get:24 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [25.0 kB]
+2024-08-06T02:25:36.183702603Z cloud-init[574]: Get:25 http://archive.ubuntu.com/ubuntu focal-backports/universe Translation-en [16.3 kB]
+2024-08-06T02:25:36.725885510Z cloud-init[574]: Get:26 http://security.ubuntu.com/ubuntu focal-security/main Translation-en [460 kB]
+2024-08-06T02:25:36.784273311Z cloud-init[574]: Get:27 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [2996 kB]
+2024-08-06T02:25:36.883735770Z cloud-init[574]: Get:28 http://security.ubuntu.com/ubuntu focal-security/restricted Translation-en [419 kB]
+2024-08-06T02:25:36.883787127Z cloud-init[574]: Get:29 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [997 kB]
+2024-08-06T02:25:36.983875790Z cloud-init[574]: Get:30 http://security.ubuntu.com/ubuntu focal-security/universe Translation-en [211 kB]
+2024-08-06T02:25:36.983918310Z cloud-init[574]: Get:31 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [24.8 kB]
+2024-08-06T02:25:36.983925915Z cloud-init[574]: Get:32 http://security.ubuntu.com/ubuntu focal-security/multiverse Translation-en [5968 B]
+2024-08-06T02:25:43.783780495Z cloud-init[574]: Fetched 33.6 MB in 6s (5735 kB/s)
+2024-08-06T02:25:45.144417278Z cloud-init[574]: Reading package lists...
+2024-08-06T02:25:45.452442308Z cloud-init[574]: Reading package lists...
+2024-08-06T02:25:45.732791327Z cloud-init[574]: Building dependency tree...
+2024-08-06T02:25:45.733431098Z cloud-init[574]: Reading state information...
+2024-08-06T02:25:46.183706071Z cloud-init[574]: The following NEW packages will be installed:
+2024-08-06T02:25:46.183768259Z cloud-init[574]:   qemu-guest-agent
+2024-08-06T02:25:46.483836961Z cloud-init[574]: 0 upgraded, 1 newly installed, 0 to remove and 3 not upgraded.
+2024-08-06T02:25:46.483867669Z cloud-init[574]: Need to get 193 kB of archives.
+2024-08-06T02:25:46.483875003Z cloud-init[574]: After this operation, 720 kB of additional disk space will be used.
+2024-08-06T02:25:46.483882117Z cloud-init[574]: Get:1 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 qemu-guest-agent amd64 1:4.2-3ubuntu6.29 [193 kB]
+2024-08-06T02:25:47.088552154Z cloud-init[574]: debconf: delaying package configuration, since apt-utils is not installed
+2024-08-06T02:25:47.131439017Z cloud-init[574]: Fetched 193 kB in 1s (261 kB/s)
+2024-08-06T02:25:47.193584683Z cloud-init[574]: Selecting previously unselected package qemu-guest-agent.
+2024-08-06T02:25:48.083790817Z cloud-init[574]: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 39533 files and directories currently installed.)
+2024-08-06T02:25:48.083834760Z cloud-init[574]: Preparing to unpack .../qemu-guest-agent_1%3a4.2-3ubuntu6.29_amd64.deb ...
+2024-08-06T02:25:48.083843457Z cloud-init[574]: Unpacking qemu-guest-agent (1:4.2-3ubuntu6.29) ...
+2024-08-06T02:25:48.183932660Z cloud-init[574]: Setting up qemu-guest-agent (1:4.2-3ubuntu6.29) ...
+2024-08-06T02:25:49.168575803Z cloud-init[574]: Processing triggers for systemd (245.4-4ubuntu3.23) ...
+2024-08-06T02:25:51.483837207Z cloud-init[574]: Synchronizing state of qemu-guest-agent.service with SysV service script with /lib/systemd/systemd-sysv-install.
+2024-08-06T02:25:51.483897211Z cloud-init[574]: Executing: /lib/systemd/systemd-sysv-install enable qemu-guest-agent
+2024-08-06T02:25:52.383801122Z cloud-init[574]: The unit files have no installation config (WantedBy=, RequiredBy=, Also=,
+2024-08-06T02:25:52.383830959Z cloud-init[574]: Alias= settings in the [Install] section, and DefaultInstance= for template[[0;32m  OK  [0m] Started [0;1;39mQEMU Guest Agent[0m.
+2024-08-06T02:25:52.383837802Z 
+2024-08-06T02:25:52.383843482Z cloud-init[574]: units). This means they are not meant to be enabled using systemctl.
+2024-08-06T02:25:52.383849985Z cloud-init[574]:  
+2024-08-06T02:25:52.383858040Z cloud-init[574]: Possible reasons for having this kind of units are:
+2024-08-06T02:25:52.383864963Z cloud-init[574]: • A unit may be statically enabled by being symlinked from another unit's
+2024-08-06T02:25:52.383870884Z cloud-init[574]:   .wants/ or .requires/ directory.
+2024-08-06T02:25:52.383876535Z cloud-init[574]: • A unit's purpose may be to act as a helper for some other unit which has
+2024-08-06T02:25:52.383882126Z cloud-init[574]:   a requirement dependency on it.
+2024-08-06T02:25:52.383887596Z cloud-init[574]: • A unit may be started when needed via activation (socket, path, timer,
+2024-08-06T02:25:52.383893176Z cloud-init[574]:   D-Bus, udev, scripted systemctl call, ...).
+2024-08-06T02:25:52.383898667Z cloud-init[574]: • In case of template units, the unit is meant to be enabled with some
+2024-08-06T02:25:52.383904598Z cloud-init[574]:   instance name specified.
+2024-08-06T02:25:52.383910119Z cloud-init[574]: [INFO]  --no-roles flag passed, unsetting all other requested roles
+2024-08-06T02:25:52.383915649Z cloud-init[574]: [INFO]  Using default agent configuration directory /etc/rancher/agent
+2024-08-06T02:25:52.483732749Z cloud-init[574]: [INFO]  Using default agent var directory /var/lib/rancher/agent
+2024-08-06T02:25:52.599258277Z cloud-init[574]: [INFO]  Successfully tested Rancher connection
+2024-08-06T02:25:52.611001078Z cloud-init[574]: [INFO]  Downloading rancher-system-agent binary from https://k8s.koat.ai/assets/rancher-system-agent-amd64
+2024-08-06T02:25:56.383887617Z cloud-init[574]: [INFO]  Successfully downloaded the rancher-system-agent binary.
+2024-08-06T02:25:56.383950486Z cloud-init[574]: [INFO]  Downloading rancher-system-agent-uninstall.sh script from https://k8s.koat.ai/assets/system-agent-uninstall.sh
+2024-08-06T02:25:56.583698570Z cloud-init[574]: [INFO]  Successfully downloaded the rancher-system-agent-uninstall.sh script.
+2024-08-06T02:25:56.583734498Z cloud-init[574]: [INFO]  Generating Cattle ID
+2024-08-06T02:25:56.783759247Z cloud-init[574]: [INFO]  Successfully downloaded Rancher connection information
+2024-08-06T02:25:56.783789995Z cloud-init[574]: [INFO]  systemd: Creating service file
+2024-08-06T02:25:56.783797489Z cloud-init[574]: [INFO]  Creating environment file /etc/systemd/system/rancher-system-agent.env
+2024-08-06T02:25:57.183741386Z cloud-init[574]: [INFO]  Enabling rancher-system-agent.service
+2024-08-06T02:25:57.183785039Z cloud-init[574]: Created symlink /etc/systemd/system/multi-user.target.wants/rancher-system-agent.service → /etc/systemd/system/rancher-system-agent.service.
+2024-08-06T02:25:57.483855711Z cloud-init[574]: [INFO]  Starting/restarting rancher-system-agent.service
+2024-08-06T02:25:57.483907840Z [[0;32m  OK  [0m] Started [0;1;39mRancher System Agent[0m.
+2024-08-06T02:25:57.583886362Z ci-info: +++++++++++++++++++++++++++++Authorized keys from /home/ubuntu/.ssh/authorized_keys for user ubuntu++++++++++++++++++++++++++++++
+2024-08-06T02:25:57.583916459Z ci-info: +---------+-------------------------------------------------------------------------------------------------+---------+---------+
+2024-08-06T02:25:57.683789912Z ci-info: | Keytype |                                       Fingerprint (sha256)                                      | Options | Comment |
+2024-08-06T02:25:57.683834827Z ci-info: +---------+-------------------------------------------------------------------------------------------------+---------+---------+
+2024-08-06T02:25:57.683844035Z ci-info: | ssh-rsa | 41:49:e8:b4:1c:93:a8:34:c1:b5:a7:5a:66:97:a8:5b:7d:44:9f:a3:a1:d9:79:58:dc:d6:4d:93:78:a5:db:19 |    -    |    -    |
+2024-08-06T02:25:57.683853372Z ci-info: +---------+-------------------------------------------------------------------------------------------------+---------+---------+
+2024-08-06T02:25:57.683863712Z <14>Aug  6 02:25:57 cloud-init: #############################################################
+2024-08-06T02:25:57.683871837Z <14>Aug  6 02:25:57 cloud-init: -----BEGIN SSH HOST KEY FINGERPRINTS-----
+2024-08-06T02:25:57.683878760Z <14>Aug  6 02:25:57 cloud-init: 256 SHA256:LcZlYos2fh3quhpNNq19LeNgVk1Sze6iac43wZrLHIc root@gputest-primary-c31607d4-hpllh (ECDSA)
+2024-08-06T02:25:57.683885603Z <14>Aug  6 02:25:57 cloud-init: 256 SHA256:BwyQZjFUtXB1QCdbK4MHOuBuMvnhvSpO33SuJgauJAY root@gputest-primary-c31607d4-hpllh (ED25519)
+2024-08-06T02:25:57.683892637Z <14>Aug  6 02:25:57 cloud-init: 3072 SHA256:gl532OJ320cLbGjr0em++5ds/9OuCHX6PsNv7IcK1vw root@gputest-primary-c31607d4-hpllh (RSA)
+2024-08-06T02:25:57.683899620Z <14>Aug  6 02:25:57 cloud-init: -----END SSH HOST KEY FINGERPRINTS-----
+2024-08-06T02:25:57.683906894Z <14>Aug  6 02:25:57 cloud-init: #############################################################
+2024-08-06T02:25:57.683914318Z -----BEGIN SSH HOST KEY KEYS-----
+2024-08-06T02:25:57.683921311Z ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCAzjCmNNe58q/lSkDxUQCHg3VlrKFg//vepWxJoc11dxd4nGtAXLAz0+uycSrVXbWh87RVsqKDOSbvt36oiKsM= root@gputest-primary-c31607d4-hpllh
+2024-08-06T02:25:57.683928575Z ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE+BYz8nay3oKD7FvucEqlNe1A71ilfJKV28dQ2xH0qy root@gputest-primary-c31607d4-hpllh
+2024-08-06T02:25:57.783876909Z ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDCHgzpzJb7WlbIQkpspXv3rAbm68T6ncLKd1Jss2Mra9vZDOQhczu3q25WIGhARVlTagGS5Oj+78tx7jHo9YUbCgR3Jq8pSQ4QH5z6m/SMcq3fgunsThexu4XHdio3v/IWE18nmN5qd7A4zswL69oYRQUIriI7NjE2WUYTv1k3+d4v/oACNcSj7Wu8f+tDMmIZNEuN93Q0U3muZ8UMMsEL9Dxl7lzJE8MNfweGEAQU8Vvl3kE0o1DMNDyPF2sTDzAvWzhcb6LnF5LVOEvIfCfz3AEQfmshRVH6gLyFF3RQ26HlZj7b1uZeXZOAgafIR46Yc9WlDy5hbgguIH4IhKRDV6IX5jMrL3NTHfLFjzVXYNyzlDBI/jqpJ81Wv0H2pSUxYyd44VdGywZgWTTCHi+0IXoKfCjE+P8JFA5FcHbVfR5xQGlevkPfsu2shdOqznODqLd54nk4210eNSLEEXe2hDiGILgBseskdIOhc7TB9+21D2RWm7mGiVy4IK3LAoE= root@gputest-primary-c31607d4-hpllh
+2024-08-06T02:25:57.783943766Z -----END SSH HOST KEY KEYS-----
+2024-08-06T02:25:57.783952593Z cloud-init[574]: Cloud-init v. 24.1.3-0ubuntu1~20.04.5 running 'modules:final' at Tue, 06 Aug 2024 02:25:33 +0000. Up 22.09 seconds.
+2024-08-06T02:25:57.783959175Z cloud-init[574]: Cloud-init v. 24.1.3-0ubuntu1~20.04.5 finished at Tue, 06 Aug 2024 02:25:57 +0000. Datasource DataSourceNoCloud [seed=/dev/vda][dsmode=net].  Up 45.48 seconds
+2024-08-06T02:25:57.783966229Z [[0;32m  OK  [0m] Finished [0;1;39mExecute cloud user/final scripts[0m.
+2024-08-06T02:25:57.783974043Z [[0;32m  OK  [0m] Reached target [0;1;39mCloud-init target[0m.

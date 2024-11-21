@@ -1,0 +1,5 @@
+2024-08-06T01:55:53.851878566Z I0806 01:55:53.851362       1 main.go:109] Version: v6.3.4
+2024-08-06T01:55:54.858966608Z I0806 01:55:54.858911       1 main.go:189] CSI driver name: "driver.longhorn.io"
+2024-08-06T01:55:54.858981256Z I0806 01:55:54.858930       1 common.go:138] Probing CSI driver for readiness
+2024-08-06T01:55:54.860161283Z I0806 01:55:54.860116       1 main.go:227] Start NewCSISnapshotSideCarController with snapshotter [driver.longhorn.io] kubeconfig [] csiTimeout [1m50s] csiAddress [/csi/csi.sock] resyncPeriod [15m0s] snapshotNamePrefix [snapshot] snapshotNameUUIDLength [824636444552]
+2024-08-06T01:55:54.860888842Z I0806 01:55:54.860607       1 leaderelection.go:250] attempting to acquire leader lease longhorn-system/external-snapshotter-leader-driver-longhorn-io...
