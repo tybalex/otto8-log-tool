@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.9"
 drain3 = "^0.9.11"
 ipykernel = "^6.29.5"
+wget = "^3.2"
 
 
 [build-system]
