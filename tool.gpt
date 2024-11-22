@@ -6,6 +6,7 @@ Param: action: Action to perform - either "templates" to show log templates or "
 Param: cluster_id: Optional cluster ID to extract parameters from (required when action is "parameters")
 
 cd ${GPTSCRIPT_TOOL_DIR}
+wget https://raw.githubusercontent.com/tybalex/otto8-log-tool/main/drain3.ini
 
 #!/usr/bin/env python3 drain_parse.py
 
