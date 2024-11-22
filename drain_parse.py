@@ -42,8 +42,9 @@ def parse_log_file(log_lines):
     return template_miner
 
 def get_tokens(s):
-    tokens = re.findall(r'<[^>]*>', s)
-    return tokens
+    parts = re.split(r'(<[^>]*>)', s)
+    # Remove any empty strings from the result
+    return [part for part in parts if part]
 
 
 def extract_parameters(template, masked_line, parameters):
@@ -57,20 +58,25 @@ def extract_parameters(template, masked_line, parameters):
     # Extract parameters
     new_parameters = []
     for template_token, log_token in zip(template_tokens, log_tokens):
-        if template_token.startswith('<') and template_token.endswith('>'):
             
-            if template_token == "<*>":
-                # Extract parameter name and value
-                param_name = template_token 
-                if log_token in parameters:
-                    actual_log_token = parameters[log_token].pop(0)
-                    new_parameters.append({param_name: actual_log_token})
+        if template_token == "<*>": # template token is <*>, but the log token can be `fleet.cattle.io<PATH>` or `<PATH><DIGITS>` which requires more processing
+            # Extract parameter name and value
+            param_name = template_token 
+            split_log_tokens = get_tokens(log_token)
+            res_full_string = ""
+            for each_token in split_log_tokens:
+                if each_token in parameters:
+                    actual_log_token = parameters[each_token].pop(0)
+                    res_full_string += actual_log_token
                 else:
-                    new_parameters.append({param_name: log_token})
+                    res_full_string += each_token
+            new_parameters.append({param_name: res_full_string})
 
-            else:
-                tokens = get_tokens(template_token)
-                for token in tokens:
+        else:
+            
+            tokens = get_tokens(template_token) # template token can be something like `fleet.cattle.io<PATH>`, so we split them and examine each part
+            for token in tokens:
+                if token.startswith('<') and token.endswith('>'):
                     actual_log_token = parameters[token].pop(0)
                     new_parameters.append({token: actual_log_token})
     return new_parameters
