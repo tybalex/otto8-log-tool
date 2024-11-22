@@ -1,4 +1,3 @@
-
 import json
 import logging
 import os
@@ -21,16 +20,20 @@ config.profiling_enabled = True
 
 
 def get_log_lines(log_file_path):
-    log_lines = []
-    with open(log_file_path, 'r') as file:
-        # Read each line in the file
-        for line in file:
-            # Process the line (for example, print it)
-            log_lines.append(line.strip())
-    return log_lines
+    if not os.path.exists(log_file_path):
+        raise FileNotFoundError(f"Log file not found: {log_file_path}")
+    
+    try:
+        with open(log_file_path, 'r', encoding='utf-8') as file:
+            return [line.strip() for line in file]
+    except Exception as e:
+        logging.error(f"Error reading log file: {e}")
+        raise
 
 
 def parse_log_file(log_lines):
+    if not log_lines:
+        raise ValueError("Empty log lines provided")
     
     template_miner = TemplateMiner(config=config)
     masker = LogMasker()
