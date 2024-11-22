@@ -85,7 +85,7 @@ def extract_parameters(template, masked_line, parameters):
     # Check if the template and log have the same number of tokens
 
     if len(template_tokens) != len(log_tokens):
-        raise ValueError("Template and log do not match in structure.")
+        raise ValueError("Template and log do not match in structure....")
 
     # Extract parameters
     new_parameters = []
