@@ -7,9 +7,10 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-drain3 = "^0.9.11"
 ipykernel = "^6.29.5"
 wget = "^3.2"
+jsonpickle = "^4.0.0"
+cachetools = "^5.5.0"
 
 
 [build-system]
