@@ -1,6 +1,6 @@
 ---
 Name: LogParser
-Description: Parse log files to extract templates and parameters using the DRAIN algorithm
+Description: Parse log files to extract templates and parameters without having to read the entire file - useful for large log files
 Param: log_file: Path to the log file to analyze
 Param: action: Action to perform - either "templates" to show log templates or "parameters" to extract parameters
 Param: cluster_id: Optional cluster ID to extract parameters from (required when action is "parameters")
