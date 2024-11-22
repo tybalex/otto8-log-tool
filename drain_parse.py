@@ -82,39 +82,24 @@ def extract_parameters(template, masked_line, parameters):
     template_tokens = template.split()
     log_tokens = masked_line.split()
 
-    # Check if the template and log have the same number of tokens
-
     if len(template_tokens) != len(log_tokens):
-        raise ValueError("Template and log do not match in structure....")
+        return []  # Return empty list if tokens don't match
 
     # Extract parameters
     new_parameters = []
     for template_token, log_token in zip(template_tokens, log_tokens):
-
-        if (
-            template_token == "<*>"
-        ):  # template token is <*>, but the log token can be `fleet.cattle.io<PATH>` or `<PATH><DIGITS>` which requires more processing
-            # Extract parameter name and value
-            param_name = template_token
-            split_log_tokens = get_tokens(log_token)
-            res_full_string = ""
-            for each_token in split_log_tokens:
-                if each_token in parameters:
-                    actual_log_token = parameters[each_token].pop(0)
-                    res_full_string += actual_log_token
+        if template_token == "<*>":
+            # For wildcard tokens, store the actual value
+            new_parameters.append({"token": "<*>", "value": log_token})
+        elif template_token.startswith("<") and template_token.endswith(">"):
+            # For other tokens, store both the token type and value
+            param_value = parameters.get(template_token)
+            if param_value is not None:
+                if isinstance(param_value, (list, tuple)):
+                    value = param_value[0] if param_value else ""
                 else:
-                    res_full_string += each_token
-            new_parameters.append({param_name: res_full_string})
-
-        else:
-
-            tokens = get_tokens(
-                template_token
-            )  # template token can be something like `fleet.cattle.io<PATH>`, so we split them and examine each part
-            for token in tokens:
-                if token.startswith("<") and token.endswith(">"):
-                    actual_log_token = parameters[token].pop(0)
-                    new_parameters.append({token: actual_log_token})
+                    value = str(param_value)
+                new_parameters.append({"token": template_token, "value": value})
     return new_parameters
 
 
@@ -133,17 +118,27 @@ def display_clusters(template_miner):
 def get_parameters_by_cluster(template_miner, log_lines):
     masker = LogMasker()
     parameters_by_cluster = defaultdict(list)
+
     for line in log_lines:
+        try:
+            line = line.rstrip()
+            masked_line, parameters = masker.mask(line)
+            matched_cluster = template_miner.match(masked_line)
 
-        line = line.rstrip()
-        masked_line, parameters = masker.mask(line)
-        matched_cluster = template_miner.match(masked_line)
-        template = matched_cluster.get_template()
-        cluster_id = matched_cluster.cluster_id
+            if matched_cluster:
+                template = matched_cluster.get_template()
+                cluster_id = matched_cluster.cluster_id
 
-        paras = extract_parameters(template, masked_line, parameters)
-        parameters_by_cluster[cluster_id].append(paras)
-    return parameters_by_cluster
+                params = extract_parameters(template, masked_line, parameters)
+                if params:  # Only add if we got parameters
+                    parameters_by_cluster[cluster_id].append(
+                        {"line": line, "parameters": params}
+                    )
+        except Exception as e:
+            logging.warning(f"Error processing line: {line}. Error: {str(e)}")
+            continue
+
+    return dict(parameters_by_cluster)  # Convert defaultdict to regular dict
 
 
 def get_log_templates(log_file_path: str) -> Tuple[List[str], TemplateMiner, List[str]]:
@@ -165,58 +160,79 @@ def get_log_templates(log_file_path: str) -> Tuple[List[str], TemplateMiner, Lis
 
 
 def main():
-    # Get parameters from environment variables as per Otto8 convention
-    log_file = os.getenv('LOG_FILE')
-    log_file_url = os.getenv('LOG_FILE_URL', "https://raw.githubusercontent.com/logpai/loghub/refs/heads/master/Apache/Apache_2k.log")
-    action = os.getenv('ACTION')
-    cluster_id = os.getenv('CLUSTER_ID')
-    
-    if not log_file:
-        print('Error: LOG_FILE environment variable must be provided')
+    # Set up argument parser
+    parser = argparse.ArgumentParser(description="Log Parser Tool")
+    parser.add_argument("--log_file", help="Path to the log file")
+    parser.add_argument("--log_file_url", help="URL to download the log file")
+    parser.add_argument(
+        "--action", choices=["templates", "parameters"], help="Action to perform"
+    )
+    parser.add_argument(
+        "--cluster_id", type=int, help="Cluster ID for parameters action"
+    )
+
+    args = parser.parse_args()
+
+    # Get parameters from either environment variables or command line arguments
+    log_file = (
+        os.getenv("LOG_FILE") or args.log_file or "downloaded_log.txt"
+    )  # Default filename
+    log_file_url = os.getenv("LOG_FILE_URL") or args.log_file_url
+    action = os.getenv("ACTION") or args.action
+    cluster_id = os.getenv("CLUSTER_ID") or args.cluster_id
+
+    if log_file_url:
+        print(f"Downloading log file from {log_file_url}")
+        wget.download(log_file_url, log_file)
+        print("\nDownload complete")
+
+    if not os.path.exists(log_file):
+        print("Error: Log file not found and no URL provided to download")
         sys.exit(1)
-        
-    destination = log_file
-    if log_file_url and not os.path.exists(destination):
-        wget.download(log_file_url, destination)
-        
-    if not action or action not in ['templates', 'parameters']:
+
+    if not action or action not in ["templates", "parameters"]:
         print('Error: ACTION must be either "templates" or "parameters"')
         sys.exit(1)
-        
+
     try:
         # First get the templates and necessary objects
         clusters, template_miner, log_lines = get_log_templates(log_file)
 
-        if action == 'templates':
+        if action == "templates":
             # Templates are already displayed by display_clusters()
             pass
-        elif action == 'parameters':
+        elif action == "parameters":
             if not cluster_id:
                 print('Error: CLUSTER_ID is required when action is "parameters"')
                 sys.exit(1)
-                
+
             try:
                 cluster_id = int(cluster_id)
             except ValueError:
-                print('Error: CLUSTER_ID must be a valid integer')
+                print("Error: CLUSTER_ID must be a valid integer")
                 sys.exit(1)
-                
+
             parameters_by_cluster = get_parameters_by_cluster(template_miner, log_lines)
             if cluster_id not in parameters_by_cluster:
-                print(json.dumps({
-                    'error': f'No parameters found for cluster ID {cluster_id}'
-                }))
+                print(
+                    json.dumps(
+                        {"error": f"No parameters found for cluster ID {cluster_id}"}
+                    )
+                )
             else:
-                print(json.dumps({
-                    'cluster_id': cluster_id,
-                    'parameters': parameters_by_cluster[cluster_id]
-                }))
+                print(
+                    json.dumps(
+                        {
+                            "cluster_id": cluster_id,
+                            "parameters": parameters_by_cluster[cluster_id],
+                        }
+                    )
+                )
 
     except Exception as e:
-        print(json.dumps({
-            'error': str(e)
-        }))
+        print(json.dumps({"error": str(e)}))
         sys.exit(1)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
