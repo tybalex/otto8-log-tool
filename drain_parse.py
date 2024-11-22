@@ -114,7 +114,7 @@ def extract_parameters(template, masked_line, parameters):
             for token in tokens:
                 if token.startswith("<") and token.endswith(">"):
                     actual_log_token = parameters[token].pop(0)
-                    new_parameters.append({token: "1234"})
+                    new_parameters.append({token: actual_log_token})
     return new_parameters
 
 

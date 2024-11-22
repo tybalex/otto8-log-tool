@@ -1,5 +1,5 @@
 ---
-Name: LogCompressor
+Name: LogParser
 Description: Parse log files to extract templates and parameters without having to read the entire file - useful for large log files
 Param: log_file: Path to the log file to analyze
 Param: log_file_url: URL to download the log file to analyze. If provided, it will be downloaded and named as log_file
