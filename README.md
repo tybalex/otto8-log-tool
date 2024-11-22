@@ -1,3 +1,3 @@
 # otto8-log-tool
 
-See log_parse.ipynb for usage.
+See log_parsing_tools.ipynb for usage.
