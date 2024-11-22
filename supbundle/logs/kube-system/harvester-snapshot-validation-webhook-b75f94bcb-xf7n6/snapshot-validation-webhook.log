@@ -1,5 +1,0 @@
-2024-08-06T01:55:41.236192408Z I0806 01:55:41.236005       1 certwatcher.go:129] Updated current TLS certificate
-2024-08-06T01:55:41.336653541Z Starting webhook server
-2024-08-06T01:55:41.336909066Z I0806 01:55:41.336857       1 webhook.go:214] Starting certificate watcher
-2024-08-06T01:58:56.672673548Z I0806 01:58:56.672540       1 certwatcher.go:129] Updated current TLS certificate
-2024-08-06T01:58:56.673434713Z I0806 01:58:56.673363       1 certwatcher.go:129] Updated current TLS certificate

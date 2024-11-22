@@ -1,6 +1,0 @@
-2024-08-06T01:57:22.929087269Z {"time": "2024-08-06T01:57:22.928858+00:00", "msg": "Starting collector", "level": "INFO"}
-2024-08-06T01:57:22.929147145Z {"time": "2024-08-06T01:57:22.929020+00:00", "msg": "No folder annotation was provided, defaulting to k8s-sidecar-target-directory", "level": "WARNING"}
-2024-08-06T01:57:22.929261558Z {"time": "2024-08-06T01:57:22.929151+00:00", "msg": "Loading incluster config ...", "level": "INFO"}
-2024-08-06T01:57:22.929855401Z {"time": "2024-08-06T01:57:22.929734+00:00", "msg": "Config for cluster api at 'https://10.53.0.1:443' loaded...", "level": "INFO"}
-2024-08-06T01:57:22.929930735Z {"time": "2024-08-06T01:57:22.929835+00:00", "msg": "Unique filenames will not be enforced.", "level": "INFO"}
-2024-08-06T01:57:22.930017198Z {"time": "2024-08-06T01:57:22.929915+00:00", "msg": "5xx response content will not be enabled.", "level": "INFO"}

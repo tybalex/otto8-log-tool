@@ -1,3 +1,0 @@
-2024-08-06T02:13:36.145312597Z I0806 02:13:36.145223   11038 main.go:133] "Calling CSI driver to discover driver name"
-2024-08-06T02:13:36.147306626Z I0806 02:13:36.147271   11038 main.go:141] "CSI driver name" driver="driver.longhorn.io"
-2024-08-06T02:13:36.147326033Z I0806 02:13:36.147283   11038 main.go:170] "ServeMux listening" address="0.0.0.0:9808"

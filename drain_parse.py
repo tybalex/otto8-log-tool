@@ -11,6 +11,7 @@ from drain3.template_miner_config import TemplateMinerConfig
 from masker import LogMasker
 from collections import defaultdict
 import re
+import argparse
 
 
 config = TemplateMinerConfig()
@@ -133,3 +134,56 @@ def get_log_templates(log_file_path: str) -> Tuple[List[str], TemplateMiner, Lis
     log_lines = get_log_lines(log_file_path)
     template_miner = parse_log_file(log_lines)
     return display_clusters(template_miner), template_miner, log_lines
+
+
+def main():
+    # Get parameters from environment variables as per Otto8 convention
+    log_file = os.getenv('LOG_FILE')
+    action = os.getenv('ACTION')
+    cluster_id = os.getenv('CLUSTER_ID')
+    
+    if not log_file:
+        print('Error: LOG_FILE environment variable must be provided')
+        sys.exit(1)
+        
+    if not action or action not in ['templates', 'parameters']:
+        print('Error: ACTION must be either "templates" or "parameters"')
+        sys.exit(1)
+        
+    try:
+        # First get the templates and necessary objects
+        clusters, template_miner, log_lines = get_log_templates(log_file)
+
+        if action == 'templates':
+            # Templates are already displayed by display_clusters()
+            pass
+        elif action == 'parameters':
+            if not cluster_id:
+                print('Error: CLUSTER_ID is required when action is "parameters"')
+                sys.exit(1)
+                
+            try:
+                cluster_id = int(cluster_id)
+            except ValueError:
+                print('Error: CLUSTER_ID must be a valid integer')
+                sys.exit(1)
+                
+            parameters_by_cluster = get_parameters_by_cluster(template_miner, log_lines)
+            if cluster_id not in parameters_by_cluster:
+                print(json.dumps({
+                    'error': f'No parameters found for cluster ID {cluster_id}'
+                }))
+            else:
+                print(json.dumps({
+                    'cluster_id': cluster_id,
+                    'parameters': parameters_by_cluster[cluster_id]
+                }))
+
+    except Exception as e:
+        print(json.dumps({
+            'error': str(e)
+        }))
+        sys.exit(1)
+
+if __name__ == '__main__':
+    main()

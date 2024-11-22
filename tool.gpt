@@ -1,0 +1,16 @@
+---
+Name: LogParser
+Description: Parse log files to extract templates and parameters using the DRAIN algorithm
+Param: log_file: Path to the log file to analyze
+Param: action: Action to perform - either "templates" to show log templates or "parameters" to extract parameters
+Param: cluster_id: Optional cluster ID to extract parameters from (required when action is "parameters")
+
+#!/usr/bin/env python3 ${GPTSCRIPT_TOOL_DIR}/drain_parse.py
+
+---
+!metadata:*:category
+Logging
+
+---
+!metadata:*:icon
+https://cdn.jsdelivr.net/npm/@phosphor-icons/core@2/assets/duotone/file-text-duotone.svg 
