@@ -167,18 +167,17 @@ def get_log_templates(log_file_path: str) -> Tuple[List[str], TemplateMiner, Lis
 def main():
     # Get parameters from environment variables as per Otto8 convention
     log_file = os.getenv('LOG_FILE')
+    log_file_url = os.getenv('LOG_FILE_URL', "https://raw.githubusercontent.com/logpai/loghub/refs/heads/master/Apache/Apache_2k.log")
     action = os.getenv('ACTION')
     cluster_id = os.getenv('CLUSTER_ID')
-    
-    test_file_url = "https://raw.githubusercontent.com/logpai/loghub/refs/heads/master/Apache/Apache_2k.log"
-    destination = "test.log"
-    if not os.path.exists(destination):
-        wget.download(test_file_url, destination)
-    log_file = destination
     
     if not log_file:
         print('Error: LOG_FILE environment variable must be provided')
         sys.exit(1)
+        
+    destination = log_file
+    if log_file_url and not os.path.exists(destination):
+        wget.download(log_file_url, destination)
         
     if not action or action not in ['templates', 'parameters']:
         print('Error: ACTION must be either "templates" or "parameters"')
