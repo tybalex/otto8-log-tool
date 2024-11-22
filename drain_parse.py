@@ -26,7 +26,6 @@ sim_th = 0.7
 depth = 6
 max_children = 512
 max_clusters = 1024
-extra_delimiters = ["_"]
 
 [PROFILING]
 enabled = True
@@ -84,6 +83,7 @@ def extract_parameters(template, masked_line, parameters):
     log_tokens = masked_line.split()
 
     # Check if the template and log have the same number of tokens
+
     if len(template_tokens) != len(log_tokens):
         raise ValueError("Template and log do not match in structure.")
 
@@ -114,7 +114,7 @@ def extract_parameters(template, masked_line, parameters):
             for token in tokens:
                 if token.startswith("<") and token.endswith(">"):
                     actual_log_token = parameters[token].pop(0)
-                    new_parameters.append({token: actual_log_token})
+                    new_parameters.append({token: "1234"})
     return new_parameters
 
 
