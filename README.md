@@ -7,7 +7,7 @@ A tool for analyzing log files using the DRAIN algorithm to discover log pattern
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/otto8-log-tool.git
+git clone https://github.com/tybalex/otto8-log-tool
 cd otto8-log-tool
 ```
 
