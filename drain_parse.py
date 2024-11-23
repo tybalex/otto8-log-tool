@@ -148,9 +148,9 @@ def get_log_templates(log_file_path: str) -> Tuple[List[str], TemplateMiner, Lis
     """Process a log file and extract templates."""
     log_lines = get_log_lines(log_file_path)
     template_miner = parse_log_file(log_lines)
-    
+
     clusters = [cluster.get_template() for cluster in template_miner.drain.clusters]
-    
+
     return clusters, template_miner, log_lines
 
 
