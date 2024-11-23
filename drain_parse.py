@@ -13,6 +13,9 @@ from collections import defaultdict
 import re
 import argparse
 import wget
+import hashlib
+from urllib.parse import urlparse
+import pathlib
 
 ini_content = """[SNAPSHOT]
 snapshot_interval_minutes = 10
@@ -142,21 +145,101 @@ def get_parameters_by_cluster(template_miner, log_lines):
 
 
 def get_log_templates(log_file_path: str) -> Tuple[List[str], TemplateMiner, List[str]]:
-    """
-    Process a log file and extract templates.
-
-    Args:
-        log_file_path: Path to the log file
-
-    Returns:
-        Tuple containing:
-        - List of template strings
-        - TemplateMiner instance
-        - Original log lines
-    """
+    """Process a log file and extract templates."""
     log_lines = get_log_lines(log_file_path)
     template_miner = parse_log_file(log_lines)
-    return display_clusters(template_miner), template_miner, log_lines
+    
+    clusters = [cluster.get_template() for cluster in template_miner.drain.clusters]
+    
+    return clusters, template_miner, log_lines
+
+
+def get_cache_filename(url: str) -> str:
+    """
+    Generate a consistent filename from URL that's filesystem-friendly.
+
+    Args:
+        url: The URL of the log file
+
+    Returns:
+        A filename in the format: {url_hostname}_{hash}_{filename}.log
+    """
+    parsed_url = urlparse(url)
+    original_filename = os.path.basename(parsed_url.path)
+    if not original_filename:
+        original_filename = "log"
+
+    # Create a short hash of the full URL
+    url_hash = hashlib.md5(url.encode()).hexdigest()[:8]
+
+    # Get hostname, removing any non-alphanumeric characters
+    hostname = "".join(c for c in parsed_url.hostname if c.isalnum())
+
+    # Construct the filename
+    return f"{hostname}_{url_hash}_{original_filename}"
+
+
+def get_or_download_file(url: str, cache_dir: str = "cache") -> str:
+    """
+    Downloads a file if it doesn't exist in cache, otherwise returns cached file path.
+
+    Args:
+        url: The URL to download from
+        cache_dir: Directory to store downloaded files
+
+    Returns:
+        Path to the local file
+    """
+    # Create cache directory if it doesn't exist
+    pathlib.Path(cache_dir).mkdir(parents=True, exist_ok=True)
+
+    # Generate filename from URL
+    filename = get_cache_filename(url)
+    cached_file_path = os.path.join(cache_dir, filename)
+
+    # If file doesn't exist in cache, download it
+    if not os.path.exists(cached_file_path):
+        print(f"Downloading log file from {url}")
+        wget.download(url, cached_file_path)
+        print("\nDownload complete")
+    else:
+        print(f"Using cached file: {cached_file_path}")
+
+    return cached_file_path
+
+
+def save_snapshot(template_miner, log_lines, cache_dir: str = "cache"):
+    """Save the current state of clusters and processed logs"""
+    snapshot = {
+        "clusters": [
+            {
+                "id": cluster.cluster_id,
+                "size": cluster.size,
+                "template": cluster.get_template(),
+            }
+            for cluster in template_miner.drain.clusters
+        ],
+        "log_lines": log_lines,
+    }
+
+    snapshot_path = os.path.join(cache_dir, "last_template_snapshot.json")
+    with open(snapshot_path, "w") as f:
+        json.dump(snapshot, f)
+
+    return snapshot
+
+
+def load_snapshot(cache_dir: str = "cache"):
+    """Load the last saved template snapshot"""
+    snapshot_path = os.path.join(cache_dir, "last_template_snapshot.json")
+    if not os.path.exists(snapshot_path):
+        raise FileNotFoundError(
+            "No analysis snapshot found. Please analyze the log patterns first:\n"
+            f"python3 drain_parse.py --log_file_url '{os.getenv('LOG_FILE_URL')}' --action analyze"
+        )
+
+    with open(snapshot_path, "r") as f:
+        return json.load(f)
 
 
 def main():
@@ -165,7 +248,9 @@ def main():
     parser.add_argument("--log_file", help="Path to the log file")
     parser.add_argument("--log_file_url", help="URL to download the log file")
     parser.add_argument(
-        "--action", choices=["templates", "parameters"], help="Action to perform"
+        "--action",
+        choices=["analyze", "extract"],  # or ["discover", "extract"]
+        help="Action to perform: 'analyze' to discover log patterns, 'extract' to get parameters from a pattern",
     )
     parser.add_argument(
         "--cluster_id", type=int, help="Cluster ID for parameters action"
@@ -174,60 +259,118 @@ def main():
     args = parser.parse_args()
 
     # Get parameters from either environment variables or command line arguments
-    log_file = (
-        os.getenv("LOG_FILE") or args.log_file or "downloaded_log.txt"
-    )  # Default filename
+    log_file = os.getenv("LOG_FILE") or args.log_file
     log_file_url = os.getenv("LOG_FILE_URL") or args.log_file_url
     action = os.getenv("ACTION") or args.action
     cluster_id = os.getenv("CLUSTER_ID") or args.cluster_id
 
+    # Handle file location
     if log_file_url:
-        print(f"Downloading log file from {log_file_url}")
-        wget.download(log_file_url, log_file)
-        print("\nDownload complete")
-
-    if not os.path.exists(log_file):
-        print("Error: Log file not found and no URL provided to download")
+        log_file = get_or_download_file(log_file_url)
+    elif not log_file:
+        print("Error: Either LOG_FILE or LOG_FILE_URL must be provided")
         sys.exit(1)
 
-    if not action or action not in ["templates", "parameters"]:
-        print('Error: ACTION must be either "templates" or "parameters"')
+    if not os.path.exists(log_file):
+        print("Error: Log file not found")
+        sys.exit(1)
+
+    if not action or action not in ["analyze", "extract"]:
+        print(
+            'Error: ACTION must be either "analyze" (to discover patterns) or "extract" (to get parameters from a pattern)'
+        )
         sys.exit(1)
 
     try:
-        # First get the templates and necessary objects
-        clusters, template_miner, log_lines = get_log_templates(log_file)
+        if action == "analyze":
+            clusters, template_miner, log_lines = get_log_templates(log_file)
+            snapshot = save_snapshot(template_miner, log_lines)
 
-        if action == "templates":
-            # Templates are already displayed by display_clusters()
-            pass
-        elif action == "parameters":
-            if not cluster_id:
-                print('Error: CLUSTER_ID is required when action is "parameters"')
-                sys.exit(1)
-
-            try:
-                cluster_id = int(cluster_id)
-            except ValueError:
-                print("Error: CLUSTER_ID must be a valid integer")
-                sys.exit(1)
-
-            parameters_by_cluster = get_parameters_by_cluster(template_miner, log_lines)
-            if cluster_id not in parameters_by_cluster:
-                print(
-                    json.dumps(
-                        {"error": f"No parameters found for cluster ID {cluster_id}"}
-                    )
+            print(
+                json.dumps(
+                    {
+                        "message": "Analysis complete. You can now use 'extract' action with --cluster_id to get parameters.",
+                        "clusters": [
+                            {
+                                "id": c["id"],
+                                "size": c["size"],
+                                "template": c["template"],
+                            }
+                            for c in snapshot["clusters"]
+                        ],
+                    },
+                    indent=2,
                 )
-            else:
+            )
+
+        elif action == "extract":
+            if not cluster_id:
                 print(
                     json.dumps(
                         {
-                            "cluster_id": cluster_id,
-                            "parameters": parameters_by_cluster[cluster_id],
+                            "error": "Cluster ID is required. Please run 'analyze' action first to see available cluster IDs"
                         }
                     )
                 )
+                sys.exit(1)
+
+            try:
+                # Load the last snapshot instead of reprocessing
+                snapshot = load_snapshot()
+
+                # Verify the cluster_id exists in the snapshot
+                cluster_exists = any(
+                    c["id"] == cluster_id for c in snapshot["clusters"]
+                )
+                if not cluster_exists:
+                    print(
+                        json.dumps(
+                            {
+                                "error": f"Cluster ID {cluster_id} not found in last template snapshot"
+                            }
+                        )
+                    )
+                    sys.exit(1)
+
+                # Reprocess only for parameter extraction using saved log lines
+                template_miner = parse_log_file(snapshot["log_lines"])
+                parameters = get_parameters_by_cluster(
+                    template_miner, snapshot["log_lines"]
+                )
+
+                if cluster_id not in parameters:
+                    print(
+                        json.dumps(
+                            {
+                                "error": f"No parameters found for cluster ID {cluster_id}"
+                            }
+                        )
+                    )
+                else:
+                    print(
+                        json.dumps(
+                            {
+                                "cluster_id": cluster_id,
+                                "template": next(
+                                    c["template"]
+                                    for c in snapshot["clusters"]
+                                    if c["id"] == cluster_id
+                                ),
+                                "parameters": parameters[cluster_id],
+                            }
+                        )
+                    )
+
+            except FileNotFoundError:
+                print(
+                    json.dumps(
+                        {
+                            "error": "No analysis snapshot found. Please analyze the log patterns first:\n"
+                            f"python3 drain_parse.py --log_file_url '{log_file_url}' --action analyze"
+                        }
+                    )
+                )
+                sys.exit(1)
 
     except Exception as e:
         print(json.dumps({"error": str(e)}))
