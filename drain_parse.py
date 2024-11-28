@@ -90,19 +90,30 @@ def extract_parameters(template, masked_line, parameters):
 
     # Extract parameters
     new_parameters = []
-    for template_token, log_token in zip(template_tokens, log_tokens):
-        if template_token == "<*>":
-            # For wildcard tokens, store the actual value
-            new_parameters.append({"token": "<*>", "value": log_token})
-        elif template_token.startswith("<") and template_token.endswith(">"):
-            # For other tokens, store both the token type and value
-            param_value = parameters.get(template_token)
-            if param_value is not None:
-                if isinstance(param_value, (list, tuple)):
-                    value = param_value[0] if param_value else ""
+    for template_token, log_token in zip(template_tokens, log_tokens):        
+        if (
+            template_token == "<*>"
+        ):  # template token is <*>, but the log token can be `fleet.cattle.io<PATH>` or `<PATH><DIGITS>` which requires more processing
+            param_name = template_token
+            split_log_tokens = get_tokens(log_token)
+            res_full_string = ""
+            for each_token in split_log_tokens:
+                if each_token in parameters:
+                    actual_log_token = parameters[each_token].pop(0)
+                    res_full_string += actual_log_token
                 else:
-                    value = str(param_value)
-                new_parameters.append({"token": template_token, "value": value})
+                    res_full_string += each_token
+            new_parameters.append({"token": param_name, "value": res_full_string})
+
+        else:
+            tokens = get_tokens(
+                template_token
+            )  # template token can be something like `fleet.cattle.io<PATH>` or `<PATH><DIGITS>`, so we split them and examine each part
+            for token in tokens:
+                if token.startswith("<") and token.endswith(">"):
+                    actual_log_token = parameters[token].pop(0)
+                    new_parameters.append({"token": token, "value": actual_log_token})
+        # TODO: can template_token be a string like `fleet.cattle.io<*>`? hopefully not.
     return new_parameters
 
 
