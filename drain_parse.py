@@ -293,14 +293,14 @@ async def load_snapshot(cache_dir: str = "cache") -> Dict[str, Any]:
             return json.load(f)
 
 
-async def get_or_download_file(url: str, cache_dir: str = "cache") -> str:
+async def get_or_download_file(url: str, log_file: str = "", cache_dir: str = "cache") -> str:
     """
     Downloads a file if it doesn't exist in cache, otherwise returns cached file path.
 
     Args:
         url: The URL to download from
         cache_dir: Directory to store downloaded files
-
+        log_file: Path to the log file to save. If provided, the file will be saved to this path.
     Returns:
         Path to the local file
     """
@@ -308,8 +308,11 @@ async def get_or_download_file(url: str, cache_dir: str = "cache") -> str:
     pathlib.Path(cache_dir).mkdir(parents=True, exist_ok=True)
 
     # Generate filename from URL
-    filename = get_cache_filename(url)
-    cached_file_path = os.path.join(cache_dir, filename)
+    if log_file: # for gptscript workspace usecase
+        cached_file_path = log_file
+    else:
+        filename = get_cache_filename(url)
+        cached_file_path = os.path.join(cache_dir, filename)
 
     # If file doesn't exist in cache, download it
     if not os.path.exists(cached_file_path):
@@ -353,8 +356,13 @@ async def main():
         sys.exit(1)
     # Handle file location
     if log_file_url:
-        log_file = await get_or_download_file(log_file_url)
-        log_lines = get_log_lines(log_file)
+        cached_log_file = await get_or_download_file(log_file_url, log_file)
+        log_lines = get_log_lines(cached_log_file)
+        if log_file:
+            try:
+                await save_to_gptscript_workspace(log_file, "\n".join(log_lines))
+            except Exception as e:
+                pass
     elif not log_file:
         print("Error: Either LOG_FILE or LOG_FILE_URL must be provided")
         sys.exit(1)
