@@ -131,4 +131,8 @@ python3 drain_parse.py --log_file_url "your_log_url" --action extract --cluster_
 
 See `log_parsing_tools.ipynb` for additional examples and usage patterns.
 
+## Use in Otto8
+
+Always enable the `workspace files` tool together with this tool.
+
 
