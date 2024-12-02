@@ -6,7 +6,7 @@ authors = ["Yingbei <yingbei@acorn.io>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.11"
 ipykernel = "^6.29.5"
 wget = "^3.2"
 jsonpickle = "^4.0.0"

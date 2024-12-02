@@ -11,7 +11,7 @@ git clone https://github.com/tybalex/otto8-log-tool
 cd otto8-log-tool
 ```
 
-2. Create and activate a virtual environment:
+2. Create and activate a virtual environment, make sure to use python 3.11+:
 
 ```bash
 python -m venv otto8-log-tool-py3.11
@@ -130,3 +130,5 @@ python3 drain_parse.py --log_file_url "your_log_url" --action extract --cluster_
 - The tool outputs JSON for easy parsing and integration with other tools
 
 See `log_parsing_tools.ipynb` for additional examples and usage patterns.
+
+

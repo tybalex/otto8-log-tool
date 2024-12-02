@@ -16,6 +16,8 @@ import wget
 import hashlib
 from urllib.parse import urlparse
 import pathlib
+import gptscript
+import asyncio
 
 ini_content = """[SNAPSHOT]
 snapshot_interval_minutes = 10
@@ -90,19 +92,30 @@ def extract_parameters(template, masked_line, parameters):
 
     # Extract parameters
     new_parameters = []
-    for template_token, log_token in zip(template_tokens, log_tokens):
-        if template_token == "<*>":
-            # For wildcard tokens, store the actual value
-            new_parameters.append({"token": "<*>", "value": log_token})
-        elif template_token.startswith("<") and template_token.endswith(">"):
-            # For other tokens, store both the token type and value
-            param_value = parameters.get(template_token)
-            if param_value is not None:
-                if isinstance(param_value, (list, tuple)):
-                    value = param_value[0] if param_value else ""
+    for template_token, log_token in zip(template_tokens, log_tokens):        
+        if (
+            template_token == "<*>"
+        ):  # template token is <*>, but the log token can be `fleet.cattle.io<PATH>` or `<PATH><DIGITS>` which requires more processing
+            param_name = template_token
+            split_log_tokens = get_tokens(log_token)
+            res_full_string = ""
+            for each_token in split_log_tokens:
+                if each_token in parameters:
+                    actual_log_token = parameters[each_token].pop(0)
+                    res_full_string += actual_log_token
                 else:
-                    value = str(param_value)
-                new_parameters.append({"token": template_token, "value": value})
+                    res_full_string += each_token
+            new_parameters.append({"token": param_name, "value": res_full_string})
+
+        else:
+            tokens = get_tokens(
+                template_token
+            )  # template token can be something like `fleet.cattle.io<PATH>` or `<PATH><DIGITS>`, so we split them and examine each part
+            for token in tokens:
+                if token.startswith("<") and token.endswith(">"):
+                    actual_log_token = parameters[token].pop(0)
+                    new_parameters.append({"token": token, "value": actual_log_token})
+        # TODO: can template_token be a string like `fleet.cattle.io<*>`? hopefully not.
     return new_parameters
 
 
@@ -144,9 +157,10 @@ def get_parameters_by_cluster(template_miner, log_lines):
     return dict(parameters_by_cluster)  # Convert defaultdict to regular dict
 
 
-def get_log_templates(log_file_path: str) -> Tuple[List[str], TemplateMiner, List[str]]:
+def get_log_templates(log_lines: List[str]) -> Tuple[List[str], TemplateMiner, List[str]]:
     """Process a log file and extract templates."""
-    log_lines = get_log_lines(log_file_path)
+    # log_lines = get_log_lines(log_file_path)
+    
     template_miner = parse_log_file(log_lines)
 
     clusters = [cluster.get_template() for cluster in template_miner.drain.clusters]
@@ -179,7 +193,107 @@ def get_cache_filename(url: str) -> str:
     return f"{hostname}_{url_hash}_{original_filename}"
 
 
-def get_or_download_file(url: str, cache_dir: str = "cache") -> str:
+# from: https://github.com/otto8-ai/tools/blob/main/google/gmail/helpers.py#L277C1-L312C46
+def prepend_base_path(base_path: str, file_path: str):
+    """
+    Prepend a base path to a file path if it's not already rooted in the base path.
+
+    Args:
+        base_path (str): The base path to prepend.
+        file_path (str): The file path to check and modify.
+
+    Returns:
+        str: The modified file path with the base path prepended if necessary.
+
+    Examples:
+      >>> prepend_base_path("files", "my-file.txt")
+      'files/my-file.txt'
+
+      >>> prepend_base_path("files", "files/my-file.txt")
+      'files/my-file.txt'
+
+      >>> prepend_base_path("files", "foo/my-file.txt")
+      'files/foo/my-file.txt'
+
+      >>> prepend_base_path("files", "bar/files/my-file.txt")
+      'files/bar/files/my-file.txt'
+
+      >>> prepend_base_path("files", "files/bar/files/my-file.txt")
+      'files/bar/files/my-file.txt'
+    """
+    # Split the file path into parts for checking
+    file_parts = os.path.normpath(file_path).split(os.sep)
+
+    # Check if the base path is already at the root
+    if file_parts[0] == base_path:
+        return file_path
+
+    # Prepend the base path
+    return os.path.join(base_path, file_path)
+
+
+# for gptscript workspace S/L, see https://github.com/gptscript-ai/py-gptscript/blob/main/gptscript/gptscript.py
+async def save_to_gptscript_workspace(filepath: str, content: str) -> None:
+    gptscript_client = gptscript.GPTScript()
+    wksp_file_path = prepend_base_path('files', filepath)
+    await gptscript_client.write_file_to_workspace(wksp_file_path, content.encode('utf-8'))
+
+
+async def save_snapshot(template_miner, log_lines, cache_dir: str = "cache") -> Dict[str, Any]:
+    """Save the current state of clusters and processed logs"""
+    snapshot = {
+        "clusters": [
+            {
+                "id": cluster.cluster_id,
+                "size": cluster.size,
+                "template": cluster.get_template(),
+            }
+            for cluster in template_miner.drain.clusters
+        ],
+        "log_lines": log_lines,
+    }
+    
+    filepath = "last_template_snapshot.json" # TODO: This should not be hardcoded. need to support snapshot for different input files
+
+    try:
+        await save_to_gptscript_workspace(filepath, json.dumps(snapshot))
+        return snapshot
+    except Exception as e:
+        # failed to save to workspace, try local file
+        snapshot_path = os.path.join(cache_dir, filepath)
+        with open(snapshot_path, "w") as f:
+            json.dump(snapshot, f)
+
+        return snapshot
+
+
+async def load_from_gptscript_workspace(filepath: str) -> str:
+    gptscript_client = gptscript.GPTScript()
+    wksp_file_path = prepend_base_path('files', filepath)
+    file_content = await gptscript_client.read_file_in_workspace(wksp_file_path)
+    return file_content.decode('utf-8')
+
+
+async def load_snapshot(cache_dir: str = "cache") -> Dict[str, Any]:
+    """Load the last saved template snapshot""" 
+    filepath = "last_template_snapshot.json" # TODO: This should not be hardcoded. need to support snapshot for different input files
+    try: # try to load from workspace file
+        file_content = await load_from_gptscript_workspace(filepath)
+        return json.loads(file_content)
+    except Exception as e:
+        # failed to load from workspace, try local file
+        snapshot_path = os.path.join(cache_dir,filepath)
+        if not os.path.exists(snapshot_path):
+            raise FileNotFoundError(
+                "No analysis snapshot found. Please analyze the log patterns first:\n"
+                f"python3 drain_parse.py --log_file_url '{os.getenv('LOG_FILE_URL')}' --action analyze"
+            )
+
+        with open(snapshot_path, "r") as f:
+            return json.load(f)
+
+
+async def get_or_download_file(url: str, cache_dir: str = "cache") -> str:
     """
     Downloads a file if it doesn't exist in cache, otherwise returns cached file path.
 
@@ -208,41 +322,7 @@ def get_or_download_file(url: str, cache_dir: str = "cache") -> str:
     return cached_file_path
 
 
-def save_snapshot(template_miner, log_lines, cache_dir: str = "cache"):
-    """Save the current state of clusters and processed logs"""
-    snapshot = {
-        "clusters": [
-            {
-                "id": cluster.cluster_id,
-                "size": cluster.size,
-                "template": cluster.get_template(),
-            }
-            for cluster in template_miner.drain.clusters
-        ],
-        "log_lines": log_lines,
-    }
-
-    snapshot_path = os.path.join(cache_dir, "last_template_snapshot.json")
-    with open(snapshot_path, "w") as f:
-        json.dump(snapshot, f)
-
-    return snapshot
-
-
-def load_snapshot(cache_dir: str = "cache"):
-    """Load the last saved template snapshot"""
-    snapshot_path = os.path.join(cache_dir, "last_template_snapshot.json")
-    if not os.path.exists(snapshot_path):
-        raise FileNotFoundError(
-            "No analysis snapshot found. Please analyze the log patterns first:\n"
-            f"python3 drain_parse.py --log_file_url '{os.getenv('LOG_FILE_URL')}' --action analyze"
-        )
-
-    with open(snapshot_path, "r") as f:
-        return json.load(f)
-
-
-def main():
+async def main():
     # Set up argument parser
     parser = argparse.ArgumentParser(description="Log Parser Tool")
     parser.add_argument("--log_file", help="Path to the log file")
@@ -264,27 +344,34 @@ def main():
     action = os.getenv("ACTION") or args.action
     cluster_id = os.getenv("CLUSTER_ID") or args.cluster_id
 
-    # Handle file location
-    if log_file_url:
-        log_file = get_or_download_file(log_file_url)
-    elif not log_file:
-        print("Error: Either LOG_FILE or LOG_FILE_URL must be provided")
-        sys.exit(1)
-
-    if not os.path.exists(log_file):
-        print("Error: Log file not found")
-        sys.exit(1)
-
     if not action or action not in ["analyze", "extract"]:
         print(
             'Error: ACTION must be either "analyze" (to discover patterns) or "extract" (to get parameters from a pattern)'
         )
         sys.exit(1)
+    # Handle file location
+    if log_file_url:
+        log_file = await get_or_download_file(log_file_url)
+        log_lines = get_log_lines(log_file)
+    elif not log_file:
+        print("Error: Either LOG_FILE or LOG_FILE_URL must be provided")
+        sys.exit(1)
+    else: # log_file is provided
+        try:
+            log_content = await load_from_gptscript_workspace(log_file)
+            log_lines = log_content.splitlines()
+        except Exception as e:
+            if not os.path.exists(log_file):
+                print("Error: Log file not found")
+                sys.exit(1)
+            else:
+                log_lines = get_log_lines(log_file)
+
 
     try:
         if action == "analyze":
-            clusters, template_miner, log_lines = get_log_templates(log_file)
-            snapshot = save_snapshot(template_miner, log_lines)
+            clusters, template_miner, log_lines = get_log_templates(log_lines)
+            snapshot = await save_snapshot(template_miner, log_lines)
 
             print(
                 json.dumps(
@@ -316,7 +403,7 @@ def main():
 
             try:
                 # Load the last snapshot instead of reprocessing
-                snapshot = load_snapshot()
+                snapshot = await load_snapshot()
 
                 # Verify the cluster_id exists in the snapshot
                 cluster_exists = any(
@@ -378,4 +465,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
