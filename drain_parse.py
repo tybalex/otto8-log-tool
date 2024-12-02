@@ -343,6 +343,8 @@ async def main():
     log_file_url = os.getenv("LOG_FILE_URL") or args.log_file_url
     action = os.getenv("ACTION") or args.action
     cluster_id = os.getenv("CLUSTER_ID") or args.cluster_id
+    if cluster_id is not None:
+        cluster_id = int(cluster_id)
 
     if not action or action not in ["analyze", "extract"]:
         print(
