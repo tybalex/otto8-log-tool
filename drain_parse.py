@@ -236,7 +236,7 @@ def prepend_base_path(base_path: str, file_path: str):
 async def save_to_gptscript_workspace(filepath: str, content: str) -> None:
     gptscript_client = gptscript.GPTScript()
     wksp_file_path = prepend_base_path('files', filepath)
-    await gptscript_client.write_file_to_workspace(wksp_file_path, content.encode('utf-8'))
+    await gptscript_client.write_file_in_workspace(wksp_file_path, content.encode('utf-8'))
 
 
 async def save_snapshot(template_miner, log_lines, cache_dir: str = "cache") -> Dict[str, Any]:
@@ -257,9 +257,11 @@ async def save_snapshot(template_miner, log_lines, cache_dir: str = "cache") -> 
 
     try:
         await save_to_gptscript_workspace(filepath, json.dumps(snapshot))
+        print(f"Saved snapshot to workspace: {filepath}")
         return snapshot
     except Exception as e:
         # failed to save to workspace, try local file
+        print(f"Failed to save snapshot to workspace, saving to local file: {filepath}")
         snapshot_path = os.path.join(cache_dir, filepath)
         with open(snapshot_path, "w") as f:
             json.dump(snapshot, f)
